@@ -36,7 +36,7 @@ def extract_next_links(url, resp):
     if resp is None or resp.status != 200 or resp.raw_response is None:
         return result
 
-    # # Only handle HTML documents
+    # Only handle HTML documents
     headers = getattr(resp.raw_response, "headers", {}) or {}
     ctype = headers.get("Content-Type", "")
     if "text/html" not in ctype.lower():
@@ -62,7 +62,7 @@ def extract_next_links(url, resp):
         href = a.get("href", "").strip()
 
         # Skip empty hrefs and non-HTTP pseudo-schemes.
-        if not href or href.startswith(("javascript:", "mailto:", "tel:")):
+        if not href or href.startswith(("javascript:", "mailto:", "tel:", "data:", "#")):
             continue
 
         # Normalize: make absolute and remove URL fragment
@@ -91,7 +91,7 @@ def is_valid(url):
             return False
 
         path = (parsed.path or "").lower()
-        query = (parsed.query or "")
+        query = (parsed.query or "").lower()
 
         # Very long URL/query → likely trap
         if len(url) > 2048 or len(query) > 600:
@@ -120,4 +120,3 @@ def is_valid(url):
     except TypeError:
         print ("TypeError for ", parsed)
         raise
-
