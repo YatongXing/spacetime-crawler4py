@@ -2,6 +2,20 @@ import re
 from urllib.parse import urlparse, urljoin, urldefrag
 from bs4 import BeautifulSoup
 
+_ALLOWED_SUFFIXES = (
+    "ics.uci.edu",
+    "cs.uci.edu",
+    "informatics.uci.edu",
+    "stat.uci.edu",
+)
+
+#trap guards
+_TRAP_KEYWORDS = {
+    "calendar", "ical", "wp-json", "xmlrpc", "attachment",
+    "replytocom", "format=pdf", "feed", "rss", "share=",
+    "sort=", "action="
+}
+
 def scraper(url, resp):
     links = extract_next_links(url, resp)
     return [link for link in links if is_valid(link)]
@@ -70,6 +84,29 @@ def is_valid(url):
         parsed = urlparse(url)
         if parsed.scheme not in set(["http", "https"]):
             return False
+            
+        host = (parsed.netloc or "").lower()
+        # Only *.ics|cs|informatics|stat.uci.edu (and subdomains)
+        if not any(host == d or host.endswith("." + d) for d in _ALLOWED_SUFFIXES):
+            return False
+
+        path = (parsed.path or "").lower()
+        query = (parsed.query or "")
+
+        # Very long URL/query → likely trap
+        if len(url) > 2048 or len(query) > 600:
+            return False
+
+        # Repeating path segments like /2020/01/2020/01/2020/01/
+        segs = [s for s in path.split("/") if s]
+        if segs and any(segs.count(s) >= 3 for s in set(segs)):
+            return False
+
+        # Calendars/feeds/attachments/etc.
+        pq = f"{path}?{query}"
+        if any(k in pq for k in _TRAP_KEYWORDS):
+            return False
+        
         return not re.match(
             r".*\.(css|js|bmp|gif|jpe?g|ico"
             + r"|png|tiff?|mid|mp2|mp3|mp4"
@@ -83,3 +120,4 @@ def is_valid(url):
     except TypeError:
         print ("TypeError for ", parsed)
         raise
+
