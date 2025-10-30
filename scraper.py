@@ -1,5 +1,6 @@
 import re
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin, urldefrag
+from bs4 import BeautifulSoup
 
 def scraper(url, resp):
     links = extract_next_links(url, resp)
@@ -15,7 +16,51 @@ def extract_next_links(url, resp):
     #         resp.raw_response.url: the url, again
     #         resp.raw_response.content: the content of the page!
     # Return a list with the hyperlinks (as strings) scrapped from resp.raw_response.content
-    return list()
+    result = []
+
+    # skip if no response, non-200 status, or no raw response object.
+    if resp is None or resp.status != 200 or resp.raw_response is None:
+        return result
+
+    # # Only handle HTML documents
+    headers = getattr(resp.raw_response, "headers", {}) or {}
+    ctype = headers.get("Content-Type", "")
+    if "text/html" not in ctype.lower():
+        return result
+
+    # Get the raw page bytes; if empty, nothing to parse.
+    content = getattr(resp.raw_response, "content", b"") or b""
+    if not content:
+        return result
+
+    # Parse HTML with BeautifulSoup (lxml parser is fast and tolerant).
+    try:
+        soup = BeautifulSoup(content, "lxml")
+    except Exception:
+        return result
+
+    # Use the final resolved URL (after redirects) as the base for resolving relative links.
+    base = resp.url or url
+    seen = set()
+
+    # Extract all <a> elements that have an href attribute.
+    for a in soup.find_all("a", href=True):
+        href = a.get("href", "").strip()
+
+        # Skip empty hrefs and non-HTTP pseudo-schemes.
+        if not href or href.startswith(("javascript:", "mailto:", "tel:")):
+            continue
+
+        # Normalize: make absolute and remove URL fragment
+        abs_url = urljoin(base, href)
+        abs_url, _ = urldefrag(abs_url)
+
+        # Deduplicate within this page, then add to the result list.
+        if abs_url and abs_url not in seen:
+            seen.add(abs_url)
+            result.append(abs_url)
+
+    return result
 
 def is_valid(url):
     # Decide whether to crawl this url or not. 
