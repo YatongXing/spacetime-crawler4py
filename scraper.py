@@ -11,9 +11,18 @@ _ALLOWED_SUFFIXES = (
 
 #trap guards
 _TRAP_KEYWORDS = {
-    "calendar", "ical", "wp-json", "xmlrpc", "attachment",
-    "replytocom", "format=pdf", "feed", "rss", "share=",
-    "sort=", "action="
+    # feeds / apis / sitemaps
+    "wp-json", "xmlrpc", "sitemap", "feed", "rss", "atom", "format=xml",
+    "ical", "ics",
+
+    # media/file browsers and attachments (parameter-driven)
+    "do=media", "tab=files", "media=", "image=", "file=", "attachment=",
+
+    # low-info render modes
+    "format=pdf", "print=", "view=print", "preview=",
+
+    # misc noise / comment reply & social share
+    "replytocom", "share="
 }
 
 def scraper(url, resp):
@@ -64,9 +73,14 @@ def extract_next_links(url, resp):
         # Skip empty hrefs and non-HTTP pseudo-schemes.
         if not href or href.startswith(("javascript:", "mailto:", "tel:", "data:", "#")):
             continue
+        if any(c in href for c in ["[", "]", " ", "{", "}", "|", "\\"]):
+            continue
 
         # Normalize: make absolute and remove URL fragment
-        abs_url = urljoin(base, href)
+        try:
+            abs_url = urljoin(base, href)
+        except Exception:
+            continue
         abs_url, _ = urldefrag(abs_url)
 
         # Deduplicate within this page, then add to the result list.
@@ -93,30 +107,66 @@ def is_valid(url):
         path = (parsed.path or "").lower()
         query = (parsed.query or "").lower()
 
-        # Very long URL/query → likely trap
-        if len(url) > 2048 or len(query) > 600:
+        # Obvious junk in host (e.g., [YOUR_IP])
+        if "[" in host or "]" in host:
             return False
 
-        # Repeating path segments like /2020/01/2020/01/2020/01/
+        # Very large non-HTML files (low information value)
+        if re.match(
+                r".*\.(css|js|bmp|gif|jpe?g|ico"
+                r"|png|tiff?|mid|mp2|mp3|mp4"
+                r"|wav|avi|mov|mpeg|ram|m4v|mkv|ogg|ogv|pdf"
+                r"|ps|eps|tex|ppt|pptx|doc|docx|xls|xlsx|names"
+                r"|data|dat|exe|bz2|tar|msi|bin|7z|psd|dmg|iso"
+                r"|epub|dll|cnf|tgz|sha1"
+                r"|thmx|mso|arff|rtf|jar|csv"
+                r"|rm|smil|wmv|swf|wma|zip|rar|gz)$",
+                path
+        ):
+            return False
+
+        # Calendar / events day-week-month views or explicit dates
+        if "/events/" in path or "/event/" in path or "/calendar" in path:
+            if ("/day/" in path or "/week/" in path or "/month/" in path
+                    or re.search(r"\d{4}[-/]\d{1,2}[-/]\d{1,2}", path)):
+                return False
+
+        # DokuWiki/RM media browsers and file tabs (tons of parameter permutations)
+        if "doku.php" in path and ("do=media" in query or "tab=files" in query):
+            return False
+
+        # Query directly pointing to a file via parameter
+        if re.search(
+                r"(image|file|media|attachment)=[^&]+\.(png|jpe?g|gif|svg|pdf|zip|rar|gz|mp4|mp3|avi|mov|pptx?|docx?|xlsx?)",
+                query):
+            return False
+
+        # Feeds/APIs/sitemaps/etc. (low textual value for our goal)
+        if any(k in f"{path}?{query}" for k in (
+                "wp-json", "xmlrpc", "sitemap", "feed", "rss", "atom", "format=pdf"
+        )):
+            return False
+
+        # Excessive pagination/offset -> likely infinite listing
+        if re.search(r"(^|[?&])page=\d{3,}", query) or re.search(r"(^|[?&])offset=\d{3,}", query):
+            return False
+
+        # Repeating path segments (e.g., /a/b/a/b/a/b/)
         segs = [s for s in path.split("/") if s]
-        if segs and any(segs.count(s) >= 3 for s in set(segs)):
+        if len(segs) >= 6:
+            for w in range(1, min(4, len(segs) // 2 + 1)):
+                if segs[:w] * (len(segs) // w) == segs[: w * (len(segs) // w)]:
+                    return False
+
+        # Path depth & URL length sanity limits
+        if len(url) > 2048 or len(query) > 600 or len(segs) > 20:
             return False
 
-        # Calendars/feeds/attachments/etc.
         pq = f"{path}?{query}"
         if any(k in pq for k in _TRAP_KEYWORDS):
             return False
-        
-        return not re.match(
-            r".*\.(css|js|bmp|gif|jpe?g|ico"
-            + r"|png|tiff?|mid|mp2|mp3|mp4"
-            + r"|wav|avi|mov|mpeg|ram|m4v|mkv|ogg|ogv|pdf"
-            + r"|ps|eps|tex|ppt|pptx|doc|docx|xls|xlsx|names"
-            + r"|data|dat|exe|bz2|tar|msi|bin|7z|psd|dmg|iso"
-            + r"|epub|dll|cnf|tgz|sha1"
-            + r"|thmx|mso|arff|rtf|jar|csv"
-            + r"|rm|smil|wmv|swf|wma|zip|rar|gz)$", parsed.path.lower())
+        return True
 
-    except TypeError:
-        print ("TypeError for ", parsed)
-        raise
+    except Exception:
+        # Be safe on any parsing error
+        return False
