@@ -57,24 +57,19 @@ def extract_next_links(url, resp):
     out = set()
     base = resp.url or url
     for href in hrefs:
-        # Skip javascript/mailto/telephone & empty refs
         if not href or href.startswith(("#", "javascript:", "mailto:", "tel:")):
             continue
-
-        # Resolve relative -> absolute and drop fragments
         abs_url = urljoin(base, href)
-        abs_url, _frag = urldefrag(abs_url)
-
+        abs_url, _ = urldefrag(abs_url)
         out.add(abs_url)
-
     return list(out)
 
 # Allowed domains (and subdomains)
 _ALLOWED_SUFFIXES = (
-    ".ics.uci.edu",
-    ".cs.uci.edu",
+    #".ics.uci.edu",
+    #".cs.uci.edu",
     ".informatics.uci.edu",
-    ".stat.uci.edu",
+    #".stat.uci.edu",
 )
 
 # Whole hosts to skip (noisy/low-value for this assignment)
@@ -198,21 +193,9 @@ def is_valid(url):
 
         return True
 
-        """
-        return not re.match(
-            r".*\.(css|js|bmp|gif|jpe?g|ico"
-            + r"|png|tiff?|mid|mp2|mp3|mp4"
-            + r"|wav|avi|mov|mpeg|ram|m4v|mkv|ogg|ogv|pdf"
-            + r"|ps|eps|tex|ppt|pptx|doc|docx|xls|xlsx|names"
-            + r"|data|dat|exe|bz2|tar|msi|bin|7z|psd|dmg|iso"
-            + r"|epub|dll|cnf|tgz|sha1"
-            + r"|thmx|mso|arff|rtf|jar|csv"
-            + r"|rm|smil|wmv|swf|wma|zip|rar|gz)$", parsed.path.lower())
-        """
+    except (TypeError, ValueError):
+        return False
 
-    except TypeError:
-        print ("TypeError for ", parsed)
-        raise
 
 
 
