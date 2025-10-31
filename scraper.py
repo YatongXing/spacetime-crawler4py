@@ -95,11 +95,6 @@ _BAD_PATH_PARTS = (
     "share", "print", "preview", "format=pdf", "download", "plugins",
 )
 
-# Explicit single pages to block (host, path)
-_BLOCKLIST_EXACT = {
-    ("informatics.uci.edu", "/alumni/corporate-engagement"),
-}
-
 # Pages with calendar indicators anywhere (path or query)
 _CALENDAR_HINTS = ("ical", "tribe")   # common from “The Events Calendar”, ICS feeds
 
@@ -174,10 +169,6 @@ def is_valid(url):
         if any(low.startswith(p) or p in low for p in _LOW_VALUE_SUBPATHS):
             return False
 
-        # Exact page blocks
-        if (host, low.rstrip("/")) in _BLOCKLIST_EXACT:
-            return False
-
         # Depth, repetition, resource types, trap-like path parts
         if _too_deep(parsed.path):
             return False
@@ -195,6 +186,7 @@ def is_valid(url):
 
     except (TypeError, ValueError):
         return False
+
 
 
 
