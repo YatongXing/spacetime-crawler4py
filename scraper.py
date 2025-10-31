@@ -47,10 +47,10 @@ def extract_next_links(url, resp):
 
 # Policy
 _ALLOWED_SUFFIXES = (
-    ".ics.uci.edu",
-    ".cs.uci.edu",
+    #".ics.uci.edu",
+    #//".cs.uci.edu",
     ".informatics.uci.edu",
-    ".stat.uci.edu",
+    #".stat.uci.edu",
 )
 
 # Disallow common non-HTML/resource extensions (starter list + a few extras)
@@ -153,4 +153,5 @@ def is_valid(url):
     except TypeError:
         print ("TypeError for ", parsed)
         raise
+
 
