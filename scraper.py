@@ -69,7 +69,7 @@ _ALLOWED_SUFFIXES = (
     #".ics.uci.edu",
     #".cs.uci.edu",
     ".informatics.uci.edu",
-    #".stat.uci.edu",
+    ".stat.uci.edu",
 )
 
 # Whole hosts to skip (noisy/low-value for this assignment)
@@ -186,6 +186,7 @@ def is_valid(url):
 
     except (TypeError, ValueError):
         return False
+
 
 
 
