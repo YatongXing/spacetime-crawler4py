@@ -1,11 +1,13 @@
+import os
 import re
+import sys
+import atexit
+import hashlib
+from collections import Counter
 from urllib.parse import urlparse, urljoin, urldefrag, parse_qsl, urlencode
 
-# Soft-404 detection
-import hashlib
-
+# Soft-404 detection (works for stat.ics.uci.edu "Whoops!" and Apache default 404 page)
 _SOFT404_HOST_PATTERNS = {
-    # ICS Statistics site returns 200 with this template
     "stat.ics.uci.edu": [
         r"Whoops!\s*We are having trouble locating your page",
         r"\bPage not found\b",
@@ -16,18 +18,16 @@ _SOFT404_HOST_PATTERNS = {
         r"\bPage not found\b",
         r"\bSearch ICS\b",
     ],
-    # Generic campus/CMS patterns
     "*": [
         r"\b(page|file|content)\s+not\s+found\b",
+        r"\bThe requested URL was not found on this server\b",  # Apache default
         r"\b404\b",
         r"\bthe page you are looking for (does not exist|cannot be found)\b",
         r"\bno results\b",
-        r"\bThe requested URL was not found on this server\b",
     ],
 }
 
 _ERROR_TEMPLATE_FPS = {}  # host -> set(md5 fingerprints)
-
 
 def _html_text(resp) -> str:
     try:
@@ -35,14 +35,11 @@ def _html_text(resp) -> str:
     except Exception:
         return ""
 
-
 def _html_title(html: str) -> str:
     m = re.search(r"(?is)<title[^>]*>(.*?)</title>", html)
     return re.sub(r"\s+", " ", m.group(1)).strip() if m else ""
 
-
 def _fingerprint_visible_text(html: str) -> str:
-    # strip scripts/styles/tags; normalize
     text = re.sub(r"(?is)<script.*?</script>", " ", html)
     text = re.sub(r"(?is)<style.*?</style>", " ", text)
     text = re.sub(r"(?is)<[^>]+>", " ", text)
@@ -51,19 +48,12 @@ def _fingerprint_visible_text(html: str) -> str:
     text = re.sub(r"\s+", " ", text).strip().lower()
     return hashlib.md5(text.encode("utf-8")).hexdigest()
 
-
 def is_soft_404(url: str, resp) -> (bool, str):
-    """
-    Heuristic to catch 200 pages that are actually error templates.
-    Returns (True/False, reason).
-    """
     if resp is None or resp.raw_response is None or getattr(resp, "status", None) != 200:
         return False, ""
-
     rr = resp.raw_response
     host = urlparse(url).netloc.lower()
 
-    # Respect X-Robots-Tag: noindex
     try:
         xrt = rr.headers.get("X-Robots-Tag", "")
         if "noindex" in xrt.lower():
@@ -75,7 +65,6 @@ def is_soft_404(url: str, resp) -> (bool, str):
     if not html:
         return True, "empty body"
 
-    # Extremely tiny bodies are likely error pages
     if len(html) < 500:
         return True, f"tiny body ({len(html)} bytes)"
 
@@ -84,124 +73,117 @@ def is_soft_404(url: str, resp) -> (bool, str):
         return True, f'404-like title "{title}"'
 
     pats = []
-    # host-specific patterns
     for h, arr in _SOFT404_HOST_PATTERNS.items():
         if h != "*" and h in host:
             pats.extend(arr)
-    # generic fallbacks
     pats.extend(_SOFT404_HOST_PATTERNS["*"])
 
     for pat in pats:
         if re.search(pat, html, re.I):
             return True, f"matched soft404 pattern: /{pat}/"
 
-    # Template fingerprint repetition heuristic
     fp = _fingerprint_visible_text(html)
     seen = _ERROR_TEMPLATE_FPS.setdefault(host, set())
     if fp in seen:
         return True, "repeated error-template fingerprint"
-    # learn fingerprints when typical 404 cues are present
     if re.search(r"\b(404|not\s+found|whoops)\b", html, re.I):
         seen.add(fp)
         return True, "error-template fingerprint learned"
 
     return False, ""
 
+# Core scraper: extract links and validate URLs
 def scraper(url, resp):
     """
     Return a list of absolute, defragmented, valid links found in 'resp'.
+    Also records page text & visited URLs for end-of-run reporting (no other files changed).
     """
-    # If request failed or we didn't get a page back, don't emit links.
     if resp is None or getattr(resp, "status", None) != 200 or resp.raw_response is None:
         return []
 
     # Soft-404 guard
     soft, reason = is_soft_404(url, resp)
     if soft:
-        # Avoid indexing & link extraction on soft-404s
         try:
             import logging
             logging.getLogger(__name__).info(f"SOFT404 skip: {url} ({reason})")
         except Exception:
             pass
+        _record_visit(url, "")  # still record the URL so uniqueness matches frontier perspective
         return []
-    
-    # Content filter: only crawl HTML pages with meaningful visible text
+
+    # Only HTML
     hdrs = getattr(resp.raw_response, "headers", {}) or {}
     ctype = str(hdrs.get("Content-Type", "")).lower()
     if "text/html" not in ctype:
+        _record_visit(url, "")
         return []
 
     html = _html_text(resp)
     if not html:
+        _record_visit(url, "")
         return []
 
-    # Require some visible text to avoid empty templates
+    # Visible text (HTML markup doesn’t count as words)
     clean = re.sub(r"(?is)<(script|style).*?>.*?</\1>", "", html)
     visible = re.sub(r"(?is)<[^>]+>", " ", clean)
-    words = len(visible.split())
+    visible = re.sub(r"\s+", " ", visible).strip()
+
+    # Light content gate to avoid thin templates
+    words = len(re.findall(r"[A-Za-z]+", visible))
     if words < 120 or (len(visible) / max(1, len(html))) < 0.05:
+        _record_visit(url, visible)  # still record text (may be short)
         return []
-    
+
+    # Extract links then validate
     links = extract_next_links(url, resp)
-    return [link for link in links if is_valid(link)]
+    links = [link for link in links if is_valid(link)]
+
+    # Record page for report
+    _record_visit(url, visible)
+
+    return links
 
 def extract_next_links(url, resp):
-    # Implementation required.
-    # url: the URL that was used to get the page
-    # resp.url: the actual url of the page
-    # resp.status: the status code returned by the server. 200 is OK, you got the page. Other numbers mean that there was some kind of problem.
-    # resp.error: when status is not 200, you can check the error here, if needed.
-    # resp.raw_response: this is where the page actually is. More specifically, the raw_response has two parts:
-    #         resp.raw_response.url: the url, again
-    #         resp.raw_response.content: the content of the page!
-    # Return a list with the hyperlinks (as strings) scrapped from resp.raw_response.content
     html = _html_text(resp)
     if not html:
         return []
 
-    # Basic HREF extraction
     hrefs = re.findall(r'''(?i)\bhref\s*=\s*["']([^"']+)["']''', html)
 
     out = set()
     base = resp.url or url
     for href in hrefs:
-        if not href or href.startswith(("#", "javascript:", "mailto:", "tel:")):
+        if not href or href.startswith(("#", "javascript:", "mailto:", "tel:", "data:")):
             continue
         abs_url = urljoin(base, href)
-        abs_url, _ = urldefrag(abs_url) # remove fragments
-
-        # Canonicalize query parameters a bit (drop tracking)
+        abs_url, _ = urldefrag(abs_url)
         abs_url = _strip_tracking_params(abs_url)
-
         out.add(abs_url)
     return list(out)
 
-# URL validation filters
-# Allowed domains (and subdomains)
+# ---- URL validation filters -------------------------------------------------
+
 _ALLOWED_SUFFIXES = (
-    #".ics.uci.edu",
-    #".cs.uci.edu",
     ".informatics.uci.edu",
     ".stat.uci.edu",
+    ".ics.uci.edu",     # optional: include whole ICS tree
+    ".cs.uci.edu",      # optional: CS subdomain
 )
 
-# Whole hosts to skip (noisy/low-value for this assignment)
 _BLOCK_HOSTS = {
     "wics.ics.uci.edu",
     "ngs.ics.uci.edu",
 }
 
-# Sections that are almost always media or near-empty wrappers
 _LOW_VALUE_SUBPATHS = (
-    "/slideshows",              # e.g., /slideshows/
-    "/videos",                  # e.g., /videos/ and /videos/video-rick-rolled/
-    "/video-",                  # slugs like /video-foo/
+    "/slideshows",
+    "/videos",
+    "/video-",
     "/media",
     "/gallery",
 )
 
-# Calendar / feeds / traps
 _BAD_PATH_PARTS = (
     "calendar", "cal", "wp-json", "feed", "feeds", "atom", "rss",
     "login", "logout", "signin", "signup", "register", "account",
@@ -209,10 +191,8 @@ _BAD_PATH_PARTS = (
     "share", "print", "preview", "format=pdf", "download", "plugins",
 )
 
-# Pages with calendar indicators anywhere (path or query)
-_CALENDAR_HINTS = ("ical", "tribe")   # common from “The Events Calendar”, ICS feeds
+_CALENDAR_HINTS = ("ical", "tribe")
 
-# Non-HTML/resource extensions
 _NON_HTML_RE = re.compile(
     r""".*\.(?:css|js|bmp|gif|jpe?g|ico
         |png|tiff?|mid|mp2|mp3|mp4|wav|avi|mov|mpeg|ram|m4v|mkv|ogg|ogv|pdf
@@ -226,7 +206,6 @@ _NON_HTML_RE = re.compile(
 def _allowed_domain(hostname: str) -> bool:
     if not hostname:
         return False
-    # allow exact domain (without the leading dot) and any of its subdomains
     for suf in _ALLOWED_SUFFIXES:
         bare = suf[1:]
         if hostname == bare or hostname.endswith(suf):
@@ -234,60 +213,37 @@ def _allowed_domain(hostname: str) -> bool:
     return False
 
 def _too_deep(path: str, max_depth: int = 3) -> bool:
-    # e.g., "/a/b/c" -> depth=3
     depth = len([p for p in path.split("/") if p])
     return depth > max_depth
 
 def _has_repetition(path: str) -> bool:
-    # Block obvious repeating segments like /foo/foo/foo or year/month/day cascades
     segs = [s for s in path.split("/") if s]
     if not segs:
         return False
-    # 1) repeated same segment 3+ times
     for s in set(segs):
         if segs.count(s) >= 3:
             return True
-    # 2) many numeric-only segments (often calendars, archives)
     numeric_segments = sum(ch.isdigit() for seg in segs for ch in seg)
     return numeric_segments >= 10
 
 def _strip_tracking_params(u: str) -> str:
-    """
-    Remove obvious tracking/query-noise parameters; keep stable ordering.
-    """
     parsed = urlparse(u)
     if not parsed.query:
         return u
     bad_keys = {
-        "utm_source",
-        "utm_medium",
-        "utm_campaign",
-        "utm_term",
-        "utm_content",
-        "gclid",
-        "fbclid",
-        "mc_cid",
-        "mc_eid",
-        "replytocom",
-        "share",
-        "ref",
-        "source",
-        "amp",
-        "ts",
-        "ns_mchannel",
-        "ns_campaign",
+        "utm_source","utm_medium","utm_campaign","utm_term","utm_content",
+        "gclid","fbclid","mc_cid","mc_eid","replytocom","share","ref","source",
+        "amp","ts","ns_mchannel","ns_campaign",
     }
-    params = [(k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True) if k.lower() not in bad_keys]
+    params = [(k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True)
+              if k.lower() not in bad_keys]
     new_q = urlencode(params, doseq=True)
     return parsed._replace(query=new_q).geturl()
 
 def is_valid(url):
-    # Decide whether to crawl this url or not. 
-    # If you decide to crawl it, return True; otherwise return False.
-    # There are already some conditions that return False.
     try:
         parsed = urlparse(url)
-        
+
         if parsed.scheme not in {"http", "https"}:
             return False
 
@@ -300,45 +256,13 @@ def is_valid(url):
 
         low = parsed.path.lower()
 
-        # Calendar / tribe hints anywhere in path
-        if any(hint in low for hint in _CALENDAR_HINTS):
-            return False
-
-        # Drop known low-text sections
-        if any(low.startswith(p) or p in low for p in _LOW_VALUE_SUBPATHS):
-            return False
-
-        # Depth, repetition, resource types, trap-like path parts
-        if _too_deep(parsed.path):
-            return False
-        # Avoid repeating segments / loops
-        if _has_repetition(parsed.path):
-            return False
-        if _NON_HTML_RE.match(low):
-            return False
-        if any(bad in low for bad in _BAD_PATH_PARTS):
-            return False
-        # Disallow super-long URLs (often dynamic traps)
-        if len(url) > 200:
-            return False
-
-        # Block query-only changes that look like pagination/search noise
-        if parsed.query:
-            if re.search(r"(page|paged|offset|start|sort|order|filter)=", parsed.query, re.I):
-                # Allow a small page index but avoid deep pagination:
-                m = re.search(r"(?:page|paged|offset)=(\d+)", parsed.query, re.I)
-                if m and int(m.group(1)) > 10:
-                    return False
-
-        # --- Block orphaned STAT slugs (migrated old news posts) ---
+        # Block orphaned STAT news slugs: /<hyphenated-slug>
         if host.endswith("stat.ics.uci.edu"):
             segs = [s for s in parsed.path.split("/") if s]
-            # Single path segment AND looks like a news slug (contains hyphens)
             if len(segs) == 1 and "-" in segs[0]:
                 return False
 
-        # WordPress "uploads" w/o a real file extension (prevents 404s like
-        # /wp-content/uploads/XinTongAbstract4-25-19)
+        # Block WP uploads without an actual file extension
         if re.search(r"/wp-content/uploads/", parsed.path, re.I):
             filename = parsed.path.rsplit("/", 1)[-1]
             allowed_exts = {
@@ -347,16 +271,164 @@ def is_valid(url):
             }
             if not any(filename.lower().endswith(ext) for ext in allowed_exts):
                 return False
-        
-        return True
 
+        if any(hint in low for hint in _CALENDAR_HINTS):
+            return False
+
+        if any(low.startswith(p) or p in low for p in _LOW_VALUE_SUBPATHS):
+            return False
+
+        if _too_deep(parsed.path):
+            return False
+        if _has_repetition(parsed.path):
+            return False
+        if _NON_HTML_RE.match(low):
+            return False
+        if any(bad in low for bad in _BAD_PATH_PARTS):
+            return False
+        if len(url) > 200:
+            return False
+
+        if parsed.query:
+            if re.search(r"(page|paged|offset|start|sort|order|filter)=", parsed.query, re.I):
+                m = re.search(r"(?:page|paged|offset)=(\d+)", parsed.query, re.I)
+                if m and int(m.group(1)) > 10:
+                    return False
+
+        return True
     except (TypeError, ValueError):
         return False
 
+# =====================================================================================
+# Reporting (only modifies scraper.py).
+# =====================================================================================
 
+# Paths
+VISITED_FILE = "visited_urls.txt"
+PAGES_DIR    = "pages"
+REPORT_FILE  = "report.txt"
 
+# English stopwords
+STOPWORDS = set("""
+a about above after again against all am an and any are aren't as at be because been 
+before being below between both but by can't cannot could couldn't did didn't do does 
+doesn't doing don't down during each few for from further had hadn't has hasn't have 
+haven't having he he'd he'll he's her here here's hers herself him himself his how 
+how's i i'd i'll i'm i've if in into is isn't it it's its itself let's me more most 
+mustn't my myself no nor not of off on once only or other ought our ours ourselves out 
+over own same shan't she she'd she'll she's should shouldn't so some such than that 
+that's the their theirs them themselves then there there's these they they'd they'll 
+they're they've this those through to too under until up very was wasn't we we'd we'll 
+we're we've were weren't what what's when when's where where's which while who who's 
+whom why why's with won't would wouldn't you you'd you'll you're you've your yours 
+yourself yourselves
+""".split())
 
+# Restart cleanup (delete previous report & scratch)
+if "--restart" in sys.argv or "restart" in sys.argv:
+    try:
+        if os.path.exists(VISITED_FILE): os.remove(VISITED_FILE)
+        if os.path.exists(REPORT_FILE): os.remove(REPORT_FILE)
+        if os.path.isdir(PAGES_DIR):
+            for f in os.listdir(PAGES_DIR):
+                try: os.remove(os.path.join(PAGES_DIR, f))
+                except Exception: pass
+        else:
+            os.makedirs(PAGES_DIR, exist_ok=True)
+    except Exception:
+        pass
 
+# Safe file name for storing page text
+def _safe_name_from_url(u: str) -> str:
+    p = urlparse(u)
+    name = (p.netloc + p.path).strip("/")
+    if not name:
+        name = p.netloc or "page"
+    name = re.sub(r"[^A-Za-z0-9._-]+", "_", name)
+    return name[:180]  # safety cap
 
+# Append URL and write text snapshot for reporting
+def _record_visit(url: str, visible_text: str):
+    try:
+        # ensure scratch dir
+        os.makedirs(PAGES_DIR, exist_ok=True)
 
+        # 1) append url to visited list (for uniqueness by URL)
+        with open(VISITED_FILE, "a", encoding="utf-8") as vf:
+            vf.write(url.strip() + "\n")
 
+        # 2) store visible text (HTML stripped)
+        if visible_text is not None:
+            fname = _safe_name_from_url(url) + ".txt"
+            with open(os.path.join(PAGES_DIR, fname), "w", encoding="utf-8", errors="ignore") as tf:
+                tf.write(visible_text)
+    except Exception:
+        # best-effort only; never break crawling
+        pass
+
+def _generate_report():
+    try:
+        if not os.path.exists(VISITED_FILE):
+            print("[REPORT] No visited_urls.txt; nothing to report.")
+            return
+
+        # Unique pages by URL (discarding fragments already done by urldefrag elsewhere)
+        with open(VISITED_FILE, "r", encoding="utf-8", errors="ignore") as f:
+            url_list = [u.strip() for u in f if u.strip()]
+        unique_urls = sorted(set(url_list))
+
+        # Aggregate words & lengths from saved text files
+        word_counter = Counter()
+        page_lengths  = {}  # filename -> word count
+        url_by_file   = {}  # filename -> a best-effort URL (reconstruct)
+        for fname in os.listdir(PAGES_DIR):
+            if not fname.endswith(".txt"):
+                continue
+            fpath = os.path.join(PAGES_DIR, fname)
+            try:
+                text = open(fpath, "r", encoding="utf-8", errors="ignore").read()
+            except Exception:
+                continue
+            words = [w for w in re.findall(r"[A-Za-z]+", text.lower()) if w not in STOPWORDS]
+            word_counter.update(words)
+            page_lengths[fname] = len(words)
+
+            # attempt to find matching URL by host prefix (best-effort)
+            host_hint = fname.split("_")[0].replace("-", ".")
+            # not bulletproof, but OK for the assignment's report
+            url_by_file[fname] = host_hint
+
+        # Subdomain counts from URLs
+        subdomain_counter = {}
+        for u in unique_urls:
+            host = urlparse(u).netloc
+            subdomain_counter[host] = subdomain_counter.get(host, 0) + 1
+
+        # Longest page by counted words
+        longest_line = "N/A"
+        if page_lengths:
+            longest_file = max(page_lengths, key=page_lengths.get)
+            longest_line = f"{longest_file}, {page_lengths[longest_file]} words"
+
+        # Write report
+        with open(REPORT_FILE, "w", encoding="utf-8") as rpt:
+            rpt.write(f"Total unique pages: {len(unique_urls)}\n")
+            rpt.write(f"\nLongest page: {longest_line}\n")
+
+            rpt.write("\nTop 50 common words:\n")
+            for w, c in word_counter.most_common(50):
+                rpt.write(f"{w}: {c}\n")
+
+            rpt.write("\nSubdomains and counts:\n")
+            for sd in sorted(subdomain_counter):
+                rpt.write(f"{sd}: {subdomain_counter[sd]}\n")
+
+        print(f"[REPORT] Generated {REPORT_FILE} (unique={len(unique_urls)})")
+    except Exception as e:
+        try:
+            print(f"[REPORT] Failed to generate report: {e}")
+        except Exception:
+            pass
+
+# Register exit hook (called when the crawler process exits)
+atexit.register(_generate_report)
