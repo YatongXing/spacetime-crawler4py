@@ -224,13 +224,9 @@ def is_valid(url):
         if not any(host == d or host.endswith("." + d) for d in _ALLOWED_SUFFIXES):
             return False
 
-        path = (parsed.path or "").lower()
+        path = (parsed.path or "").lower().rstrip("/")
         query = (parsed.query or "").lower()
         pq = f"{path}?{query}"
-
-        # Obvious junk in host (e.g., [YOUR_IP])
-        if "[" in host or "]" in host:
-            return False
 
         # Very large non-HTML files (low information value)
         if path.endswith(_NON_HTML_EXTS):
@@ -303,7 +299,7 @@ def is_valid(url):
             return False
 
         # Excessive pagination/offset -> likely infinite listing
-        if re.search(r"(^|[?&])page=\d{3,}", query) or re.search(r"(^|[?&])offset=\d{3,}", query):
+        if re.search(r"(^|[?&])(page|paged|pagenum|start|offset)=\d{3,}", query):
             return False
 
         # Repeating path segments (e.g., /a/b/a/b/a/b/)
