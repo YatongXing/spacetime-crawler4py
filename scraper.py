@@ -5,7 +5,7 @@ from collections import Counter, defaultdict
 from threading import RLock
 from urllib.parse import (
     urlparse, urljoin, urldefrag,
-    urlsplit, urlunsplit, parse_qsl, urlencode
+    urlsplit, urlunsplit, parse_qsl, urlencode, parse_qs
 )
 from bs4 import BeautifulSoup
 
@@ -27,7 +27,7 @@ _TRAP_KEYWORDS = {
     "do=media", "tab=files", "media=", "image=", "file=", "attachment=",
 
     # low-info render modes
-    "format=pdf", "print=", "view=print", "preview=",
+    "format=pdf", "print=", "view=print", "preview=", "untitled%20folder%202", "~wscacchi/Presentations",
 
     # misc noise / comment reply & social share
     "replytocom", "share="
@@ -35,8 +35,8 @@ _TRAP_KEYWORDS = {
 
 # --------------------------- Thin-content thresholds --------------------------
 # If a 200-HTML page has fewer than these, treat as "no useful text" → don't expand.
-_MIN_TEXT_CHARS = 20
-_MIN_TEXT_WORDS = 5
+_MIN_TEXT_CHARS = 60
+_MIN_TEXT_WORDS = 12
 
 # Hard cap to avoid massive HTML dumps with little value
 _MAX_HTML_BYTES = 3_000_000
@@ -269,6 +269,16 @@ def is_valid(url):
             # 5) Pagination combined with event parameters (e.g., /page/3/?...tribe...)
             if re.search(r"/page/\d+/", path):
                 return False
+        # seminar-series archive
+
+        if len(re.findall(r"seminar-series-\d{4}-\d{4}", path)) >= 2:
+            return False
+
+        if "/seminar-series/seminar-series-archive" in path and re.search(r"seminar-series-\d{4}-\d{4}", path):
+            return False
+
+        if "/wp-content/uploads/" in path:
+            return False
 
         # ----------------------- Trac / timeline trap (infinite time windows) -----------------------
         # Example: /wiki/.../timeline?from=...&precision=second
@@ -278,9 +288,20 @@ def is_valid(url):
             return False
         if re.search(r"(?:^|[?&])from=[^&]+", query):
             return False
-
-        # DokuWiki/RM media browsers and file tabs (tons of parameter permutations)
-        if "doku.php" in path and ("do=media" in query or "tab=files" in query or "?" in query):
+        if "/doku.php" in path:
+            q = parse_qs(query or "", keep_blank_values=True)
+            # Block low-value / explosive DokuWiki views
+            if any(k in q for k in ("do", "tab", "idx", "rev", "ns", "image", "media")):
+                return False
+        # Apache autoindex sorter duplicates (e.g., ?C=N;O=D or ?C=N%3BO%3DD)
+        # Block when sorting params appear on directory listings to avoid near-duplicates.
+        if path.endswith("/") and (
+                "%3bo%3d" in query  # encoded ";O="
+                or "%20uai%20" in query
+                or ";o=" in query  # raw ";O="
+                or re.search(r"(?:^|&)\bc=[nmsd]\b", query)  # C=N|M|S|D
+                or re.search(r"(?:^|&)\bo=[ad]\b", query)  # O=A|D
+        ):
             return False
 
         # Query directly pointing to files via parameter
