@@ -166,9 +166,9 @@ def extract_next_links(url, resp):
 
 _ALLOWED_SUFFIXES = (
     ".informatics.uci.edu",
-    ".stat.uci.edu",
-    ".ics.uci.edu",
-    ".cs.uci.edu",
+    #".stat.uci.edu",
+    #".ics.uci.edu",
+    #".cs.uci.edu",
 )
 
 _BLOCK_HOSTS = {
@@ -429,4 +429,5 @@ def _generate_report():
 
 # Register exit hook (called when the crawler process exits)
 atexit.register(_generate_report)
+
 
