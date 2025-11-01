@@ -167,8 +167,8 @@ def extract_next_links(url, resp):
 _ALLOWED_SUFFIXES = (
     ".informatics.uci.edu",
     ".stat.uci.edu",
-    ".ics.uci.edu",     # optional: include whole ICS tree
-    ".cs.uci.edu",      # optional: CS subdomain
+    ".ics.uci.edu",
+    ".cs.uci.edu",
 )
 
 _BLOCK_HOSTS = {
@@ -299,10 +299,7 @@ def is_valid(url):
     except (TypeError, ValueError):
         return False
 
-# =====================================================================================
-# Reporting (only modifies scraper.py).
-# =====================================================================================
-
+# Reporting
 # Paths
 VISITED_FILE = "visited_urls.txt"
 PAGES_DIR    = "pages"
@@ -432,3 +429,4 @@ def _generate_report():
 
 # Register exit hook (called when the crawler process exits)
 atexit.register(_generate_report)
+
