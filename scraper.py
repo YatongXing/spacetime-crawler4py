@@ -2,133 +2,42 @@ import os
 import re
 import sys
 import atexit
-import hashlib
 from collections import Counter
 from urllib.parse import urlparse, urljoin, urldefrag, parse_qsl, urlencode
-
-# Soft-404 detection (works for stat.ics.uci.edu "Whoops!" and Apache default 404 page)
-_SOFT404_HOST_PATTERNS = {
-    "stat.ics.uci.edu": [
-        r"Whoops!\s*We are having trouble locating your page",
-        r"\bPage not found\b",
-        r"\bSearch ICS\b",
-    ],
-    "www.stat.uci.edu": [
-        r"Whoops!\s*We are having trouble locating your page",
-        r"\bPage not found\b",
-        r"\bSearch ICS\b",
-    ],
-    "*": [
-        r"\b(page|file|content)\s+not\s+found\b",
-        r"\bThe requested URL was not found on this server\b",  # Apache default
-        r"\b404\b",
-        r"\bthe page you are looking for (does not exist|cannot be found)\b",
-        r"\bno results\b",
-    ],
-}
-
-_ERROR_TEMPLATE_FPS = {}  # host -> set(md5 fingerprints)
-
 
 # ---------- Quick-test settings ----------
 TEST_MODE = True            # set False for full crawl
 PAGE_BUDGET = 50            # stop expanding links after this many pages recorded
+# If you leave TEST_ALLOWED_HOSTS empty, quick-test host/path restriction is skipped.
 TEST_ALLOWED_HOSTS = {
-    "informatics.uci.edu": [
-        "/about",          # e.g., https://informatics.uci.edu/about/...
-        "/people",         # keep it small and fast
-    ],
-    "stat.ics.uci.edu": [
-        "/people",
-        "/about",
-    ],
+    # "informatics.uci.edu": ["/about", "/people"],   # example
+    # "stat.ics.uci.edu": ["/people", "/about"],      # example
 }
 
 # keeps a simple in-process page counter
 _PAGES_RECORDED = {"count": 0}
 
+# =====================================================================================
+# Utilities
+# =====================================================================================
 
 def _html_text(resp) -> str:
+    """Return page HTML as text (utf-8; ignore decode errors)."""
     try:
         return resp.raw_response.content.decode("utf-8", errors="ignore")
     except Exception:
         return ""
 
-def _html_title(html: str) -> str:
-    m = re.search(r"(?is)<title[^>]*>(.*?)</title>", html)
-    return re.sub(r"\s+", " ", m.group(1)).strip() if m else ""
-
-def _fingerprint_visible_text(html: str) -> str:
-    text = re.sub(r"(?is)<script.*?</script>", " ", html)
-    text = re.sub(r"(?is)<style.*?</style>", " ", text)
-    text = re.sub(r"(?is)<[^>]+>", " ", text)
-    text = re.sub(r"https?://\S+", " ", text)
-    text = re.sub(r"\d+", " ", text)
-    text = re.sub(r"\s+", " ", text).strip().lower()
-    return hashlib.md5(text.encode("utf-8")).hexdigest()
-
-def is_soft_404(url: str, resp) -> (bool, str):
-    if resp is None or resp.raw_response is None or getattr(resp, "status", None) != 200:
-        return False, ""
-    rr = resp.raw_response
-    host = urlparse(url).netloc.lower()
-
-    try:
-        xrt = rr.headers.get("X-Robots-Tag", "")
-        if "noindex" in xrt.lower():
-            return True, "X-Robots-Tag: noindex"
-    except Exception:
-        pass
-
-    html = _html_text(resp)
-    if not html:
-        return True, "empty body"
-
-    if len(html) < 500:
-        return True, f"tiny body ({len(html)} bytes)"
-
-    title = _html_title(html).lower()
-    if any(t in title for t in ("404", "not found", "page not found", "error")):
-        return True, f'404-like title "{title}"'
-
-    pats = []
-    for h, arr in _SOFT404_HOST_PATTERNS.items():
-        if h != "*" and h in host:
-            pats.extend(arr)
-    pats.extend(_SOFT404_HOST_PATTERNS["*"])
-
-    for pat in pats:
-        if re.search(pat, html, re.I):
-            return True, f"matched soft404 pattern: /{pat}/"
-
-    fp = _fingerprint_visible_text(html)
-    seen = _ERROR_TEMPLATE_FPS.setdefault(host, set())
-    if fp in seen:
-        return True, "repeated error-template fingerprint"
-    if re.search(r"\b(404|not\s+found|whoops)\b", html, re.I):
-        seen.add(fp)
-        return True, "error-template fingerprint learned"
-
-    return False, ""
-
+# =====================================================================================
 # Core scraper: extract links and validate URLs
+# =====================================================================================
+
 def scraper(url, resp):
     """
     Return a list of absolute, defragmented, valid links found in 'resp'.
     Also records page text & visited URLs for end-of-run reporting (no other files changed).
     """
     if resp is None or getattr(resp, "status", None) != 200 or resp.raw_response is None:
-        return []
-
-    # Soft-404 guard
-    soft, reason = is_soft_404(url, resp)
-    if soft:
-        try:
-            import logging
-            logging.getLogger(__name__).info(f"SOFT404 skip: {url} ({reason})")
-        except Exception:
-            pass
-        _record_visit(url, "")  # still record the URL so uniqueness matches frontier perspective
         return []
 
     # Only HTML
@@ -148,29 +57,28 @@ def scraper(url, resp):
     visible = re.sub(r"(?is)<[^>]+>", " ", clean)
     visible = re.sub(r"\s+", " ", visible).strip()
 
+    # Tokenize with assignment-friendly rules (ignore stopwords, 1-char except a/i, non-letters)
+    tokens = _tokenize_for_report(visible)
+    words = len(tokens)
+
     # Light content gate to avoid thin templates
-    words = len(re.findall(r"[A-Za-z]+", visible))
     if words < 120 or (len(visible) / max(1, len(html))) < 0.05:
         _record_visit(url, visible)  # still record text (may be short)
         return []
 
-    
-    # If we’ve already recorded enough pages, emit no outlinks anymore.
+    # If we’ve already recorded enough pages, emit no outlinks anymore (quick-test).
     if TEST_MODE and _PAGES_RECORDED["count"] >= PAGE_BUDGET:
         _record_visit(url, visible)
         return []
 
-    
     # Extract links then validate
     links = extract_next_links(url, resp)
     links = [link for link in links if is_valid(link)]
 
-
-    # Now that this page is accepted, increment the budget counter
+    # Now that this page is accepted, increment the budget counter (quick-test).
     if TEST_MODE:
         _PAGES_RECORDED["count"] += 1
 
-    
     # Record page for report
     _record_visit(url, visible)
 
@@ -198,9 +106,9 @@ def extract_next_links(url, resp):
 
 _ALLOWED_SUFFIXES = (
     ".informatics.uci.edu",
-    #".stat.uci.edu",
-    #".ics.uci.edu",
-    #".cs.uci.edu",
+    ".stat.ics.uci.edu",
+    ".ics.uci.edu",
+    ".cs.uci.edu",
 )
 
 _BLOCK_HOSTS = {
@@ -325,27 +233,28 @@ def is_valid(url):
                 if m and int(m.group(1)) > 10:
                     return False
 
-
-        if TEST_MODE:
+        # ----------------- TEST MODE: restrict scope heavily -----------------
+        if TEST_MODE and TEST_ALLOWED_HOSTS:
             # Only allow specific small hosts + path prefixes
             if host not in TEST_ALLOWED_HOSTS:
                 return False
-
             allowed_prefixes = TEST_ALLOWED_HOSTS[host]
             low_path = parsed.path.rstrip("/") or "/"
-            if not any(low_path.startswith(pfx) for pfx in allowed_prefixes):
+            if allowed_prefixes and not any(low_path.startswith(pfx) for pfx in allowed_prefixes):
                 return False
-
             # Keep it shallow during quick test
-            if _too_deep(parsed.path, max_depth=2):   # depth 2 is plenty
+            if _too_deep(parsed.path, max_depth=2):
                 return False
-        
+        # ---------------------------------------------------------------------
 
         return True
     except (TypeError, ValueError):
         return False
 
-# Reporting
+# =====================================================================================
+# Reporting (only modifies scraper.py). No DB, no other files touched.
+# =====================================================================================
+
 # Paths
 VISITED_FILE = "visited_urls.txt"
 PAGES_DIR    = "pages"
@@ -366,6 +275,29 @@ we're we've were weren't what what's when when's where where's which while who w
 whom why why's with won't would wouldn't you you'd you'll you're you've your yours 
 yourself yourselves
 """.split())
+
+_HTML_ARTIFACTS = {"nbsp"}  # common entity noise
+
+def _tokenize_for_report(text: str):
+    """
+    Normalize and tokenize visible text for the assignment's 'word' notion:
+    - letters only
+    - lowercase
+    - drop stopwords
+    - drop one-letter tokens except 'a' and 'i'
+    - drop common HTML artifacts like 'nbsp'
+    """
+    raw = re.findall(r"[A-Za-z]+", text.lower())
+    out = []
+    for w in raw:
+        if w in _HTML_ARTIFACTS:
+            continue
+        if w in STOPWORDS:
+            continue
+        if len(w) == 1 and w not in {"a", "i"}:
+            continue
+        out.append(w)
+    return out
 
 # Restart cleanup (delete previous report & scratch)
 if "--restart" in sys.argv or "restart" in sys.argv:
@@ -393,21 +325,17 @@ def _safe_name_from_url(u: str) -> str:
 # Append URL and write text snapshot for reporting
 def _record_visit(url: str, visible_text: str):
     try:
-        # ensure scratch dir
         os.makedirs(PAGES_DIR, exist_ok=True)
-
         # 1) append url to visited list (for uniqueness by URL)
         with open(VISITED_FILE, "a", encoding="utf-8") as vf:
             vf.write(url.strip() + "\n")
-
         # 2) store visible text (HTML stripped)
         if visible_text is not None:
             fname = _safe_name_from_url(url) + ".txt"
             with open(os.path.join(PAGES_DIR, fname), "w", encoding="utf-8", errors="ignore") as tf:
                 tf.write(visible_text)
     except Exception:
-        # best-effort only; never break crawling
-        pass
+        pass  # best-effort only; never break crawling
 
 def _generate_report():
     try:
@@ -415,7 +343,7 @@ def _generate_report():
             print("[REPORT] No visited_urls.txt; nothing to report.")
             return
 
-        # Unique pages by URL (discarding fragments already done by urldefrag elsewhere)
+        # Unique pages by URL (discarding fragments already handled by urldefrag elsewhere)
         with open(VISITED_FILE, "r", encoding="utf-8", errors="ignore") as f:
             url_list = [u.strip() for u in f if u.strip()]
         unique_urls = sorted(set(url_list))
@@ -423,7 +351,6 @@ def _generate_report():
         # Aggregate words & lengths from saved text files
         word_counter = Counter()
         page_lengths  = {}  # filename -> word count
-        url_by_file   = {}  # filename -> a best-effort URL (reconstruct)
         for fname in os.listdir(PAGES_DIR):
             if not fname.endswith(".txt"):
                 continue
@@ -432,20 +359,16 @@ def _generate_report():
                 text = open(fpath, "r", encoding="utf-8", errors="ignore").read()
             except Exception:
                 continue
-            words = [w for w in re.findall(r"[A-Za-z]+", text.lower()) if w not in STOPWORDS]
-            word_counter.update(words)
-            page_lengths[fname] = len(words)
+            toks = _tokenize_for_report(text)
+            word_counter.update(toks)
+            page_lengths[fname] = len(toks)
 
-            # attempt to find matching URL by host prefix (best-effort)
-            host_hint = fname.split("_")[0].replace("-", ".")
-            # not bulletproof, but OK for the assignment's report
-            url_by_file[fname] = host_hint
-
-        # Subdomain counts from URLs
+        # Subdomain counts from URLs (only uci.edu)
         subdomain_counter = {}
         for u in unique_urls:
             host = urlparse(u).netloc
-            subdomain_counter[host] = subdomain_counter.get(host, 0) + 1
+            if host.endswith(".uci.edu") or host == "uci.edu":
+                subdomain_counter[host] = subdomain_counter.get(host, 0) + 1
 
         # Longest page by counted words
         longest_line = "N/A"
@@ -475,6 +398,3 @@ def _generate_report():
 
 # Register exit hook (called when the crawler process exits)
 atexit.register(_generate_report)
-
-
-
