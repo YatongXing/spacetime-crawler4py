@@ -29,6 +29,25 @@ _SOFT404_HOST_PATTERNS = {
 
 _ERROR_TEMPLATE_FPS = {}  # host -> set(md5 fingerprints)
 
+
+# ---------- Quick-test settings ----------
+TEST_MODE = True            # set False for full crawl
+PAGE_BUDGET = 50            # stop expanding links after this many pages recorded
+TEST_ALLOWED_HOSTS = {
+    "informatics.uci.edu": [
+        "/about",          # e.g., https://informatics.uci.edu/about/...
+        "/people",         # keep it small and fast
+    ],
+    "stat.ics.uci.edu": [
+        "/people",
+        "/about",
+    ],
+}
+
+# keeps a simple in-process page counter
+_PAGES_RECORDED = {"count": 0}
+
+
 def _html_text(resp) -> str:
     try:
         return resp.raw_response.content.decode("utf-8", errors="ignore")
@@ -135,10 +154,23 @@ def scraper(url, resp):
         _record_visit(url, visible)  # still record text (may be short)
         return []
 
+    
+    # If we’ve already recorded enough pages, emit no outlinks anymore.
+    if TEST_MODE and _PAGES_RECORDED["count"] >= PAGE_BUDGET:
+        _record_visit(url, visible)
+        return []
+
+    
     # Extract links then validate
     links = extract_next_links(url, resp)
     links = [link for link in links if is_valid(link)]
 
+
+    # Now that this page is accepted, increment the budget counter
+    if TEST_MODE:
+        _PAGES_RECORDED["count"] += 1
+
+    
     # Record page for report
     _record_visit(url, visible)
 
@@ -278,8 +310,6 @@ def is_valid(url):
         if any(low.startswith(p) or p in low for p in _LOW_VALUE_SUBPATHS):
             return False
 
-        if _too_deep(parsed.path):
-            return False
         if _has_repetition(parsed.path):
             return False
         if _NON_HTML_RE.match(low):
@@ -294,6 +324,22 @@ def is_valid(url):
                 m = re.search(r"(?:page|paged|offset)=(\d+)", parsed.query, re.I)
                 if m and int(m.group(1)) > 10:
                     return False
+
+
+        if TEST_MODE:
+            # Only allow specific small hosts + path prefixes
+            if host not in TEST_ALLOWED_HOSTS:
+                return False
+
+            allowed_prefixes = TEST_ALLOWED_HOSTS[host]
+            low_path = parsed.path.rstrip("/") or "/"
+            if not any(low_path.startswith(pfx) for pfx in allowed_prefixes):
+                return False
+
+            # Keep it shallow during quick test
+            if _too_deep(parsed.path, max_depth=2):   # depth 2 is plenty
+                return False
+        
 
         return True
     except (TypeError, ValueError):
@@ -429,5 +475,6 @@ def _generate_report():
 
 # Register exit hook (called when the crawler process exits)
 atexit.register(_generate_report)
+
 
 
