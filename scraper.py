@@ -1,5 +1,111 @@
 import re
-from urllib.parse import urlparse, urljoin, urldefrag
+from urllib.parse import urlparse, urljoin, urldefrag, parse_qsl, urlencode
+
+# Soft-404 detection
+import hashlib
+
+_SOFT404_HOST_PATTERNS = {
+    # ICS Statistics site returns 200 with this template
+    "stat.ics.uci.edu": [
+        r"Whoops!\s*We are having trouble locating your page",
+        r"\bPage not found\b",
+        r"\bSearch ICS\b",
+    ],
+    "www.stat.uci.edu": [
+        r"Whoops!\s*We are having trouble locating your page",
+        r"\bPage not found\b",
+        r"\bSearch ICS\b",
+    ],
+    # Generic campus/CMS patterns
+    "*": [
+        r"\b(page|file|content)\s+not\s+found\b",
+        r"\b404\b",
+        r"\bthe page you are looking for (does not exist|cannot be found)\b",
+        r"\bno results\b",
+        r"\bThe requested URL was not found on this server\b",
+    ],
+}
+
+_ERROR_TEMPLATE_FPS = {}  # host -> set(md5 fingerprints)
+
+
+def _html_text(resp) -> str:
+    try:
+        return resp.raw_response.content.decode("utf-8", errors="ignore")
+    except Exception:
+        return ""
+
+
+def _html_title(html: str) -> str:
+    m = re.search(r"(?is)<title[^>]*>(.*?)</title>", html)
+    return re.sub(r"\s+", " ", m.group(1)).strip() if m else ""
+
+
+def _fingerprint_visible_text(html: str) -> str:
+    # strip scripts/styles/tags; normalize
+    text = re.sub(r"(?is)<script.*?</script>", " ", html)
+    text = re.sub(r"(?is)<style.*?</style>", " ", text)
+    text = re.sub(r"(?is)<[^>]+>", " ", text)
+    text = re.sub(r"https?://\S+", " ", text)
+    text = re.sub(r"\d+", " ", text)
+    text = re.sub(r"\s+", " ", text).strip().lower()
+    return hashlib.md5(text.encode("utf-8")).hexdigest()
+
+
+def is_soft_404(url: str, resp) -> (bool, str):
+    """
+    Heuristic to catch 200 pages that are actually error templates.
+    Returns (True/False, reason).
+    """
+    if resp is None or resp.raw_response is None or getattr(resp, "status", None) != 200:
+        return False, ""
+
+    rr = resp.raw_response
+    host = urlparse(url).netloc.lower()
+
+    # Respect X-Robots-Tag: noindex
+    try:
+        xrt = rr.headers.get("X-Robots-Tag", "")
+        if "noindex" in xrt.lower():
+            return True, "X-Robots-Tag: noindex"
+    except Exception:
+        pass
+
+    html = _html_text(resp)
+    if not html:
+        return True, "empty body"
+
+    # Extremely tiny bodies are likely error pages
+    if len(html) < 500:
+        return True, f"tiny body ({len(html)} bytes)"
+
+    title = _html_title(html).lower()
+    if any(t in title for t in ("404", "not found", "page not found", "error")):
+        return True, f'404-like title "{title}"'
+
+    pats = []
+    # host-specific patterns
+    for h, arr in _SOFT404_HOST_PATTERNS.items():
+        if h != "*" and h in host:
+            pats.extend(arr)
+    # generic fallbacks
+    pats.extend(_SOFT404_HOST_PATTERNS["*"])
+
+    for pat in pats:
+        if re.search(pat, html, re.I):
+            return True, f"matched soft404 pattern: /{pat}/"
+
+    # Template fingerprint repetition heuristic
+    fp = _fingerprint_visible_text(html)
+    seen = _ERROR_TEMPLATE_FPS.setdefault(host, set())
+    if fp in seen:
+        return True, "repeated error-template fingerprint"
+    # learn fingerprints when typical 404 cues are present
+    if re.search(r"\b(404|not\s+found|whoops)\b", html, re.I):
+        seen.add(fp)
+        return True, "error-template fingerprint learned"
+
+    return False, ""
 
 def scraper(url, resp):
     """
@@ -9,27 +115,32 @@ def scraper(url, resp):
     if resp is None or getattr(resp, "status", None) != 200 or resp.raw_response is None:
         return []
 
+    # Soft-404 guard
+    soft, reason = is_soft_404(url, resp)
+    if soft:
+        # Avoid indexing & link extraction on soft-404s
+        try:
+            import logging
+            logging.getLogger(__name__).info(f"SOFT404 skip: {url} ({reason})")
+        except Exception:
+            pass
+        return []
+    
     # Content filter: only crawl HTML pages with meaningful visible text
     hdrs = getattr(resp.raw_response, "headers", {}) or {}
     ctype = str(hdrs.get("Content-Type", "")).lower()
     if "text/html" not in ctype:
         return []
 
-    body = getattr(resp.raw_response, "content", b"")
-    # Size guard: avoid huge “HTML” responses
-    if not body or len(body) > 5_000_000:  # ~5 MB
+    html = _html_text(resp)
+    if not html:
         return []
 
-    try:
-        html = body.decode("utf-8", errors="ignore")
-        # remove script/style, then strip tags to approximate visible text
-        clean = re.sub(r"(?is)<(script|style).*?>.*?</\1>", "", html)
-        visible = re.sub(r"(?is)<[^>]+>", " ", clean)
-        words = len(visible.split())
-        # require some real text and a minimal text/markup ratio
-        if words < 120 or (len(visible) / max(1, len(html))) < 0.05:
-            return []
-    except Exception:
+    # Require some visible text to avoid empty templates
+    clean = re.sub(r"(?is)<(script|style).*?>.*?</\1>", "", html)
+    visible = re.sub(r"(?is)<[^>]+>", " ", clean)
+    words = len(visible.split())
+    if words < 120 or (len(visible) / max(1, len(html))) < 0.05:
         return []
     
     links = extract_next_links(url, resp)
@@ -45,13 +156,11 @@ def extract_next_links(url, resp):
     #         resp.raw_response.url: the url, again
     #         resp.raw_response.content: the content of the page!
     # Return a list with the hyperlinks (as strings) scrapped from resp.raw_response.content
-    try:
-        # Decode bytes -> str defensively
-        html = resp.raw_response.content.decode("utf-8", errors="ignore")
-    except Exception:
+    html = _html_text(resp)
+    if not html:
         return []
 
-    # Very simple href extractor (good enough for first run)
+    # Basic HREF extraction
     hrefs = re.findall(r'''(?i)\bhref\s*=\s*["']([^"']+)["']''', html)
 
     out = set()
@@ -60,10 +169,15 @@ def extract_next_links(url, resp):
         if not href or href.startswith(("#", "javascript:", "mailto:", "tel:")):
             continue
         abs_url = urljoin(base, href)
-        abs_url, _ = urldefrag(abs_url)
+        abs_url, _ = urldefrag(abs_url) # remove fragments
+
+        # Canonicalize query parameters a bit (drop tracking)
+        abs_url = _strip_tracking_params(abs_url)
+
         out.add(abs_url)
     return list(out)
 
+# URL validation filters
 # Allowed domains (and subdomains)
 _ALLOWED_SUFFIXES = (
     #".ics.uci.edu",
@@ -137,6 +251,35 @@ def _has_repetition(path: str) -> bool:
     numeric_segments = sum(ch.isdigit() for seg in segs for ch in seg)
     return numeric_segments >= 10
 
+def _strip_tracking_params(u: str) -> str:
+    """
+    Remove obvious tracking/query-noise parameters; keep stable ordering.
+    """
+    parsed = urlparse(u)
+    if not parsed.query:
+        return u
+    bad_keys = {
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "gclid",
+        "fbclid",
+        "mc_cid",
+        "mc_eid",
+        "replytocom",
+        "share",
+        "ref",
+        "source",
+        "amp",
+        "ts",
+        "ns_mchannel",
+        "ns_campaign",
+    }
+    params = [(k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True) if k.lower() not in bad_keys]
+    new_q = urlencode(params, doseq=True)
+    return parsed._replace(query=new_q).geturl()
 
 def is_valid(url):
     # Decide whether to crawl this url or not. 
@@ -155,10 +298,6 @@ def is_valid(url):
         if not _allowed_domain(host):
             return False
 
-        # Disallow any query/params (kills ?ical=1, ?tribe_event, etc.)
-        if parsed.query or parsed.params:
-            return False
-
         low = parsed.path.lower()
 
         # Calendar / tribe hints anywhere in path
@@ -172,20 +311,30 @@ def is_valid(url):
         # Depth, repetition, resource types, trap-like path parts
         if _too_deep(parsed.path):
             return False
+        # Avoid repeating segments / loops
         if _has_repetition(parsed.path):
             return False
         if _NON_HTML_RE.match(low):
             return False
         if any(bad in low for bad in _BAD_PATH_PARTS):
             return False
-
+        # Disallow super-long URLs (often dynamic traps)
         if len(url) > 200:
             return False
+
+        # Block query-only changes that look like pagination/search noise
+        if parsed.query:
+            if re.search(r"(page|paged|offset|start|sort|order|filter)=", parsed.query, re.I):
+                # Allow a small page index but avoid deep pagination:
+                m = re.search(r"(?:page|paged|offset)=(\d+)", parsed.query, re.I)
+                if m and int(m.group(1)) > 10:
+                    return False
 
         return True
 
     except (TypeError, ValueError):
         return False
+
 
 
 
