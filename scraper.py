@@ -2,6 +2,34 @@ import re
 from urllib.parse import urlparse, urljoin, urldefrag
 from bs4 import BeautifulSoup
 
+_NON_HTML_EXTS = (
+    ".css",".js",".bmp",".gif",".jpg",".jpeg",".ico",".png",".tif",".tiff",".psp",".h5",".java",".php",".seq",
+    ".mid",".mp2",".mp3",".mp4",".wav",".avi",".mov",".mpeg",".ram",".m4v",".mkv",".ogg",".ogv",".nb",".jsp",
+    ".pdf",".ps",".eps",".tex",".ppt",".pptx",".doc",".docx",".xls",".xlsx",".ppsX",".py",".bib",".sdf",".tsv",".conf",
+    ".names",".data",".dat",".exe",".bz2",".tar",".msi",".bin",".7z",".psd",".dmg",".iso",".mol",".ismsmi",".war",
+    ".epub",".dll",".cnf",".tgz",".sha1",".thmx",".mso",".arff",".rtf",".jar",".csv", ".sql",".target",".fpkm",".class",
+    ".rm",".smil",".wmv",".swf",".wma",".zip",".rar",".gz", ".ics", ".mpg", ".txt", ".apk", ".img", ".odp", ".ipynb",
+    ".xml",".sh", ".svg"
+)
+
+_ERROR_PATTERNS = [
+    re.compile(p) for p in (
+        r"\b404\b",
+        r"\bpage\s+not\s+found\b",
+        r"\boops\b|\bwhoops\b",
+        r"\bnot\s+found\b",
+        r"\bdoesn?t?\s+exist\b",
+        r"\bwe\s+are\s+having\s+trouble\s+locating\s+your\s+page\b",
+        r"\bnothing\s+found\b",
+        r"\bcontent\s+you\s+requested\s+could\s+not\s+be\s+found\b",
+        r"\bforbidden\b",
+        r"\berror\b",
+        r"\brequested\s+url\s+was\s+not\s+found\b",
+        r"\bthat\s+page\s+can\s*t\s+be\s+found\b",
+        r"\bwe\s+can\s*t\s+seem\s+to\s+find\b"
+    )
+]
+
 _ALLOWED_SUFFIXES = (
     "ics.uci.edu",
     "cs.uci.edu",
@@ -9,25 +37,92 @@ _ALLOWED_SUFFIXES = (
     "stat.uci.edu",
 )
 
-#trap guards
 _TRAP_KEYWORDS = {
     # feeds / apis / sitemaps
     "wp-json", "xmlrpc", "sitemap", "feed", "rss", "atom", "format=xml",
-    "ical", "ics",
 
     # media/file browsers and attachments (parameter-driven)
     "do=media", "tab=files", "media=", "image=", "file=", "attachment=",
 
-    # low-info render modes
-    "format=pdf", "print=", "view=print", "preview=",
+    # low-info render modes/login
+    "format=pdf", "print=", "view=print", "preview=", "login", "register"
 
     # misc noise / comment reply & social share
-    "replytocom", "share="
+    "replytocom", "share=",
+
+    "demo", "makefile", "readme"
 }
+
+_RE_EVENTS_PAGE_IN_PATH = re.compile(r"/events?/.*/page/\d+/?$")
+_RE_TRIBE_QS          = re.compile(r"(?:^|[?&])tribe-bar-date=\d{4}-\d{2}-\d{2}(?:&|$)")
+_RE_EVENTDISPLAY      = re.compile(r"(?:^|[?&])eventDisplay=(?:upcoming|past|list|month|day)(?:&|$)")
+
+_RE_MEDIA_PARAM_FILE = re.compile(
+    r"(?:^|[?&])(img|image|file|media|attachment|format)=[^&]+\.(?:png|jpe?g|gif|svg|pdf|zip|rar|gz|mp4|mp3|avi|mov|pptx?|docx?|xlsx?|txt)",
+    re.I
+)
+
+_RE_APACHE_AUTOINDEX_QS = re.compile(
+    r"(?:^|[?&;])(?:c=(?:n|m|s|d)|o=(?:a|d)|f=\d+)(?:[;&]|$)", re.I
+)
+
+_RE_ICAL_EXPORT_QS = re.compile(
+    r"(?:^|[?&;])(outlook-)?ical=\d+(?:[&;]|$)", re.I
+)
+
+_RE_STATIC_CALENDAR = re.compile(r"/calendar(?:\.html?)?/?$")
+_RE_STATIC_GALLERY  = re.compile(r"/gallery(?:\.html?)?/?$")
+
+_RE_WSC_BLOCK = re.compile(r"^/~wscacchi/(presentations|gamelab)(?:/|$)", re.I)
+
+_RE_MLPHYSICS_DATA_SEG = re.compile(r"(?:^|/)data(?:/|$)", re.I)
 
 def scraper(url, resp):
     links = extract_next_links(url, resp)
     return [link for link in links if is_valid(link)]
+
+def _page_stats(soup):
+    text = soup.get_text(" ", strip=True)
+    norm = re.sub(r"[^a-z0-9]+", " ", (text or "").lower()).strip()
+    word_count = len(norm.split())
+    a_count = len(soup.find_all("a", href=True))
+    title = (soup.title.string or "").lower() if soup.title and soup.title.string else ""
+    title_norm = re.sub(r"[^a-z0-9]+", " ", title).strip()
+    return word_count, a_count, title_norm
+
+def _looks_like_login_wall(soup) -> bool:
+    if soup.find("input", {"type": "password"}):
+        return True
+
+    for form in soup.find_all("form"):
+        action = (form.get("action") or "").lower()
+        if any(w in action for w in ("login", "signin", "sign-in", "webauth", "shibboleth", "cas", "saml", "oauth")):
+            return True
+
+    return False
+
+def _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm) -> bool:
+    # 1) Common 404/error CSS hooks
+    if soup.select_one(".error-404, .page-404, body.error404, #error404, .not-found, .page-not-found"):
+        return True
+
+    if any(p.search(title_norm) for p in _ERROR_PATTERNS):
+        return True
+    for hdr in soup.find_all(["h1", "h2"]):
+        h = re.sub(r"[^a-z0-9]+", " ", (hdr.get_text(strip=True) or "").lower())
+        if any(p.search(h) for p in _ERROR_PATTERNS):
+            return True
+
+    for m in soup.find_all("meta"):
+        if (m.get("name", "").lower() == "robots"):
+            c = (m.get("content", "").lower())
+            if "noindex" in c or "nofollow" in c:
+                return True
+
+    if a_count > 120 and word_count < 80:
+        return True
+
+    return False
 
 def extract_next_links(url, resp):
     # Implementation required.
@@ -48,12 +143,20 @@ def extract_next_links(url, resp):
     # Only handle HTML documents
     headers = getattr(resp.raw_response, "headers", {}) or {}
     ctype = headers.get("Content-Type", "")
-    if "text/html" not in ctype.lower():
+    ctype_l = ctype.lower()
+    if "text/html" not in ctype_l:
         return result
 
     # Get the raw page bytes; if empty, nothing to parse.
     content = getattr(resp.raw_response, "content", b"") or b""
     if not content:
+        return result
+
+    if "xml" in ctype_l and "xhtml" not in ctype_l:
+        return result
+
+    head = (content[:512] or b"").lstrip().lower()
+    if head.startswith(b"<?xml") or head.startswith(b"<rss") or head.startswith(b"<feed") or b"<urlset" in head or b"<sitemapindex" in head:
         return result
 
     # Parse HTML with BeautifulSoup (lxml parser is fast and tolerant).
@@ -62,12 +165,27 @@ def extract_next_links(url, resp):
     except Exception:
         return result
 
+    for t in soup(['script', 'style', 'noscript', 'svg']):
+        t.decompose()
+
+    word_count, a_count, title_norm = _page_stats(soup)
+
+    if _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm):
+        return result
+
+    a_tags = soup.find_all("a", href=True)
+    if len(a_tags) > 100 and word_count < 50:
+        return result
+
+    if _looks_like_login_wall(soup):
+        return result
+
     # Use the final resolved URL (after redirects) as the base for resolving relative links.
     base = resp.url or url
     seen = set()
 
     # Extract all <a> elements that have an href attribute.
-    for a in soup.find_all("a", href=True):
+    for a in a_tags:
         href = a.get("href", "").strip()
 
         # Skip empty hrefs and non-HTTP pseudo-schemes.
@@ -99,30 +217,21 @@ def is_valid(url):
         if parsed.scheme not in set(["http", "https"]):
             return False
             
-        host = (parsed.netloc or "").lower()
+        host = (parsed.hostname or "").rstrip(".").lower()
         # Only *.ics|cs|informatics|stat.uci.edu (and subdomains)
         if not any(host == d or host.endswith("." + d) for d in _ALLOWED_SUFFIXES):
             return False
 
         path = (parsed.path or "").lower()
         query = (parsed.query or "").lower()
+        pq = f"{path}?{query}"
 
         # Obvious junk in host (e.g., [YOUR_IP])
         if "[" in host or "]" in host:
             return False
 
         # Very large non-HTML files (low information value)
-        if re.match(
-                r".*\.(css|js|bmp|gif|jpe?g|ico"
-                r"|png|tiff?|mid|mp2|mp3|mp4"
-                r"|wav|avi|mov|mpeg|ram|m4v|mkv|ogg|ogv|pdf"
-                r"|ps|eps|tex|ppt|pptx|doc|docx|xls|xlsx|names"
-                r"|data|dat|exe|bz2|tar|msi|bin|7z|psd|dmg|iso"
-                r"|epub|dll|cnf|tgz|sha1"
-                r"|thmx|mso|arff|rtf|jar|csv"
-                r"|rm|smil|wmv|swf|wma|zip|rar|gz)$",
-                path
-        ):
+        if path.endswith(_NON_HTML_EXTS):
             return False
 
         # Calendar / events day-week-month views or explicit dates
@@ -131,20 +240,61 @@ def is_valid(url):
                     or re.search(r"\d{4}[-/]\d{1,2}[-/]\d{1,2}", path)):
                 return False
 
+            if re.search(r"/20\d{2}-?(0[1-9]|1[0-2])/?$", path) or re.search(r"/20\d{2}/(0[1-9]|1[0-2])/?$", path):
+                return False
+
+            if _RE_EVENTS_PAGE_IN_PATH.search(path) or _RE_TRIBE_QS.search(query) or _RE_EVENTDISPLAY.search(query):
+                return False
+
+        if host == "www.ics.uci.edu" and path.startswith("/~eppstein/pix/"):
+            return False
+
         # DokuWiki/RM media browsers and file tabs (tons of parameter permutations)
-        if "doku.php" in path and ("do=media" in query or "tab=files" in query):
+        if "doku.php" in path and ("do=" in query or "tab=" or "idx=" in query):
+            return False
+
+        if host == "wics.ics.uci.edu":
+            if re.search(r"/\d{6,}(?:_[0-9a-f]{4,})+(?:_[a-z])?/?$", path):
+                return False
+            if re.search(r"/(img|dsc|photo)[_-]?\d{3,}(/|$)", path):
+                return False
+            if re.search(r"/\d{2}(?:-\d{2}){1,2}-[a-z0-9-]+-\d{2,4}/?$", path):
+                return False
+
+        if _RE_APACHE_AUTOINDEX_QS.search(query):
             return False
 
         # Query directly pointing to a file via parameter
-        if re.search(
-                r"(image|file|media|attachment)=[^&]+\.(png|jpe?g|gif|svg|pdf|zip|rar|gz|mp4|mp3|avi|mov|pptx?|docx?|xlsx?)",
-                query):
+        if _RE_MEDIA_PARAM_FILE.search(query):
             return False
 
+        if _RE_ICAL_EXPORT_QS.search(query):
+            return False
+
+        if _RE_STATIC_CALENDAR.search(path) or _RE_STATIC_GALLERY.search(path):
+            return False
+
+        if host == "www.ics.uci.edu" and _RE_WSC_BLOCK.search(path):
+            return False
+
+        if host == "mailman.ics.uci.edu":
+            return False
+
+        if host == "instdav.ics.uci.edu":
+            return False
+
+        if host == "mlphysics.ics.uci.edu" and _RE_MLPHYSICS_DATA_SEG.search(path):
+            return False
+
+        if host == "grape.ics.uci.edu":
+            segs = [s for s in path.split("/") if s]
+            if "asterix" in segs or "timeline" in segs:
+                return False
+            if "action=" or "format=" in query:
+                return False
+
         # Feeds/APIs/sitemaps/etc. (low textual value for our goal)
-        if any(k in f"{path}?{query}" for k in (
-                "wp-json", "xmlrpc", "sitemap", "feed", "rss", "atom", "format=pdf"
-        )):
+        if any(k in pq for k in _TRAP_KEYWORDS):
             return False
 
         # Excessive pagination/offset -> likely infinite listing
@@ -162,9 +312,6 @@ def is_valid(url):
         if len(url) > 2048 or len(query) > 600 or len(segs) > 20:
             return False
 
-        pq = f"{path}?{query}"
-        if any(k in pq for k in _TRAP_KEYWORDS):
-            return False
         return True
 
     except Exception:
