@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 _NON_HTML_EXTS = (
     ".css",".js",".bmp",".gif",".jpg",".jpeg",".ico",".png",".tif",".tiff",".psp",".h5",".java",".php",".seq",
     ".mid",".mp2",".mp3",".mp4",".wav",".avi",".mov",".mpeg",".ram",".m4v",".mkv",".ogg",".ogv",".nb",".jsp",
-    ".pdf",".ps",".eps",".tex",".ppt",".pptx",".doc",".docx",".xls",".xlsx",".ppsX",".py",".bib",".sdf",".tsv",".conf",
+    ".pdf",".ps",".eps",".tex",".ppt",".pptx",".doc",".docx",".xls",".xlsx",".ppsx",".py",".bib",".sdf",".tsv",".conf",
     ".names",".data",".dat",".exe",".bz2",".tar",".msi",".bin",".7z",".psd",".dmg",".iso",".mol",".ismsmi",".war",
     ".epub",".dll",".cnf",".tgz",".sha1",".thmx",".mso",".arff",".rtf",".jar",".csv", ".sql",".target",".fpkm",".class",
     ".rm",".smil",".wmv",".swf",".wma",".zip",".rar",".gz", ".ics", ".mpg", ".txt", ".apk", ".img", ".odp", ".ipynb",
@@ -45,7 +45,7 @@ _TRAP_KEYWORDS = {
     "do=media", "tab=files", "media=", "image=", "file=", "attachment=",
 
     # low-info render modes/login
-    "format=pdf", "print=", "view=print", "preview=", "login", "register"
+    "format=pdf", "print=", "view=print", "preview=", "login", "register",
 
     # misc noise / comment reply & social share
     "replytocom", "share=",
@@ -76,6 +76,10 @@ _RE_STATIC_GALLERY  = re.compile(r"/gallery(?:\.html?)?/?$")
 _RE_WSC_BLOCK = re.compile(r"^/~wscacchi/(presentations|gamelab)(?:/|$)", re.I)
 
 _RE_MLPHYSICS_DATA_SEG = re.compile(r"(?:^|/)data(?:/|$)", re.I)
+
+_RE_PATH_PAGINATION_DEEP = re.compile(
+    r"/(?:page|paged|pagenum|pagination)/\d{3,}/?$", re.I
+)
 
 def scraper(url, resp):
     links = extract_next_links(url, resp)
@@ -174,8 +178,6 @@ def extract_next_links(url, resp):
         return result
 
     a_tags = soup.find_all("a", href=True)
-    if len(a_tags) > 100 and word_count < 50:
-        return result
 
     if _looks_like_login_wall(soup):
         return result
@@ -250,7 +252,7 @@ def is_valid(url):
             return False
 
         # DokuWiki/RM media browsers and file tabs (tons of parameter permutations)
-        if "doku.php" in path and ("do=" in query or "tab=" or "idx=" in query):
+        if "doku.php" in path and ("do=" in query or "tab=" in query or "idx=" in query):
             return False
 
         if host == "wics.ics.uci.edu":
@@ -290,8 +292,11 @@ def is_valid(url):
             segs = [s for s in path.split("/") if s]
             if "asterix" in segs or "timeline" in segs:
                 return False
-            if "action=" or "format=" in query:
+            if ("action=" in query) or ("format=" in query):
                 return False
+
+        if _RE_PATH_PAGINATION_DEEP.search(path):
+            return False
 
         # Feeds/APIs/sitemaps/etc. (low textual value for our goal)
         if any(k in pq for k in _TRAP_KEYWORDS):
