@@ -330,10 +330,29 @@ def is_valid(url):
                 if m and int(m.group(1)) > 10:
                     return False
 
+        # --- Block orphaned STAT slugs (migrated old news posts) ---
+        if host.endswith("stat.ics.uci.edu"):
+            segs = [s for s in parsed.path.split("/") if s]
+            # Single path segment AND looks like a news slug (contains hyphens)
+            if len(segs) == 1 and "-" in segs[0]:
+                return False
+
+        # WordPress "uploads" w/o a real file extension (prevents 404s like
+        # /wp-content/uploads/XinTongAbstract4-25-19)
+        if re.search(r"/wp-content/uploads/", parsed.path, re.I):
+            filename = parsed.path.rsplit("/", 1)[-1]
+            allowed_exts = {
+                ".pdf",".png",".jpg",".jpeg",".gif",".tif",".tiff",".svg",".webp",
+                ".doc",".docx",".ppt",".pptx",".xls",".xlsx",".zip",".rar",".gz",".bz2",".7z"
+            }
+            if not any(filename.lower().endswith(ext) for ext in allowed_exts):
+                return False
+        
         return True
 
     except (TypeError, ValueError):
         return False
+
 
 
 
