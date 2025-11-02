@@ -38,10 +38,10 @@ _ERROR_PATTERNS = [
 
 # ----------------------------- Allowed suffixes -----------------------------
 _ALLOWED_SUFFIXES = (
-    #"ics.uci.edu",
-    #"cs.uci.edu",
+    "ics.uci.edu",
+    "cs.uci.edu",
     "informatics.uci.edu",
-    #"stat.uci.edu",
+    "stat.uci.edu",
 )
 
 # ----------------------------- Trap heuristics and regexes -----------------------------
@@ -445,3 +445,4 @@ def is_valid(url):
 
     except Exception:
         return False
+
