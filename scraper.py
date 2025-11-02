@@ -4,7 +4,6 @@ import sys
 import atexit
 from collections import Counter
 from urllib.parse import urlparse, urljoin, urldefrag, parse_qsl, urlencode
-from bs4 import BeautifulSoup  # required by extract_next_links()
 
 # ----------------------------- Non-HTML extensions -----------------------------
 _NON_HTML_EXTS = (
@@ -12,9 +11,9 @@ _NON_HTML_EXTS = (
     ".mid",".mp2",".mp3",".mp4",".wav",".avi",".mov",".mpeg",".ram",".m4v",".mkv",".ogg",".ogv",".nb",
     ".pdf",".ps",".eps",".tex",".ppt",".pptx",".doc",".docx",".xls",".xlsx",".ppsx",".bib",".sdf",".tsv",".conf",
     ".names",".data",".dat",".exe",".bz2",".tar",".msi",".bin",".7z",".psd",".dmg",".iso",".mol",".ismsmi",".war",
-    ".epub",".dll",".cnf",".tgz",".sha1",".thmx",".mso",".arff",".rtf",".jar",".csv", ".sql",".target",".fpkm",".class",
-    ".rm",".smil",".wmv",".swf",".wma",".zip",".rar",".gz", ".ics", ".mpg", ".txt", ".apk", ".img", ".odp", ".ipynb",
-    ".xml",".sh", ".svg"
+    ".epub",".dll",".cnf",".tgz",".sha1",".thmx",".mso",".arff",".rtf",".jar",".csv",".sql",".target",".fpkm",".class",
+    ".rm",".smil",".wmv",".swf",".wma",".zip",".rar",".gz",".ics",".mpg",".txt",".apk",".img",".odp",".ipynb",
+    ".xml",".sh",".svg"
 )
 
 # ----------------------------- Error pattern heuristics -----------------------------
@@ -89,7 +88,6 @@ VISITED_FILE = "visited_urls.txt"
 PAGES_DIR    = "pages"
 REPORT_FILE  = "report.txt"
 
-# English stopwords for Top-50
 STOPWORDS = set("""
 a about above after again against all am an and any are aren't as at be because been 
 before being below between both but by can't cannot could couldn't did didn't do does 
@@ -105,7 +103,7 @@ whom why why's with won't would wouldn't you you'd you'll you're you've your you
 yourself yourselves
 """.split())
 
-_HTML_ARTIFACTS = {"nbsp"}  # common entity leakage to drop
+_HTML_ARTIFACTS = {"nbsp"}  # drop common entity leakage
 
 def _tokenize_for_report(text: str):
     """
@@ -161,24 +159,25 @@ def _generate_report():
         # 2) Words & longest page
         word_counter = Counter()
         page_lengths  = {}
-        for fname in os.listdir(PAGES_DIR) if os.path.isdir(PAGES_DIR) else []:
-            if not fname.endswith(".txt"):
-                continue
-            fpath = os.path.join(PAGES_DIR, fname)
-            try:
-                text = open(fpath, "r", encoding="utf-8", errors="ignore").read()
-            except Exception:
-                continue
-            toks = _tokenize_for_report(text)
-            word_counter.update(toks)
-            page_lengths[fname] = len(toks)
+        if os.path.isdir(PAGES_DIR):
+            for fname in os.listdir(PAGES_DIR):
+                if not fname.endswith(".txt"):
+                    continue
+                fpath = os.path.join(PAGES_DIR, fname)
+                try:
+                    text = open(fpath, "r", encoding="utf-8", errors="ignore").read()
+                except Exception:
+                    continue
+                toks = _tokenize_for_report(text)
+                word_counter.update(toks)
+                page_lengths[fname] = len(toks)
 
         longest_line = "N/A"
         if page_lengths:
             longest_file = max(page_lengths, key=page_lengths.get)
             longest_line = f"{longest_file}, {page_lengths[longest_file]} words"
 
-        # 3) Subdomain counts (only uci.edu hosts)
+        # 3) Subdomain counts (uci.edu only)
         subdomain_counter = {}
         for u in unique_urls:
             host = urlparse(u).netloc
@@ -223,14 +222,15 @@ if "--restart" in sys.argv or "restart" in sys.argv:
 atexit.register(_generate_report)
 
 # =====================================================================================
-# Scraper pipeline
+# Scraper pipeline (no external libs)
 # =====================================================================================
 
 def scraper(url, resp):
     """
-    Our framework entry point:
-      - Records a text snapshot (for reporting).
-      - Extracts links and applies is_valid().
+    Framework entry point:
+      - Extract outbound links with regex.
+      - Apply is_valid().
+      - Record a visible-text snapshot for reporting on successful HTML pages.
     """
     links = extract_next_links(url, resp)
 
@@ -240,58 +240,80 @@ def scraper(url, resp):
             headers = getattr(resp.raw_response, "headers", {}) or {}
             ctype = (headers.get("Content-Type", "") or "").lower()
             if "text/html" in ctype:
-                html = resp.raw_response.content.decode("utf-8", errors="ignore")
-                # visible text: strip scripts/styles then tags
-                clean = re.sub(r"(?is)<(script|style).*?>.*?</\1>", "", html)
-                visible = re.sub(r"(?is)<[^>]+>", " ", clean)
-                visible = re.sub(r"\s+", " ", visible).strip()
+                html = _html_text(resp)
+                visible = _visible_text_from_html(html)
                 _record_visit(resp.url or url, visible)
     except Exception:
-        # never break crawling for reporting
-        pass
+        pass  # never break crawling for reporting
 
     return [link for link in links if is_valid(link)]
 
-def _page_stats(soup):
-    text = soup.get_text(" ", strip=True)
-    norm = re.sub(r"[^a-z0-9]+", " ", (text or "").lower()).strip()
-    word_count = len(norm.split())
-    a_count = len(soup.find_all("a", href=True))
-    title = (soup.title.string or "").lower() if soup.title and soup.title.string else ""
-    title_norm = re.sub(r"[^a-z0-9]+", " ", title).strip()
+def _html_text(resp) -> str:
+    try:
+        return resp.raw_response.content.decode("utf-8", errors="ignore")
+    except Exception:
+        return ""
+
+def _strip_scripts_styles(html: str) -> str:
+    # Remove <script>..</script> and <style>..</style> blocks
+    html = re.sub(r"(?is)<script.*?</script>", " ", html)
+    html = re.sub(r"(?is)<style.*?</style>", " ", html)
+    return html
+
+def _visible_text_from_html(html: str) -> str:
+    # Drop scripts/styles, then strip all tags, collapse whitespace
+    html = _strip_scripts_styles(html)
+    text = re.sub(r"(?is)<[^>]+>", " ", html)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+def _extract_title(html: str) -> str:
+    m = re.search(r"(?is)<title[^>]*>(.*?)</title>", html)
+    title = m.group(1) if m else ""
+    title = re.sub(r"\s+", " ", title).strip().lower()
+    return title
+
+def _page_stats_from_html(html: str):
+    visible = _visible_text_from_html(html)
+    word_count = len(re.findall(r"[A-Za-z0-9]+", visible))
+    a_count = len(re.findall(r"(?i)<a\s+[^>]*href\s*=\s*['\"][^'\"]+['\"][^>]*>", html))
+    title_norm = _extract_title(html)
     return word_count, a_count, title_norm
 
-def _looks_like_login_wall(soup) -> bool:
-    if soup.find("input", {"type": "password"}):
+def _looks_like_login_wall_html(html: str) -> bool:
+    # quick checks for login forms
+    if re.search(r'(?i)<input[^>]+type\s*=\s*["\']password["\']', html):
         return True
-    for form in soup.find_all("form"):
-        action = (form.get("action") or "").lower()
+    for m in re.finditer(r'(?is)<form[^>]*action\s*=\s*["\']([^"\']+)["\']', html):
+        action = m.group(1).lower()
         if any(w in action for w in ("login", "signin", "sign-in", "webauth", "shibboleth", "cas", "saml", "oauth")):
             return True
     return False
 
-def _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm) -> bool:
-    # WordPress/STAT "not found" templates etc.
-    if soup.select_one(".error-404, .page-404, body.error404, #error404, .not-found, .page-not-found"):
+def _looks_like_error_200_html(html: str, word_count: int, a_count: int, title_norm: str) -> bool:
+    # 404-ish class/id hooks
+    if re.search(r'(?is)\b(error-404|page-404|error404|not-found|page-not-found)\b', html):
         return True
     if any(p.search(title_norm) for p in _ERROR_PATTERNS):
         return True
-    for hdr in soup.find_all(["h1", "h2"]):
-        h = re.sub(r"[^a-z0-9]+", " ", (hdr.get_text(strip=True) or "").lower())
-        if any(p.search(h) for p in _ERROR_PATTERNS):
+    # headers text
+    for m in re.finditer(r'(?is)<h[12][^>]*>(.*?)</h[12]>', html):
+        htxt = re.sub(r"[^a-z0-9]+", " ", (m.group(1) or "").lower()).strip()
+        if any(p.search(htxt) for p in _ERROR_PATTERNS):
             return True
-    for m in soup.find_all("meta"):
-        if (m.get("name", "").lower() == "robots"):
-            c = (m.get("content", "").lower())
-            if "noindex" in c or "nofollow" in c:
-                return True
+    # meta robots
+    for m in re.finditer(r'(?is)<meta[^>]+name\s*=\s*["\']robots["\'][^>]*>', html):
+        content = re.search(r'(?is)content\s*=\s*["\']([^"\']+)["\']', m.group(0))
+        if content and any(k in content.group(1).lower() for k in ("noindex", "nofollow")):
+            return True
+    # link-heavy, word-thin template
     if a_count > 120 and word_count < 80:
         return True
     return False
 
 def extract_next_links(url, resp):
     """
-    Parse the page and extract outbound links (BeautifulSoup).
+    Regex-based link extractor with basic HTML checks.
     """
     result = []
 
@@ -299,55 +321,65 @@ def extract_next_links(url, resp):
         return result
 
     headers = getattr(resp.raw_response, "headers", {}) or {}
-    ctype = headers.get("Content-Type", "") or ""
-    ctype_l = ctype.lower()
-    if "text/html" not in ctype_l:
+    ctype = (headers.get("Content-Type", "") or "").lower()
+    if "text/html" not in ctype:
         return result
 
-    content = getattr(resp.raw_response, "content", b"") or b""
-    if not content:
+    html = _html_text(resp)
+    if not html:
         return result
 
-    if "xml" in ctype_l and "xhtml" not in ctype_l:
+    # reject XML-ish feeds/sitemaps
+    if "xml" in ctype and "xhtml" not in ctype:
+        return result
+    head = html[:512].lstrip().lower()
+    if head.startswith("<?xml") or head.startswith("<rss") or head.startswith("<feed") or "<urlset" in head or "<sitemapindex" in head:
         return result
 
-    head = (content[:512] or b"").lstrip().lower()
-    if head.startswith(b"<?xml") or head.startswith(b"<rss") or head.startswith(b"<feed") or b"<urlset" in head or b"<sitemapindex" in head:
+    # basic quality/error checks
+    word_count, a_count, title_norm = _page_stats_from_html(html)
+    if _looks_like_error_200_html(html, word_count, a_count, title_norm):
+        return result
+    if _looks_like_login_wall_html(html):
         return result
 
-    try:
-        soup = BeautifulSoup(content, "lxml")
-    except Exception:
-        return result
-
-    for t in soup(['script', 'style', 'noscript', 'svg']):
-        t.decompose()
-
-    word_count, a_count, title_norm = _page_stats(soup)
-    if _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm):
-        return result
-    if _looks_like_login_wall(soup):
-        return result
-
-    a_tags = soup.find_all("a", href=True)
-
+    # extract hrefs
+    hrefs = re.findall(r'''(?i)\bhref\s*=\s*["']([^"']+)["']''', html)
     base = resp.url or url
     seen = set()
-    for a in a_tags:
-        href = a.get("href", "").strip()
+
+    for href in hrefs:
+        href = href.strip()
         if not href or href.startswith(("javascript:", "mailto:", "tel:", "data:", "#")):
             continue
         if any(c in href for c in ["[", "]", " ", "{", "}", "|", "\\"]):
             continue
+
         try:
             abs_url = urljoin(base, href)
         except Exception:
             continue
         abs_url, _ = urldefrag(abs_url)
+
         if abs_url and abs_url not in seen:
             seen.add(abs_url)
             result.append(abs_url)
+
     return result
+
+def _strip_tracking_params(u: str) -> str:
+    parsed = urlparse(u)
+    if not parsed.query:
+        return u
+    bad_keys = {
+        "utm_source","utm_medium","utm_campaign","utm_term","utm_content",
+        "gclid","fbclid","mc_cid","mc_eid","replytocom","share","ref","source",
+        "amp","ts","ns_mchannel","ns_campaign",
+    }
+    params = [(k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True)
+              if k.lower() not in bad_keys]
+    new_q = urlencode(params, doseq=True)
+    return parsed._replace(query=new_q).geturl()
 
 def is_valid(url):
     """
@@ -366,9 +398,11 @@ def is_valid(url):
         query = (parsed.query or "").lower()
         pq = f"{path}?{query}"
 
+        # non-HTML resources by extension
         if path.endswith(_NON_HTML_EXTS):
             return False
 
+        # events/calendar noise
         if "/events/" in path or "/event/" in path or "/calendar" in path:
             if ("/day/" in path or "/week/" in path or "/month/" in path
                     or re.search(r"\d{4}[-/]\d{1,2}[-/]\d{1,2}", path)):
@@ -378,12 +412,15 @@ def is_valid(url):
             if _RE_EVENTS_PAGE_IN_PATH.search(path) or _RE_TRIBE_QS.search(query) or _RE_EVENTDISPLAY.search(query):
                 return False
 
+        # specific site carveouts
         if host == "www.ics.uci.edu" and path.startswith("/~eppstein/pix/"):
             return False
 
+        # DokuWiki/media browsers
         if "doku.php" in path and ("do=" in query or "tab=" in query or "idx=" in query):
             return False
 
+        # WICS image traps
         if host == "wics.ics.uci.edu":
             if re.search(r"/\d{6,}(?:_[0-9a-f]{4,})+(?:_[a-z])?/?$", path):
                 return False
@@ -445,4 +482,3 @@ def is_valid(url):
 
     except Exception:
         return False
-
