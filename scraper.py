@@ -7,11 +7,11 @@ from urllib.parse import urlparse, urljoin, urldefrag, parse_qsl, urlencode
 
 # ---------- Quick-test settings ----------
 TEST_MODE = True            # set False for full crawl
-PAGE_BUDGET = 50            # stop expanding links after this many pages recorded
+PAGE_BUDGET = 100            # stop expanding links after this many pages recorded
 # If TEST_ALLOWED_HOSTS empty, quick-test host/path restriction is skipped.
 TEST_ALLOWED_HOSTS = {
-    "informatics.uci.edu": ["/about", "/people"],
-    "stat.ics.uci.edu": ["/people", "/about"],
+    "informatics.uci.edu",
+    "stat.ics.uci.edu",
 }
 
 # keeps a simple in-process page counter
@@ -398,4 +398,5 @@ def _generate_report():
 
 # Register exit hook (called when the crawler process exits)
 atexit.register(_generate_report)
+
 
