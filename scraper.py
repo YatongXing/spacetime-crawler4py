@@ -1,11 +1,66 @@
 import re
-from urllib.parse import urlparse, urljoin, urldefrag
+from urllib.parse import urlparse, urljoin, urldefrag, urlsplit, urlunsplit
 from bs4 import BeautifulSoup
+import os, hashlib, threading
+
+# Output locations (can be overridden with env var CRAWL_OUT)
+_OUT_DIR = os.environ.get("CRAWL_OUT", "crawl_out")
+_PAGES_DIR = os.path.join(_OUT_DIR, "pages")
+_MANIFEST = os.path.join(_OUT_DIR, "manifest.tsv")
+
+# In-process de-dup for saved pages (thread-safe)
+_SEEN_SAVE = set()
+_SEEN_LOCK = threading.Lock()
+
+def _norm_url_no_fragment(u: str) -> str:
+    """Normalize a URL by stripping only the fragment (#...), as required by the assignment."""
+    try:
+        p = urlsplit(u)
+        # Remove fragment but keep scheme, host, path, and query intact
+        return urlunsplit((p.scheme, p.netloc, p.path, p.query, ""))
+    except Exception:
+        return u
+
+def _safe_save_page(url: str, html_bytes: bytes) -> str:
+    """
+    Persist the current page to disk and append a row to the manifest file.
+
+    - Saves under crawl_out/pages/<sha1(url_without_fragment)>.html
+    - Writes a one-line HTML comment header: <!-- URL: ... --> (useful for offline scans)
+    - Appends: "<URL_without_fragment>\t<absolute_file_path>" to crawl_out/manifest.tsv
+    - Thread-safe within a single process (coarse-grained set + lock)
+    """
+    os.makedirs(_PAGES_DIR, exist_ok=True)
+
+    key = _norm_url_no_fragment(url)
+    h = hashlib.sha1(key.encode("utf-8")).hexdigest()
+    path = os.path.join(_PAGES_DIR, f"{h}.html")
+
+    # Ensure we only save once per normalized URL in this process
+    with _SEEN_LOCK:
+        if key in _SEEN_SAVE:
+            return path
+        _SEEN_SAVE.add(key)
+
+    if not os.path.exists(path):
+        tmp = path + ".tmp"
+        # Write a URL hint in the header so the URL can be recovered from the file alone
+        with open(tmp, "wb") as f:
+            f.write(b"<!-- URL: " + key.encode("utf-8") + b" -->\n")
+            f.write(html_bytes)
+        os.replace(tmp, path)
+
+        # Append to the manifest (best-effort; slight duplicates across processes are harmless)
+        os.makedirs(_OUT_DIR, exist_ok=True)
+        with open(_MANIFEST, "a", encoding="utf-8") as mf:
+            mf.write(f"{key}\t{path}\n")
+
+    return path
 
 _NON_HTML_EXTS = (
-    ".css",".js",".bmp",".gif",".jpg",".jpeg",".ico",".png",".tif",".tiff",".psp",".h5",".java",".php",".seq",
-    ".mid",".mp2",".mp3",".mp4",".wav",".avi",".mov",".mpeg",".ram",".m4v",".mkv",".ogg",".ogv",".nb",".jsp",
-    ".pdf",".ps",".eps",".tex",".ppt",".pptx",".doc",".docx",".xls",".xlsx",".ppsx",".py",".bib",".sdf",".tsv",".conf",
+    ".css",".js",".bmp",".gif",".jpg",".jpeg",".ico",".png",".tif",".tiff",".psp",".h5",".java",".seq",
+    ".mid",".mp2",".mp3",".mp4",".wav",".avi",".mov",".mpeg",".ram",".m4v",".mkv",".ogg",".ogv",".nb",
+    ".pdf",".ps",".eps",".tex",".ppt",".pptx",".doc",".docx",".xls",".xlsx",".ppsx",".bib",".sdf",".tsv",".conf",
     ".names",".data",".dat",".exe",".bz2",".tar",".msi",".bin",".7z",".psd",".dmg",".iso",".mol",".ismsmi",".war",
     ".epub",".dll",".cnf",".tgz",".sha1",".thmx",".mso",".arff",".rtf",".jar",".csv", ".sql",".target",".fpkm",".class",
     ".rm",".smil",".wmv",".swf",".wma",".zip",".rar",".gz", ".ics", ".mpg", ".txt", ".apk", ".img", ".odp", ".ipynb",
@@ -177,10 +232,17 @@ def extract_next_links(url, resp):
     if _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm):
         return result
 
-    a_tags = soup.find_all("a", href=True)
-
     if _looks_like_login_wall(soup):
         return result
+
+    # Save this page after it passes content/quality guards
+    try:
+        _safe_save_page(resp.url or url, content)
+    except Exception:
+        # Saving should never break crawling; ignore any I/O errors
+        pass
+
+    a_tags = soup.find_all("a", href=True)
 
     # Use the final resolved URL (after redirects) as the base for resolving relative links.
     base = resp.url or url
