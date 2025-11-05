@@ -241,8 +241,10 @@ def scraper(url, resp):
             ctype = (headers.get("Content-Type", "") or "").lower()
             if "text/html" in ctype:
                 html = _html_text(resp)
-                visible = _visible_text_from_html(html)
-                _record_visit(resp.url or url, visible)
+                wc, ac, title = _page_stats_from_html(html)
+                if not _looks_like_error_200_html(html, wc, ac, title) \
+                   and not _looks_like_login_wall_html(html):
+                    _record_visit(resp.url or url, _visible_text_from_html(html))
     except Exception:
         pass  # never break crawling for reporting
 
@@ -406,7 +408,7 @@ def is_valid(url):
             return False
 
         # events/calendar noise
-        if "/events/" in path or "/event/" in path or "/calendar" in path:
+        if "/events/" in path or "/event/" in path:
             if ("/day/" in path or "/week/" in path or "/month/" in path
                     or re.search(r"\d{4}[-/]\d{1,2}[-/]\d{1,2}", path)):
                 return False
@@ -485,6 +487,7 @@ def is_valid(url):
 
     except Exception:
         return False
+
 
 
 
