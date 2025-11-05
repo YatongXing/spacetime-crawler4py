@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
-# analyze_crawl.py  (now supports --worker_log)
+# analyze_crawl.py
+#
+# Usage examples:
+#   python analyze_crawl.py --manifest crawl_out/manifest.tsv --report crawl_out/report.json
+#   python analyze_crawl.py --pages_dir crawl_out/pages --report crawl_out/report.json
+#   python analyze_crawl.py --worker_log Worker-0.log --worker_log Worker-1.log
+#
+# This script aggregates four required metrics for CS121 A2:
+#   1) Unique page count (URL uniqueness ignores fragment only)
+#   2) Longest page by word count (HTML markup excluded)
+#   3) Top-K most common words (stopwords removed)
+#   4) Subdomains under uci.edu with counts (alphabetical)
+
 import argparse
 import csv
 import os
@@ -8,8 +20,10 @@ import sys
 import json
 from collections import Counter, defaultdict
 from urllib.parse import urlsplit, urlunsplit
+
 from bs4 import BeautifulSoup
 
+# ---------- Stopwords (fallback) ----------
 DEFAULT_STOPWORDS = {
     "a","about","above","after","again","against","all","am","an","and","any","are","as","at",
     "be","because","been","before","being","below","between","both","but","by",
@@ -32,12 +46,22 @@ DEFAULT_STOPWORDS = {
     "you","your","yours","yourself","yourselves",
 }
 
-WORD_RE = re.compile(r"[a-z]+")  # letters only
+# ---------- Tokenization ----------
+# Ignore single-letter tokens to prevent 's', 'e', ... from dominating counts
+WORD_RE = re.compile(r"[a-z]{2,}")
+
+# Obvious filename/extension-like noise words we don't want in top list
+NOISE_WORDS = {
+    "html","htm","pdf","jpg","jpeg","png","gif","svg","css","js","xml","json",
+    "zip","rar","gz","tar","bz2","ppt","pptx","doc","docx","xls","xlsx","csv",
+    "php","jsp"
+}
 
 def norm_url_strip_fragment(u: str) -> str:
+    """Normalize a URL by stripping only the fragment (#...)."""
     try:
         p = urlsplit(u)
-        return urlunsplit((p.scheme, p.netloc, p.path, p.query, ""))  # strip fragment only
+        return urlunsplit((p.scheme, p.netloc, p.path, p.query, ""))
     except Exception:
         return u
 
@@ -53,15 +77,31 @@ def load_stopwords(path: str | None) -> set[str]:
     return sw
 
 def extract_text(html_bytes: bytes) -> str:
+    """Parse HTML and return visible text."""
     soup = BeautifulSoup(html_bytes, "lxml")
+
+    # Strip obvious non-content nodes
     for t in soup(["script", "style", "noscript", "svg"]):
         t.decompose()
+
+    # Optionally reduce chrome noise
+    for t in soup.select('[hidden], [aria-hidden="true"], [style*="display:none"], [style*="visibility:hidden"]'):
+        t.decompose()
+    for tag in ("nav", "footer", "header"):
+        for t in soup.select(tag):
+            t.decompose()
+
     return soup.get_text(" ", strip=True)
 
 def tokenize_words(text: str) -> list[str]:
-    return WORD_RE.findall(text.lower())
+    """Lowercase, normalize possessives, and split into words (>=2 letters)."""
+    s = text.lower()
+    # normalize possessives "university's" -> "university"
+    s = re.sub(r"\b([a-z]+)[’']s\b", r"\1", s)
+    return WORD_RE.findall(s)
 
 def read_manifest(manifest_path: str) -> list[tuple[str, str]]:
+    """Read URL<tab>local_html_path pairs."""
     pairs = []
     with open(manifest_path, "r", encoding="utf-8", errors="ignore") as f:
         sample = f.read(4096); f.seek(0)
@@ -75,6 +115,9 @@ def read_manifest(manifest_path: str) -> list[tuple[str, str]]:
     return pairs
 
 def scan_pages_dir(pages_dir: str) -> list[tuple[str, str]]:
+    """
+    Recover (URL, path) pairs by reading <!-- URL: ... --> from saved HTML files.
+    """
     out = []
     url_hint_re = re.compile(r"<!--\s*url\s*:\s*(.*?)\s*-->", re.I)
     for root, _, files in os.walk(pages_dir):
@@ -104,7 +147,7 @@ def read_urls_only(urls_file: str) -> list[str]:
                 urls.append(u)
     return urls
 
-# --- NEW: extract URLs from worker logs ---
+# Parse URLs out of worker logs (best-effort)
 LOG_URL_RE = re.compile(
     r"\b(?:Downloaded|Fetching|Fetched|Crawling|d)\s+(https?://[^\s,)\]]+)",
     re.I
@@ -124,12 +167,13 @@ def read_worker_log(paths: list[str]) -> list[str]:
 def main():
     ap = argparse.ArgumentParser(description="Analyze crawled pages for CS121 A2 metrics.")
     ap.add_argument("--manifest", help="TSV/CSV: URL<TAB>local_html_path")
-    ap.add_argument("--pages_dir", help="Directory with saved HTML files (optionally with <!-- URL: ... -->)")
+    ap.add_argument("--pages_dir", help="Directory with saved HTML files")
     ap.add_argument("--urls_only", help="File with one URL per line (no content)")
-    ap.add_argument("--worker_log", action="append", help="Path to worker log (can be given multiple times)")
+    ap.add_argument("--worker_log", action="append", help="Path to worker log (can be used multiple times)")
     ap.add_argument("--stopwords", help="Stopwords file (one per line)")
     ap.add_argument("--topk", type=int, default=50, help="Top-K most common words (default 50)")
     ap.add_argument("--report", help="Write JSON report to this path")
+    ap.add_argument("--verbose", action="store_true", help="Print progress every 200 pages")
     args = ap.parse_args()
 
     stopwords = load_stopwords(args.stopwords)
@@ -160,7 +204,7 @@ def main():
     for u in urls_extra:
         unique_urls.add(norm_url_strip_fragment(u))
 
-    # Subdomains under uci.edu
+    # Subdomain counts under uci.edu
     subdomain_counts: defaultdict[str, int] = defaultdict(int)
     for u in unique_urls:
         try:
@@ -170,12 +214,16 @@ def main():
         if host.endswith(".uci.edu"):
             subdomain_counts[host] += 1
 
-    # Longest page & top words (only if we have HTML files)
+    # Longest page & top words (only if HTML files exist)
     word_counter = Counter()
     longest_page_url = None
     longest_page_wordcount = -1
 
-    for url, path in url_path_pairs:
+    total_pages = len(url_path_pairs)
+    if args.verbose and total_pages:
+        print(f"Scanning {total_pages} HTML files...", flush=True)
+
+    for i, (url, path) in enumerate(url_path_pairs, 1):
         if not os.path.exists(path):
             continue
         try:
@@ -189,17 +237,27 @@ def main():
             continue
 
         tokens = tokenize_words(text)
+
+        # Heuristic: skip pages that look like pure index/noise (almost no real tokens)
+        if len(tokens) < 20:
+            continue
+
+        # Longest page: count all tokens we keep (>=2 letters), no stopword removal here
         total_words = len(tokens)
         if total_words > longest_page_wordcount:
             longest_page_wordcount = total_words
             longest_page_url = url
 
-        filtered = (w for w in tokens if w not in stopwords)
+        # Top words: remove stopwords and common noise tokens
+        filtered = (w for w in tokens if w not in stopwords and w not in NOISE_WORDS)
         word_counter.update(filtered)
+
+        if args.verbose and i % 200 == 0:
+            print(f"[progress] processed {i}/{total_pages} pages...", flush=True)
 
     most_common = word_counter.most_common(args.topk)
 
-    # Output
+    # ---- Output ----
     print("=== Crawl Analysis Report ===")
     print(f"Unique pages (URL dedup, ignoring fragments): {len(unique_urls)}")
     if longest_page_url is not None and longest_page_wordcount >= 0:
