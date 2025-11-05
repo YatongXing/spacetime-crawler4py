@@ -361,6 +361,9 @@ def extract_next_links(url, resp):
             continue
         abs_url, _ = urldefrag(abs_url)
 
+        # canonicalize query noise (utm_*, gclid, fbclid, etc.)
+        abs_url = _strip_tracking_params(abs_url)
+
         if abs_url and abs_url not in seen:
             seen.add(abs_url)
             result.append(abs_url)
@@ -482,5 +485,6 @@ def is_valid(url):
 
     except Exception:
         return False
+
 
 
