@@ -224,7 +224,7 @@ def extract_next_links(url, resp):
     # Parse HTML with BeautifulSoup (lxml parser is fast and tolerant).
     try:
         #soup = BeautifulSoup(content, "lxml")
-        soup = BeautifulSoup(content, "html.parser")
+        soup = BeautifulSoup(content, "lxml")
     except Exception:
         return result
 
@@ -415,6 +415,7 @@ def is_valid(url):
         # Be safe on any parsing error
 
         return False
+
 
 
 
