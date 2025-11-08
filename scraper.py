@@ -240,35 +240,20 @@ def extract_next_links(url, resp):
     if _looks_like_login_wall(soup):
         return result
     
-    # 4. Duplicate detection
-    # Visible text for fingerprinting (no external libs allowed)
-    page_text = soup.get_text(" ", strip=True)
-    
-    # 1) Exact duplicate by checksum of raw bytes
+    # 4) Duplicate detection
+    #    a) exact dupes by checksum of raw bytes
     chk = similarity.checksum_bytes(content)
-    if similarity.seen_exact(chk):
-        # Exact dup: skip saving another copy, but still return outlinks.
-        # (We still continue to extract <a> below.)
-        pass
-    else:
+    if not similarity.seen_exact(chk):
         similarity.remember_exact(chk)
-    
-    # 2) Near-duplicate by Jaccard over 3-gram fingerprints
-    nd = similarity.is_near_duplicate_of(page_text, tau=similarity.NEAR_DUP_TAU)
-    if nd:
-        # nd is (doc_id, sim). We choose to SKIP saving this page’s HTML to disk
-        # to conserve resources, but we will still index its links.
-        # If you prefer to always save, just remove the `skip_save` flag.
-        skip_save = True
-    else:
-        skip_save = False
-    
-    # Index THIS page so future pages can be compared to it.
-    # Use normalized URL without fragment as the doc_id.
+    #    b) near dupes by Jaccard over 3-gram fingerprints (text only)
+    page_text = soup.get_text(" ", strip=True)
     doc_id = _norm_url_no_fragment(resp.url or url)
+    nd = similarity.is_near_duplicate_of(page_text, tau=similarity.NEAR_DUP_TAU)
+    skip_save = bool(nd)  # skip saving if near-duplicate of an already-seen page
+    # Index this page so *future* pages can be compared to it
     similarity.add_document(doc_id, page_text)
 
-    # Save only if we didn't flag it as a near-duplicate of something we already have
+    # 5) Save page if not near-duplicate (we still always return outlinks)
     try:
         if not skip_save:
             _safe_save_page(resp.url or url, content)
@@ -415,6 +400,7 @@ def is_valid(url):
         # Be safe on any parsing error
 
         return False
+
 
 
 
