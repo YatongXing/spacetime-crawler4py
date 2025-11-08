@@ -7,66 +7,154 @@ from queue import Queue, Empty
 from utils import get_logger, get_urlhash, normalize
 from scraper import is_valid
 
-class Frontier(object):
-    def __init__(self, config, restart):
-        self.logger = get_logger("FRONTIER")
-        self.config = config
-        self.to_be_downloaded = list()
-        
-        if not os.path.exists(self.config.save_file) and not restart:
-            # Save file does not exist, but request to load save.
-            self.logger.info(
-                f"Did not find save file {self.config.save_file}, "
-                f"starting from seed.")
-        elif os.path.exists(self.config.save_file) and restart:
-            # Save file does exists, but request to start from seed.
-            self.logger.info(
-                f"Found save file {self.config.save_file}, deleting it.")
-            os.remove(self.config.save_file)
-        # Load existing save file, or create one if it does not exist.
-        self.save = shelve.open(self.config.save_file)
-        if restart:
-            for url in self.config.seed_urls:
-                self.add_url(url)
-        else:
-            # Set the frontier state with contents of save file.
-            self._parse_save_file()
-            if not self.save:
-                for url in self.config.seed_urls:
-                    self.add_url(url)
 
-    def _parse_save_file(self):
-        ''' This function can be overridden for alternate saving techniques. '''
-        total_count = len(self.save)
-        tbd_count = 0
-        for url, completed in self.save.values():
-            if not completed and is_valid(url):
-                self.to_be_downloaded.append(url)
-                tbd_count += 1
-        self.logger.info(
-            f"Found {tbd_count} urls to be downloaded from {total_count} "
-            f"total urls discovered.")
+class Frontier:
+    """
+    Thread-safe Frontier using:
+        - Queue for pending URLs
+        - sets for seen + completed
+        - RLock for safety across multiple Workers
+        - shelve for checkpointing
+
+    Fully compatible with the original ICS crawler architecture
+    but now safe for multithreading.
+    """
+
+    def __init__(self, config, restart: bool):
+        self.config = config
+        self.logger = get_logger("Frontier")
+
+        # Thread-safe queue for URLs to visit
+        self._q = Queue()
+
+        # Protect shared structures
+        self._lock = RLock()
+
+        # Track seen and completed URLs
+        self._seen = set()
+        self._completed = set()
+
+        self._save_path = config.save_file
+
+        # Handle restart
+        if restart:
+            self._reset_state()
+            self.add_url(config.seed_url)
+        else:
+            loaded = self._load_state()
+            if not loaded:
+                self.add_url(config.seed_url)
+
+    # ----------------------------------------------------------------------
+    # Internal helpers
+    # ----------------------------------------------------------------------
+
+    def _reset_state(self):
+        """On restart: clear shelve DB files."""
+        for ext in ("", ".bak", ".dat", ".dir"):
+            p = self._save_path + ext
+            try:
+                if os.path.exists(p):
+                    os.remove(p)
+            except OSError:
+                pass
+
+    def _load_state(self) -> bool:
+        """Try loading frontier state from disk."""
+        try:
+            with shelve.open(self._save_path) as db:
+                seen = db.get("seen")
+                completed = db.get("completed")
+                queued = db.get("queue")
+
+            if seen is None or completed is None or queued is None:
+                return False
+
+            with self._lock:
+                self._seen = set(seen)
+                self._completed = set(completed)
+
+                # Only requeue unfinished URLs
+                for u in queued:
+                    if u not in self._completed:
+                        self._q.put(u)
+
+            self.logger.info(f"Frontier loaded with {len(self._seen)} seen, "
+                             f"{len(self._completed)} completed.")
+            return True
+
+        except Exception:
+            return False
+
+    def _save_state(self):
+        """Persist the whole frontier to disk safely."""
+        try:
+            with self._lock:
+                seen = list(self._seen)
+                completed = list(self._completed)
+                queued = list(self._q.queue)
+
+            with shelve.open(self._save_path) as db:
+                db["seen"] = seen
+                db["completed"] = completed
+                db["queue"] = queued
+
+        except Exception:
+            self.logger.error("Failed to save frontier state.", exc_info=True)
+
+    # ----------------------------------------------------------------------
+    # Required API for crawler
+    # ----------------------------------------------------------------------
 
     def get_tbd_url(self):
+        """
+        Thread-safe fetch:
+        - Blocks up to 0.5 seconds
+        - Returns None when frontier is drained
+        """
         try:
-            return self.to_be_downloaded.pop()
-        except IndexError:
+            return self._q.get(timeout=0.5)
+        except Empty:
+            with self._lock:
+                # Drained when: seen is non-empty AND all seen are completed
+                if self._seen and self._seen == self._completed:
+                    return None
             return None
 
-    def add_url(self, url):
-        url = normalize(url)
-        urlhash = get_urlhash(url)
-        if urlhash not in self.save:
-            self.save[urlhash] = (url, False)
-            self.save.sync()
-            self.to_be_downloaded.append(url)
-    
-    def mark_url_complete(self, url):
-        urlhash = get_urlhash(url)
-        if urlhash not in self.save:
-            # This should not happen.
-            self.logger.error(
-                f"Completed url {url}, but have not seen it before.")
+    def add_url(self, url: str):
+        """
+        Add a URL to frontier:
+        - Normalize
+        - Avoid duplicates (seen or completed)
+        - Validate using existing scraper.is_valid()
+        """
+        if not url:
+            return
 
-        self.save[urlhash] = (url, True)
-        self.save.sync()
+        url = normalize(url)
+
+        if not is_valid(url):
+            return
+
+        with self._lock:
+            if url in self._seen or url in self._completed:
+                return
+
+            self._seen.add(url)
+            self._q.put(url)
+
+        # Save occasionally
+        if self._q.qsize() % 50 == 0:
+            self._save_state()
+
+    def mark_url_complete(self, url: str):
+        """Mark completed & snapshot occasionally."""
+        if not url:
+            return
+        url = normalize(url)
+
+        with self._lock:
+            self._completed.add(url)
+
+        if len(self._completed) % 50 == 0:
+            self._save_state()
