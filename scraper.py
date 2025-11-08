@@ -86,8 +86,8 @@ _ERROR_PATTERNS = [
 ]
 
 _ALLOWED_SUFFIXES = (
-    "ics.uci.edu",
-    "cs.uci.edu",
+    #"ics.uci.edu",
+    #"cs.uci.edu",
     "informatics.uci.edu",
     "stat.uci.edu",
 )
@@ -379,4 +379,5 @@ def is_valid(url):
 
     except Exception:
         # Be safe on any parsing error
+
         return False
