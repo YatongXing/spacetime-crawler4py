@@ -215,37 +215,44 @@ def extract_next_links(url, resp):
        or b"<urlset" in head or b"<sitemapindex" in head:
         return result
 
-    # 2) Parse HTML safely (assignment requires lxml)
+    # 2. Parse HTML safely
+    # Use lxml for crawling & reports
     try:
         soup = BeautifulSoup(content, "lxml")
     except Exception:
-        # If lxml isn't installed at runtime, parsing will fail here.
         return result
-
-    # Remove non-content elements before computing stats and text
+    
+    # Use html.parser for similarity (safer & parser is always available)
+    soup_for_text = BeautifulSoup(content, "html.parser")
+    
+    # Clean both soups (remove script/style/...)
     for t in soup(['script', 'style', 'noscript', 'svg']):
         t.decompose()
-
-    # 3) Page-quality filtering
+    for t in soup_for_text(['script', 'style', 'noscript', 'svg']):
+        t.decompose()
+    
+    # --- 3. Page-quality filtering (uses lxml soup) ---
     word_count, a_count, title_norm = _page_stats(soup)
     if _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm):
         return result
     if _looks_like_login_wall(soup):
         return result
-
+    
     # 4) Duplicate detection
-    #    a) exact dupes by checksum of raw bytes
+    page_text = soup_for_text.get_text(" ", strip=True)
+    
+    # Exact duplicate
     chk = similarity.checksum_bytes(content)
     if not similarity.seen_exact(chk):
         similarity.remember_exact(chk)
-    #    b) near dupes by Jaccard over 3-gram fingerprints (text only)
-    page_text = soup.get_text(" ", strip=True)
+    
+    # Near duplicate
     doc_id = _norm_url_no_fragment(resp.url or url)
     nd = similarity.is_near_duplicate_of(page_text, tau=similarity.NEAR_DUP_TAU)
-    skip_save = bool(nd)  # skip saving if near-duplicate of an already-seen page
-    # Index this page so *future* pages can be compared to it
+    skip_save = bool(nd)
+    
+    # Index fingerprints for future comparisons
     similarity.add_document(doc_id, page_text)
-
     # 5) Save page if not near-duplicate (we still always return outlinks)
     try:
         if not skip_save:
@@ -383,6 +390,7 @@ def is_valid(url):
         # Be safe on any parsing error
 
         return False
+
 
 
 
