@@ -1,110 +1,125 @@
+import heapq
 import os
 import shelve
-
-from threading import Thread, RLock
-from queue import Queue, Empty
+import time
+from collections import defaultdict, deque
+from threading import RLock, Condition
+from urllib.parse import urlparse
 
 from utils import get_logger, get_urlhash, normalize
 from scraper import is_valid
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Thread-safe Frontier with simple persistence.
-#  - Uses Queue for TBD urls
-#  - Uses sets of url_hashes to de-dupe seen/completed
-#  - Normalizes urls before hashing (keeps your utils.normalize / get_urlhash)
-#  - Shelve snapshot is best-effort and occasional
-# ──────────────────────────────────────────────────────────────────────────────
 
-class Frontier:
-    def __init__(self, config, restart: bool):
+class Frontier(object):
+    def __init__(self, config, restart):
+        self.logger = get_logger("FRONTIER")
         self.config = config
-        self.log = get_logger("FRONTIER")
-        self._q: Queue[str] = Queue()
-        self._lock = RLock()
-        self._seen = set()       # hashes of normalized urls
-        self._completed = set()  # hashes of normalized urls
-        self._save_path = config.save_file or "frontier.shelve"
+        self.lock = RLock()
+        self.cv = Condition(self.lock)
+        self.domain_queues = defaultdict(deque)
+        self.domain_next_time = dict()
+        self.domain_heap = list()
+        self.total_pending = 0
+        self.in_progress = 0
+        self.politeness_delay = max(self.config.time_delay, 0.5)
 
+        if not os.path.exists(self.config.save_file) and not restart:
+            # Save file does not exist, but request to load save.
+            self.logger.info(
+                f"Did not find save file {self.config.save_file}, "
+                f"starting from seed.")
+        elif os.path.exists(self.config.save_file) and restart:
+            # Save file does exists, but request to start from seed.
+            self.logger.info(
+                f"Found save file {self.config.save_file}, deleting it.")
+            os.remove(self.config.save_file)
+        # Load existing save file, or create one if it does not exist.
+        self.save = shelve.open(self.config.save_file)
         if restart:
-            # wipe any old state and seed fresh
-            for ext in ("", ".bak", ".dat", ".dir"):
-                p = self._save_path + ext
-                if os.path.exists(p):
-                    try: os.remove(p)
-                    except OSError: pass
-            self.add_url(config.seed_url)
+            for url in self.config.seed_urls:
+                self.add_url(url)
         else:
-            if not self._load_state():
-                self.add_url(config.seed_url)
+            # Set the frontier state with contents of save file.
+            self._parse_save_file()
+            if not self.save:
+                for url in self.config.seed_urls:
+                    self.add_url(url)
 
-    # ── public API expected by crawler ────────────────────────────────────────
+    def _parse_save_file(self):
+        ''' This function can be overridden for alternate saving techniques. '''
+        total_count = len(self.save)
+        tbd_count = 0
+        with self.cv:
+            for url, completed in self.save.values():
+                if not completed and is_valid(url):
+                    self._enqueue_url(url)
+                    tbd_count += 1
+        self.logger.info(
+            f"Found {tbd_count} urls to be downloaded from {total_count} "
+            f"total urls discovered.")
+
     def get_tbd_url(self):
-        """
-        Return one URL to download or None if the frontier is drained.
-        """
-        try:
-            return self._q.get(timeout=0.5)
-        except Empty:
-            with self._lock:
-                drained = (len(self._seen) > 0) and (self._seen == self._completed)
-            return None if drained else None
+        with self.cv:
+            while True:
+                if self.total_pending == 0 and self.in_progress == 0:
+                    return None
+                if not self.domain_heap:
+                    self.cv.wait()
+                    continue
+                next_time, domain = self.domain_heap[0]
+                now = time.monotonic()
+                wait_time = next_time - now
+                if wait_time > 0:
+                    self.cv.wait(timeout=wait_time)
+                    continue
+                heapq.heappop(self.domain_heap)
+                queue = self.domain_queues[domain]
+                if not queue:
+                    # Should not happen, but continue gracefully.
+                    continue
+                url = queue.popleft()
+                self.total_pending -= 1
+                self.in_progress += 1
+                next_available = now + self.politeness_delay
+                self.domain_next_time[domain] = next_available
+                if queue:
+                    heapq.heappush(self.domain_heap, (next_available, domain))
+                return url
 
-    def add_url(self, url: str):
-        if not url:
-            return
-        # Normalize & hash for stable deduping
-        norm = normalize(url)
-        h = get_urlhash(norm)
-        with self._lock:
-            if h in self._seen or h in self._completed:
-                return
-            self._seen.add(h)
-            self._q.put(norm)
-        # snapshot occasionally
-        if self._q.qsize() % 50 == 0:
-            self._save_state()
+    def add_url(self, url):
+        url = normalize(url)
+        urlhash = get_urlhash(url)
+        with self.cv:
+            if urlhash not in self.save:
+                self.save[urlhash] = (url, False)
+                self.save.sync()
+                self._enqueue_url(url)
 
-    def mark_url_complete(self, url: str):
-        if not url:
-            return
-        norm = normalize(url)
-        h = get_urlhash(norm)
-        with self._lock:
-            self._completed.add(h)
-        if len(self._completed) % 50 == 0:
-            self._save_state()
+    def mark_url_complete(self, url):
+        urlhash = get_urlhash(url)
+        with self.cv:
+            if urlhash not in self.save:
+                # This should not happen.
+                self.logger.error(
+                    f"Completed url {url}, but have not seen it before.")
 
-    # ── persistence helpers ───────────────────────────────────────────────────
-    def _load_state(self) -> bool:
-        try:
-            with shelve.open(self._save_path) as db:
-                seen = db.get("seen")
-                completed = db.get("completed")
-                queued = db.get("queue")
-            if seen is None or completed is None or queued is None:
-                return False
-            with self._lock:
-                self._seen = set(seen)
-                self._completed = set(completed)
-                for u in queued:
-                    # Only requeue not-yet-completed items
-                    if get_urlhash(normalize(u)) not in self._completed:
-                        self._q.put(u)
-            self.log.info("Frontier state restored: seen=%d, completed=%d, queued=%d",
-                          len(self._seen), len(self._completed), self._q.qsize())
-            return True
-        except Exception:
-            return False
+            self.save[urlhash] = (url, True)
+            self.save.sync()
+            if self.in_progress > 0:
+                self.in_progress -= 1
+            self.cv.notify_all()
 
-    def _save_state(self):
-        try:
-            with self._lock:
-                seen = list(self._seen)
-                completed = list(self._completed)
-                queued = list(self._q.queue)
-            with shelve.open(self._save_path) as db:
-                db["seen"] = seen
-                db["completed"] = completed
-                db["queue"] = queued
-        except Exception:
-            pass
+    def _enqueue_url(self, url):
+        domain = urlparse(url).netloc
+        queue = self.domain_queues[domain]
+        was_empty = len(queue) == 0
+        queue.append(url)
+        self.total_pending += 1
+        now = time.monotonic()
+        next_ready = self.domain_next_time.get(domain, now)
+        if next_ready < now:
+            next_ready = now
+        self.domain_next_time[domain] = next_ready
+        if was_empty:
+            heapq.heappush(self.domain_heap, (next_ready, domain))
+        self.cv.notify_all()
