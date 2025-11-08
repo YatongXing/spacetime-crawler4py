@@ -228,10 +228,10 @@ def extract_next_links(url, resp):
     # Clean both soups (remove script/style/...)
     for t in soup(['script', 'style', 'noscript', 'svg']):
         t.decompose()
-    for t in soup_for_text(['script', 'style', 'noscript', 'svg']):
-        t.decompose()
+    #for t in soup_for_text(['script', 'style', 'noscript', 'svg']):
+        #t.decompose()
     
-    # --- 3. Page-quality filtering (uses lxml soup) ---
+    # 3) Page-quality filtering
     word_count, a_count, title_norm = _page_stats(soup)
     if _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm):
         return result
@@ -390,6 +390,7 @@ def is_valid(url):
         # Be safe on any parsing error
 
         return False
+
 
 
 
