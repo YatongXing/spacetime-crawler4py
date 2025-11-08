@@ -2,6 +2,7 @@ import re
 from urllib.parse import urlparse, urljoin, urldefrag, urlsplit, urlunsplit
 from bs4 import BeautifulSoup
 import os, hashlib, threading
+from utils import similarity as sim
 
 # Output locations (can be overridden with env var CRAWL_OUT)
 _OUT_DIR = os.environ.get("CRAWL_OUT", "crawl_out")
@@ -195,6 +196,7 @@ def extract_next_links(url, resp):
     # Return a list with the hyperlinks (as strings) scrapped from resp.raw_response.content
     result = []
 
+    # 1. Basic response guards
     # skip if no response, non-200 status, or no raw response object.
     if resp is None or resp.status != 200 or resp.raw_response is None:
         return result
@@ -218,6 +220,7 @@ def extract_next_links(url, resp):
     if head.startswith(b"<?xml") or head.startswith(b"<rss") or head.startswith(b"<feed") or b"<urlset" in head or b"<sitemapindex" in head:
         return result
 
+    # 2. Parse HTML safely
     # Parse HTML with BeautifulSoup (lxml parser is fast and tolerant).
     try:
         soup = BeautifulSoup(content, "lxml")
@@ -227,6 +230,7 @@ def extract_next_links(url, resp):
     for t in soup(['script', 'style', 'noscript', 'svg']):
         t.decompose()
 
+    # 3. Page-quality filtering
     word_count, a_count, title_norm = _page_stats(soup)
 
     if _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm):
@@ -234,14 +238,53 @@ def extract_next_links(url, resp):
 
     if _looks_like_login_wall(soup):
         return result
-
-    # Save this page after it passes content/quality guards
+    
+    # 4. Duplicate detection
+    # 4.1 Exact duplicate: based on raw bytes
     try:
-        _safe_save_page(resp.url or url, content)
+        if sim.is_exact_duplicate(content):
+            # Skip saving + skip outbound links
+            return result
     except Exception:
-        # Saving should never break crawling; ignore any I/O errors
+        # Similarity should never break crawling
         pass
 
+    # 4.2 Near-duplicate: based on visible text similarity
+    try:
+        # Prefer visible-text extractor
+        try:
+            visible_text = sim.visible_text_from_soup(soup)
+        except Exception:
+            visible_text = soup.get_text(separator=" ", strip=True)
+
+        nd_ret = sim.is_near_duplicate(visible_text)
+        if isinstance(nd_ret, tuple):
+            is_near_dup = bool(nd_ret[0])
+        else:
+            is_near_dup = bool(nd_ret)
+
+        if is_near_dup:
+            # Skip saving + skip outbound links
+            return result
+    except Exception:
+        pass
+
+    # 5. Page accepted: index it + save it
+    try:
+        # Use canonical URL (without fragment) as page ID
+        page_id = resp.url or url
+
+        # Add this page to the similarity index
+        sim.remember(page_id, content, visible_text)
+
+        # Save to disk
+        _safe_save_page(page_id, content)
+
+    except Exception:
+        # Saving failure should not stop outbound link extraction
+        pass
+
+    # 6. Extract and normalize outbound links
     a_tags = soup.find_all("a", href=True)
 
     # Use the final resolved URL (after redirects) as the base for resolving relative links.
@@ -381,3 +424,4 @@ def is_valid(url):
         # Be safe on any parsing error
 
         return False
+
