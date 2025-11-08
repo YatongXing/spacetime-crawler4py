@@ -196,50 +196,43 @@ def extract_next_links(url, resp):
     # Return a list with the hyperlinks (as strings) scrapped from resp.raw_response.content
     result = []
 
-    # 1. Basic response guards
-    # skip if no response, non-200 status, or no raw response object.
+    # 1) Basic guards: must have a successful HTTP 200 HTML response
     if resp is None or resp.status != 200 or resp.raw_response is None:
         return result
 
-    # Only handle HTML documents
     headers = getattr(resp.raw_response, "headers", {}) or {}
-    ctype = headers.get("Content-Type", "")
-    ctype_l = ctype.lower()
-    if "text/html" not in ctype_l:
+    ctype = (headers.get("Content-Type", "") or "").lower()
+    if "text/html" not in ctype:
         return result
 
-    # Get the raw page bytes; if empty, nothing to parse.
     content = getattr(resp.raw_response, "content", b"") or b""
     if not content:
         return result
 
-    if "xml" in ctype_l and "xhtml" not in ctype_l:
-        return result
-
+    # Skip true XML feeds and sitemaps (even though they can be served as text/html sometimes)
     head = (content[:512] or b"").lstrip().lower()
-    if head.startswith(b"<?xml") or head.startswith(b"<rss") or head.startswith(b"<feed") or b"<urlset" in head or b"<sitemapindex" in head:
+    if head.startswith(b"<?xml") or head.startswith(b"<rss") or head.startswith(b"<feed") \
+       or b"<urlset" in head or b"<sitemapindex" in head:
         return result
 
-    # 2. Parse HTML safely
-    # Parse HTML with BeautifulSoup (lxml parser is fast and tolerant).
+    # 2) Parse HTML safely (assignment requires lxml)
     try:
-        #soup = BeautifulSoup(content, "lxml")
         soup = BeautifulSoup(content, "lxml")
     except Exception:
+        # If lxml isn't installed at runtime, parsing will fail here.
         return result
 
+    # Remove non-content elements before computing stats and text
     for t in soup(['script', 'style', 'noscript', 'svg']):
         t.decompose()
 
-    # 3. Page-quality filtering
+    # 3) Page-quality filtering
     word_count, a_count, title_norm = _page_stats(soup)
-
     if _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm):
         return result
-
     if _looks_like_login_wall(soup):
         return result
-    
+
     # 4) Duplicate detection
     #    a) exact dupes by checksum of raw bytes
     chk = similarity.checksum_bytes(content)
@@ -260,31 +253,21 @@ def extract_next_links(url, resp):
     except Exception:
         pass
 
-    # 6. Extract and normalize outbound links
-    a_tags = soup.find_all("a", href=True)
-
-    # Use the final resolved URL (after redirects) as the base for resolving relative links.
+    # 6) Extract and normalize links
     base = resp.url or url
     seen = set()
-
-    # Extract all <a> elements that have an href attribute.
-    for a in a_tags:
+    for a in soup.find_all("a", href=True):
         href = a.get("href", "").strip()
-
-        # Skip empty hrefs and non-HTTP pseudo-schemes.
+        # Ignore javascript/mailto/tel/data fragments, empty, or obviously broken hrefs
         if not href or href.startswith(("javascript:", "mailto:", "tel:", "data:", "#")):
             continue
-        if any(c in href for c in ["[", "]", " ", "{", "}", "|", "\\"]):
+        if any(c in href for c in ["[", "]", "{", "}", "|", "\\"]):
             continue
-
-        # Normalize: make absolute and remove URL fragment
         try:
             abs_url = urljoin(base, href)
         except Exception:
             continue
-        abs_url, _ = urldefrag(abs_url)
-
-        # Deduplicate within this page, then add to the result list.
+        abs_url, _ = urldefrag(abs_url)   # remove #fragment
         if abs_url and abs_url not in seen:
             seen.add(abs_url)
             result.append(abs_url)
@@ -400,6 +383,7 @@ def is_valid(url):
         # Be safe on any parsing error
 
         return False
+
 
 
 
