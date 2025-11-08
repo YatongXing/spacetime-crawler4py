@@ -2,7 +2,7 @@ import re
 from urllib.parse import urlparse, urljoin, urldefrag, urlsplit, urlunsplit
 from bs4 import BeautifulSoup
 import os, hashlib, threading
-from utils import similarity as sim
+from utils import similarity
 
 # Output locations (can be overridden with env var CRAWL_OUT)
 _OUT_DIR = os.environ.get("CRAWL_OUT", "crawl_out")
@@ -223,9 +223,7 @@ def extract_next_links(url, resp):
     # 2. Parse HTML safely
     # Parse HTML with BeautifulSoup (lxml parser is fast and tolerant).
     try:
-        soup = BeautifulSoup(content, "lxml")
-    except FeatureNotFound:
-        # Fallback when lxml isn't available on the machine
+        #soup = BeautifulSoup(content, "lxml")
         soup = BeautifulSoup(content, "html.parser")
     except Exception:
         return result
@@ -243,48 +241,38 @@ def extract_next_links(url, resp):
         return result
     
     # 4. Duplicate detection
-    # 4.1 Exact duplicate: based on raw bytes
-    try:
-        if sim.is_exact_duplicate(content):
-            # Skip saving + skip outbound links
-            return result
-    except Exception:
-        # Similarity should never break crawling
+    # Visible text for fingerprinting (no external libs allowed)
+    page_text = soup.get_text(" ", strip=True)
+    
+    # 1) Exact duplicate by checksum of raw bytes
+    chk = similarity.checksum_bytes(content)
+    if similarity.seen_exact(chk):
+        # Exact dup: skip saving another copy, but still return outlinks.
+        # (We still continue to extract <a> below.)
         pass
+    else:
+        similarity.remember_exact(chk)
+    
+    # 2) Near-duplicate by Jaccard over 3-gram fingerprints
+    nd = similarity.is_near_duplicate_of(page_text, tau=similarity.NEAR_DUP_TAU)
+    if nd:
+        # nd is (doc_id, sim). We choose to SKIP saving this page’s HTML to disk
+        # to conserve resources, but we will still index its links.
+        # If you prefer to always save, just remove the `skip_save` flag.
+        skip_save = True
+    else:
+        skip_save = False
+    
+    # Index THIS page so future pages can be compared to it.
+    # Use normalized URL without fragment as the doc_id.
+    doc_id = _norm_url_no_fragment(resp.url or url)
+    similarity.add_document(doc_id, page_text)
 
-    # 4.2 Near-duplicate: based on visible text similarity
+    # Save only if we didn't flag it as a near-duplicate of something we already have
     try:
-        # Prefer visible-text extractor
-        try:
-            visible_text = sim.visible_text_from_soup(soup)
-        except Exception:
-            visible_text = soup.get_text(separator=" ", strip=True)
-
-        nd_ret = sim.is_near_duplicate(visible_text)
-        if isinstance(nd_ret, tuple):
-            is_near_dup = bool(nd_ret[0])
-        else:
-            is_near_dup = bool(nd_ret)
-
-        if is_near_dup:
-            # Skip saving + skip outbound links
-            return result
+        if not skip_save:
+            _safe_save_page(resp.url or url, content)
     except Exception:
-        pass
-
-    # 5. Page accepted: index it + save it
-    try:
-        # Use canonical URL (without fragment) as page ID
-        page_id = resp.url or url
-
-        # Add this page to the similarity index
-        sim.remember(page_id, content, visible_text)
-
-        # Save to disk
-        _safe_save_page(page_id, content)
-
-    except Exception:
-        # Saving failure should not stop outbound link extraction
         pass
 
     # 6. Extract and normalize outbound links
@@ -427,6 +415,7 @@ def is_valid(url):
         # Be safe on any parsing error
 
         return False
+
 
 
 
