@@ -216,21 +216,15 @@ def extract_next_links(url, resp):
         return result
 
     # 2. Parse HTML safely
-    # Use lxml for crawling & reports
     try:
-        soup = BeautifulSoup(content, "lxml")
+        soup = BeautifulSoup(content, "html.parser")
     except Exception:
         return result
     
     # Use html.parser for similarity (safer & parser is always available)
-    soup_for_text = BeautifulSoup(content, "html.parser")
-    
-    # Clean both soups (remove script/style/...)
     for t in soup(['script', 'style', 'noscript', 'svg']):
         t.decompose()
-    #for t in soup_for_text(['script', 'style', 'noscript', 'svg']):
-        #t.decompose()
-    
+
     # 3) Page-quality filtering
     word_count, a_count, title_norm = _page_stats(soup)
     if _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm):
@@ -239,20 +233,18 @@ def extract_next_links(url, resp):
         return result
     
     # 4) Duplicate detection
-    page_text = soup_for_text.get_text(" ", strip=True)
-    
-    # Exact duplicate
+    #    a) exact dupes by checksum of raw bytes
     chk = similarity.checksum_bytes(content)
     if not similarity.seen_exact(chk):
         similarity.remember_exact(chk)
-    
-    # Near duplicate
+    #    b) near dupes by Jaccard over 3-gram fingerprints (text only)
+    page_text = soup.get_text(" ", strip=True)
     doc_id = _norm_url_no_fragment(resp.url or url)
     nd = similarity.is_near_duplicate_of(page_text, tau=similarity.NEAR_DUP_TAU)
-    skip_save = bool(nd)
-    
-    # Index fingerprints for future comparisons
+    skip_save = bool(nd)  # skip saving if near-duplicate of an already-seen page
+    # Index this page so *future* pages can be compared to it
     similarity.add_document(doc_id, page_text)
+    
     # 5) Save page if not near-duplicate (we still always return outlinks)
     try:
         if not skip_save:
@@ -390,6 +382,7 @@ def is_valid(url):
         # Be safe on any parsing error
 
         return False
+
 
 
 
