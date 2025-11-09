@@ -87,10 +87,10 @@ _ERROR_PATTERNS = [
 ]
 
 _ALLOWED_SUFFIXES = (
-    #"ics.uci.edu",
-    #"cs.uci.edu",
+    "ics.uci.edu",
+    "cs.uci.edu",
     "informatics.uci.edu",
-    #"stat.uci.edu",
+    "stat.uci.edu",
 )
 
 _TRAP_KEYWORDS = {
@@ -196,7 +196,7 @@ def extract_next_links(url, resp):
     # Return a list with the hyperlinks (as strings) scrapped from resp.raw_response.content
     result = []
 
-    # 1) Basic guards: must have a successful HTTP 200 HTML response
+    # 1. Basic guards: must have a successful HTTP 200 HTML response
     if resp is None or resp.status != 200 or resp.raw_response is None:
         return result
 
@@ -225,14 +225,14 @@ def extract_next_links(url, resp):
     for t in soup(['script', 'style', 'noscript', 'svg']):
         t.decompose()
 
-    # 3) Page-quality filtering
+    # 3. Page-quality filtering
     word_count, a_count, title_norm = _page_stats(soup)
     if _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm):
         return result
     if _looks_like_login_wall(soup):
         return result
     
-    # 4) Duplicate detection
+    # 4. Duplicate detection
     #    a) exact dupes by checksum of raw bytes
     chk = similarity.checksum_bytes(content)
     if not similarity.seen_exact(chk):
@@ -245,14 +245,14 @@ def extract_next_links(url, resp):
     # Index this page so *future* pages can be compared to it
     similarity.add_document(doc_id, page_text)
     
-    # 5) Save page if not near-duplicate (we still always return outlinks)
+    # 5. Save page if not near-duplicate (we still always return outlinks)
     try:
         if not skip_save:
             _safe_save_page(resp.url or url, content)
     except Exception:
         pass
 
-    # 6) Extract and normalize links
+    # 6. Extract and normalize links
     base = resp.url or url
     seen = set()
     for a in soup.find_all("a", href=True):
@@ -382,14 +382,3 @@ def is_valid(url):
         # Be safe on any parsing error
 
         return False
-
-
-
-
-
-
-
-
-
-
-
