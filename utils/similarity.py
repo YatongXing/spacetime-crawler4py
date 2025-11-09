@@ -1,83 +1,93 @@
 # utils/similarity.py
-# Minimal duplicate & near-duplicate detector for text pages.
-# Implements:
-#   - exact dupes by checksum of raw bytes
-#   - near dupes by Jaccard over hashed 3-gram shingles
+import re
+import hashlib
+import threading
+from typing import Iterable, Set, Dict, Tuple, Optional, List
 
-from typing import Iterable, Set, Tuple, Optional
+# ---------- Tunables ----------
+N_GRAM       = 3        # shingle size (words)
+SAMPLE_MOD   = 8        # keep h where h % SAMPLE_MOD == 0 (subsampling)
+NEAR_DUP_TAU = 0.90     # Jaccard threshold
 
-# --- Tunables ---------------------------------------------------------------
-NGRAM_N: int = 3                 # length of contiguous word n-grams
-NEAR_DUP_TAU: float = 0.9        # Jaccard threshold for near-duplicate
-FINGERPRINT_MOD: int = 4         # keep n-grams whose hash % MOD == 0
-# ---------------------------------------------------------------------------
+# ---------- In-memory state (protected by a single lock) ----------
+_LOCK       = threading.RLock()
+_DOC_FPS: Dict[str, Set[int]] = {}   # doc_id -> fingerprint set
+_SEEN_CKSUM: Set[str] = set()        # exact-dedup checksums (hex string)
 
-# Exact duplicate memory (checksums of raw bytes)
-_exact_seen: Set[int] = set()
+# ---------- Tokenization / n-grams ----------
+_WORD_RE = re.compile(r"[A-Za-z0-9]+")
 
-# Fingerprints per document id: doc_id -> set of int hashes
-_fingerprints = {}  # type: dict[str, Set[int]]
+def _words(text: str) -> Iterable[str]:
+    for m in _WORD_RE.finditer(text.lower()):
+        yield m.group(0)
 
-def checksum_bytes(b: bytes) -> int:
-    """Fast exact-dupe checksum (sum of bytes). Collisions are possible but rare for our use."""
-    # (Could use CRC32/MD5 if allowed; assignment says “from scratch”, so keep it simple.)
-    return sum(b) & 0xFFFFFFFF
+def _ngrams(tokens: Iterable[str], n: int) -> Iterable[Tuple[str, ...]]:
+    buf: List[str] = []
+    for t in tokens:
+        buf.append(t)
+        if len(buf) >= n:
+            yield tuple(buf[-n:])
 
-def seen_exact(chk: int) -> bool:
-    """Return True if this checksum has been seen before."""
-    return chk in _exact_seen
+def _hash_ngram(ng: Tuple[str, ...]) -> int:
+    # fast 64-bit hash of the n-gram
+    h = hashlib.blake2b((" ".join(ng)).encode("utf-8"), digest_size=8).digest()
+    return int.from_bytes(h, "big", signed=False)
 
-def remember_exact(chk: int) -> None:
-    """Record an exact-dupe checksum."""
-    _exact_seen.add(chk)
-
-# -------- Near-duplicate helpers -------------------------------------------
-
-def _normalize(text: str) -> list[str]:
-    """Lowercase and split on whitespace; drop obvious punctuation-only tokens."""
-    # Keep it simple—slides only need words, no stemming/stopwords.
-    import re
-    tokens = re.findall(r"[A-Za-z0-9]+", text.lower())
-    return tokens
-
-def _ngrams(tokens: list[str], n: int) -> Iterable[tuple[str, ...]]:
-    for i in range(len(tokens) - n + 1):
-        yield tuple(tokens[i:i+n])
-
-def _fingerprint(text: str) -> Set[int]:
-    """Return a compact set of hashed n-grams (min-hash style sampling with modulo)."""
-    toks = _normalize(text)
+# ---------- Fingerprints ----------
+def fingerprints_from_text(text: str,
+                           n_gram: int = N_GRAM,
+                           sample_mod: int = SAMPLE_MOD) -> Set[int]:
+    toks = list(_words(text))
     fps: Set[int] = set()
-    for g in _ngrams(toks, NGRAM_N):
-        h = hash(g)
-        # Select a subset to keep representation compact (like winnowing).
-        if h % FINGERPRINT_MOD == 0:
+    for ng in _ngrams(toks, n_gram):
+        h = _hash_ngram(ng)
+        if sample_mod <= 1 or (h % sample_mod) == 0:
             fps.add(h)
     return fps
 
-def add_document(doc_id: str, text: str) -> Set[int]:
-    """Compute & store fingerprints for a document id. Returns the set."""
-    fps = _fingerprint(text)
-    _fingerprints[doc_id] = fps
-    return fps
-
 def jaccard(a: Set[int], b: Set[int]) -> float:
-    if not a and not b:
+    if not a and not b:  # both empty
         return 1.0
     if not a or not b:
         return 0.0
     inter = len(a & b)
-    uni = len(a | b)
-    return inter / uni if uni else 0.0
+    union = len(a | b)
+    return inter / union if union else 0.0
+
+# ---------- Exact duplicates ----------
+def checksum_bytes(b: bytes) -> str:
+    return hashlib.sha1(b).hexdigest()  # simple checksum for exact dup
+
+def seen_exact(hex_digest: str) -> bool:
+    with _LOCK:
+        return hex_digest in _SEEN_CKSUM
+
+def remember_exact(hex_digest: str) -> None:
+    with _LOCK:
+        _SEEN_CKSUM.add(hex_digest)
+
+# ---------- Index & search ----------
+def add_document(doc_id: str, text: str) -> Set[int]:
+    """Compute and store fingerprints for doc_id. Returns the set."""
+    fps = fingerprints_from_text(text)
+    with _LOCK:
+        _DOC_FPS[doc_id] = fps
+    return fps
+
+def best_matches_for(text: str, top_k: int = 10) -> List[Tuple[str, float]]:
+    """Return up to top_k (doc_id, similarity) against currently indexed docs."""
+    fps_q = fingerprints_from_text(text)
+    with _LOCK:
+        items = list(_DOC_FPS.items())      # snapshot to avoid mutation during iteration
+    scores: List[Tuple[str, float]] = []
+    for d, fps in items:
+        scores.append((d, jaccard(fps_q, fps)))
+    scores.sort(key=lambda x: x[1], reverse=True)
+    return scores[:top_k]
 
 def is_near_duplicate_of(text: str, tau: float = NEAR_DUP_TAU) -> Optional[Tuple[str, float]]:
-    """Compare text against all stored docs; return (doc_id, sim) if any sim >= tau, else None."""
-    cand = _fingerprint(text)
-    best_id, best_sim = None, 0.0
-    for doc_id, fps in _fingerprints.items():
-        sim = jaccard(cand, fps)
-        if sim > best_sim:
-            best_id, best_sim = doc_id, sim
-    if best_id is not None and best_sim >= tau:
-        return best_id, best_sim
+    """Return (doc_id, sim) if any indexed doc meets the threshold; else None."""
+    for d, s in best_matches_for(text, top_k=10):
+        if s >= tau:
+            return d, s
     return None
