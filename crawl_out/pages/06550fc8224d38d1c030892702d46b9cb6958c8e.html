@@ -1,0 +1,363 @@
+<!-- URL: https://mover.ics.uci.edu/patient-info-table.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Patient-info-table - MOVER</title>
+    <meta property="og:title" content="Patient-info-table - UNCOVER" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./patient-info-table.css" rel="stylesheet" />
+
+      <div class="patient-info-table-container">
+        <header data-role="Header" class="patient-info-table-header">
+          <div class="patient-info-table-nav">
+            <nav
+              class="navigation-links-nav navigation-links-root-class-name11"
+            >
+              <a href="index.html" class="navigation-links-navlink">
+                <span>Home</span>
+              </a>
+              <a href="documentation.html" class="navigation-links-navlink1">
+                <span>Documentation</span>
+              </a>
+              <a href="download.html" class="navigation-links-navlink2">
+                <span>Download</span>
+              </a>
+              <a href="paper.html" class="navigation-links-navlink3">
+                <span>Paper</span>
+              </a>
+            </nav>
+          </div>
+        </header>
+        <div class="patient-info-table-sidebar">
+          <div class="patient-info-table-nav-item">
+            <a href="documentation.html" class="patient-info-table-navlink">
+              EPIC DATASET TABLES
+            </a>
+            <div class="patient-info-table-options">
+              <a
+                href="patient-info-table.html"
+                class="patient-info-table-navlink01"
+              >
+                Patient Information&nbsp;
+              </a>
+              <a
+                href="patient-history-table.html"
+                class="patient-info-table-navlink02"
+              >
+                Patient History
+              </a>
+              <a
+                href="patient-visit-table.html"
+                class="patient-info-table-navlink03"
+              >
+                Patient Visit&nbsp;
+              </a>
+              <a
+                href="patient-procedure-events.html"
+                class="patient-info-table-navlink04"
+              >
+                Patient Procedure Events&nbsp;
+              </a>
+              <a href="patient-meds.html" class="patient-info-table-navlink05">
+                Patient Medications
+              </a>
+              <a href="patient-labs.html" class="patient-info-table-navlink06">
+                Patient Labs
+              </a>
+              <a href="patient-lda.html" class="patient-info-table-navlink07">
+                Patient LDA
+              </a>
+              <a
+                href="patient-measurements.html"
+                class="patient-info-table-navlink08"
+              >
+                Patient Measurements&nbsp;
+              </a>
+              <a
+                href="patient-postoperative-complications.html"
+                class="patient-info-table-navlink09"
+              >
+                Patient Postoperative Complications&nbsp;
+              </a>
+              <a
+                href="patient-coding.html"
+                class="patient-info-table-navlink10"
+              >
+                Patient Coding
+              </a>
+            </div>
+          </div>
+          <div class="patient-info-table-nav-item1">
+            <a href="documentation.html" class="patient-info-table-navlink11">
+              SIS DATASET TABLES
+            </a>
+            <div class="patient-info-table-options1">
+              <a
+                href="patient-information-s-i-s.html"
+                class="patient-info-table-navlink12"
+              >
+                Patient Information&nbsp;
+              </a>
+              <a
+                href="patient-medications-sis.html"
+                class="patient-info-table-navlink13"
+              >
+                Patient Medications
+              </a>
+              <a
+                href="patient-labs-sis.html"
+                class="patient-info-table-navlink14"
+              >
+                Patient Labs
+              </a>
+              <a
+                href="patient-io-s-i-s.html"
+                class="patient-info-table-navlink15"
+              >
+                Patient I/O
+              </a>
+              <a
+                href="patient-vitals-sis.html"
+                class="patient-info-table-navlink16"
+              >
+                Patient Vitals
+              </a>
+              <a
+                href="patient-observations-sis.html"
+                class="patient-info-table-navlink17"
+              >
+                Patient Observations
+              </a>
+              <a
+                href="patient-ventilator-sis.html"
+                class="patient-info-table-navlink18"
+              >
+                Patient Ventilator
+              </a>
+              <a
+                href="patient-a-line-sis.html"
+                class="patient-info-table-navlink19"
+              >
+                Patient A-line
+              </a>
+              <a
+                href="patient-procedure-events-sis.html"
+                class="patient-info-table-navlink20"
+              >
+                Patient Procedure Events&nbsp;
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="patient-info-table-container1">
+          <div class="patient-info-table-feature-card">
+            <div class="patient-info-table-container2">
+              <a
+                href="patient-info-table.html"
+                class="patient-info-table-navlink21"
+              >
+                <h2 class="patient-info-table-text">Patient Information</h2>
+              </a>
+              <span class="patient-info-table-text01">
+                patient demographic information including: age, sex, height, and
+                weight; information regarding the surgery being performed
+                including: the type of surgery, the start and end time of both
+                the surgery and anesthesia, ASA status, and discharge
+                disposition.
+              </span>
+            </div>
+          </div>
+          <div class="patient-info-table-feature-card1">
+            <div class="patient-info-table-container3">
+              <h2 class="patient-info-table-text02">MRN</h2>
+              <span class="patient-info-table-text03">
+                <span>
+                  Medical record number which is a unique identifier for an
+                  individual patient.
+                </span>
+                <br />
+                <span></span>
+                <br />
+              </span>
+              <h2 class="patient-info-table-text08">LOG_ID</h2>
+              <span class="patient-info-table-text09">
+                <span>
+                  Each row of this table contains a unique LOG_ID, which
+                  represents a single patient encounter. It is possible for this
+                  table to have duplicate MRNs, indicating that a single patient
+                  has come in for multiple surgeries.
+                </span>
+                <br />
+                <span></span>
+                <br />
+              </span>
+              <h2 class="patient-info-table-text14">
+                BIRTH_DATE, HEIGHT, WEIGHT, SEX
+              </h2>
+              <span class="patient-info-table-text15">
+                <span>
+                  BIRTH_DATE gives the patient age in years, HEIGHT gives the
+                  patient height in ft and inches, WEIGHT gives the patient
+                  weight in grams (for SIS dataset) or ounces (for EPIC dataset), 
+				  and sex gives the genotypical sex of the
+                  patient.
+                </span>
+                <br />
+                <span>&nbsp;</span>
+                <br />
+              </span>
+              <h2 class="patient-info-table-text20">
+                ASA_RATING_C, ASA_RATING
+              </h2>
+              <span class="patient-info-table-text21">
+                <span>
+                  ASA_RATING_C gives the ASA Physical Status Class 1-6 for each
+                  patient and the ASA_RATING provides the name for each
+                  class.&nbsp;
+                </span>
+                <br />
+                <span>&nbsp;</span>
+                <br />
+              </span>
+              <h2 class="patient-info-table-text26">
+                HOSP_ADMSN_TIME, HOSP_DISCH_TIME, LOS&nbsp;
+              </h2>
+              <span class="patient-info-table-text27">
+                <span>
+                  HOSP_ADMSN_TIME provides the date and time the patient was
+                  admitted to the hospital, HOSP_DISCH_TIME provides the date
+                  and time the patient was discharged from the hospital, and LOS
+                  provides the length of stay in the hospital in days.&nbsp;
+                </span>
+                <br />
+                <br />
+              </span>
+              <h2 class="patient-info-table-text31">
+                DISCH_DISP_C,&nbsp;DISCH_DISP&nbsp;
+              </h2>
+              <span class="patient-info-table-text32">
+                <span>
+                  DISCH_DISP_C represents a class 1-100 representing a patients
+                  discharge disposition. These classes correlate with the name
+                  for each discharge disposition which can be found in
+                  DISCH_DISP.
+                </span>
+                <br />
+                <br />
+              </span>
+              <h2 class="patient-info-table-text36">SURGERY_DATE</h2>
+              <span class="patient-info-table-text37">
+                <span>
+                  SURGERY_DATE provides the date on which the patient underwent
+                  a surgical procedure.
+                </span>
+                <br />
+                <span>&nbsp;</span>
+                <br />
+              </span>
+              <h2 class="patient-info-table-text42">PRIMARY_PROCEDURE_NM</h2>
+              <span class="patient-info-table-text43">
+                <span>
+                  PRIMARY_PROCEDURE_NM indicates the name of the surgical
+                  procedure a patient is scheduled to undergo.
+                </span>
+                <br />
+                <span>&nbsp;</span>
+                <br />
+              </span>
+              <h2 class="patient-info-table-text48">IN_OR_DTTM, OUT_OR_DTTM</h2>
+              <span class="patient-info-table-text49">
+                <span>
+                  IN_OR_DTTM provides the date and time the patient went into
+                  the OR and the procedure was started, and OUT_OR_DTTM provides
+                  the date and time the patient left the OR when the procedure
+                  was completed.
+                </span>
+                <br />
+                <span>&nbsp;</span>
+                <br />
+              </span>
+              <h2 class="patient-info-table-text54">
+                AN_START_DATETIME, AN_STOP_DATETIME
+              </h2>
+              <span class="patient-info-table-text55">
+                <span>
+                  AN_START_DATETIME represents the date and time at which
+                  anesthesia was started and AN_STOP_DATETIME represents the
+                  date and time at which anesthesia was stopped.&nbsp;&nbsp;
+                </span>
+                <br />
+                <br />
+              </span>
+              <h2 class="patient-info-table-text59">ICU_ADMIN</h2>
+              <span class="patient-info-table-text60">
+                <span>
+                  ICU_ADMIN displays whether or not a patient was admitted to
+                  the ICU during their visit.
+                </span>
+                <br />
+                <br />
+              </span>
+              <h2 class="patient-info-table-text64">PRIMARY_ANES_TYPE_NM</h2>
+              <span class="patient-info-table-text65">
+                <span>
+                  PRIMARY_ANES_TYPE_NM is the primary type of anesthesia a
+                  patient received. (ex: general, MAC, etc)
+                </span>
+                <br />
+                <br />
+              </span>
+              <h2 class="patient-info-table-text69">
+                PATIENT_CLASS_GROUP, PATIENT_CLASS_NM
+              </h2>
+              <span class="patient-info-table-text70">
+                <span>
+                  PATIENT_CLASS_GROUP specifies whether an encounter was
+                  inpatient or outpatient and PATIENT_CLASS_NM provides more
+                  detail.&nbsp;
+                </span>
+                <br />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </body>
+</html>

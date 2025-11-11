@@ -1,0 +1,214 @@
+<!-- URL: https://grape.ics.uci.edu/wiki/public/wiki/cs122b-2018-winter-mysql-fulltext -->
+
+<!DOCTYPE html>
+<html lang="en-US">   <head>
+    <!-- # block head (placeholder in theme.html) -->
+        <!-- # block head (content inherited from layout.html) -->
+    <title>
+      cs122b-2018-winter-mysql-fulltext     – Public
+
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script>
+        if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+        </script><![endif]-->
+
+    <link rel="start"  href="/wiki/public/wiki" />
+    <link rel="search"  href="/wiki/public/search" />
+    <link rel="help"  href="/wiki/public/wiki/TracGuide" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/trac.css" type="text/css" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/wiki.css" type="text/css" />
+    <link rel="icon"  href="/wiki/public/chrome/site/favicon.ico" type="image/x-icon" />
+    <link rel="alternate"  href="/wiki/public/wiki/cs122b-2018-winter-mysql-fulltext?format=txt" title="Plain Text" type="text/x-trac-wiki" />
+    <noscript>
+      <style>
+        .trac-noscript { display: none !important }
+      </style>     </noscript>
+    <script src="/wiki/public/chrome/common/js/jquery.js"></script>
+    <script src="/wiki/public/chrome/common/js/babel.js"></script>
+    <script src="/wiki/public/chrome/common/js/trac.js"></script>
+    <script src="/wiki/public/chrome/common/js/search.js"></script>
+    <script src="/wiki/public/chrome/common/js/folding.js"></script>
+    <script src="/wiki/public/chrome/common/js/wiki.js"></script>
+    <script>
+      jQuery(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])")
+            .prop("autocomplete", "off").datepicker();
+          // Input current date when today is pressed.
+          var _goToToday = $.datepicker._gotoToday;
+          $.datepicker._gotoToday = function(id) {
+            _goToToday.call(this, id);
+            this._selectDate(id)
+          };
+          $(".trac-datetimepicker:not([readonly])")
+            .prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <!--   # include 'site_head.html' (layout.html) -->
+    <!--   end of site_head.html -->
+    <!-- # endblock head (content inherited from layout.html) -->
+
+
+    <script>
+      jQuery(function($) {
+        wikiColumn($("#wikipage"));
+      });
+    </script>
+    <!-- # endblock head (placeholder in theme.html) -->
+  </head> 
+  <body>
+    <!-- # block body (content inherited from theme.html) -->
+    <!--   # include 'site_header.html' (theme.html) -->
+    <!--   end of site_header.html -->
+
+    <div id="banner">
+      <div id="header">
+        <a id="logo"
+           href="http://www.ics.uci.edu/">
+          <img  alt="ICS Logo" height="67" src="/wiki/public/chrome/site/ics.jpg" width="128" /></a>
+
+
+      </div>
+      <form id="search" action="/wiki/public/search" method="get">
+      </form>
+          <div id="metanav" class="nav">
+      <ul><li  class="first"><a href="/wiki/public/login">Login</a></li><li ><a href="/wiki/public/prefs">Preferences</a></li><li ><a href="/wiki/public/about">About Trac</a></li><li  class="last"><a href="/wiki/public/register">Register</a></li></ul>
+    </div>
+
+    </div>
+        <div id="mainnav" class="nav">
+    </div>
+
+
+    <div id="main"
+         >
+
+<div id="pagepath" class="noprint">
+<a class="pathentry first" title="View WikiStart"
+   href="/wiki/public/wiki">wiki:</a><a href="/wiki/public/wiki/cs122b-2018-winter-mysql-fulltext"
+     title="View cs122b-2018-winter-mysql-fulltext"
+     class="pathentry">cs122b-2018-winter-mysql-fulltext</a></div>      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li  class="first last"><a href="/wiki/public/wiki/cs122b-2018-winter-mysql-fulltext?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+
+      
+
+      
+
+      <!-- # block content (placeholder in theme.html) -->
+    <div id="content" class="wiki narrow">
+
+      <div class="wikipage searchable">
+        <div id="wikipage" class="trac-content borderless"><h1 class="section" id="MySQLFull-TextSearchExamples">MySQL Full-Text Search Examples</h1>
+<ul><li>Creating a Full Text Searchable Table:
+<pre class="wiki">DROP TABLE IF EXISTS ft;
+CREATE TABLE ft (
+    entryID INT AUTO_INCREMENT,
+    entry text,
+    PRIMARY KEY (entryID),
+    FULLTEXT (entry));
+</pre></li></ul><ul><li>Adding Rows into the table:
+<pre class="wiki">INSERT INTO ft 
+VALUES (1,
+        'I was born in michigan in 1980 in a small town called Adrian. 
+         My mother is named Sue, while my father is named Mike.  They 
+         currently live in a small town called East Jordan. On April 
+         27th, 2003 I will graduate from Eastern Michigan University 
+         with a degree in Computer Information Systems.');
+
+
+INSERT INTO ft
+VALUES (2,
+        'While I was at work today I was having some problems with the 
+        RAID array. It seems that we have a rogue cron script that is
+        causing problems. When I find out more info I will post it here.');
+
+INSERT INTO ft
+VALUES (3,
+        'After I graduate I am taking a 2 week vacation. On my 
+        agenda is a trip to Washington DC to see my girlfriend\'s 
+        sister as well as throwing a few discs at the local disc 
+        golf course.');
+</pre></li></ul><ul><li>Searching for whole words
+<pre class="wiki">SELECT entryID FROM ft WHERE MATCH (entry) AGAINST ('golf');
+
+RESULT : entryID : 3
+</pre></li></ul><ul><li>Prefix Search
+<pre class="wiki">SELECT entryID FROM ft WHERE MATCH (entry) AGAINST ('grad*' IN BOOLEAN MODE);
+
+RESULT entryID: 1 and 3
+</pre></li></ul><ul><li>Boolean Searches
+<pre class="wiki">SELECT entryID FROM ft WHERE MATCH (entry) AGAINST ('+graduate -michigan' IN BOOLEAN MODE);
+
+# No operator signifies OR operation
+SELECT entryID FROM ft WHERE MATCH (entry) AGAINST ('graduate michigan' IN BOOLEAN MODE);
+</pre></li></ul><ul><li>References:
+<ul><li><a class="ext-link" href="https://dev.mysql.com/doc/refman/5.7/en/fulltext-search.html"><span class="icon">​</span>https://dev.mysql.com/doc/refman/5.7/en/fulltext-search.html</a>
+</li><li><a class="ext-link" href="https://dev.mysql.com/doc/refman/5.7/en/fulltext-boolean.html"><span class="icon">​</span>https://dev.mysql.com/doc/refman/5.7/en/fulltext-boolean.html</a>
+</li></ul></li></ul></div>
+        <div class="trac-modifiedby">
+          <span>
+            <a href="/wiki/public/wiki/cs122b-2018-winter-mysql-fulltext?action=diff&amp;version=2" title="Version 2 by Zuozhi Wang">Last modified</a>
+ <a class="timeline" href="/wiki/public/timeline?from=2018-02-26T22%3A14%3A24-08%3A00&amp;precision=second" title="See timeline at Feb 26, 2018, 10:14:24 PM">8 years ago</a>          </span>
+          <span class="trac-print">
+            Last modified on Feb 26, 2018, 10:14:24 PM
+          </span>
+        </div>
+      </div>
+
+
+
+
+
+<div class="trac-help">
+  <strong>Note:</strong>
+ See   <a href="/wiki/public/wiki/TracWiki">TracWiki</a>
+ for help on using the wiki.
+</div>
+    </div>
+        <!-- # block content (content inherited from layout.html) -->
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first last">
+          <a rel="nofollow" href="/wiki/public/wiki/cs122b-2018-winter-mysql-fulltext?format=txt"
+              class="">
+            Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    <!-- # endblock content (content inherited from layout.html) -->
+
+      <!-- # endblock content (placeholder in theme.html) -->
+    </div>
+
+    <div id="footer"><hr/>
+      <a id="tracpowered" href="https://trac.edgewall.org/"
+         ><img src="/wiki/public/chrome/common/trac_logo_mini.png" height="30"
+               width="107" alt="Trac Powered"/></a>
+      <p class="left">
+Powered by         <a href="/wiki/public/about"><strong>Trac 1.5.3</strong></a>
+        <br />
+ By         <a href="http://www.edgewall.org/">Edgewall Software</a>
+.      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+    <!--   # include 'site_footer.html' (theme.html) -->
+    <!--   end of site_footer.html -->
+    <!-- # endblock body (content inherited from theme.html) -->
+  </body> </html>

@@ -1,0 +1,376 @@
+<!-- URL: https://www.ics.uci.edu/~harris -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Ian G. Harris - UC Irvine</title>
+    <style>
+        :root {
+            --uci-blue: #0064a4;
+            --uci-gold: #ffd200;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--uci-blue);
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            border-bottom: 5px solid var(--uci-gold);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .profile-section {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .profile-image {
+            flex-shrink: 0;
+            text-align: center;
+        }
+        
+        .profile-image img {
+            max-width: 250px;
+            border: 3px solid var(--uci-blue);
+            border-radius: 5px;
+        }
+        
+        .profile-info {
+            flex-grow: 1;
+            min-width: 300px;
+        }
+        
+        h1, h2, h3 {
+            color: var(--uci-blue);
+            margin-top: 0;
+        }
+        
+        header h1 {
+            color: white;
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        header p {
+            color: var(--uci-gold);
+            margin: 5px 0 0 0;
+            font-size: 1.2em;
+        }
+        
+        .uci-logo img {
+            height: 60px;
+        }
+        
+        nav {
+            background-color: var(--light-gray);
+            padding: 10px 0;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: var(--uci-blue);
+            color: white;
+        }
+        
+        .content-section {
+            margin-bottom: 40px;
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .content-section h2 {
+            border-bottom: 2px solid var(--uci-gold);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        footer {
+            background-color: var(--uci-blue);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        a {
+            color: var(--uci-blue);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .research-item {
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .research-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .research-item h3 {
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        
+        .research-item p {
+            margin-bottom: 0;
+            font-size: 0.9em;
+        }
+        
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .course-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .course-code {
+            font-weight: bold;
+            color: var(--uci-blue);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .contact-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .contact-card h3 {
+            margin-top: 0;
+            font-size: 1.2em;
+            border-bottom: 2px solid var(--uci-gold);
+            padding-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .uci-logo {
+                margin-top: 20px;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .profile-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div>
+                <h1>Ian G. Harris</h1>
+                <p>Professor, Department of Computer Science</p>
+                <p>University of California, Irvine</p>
+            </div>
+ <!--           <div class="uci-logo">
+				<div>
+                <img src="./uci_logo.svg" width="50%" alt="UC Irvine Logo">
+            </div>
+			-->
+        </div>
+    </header>
+    
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <section class="profile-section">
+            <div class="profile-image">
+                <img src="./images/harris_cropped.jpg" alt="Prof. Ian G. Harris">
+            </div>
+            <div class="profile-info">
+                <h2 id="about">About</h2>
+                <p>Ian G. Harris is a Professor in the Computer Science Department at the University of California, Irvine. He is affiliated with the following research centers:</p>
+                <ul>
+                    <li><a href="https://research.uci.edu/center/center-for-embedded-and-cyber-physical-systems/"> Center for Embedded and Cyber-physical Systems (CECS)</a></li>
+                    <li><a href="https://cpri.uci.edu/"> Cybersecurity Policy and Research Institute (CPRI) </a></li>
+                </ul>
+                <p>Professor Harris received his BS in Computer Science from Massachusetts Institute of Technology, MS and PhD in Computer Science from the University of California San Diego. He conducts research in the areas of natural language processing and hardware security.</p>
+            </div>
+        </section>
+        
+        <section class="content-section" id="research">
+            <h2>Research Areas</h2>
+            <p>My research focuses on several key areas in natural language processing and cybersecurity:</p>
+            
+            <div class="research-grid">
+                <div class="research-item">
+                    <h3>Distributed Inference and Training of LLMs</h3>
+                    <p>Partitioning the training and inference processes across a set of resource-constrained IoT devices..</p>
+                </div>
+                <div class="research-item">
+                    <h3>Security of LLMs</h3>
+                    <p>Detecting malicious prompts and mitigating their effects without disrupting helpfulness.</p>
+                </div>
+                <div class="research-item">
+                    <h3>Hate and Toxic Speech Mitigation</h3>
+                    <p>Using LLMs to detect offensive speech and ensuring that LLMs do not generate offensive responses.</p>
+                </div>
+                <div class="research-item">
+                    <h3>Embedded System Security</h3>
+                    <p>Designing and analyzing secure embedded system architectures.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section" id="teaching">
+            <h2>Teaching</h2>
+            <p>I teach various courses in the Computer Science department:</p>
+            
+            <ul class="course-list">
+                <li><span class="course-code">ICS 53:</span> Principles in System Design</li>
+                <li><span class="course-code">CS 145:</span> Embedded Software</li>
+                <li><span class="course-code">ICS 31:</span> Introduction to Programming</li>
+                <li><span class="course-code">CS 295P/297P:</span> Capstone/Keystone Project for Computer Science</li>
+                <li><span class="course-code">SWE 267P:</span> Cloud and Security Foundations</li>
+            </ul>
+	    <p>I also teach several online courses though Coursera:</p>
+	    <ul class="course-list">
+		<li><span class="course-code"> <a href="https://www.coursera.org/specializations/iot">An Introduction to Programming the Internet of Things (IOT) Specialization</a></span></li>
+		<li><span class="course-code"> <a href="https://www.coursera.org/specializations/google-golang">Programming with Google Go Specialization</a></span></li>
+	    </ul>
+        </section>
+        
+        <section class="content-section" id="publications">
+            <h2>Selected Publications</h2>
+            <ul>
+                <li>Z. Yang and I. G. Harris, <b>"LogLLaMA: Transformer-based log anomaly detection with LLaMA"</b>, International Joint Conference on Neural Networks, June 2025.</li>
+                <li>S. Hashemitaheri and I. G. Harris, <b>"Enhancing Non-English Conversational Agents Using Synthetic Data Generation"</b>, Workshop on Generative AI for Smart and Connected Health (GenAI4SCH), June 2025.</li>
+                <li>S. Rahman and I. G. Harris, <b>"Summary the Savior: Harmful Keyword and Query-based Summarization for LLM Jailbreak Defense"</b>, Workshop on Trustworthy NLP (TrustNLP 2025), May 2025.</li>
+                <li>T. Giyahchi, C. Pechmann and I. Harris, <b>"Empathetic Reflective Response Generation: Towards Conversation Models for Online Mental Health Support"</b>, International Conference on Machine Learning and Applications (ICMLA), December 2024.</li>
+                <li>J. Xu, D. Abraham and I. G. Harris, <b>"Run-Time ROP Attack Detection on Embedded Devices Using Side Channel Power Analysis"</b>, IEEE Embedded Systems Letters, December 2024.</li>
+		<li>J. Zhao, Y. Song, S. Liu, I. G. Harris, and S. A. Jyothi, <b>"LinguaLinked: Distributed large language model inference on mobile devices"</b>, Annual Meeting of the Association for Computational Linguistics (ACL), August 2024.</li>
+		<li>J. Kim, A. Derakhshan, and I. G. Harris, <b>"Robust safety classifier against jailbreaking attacks: Adversarial prompt shield"</b>, Workshop on Online Abuse and Harms (WOAH), June 2024.</li>
+               <li>D. Yao, J. Zhang, I. G. Harris, and  M. Carlsson, <b>"Fuzzllm: A novel and universal fuzzing framework for proactively discovering jailbreak vulnerabilities in large language models"</b>, IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), April 2024.</li>
+            </ul>
+            <p>For a complete list of publications, please visit my <a href="https://scholar.google.com/citations?user=NpcLBDsAAAAJ&hl=en">Google Scholar profile</a>.</p>
+        </section>
+        
+        <section class="content-section" id="contact">
+            <h2>Contact Information</h2>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Office</h3>
+                    <p>Donald Bren Hall 3088<br>
+                    University of California, Irvine<br>
+                    Irvine, CA 92697-3435</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Contact Details</h3>
+                    <p>Phone: (949) 824-8842<br>
+                    Email: iharris@uci.edu</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Office Hours</h3>
+                    <p> By appointment</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ian G. Harris | Department of Computer Science | University of California, Irvine</p>
+        </div>
+    </footer>
+</body>
+</html>

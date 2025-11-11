@@ -1,0 +1,65 @@
+<!-- URL: http://www.ics.uci.edu/~eppstein/pubs/p-qpack.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<title>David Eppstein - Publications</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll("script[type='math/tex']").forEach(function(el) {
+              el.outerHTML = "\\(" + el.textContent + "\\)";
+            });
+            document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+              el.outerHTML = "\\[" + el.textContent + "\\]";
+            });
+            var script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js";
+            document.head.appendChild(script);
+        }, false);
+    </script>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<h1>David Eppstein - Publications</h1>
+<hr><p>
+<h2>
+</h2>
+<ul>
+<li><b>Quadrilateral meshing by circle packing</b>.<br>
+<a href="https://www.parc.xerox.com/csl/members/bern/">M. Bern</a>
+and D. Eppstein.<br>
+<a href="https://www.cs.duke.edu/CGC/workshop97.html"><i>2nd CGC
+Worksh. Computational Geometry</i></a>, Durham, North Carolina, 1997.<br>
+<a href="BerEpp-MRT-97.pdf"><i>6th Int. Meshing Roundtable,</i> Park
+City, Utah, 1997, pp. 7&ndash;19</a>.<br>
+<a href="https://arXiv.org/abs/cs.CG/9908016">arXiv:cs.CG/9908016</a>.<br>
+<i>Int. J. Comp. Geom. &amp; Appl.</i> 10 (4): 347&ndash;360, 2000.
+<p>
+We use <a href="p-cpack.html">circle-packing methods</a> to generate
+quadrilateral meshes for
+polygonal domains, with guaranteed bounds both on the quality and the
+number of elements.  We show that these methods can generate meshes of
+several types:
+<ol>
+<li>The elements form the cells of a Voronoi diagram,
+<li>The elements each have two opposite 90 degree angles,
+<li>All elements are kites, or
+<li>All angles are at most 120 degrees.
+</ol>
+In each case the total number of elements is O(<i>n</i>).
+The 120-degree bound is optimal; if a simply-connected region has all
+angles at least 120 degrees, any mesh of that region has a 120 degree
+angle.
+<p>
+<div align=center><img src="p-qpack.gif" width=527 height=387 alt="quadrilateralized whale"></div>
+<p>
+</ul>
+
+<hr><p>
+<a href="/~eppstein/pubs/">Publications</a> &ndash;
+<a href="/~eppstein/">David Eppstein</a> &ndash;
+<a href="/~theory/">Theory Group</a> &ndash;
+<a href="/">Inf. &amp; Comp. Sci.</a> &ndash;
+<a href="https://www.uci.edu/">UC Irvine</a>
+<p>
+<small>Semi-automatically <a href="filter.html">filtered</a>
+from a common source file.</small>
+</body></html>

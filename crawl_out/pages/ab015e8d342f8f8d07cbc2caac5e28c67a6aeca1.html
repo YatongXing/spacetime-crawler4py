@@ -1,0 +1,58 @@
+<!-- URL: http://www.ics.uci.edu/~eppstein/pubs/p-minni.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<title>David Eppstein - Publications</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll("script[type='math/tex']").forEach(function(el) {
+              el.outerHTML = "\\(" + el.textContent + "\\)";
+            });
+            document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+              el.outerHTML = "\\[" + el.textContent + "\\]";
+            });
+            var script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js";
+            document.head.appendChild(script);
+        }, false);
+    </script>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<h1>David Eppstein - Publications</h1>
+<hr><p>
+<h2>
+</h2>
+<ul>
+<li><b>M&ouml;bius-invariant natural neighbor interpolation</b>.<br>
+<a href="https://www.parc.xerox.com/csl/members/bern/">M. Bern</a>
+and D. Eppstein.<br>
+<a href="https://arxiv.org/abs/cs.CG/0207081">arXiv:cs.CG/0207081</a>.<br>
+<a href="https://portal.acm.org/citation.cfm?id=644130">
+<i>14th ACM-SIAM Symp. Discrete Algorithms,</i>
+Baltimore, 2003, pp. 128&ndash;129</a>.
+<p>
+Natural neighbor interpolation is a well-known technique for fitting a
+surface to scattered data, with some nice properties including
+smoothness everywhere except the data and exact fitting of linear functions.
+The interpolated surface is formed from a weighted combination of data
+values at the "natural neighbors" (neighbors in the Delaunay
+triangulation), with weights related to Voronoi cell areas.
+We describe a variation of natural neighbor interpolation, using
+different weights based on Delaunay circle angles, that remains
+invariant when the data is transformed by M&ouml;bius transformations,
+and reconstructs harmonic functions in the limit of dense data on a circle.
+<p>
+(<a href="BerEpp-SODA-03.pdf">SODA talk slides</a>)
+<p>
+</ul>
+
+<hr><p>
+<a href="/~eppstein/pubs/">Publications</a> &ndash;
+<a href="/~eppstein/">David Eppstein</a> &ndash;
+<a href="/~theory/">Theory Group</a> &ndash;
+<a href="/">Inf. &amp; Comp. Sci.</a> &ndash;
+<a href="https://www.uci.edu/">UC Irvine</a>
+<p>
+<small>Semi-automatically <a href="filter.html">filtered</a>
+from a common source file.</small>
+</body></html>

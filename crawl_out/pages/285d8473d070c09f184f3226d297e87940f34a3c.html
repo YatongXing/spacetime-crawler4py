@@ -1,0 +1,243 @@
+<!-- URL: http://www.ics.uci.edu/~eppstein/163 -->
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Graph Algorithms</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+</head>
+<body>
+<h1>Computer Science 163/265, Winter 2025: Graph Algorithms</h1>
+
+<hr>
+
+<h2>General Course Information</h2>
+
+<p>The two courses CS 163 (for undergraduates) and CS 265 (for graduate students) are co-located: they will have the same lectures, but different exam problems. 
+They will have their lectures on Monday, Wednesday, and Fridays,
+2:00 &ndash; 2:50, MOVED FROM ORIGINAL LOCATION, now <a href="https://classrooms.uci.edu/classroomtechnology/classrooms/pcb/pcb-1100">Parkview 1100</a>. The final exam will be in the same place at the scheduled time: Friday, March 21, 1:30PM &ndash; 3:30PM. Lectures and exams will only be offered in-person. The instructor is David Eppstein, and we also have three teaching assistants, Yubin Kim, Parnian Shakhar, and Stelios Stavroulakis. There is an online discussion forum on Ed Discussion, linked from Canvas.</p>
+
+<p>For both courses, I will assign weekly practice problem sets at the start of each week, covering that week's material, and I strongly recommend that all students do these, but they will not be collected and graded. Instead, solutions will be posted at the end of the week to "Resources" in Ed Discussion, and you can expect to see similar problems (or even in some cases the same problems) on the exams. There will be three exams (two midterms and a final) each covering the material from roughly one third of the class (not comprehensive), each equally weighted in the overall course grade. Exams will be closed book, closed notes, and closed friends.</p>
+
+<p>The lecture notes are linked online, starting from last year's lecture notes, and are subject to change until the start of each lecture (possibly also including minor corrections after the lecture). This web page will also include weekly additional reading for the graduate course, related to the topic of each week's material but going beyond the lectures. Undergraduates are welcome to try reading this material as well, but will not be tested on it. I will try to link free copies when I can find them, but you may need to use a UCI internet address to gain access to some of the readings.</p>
+
+<p>The text we will be using is <a
+href="https://en.wikipedia.org/wiki/User:David_Eppstein/Graph_Algorithms"><i>Graph
+Algorithms</i></a>, a collection of readings compiled from
+Wikipedia (unfortunately, there is no published textbook that covers this material with the same depth and focus as this course). The lecture slides will be linked online here, prior to each lecture.</p>
+
+<h2>Office hours:</h2>
+<ul>
+<li>David Eppstein: Mondays, 3:30PM &ndash; 4:30PM, Bren Hall 4082</li>
+<li>Yubin Kim: Tuesdays and Thursdays, 3:00PM &ndash; 4:00 PM, ICS 458B until week 8, MOVED to DBH 3015 starting week 9</li>
+<li>Parnian Shakhar: Tuesdays, 4:30PM &ndash; 6:30PM, Bren Hall 4099</li>
+<li>Stelios Stavroulakis: Wednesdays 5:30PM &ndash; 7:30PM, Java City outside Bren Hall (because Bren Hall will be locked by that time)</li>
+</ul>
+
+<h2>Tentative Schedule of Topics</h2>
+<dl>
+<dt><b>Week 1</b> (January 6 &ndash; January 10):</dt>
+<dd>&nbsp;</dd>
+<dd>Extracting information from graph structure: <a href="http://en.wikipedia.org/wiki/PageRank">Web search engines and the PageRank
+algorithm</a>.
+<dd><a href="http://en.wikipedia.org/wiki/Graph_(data_structure)">Computer representation of graphs</a> and the <a href="https://en.wikipedia.org/wiki/Decorator_pattern">decorator pattern</a>.</dd>
+<dd><a href="http://en.wikipedia.org/wiki/Web_crawler">Web crawler</a> case study; review of <href="http://en.wikipedia.org/wiki/Breadth-first_search">breadth-first search</a>.</dd>
+<dd><a
+href="http://en.wikipedia.org/wiki/Depth-first_search">Depth-first search</a> and <a
+href="http://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm">Tarjan's
+algorithm</a> for <a href="http://en.wikipedia.org/wiki/Strongly_connected_component">strongly connected components</a>.</dd>
+<dd>&nbsp;</dd>
+<dd><a href="w25-ps1.html">Practice problem set 1</a></dd>
+<dd>Lecture notes: <a href="lecture1a.pdf">Monday</a>, <a href="lecture1b.pdf">Wednesday</a>, <a href="lecture1c.pdf">Friday</a></dd>
+<dd>Graduate reading: "<a href="https://www.wisdom.weizmann.ac.il/~/naor/PAPERS/imp_graph.pdf">Implicit representation of graphs</a>", S. Kannan, M. Naor, and S. Rudich, <i>SIAM J. Discrete Math.</i> 1992.</dd>
+<dd>&nbsp;</dd>
+
+<dt><b>Week 2</b> (January 13 &ndash; January 17):</dt>
+<dd>&nbsp;</dd>
+<dd><a
+href="http://en.wikipedia.org/wiki/Maze_generation_algorithm">Maze</a>
+and <a href="http://www.nature.com/nature/journal/v352/n6334/abs/352423a0.html">river network simulation via invasion percolation</a> case
+study. <a href="http://en.wikipedia.org/wiki/Minimum_spanning_tree">Minimum
+spanning trees</a> and their properties.</dd>
+<dd><a
+href="http://en.wikipedia.org/wiki/Prim%27s_algorithm">Prim-Dijkstra-Jarnik
+algorithm</a>, <a
+href="http://en.wikipedia.org/wiki/Boruvka%27s_algorithm">Boruvka's
+algorithm</a>, and <a
+href="http://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal's
+algorithm</a>.</dd>
+<dd>Spreadsheet and <a href="https://en.wikipedia.org/wiki/Critical_path_method">critical
+path scheduling</a> case studies. <a href="http://en.wikipedia.org/wiki/Directed_acyclic_graph">DAGs</a> and
+<a href="http://en.wikipedia.org/wiki/Topological_sorting">topological
+ordering</a>.</dd>
+<dd>&nbsp;</dd>
+<dd><a href="w25-ps2.html">Practice problem set 2</a></dd>
+<dd>Lecture notes: <a href="lecture2a.pdf">Monday</a>, <a href="lecture2b.pdf">Wednesday</a>,  <a href="lecture2c.pdf">Friday</a>, </dd>
+<dd>Graduate reading: "<a href="https://doi.org/10.4230/LIPIcs.SWAT.2020.24">Simplifying activity-on-edge graphs</a>", D. Eppstein, D. Frishberg, and E. Havvaei, <i>SWAT</i> 2020.</dd>
+<dd>&nbsp;</dd>
+
+<dt><b>Week 3</b> (January 20 &ndash; January 24):</dt>
+<dd>&nbsp;</dd>
+<dd>Holiday Monday, January 20: Martin Luther King, Jr. Day</dd>
+<dd>&nbsp;</dd>
+<dd><a href="http://en.wikipedia.org/wiki/Route_planning_software">Road map path planning</a> case study.
+<a href="http://en.wikipedia.org/wiki/Shortest_path_problem">Shortest paths</a>,
+<a href="http://www.catonmat.net/blog/mit-introduction-to-algorithms-part-twelve/">relaxation</a>, <a href="http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra</a>, and <a href="http://en.wikipedia.org/wiki/Bellman-Ford_algorithm">Bellman-Ford</a>.</dd></dd>
+<dd>Reweighting:
+<a href="http://en.wikipedia.org/wiki/Johnson%27s_algorithm">Johnson's algorithm</a>,
+<a href="https://en.wikipedia.org/wiki/Suurballe%27s_algorithm">Suurballe's algorithm</a>,
+<a href="http://en.wikipedia.org/wiki/A*_search_algorithm">A*</a>, and <a href="https://www.microsoft.com/en-us/research/publication/computing-the-shortest-path-a-search-meets-graph-theory/?from=http%3A%2F%2Fresearch.microsoft.com%2Fpubs%2F154937%2Fsoda05.pdf">Landmark-based distance estimation</a>.</dd>
+<dd>&nbsp;</dd>
+<dd><a href="w25-ps3.html">Practice problem set 3</a></dd>
+<dd>Lecture notes:<a href="lecture3a.pdf">Wednesday</a>, <a href="lecture3b.pdf">Friday</a></dd>
+<dd>Graduate reading: "<a href="https://arxiv.org/abs/2203.03456">Negative-weight single-source shortest paths in near-linear time</a>", A. Bernstein, D. Nanongkai, and C. Wulff-Nilsen, <i>FOCS</i> 2022.</dd>
+<dd>&nbsp;</dd>
+
+<dt><b>Week 4</b> (January 27 &ndash; January 31):</dt>
+<dd>&nbsp;</dd>
+<dd>Midterm Monday, January 27</dd>
+<dd>&nbsp;</dd>
+<dd><a href="http://en.wikipedia.org/wiki/Schulze_method">Preference
+voting case study</a> and
+the <a href="http://en.wikipedia.org/wiki/Widest_path_problem">widest
+path problem</a>.</dd>
+<dd>Transportation scheduling case study. <a href="http://en.wikipedia.org/wiki/Eulerian_path">Euler tours</a> and the
+<a href="http://en.wikipedia.org/wiki/Travelling_salesman_problem">traveling salesperson problem</a>.</dd>
+<dd>&nbsp;</dd>
+<dd><a href="w25-ps4.html">Practice problem set 4</a></dd>
+<dd>Lecture notes: <a href="lecture4a.pdf">Wednesday</a>, <a href="lecture4b.pdf">Friday</a></dd>
+<dd>Graduate reading: "<a href="https://arxiv.org/abs/2411.18790">Fast Schulze voting using quickselect</a>", A. Arora, D. Eppstein, and R. L. Huynh, 2024.</dd>
+<dd>&nbsp;</dd>
+
+<dt><b>Week 5</b> (February 3 &ndash; February 7):</dt>
+<dd>&nbsp;</dd>
+<dd><a href="http://en.wikipedia.org/wiki/Approximation_algorithm">Approximation
+algorithms and the approximation ratio</a>,
+<a
+href="http://en.wikipedia.org/wiki/Travelling_salesman_problem#Metric_TSP">MST-doubling
+heuristic</a>,
+<a href="http://en.wikipedia.org/wiki/Christofides_algorithm">Christofides' heuristic</a>.</dd>
+<dd><a href="https://en.wikipedia.org/wiki/Held%E2%80%93Karp_algorithm">Exponential-time dynamic programming for the traveling salesperson problem</a>.</dd>
+<dd><a href="http://en.wikipedia.org/wiki/Social_network">Social network analysis</a> case study. <a href="https://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdős numbers</a>, the <a href="https://oracleofbacon.org/">Oracle of Bacon</a>, and the <a href="https://en.wikipedia.org/wiki/Small-world_experiment">Milgram small-world experiment</a>.</dd>
+<dd>Social network properties:
+<a href="http://en.wikipedia.org/wiki/Dense_graph">sparsity</a>,
+<a href="http://en.wikipedia.org/wiki/Small-world_network">small world property</a>,
+<a href="http://en.wikipedia.org/wiki/Scale-free_network">power laws</a>.</dd>
+<dd>Methods for generating synthetic networks: 
+<a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model">Erdős–Rényi model</a>, <a href="https://en.wikipedia.org/wiki/Exponential_family_random_graph_models">ERGM</a>,
+<a href="https://web.archive.org/web/20210227105335/http://www.people.fas.harvard.edu/~blitz/BlitzsteinDiaconisGraphAlgorithm.pdf">random graphs with fixed degrees</a>, <a href="http://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model">Barab&aacute;si-Albert (preferential attachment)</a>, <a href="https://en.wikipedia.org/wiki/Small-world_routing#The_Kleinberg_model">Kleinberg's model</a>.</dd>
+<dd>&nbsp;</dd>
+<dd><a href="w25-ps5.html">Practice problem set 5</a></dd>
+<dd>Lecture notes: <a href="lecture5a.pdf">Monday</a>, <a href="lecture5b.pdf">Wednesday</a>, <a href="lecture5c.pdf">Friday</a></dd>
+<dd>Graduate reading: "<a href="https://arxiv.org/abs/2405.03018">TSP escapes the \(O(2^n\,n^2)\) curse</a>", M. Stoian, 2024.</dd>
+<dd>&nbsp;</dd>
+
+<dt><b>Week 6</b> (February 10 &ndash; February 14):</dt>
+<dd>&nbsp;</dd>
+<dd><a href="https://en.wikipedia.org/wiki/Centrality">Centrality</a>,
+<a href="https://en.wikipedia.org/wiki/Degeneracy_(graph_theory)">degeneracy
+and k-cores</a>.<br>
+<a
+href="http://en.wikipedia.org/wiki/Clique_problem">Cliques</a>,
+<a href="http://en.wikipedia.org/wiki/Tur%C3%A1n_graph#Special_cases">Moon-Moser
+bound on maximal cliques</a>,
+<a href="http://en.wikipedia.org/wiki/Bron%E2%80%93Kerbosch_algorithm">Bron-Kerbosch
+algorithm</a>.</dd>
+<dd><a href="http://en.wikipedia.org/wiki/Register_allocation">Register allocation</a> case study.
+<a href="https://en.wikipedia.org/wiki/Strahler_number">Strahler number</a>,
+<a href="http://en.wikipedia.org/wiki/Graph_coloring">graph coloring</a>,
+<a href="http://en.wikipedia.org/wiki/Greedy_coloring">greedy coloring</a>,
+<a href="http://en.wikipedia.org/wiki/Interval_graph">interval graphs</a>.</dd>
+<dd>&nbsp;</dd>
+<dd><a href="w25-ps6.html">Practice problem set 6</a></dd>
+<dd>Lecture notes: <a href="lecture6a.pdf">Monday</a>, <a href="lecture6b.pdf">Wednesday</a>, <a href="lecture6c.pdf">Friday</a></dd>
+<dd>Graduate reading: "<a href="https://www.ecei.tohoku.ac.jp/alg/nishizeki/sub/j/DVD/PDF_J/J053.pdf">Arboricity and subgraph listing algorithms</a>", N. Chiba and T. Nishizeki, <i>SIAM J. Comput.</i> 1985.</dd>
+<dd>&nbsp;</dd>
+
+<dt><b>Week 7</b> (February 17 &ndash; February 21):</dt>
+<dd>&nbsp;</dd>
+<dd>Holiday Monday, February 17: Presidents' Day</dd>
+<dd>&nbsp;</dd>
+<dd><a href="http://en.wikipedia.org/wiki/Chordal_graph">Chordal graphs</a>,
+and <a href="http://en.wikipedia.org/wiki/Perfect_graph">perfect graphs</a>
+and
+using <a href="http://en.wikipedia.org/wiki/Lexicographic_breadth-first_search">Lexicographic
+breadth-first search</a> to find an elimination ordering.</dd>
+<dd><a href="https://en.wikipedia.org/wiki/Pathwidth">Pathwidth</a>, <a href="https://en.wikipedia.org/wiki/Treewidth">treewidth</a>, the <a href="https://en.wikipedia.org/wiki/Logic_of_graphs">logic of graphs</a>, and <a href="https://en.wikipedia.org/wiki/Courcelle's_theorem">Courcelle's theorem</a>.</dd>
+<dd>&nbsp;</dd>
+<dd><a href="w25-ps7.html">Practice problem set 7</a></dd>
+<dd>Lecture notes: <a href="lecture7a.pdf">Wednesday</a>, <a href="lecture7b.pdf">Friday</a></dd>
+<dd>Graduate reading: "<a href="https://arxiv.org/abs/2306.12611">Geometric graphs with unbounded flip-width</a>", D. Eppstein and R. McCarty, <i>CCCG</i> 2023.</dd>
+<dd>&nbsp;</dd>
+
+<dt><b>Week 8</b> (February 24 &ndash; February 28):</dt>
+<dd>&nbsp;</dd>
+<dd>Midterm Monday, February 24</dd>
+<dd>&nbsp;</dd>
+<dd><a
+href="http://www.cs.princeton.edu/courses/archive/spr03/cs226/assignments/baseball.html">Baseball
+elimination</a> case study. <a
+href="http://en.wikipedia.org/wiki/Maximum_flow_problem">Maximum flow
+problem</a>, <a
+href="http://en.wikipedia.org/wiki/Cut_(graph_theory)">minimum cut
+problem</a>, <a
+href="http://en.wikipedia.org/wiki/Max-flow_min-cut_theorem">max-flow
+min-cut theorem</a>.</dd>
+<dd><a
+href="http://en.wikipedia.org/wiki/Ford-Fulkerson_algorithm">Augmenting
+path (Ford-Fulkerson) algorithm</a>. New fast algorithms for integer flows.</dd>
+<dd>&nbsp;</dd>
+<dd><a href="w25-ps8.html">Practice problem set 8</a></dd>
+<dd>Lecture notes: <a href="lecture8a.pdf">Wednesday</a>, <a href="lecture8b.pdf">Friday</a></dd>
+<dd>Graduate reading: "<a href="https://arxiv.org/abs/2207.12911">Learning-augmented maximum flow</a>", A. Polak and M. Zub, <i>Inf. Proc. Lett.</i> 2024.</dd>
+<dd>&nbsp;</dd>
+
+<dt><b>Week 9</b> (March 3 &ndash; March 7):</dt>
+<dd>&nbsp;</dd>
+<dd><a href="http://en.wikipedia.org/wiki/Matching_(graph_theory)">Matchings</a>,
+<a
+href="http://en.wikipedia.org/wiki/Bipartite_graph">Bipartite
+graphs</a>,
+ <a href="http://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/matching.pdf">formulating bipartite maximum matching as a flow problem.</a><br>
+<a href="http://en.wikipedia.org/wiki/K%C3%B6nig%27s_theorem_(graph_theory)">Using
+  matchings to find vertex covers and independent sets</a>,
+<a href="http://arxiv.org/abs/0908.3916">partition into a minimum number
+  of rectangles</a>.</dd>
+<dd>The <a href="https://en.wikipedia.org/wiki/Assignment_problem">assignment problem</a> and the <a href="https://en.wikipedia.org/wiki/Hungarian_algorithm">Hungarian algorithm</a>.</dd>
+<dd><a
+href="http://en.wikipedia.org/wiki/Residency_(medicine)#Matching">Medical
+school residency assignment</a> case study, <a
+href="http://en.wikipedia.org/wiki/Stable_marriage_problem">stable
+matching</a>, <a
+href="https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm">Gale-Shapley
+algorithm for stable matching</a>.</dd>
+<dd>&nbsp;</dd>
+<dd><a href="w25-ps9.html">Practice problem set 9</a></dd>
+<dd>Lecture notes: <a href="lecture9a.pdf">Monday</a>, <a href="lecture9b.pdf">Wednesday</a>, <a href="lecture9c.pdf">Friday</a></dd>
+<dd>Graduate reading: "<a href="https://doi.org/10.4230/LIPIcs.ITCS.2020.54">Matching is as easy as the decision problem, in the NC model</a>", N. Amari and V. Vazirani, <i>ITCS</i> 2020.
+<dd>&nbsp;</dd>
+
+<dt><b>Week 10</b> (March 10 &ndash; March 14):</dt>
+<dd>&nbsp;</dd>
+<dd><a href="http://en.wikipedia.org/wiki/Planar_graph">Planar
+graphs</a>; review of planarity-related topics from earlier weeks.</dd>
+<dd>Road maps, spanning trees of grid graphs, graph coloring and the four-color theorem.</dd>
+<dd><a href="http://en.wikipedia.org/wiki/Dual_graph">Duality</a>,
+duality of <a href="http://en.wikipedia.org/wiki/Euler_tour">Euler
+tours</a> and <a href="http://en.wikipedia.org/wiki/Bipartite_graph">bipartiteness</a>,
+<a href="http://www.ics.uci.edu/~eppstein/junkyard/euler/">Euler's formula</a>.</dd>
+<dd><a href="http://en.wikipedia.org/wiki/Planarity_testing">Planarity testing</a> and the <a href="http://cs.brown.edu/people/rtamassi/gdhandbook/chapters/planarity.pdf">cycle-based planarity testing algorithm</a>.</dd>
+<dd><a href="http://en.wikipedia.org/wiki/Fary%27s_theorem">F&aacute;ry's theorem</a> and <a href="http://page.math.tu-berlin.de/~felsner/Slides/dagstuhl.pdf">Schnyder woods</a>.</dd>
+<dd>&nbsp;</dd>
+<dd><a href="w25-ps10.html">Practice problem set 10</a></dd>
+<dd>Lecture notes: <a href="lecture10a.pdf">Monday</a>, <a href="lecture10b.pdf">Wednesday</a>, <a href="lecture10c.pdf">Friday</a></dd>
+<dd>Graduate reading: "<a href="https://doi.org/10.1007/978-981-15-6533-5_1">Beyond Planar Graphs: Introduction</a>", Seoh-Hee Hong, <i>NII Shonan Meeting on Beyond Planar Graphs</i>, 2020.
+<dd>&nbsp;</dd>
+</dl>
+
+<h2>Material from Previous Course Offerings</h2>
+<p><a href="http://www.ics.uci.edu/~eppstein/163/w24-mt1.pdf">Midterm I</a>, <a href="http://www.ics.uci.edu/~eppstein/163/w24-mt2.pdf">Midterm II</a>, and <a href="http://www.ics.uci.edu/~eppstein/163/w24-f.pdf">Final</a> from Winter 2024.</p>
+
+</body>
+</html>

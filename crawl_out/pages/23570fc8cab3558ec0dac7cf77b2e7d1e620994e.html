@@ -1,0 +1,59 @@
+<!-- URL: http://www.ics.uci.edu/~eppstein/pubs/a-sridhar.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<title>David Eppstein - Publications</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll("script[type='math/tex']").forEach(function(el) {
+              el.outerHTML = "\\(" + el.textContent + "\\)";
+            });
+            document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+              el.outerHTML = "\\[" + el.textContent + "\\]";
+            });
+            var script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js";
+            document.head.appendChild(script);
+        }, false);
+    </script>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<h1>David Eppstein - Publications</h1>
+<hr><p>
+<h2>
+Publications with Vinesh Sridhar
+</h2>
+<ul>
+<li><b>Computational geometry with probabilistically noisy primitive operations</b>.<br>
+D. Eppstein,
+<a href="https://www.ics.uci.edu/~goodrich/">M. T. Goodrich</a>,
+and V. Sridhar.<br>
+<a href="https://arxiv.org/abs/2501.07707">arXiv:2501.07707</a>.<br>
+<i>Proc. 19th Algorithms and Data Structures Symposium (WADS 2025)</i>.<br>
+<a href="https://doi.org/10.4230/LIPIcs.WADS.2025.24">Leibniz
+International Proceedings in Informatics (LIPIcs) 349, 2025,
+pp. 24:1&ndash;24:20</a>.<br>
+<p>
+An algorithm that uses Boolean primitive operations, like comparisons,
+that may be erroneous with some small independent probability per call,
+may be made to run correctly with high probability by repeating each
+primitive enough times to be sure its majority result is correct, but
+this incurs a logarithmic time penalty. Prior work avoids this penalty
+for sorting; we extend this speedup to algorithms in computational
+geometry that can be formulated using path search in DAGs.  Applications
+of our "path-guided pushdown random walk" technique include point
+location, plane sweep, convex hulls, and Delaunay triangulation.
+<p>
+</ul>
+
+<hr><p>
+<a href="auth.html">Co-authors</a> &ndash;
+<a href="/~eppstein/pubs/">Publications</a> &ndash;
+<a href="/~eppstein/">David Eppstein</a> &ndash;
+<a href="/~theory/">Theory Group</a> &ndash;
+<a href="/">Inf. &amp; Comp. Sci.</a> &ndash;
+<a href="https://www.uci.edu/">UC Irvine</a>
+<p>
+<small>Semi-automatically <a href="filter.html">filtered</a>
+from a common source file.</small>
+</body></html>

@@ -1,0 +1,698 @@
+<!-- URL: https://swiki.ics.uci.edu/doku.php/policies:sudoers -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sudo @ ICS [Support Wiki]</title>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="policies,sudoers"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/css.php?css=assets/mikio.less"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/icons/fontawesome/css/all.min.css"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Support Wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php/policies:sudoers?do=index" title="Sitemap"/>
+<link rel="manifest" href="/lib/exe/manifest.php" crossorigin="use-credentials"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="/feed.php?mode=list&amp;ns=policies"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="/doku.php/policies:sudoers?do=export_xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="/doku.php/policies:sudoers?do=export_raw"/>
+<link rel="canonical" href="https://wiki.ics.uci.edu/doku.php/policies:sudoers"/>
+<link rel="stylesheet" href="/lib/exe/css.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"/>
+<script >var NS='policies';var JSINFO = {"plugins":{"gallery":{"defaults":{"thumbnailsize":{"default":"150x150"},"imagesize":{"default":"1600X1200"},"cache":{"default":true},"filter":{"default":""},"showname":{"default":false},"showtitle":{"default":false},"crop":{"default":true},"direct":{"default":false},"reverse":{"default":false},"recursive":{"default":false},"align":{"default":0},"cols":{"default":0},"limit":{"default":0},"offset":{"default":0},"paginate":{"default":0},"sort":{"default":"file"},"namespace":{"default":""}}}},"isadmin":0,"isauth":0,"move_renameokay":false,"move_allowrename":false,"plugin_slider":{"width":800,"mode":"horizontal","infiniteLoop":true,"hideControlOnEnd":false,"speed":500,"easing":null,"slideMargin":0,"startSlide":0,"randomStart":false,"captions":false,"ticker":false,"tickerHover":false,"adaptiveHeight":false,"adaptiveHeightSpeed":500,"video":false,"useCSS":true,"preloadImages":"visible","responsive":true,"pager":true,"pagerType":"full","pagerShortSeparator":"\/","controls":true,"nextText":"Next","prevText":"Prev","autoControls":false,"startText":"Start","stopText":"Stop","autoControlsCombine":false,"auto":false,"pause":4000,"autoStart":true,"autoDirection":"next","autoHover":false,"autoDelay":0,"minSlides":1,"maxSlides":1,"moveSlides":0,"slideWidth":0,"touchEnabled":true,"swipeThreshold":50,"oneToOneTouch":true,"preventDefaultSwipeX":true,"preventDefaultSwipeY":false},"SMILEY_CONF":{"8-)":"cool.svg","8-O":"eek.svg","8-o":"eek.svg",":-(":"sad.svg",":-)":"smile.svg","=)":"smile2.svg",":-\/":"doubt.svg",":-\\":"doubt2.svg",":-?":"confused.svg",":-D":"biggrin.svg",":-P":"razz.svg",":-o":"surprised.svg",":-O":"surprised.svg",":-x":"silenced.svg",":-X":"silenced.svg",":-|":"neutral.svg",";-)":"wink.svg","m(":"facepalm.svg","^_^":"fun.svg",":?:":"question.svg",":!:":"exclaim.svg","LOL":"lol.svg","FIXME":"fixme.svg","DELETEME":"deleteme.svg"},"id":"policies:sudoers","namespace":"policies","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<script src="/lib/exe/jquery.php?tseed=8faf3dc90234d51a499f4f428a0eae43"></script>
+<script src="/lib/exe/js.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio-typeahead.js" defer="defer"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio.js" defer="defer"></script>
+<link rel="shortcut icon" href="/lib/tpl/mikio/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/mikio/images/apple-touch-icon.png" />
+</head>
+<body class="mikio">
+<div id="dokuwiki__site">
+    <div id="dokuwiki__top" class="site dokuwiki mode_show tpl_mikio    showSidebar hasSidebar"><nav class="mikio-navbar"><div class="mikio-container"><a class="mikio-navbar-brand" href="/doku.php/start" accesskey="h" title="Home [h]"><img src="/lib/exe/fetch.php/wiki:logo.png" class="mikio-navbar-brand-image" style="width:250px;max-width:none;max-height:none;"><div class="mikio-navbar-brand-title"><h1 class="mikio-navbar-brand-title-text">Support Wiki</h1><p class="claim mikio-navbar-brand-title-tagline"></p></div></a><div class="mikio-navbar-toggle"><span class="icon"></span></div><div class="mikio-navbar-collapse"><div class="mikio-nav-item"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="policies:sudoers"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form></div><ul class="mikio-nav"><li id="dokuwiki__pagetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_pagetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,235.38983,1277.8305)" id="g2991">
+<path d="M 128,0 H 1152 V 768 H 736 q -40,0 -68,28 -28,28 -28,68 v 416 H 128 V 0 z m 640,896 h 299 L 768,1195 V 896 z M
+1280,768 V -32 q 0,-40 -28,-68 -28,-28 -68,-28 H 96 q -40,0 -68,28 -28,28 -28,68 v 1344 q 0,40 28,68 28,28 68,28 h 544
+q 40,0 88,-20 48,-20 76,-48 l 408,-408 q 28,-28 48,-76 20,-48 20,-88 z" id="path2993" /></g></svg><span class="mikio-small-only">Page Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item revs" href="/doku.php/policies:sudoers?do=revisions" title="Old revisions"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></span><span>Old revisions</span></a><a class="mikio-nav-link mikio-dropdown-item backlink" href="/doku.php/policies:sudoers?do=backlink" title="Backlinks"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></span><span>Backlinks</span></a></div></li><li id="dokuwiki__sitetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_sitetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,121.49153,1285.4237)" id="g3027">
+<path d="m 1024,640 q 0,106 -75,181 -75,75 -181,75 -106,0 -181,-75 -75,-75 -75,-181 0,-106 75,-181 75,-75 181,-75 106,0
+181,75 75,75 75,181 z m 512,109 V 527 q 0,-12 -8,-23 -8,-11 -20,-13 l -185,-28 q -19,-54 -39,-91 35,-50 107,-138 10,-12
+10,-25 0,-13 -9,-23 -27,-37 -99,-108 -72,-71 -94,-71 -12,0 -26,9 l -138,108 q -44,-23 -91,-38 -16,-136 -29,-186 -7,-28
+-36,-28 H 657 q -14,0 -24.5,8.5 Q 622,-111 621,-98 L 593,86 q -49,16 -90,37 L 362,16 Q 352,7 337,7 323,7 312,18 186,132
+147,186 q -7,10 -7,23 0,12 8,23 15,21 51,66.5 36,45.5 54,70.5 -27,50 -41,99 L 29,495 Q 16,497 8,507.5 0,518 0,531 v 222
+q 0,12 8,23 8,11 19,13 l 186,28 q 14,46 39,92 -40,57 -107,138 -10,12 -10,24 0,10 9,23 26,36 98.5,107.5 72.5,71.5 94.5,
+71.5 13,0 26,-10 l 138,-107 q 44,23 91,38 16,136 29,186 7,28 36,28 h 222 q 14,0 24.5,-8.5 Q 914,1391 915,1378 l 28,-184
+q 49,-16 90,-37 l 142,107 q 9,9 24,9 13,0 25,-10 129,-119 165,-170 7,-8 7,-22 0,-12 -8,-23 -15,-21 -51,-66.5 -36,-45.5
+-54,-70.5 26,-50 41,-98 l 183,-28 q 13,-2 21,-12.5 8,-10.5 8,-23.5 z" id="path3029" />
+</g></svg><span class="mikio-small-only">Site Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item recent" href="/doku.php/policies:sudoers?do=recent" title="Recent Changes"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69V13m4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67V8M5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2H5m11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85z"/></svg></span><span>Recent Changes</span></a><a class="mikio-nav-link mikio-dropdown-item media" href="/doku.php/policies:sudoers?do=media&ns=policies" title="Media Manager"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 15l4.5-6 3.5 4.5 2.5-3L21 15m1-11h-8l-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M2 6H0v14a2 2 0 0 0 2 2h18v-2H2V6z"/></svg></span><span>Media Manager</span></a><a class="mikio-nav-link mikio-dropdown-item index" href="/doku.php/policies:sudoers?do=index" title="Sitemap"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2z"/></svg></span><span>Sitemap</span></a></div></li><li id="dokuwiki__usertools" class="mikio-nav-dropdown"><a id="mikio_dropdown_usertools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,197.42373,1300.6102)"><path d="M
+1408,131 Q 1408,11 1335,-58.5 1262,-128 1141,-128 H 267 Q 146,-128 73,-58.5 0,11 0,131 0,184 3.5,234.5 7,285 17.5,343.5
+28,402 44,452 q 16,50 43,97.5 27,47.5 62,81 35,33.5 85.5,53.5 50.5,20 111.5,20 9,0 42,-21.5 33,-21.5 74.5,-48 41.5,
+-26.5 108,-48 Q 637,565 704,565 q 67,0 133.5,21.5 66.5,21.5 108,48 41.5,26.5 74.5,48 33,21.5 42,21.5 61,0 111.5,-20
+50.5,-20 85.5,-53.5 35,-33.5 62,-81 27,-47.5 43,-97.5 16,-50 26.5,-108.5 10.5,-58.5 14,-109 Q 1408,184 1408,131 z m
+-320,893 Q 1088,865 975.5,752.5 863,640 704,640 545,640 432.5,752.5 320,865 320,1024 320,1183 432.5,1295.5 545,1408 704,
+1408 863,1408 975.5,1295.5 1088,1183 1088,1024 z"/></g></svg><span class="mikio-small-only">User Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item login" href="/doku.php/policies:sudoers?do=login&sectok=" title="Log In"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></span><span>Log In</span></a></div></li></ul></div></div></nav><a name="dokuwiki__top" id="dokuwiki__top"></a><div class="mikio-hero"><div class="mikio-container"><div class="mikio-hero-text"><div class="mikio-breadcrumbs"><div class="mikio-container"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php/policies:sudoers"  class="breadcrumbs" title="policies:sudoers">Sudo @ ICS</a></bdi></span></div></div><h1 class="mikio-hero-title">Sudo @ ICS</h1><h2 class="mikio-hero-subtitle"></h2></div><div class="mikio-hero-image"><div class="mikio-tags"></div></div></div></div><main class="mikio-page"><div class="mikio-container"><aside class="mikio-sidebar mikio-sidebar-left"><a class="mikio-sidebar-toggle closed" href="#">Sidebar <span class="icon"></span></a><div class="mikio-sidebar-collapse"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="policies:sudoers"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form><div class="mikio-sidebar-content"><div><div id="nojs_indexmenu_92216708768e6d56a08415" data-jsajax="%26group%3D1" class="indexmenu_nojs">
+<ul class="idx">
+<li class="closed"><div class="li"><a href="/doku.php/accounts:accounts" class="indexmenu_idx_head" data-wiki-id="accounts:accounts">ICS Accounts</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/announce:announce" class="indexmenu_idx_head" data-wiki-id="announce:announce">Announcement and Maintenance</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/backups:backups" class="indexmenu_idx_head" data-wiki-id="backups:backups">Backups @ ICS</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/commands:commands" class="indexmenu_idx_head" data-wiki-id="commands:commands">Common Tasks and Commands</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/group:group" class="indexmenu_idx_head" data-wiki-id="group:group">Group Files</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/hardware:hardware" class="indexmenu_idx_head" data-wiki-id="hardware:hardware">Hardware Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/instructional_support:instructional_support" class="indexmenu_idx_head" data-wiki-id="instructional_support:instructional_support">Instructional Support Resources</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/network:network" class="indexmenu_idx_head" data-wiki-id="network:network">Network</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/os?idx=os" class="indexmenu_idx" data-wiki-id="">os</a></div></li>
+<li class="open"><div class="li"><a href="/doku.php/policies?idx=policies" class="indexmenu_idx open" data-wiki-id="">policies</a></div>
+<ul class="idx">
+<li class="level2" ><div class="li"><a href="/doku.php/policies:sudoers" class="wikilink1" title="policies:sudoers" data-wiki-id="policies:sudoers">Sudo @ ICS</a></div></li>
+</ul>
+</li>
+<li class="closed"><div class="li"><a href="/doku.php/projects?idx=projects" class="indexmenu_idx" data-wiki-id="">projects</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/remote_support?idx=remote_support" class="indexmenu_idx" data-wiki-id="">remote_support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/requesttracker?idx=requesttracker" class="indexmenu_idx" data-wiki-id="">requesttracker</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/research_support:research_support" class="indexmenu_idx_head" data-wiki-id="research_support:research_support">Research Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/security?idx=security" class="indexmenu_idx" data-wiki-id="">security</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/services?idx=services" class="indexmenu_idx" data-wiki-id="">services</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/software:software" class="indexmenu_idx_head" data-wiki-id="software:software">Software</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/virtual_environments:virtual_environments" class="indexmenu_idx_head" data-wiki-id="virtual_environments:virtual_environments">Virtual Environments</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/webapps:webapps" class="indexmenu_idx_head" data-wiki-id="webapps:webapps">ICS Web Applications</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/wiki?idx=wiki" class="indexmenu_idx" data-wiki-id="">wiki</a></div></li>
+</ul>
+</div></div></div></div></aside><div class="mikio-content" id="dokuwiki__content"><article class="mikio-article"><div class="mikio-toc"><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle"><svg class="mikio-iicon hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+style="fill:currentColor"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0
+76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16z"/></svg>Table of Contents<svg class="mikio-iicon down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+aria-hidden="true" style="fill:currentColor"><path d="M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9
+1.917-1.916z"/></svg></h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#sudo_ics">Sudo @ ICS</a></div></li>
+<li class="level1"><div class="li"><a href="#take-away">Take-away</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#sudoers">Sudoers</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#philosophy">Philosophy</a></div></li>
+<li class="level3"><div class="li"><a href="#usage">Usage</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#sudo_alternatives">Sudo Alternatives</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#using_code_in_openlab">Using Code in Openlab</a></div></li>
+<li class="level3"><div class="li"><a href="#package_yum_apt_installation">Package (yum/apt) installation</a></div></li>
+<li class="level3"><div class="li"><a href="#compiling_software_from_source">Compiling Software from Source</a></div></li>
+<li class="level3"><div class="li"><a href="#find">find</a></div></li>
+<li class="level3"><div class="li"><a href="#ldconfig">ldconfig</a></div></li>
+<li class="level3"><div class="li"><a href="#lshw">lshw</a></div></li>
+<li class="level3"><div class="li"><a href="#firewalls">firewalls</a></div></li>
+<li class="level3"><div class="li"><a href="#reboot_shutdown">Reboot/Shutdown</a></div></li>
+<li class="level3"><div class="li"><a href="#shells">Shells</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#sudoer_mess_boilerplatestemplate">Sudoer Mess BoilerplatesTemplate</a></div></li>
+<li class="level2"><div class="li"><a href="#troubleshooting">Troubleshooting</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div><div class="mikio-article-content"><h1 class="sectionedit1" id="sudo_ics" style="display:none">Sudo @ ICS</h1>
+<div class="level1">
+
+<p>
+This page has been created to share philosophy and policy regarding ICS sudo and provide sudo alternatives on ICS managed Linux hosts..  If you don&#039;t find the answer you are looking for here, or if you find an incorrect or incomplete answer, send mail to helpdesk@ics.uci.edu
+</p>
+
+</div>
+
+<h1 class="sectionedit2" id="take-away">Take-away</h1>
+<div class="level1">
+
+<p>
+The big thing that everyone takes away from this document is that sudo root should be used in one of these three situations:
+</p>
+<ul>
+<li class="level1"><div class="li"> To start or stop a service on a privileged port or via the systemctl command</div>
+</li>
+<li class="level1"><div class="li"> Install packages via apt or yum.</div>
+</li>
+<li class="level1"><div class="li"> To collect information or make configuration changes to the system that is not available to another user such as apache or postgres.</div>
+</li>
+</ul>
+
+<p>
+If your use of sudo usage doesn&#039;t comport to one of these three uses, continue reading or reach out to helpdesk@ics.uci.edu and we&#039;ll suggest convenient alternatives that your whole team can use.
+</p>
+
+</div>
+
+<h2 class="sectionedit3" id="sudoers">Sudoers</h2>
+<div class="level2">
+
+<p>
+Some ICS research hosts are cordoned into a security sandbox and users have access to sudo commands.  See <a href="/doku.php/services:supported_os" class="wikilink1" title="services:supported_os" data-wiki-id="services:supported_os">OS support levels</a>
+</p>
+
+</div>
+
+<h3 class="sectionedit4" id="philosophy">Philosophy</h3>
+<div class="level3">
+
+<p>
+The system operations team strives to strike a balance between allowing researchers to self manage their computing resources and  maintaining maximum stability, conformity, and security of the systems we manage.  We acknowledge that it can take a little bit longer to reach out to helpdesk@ics.uci.edu, but it also allows us to provide updates safely, securely and uniformly across the entire ICS fleet.  Our team makes best effort to avoid the role of the gatekeeper or to be a blocker.  At the same time, we want to limit any critical problems, such as a broken package dependency, to derail your work when your team does have a deadline.  
+</p>
+
+</div>
+
+<h4 id="delegation_of_authority">Delegation of Authority</h4>
+<div class="level4">
+
+<p>
+With that in mind, we group sudo privileges into the following broad groupings:
+</p>
+<ul>
+<li class="level1"><div class="li"> Senior team members have sudo access to update or make changes to the system.</div>
+</li>
+<li class="level1"><div class="li"> Other team members may have sudo access to commands that are ephemeral or informational.</div>
+</li>
+</ul>
+
+<p>
+We ask researchers for points of contact, typically one or two senior grad students that have familiarity with all the group projects.  These team members will be called on by the systems operations group in the expanded capacities:
+</p>
+<ol>
+<li class="level1"><div class="li"> coordinate system maintenance for the group</div>
+</li>
+<li class="level1"><div class="li"> sends/approves software change requests</div>
+</li>
+<li class="level1"><div class="li"> request visitor accounts</div>
+</li>
+<li class="level1"><div class="li"> control of group&#039;s slurm partitions</div>
+</li>
+</ol>
+
+</div>
+
+<h4 id="common_pitfalls">Common Pitfalls</h4>
+<div class="level4">
+
+<p>
+Examples of ways that promiscuous sudo privilege can block research.
+</p>
+
+</div>
+
+<h5 id="update_alternatives_contention">Update Alternatives Contention</h5>
+<div class="level5">
+
+<p>
+Multiple versions of programs, such as Java or Python, are present on most linux distributions.  On Ubuntu, switching the default java or python version is as simple as installing a package that runs the <a href="https://manpages.ubuntu.com/manpages/trusty/man8/update-alternatives.8.html" class="urlextern" title="https://manpages.ubuntu.com/manpages/trusty/man8/update-alternatives.8.html" rel="ugc nofollow">update-alternatives</a> command.   A change to the default version that isn&#039;t carefully considered and discussed ahead of time can disrupt projects and will be time-consuming to detect. 
+</p>
+
+</div>
+
+<h5 id="broken_package_dependencies">Broken Package Dependencies</h5>
+<div class="level5">
+
+<p>
+The yum and apt package managers on occasion break and it can be difficult, if not impossible, to resolve nonsensical package dependencies.  To reduce risk of problems we ask that package updates privileges be restricted to a small number of users.  
+</p>
+
+</div>
+
+<h3 class="sectionedit5" id="usage">Usage</h3>
+<div class="level3">
+
+<p>
+Run the following command for a list of sudo commands available to you:
+</p>
+<pre class="code">sudo -l</pre>
+
+</div>
+
+<h4 id="filesystem_eg_mkdir_mv_cp_etc">Filesystem (e.g. mkdir, mv, cp, etc)</h4>
+<div class="level4">
+
+<p>
+Using the sudo command to create or edit files in this space is typically unnecessary and can be counterproductive  for your team.  Using root privilege escalation to create and edit files will block team members that do not have root privilege (ICS follows the <a href="https://www.cisa.gov/uscert/bsi/articles/knowledge/principles/least-privilege" class="urlextern" title="https://www.cisa.gov/uscert/bsi/articles/knowledge/principles/least-privilege" rel="ugc nofollow">principal of least privilege</a>).
+</p>
+
+<p>
+Alternatives:
+</p>
+
+</div>
+
+<h5 id="local_storage">Local Storage</h5>
+<div class="level5">
+
+<p>
+All ICS systems have world or group writable local storage.   Every system is going to have /tmp and /scratch directories.  Many research directories will also have local drives mounted beneath /drv or /srv.   Many other systems have undeployed storage.   If you have questions about what is available on a particular workstation, please send mail to helpdesk@ics.uci.edu
+</p>
+
+</div>
+
+<h5 id="group_accounts">Group accounts</h5>
+<div class="level5">
+
+<p>
+If you need to share storage with your team, use your <a href="/doku.php/accounts:gsu" class="wikilink1" title="accounts:gsu" data-wiki-id="accounts:gsu">Groupleader Accounts (Linux)</a>.   It works the same way as root sudo, but avoids the requirement that the entire team has root sudo.  The group account can use all the same local storage as well as, on many systems, NFS storage.
+</p>
+
+</div>
+
+<h4 id="universal_student_access">Universal Student Access</h4>
+<div class="level4">
+
+<p>
+All students have been given access to a limited number of commands on instructional hosts.  Grad students will have the same privileges on research hosts.  The commands are commonly used diagnostic commands that require root privilege to execute but are reasonably necessary for day to day work. 
+</p>
+
+</div>
+
+<h4 id="getting_more">Getting More</h4>
+<div class="level4">
+
+<p>
+If you feel that you require access to a command that is not on the list, please email helpdesk@ics.uci.edu.
+</p>
+
+<p>
+In the cases that you have been granted sudo access to a host, please consider what it means to have that privilege.   
+</p>
+<ul>
+<li class="level1"><div class="li"> Broken or corrupt <abbr title="Operating System">OS</abbr> and system software will be repaired by total reinstallation.</div>
+</li>
+<li class="level1"><div class="li"> Backup of local storage is your responsibility.  Mount your <a href="/doku.php/accounts:fuse-sshfs" class="wikilink1" title="accounts:fuse-sshfs" data-wiki-id="accounts:fuse-sshfs">ICS Home Directory</a> and copy important data there.</div>
+</li>
+<li class="level1"><div class="li"> Accounts are managed centrally by helpdesk@ics.uci.edu.</div>
+</li>
+<li class="level1"><div class="li"> Request permanent changes to the <abbr title="Operating System">OS</abbr> and system software from helpdesk@ics.uci.edu.</div>
+</li>
+<li class="level1"><div class="li"> Make no changes that would interfere with the ICS Computing Support group to manage the computer</div>
+</li>
+<li class="level1"><div class="li"> Make no changes that would prevent <a href="/doku.php/services:puppet" class="wikilink1" title="services:puppet" data-wiki-id="services:puppet">ICS Puppet</a> from updating the configuration of the machine.</div>
+</li>
+<li class="level1"><div class="li"> The machines are monitored (<a href="/doku.php/services:monitoring:grafana" class="wikilink1" title="services:monitoring:grafana" data-wiki-id="services:monitoring:grafana">grafana</a>and <a href="/doku.php/services:monitoring:icinga2" class="wikilink1" title="services:monitoring:icinga2" data-wiki-id="services:monitoring:icinga2">Icinga2@ics</a>).  Alerts will trigger a response. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit6" id="sudo_alternatives">Sudo Alternatives</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit7" id="using_code_in_openlab">Using Code in Openlab</h3>
+<div class="level3">
+
+<p>
+We&#039;ve seen a lot of students trying to install code.  This isn&#039;t going to work because sudo, but also because the X Server isn&#039;t near fast enough.
+</p>
+
+<p>
+Alternative 1:   Use <a href="https://wiki.ics.uci.edu/doku.php/virtual_environments:jupyterhub" class="urlextern" title="https://wiki.ics.uci.edu/doku.php/virtual_environments:jupyterhub" rel="ugc nofollow">Jupyterhub@ICS</a>:  <a href="https://hub.ics.uci.edu" class="urlextern" title="https://hub.ics.uci.edu" rel="ugc nofollow">https://hub.ics.uci.edu</a>
+</p>
+
+<p>
+Alternative 2:  Run VSCode locally but run programs on Openlab using  “<a href="https://code.visualstudio.com/docs/remote/ssh" class="urlextern" title="https://code.visualstudio.com/docs/remote/ssh" rel="ugc nofollow">Visual Studio Code Remote - SSH</a>”.
+</p>
+
+<p>
+Alternative 3:  <a href="https://wiki.ics.uci.edu/doku.php/accounts:mapping_network_drive" class="urlextern" title="https://wiki.ics.uci.edu/doku.php/accounts:mapping_network_drive" rel="ugc nofollow">Map your network drive</a> and run code locally on your computer.
+</p>
+
+</div>
+
+<h3 class="sectionedit8" id="package_yum_apt_installation">Package (yum/apt) installation</h3>
+<div class="level3">
+
+<p>
+It would not be useful to allow everybody on the openlab to add or remove packages as they saw fit so we don&#039;t give out sudo permission for that.  However, that doesn&#039;t mean that the package you want&#039; isn&#039;t available or that you cannot install your own packages.
+</p>
+
+</div>
+
+<h4 id="modules">Modules</h4>
+<div class="level4">
+
+<p>
+<strong>An alternative to update-alternatives</strong>
+</p>
+
+<p>
+Natively, CentOS and Ubuntu may not provide the latest program versions.  To address this, ICS Computing Support will provide locally compiled software as part of the <a href="/doku.php/software:software_library" class="wikilink1" title="software:software_library" data-wiki-id="software:software_library">ICS Software Library</a>.   
+</p>
+
+<p>
+You may add these packages to your environment by invoking the <a href="/doku.php/commands:modules" class="wikilink1" title="commands:modules" data-wiki-id="commands:modules">module command</a>.  
+</p>
+
+<p>
+Add a different javac to your path:
+</p>
+<pre class="code">module load openjdk/11.0.2</pre>
+
+<p>
+Add slurm to your path:
+</p>
+<pre class="code">module load slurm</pre>
+
+<p>
+Add julia/1.6.0 to your path:
+</p>
+<pre class="code">module load julia/1.6.0</pre>
+
+<p>
+See which versions of gcc are available:
+</p>
+<pre class="code">module avail gcc</pre>
+
+</div>
+
+<h4 id="multiple_versions">Multiple Versions</h4>
+<div class="level4">
+
+<p>
+<strong>An alternative to update-alternatives</strong>
+</p>
+
+<p>
+On instruction and research systems, several versions of python are provided.  These may be invoked by specifying the longer version:  e.g. /usr/bin/python3.7
+</p>
+
+<p>
+See what is available locally by using <a href="https://www.howtogeek.com/195207/use-tab-completion-to-type-commands-faster-on-any-operating-system/" class="urlextern" title="https://www.howtogeek.com/195207/use-tab-completion-to-type-commands-faster-on-any-operating-system/" rel="ugc nofollow">shell tab completion</a>.
+</p>
+
+<p>
+You can also see which versions of python are available by using wildcards:
+</p>
+<pre class="code">ls /usr/bin/python* /usr/local/bin/python*</pre>
+
+</div>
+
+<h4 id="python3_packages">Python3 Packages</h4>
+<div class="level4">
+
+<p>
+Most python and anaconda packages do not require root privilege to install.  See the following <abbr title="Uniform Resource Locator">URL</abbr> for instructions on installing Python libraries, including how to upgrade pip:
+</p>
+
+<p>
+See <a href="https://wiki.ics.uci.edu/doku.php/software:python" class="urlextern" title="https://wiki.ics.uci.edu/doku.php/software:python" rel="ugc nofollow">https://wiki.ics.uci.edu/doku.php/software:python</a>
+</p>
+
+</div>
+
+<h4 id="db_servers">DB Servers</h4>
+<div class="level4">
+
+<p>
+The MySQL and PostgreSL servers run on unprivileged ports and it is best practice to run these as a non-root user.  Please see this page for running <a href="/doku.php/services:database:mysql:unprivileged-users" class="wikilink1" title="services:database:mysql:unprivileged-users" data-wiki-id="services:database:mysql:unprivileged-users">MySQL as an unprivileged user</a>.  Please request a <a href="/doku.php/accounts:gsu" class="wikilink1" title="accounts:gsu" data-wiki-id="accounts:gsu">group account</a> from helpdesk@ics.uci.edu if your team would like to share ownership of a MySQL server.
+</p>
+
+</div>
+
+<h4 id="nodejs">NodeJS</h4>
+<div class="level4">
+
+<p>
+See <a href="https://wiki.ics.uci.edu/doku.php/software:nodejs" class="urlextern" title="https://wiki.ics.uci.edu/doku.php/software:nodejs" rel="ugc nofollow">https://wiki.ics.uci.edu/doku.php/software:nodejs</a>
+</p>
+
+</div>
+
+<h3 class="sectionedit9" id="compiling_software_from_source">Compiling Software from Source</h3>
+<div class="level3">
+
+<p>
+Software source can be compiled and installed to writable storage by any user without SUDO.
+</p>
+
+<p>
+Use the –prefix option to rehome the package
+</p>
+<pre class="code">./configure --prefix=$HOME/pkg/pkg_name/version </pre>
+
+<p>
+See this <a href="/doku.php/software:personal_library" class="wikilink1" title="software:personal_library" data-wiki-id="software:personal_library">link</a> for a little bit more information.
+</p>
+
+</div>
+
+<h3 class="sectionedit10" id="find">find</h3>
+<div class="level3">
+
+<p>
+sudo privilege is not required to search areas of the filesystem that belong to you or public spaces.    Due to our security policies many areas of the filesystem are not going to be accessible to root.  Please reach out to helpdesk@ics.uci.edu if you feel you need to search an area of the file system that you do not have access to.
+</p>
+
+</div>
+
+<h3 class="sectionedit11" id="ldconfig">ldconfig</h3>
+<div class="level3">
+
+<p>
+Set your LD_LIBRARY_PATH And LD_RUN_PATH instead.  For example:
+</p>
+
+<p>
+Add a lib directory in your home directory to be search when running programs (bash/zsh)
+</p>
+<pre class="code">export LD_LIBRARYPATH=$LD_LIBRARY_PATH:$HOME/lib</pre>
+
+<p>
+Order is important, if you want your personal library searched BEFORE system libs reverse the order:
+</p>
+<pre class="code">export LD_LIBRARYPATH=$HOME/lib:$LD_LIBRARY_PATH</pre>
+
+<p>
+Loading modules will automatically add necessary libraries to your LD_LIBRARY_PATH or LD_RUN_PATH.
+</p>
+
+</div>
+
+<h3 class="sectionedit12" id="lshw">lshw</h3>
+<div class="level3">
+
+<p>
+This command will return some information for non-root users, although the information may be incomplete.  
+</p>
+
+<p>
+You may also run the following commands to get additional system information:
+</p>
+<ul>
+<li class="level1"><div class="li"> lsblk:  information and attached block devices (e.g. disks).</div>
+</li>
+<li class="level1"><div class="li"> lsscsi:  information and devices on the scsi bus</div>
+</li>
+<li class="level1"><div class="li"> cat /proc/meminfo:  information about system memory</div>
+</li>
+<li class="level1"><div class="li"> cat /proc/cpuinfo:  information about the system cpus</div>
+</li>
+<li class="level1"><div class="li"> top/htop:  broad information about processes and resource consumption</div>
+</li>
+<li class="level1"><div class="li"> dmesg:  startup messages</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit13" id="firewalls">firewalls</h3>
+<div class="level3">
+
+<p>
+ICS managed computing employs<a href="/doku.php/network:firewall:iptables" class="wikilink1" title="network:firewall:iptables" data-wiki-id="network:firewall:iptables">iptables</a>.  Ports above 1024 on managed instructional and research Linux computing should be open to campus and VPN addresses.  Please send requests for restricted ports, ports less than 1024, and other special requests to helpdesk@ics.uci.edu.   
+</p>
+
+<p>
+<strong>Note:</strong>  Some local sudo users may have privilege to run /usr/sbin/iptables to open and close ports but any changes will be ephemeral.  Please send a request to helpdesk@ics.uci.edu to make them permanent.
+</p>
+
+</div>
+
+<h3 class="sectionedit14" id="reboot_shutdown">Reboot/Shutdown</h3>
+<div class="level3">
+
+<p>
+Please reach out to helpdesk@ics.uci.edu if you believe a machine needs to be rebooted.
+</p>
+
+</div>
+
+<h3 class="sectionedit15" id="shells">Shells</h3>
+<div class="level3">
+
+<p>
+Sudo shell access is not allowed, it would allow users to circumvent the policies we have in place to protect security.
+</p>
+
+</div>
+
+<h2 class="sectionedit16" id="sudoer_mess_boilerplatestemplate">Sudoer Mess BoilerplatesTemplate</h2>
+<div class="level2">
+
+</div>
+
+<h4 id="general">General</h4>
+<div class="level4">
+<pre class="code">Our system reported that you ran the sudo command recently.  I going to take this opportunity to share this wiki page that describes our sudoers policy, reasoning, and potential alternatives:
+
+  https://wiki.ics.uci.edu/doku.php/policies:sudoers
+
+This page doesn&#039;t require you to login but links from this page may require ICS credentials to login. </pre>
+
+</div>
+
+<h4 id="unnecessary_sudo_invocations">Unnecessary Sudo Invocations</h4>
+<div class="level4">
+
+<p>
+You are receiving this message because you recently tried running a command with sudo.
+</p>
+
+<p>
+The command invoked does not require sudo privilege and can be run as your own user.  Please let us know if there is a specific reason you felt that it was necessary to invoke via sudo.   If we can figure out a non-sudo way to accomplish the same thing I will add it to our sudoers page:
+</p>
+<pre class="code">https://wiki.ics.uci.edu/doku.php/policies:sudoers</pre>
+
+<p>
+Typically, the sudo command should be used exclusively to invoke commands not available to an  ordinary user such as  installing a package (apt or yum) or running a service on a privileged port (less than 1024).
+</p>
+
+</div>
+
+<h4 id="installation_alternatives">Installation Alternatives</h4>
+<div class="level4">
+
+<p>
+You are receiving this message because you recently tried running a command with sudo on an ICS managed server.
+</p>
+
+<p>
+The following page details several alternative methods to accomplish what you were trying to do with the sudo command:
+</p>
+<pre class="code">  https://wiki.ics.uci.edu/doku.php/policies:sudoers</pre>
+
+<p>
+When using `pip install`, please use the –user switch to install into space that you own.
+</p>
+<pre class="code">pip install --user nltk
+pip install --user requests</pre>
+
+<p>
+If you do not see a command in your path, please look at ICS modules with `module avail`:
+</p>
+<pre class="code">https://wiki.ics.uci.edu/doku.php/commands:modules</pre>
+
+<p>
+Module ex.
+</p>
+<pre class="code">$ module avail go
+------------ /pkg/modules/modulefiles ------------ 
+go/1.12.1 go/1.13.1 go/1.15.6 go/1.8.3  go/1.9    
+circinus-3 09:00:45 ~ 
+$ module load go
+circinus-3 09:00:47 ~ 
+$ which go
+/pkg/go/1.15.6/bin/go</pre>
+
+<p>
+You can determine what programs are available in your path using the which command:
+</p>
+<pre class="code">circinus-3:~# which wget
+/usr/bin/wget
+
+circinus-3:~# which valgrind
+/usr/bin/valgrind
+
+circinus-3:~#  which go
+/pkg/go/1.15.6/bin/go</pre>
+
+</div>
+
+<h4 id="disk_usage">Disk Usage</h4>
+<div class="level4">
+
+<p>
+Hello &lt;Name&gt;,
+</p>
+
+<p>
+We recorded the recent sudo activity on your account on &lt;DATE&gt;:
+</p>
+
+<p>
+The command recorded was “sudo /bin/du -h”. Were you trying to get dis usage on the host? Were you just trying to look at your home directory but made a mistake? Please let us know what you were trying to do and maybe I could help.
+</p>
+
+<p>
+Thank you and have a great day,
+</p>
+
+</div>
+
+<h4 id="shell_and_service_invocations">Shell and service invocations</h4>
+<div class="level4">
+
+<p>
+Our system reported that you ran the sudo command recently.  I&#039;m going to take this opportunity to share this wiki page that describes our sudoers policy, reasoning, and potential alternatives:
+</p>
+
+<p>
+  <a href="https://wiki.ics.uci.edu/doku.php/policies:sudoers" class="urlextern" title="https://wiki.ics.uci.edu/doku.php/policies:sudoers" rel="ugc nofollow">https://wiki.ics.uci.edu/doku.php/policies:sudoers</a>
+</p>
+
+<p>
+This page doesn&#039;t require you to login but links from this page may require ICS credentials to login. 
+</p>
+
+<p>
+Some of the key points:
+</p>
+<ul>
+<li class="level1"><div class="li"> Services on unprivileged ports (above 1024) should not run with sudo</div>
+</li>
+<li class="level1"><div class="li"> Sudo shell invocations are usuaully unecessary, we can find alternatives.</div>
+</li>
+<li class="level1"><div class="li"> Software not available via package managers may be installed in user space.</div>
+</li>
+</ul>
+
+<p>
+ Please let us know if there is a specific challenge that caused you to use sudo and we can help figure out an alternative way to accomplish the same thing.
+</p>
+
+</div>
+
+<h2 class="sectionedit17" id="troubleshooting">Troubleshooting</h2>
+<div class="level2">
+
+</div>
+
+<h4 id="q_sudoerror_initializing_audit_plugin_sudoers_audit">Q.  sudo: error initializing audit plugin sudoers_audit</h4>
+<div class="level4">
+
+<p>
+<strong>Symptoms:</strong> Sudo runs fine as root user but produces this error when run as a non-root user.
+</p>
+<pre class="code">sudo: error initializing audit plugin sudoers_audit</pre>
+
+<p>
+<strong>Cause:</strong> User does not exist
+</p>
+
+</div><div style="clear:both"></div></div></article></div><nav id="dw__pagetools" class="hidden-print dw__pagetools"><ul class="tools"><li class="source"><a href="/doku.php/policies:sudoers?do=edit" class="source" title="Show pagesource [v]" accesskey="v"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></div><span class="a11y">Show pagesource</span></a></li><li class="revs"><a href="/doku.php/policies:sudoers?do=revisions" class="revs" title="Old revisions [o]" accesskey="o"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></div><span class="a11y">Old revisions</span></a></li><li class="backlink"><a href="/doku.php/policies:sudoers?do=backlink" class="backlink" title="Backlinks"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></div><span class="a11y">Backlinks</span></a></li><li class="top"><a href="#dokuwiki__top" class="top" title="Back to top [t]" accesskey="t"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></div><span class="a11y">Back to top</span></a></li></ul></nav></div></main><div class="mikio-page-fill"><div class="mikio-content" style="padding:0"></div></div><footer class="mikio-footer"><div class="doc"><bdi>policies/sudoers.txt</bdi> · Last modified: 2025/09/19 09:36</div><div class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license"><img src="/lib/images/license/badge/cc-by-nc-sa.png" alt="CC Attribution-Noncommercial-Share Alike 4.0 International" /></a> Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license" class="urlextern">CC Attribution-Noncommercial-Share Alike 4.0 International</a></bdi></div></footer>    <div class="no"><img src="/lib/exe/taskrunner.php?id=policies%3Asudoers&amp;1760917672" width="2" height="1" alt="" /></div>
+</div>
+</body>
+</html>

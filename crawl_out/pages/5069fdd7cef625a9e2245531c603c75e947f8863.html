@@ -1,0 +1,68 @@
+<!-- URL: http://seal.ics.uci.edu/projects/over_a11y/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83301040-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<head>
+<title>SEAL - Energy Testing Oracle</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Reply-to" content="malek at uci dot edu">
+<meta http-equiv="Owner" content="Sam Malek">
+<meta name="Author" content="Sam Malek">
+<meta name="Generator" content="Emacs">
+<link rev="MADE" href="mailto:malek at uci dot edu">
+<link href="../../seal.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="wrapper">
+    
+<!-- *************** Beginning of content ****************** -->
+
+<h2>Too Much Accessibility is Harmful! Automated Detection and Analysis of Overly Accessible Elements in Mobile Apps</h2>
+
+<p>
+Mobile apps, an essential technology in today’s world, should provide equal access to all, including 15% of the world population with disabilities. Assistive Technologies (AT), with the help of Accessibility APIs, provide alternative ways of interaction with apps for disabled users who cannot see or touch the screen. Prior studies have shown that mobile apps are prone to the under-access problem, i.e., a condition in which functionalities in an app are not accessible to disabled users, even with the use of ATs. We study the dual of this problem, called the over-access problem, and defined as a condition in which an AT can be used to gain access to functionalities in an app that are inaccessible otherwise. Over-access has severe security and privacy implications, allowing one to bypass protected functionalities using ATs, e.g., using VoiceOver to read notes on a locked phone. Over-access also degrades the accessibility of apps by presenting to disabled users information that is actually not intended to be available on a screen, thereby confusing and hindering their ability to effectively navigate. In this work, we first empirically study overly accessible elements in Android apps and define a set of conditions that can result in over-access problem. We then present OverSight, an automated framework that leverages these conditions to detect overly accessible elements and verifies their accessibility dynamically using an AT. Our empirical evaluation of OverSight on real-world apps demonstrates OverSight’s effectiveness in detecting previously unknown security threats, workflow violations, and accessibility issues.
+</p>
+
+<h3>How does OverSight work?</h3>
+<p>
+OverSight consists of two main components: OADetector and OAVerifier. OADetector gets a window’s content specification in XML along with its screenshot through OverSight Service (OSS). OSS runs in the background, dumps a hierarchical representation of nodes in an XML file, and enables communication with the device through broadcast messages. OADetector analyzes nodes on the window and returns OverAccessibility Smells, i.e., nodes that meet one of the conditions derived from our empirical study. Confirming overaccessibility issues in these nodes is the responsibility of OAVerifier. Our approach only relies on available information to Accessibility Services; therefore, it is applicable to any app regardless of its technology or even if it is obfuscated. OAVerifier communicates with the device and explores the window with an AT to validate the reachability and actionability of overaccessibility smells. OverSight also visualizes overaccessibility smells as well as OA elements on the screenshot along with their specification for developers.</p>
+
+<img style="margin:10" ALT="[Oversight picture]" height="250" src=./approach.png><br>
+
+<h3>Artifacts</h3>
+
+<p>
+The artifacts are publicly available <a href="https://github.com/seal-hub/Oversight">here</a>.
+
+<h3>Publications</h3>
+
+More details about can be found in our publication below:
+<br>
+<ul class="paperlist">
+    <li><b>Too Much Accessibility is Harmful! Automated Detection and Analysis of Overly Accessible Elements in Mobile Apps</b><br> 
+    Forough Mehralian, Navid Salehnamadi, Syed Fatiul Huq, and Sam Malek<br>
+    <i>IEEE/ACM International Conference on Automated Software Engineering (ASE 2022), Oakland Center, United States, October 2022.</i>
+    <br>[<a href="./oversight.pdf">PDF</a>]
+    </li> 
+</ul>
+
+<!-- ***************** End of content ****************** -->
+<br><br>
+<div style="float:left">
+            <a href="http://www.ics.uci.edu/~seal/"><img ALT="[seal's logo]" height="200" src=../../seal.png></a>
+</div>
+<div style="float:right">
+            <a href="http://www.ics.uci.edu"><img ALT="[uci's logo]" style="padding-top: 40px" height="100" src=../../uci.jpg></a>
+</div>
+</div>
+</body>

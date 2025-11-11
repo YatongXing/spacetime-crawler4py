@@ -1,0 +1,707 @@
+<!-- URL: https://swiki.ics.uci.edu/doku.php/projects:maint-fall-2019 -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Data Center Power Outage [Support Wiki]</title>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="projects,maint-fall-2019"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/css.php?css=assets/mikio.less"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/icons/fontawesome/css/all.min.css"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Support Wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php/projects:maint-fall-2019?do=index" title="Sitemap"/>
+<link rel="manifest" href="/lib/exe/manifest.php" crossorigin="use-credentials"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="/feed.php?mode=list&amp;ns=projects"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="/doku.php/projects:maint-fall-2019?do=export_xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="/doku.php/projects:maint-fall-2019?do=export_raw"/>
+<link rel="canonical" href="https://wiki.ics.uci.edu/doku.php/projects:maint-fall-2019"/>
+<link rel="stylesheet" href="/lib/exe/css.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"/>
+<script >var NS='projects';var JSINFO = {"plugins":{"gallery":{"defaults":{"thumbnailsize":{"default":"150x150"},"imagesize":{"default":"1600X1200"},"cache":{"default":true},"filter":{"default":""},"showname":{"default":false},"showtitle":{"default":false},"crop":{"default":true},"direct":{"default":false},"reverse":{"default":false},"recursive":{"default":false},"align":{"default":0},"cols":{"default":0},"limit":{"default":0},"offset":{"default":0},"paginate":{"default":0},"sort":{"default":"file"},"namespace":{"default":""}}}},"isadmin":0,"isauth":0,"move_renameokay":false,"move_allowrename":false,"plugin_slider":{"width":800,"mode":"horizontal","infiniteLoop":true,"hideControlOnEnd":false,"speed":500,"easing":null,"slideMargin":0,"startSlide":0,"randomStart":false,"captions":false,"ticker":false,"tickerHover":false,"adaptiveHeight":false,"adaptiveHeightSpeed":500,"video":false,"useCSS":true,"preloadImages":"visible","responsive":true,"pager":true,"pagerType":"full","pagerShortSeparator":"\/","controls":true,"nextText":"Next","prevText":"Prev","autoControls":false,"startText":"Start","stopText":"Stop","autoControlsCombine":false,"auto":false,"pause":4000,"autoStart":true,"autoDirection":"next","autoHover":false,"autoDelay":0,"minSlides":1,"maxSlides":1,"moveSlides":0,"slideWidth":0,"touchEnabled":true,"swipeThreshold":50,"oneToOneTouch":true,"preventDefaultSwipeX":true,"preventDefaultSwipeY":false},"SMILEY_CONF":{"8-)":"cool.svg","8-O":"eek.svg","8-o":"eek.svg",":-(":"sad.svg",":-)":"smile.svg","=)":"smile2.svg",":-\/":"doubt.svg",":-\\":"doubt2.svg",":-?":"confused.svg",":-D":"biggrin.svg",":-P":"razz.svg",":-o":"surprised.svg",":-O":"surprised.svg",":-x":"silenced.svg",":-X":"silenced.svg",":-|":"neutral.svg",";-)":"wink.svg","m(":"facepalm.svg","^_^":"fun.svg",":?:":"question.svg",":!:":"exclaim.svg","LOL":"lol.svg","FIXME":"fixme.svg","DELETEME":"deleteme.svg"},"id":"projects:maint-fall-2019","namespace":"projects","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<script src="/lib/exe/jquery.php?tseed=8faf3dc90234d51a499f4f428a0eae43"></script>
+<script src="/lib/exe/js.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio-typeahead.js" defer="defer"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio.js" defer="defer"></script>
+<link rel="shortcut icon" href="/lib/tpl/mikio/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/mikio/images/apple-touch-icon.png" />
+</head>
+<body class="mikio">
+<div id="dokuwiki__site">
+    <div id="dokuwiki__top" class="site dokuwiki mode_show tpl_mikio    showSidebar hasSidebar"><nav class="mikio-navbar"><div class="mikio-container"><a class="mikio-navbar-brand" href="/doku.php/start" accesskey="h" title="Home [h]"><img src="/lib/exe/fetch.php/wiki:logo.png" class="mikio-navbar-brand-image" style="width:250px;max-width:none;max-height:none;"><div class="mikio-navbar-brand-title"><h1 class="mikio-navbar-brand-title-text">Support Wiki</h1><p class="claim mikio-navbar-brand-title-tagline"></p></div></a><div class="mikio-navbar-toggle"><span class="icon"></span></div><div class="mikio-navbar-collapse"><div class="mikio-nav-item"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="projects:maint-fall-2019"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form></div><ul class="mikio-nav"><li id="dokuwiki__pagetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_pagetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,235.38983,1277.8305)" id="g2991">
+<path d="M 128,0 H 1152 V 768 H 736 q -40,0 -68,28 -28,28 -28,68 v 416 H 128 V 0 z m 640,896 h 299 L 768,1195 V 896 z M
+1280,768 V -32 q 0,-40 -28,-68 -28,-28 -68,-28 H 96 q -40,0 -68,28 -28,28 -28,68 v 1344 q 0,40 28,68 28,28 68,28 h 544
+q 40,0 88,-20 48,-20 76,-48 l 408,-408 q 28,-28 48,-76 20,-48 20,-88 z" id="path2993" /></g></svg><span class="mikio-small-only">Page Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item revs" href="/doku.php/projects:maint-fall-2019?do=revisions" title="Old revisions"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></span><span>Old revisions</span></a><a class="mikio-nav-link mikio-dropdown-item backlink" href="/doku.php/projects:maint-fall-2019?do=backlink" title="Backlinks"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></span><span>Backlinks</span></a></div></li><li id="dokuwiki__sitetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_sitetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,121.49153,1285.4237)" id="g3027">
+<path d="m 1024,640 q 0,106 -75,181 -75,75 -181,75 -106,0 -181,-75 -75,-75 -75,-181 0,-106 75,-181 75,-75 181,-75 106,0
+181,75 75,75 75,181 z m 512,109 V 527 q 0,-12 -8,-23 -8,-11 -20,-13 l -185,-28 q -19,-54 -39,-91 35,-50 107,-138 10,-12
+10,-25 0,-13 -9,-23 -27,-37 -99,-108 -72,-71 -94,-71 -12,0 -26,9 l -138,108 q -44,-23 -91,-38 -16,-136 -29,-186 -7,-28
+-36,-28 H 657 q -14,0 -24.5,8.5 Q 622,-111 621,-98 L 593,86 q -49,16 -90,37 L 362,16 Q 352,7 337,7 323,7 312,18 186,132
+147,186 q -7,10 -7,23 0,12 8,23 15,21 51,66.5 36,45.5 54,70.5 -27,50 -41,99 L 29,495 Q 16,497 8,507.5 0,518 0,531 v 222
+q 0,12 8,23 8,11 19,13 l 186,28 q 14,46 39,92 -40,57 -107,138 -10,12 -10,24 0,10 9,23 26,36 98.5,107.5 72.5,71.5 94.5,
+71.5 13,0 26,-10 l 138,-107 q 44,23 91,38 16,136 29,186 7,28 36,28 h 222 q 14,0 24.5,-8.5 Q 914,1391 915,1378 l 28,-184
+q 49,-16 90,-37 l 142,107 q 9,9 24,9 13,0 25,-10 129,-119 165,-170 7,-8 7,-22 0,-12 -8,-23 -15,-21 -51,-66.5 -36,-45.5
+-54,-70.5 26,-50 41,-98 l 183,-28 q 13,-2 21,-12.5 8,-10.5 8,-23.5 z" id="path3029" />
+</g></svg><span class="mikio-small-only">Site Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item recent" href="/doku.php/projects:maint-fall-2019?do=recent" title="Recent Changes"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69V13m4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67V8M5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2H5m11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85z"/></svg></span><span>Recent Changes</span></a><a class="mikio-nav-link mikio-dropdown-item media" href="/doku.php/projects:maint-fall-2019?do=media&ns=projects" title="Media Manager"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 15l4.5-6 3.5 4.5 2.5-3L21 15m1-11h-8l-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M2 6H0v14a2 2 0 0 0 2 2h18v-2H2V6z"/></svg></span><span>Media Manager</span></a><a class="mikio-nav-link mikio-dropdown-item index" href="/doku.php/projects:maint-fall-2019?do=index" title="Sitemap"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2z"/></svg></span><span>Sitemap</span></a></div></li><li id="dokuwiki__usertools" class="mikio-nav-dropdown"><a id="mikio_dropdown_usertools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,197.42373,1300.6102)"><path d="M
+1408,131 Q 1408,11 1335,-58.5 1262,-128 1141,-128 H 267 Q 146,-128 73,-58.5 0,11 0,131 0,184 3.5,234.5 7,285 17.5,343.5
+28,402 44,452 q 16,50 43,97.5 27,47.5 62,81 35,33.5 85.5,53.5 50.5,20 111.5,20 9,0 42,-21.5 33,-21.5 74.5,-48 41.5,
+-26.5 108,-48 Q 637,565 704,565 q 67,0 133.5,21.5 66.5,21.5 108,48 41.5,26.5 74.5,48 33,21.5 42,21.5 61,0 111.5,-20
+50.5,-20 85.5,-53.5 35,-33.5 62,-81 27,-47.5 43,-97.5 16,-50 26.5,-108.5 10.5,-58.5 14,-109 Q 1408,184 1408,131 z m
+-320,893 Q 1088,865 975.5,752.5 863,640 704,640 545,640 432.5,752.5 320,865 320,1024 320,1183 432.5,1295.5 545,1408 704,
+1408 863,1408 975.5,1295.5 1088,1183 1088,1024 z"/></g></svg><span class="mikio-small-only">User Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item login" href="/doku.php/projects:maint-fall-2019?do=login&sectok=" title="Log In"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></span><span>Log In</span></a></div></li></ul></div></div></nav><a name="dokuwiki__top" id="dokuwiki__top"></a><div class="mikio-hero"><div class="mikio-container"><div class="mikio-hero-text"><div class="mikio-breadcrumbs"><div class="mikio-container"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php/projects:maint-fall-2019"  class="breadcrumbs" title="projects:maint-fall-2019">Data Center Power Outage</a></bdi></span></div></div><h1 class="mikio-hero-title">Data Center Power Outage</h1><h2 class="mikio-hero-subtitle"></h2></div><div class="mikio-hero-image"><div class="mikio-tags"></div></div></div></div><main class="mikio-page"><div class="mikio-container"><aside class="mikio-sidebar mikio-sidebar-left"><a class="mikio-sidebar-toggle closed" href="#">Sidebar <span class="icon"></span></a><div class="mikio-sidebar-collapse"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="projects:maint-fall-2019"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form><div class="mikio-sidebar-content"><div><div id="nojs_indexmenu_92216708768e6d56a08415" data-jsajax="%26group%3D1" class="indexmenu_nojs">
+<ul class="idx">
+<li class="closed"><div class="li"><a href="/doku.php/accounts:accounts" class="indexmenu_idx_head" data-wiki-id="accounts:accounts">ICS Accounts</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/announce:announce" class="indexmenu_idx_head" data-wiki-id="announce:announce">Announcement and Maintenance</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/backups:backups" class="indexmenu_idx_head" data-wiki-id="backups:backups">Backups @ ICS</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/commands:commands" class="indexmenu_idx_head" data-wiki-id="commands:commands">Common Tasks and Commands</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/group:group" class="indexmenu_idx_head" data-wiki-id="group:group">Group Files</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/hardware:hardware" class="indexmenu_idx_head" data-wiki-id="hardware:hardware">Hardware Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/instructional_support:instructional_support" class="indexmenu_idx_head" data-wiki-id="instructional_support:instructional_support">Instructional Support Resources</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/network:network" class="indexmenu_idx_head" data-wiki-id="network:network">Network</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/os?idx=os" class="indexmenu_idx" data-wiki-id="">os</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/policies?idx=policies" class="indexmenu_idx" data-wiki-id="">policies</a></div></li>
+<li class="open"><div class="li"><a href="/doku.php/projects?idx=projects" class="indexmenu_idx open" data-wiki-id="">projects</a></div>
+<ul class="idx">
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-3-28-2016" class="wikilink1" title="projects:maint-3-28-2016" data-wiki-id="projects:maint-3-28-2016">ICS Maintenance March 28, 2017</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-6-18-2016" class="wikilink1" title="projects:maint-6-18-2016" data-wiki-id="projects:maint-6-18-2016">ICS Maintenance June 18, 2016</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-06-30-2017" class="wikilink1" title="projects:maint-06-30-2017" data-wiki-id="projects:maint-06-30-2017">Summer Maintenance Schedule</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-9-21-2016" class="wikilink1" title="projects:maint-9-21-2016" data-wiki-id="projects:maint-9-21-2016">ICS Maintenance September 21, 2016</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-12-20-2016" class="wikilink1" title="projects:maint-12-20-2016" data-wiki-id="projects:maint-12-20-2016">ICS Maintenance December 20, 2016</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-2021" class="wikilink1" title="projects:maint-2021" data-wiki-id="projects:maint-2021">2021 Maintenance Schedule</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-2022" class="wikilink1" title="projects:maint-2022" data-wiki-id="projects:maint-2022">2022 Maintenance Schedule</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-2023" class="wikilink1" title="projects:maint-2023" data-wiki-id="projects:maint-2023">2023 Maintenance Schedule</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-2024" class="wikilink1" title="projects:maint-2024" data-wiki-id="projects:maint-2024">2024 ICS Maintenance Schedule</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-2025" class="wikilink1" title="projects:maint-2025" data-wiki-id="projects:maint-2025">2025 ICS Maintenance Schedule</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-fall-2017-dtr" class="wikilink1" title="projects:maint-fall-2017-dtr" data-wiki-id="projects:maint-fall-2017-dtr">Headline</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-fall-2018" class="wikilink1" title="projects:maint-fall-2018" data-wiki-id="projects:maint-fall-2018">2018 Fall Quarter Maintenance Schedule</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-fall-2019" class="wikilink1" title="projects:maint-fall-2019" data-wiki-id="projects:maint-fall-2019">Data Center Power Outage</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-fall-2020" class="wikilink1" title="projects:maint-fall-2020" data-wiki-id="projects:maint-fall-2020">Downtime Notice: #77051: TSM Backups Paused</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-fall" class="wikilink1" title="projects:maint-fall" data-wiki-id="projects:maint-fall">Fall Maintenance Schedule</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-spring-2018" class="wikilink1" title="projects:maint-spring-2018" data-wiki-id="projects:maint-spring-2018">2018 Spring Quarter Maintenance Events</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-spring-2019" class="wikilink1" title="projects:maint-spring-2019" data-wiki-id="projects:maint-spring-2019">Spring 2019 Maintenance Schedule</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-spring-2020" class="wikilink1" title="projects:maint-spring-2020" data-wiki-id="projects:maint-spring-2020">2020 Spring Maintenance Notifications</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-spring-2021" class="wikilink1" title="projects:maint-spring-2021" data-wiki-id="projects:maint-spring-2021">2021 June Maintenance  June 14th through June 18</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-summer-2018" class="wikilink1" title="projects:maint-summer-2018" data-wiki-id="projects:maint-summer-2018">Summer Quarter 2018 Maintentance Events</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-summer-2019" class="wikilink1" title="projects:maint-summer-2019" data-wiki-id="projects:maint-summer-2019">Summer 2019 Maintenance Schedule</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-summer-2020" class="wikilink1" title="projects:maint-summer-2020" data-wiki-id="projects:maint-summer-2020">Maintenance Notifications Summer 2020</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-winter-2018" class="wikilink1" title="projects:maint-winter-2018" data-wiki-id="projects:maint-winter-2018">Calendar</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-winter-2019" class="wikilink1" title="projects:maint-winter-2019" data-wiki-id="projects:maint-winter-2019">2019 Winter Quarter Maintenance Schedule</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-winter-2020" class="wikilink1" title="projects:maint-winter-2020" data-wiki-id="projects:maint-winter-2020">2020 Winter Maintenance Notifications</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/projects:maint-winter-2021" class="wikilink1" title="projects:maint-winter-2021" data-wiki-id="projects:maint-winter-2021">2021 Winter Maintenance Schedule</a></div></li>
+</ul>
+</li>
+<li class="closed"><div class="li"><a href="/doku.php/remote_support?idx=remote_support" class="indexmenu_idx" data-wiki-id="">remote_support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/requesttracker?idx=requesttracker" class="indexmenu_idx" data-wiki-id="">requesttracker</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/research_support:research_support" class="indexmenu_idx_head" data-wiki-id="research_support:research_support">Research Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/security?idx=security" class="indexmenu_idx" data-wiki-id="">security</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/services?idx=services" class="indexmenu_idx" data-wiki-id="">services</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/software:software" class="indexmenu_idx_head" data-wiki-id="software:software">Software</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/virtual_environments:virtual_environments" class="indexmenu_idx_head" data-wiki-id="virtual_environments:virtual_environments">Virtual Environments</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/webapps:webapps" class="indexmenu_idx_head" data-wiki-id="webapps:webapps">ICS Web Applications</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/wiki?idx=wiki" class="indexmenu_idx" data-wiki-id="">wiki</a></div></li>
+</ul>
+</div></div></div></div></aside><div class="mikio-content" id="dokuwiki__content"><article class="mikio-article"><div class="mikio-toc"><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle"><svg class="mikio-iicon hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+style="fill:currentColor"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0
+76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16z"/></svg>Table of Contents<svg class="mikio-iicon down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+aria-hidden="true" style="fill:currentColor"><path d="M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9
+1.917-1.916z"/></svg></h3>
+<div>
+
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#data_center_power_outage">Data Center Power Outage</a></div></li>
+<li class="level2"><div class="li"><a href="#ics_computing_maintenance">ICS Computing Maintenance</a></div></li>
+<li class="level3"><div class="li"><a href="#research_host_computing_kernel_patch_and_reboot_schedule">Research Host Computing Kernel Patch and Reboot Schedule</a></div></li>
+<li class="level3"><div class="li"><a href="#infrastructure_host_computing_kernel_patch_and_reboot_schedule">Infrastructure Host Computing Kernel Patch and Reboot Schedule</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div><div class="mikio-article-content"><h3 class="sectionedit1" id="data_center_power_outage" style="display:none">Data Center Power Outage</h3>
+<div class="level3">
+
+<p>
+<strong> Information Notice </strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> DATE: 12/09/2019</div>
+</li>
+<li class="level1"><div class="li"> START TIME: 0800</div>
+</li>
+<li class="level1"><div class="li"> DURATION: 2 hours</div>
+</li>
+</ul>
+
+<p>
+<strong> AFFECTS </strong>
+</p>
+
+<p>
+For servers that have dual power supplies, there will be a momentary loss of network connectivity before and after the outage.
+</p>
+<ul>
+<li class="level1"><div class="li"> ava</div>
+</li>
+<li class="level1"><div class="li"> axon-mind</div>
+</li>
+<li class="level1"><div class="li"> c1ccccc1-2</div>
+</li>
+<li class="level1"><div class="li"> c1ccccc1-3</div>
+</li>
+<li class="level1"><div class="li"> c1ccccc1-4</div>
+</li>
+<li class="level1"><div class="li"> c1ccccc1-32</div>
+</li>
+<li class="level1"><div class="li"> c1ccccc1-38 to 55</div>
+</li>
+<li class="level1"><div class="li"> gallifrey</div>
+</li>
+<li class="level1"><div class="li"> hera</div>
+</li>
+<li class="level1"><div class="li"> new-c1ccccc1- 6  </div>
+</li>
+<li class="level1"><div class="li"> new-c1ccccc1-10</div>
+</li>
+<li class="level1"><div class="li"> nimbus </div>
+</li>
+<li class="level1"><div class="li"> ochca1</div>
+</li>
+<li class="level1"><div class="li"> ochca2</div>
+</li>
+<li class="level1"><div class="li"> osgrid</div>
+</li>
+<li class="level1"><div class="li"> ronne</div>
+</li>
+<li class="level1"><div class="li"> ronne-raid</div>
+</li>
+<li class="level1"><div class="li"> ross</div>
+</li>
+<li class="level1"><div class="li"> unhygienix</div>
+</li>
+</ul>
+
+<p>
+The following servers only have one power supply and will be offline during the outage:
+</p>
+<ul>
+<li class="level1"><div class="li"> amazon</div>
+</li>
+<li class="level1"><div class="li"> apricot</div>
+</li>
+<li class="level1"><div class="li"> asterix-1 to 10</div>
+</li>
+<li class="level1"><div class="li"> cacofonix-1 to 5</div>
+</li>
+<li class="level1"><div class="li"> coyote</div>
+</li>
+<li class="level1"><div class="li"> ieee</div>
+</li>
+<li class="level1"><div class="li"> ipubmed1 to 3</div>
+</li>
+<li class="level1"><div class="li"> maxwell</div>
+</li>
+<li class="level1"><div class="li"> sensorium 1 to 38</div>
+</li>
+<li class="level1"><div class="li"> spiritbomb</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit2" id="ics_computing_maintenance">ICS Computing Maintenance</h2>
+<div class="level2">
+
+<p>
+(RT Ticket #73221)
+</p>
+
+<p>
+Please note that we will be running maintenance on systems from 12/9/2019 until 12/19/2019.   
+</p>
+
+<p>
+<strong>Check back</strong> to see updated scheduling.
+</p>
+
+<p>
+Services to upgrade
+</p>
+
+<p>
+<strong>12/9 Scheduled Maintenance</strong>
+</p>
+<div class="table sectionedit3"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Ticket</th><th class="col1">Event</th><th class="col2">Begins</th><th class="col3">Duration</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">72849</td><td class="col1">Limited Data Center Power Outage</td><td class="col2">0800</td><td class="col3">8 hours</td>
+	</tr>
+</table></div>
+
+<p>
+<strong>12/10 Scheduled Maintenance</strong>
+</p>
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Ticket</th><th class="col1">Event</th><th class="col2">Begins</th><th class="col3">Duration</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">73225</td><td class="col1">Netapp Upgrade:  Not Downtime Anticipated</td><td class="col2">0800</td><td class="col3">2 hours</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">TBD</td><td class="col1">Promote new domain controllers</td><td class="col2">0800</td><td class="col3">2 hours</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">TBD</td><td class="col1">Security and Kernel Patch:  Infrastructure Systems (see below)</td><td class="col2">0800</td><td class="col3">5-30 minutes per host</td>
+	</tr>
+</table></div>
+
+<p>
+<strong>12/11 Scheduled Maintenance</strong>
+</p>
+<div class="table sectionedit5"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Ticket</th><th class="col1">Event</th><th class="col2">Begins</th><th class="col3">Duration</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">72959</td><td class="col1">Kubernetes:  Instruction  Cluster Helm Charts Updates</td><td class="col2">0800</td><td class="col3">All day</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">73240</td><td class="col1">Downtime for Statistics hosts</td><td class="col2">0800</td><td class="col3">2 hours</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">TBD</td><td class="col1">Security and Kernel Patch:  Infrastructure Systems (see below)</td><td class="col2">0800</td><td class="col3">5-30 minutes per host</td>
+	</tr>
+</table></div>
+
+<p>
+<strong>12/13 Scheduled Maintenance</strong>
+</p>
+<div class="table sectionedit6"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Ticket</th><th class="col1">Event</th><th class="col2">Begins</th><th class="col3">Duration</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">TBD</td><td class="col1">Security and Kernel Patch:  Infrastructure Systems (see below)</td><td class="col2">0800</td><td class="col3">5-30 minutes per host</td>
+	</tr>
+</table></div>
+
+<p>
+<strong>12/16 Scheduled Maintenance</strong>
+</p>
+<div class="table sectionedit7"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Ticket</th><th class="col1">Event</th><th class="col2">Begins</th><th class="col3">Duration</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">73378</td><td class="col1">Circinus(openlab) cluster update</td><td class="col2">0800</td><td class="col3">All day, 5-30 minutes per host</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">TBD</td><td class="col1">Gitlab Update</td><td class="col2">0800</td><td class="col3">2 hours</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">73228</td><td class="col1">Software Update</td><td class="col2">1300</td><td class="col3">N/A</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">TBD</td><td class="col1">Security and Kernel Patch:  Infrastructure Systems (see below)</td><td class="col2">0800</td><td class="col3">All day, 5-30 minutes per host</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">73376</td><td class="col1">Security, CUDA and Kernel Patch: poison, velox,hypernova</td><td class="col2">0800</td><td class="col3">4 hours</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">TBD</td><td class="col1">Security and Kernel Patch:  Research Systems</td><td class="col2">0800</td><td class="col3">All day, 5-30 minutes per host</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">TBD</td><td class="col1">Certificate Services to new Domain Controller</td><td class="col2">1300</td><td class="col3">2 hours</td>
+	</tr>
+</table></div>
+
+<p>
+<strong>12/17 Scheduled Maintenance</strong>
+</p>
+<div class="table sectionedit8"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Ticket</th><th class="col1">Event</th><th class="col2">Begins</th><th class="col3">Duration</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">73378</td><td class="col1">Circinus(openlab) cluster update</td><td class="col2">0800</td><td class="col3">All day, 5-30 minutes per host</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">TBD</td><td class="col1">Security and Kernel Patch:  Infrastructure Systems (see below)</td><td class="col2">0800</td><td class="col3">All day, 5-30 minutes per host</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">73374</td><td class="col1">Security, CUDA and Kernel Patch: arcus_cluster, nimbus</td><td class="col2">0900</td><td class="col3">4 hours</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">TBD</td><td class="col1">Security and Kernel Patch:  Research Systems</td><td class="col2">0800</td><td class="col3">All day, 5-30 minutes per host</td>
+	</tr>
+</table></div>
+
+<p>
+<strong>12/18 Scheduled Maintenance</strong>
+</p>
+<div class="table sectionedit9"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Ticket</th><th class="col1">Event</th><th class="col2">Begins</th><th class="col3">Duration</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">73378</td><td class="col1">Centaurus(kubernetes) cluster update</td><td class="col2">0800</td><td class="col3">All day, 5-30 minutes per host</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">TBD</td><td class="col1">Infrastructure Host Updates</td><td class="col2">0800</td><td class="col3">All day, 5-30 minutes per host</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">73375</td><td class="col1">Security, CUDA and Kernel Patch: zen, bayonet_cluster, gauss</td><td class="col2">0900</td><td class="col3">4 hours</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">TBD</td><td class="col1">Security and Kernel Patch:  Research Systems</td><td class="col2">0800</td><td class="col3">All day, 5-30 minutes per host</td>
+	</tr>
+</table></div>
+
+<p>
+<strong>12/19 Scheduled Maintenance</strong>
+</p>
+<div class="table sectionedit10"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Ticket</th><th class="col1">Event</th><th class="col2">Begins</th><th class="col3">Duration</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">73378</td><td class="col1">Centaurus(kubernetes) cluster update</td><td class="col2">0800</td><td class="col3">All day, 5-30 minutes per host</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">TBD</td><td class="col1">Security and Kernel Patch:  Infrastructure Systems (see below)</td><td class="col2">0800</td><td class="col3">All day, 5-30 minutes per host</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">TBD</td><td class="col1">Security and Kernel Patch:  Research Systems</td><td class="col2">0800</td><td class="col3">All day, 5-30 minutes per host</td>
+	</tr>
+</table></div>
+
+</div>
+
+<h3 class="sectionedit11" id="research_host_computing_kernel_patch_and_reboot_schedule">Research Host Computing Kernel Patch and Reboot Schedule</h3>
+<div class="level3">
+
+<p>
+These hosts will be updated with the current kernel and security patches. Each system will be rebooted following the application of patches.
+</p>
+
+</div>
+
+<h4 id="ticket_73383">12/16 (Ticket 73383)</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> drg</div>
+</li>
+<li class="level1"><div class="li"> titan_cluster</div>
+</li>
+<li class="level1"><div class="li"> mimir_cluster</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="ticket_73384">12/17 (Ticket 73384)</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> cloudet</div>
+</li>
+<li class="level1"><div class="li"> c1ccccc1-14</div>
+</li>
+<li class="level1"><div class="li"> c1ccccc1-35.</div>
+</li>
+<li class="level1"><div class="li"> c1ccccc1-36</div>
+</li>
+<li class="level1"><div class="li"> c1ccccc1-37</div>
+</li>
+<li class="level1"><div class="li"> 73384“</div>
+</li>
+<li class="level1"><div class="li"> c1ccccc1-7</div>
+</li>
+<li class="level1"><div class="li"> dover-1</div>
+</li>
+<li class="level1"><div class="li"> dover-2</div>
+</li>
+<li class="level1"><div class="li"> new-c1ccccc1-34</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="ticket_733841">12/18 (Ticket 73384)</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> datalab/markov</div>
+</li>
+<li class="level1"><div class="li"> neuromancer</div>
+</li>
+<li class="level1"><div class="li"> kingoftown</div>
+</li>
+<li class="level1"><div class="li"> syn2-1</div>
+</li>
+<li class="level1"><div class="li"> syn2-2</div>
+</li>
+<li class="level1"><div class="li"> syn2-3</div>
+</li>
+<li class="level1"><div class="li"> hyperion</div>
+</li>
+<li class="level1"><div class="li"> invictus</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="section16">1/6</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> nebula-1</div>
+</li>
+<li class="level1"><div class="li"> nebula-2</div>
+</li>
+<li class="level1"><div class="li"> nebula-3</div>
+</li>
+<li class="level1"><div class="li"> nebula-4</div>
+</li>
+<li class="level1"><div class="li"> nebula-5</div>
+</li>
+<li class="level1"><div class="li"> nebula-6</div>
+</li>
+<li class="level1"><div class="li"> nebula-7</div>
+</li>
+<li class="level1"><div class="li"> sequel-1</div>
+</li>
+<li class="level1"><div class="li"> sequel-2</div>
+</li>
+<li class="level1"><div class="li"> sequel-3</div>
+</li>
+<li class="level1"><div class="li"> sequel-4</div>
+</li>
+<li class="level1"><div class="li"> sequel-5</div>
+</li>
+<li class="level1"><div class="li"> sequel-6</div>
+</li>
+<li class="level1"><div class="li"> lambda</div>
+</li>
+<li class="level1"><div class="li"> c1ccccc1-33</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit12" id="infrastructure_host_computing_kernel_patch_and_reboot_schedule">Infrastructure Host Computing Kernel Patch and Reboot Schedule</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="section129">12/9</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> addison.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> addison-v0.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> addison-v1.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> addison-v2.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> addison-v3.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> addison-v4.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> addison-v5.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> addison-v6.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> addison-v7.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> addison-v8.ics.uci.edu</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="section1210">12/10</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> adrian-monk-v9.lom.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v0.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v1.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v2.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v3.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v4.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v5.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v6.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v7.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v8.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v9.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v10.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v11.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> adrian-monk-v12.ics.uci.edu</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="section1211">12/11</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> astro-boy.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> colin-baker.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> colin-baker-v0.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> colin-baker-v1.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> colin-baker-v2.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> colin-baker-v3.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> hercule-poirot.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> jo-grant.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> liz-shaw.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> matt-smith.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> matt-smith-v0.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> matt-smith-v1.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> matt-smith-v2.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> matt-smith-v3.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> matt-smith-v4.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> peter-capaldi.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> peter-capaldi-v0.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> peter-capaldi-v1.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> peter-capaldi-v2.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> peter-capaldi-v3.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> peter-capaldi-v4.ics.uci.edu</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="section1213">12/13</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> kate-beckett.lom.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> kate-beckett-v2.lom.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> kate-beckett.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> kate-beckett-v0.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> kate-beckett-v1.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> kate-beckett-v2.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> kate-beckett-v3.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> kate-beckett-v4.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> kate-beckett-v5.ics.uci.edu</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="section1216">12/16</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> john-luther.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> john-luther-v0.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> john-luther-v1.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> john-luther-v2.ics.uci.edu</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="section1217">12/17</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> melvil-dewey.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> melvil-dewey-v0.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> melvil-dewey-v1.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> melvil-dewey-v2.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> nancy-drew.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> nancy-drew-v0.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> nancy-drew-v1.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> nancy-drew-v2.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> nancy-drew-v3.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> nancy-drew-v4.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> nancy-drew-v5.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> nancy-drew-v6.ics.uci.edu</div>
+</li>
+</ul>
+
+</div><div style="clear:both"></div></div></article></div><nav id="dw__pagetools" class="hidden-print dw__pagetools"><ul class="tools"><li class="source"><a href="/doku.php/projects:maint-fall-2019?do=edit" class="source" title="Show pagesource [v]" accesskey="v"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></div><span class="a11y">Show pagesource</span></a></li><li class="revs"><a href="/doku.php/projects:maint-fall-2019?do=revisions" class="revs" title="Old revisions [o]" accesskey="o"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></div><span class="a11y">Old revisions</span></a></li><li class="backlink"><a href="/doku.php/projects:maint-fall-2019?do=backlink" class="backlink" title="Backlinks"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></div><span class="a11y">Backlinks</span></a></li><li class="top"><a href="#dokuwiki__top" class="top" title="Back to top [t]" accesskey="t"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></div><span class="a11y">Back to top</span></a></li></ul></nav></div></main><div class="mikio-page-fill"><div class="mikio-content" style="padding:0"></div></div><footer class="mikio-footer"><div class="doc"><bdi>projects/maint-fall-2019.txt</bdi> · Last modified: 2019/12/16 17:38</div><div class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license"><img src="/lib/images/license/badge/cc-by-nc-sa.png" alt="CC Attribution-Noncommercial-Share Alike 4.0 International" /></a> Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license" class="urlextern">CC Attribution-Noncommercial-Share Alike 4.0 International</a></bdi></div></footer>    <div class="no"><img src="/lib/exe/taskrunner.php?id=projects%3Amaint-fall-2019&amp;1761043315" width="2" height="1" alt="" /></div>
+</div>
+</body>
+</html>

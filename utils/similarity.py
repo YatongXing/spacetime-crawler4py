@@ -1,20 +1,19 @@
-# utils/similarity.py
 import re
 import hashlib
 import threading
 from typing import Iterable, Set, Dict, Tuple, Optional, List
 
-# ---------- Tunables ----------
+# Tunables
 N_GRAM       = 3        # shingle size (words)
 SAMPLE_MOD   = 8        # keep h where h % SAMPLE_MOD == 0 (subsampling)
 NEAR_DUP_TAU = 0.90     # Jaccard threshold
 
-# ---------- In-memory state (protected by a single lock) ----------
+# In-memory state (protected by a single lock)
 _LOCK       = threading.RLock()
 _DOC_FPS: Dict[str, Set[int]] = {}   # doc_id -> fingerprint set
 _SEEN_CKSUM: Set[str] = set()        # exact-dedup checksums (hex string)
 
-# ---------- Tokenization / n-grams ----------
+# Tokenization / n-grams
 _WORD_RE = re.compile(r"[A-Za-z0-9]+")
 
 def _words(text: str) -> Iterable[str]:
@@ -33,7 +32,7 @@ def _hash_ngram(ng: Tuple[str, ...]) -> int:
     h = hashlib.blake2b((" ".join(ng)).encode("utf-8"), digest_size=8).digest()
     return int.from_bytes(h, "big", signed=False)
 
-# ---------- Fingerprints ----------
+# Fingerprints
 def fingerprints_from_text(text: str,
                            n_gram: int = N_GRAM,
                            sample_mod: int = SAMPLE_MOD) -> Set[int]:
@@ -54,7 +53,7 @@ def jaccard(a: Set[int], b: Set[int]) -> float:
     union = len(a | b)
     return inter / union if union else 0.0
 
-# ---------- Exact duplicates ----------
+# Exact duplicates
 def checksum_bytes(b: bytes) -> str:
     return hashlib.sha1(b).hexdigest()  # simple checksum for exact dup
 
@@ -66,7 +65,7 @@ def remember_exact(hex_digest: str) -> None:
     with _LOCK:
         _SEEN_CKSUM.add(hex_digest)
 
-# ---------- Index & search ----------
+# Index & search
 def add_document(doc_id: str, text: str) -> Set[int]:
     """Compute and store fingerprints for doc_id. Returns the set."""
     fps = fingerprints_from_text(text)

@@ -1,0 +1,235 @@
+<!-- URL: https://grape.ics.uci.edu/wiki/public/prefs/userinterface -->
+
+
+<!DOCTYPE html>
+<html lang="en-US">   <head>
+    <!-- # block head (placeholder in theme.html) -->
+    <!-- # block head (content inherited from layout.html) -->
+    <title>
+      Preferences:
+      User Interface
+          – Public
+
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script>
+        if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+        </script><![endif]-->
+
+    <link rel="start"  href="/wiki/public/wiki" />
+    <link rel="search"  href="/wiki/public/search" />
+    <link rel="help"  href="/wiki/public/wiki/TracGuide" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/trac.css" type="text/css" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/prefs.css" type="text/css" />
+    <link rel="icon"  href="/wiki/public/chrome/site/favicon.ico" type="image/x-icon" />
+    <noscript>
+      <style>
+        .trac-noscript { display: none !important }
+      </style>     </noscript>
+    <script src="/wiki/public/chrome/common/js/jquery.js"></script>
+    <script src="/wiki/public/chrome/common/js/babel.js"></script>
+    <script src="/wiki/public/chrome/common/js/trac.js"></script>
+    <script src="/wiki/public/chrome/common/js/search.js"></script>
+    <script src="/wiki/public/chrome/common/js/folding.js"></script>
+    <script>
+      jQuery(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])")
+            .prop("autocomplete", "off").datepicker();
+          // Input current date when today is pressed.
+          var _goToToday = $.datepicker._gotoToday;
+          $.datepicker._gotoToday = function(id) {
+            _goToToday.call(this, id);
+            this._selectDate(id)
+          };
+          $(".trac-datetimepicker:not([readonly])")
+            .prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <!--   # include 'site_head.html' (layout.html) -->
+    <!--   end of site_head.html -->
+    <!-- # endblock head (content inherited from layout.html) -->
+    <!-- # endblock head (placeholder in theme.html) -->
+  </head> 
+  <body>
+    <!-- # block body (content inherited from theme.html) -->
+    <!--   # include 'site_header.html' (theme.html) -->
+    <!--   end of site_header.html -->
+
+    <div id="banner">
+      <div id="header">
+        <a id="logo"
+           href="http://www.ics.uci.edu/">
+          <img  alt="ICS Logo" height="67" src="/wiki/public/chrome/site/ics.jpg" width="128" /></a>
+
+
+      </div>
+      <form id="search" action="/wiki/public/search" method="get">
+      </form>
+          <div id="metanav" class="nav">
+      <ul><li  class="first"><a href="/wiki/public/login">Login</a></li><li  class="active"><a href="/wiki/public/prefs">Preferences</a></li><li ><a href="/wiki/public/about">About Trac</a></li><li  class="last"><a href="/wiki/public/register">Register</a></li></ul>
+    </div>
+
+    </div>
+        <div id="mainnav" class="nav">
+    </div>
+
+
+    <div id="main"
+         >
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <hr />
+      </div>
+
+      
+
+      
+
+      <!-- # block content (placeholder in theme.html) -->
+    <div id="content" class="prefs">
+      <h1>Preferences</h1>
+      <p>
+This page lets you customize your personal settings for this site. These settings are stored on the server and are identified by a session key stored in a browser cookie. That cookie allows your settings to be restored on subsequent visits.      </p>
+
+      <ul id="tabs">
+        <li>
+          <a href="/wiki/public/prefs">General</a>
+        </li>
+        <li id="tab_advanced">
+          <a href="/wiki/public/prefs/advanced">Advanced</a>
+        </li>
+        <li id="tab_localization">
+          <a href="/wiki/public/prefs/localization">Localization</a>
+        </li>
+        <li id="tab_notification">
+          <a href="/wiki/public/prefs/notification">Notifications</a>
+        </li>
+        <li id="tab_pygments">
+          <a href="/wiki/public/prefs/pygments">Syntax Highlighting</a>
+        </li>
+        <li class="active" id="tab_userinterface">
+          User Interface
+        </li>
+      </ul>
+
+      <div id="tabcontent">
+        <form id="userprefs" action="#" method="post">
+          <input type="hidden" name="__FORM_TOKEN" value="53dce23340a6d7bee87b5efe" />
+
+
+    <div class="field">
+      <input type="hidden" name="accesskeys_cb" value="" />
+      <label>
+        <input type="checkbox" name="accesskeys" value="1"/>
+        Enable access keys
+      </label>
+      <p class="hint">
+This site provides keyboard shortcuts for faster access to certain functions of this site. As these shortcuts can cause conflicts with shortcuts provided by the desktop system or web browser, they are disabled by default. See         <a href="/wiki/public/wiki/TracAccessibility">TracAccessibility</a>
+ for more information on access keys.      </p>
+    </div>
+
+    <div class="field">
+      <input type="hidden" name="wiki_fullwidth_cb" value="" />
+      <label>
+        <input type="checkbox" name="wiki_fullwidth" value="1"/>
+        Show wiki pages in full-width by default.
+      </label>
+      <p class="hint">
+Use all the available browser width to display the wiki page content, instead of the fixed-width central column aimed at improving readability.      </p>
+    </div>
+
+    <div class="field">
+      <input type="hidden" name="ui.use_symbols_cb" value="" />
+      <label>
+        <input type="checkbox" name="ui.use_symbols" value="1"/>
+        Use only symbols for buttons.
+      </label>
+      <p class="hint">
+Display only the icon or symbol for short inline buttons, and hide the text caption.      </p>
+    </div>
+
+    <div class="field">
+      <input type="hidden" name="ui.hide_help_cb" value="" />
+      <label>
+        <input type="checkbox" name="ui.hide_help" value="1"/>
+        Hide help links.
+      </label>
+      <p class="hint">
+Don't show the various help links. This reduces the verbosity of the pages.      </p>
+    </div>
+
+    <div class="field">
+      <label>
+        Auto preview timeout:
+        <input type="text" name="ui.auto_preview_timeout" size="1"
+               value=""/>
+      </label>
+      <span class="hint">seconds</span>
+      <p class="hint">
+Defaults to the site-configured value (2.0 seconds) when empty. Set to 0 to disable autopreview.      </p>
+    </div>
+    <div class="field">
+      <label for="default_handler">Default handler:</label>
+      <select id="default_handler" name="default_handler">
+        <option value="">
+          Default: WikiModule</option>
+        <option value="AboutModule">AboutModule</option>
+        <option value="AccountModule">AccountModule</option>
+        <option value="AdminModule">AdminModule</option>
+        <option value="AnyDiffModule">AnyDiffModule</option>
+        <option value="BrowserModule">BrowserModule</option>
+        <option value="ChangesetModule">ChangesetModule</option>
+        <option value="EmailVerificationModule">EmailVerificationModule</option>
+        <option value="LogModule">LogModule</option>
+        <option value="MilestoneModule">MilestoneModule</option>
+        <option value="PreferencesModule">PreferencesModule</option>
+        <option value="QueryModule">QueryModule</option>
+        <option value="RegistrationModule">RegistrationModule</option>
+        <option value="ReportModule">ReportModule</option>
+        <option value="RoadmapModule">RoadmapModule</option>
+        <option value="SearchModule">SearchModule</option>
+        <option value="TicketModule">TicketModule</option>
+        <option value="TimelineModule">TimelineModule</option>
+        <option value="WikiModule">WikiModule</option>
+      </select>
+    </div>
+          <div class="buttons">
+            <input type="hidden" name="action" value="save" />
+            <input type="submit" value="Save changes" />
+          </div>
+
+        </form>
+      </div>
+    </div>
+        <!-- # block content (content inherited from layout.html) -->
+    <!-- # endblock content (content inherited from layout.html) -->
+
+      <!-- # endblock content (placeholder in theme.html) -->
+    </div>
+
+    <div id="footer"><hr/>
+      <a id="tracpowered" href="https://trac.edgewall.org/"
+         ><img src="/wiki/public/chrome/common/trac_logo_mini.png" height="30"
+               width="107" alt="Trac Powered"/></a>
+      <p class="left">
+Powered by         <a href="/wiki/public/about"><strong>Trac 1.5.3</strong></a>
+        <br />
+ By         <a href="http://www.edgewall.org/">Edgewall Software</a>
+.      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+    <!--   # include 'site_footer.html' (theme.html) -->
+    <!--   end of site_footer.html -->
+    <!-- # endblock body (content inherited from theme.html) -->
+  </body> </html>

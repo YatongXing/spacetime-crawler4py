@@ -162,7 +162,7 @@ def _looks_like_login_wall(soup) -> bool:
     return False
 
 def _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm) -> bool:
-    # 1) Common 404/error CSS hooks
+    # Common 404/error CSS hooks
     if soup.select_one(".error-404, .page-404, body.error404, #error404, .not-found, .page-not-found"):
         return True
 
@@ -196,7 +196,7 @@ def extract_next_links(url, resp):
     # Return a list with the hyperlinks (as strings) scrapped from resp.raw_response.content
     result = []
 
-    # 1. Basic guards: must have a successful HTTP 200 HTML response
+    # Basic guards: must have a successful HTTP 200 HTML response
     if resp is None or resp.status != 200 or resp.raw_response is None:
         return result
 
@@ -215,7 +215,7 @@ def extract_next_links(url, resp):
        or b"<urlset" in head or b"<sitemapindex" in head:
         return result
 
-    # 2. Parse HTML safely
+    # Parse HTML safely
     try:
         soup = BeautifulSoup(content, "html.parser")
     except Exception:
@@ -225,19 +225,19 @@ def extract_next_links(url, resp):
     for t in soup(['script', 'style', 'noscript', 'svg']):
         t.decompose()
 
-    # 3. Page-quality filtering
+    # Page-quality filtering
     word_count, a_count, title_norm = _page_stats(soup)
     if _looks_like_error_200_from_stats(soup, word_count, a_count, title_norm):
         return result
     if _looks_like_login_wall(soup):
         return result
     
-    # 4. Duplicate detection
-    #    a) exact dupes by checksum of raw bytes
+    # Duplicate detection
+    # exact dupes by checksum of raw bytes
     chk = similarity.checksum_bytes(content)
     if not similarity.seen_exact(chk):
         similarity.remember_exact(chk)
-    #    b) near dupes by Jaccard over 3-gram fingerprints (text only)
+    # near dupes by Jaccard over 3-gram fingerprints (text only)
     page_text = soup.get_text(" ", strip=True)
     doc_id = _norm_url_no_fragment(resp.url or url)
     nd = similarity.is_near_duplicate_of(page_text, tau=similarity.NEAR_DUP_TAU)
@@ -245,14 +245,14 @@ def extract_next_links(url, resp):
     # Index this page so *future* pages can be compared to it
     similarity.add_document(doc_id, page_text)
     
-    # 5. Save page if not near-duplicate (we still always return outlinks)
+    # Save page if not near-duplicate (we still always return outlinks)
     try:
         if not skip_save:
             _safe_save_page(resp.url or url, content)
     except Exception:
         pass
 
-    # 6. Extract and normalize links
+    # Extract and normalize links
     base = resp.url or url
     seen = set()
     for a in soup.find_all("a", href=True):

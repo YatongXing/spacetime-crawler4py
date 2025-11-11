@@ -1,0 +1,409 @@
+<!-- URL: https://grape.ics.uci.edu/wiki/public/wiki/cs221-2019-spring-project2 -->
+
+<!DOCTYPE html>
+<html lang="en-US">   <head>
+    <!-- # block head (placeholder in theme.html) -->
+        <!-- # block head (content inherited from layout.html) -->
+    <title>
+      cs221-2019-spring-project2     – Public
+
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script>
+        if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+        </script><![endif]-->
+
+    <link rel="start"  href="/wiki/public/wiki" />
+    <link rel="search"  href="/wiki/public/search" />
+    <link rel="help"  href="/wiki/public/wiki/TracGuide" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/trac.css" type="text/css" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/wiki.css" type="text/css" />
+    <link rel="icon"  href="/wiki/public/chrome/site/favicon.ico" type="image/x-icon" />
+    <link rel="alternate"  href="/wiki/public/wiki/cs221-2019-spring-project2?format=txt" title="Plain Text" type="text/x-trac-wiki" />
+    <noscript>
+      <style>
+        .trac-noscript { display: none !important }
+      </style>     </noscript>
+    <script src="/wiki/public/chrome/common/js/jquery.js"></script>
+    <script src="/wiki/public/chrome/common/js/babel.js"></script>
+    <script src="/wiki/public/chrome/common/js/trac.js"></script>
+    <script src="/wiki/public/chrome/common/js/search.js"></script>
+    <script src="/wiki/public/chrome/common/js/folding.js"></script>
+    <script src="/wiki/public/chrome/common/js/wiki.js"></script>
+    <script>
+      jQuery(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])")
+            .prop("autocomplete", "off").datepicker();
+          // Input current date when today is pressed.
+          var _goToToday = $.datepicker._gotoToday;
+          $.datepicker._gotoToday = function(id) {
+            _goToToday.call(this, id);
+            this._selectDate(id)
+          };
+          $(".trac-datetimepicker:not([readonly])")
+            .prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <!--   # include 'site_head.html' (layout.html) -->
+    <!--   end of site_head.html -->
+    <!-- # endblock head (content inherited from layout.html) -->
+
+
+    <script>
+      jQuery(function($) {
+        wikiColumn($("#wikipage"));
+      });
+    </script>
+    <!-- # endblock head (placeholder in theme.html) -->
+  </head> 
+  <body>
+    <!-- # block body (content inherited from theme.html) -->
+    <!--   # include 'site_header.html' (theme.html) -->
+    <!--   end of site_header.html -->
+
+    <div id="banner">
+      <div id="header">
+        <a id="logo"
+           href="http://www.ics.uci.edu/">
+          <img  alt="ICS Logo" height="67" src="/wiki/public/chrome/site/ics.jpg" width="128" /></a>
+
+
+      </div>
+      <form id="search" action="/wiki/public/search" method="get">
+      </form>
+          <div id="metanav" class="nav">
+      <ul><li  class="first"><a href="/wiki/public/login">Login</a></li><li ><a href="/wiki/public/prefs">Preferences</a></li><li ><a href="/wiki/public/about">About Trac</a></li><li  class="last"><a href="/wiki/public/register">Register</a></li></ul>
+    </div>
+
+    </div>
+        <div id="mainnav" class="nav">
+    </div>
+
+
+    <div id="main"
+         >
+
+<div id="pagepath" class="noprint">
+<a class="pathentry first" title="View WikiStart"
+   href="/wiki/public/wiki">wiki:</a><a href="/wiki/public/wiki/cs221-2019-spring-project2"
+     title="View cs221-2019-spring-project2"
+     class="pathentry">cs221-2019-spring-project2</a></div>      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li  class="first last"><a href="/wiki/public/wiki/cs221-2019-spring-project2?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+
+      
+
+      
+
+      <!-- # block content (placeholder in theme.html) -->
+    <div id="content" class="wiki narrow">
+
+      <div class="wikipage searchable">
+        <div id="wikipage" class="trac-content borderless"><h1 class="section" id="CS221:Project2-II:Invertedindexbooleansearch">CS221: Project 2 - II: Inverted index, boolean search</h1>
+<p>
+<strong>Test Cases Due:     Week 4 Tu. (Apr 23), Due on Github as Pull Requests</strong><br />
+<strong>Review Due:           Week 4, Fri. (Apr 26),  Due on Github as Pull Requests Comments</strong><br />
+<strong>Final Code Due:     Week 5, Sun. (May. 5),  Due on Github.</strong><br />
+</p>
+<h2 class="section" id="Codebase">Codebase</h2>
+<p>
+<a class="ext-link" href="https://github.com/UCI-Chenli-teaching/spring19-cs221-project/tree/master/src/main/java/edu/uci/ics/cs221/index/inverted"><span class="icon">​</span>github repo</a>
+</p>
+<h2 class="section" id="CodingTasks">Coding Tasks</h2>
+<ol><li>Implement LSM-like disk-based inverted index that supports insertions. (6 points)
+</li><li>Implement merge of inverted index segments. (4 points)
+</li><li>Implement keyword search, boolean AND search, and boolean OR search. (5 points)
+</li><li>(Optional Extra Credit): Implement deletions. (2 points)
+</li></ol><h2 class="section" id="TestingTasks">Testing Tasks</h2>
+<ol><li>Write at least 2 test cases for a task (2 points)
+</li><li>Review the test cases of two teams (2 points)
+</li></ol><p>
+Total: 19 points  (+ 2 extra credits)
+</p>
+<h2 class="section" id="Overview">Overview</h2>
+<p>
+In this project, you'll be implementing a disk-based inverted index and the search operations.
+</p>
+<p>
+At a high level, inverted index stores a mapping from keywords to the ids of documents they appear in.
+A simple in-memory structure could be <code>Map&lt;String, List&lt;Integer&gt;&gt;</code>, where each key is a keyword token (also called a "term"),
+and each value is a list of (often sorted) document IDs (also called "postings").
+</p>
+<p>
+In this project, the disk-based index structure is based on the idea of LSM (Log-Structured Merge tree).
+Its main idea is the following:
+</p>
+<p>
+The inverted index consists of multiple index segments, where each segment is initially created in memory.
+Once a segment is written to disk, it becomes immutable and is never changed.
+</p>
+<p>
+Each index segment is a fully searchable inverted index.
+It contains a posting list structure as well as a document store, which is a mapping from a docID to the corresponding document.
+The document IDs within each segment are local in the segment and are invisible to the user.
+These in-disk segments are periodically merged to bigger segments.
+</p>
+<p>
+When users search a keyword, all segments are searched, and the result documents from each segment are combined.
+</p>
+<p>
+Example:
+</p>
+<pre class="wiki">Add documents Doc{"cat dog"} and Doc{"cat elephant"}, then flush to Segment0.
+Segment0:
+----------
+PostingList: {"cat": [0, 1], "dog": [0], "elephant": [1]}
+DocStore: {0: "cat dog", 1: "cat elephant"}
+----------
+
+Then add documents Doc{"cat dog"} and Doc{"wolf dog"}, and flush to Segment1.
+Segment1:
+----------
+PostingList: {"cat": [0], "dog": [0, 1], "wolf": [1]}
+DocStore: {0: "cat dog", 1: "wolf dog"}
+----------
+
+When searching the word "cat", we first search Segment0 and get [Doc{"cat dog"}, Doc{"cat elephant"}].
+Then we search Segment1 and get [Doc{"cat dog"}]. We combine these results and get [Doc{"cat dog"}, Doc{"cat elephant"}, Doc{"cat dog"}]
+</pre><h2 class="section" id="Task1:ImplementLSM-likedisk-basedinvertedindexthatsupportsinsertionsonly.">Task 1: Implement LSM-like disk-based inverted index that supports insertions only.</h2>
+<p>
+In this task, you'll implement the disk file structure of a single segment.
+When a document is added via <code>addDocument()</code>, it should be first stored in an in-memory buffer.
+You need to design the data structure for the in-memory segment.
+</p>
+<p>
+Whenever the number of documents reaches a parameter <code>default_flush_threshold</code>, or function <code>flush()</code> is called,
+you should flush the segment to disk.
+</p>
+<p>
+The specific format of the disk posting lists should follow what we cover in lectures.
+You also have freedom to improve the format to make it more efficient.
+</p>
+<p>
+The following are specific functions to implement:
+</p>
+<pre class="wiki">/**
+ * Adds a document to the inverted index.
+ * Document should live in an in-memory buffer until flush() is called to write the segment to disk.
+ * @param document
+ */
+public void addDocument(Document document)
+
+/**
+ * Flushes all the documents in the in-memory buffer to disk. If the buffer is empty, it should not do anything.
+ * flush() writes the segment to disk containing the posting list and the corresponding document store.
+ */
+public void flush()
+
+/**
+ * Iterates through all the documents in all the disk segments.
+ */
+public Iterator&lt;Document&gt; documentIterator() {
+    throw new UnsupportedOperationException();
+}
+
+/**
+ * Gets the total number of segments in the inverted index.
+ * This function is used for checking correctness in test cases.
+ *
+ * @return number of index segments.
+ */
+public int getNumSegments()
+
+/**
+ * Reads a disk segment into memory based on segmentNum.
+ * This function is mainly used for checking correctness in test cases.
+ *
+ * @param segmentNum n-th segment in the inverted index (starting from 0).
+ * @return in-memory data structure with all the contents in the index segment, null if 
+ * the segment of segmentNum doesn't exist.
+ */
+public InvertedIndexSegmentForTest getIndexSegment(int segmentNum)
+
+</pre><h2 class="section" id="Task2:Implementmergeofdisksegments.">Task 2: Implement merge of disk segments.</h2>
+<p>
+In this task, you'll implement the merging of disk segments. We cannot let the number of segments grow indefinitely
+because otherwise searching a keyword needs to go through a lot of segments.
+</p>
+<p>
+In general, there are many merging policies. In this task, we want to implement a particular policy.
+Whenever the number of segments has reached a parameter <code>default_merge_threshold</code>, or <code>mergeAllSegments()</code> is called,
+you need to merge <strong>all</strong> the disk segments pair-wise.
+For example, suppose there are 10 disk segments. After the merge, we should have 5 disk segments.
+You could assume merging only happens when you have an even number of segments.
+</p>
+<p>
+When merging two segments into one, since each segment has its own local document IDs, you need to generate new document IDs for the merged segment.
+When merging two segments, you need to merge both the inverted index, as well as the documents store of the two segments.
+For simplicity, you can assume we have enough memory to hold the keywords of both segments.
+BUT, you cannot assume we have enough memory to store the posting lists and documents of both segments.
+</p>
+<p>
+The following is specific function to implement:
+</p>
+<pre class="wiki">/**
+ * Merges all the disk segments of the inverted index pair-wise.
+ */
+public void mergeAllSegments()
+</pre><h2 class="section" id="Task3:ImplementkeywordsearchbooleanANDsearchandbooleanORsearch.">Task 3: Implement keyword search, boolean AND search, and boolean OR search.</h2>
+<p>
+In this task, you'll implement searching using the inverted index.
+You could assume all documents are flushed to disk segments when doing a search.
+</p>
+<p>
+Here we make the same assumption as in the merge case regarding what can be stored in memory.
+</p>
+<p>
+For every query keyword, you need to first analyze it using the provided analyzer before using it to access the inverted index.
+You can assume the analyzer will not convert one keyword to multiple keywords.
+If the keyword is empty, searching should not return any results.
+</p>
+<p>
+The following are specific functions to implement:
+</p>
+<pre class="wiki">/**
+ * Performs a single-keyword search on the inverted index.
+ * You could assume the analyzer won't convert the keyword into multiple tokens.
+ * If the keyword is empty, it should not return anything.
+ *
+ * @param keyword keyword, cannot be null.
+ * @return a iterator of documents matching the query
+ */
+public Iterator&lt;Document&gt; searchQuery(String keyword)
+
+/**
+ * Performs an AND boolean search on the inverted index.
+ *
+ * @param keywords a list of keywords in the AND query
+ * @return a iterator of documents matching the query
+ */
+public Iterator&lt;Document&gt; searchAndQuery(List&lt;String&gt; keywords)
+}
+
+/**
+ * Performs an OR boolean search on the inverted index.
+ *
+ * @param keywords a list of keywords in the OR query
+ * @return a iterator of documents matching the query
+ */
+public Iterator&lt;Document&gt; searchOrQuery(List&lt;String&gt; keywords) 
+</pre><h2 class="section" id="Task4OptionalExtraCredit:Implementdeletions.">Task 4 (Optional Extra Credit): Implement deletions.</h2>
+<p>
+In the LSM-like index structure, deletion could be implemented by maintaining a list of deleted document IDs per segment.
+Each deleted document is not physically deleted in the inverted index nor document store.
+When reading or searching, each docID is checked to see if it has been logically deleted. 
+If so, we will not return it to the user.
+</p>
+<p>
+Those deleted documents within a segment should be physically deleted when we merge it with another segment.
+</p>
+<p>
+The following is the specific function to implement:
+</p>
+<pre class="wiki">/**
+ * Deletes all documents in all disk segments of the inverted index that match the keyword.
+ * @param keyword 
+ */
+public void deleteDocuments(String keyword)
+</pre><h2 class="section" id="Testcases">Test cases</h2>
+<p>
+Please follow the similar general guideline and procedure as in project 1. Here is <a class="ext-link" href="https://docs.google.com/spreadsheets/d/1_iwJOT-bnYDk9tWNNy61GCyi1kRN7s3VHdn5h_2T1DA/edit#gid=996032174"><span class="icon">​</span>test task assignment</a>. There are some guidelines and tips for project 2 test cases:
+</p>
+<ol><li>Put the index and document files under your own folder. Specifically, you should use folder <code>index/YourTestName/</code>, for example <code>index/Team0StressTest</code>.
+</li><li>Clean up and delete all files after each test. You should use Junit <code>@After</code> to delete all written files.
+</li><li>For testing tasks 1 and 2, you could change <code>default_flush_threshold</code> or <code>default_merge_threshold</code>, or directly call <code>flush()</code> and <code>mergeAllSegments()</code> to control when to flush or when to merge. If you changed the variables <code>default_flush_threshold</code> or <code>default_merge_threshold</code>, be sure to change them back to their original value after your tests.
+</li><li>For stress test, you should collect or generate a large amount of text data to test the performance and stability. If you rely on external data sets, please don't commit the large data directly in git. Instead, use a source URL to download the data.
+</li><li>For all test tasks, you should also check the read/write counter values in the <code>PageFileChannel</code> class to make sure the IO number is within a reasonable range.
+</li></ol></div>
+        <div class="trac-modifiedby">
+          <span>
+            <a href="/wiki/public/wiki/cs221-2019-spring-project2?action=diff&amp;version=21" title="Version 21 by chenli">Last modified</a>
+ <a class="timeline" href="/wiki/public/timeline?from=2019-04-22T09%3A50%3A03-07%3A00&amp;precision=second" title="See timeline at Apr 22, 2019, 9:50:03 AM">6 years ago</a>          </span>
+          <span class="trac-print">
+            Last modified on Apr 22, 2019, 9:50:03 AM
+          </span>
+        </div>
+      </div>
+
+
+
+
+
+<div id="attachments">
+  <h3  class="foldable">
+    Attachments
+    <span class="trac-count">(2)</span></h3>
+  <div>
+    <ul>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs221-2019-spring-project2/Team2StressTest.txt" title="View attachment">Team2StressTest.txt</a><a href="/wiki/public/raw-attachment/wiki/cs221-2019-spring-project2/Team2StressTest.txt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="725060 bytes">708.1 KB</span>
+) - added by <span class="trac-author">Zuozhi Wang</span> <a class="timeline" href="/wiki/public/timeline?from=2019-04-30T05%3A40%3A56-07%3A00&amp;precision=second" title="See timeline at Apr 30, 2019, 5:40:56 AM">6 years ago</a>.
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs221-2019-spring-project2/Team3StressTest.txt" title="View attachment">Team3StressTest.txt</a><a href="/wiki/public/raw-attachment/wiki/cs221-2019-spring-project2/Team3StressTest.txt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="8761 bytes">8.6 KB</span>
+) - added by <span class="trac-author">Zuozhi Wang</span> <a class="timeline" href="/wiki/public/timeline?from=2019-04-30T07%3A33%3A06-07%3A00&amp;precision=second" title="See timeline at Apr 30, 2019, 7:33:06 AM">6 years ago</a>.
+      </li>
+    </ul>
+    <p>
+  Download all attachments as:
+  <a rel="nofollow" href="/wiki/public/zip-attachment/wiki/cs221-2019-spring-project2/">.zip</a>
+</p>
+
+  </div>
+</div>
+<div class="trac-help">
+  <strong>Note:</strong>
+ See   <a href="/wiki/public/wiki/TracWiki">TracWiki</a>
+ for help on using the wiki.
+</div>
+    </div>
+        <!-- # block content (content inherited from layout.html) -->
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first last">
+          <a rel="nofollow" href="/wiki/public/wiki/cs221-2019-spring-project2?format=txt"
+              class="">
+            Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    <!-- # endblock content (content inherited from layout.html) -->
+
+      <!-- # endblock content (placeholder in theme.html) -->
+    </div>
+
+    <div id="footer"><hr/>
+      <a id="tracpowered" href="https://trac.edgewall.org/"
+         ><img src="/wiki/public/chrome/common/trac_logo_mini.png" height="30"
+               width="107" alt="Trac Powered"/></a>
+      <p class="left">
+Powered by         <a href="/wiki/public/about"><strong>Trac 1.5.3</strong></a>
+        <br />
+ By         <a href="http://www.edgewall.org/">Edgewall Software</a>
+.      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+    <!--   # include 'site_footer.html' (theme.html) -->
+    <!--   end of site_footer.html -->
+    <!-- # endblock body (content inherited from theme.html) -->
+  </body> </html>

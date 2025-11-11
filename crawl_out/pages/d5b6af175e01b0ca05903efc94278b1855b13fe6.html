@@ -1,0 +1,149 @@
+<!-- URL: http://www.ics.uci.edu/~eppstein/pubs/a-hesterberg.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<title>David Eppstein - Publications</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll("script[type='math/tex']").forEach(function(el) {
+              el.outerHTML = "\\(" + el.textContent + "\\)";
+            });
+            document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+              el.outerHTML = "\\[" + el.textContent + "\\]";
+            });
+            var script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js";
+            document.head.appendChild(script);
+        }, false);
+    </script>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<h1>David Eppstein - Publications</h1>
+<hr><p>
+<h2>
+Publications with
+<a href="https://math.mit.edu/directory/profile.php?pid=1468">
+Adam Herterberg
+</a>
+</h2>
+<ul>
+<li><b>Folding a paper strip to minimize thickness</b>.<br>
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+D. Eppstein,
+<a href="https://math.mit.edu/directory/profile.php?pid=1468">A. Hesterberg</a>,
+<a href="https://www.alg.cei.uec.ac.jp/itohiro/">H. Ito</a>,
+<a href="https://cs.uwaterloo.ca/~alubiw/Site/Anna_Lubiw.html">A. Lubiw</a>,
+<a href="https://www.jaist.ac.jp/~uehara/index-e.html">R. Uehara</a>, and
+<a href="https://jazz.cias.osakafu-u.ac.jp/~uno/index-e.htm">Y. Uno</a>.<br>
+<a href="https://arxiv.org/abs/1411.6371"> arXiv:1411.6371</a>.<br>
+<i>9th International Workshop on Algorithms and Computation (WALCOM
+2015)</i>, Dhaka, Bangladesh.<br>
+<a href="https://doi.org/10.1007/978-3-319-15612-5_11">Springer, <i>Lecture Notes in Comp. Sci.</i> 8973 (2015), pp. 113&ndash;124</a>.<br>
+<a href="https://doi.org/10.1016/j.jda.2015.09.003"><i>Journal of Discrete
+Algorithms</i> 36: 18&ndash;26, 2016</a> (special issue for WALCOM).<br>
+<p>
+If a folding pattern for a flat origami is given, together with a
+mountain-valley assignment, there might still be multiple ways of
+folding it, depending on how some flaps of the pattern are arranged
+within pockets formed by folds elsewhere in the pattern. It turns out to
+be hard (but fixed-parameter tractable) to determine which of these ways
+is best with respect to minimizing the thickness of the folded pattern.
+<p>
+<li><b>Folding polyominoes into (poly)cubes</b>.<br>
+<a href="https://www.ist.tugraz.at/aichholzer/">O. Aichholzer</a>,
+<a href="https://www.swarthmore.edu/profile/michael-biro">M. Biro</a>,
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+<a href="https://martindemaine.org/">M. Demaine</a>,
+D. Eppstein,
+<a href="https://www.ibr.cs.tu-bs.de/users/fekete/?lang=en">S. P. Fekete</a>,
+<a href="https://math.mit.edu/directory/profile.php?pid=1468">A. Hesterberg</a>,
+<a href="https://www.win.tue.nl/~ikostits/">I. Kostitsyna</a>, and
+<a href="https://www.itn.liu.se/~chrsc91/">C. Schmidt</a>.<br>
+<a href="https://www.cccg.ca/proceedings/2015/37.pdf"><i>27th Canadian Conference on Computational Geometry</i>, Kingston, Ontario,
+Canada, 2015, pp.&nbsp;101&ndash;106</a>.<br>
+<a href="https://arxiv.org/abs/1712.09317">arXiv:1712.09317</a>.<br>
+<a href="https://doi.org/10.1142/S0218195918500048"><i>Int. J. Comp. Geom. &amp;
+Appl.</i> 28 (3): 197&ndash;226, 2018</a>.
+<p>
+We classify the polyominoes that can be folded to form the surface of a
+cube or polycube, in multiple different folding models that incorporate
+the type of fold (mountain or valley), the location of a fold (edges of
+the polycube only, or elsewhere such as along diagonals), and whether
+the folded polyomino is allowed to pass through the interior of the
+polycube or must stay on its surface.
+<p>
+<li><b>Reconfiguring undirected paths</b>.<br>
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+D. Eppstein,
+<a href="https://math.mit.edu/directory/profile.php?pid=1468">A. Hesterberg</a>,
+K. Jain,
+<a href="https://cs.uwaterloo.ca/~alubiw/Site/Anna_Lubiw.html">A. Lubiw</a>,
+<a href="https://www.jaist.ac.jp/~uehara/index-e.html">R. Uehara</a>, and
+<a href="https://jazz.cias.osakafu-u.ac.jp/~uno/index-e.htm">Y. Uno</a>.<br>
+<a href="https://arxiv.org/abs/1905.00518">arXiv:1905.00518</a>.<br>
+<i>16th Algorithms and Data Structures Symp. (WADS 2019)</i>, Edmonton,
+Alberta.<br>
+<a href="https://doi.org/10.1007/978-3-030-24766-9_26">Springer, <i>Lecture
+Notes in Comp. Sci.</i> 11646 (2019), pp. 353&ndash;365</a>.<br>
+<p>
+A motion that slides an undirected path along its length from one
+configuration to another in a graph (allowing moves in both directions)
+can be found in time that is fixed-parameter tractable in the path length.
+However the problem is PSPACE-complete for paths of unbounded length,
+even when the host graph has bounded bandwidth.
+<p>
+(<a href="DemEppHes-WADS-19.pdf">Slides</a>)
+<p>
+<li><b>New results in sona drawing: hardness and TSP separation</b>.<br>
+<a href="https://chiumk.github.io/">M.-W. Chiu</a>,
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+<a href="https://martindemaine.org/">M. Demaine</a>,
+D. Eppstein,
+<a href="https://groups.csail.mit.edu/mac/users/bob/">R. Hearn</a>,
+<a href="https://math.mit.edu/directory/profile.php?pid=1468">A. Hesterberg</a>,
+<a href="https://engineering.tufts.edu/people/faculty/matias-korman">M. Korman</a>,
+<a href="https://www.ist.tugraz.at/parada/">I. Parada</a>, and
+M. Rudoy.<br>
+<a href="https://arxiv.org/abs/2007.15784">arXiv:2007.15784</a>.<br>
+<i><a href="http://cccg.ca/proceedings/2020/proceedings.pdf">Proc. 32nd Canadian Conference on Computational Geometry</a></i>, 2020, pp. 63&ndash;72.
+<p>
+A sona drawing is a self-crossing curve in the plane that separates each
+of a given system of points into its own region. We show that it is hard
+to find the shortest such curve, and we explore how much shorter than
+the TSP it can be.
+<p>
+<li><b>Multifold tiles of polyominoes and convex lattice polygons</b>.<br>
+K. Chida,
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+<a href="https://martindemaine.org/">M. Demaine</a>,
+D. Eppstein,
+<a href="https://math.mit.edu/directory/profile.php?pid=1468">A. Hesterberg</a>,
+T. Horiyama,
+<a href="https://di.ulb.ac.be/algo/iacono/">J. Iacono</a>,
+<a href="https://www.alg.cei.uec.ac.jp/itohiro/">H. Ito</a>,
+<a href="http://cgm.cs.mcgill.ca/~sl/">S. Langerman</a>,
+<a href="https://www.jaist.ac.jp/~uehara/index-e.html">R. Uehara</a>, and
+<a href="https://jazz.cias.osakafu-u.ac.jp/~uno/index-e.htm">Y. Uno</a>.<br>
+<a href="http://www.math.science.cmu.ac.th/tjcdcggg/Book-abstract.pdf"><i>23rd Thailand-Japan Conference on Discrete and Computational
+Geometry, Graphs, and Games</i>, 2021, pp. 28&ndash;29</a>.<br>
+<a href="https://thaijmath2.in.cmu.ac.th/index.php/thaijmath/article/view/1559"><i>Thai Journal of Mathematics</i> 21 (4): 957&ndash;978, 2023</a>.
+<p>
+We investigate shapes whose congruent copies can cover the plane
+exactly \(k\) times per point, but not a number of times that is a
+nonzero integer
+smaller than \(k\). We find polyominoes with this property for all \(k\ge 2\), and convex integer-coordinate polygons with this property for \(k=5\)
+and for all \(k\ge 7\).
+<p>
+</ul>
+
+<hr><p>
+<a href="auth.html">Co-authors</a> &ndash;
+<a href="/~eppstein/pubs/">Publications</a> &ndash;
+<a href="/~eppstein/">David Eppstein</a> &ndash;
+<a href="/~theory/">Theory Group</a> &ndash;
+<a href="/">Inf. &amp; Comp. Sci.</a> &ndash;
+<a href="https://www.uci.edu/">UC Irvine</a>
+<p>
+<small>Semi-automatically <a href="filter.html">filtered</a>
+from a common source file.</small>
+</body></html>

@@ -1,0 +1,113 @@
+<!-- URL: http://cdb.ics.uci.edu/cgibin/ReactivitiesDatasetsWeb.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Datasets: For Machine Learning and Searching Experiments</title>
+    <meta charset="utf-8">
+    <!-- Include JQuery for tabs and UI plugins -->
+    <!--script type="text/javascript" src="/js/jquery-1.6.2.min.js"></script-->
+    <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="/js/chemdb.js"></script>
+    <script type="text/javascript" src="/js/jquery-migrate-3.3.2.js"></script>
+    <!-- Include styling -->
+    <link rel="stylesheet" type="text/css" href="/css/chemdb.css" />
+    <link rel="stylesheet" type="text/css" href="/css/smoothness/jquery-ui-1.8.16.custom.css" />
+    <style>
+        table tr:hover{
+            background-color: #fff68f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="background">           
+        <div id="content">
+            <div id="header">
+                <div id="chemdb-logo"></div>
+                <div id="top-nav">                
+                    <div class="nav-menu-item-wrapper">
+                        <button class="menu-item">Tools</button>
+                        <ul class="sub-menu ui-menu ui-widget ui-widget-content ui-corner-all">
+                            <li class="odd"><a href="/cgibin/BabelWeb.py">Babel</a></li>
+                            <li><a href="/cgibin/Mass2Structure.py">Mass2Structure</a></li>                        
+                            <li class="odd"><a href="/cgibin/tools/MolInfoWeb.py">MolInfo</a></li>
+                            <li><a href="/cgibin/MSFragment.py">MSFragment</a></li>
+                            <li class="odd"><a href="/cgibin/PatternCountScreenWeb.py">Pattern Count Screen</a></li>
+                            <li><a href="/cgibin/PatternMatchCounterWeb.py">Pattern Match Counter</a></li>
+                            <li class="odd"><a href="/cgibin/Smi2DepictWeb.py">Smi2Depict</a></li>
+                            <li><a href="/cgibin/reaction/ReactionProcessorWeb.py">Reaction Processor</a></li>
+                        </ul>
+                    </div>                                                                          
+                    <div class="nav-menu-item-wrapper">
+                        <button class="menu-item">Applications</button>
+                        <ul class="sub-menu ui-menu ui-widget ui-widget-content ui-corner-all">
+                            <li class="odd"><a href="/cgibin/ChemicalIndexWeb.py">Chemical Search</a></li>
+                            <li><a href="http://cosmos.igb.uci.edu/">COSMOS</a></li>
+                            <li class="odd"><a href="/cgibin/tutorial/ReactionTutorialSetupWeb.py">Reaction Explorer</a></li>
+                            <li><a href="http://reactions.igb.uci.edu/">Reaction Predictor</a></li>                        
+                            <li class="odd"><a href="/cgibin/reaction/VirtualSpaceWeb.py">Virtual Chemical Space</a></li>
+                        </ul>
+                    </div>
+                </div>   
+                <div id="crumbs"><!-- <a class="breadcrumb" href="../index.htm" target="_top">ChemDB</a>
+ --><a href="/">Home</a> <img class="crumb-arrow" src='/images/arrow.png' /> <a class="breadcrumb" href="#">Datasets</a></div>
+            </div>
+
+            <div class="ui-widget-header">Datasets</div>                     
+
+			<table><table cellspacing=0 cellpadding=4><thead><tr valign=bottom  class="odd">
+    <td class="module-sub-header gray-background">Chemical Reactivities</td>
+    <td class="module-sub-header gray-background">Description</td>
+    <td class="module-sub-header gray-background">Reference</td>
+</tr>
+
+</thead><tr valign=top align=left class="even">
+    <td class="labelCell"><a href="dataset-reactivities/eletrophilicity.csv">eletrophilicity csv file
+</a></td>
+    <td>methyl anion
+affinities (electrophilicity)</td>
+    <td>
+Methyl Anion Affinities of the Canonical Organic Functional Groups;
+Mood, Aaron and Tavakoli, Mohammadamin and Gutman, Eugene and Kadish, Dora and Baldi, Pierre and
+Van Vranken, David L;
+The Journal of organic chemistry;
+2020;
+85(6);
+pages 4096--4102.
+</td>
+</tr>
+
+</thead><tr valign=top align=left class="even">
+    <td class="labelCell"><a href="dataset-reactivities/nucleophilicity.csv">nucleophilicity csv file</a></td>
+    <td>methyl cation affinities (nucleophilicity)
+    <td>
+Methyl Cation Affinities of Canonical Organic Functional Groups;
+Kadish, Dora and Mood, Aaron D and Tavakoli, Mohammadamin and Gutman, Eugene S and Baldi, Pierre
+and Van Vranken, David L;
+The Journal of Organic Chemistry;
+2021;
+86(5);
+pages 3721–-3729.
+
+
+</td>
+</tr>
+
+</thead><tr valign=top align=left class="even">
+    <td class="labelCell"><a href="dataset-reactivities/100_rxn_mechanisms.csv">100 reaction mechanisms csv file</a></td>
+    <td>A test set of 100 reaction mechanisms where the reacting function groups are similar to the functional groups
+in the training data of MCA* and MAA*
+    <td>
+
+
+</td>
+</tr>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

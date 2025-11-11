@@ -1,0 +1,632 @@
+<!-- URL: http://www.ics.uci.edu/~gbolcer -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <title>bolcer</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style type="text/css">
+  #g_title p, #g_footer p, #g_description p {
+    margin: 0;
+  }
+  /*
+
+  	-- -- -- -- -- -- --
+  	Browser Fixes
+  	-- -- -- -- -- -- --
+  	
+  	This file uses CSS filtering methods to fix various
+  	layout bugs.
+
+  	Each of the following three imported files is a 
+  	separate, browser-specific CSS file that keeps all 
+  	hacks out of the main style sheet.
+  	
+  	Over time, as supporting these browsers no longer
+  	remains a priority, cleaning up the hacks is as
+  	easy as deleting the @import statement below, or
+  	simply no longer linking this file from the HTML.
+  	
+  */
+
+  /* 
+    fix ie6 "peekaboo bug" using the "holly hack". 
+    Note, this style only gets applied to ie6
+  */
+  * html .wrapper {
+    height: 0.1%;
+  }
+
+  /* 
+   * IE5 mac - overrides the IE/Win hack 
+   */
+
+  /*\*//*/
+
+  * html #threecolumn div {
+  	height: auto;
+  }
+
+  /**/
+
+
+  /* 
+   * IE5/Win-specific CSS -ensures #container wraps all content on window resize
+   */
+
+  @media tty {
+   i{content:"\";/*" "*/}} * html #container { height: 1%; } /*";}
+  }/* */
+  /* Styling for editable elements. Eventually, this will be part of the style. */
+  .editable {
+    border: 1px dashed blue;
+  }
+  
+  #footer {
+    clear: both;
+  }
+  
+  /* Extra divs hidden by default. The custom CSS can override this though */
+  #extraDiv1, #extraDiv2, #extraDiv3, #extraDiv4, #extraDiv5, #extraDiv6 {
+    display: none;
+  }
+  
+  a img,:link img,:visited img {border: none;}
+
+
+  body {
+    text-align: center;
+  }
+  #container {
+    width: 718px;
+    text-align: left;
+    margin: 0 auto;
+  }
+  /** BEGIN CUSTOM SKIN **/
+  /*
+
+  	-- -- -- -- -- -- --
+  	Base CSS
+  	-- -- -- -- -- -- --
+  	
+  	This file simply removes default styling on most HTML elements in 
+  	order to reduce the need to later override them.
+  	
+  */
+
+  h1,h2,h3,h4,h5,h6,pre,code,p {font-size: 1em;}
+  dl,li,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input {margin: 0; padding: 0;}
+  a img,:link img,:visited img {border: none;}
+  address {font-style: normal;}/*
+
+  	-- -- -- -- -- -- --
+  	Type Scheme: Deco
+  	-- -- -- -- -- -- --
+  	
+  */
+
+  body {
+  	font: 76% Verdana, sans-serif;
+  }	
+
+  h1, h2, h3, h4, h5, h6, p.description {
+  	font-family: "Trebuchet MS", Trebuchet, sans-serif;
+  }
+  h1 {
+  	font-size: 3em;
+  	font-weight: bold;
+  	letter-spacing: 2px;
+  }
+  h2 {
+  	font-size: 2em;
+  	font-weight: normal;
+  }
+  h3 {
+  	font-size: 1.5em;
+  }
+  h4 {
+  	font-size: 1.2em;
+  	letter-spacing: 0.2em;
+  }
+  h5 {
+  	font-size: 1.2em;
+  }
+  h6 {
+  	font-size: 1em;
+  	font-weight: bold;
+  }
+
+  p, td {
+  	line-height: 1.8em;
+  }
+  code, kbd {
+  	font-size: 1.25em;
+  }/*
+
+  	-- -- -- -- -- -- --
+  	STYLE: Solitude
+  	-- -- -- -- -- -- --
+  */
+
+  /* ie6win */
+  * html #sidebar a {
+      height: 1px;
+  }
+
+  /* ie5mac */
+
+  /*\*//*/
+  * html #sidebar a { height: auto; }
+  /**/
+
+
+  /* Basic HTML style
+  ----------------------------------------------- */
+  a:link {
+  	font-weight: bold;
+  	margin: -1px -2px -2px;
+  	padding: 1px 2px 2px; 
+  }
+  a:visited {
+  	color: #666;
+  	font-weight: bold;
+  	margin: -1px -2px -2px;
+  	padding: 1px 2px 2px; 
+  }
+  a:hover, a:active {
+  	color: #333;
+  	background: #E7E7E7;
+  }
+  body {
+  	font: 71% "Lucida Grande","Lucida Sans",Verdana, Arial, sans-serif;
+  	color: #333;
+  	margin: 10px;
+  	padding: 0;
+  }
+  blockquote {
+  	margin: 1em 2em;
+  	color: #666;
+  }
+  blockquote p {
+  	line-height: 1.2;
+  }
+  caption {
+  	font-weight: bold;
+  	background: #ccc;
+  	padding: .5em;
+  }
+  dd {
+  	margin: 1em 2em;
+  }
+  dt {
+  	font-weight: bold;
+  }
+  hr {
+  	margin: 1em 6em;
+  }
+  /*
+  li {
+  	margin: 1em 0;
+  */
+  }
+  table {
+  	border: 1px solid #ccc;
+  }
+  td {
+  	vertical-align: top;
+  	padding: 0.5em;
+  }
+  th {
+  	text-align: left;
+  	padding: .5em;
+  }
+
+
+
+  /* Nested HTML elements
+  ----------------------------------------------- */
+  ol li {
+  	margin-left: 2em;
+  	list-style-type: decimal;	
+  }
+  ol, ul {
+  	margin: 1em 0;
+  	padding-left: 1.7em;
+  }
+  ul li {
+  	list-style-type: disc;
+  }
+
+
+
+  /* Custom font definitions for style
+  ----------------------------------------------- */
+  p {
+  	margin: 1em 0;
+  	line-height: 1.8em;
+  }
+  p.description {
+  	margin: .2em 0 1.5em;
+  	line-height: 1.5;
+  	color: #999;
+  }
+  h1 {
+  	font-family: "Palatino","Palatino Linotype", serif;
+  	font-size: 2.75em;
+  	font-weight: normal;
+  	letter-spacing: 3px;
+  	text-shadow: #999 2px 2px 2px;
+  	padding: 5px 35px;
+  }
+
+  h2 {
+  	margin: .9em 0 .5em;
+  	font-family: "Palatino","Palatino Linotype", serif;
+  	font-size: 1.8em;
+  	font-weight: normal;
+  	text-shadow: #999 2px 2px 2px;
+  }
+  h3 {
+  	font-family: "Palatino","Palatino Linotype", serif;
+  	font-size: 1.5em;
+  	font-weight: normal;
+  	margin-top: 1em;
+  }
+  h4 {
+  	font-size: 1.2em;
+  }
+  h5 {
+  	font-size: 1em;
+  }
+  h6 {
+  	font-size: 1em;
+  	font-weight: normal;
+  	color: #515151;
+  }
+
+
+
+  /* Header style
+  ----------------------------------------------- */
+  #header {
+  	text-align: center;
+  	padding: 90px 0 1px;
+  }
+
+
+  /* Content column tweaks
+  ----------------------------------------------- */
+  #main-content {
+  	margin-top: 1em;
+  }
+  #main-content .wrapper {
+  	padding: 0 2em;
+  }
+  .content-item {
+  	border-top: 1px dotted #878787;
+  }
+
+
+
+  /* Sidebar style
+  ----------------------------------------------- */
+  #sidebar .links {
+  	background: #F7F7F7; 
+  	position: relative;
+  }
+  #sidebar li a:link, #sidebar li a:visited {
+  	background: none;
+  	font-weight: normal;
+  	display: block;
+  	border-bottom: 1px solid #fff;
+  	padding: .5em 1em;
+  }
+  #sidebar li a:hover {
+  	background: #fff;
+  }
+  #sidebar h3, #sidebar-alternate h3 {
+  	margin: 1em 0;
+  	font-family: "Lucida Grande","Lucida Sans",Verdana, Arial, sans-serif;
+  	line-height: 1;
+  	font-size: 1em;
+  	padding: 6px 0;
+  	border-top: 1px dotted #878787;
+  	border-bottom: 1px dotted #878787;
+  	font-weight: normal;
+  }
+  #sidebar h4, #sidebar-alternate h4 {
+  	margin: 1em 0;
+  	font-family: "Lucida Grande","Lucida Sans",Verdana, Arial, sans-serif;
+  	line-height: 1;
+  	font-size: 1em;
+  	padding: 6px 0;
+  	color: #515151;
+  	border-top: 1px dotted #878787;
+  	border-bottom: 1px dotted #878787;
+  	font-weight: normal;
+  }
+  #sidebar h5, #sidebar-alternate h5 {
+  	margin: 1em 0;
+  	font-family: "Lucida Grande","Lucida Sans",Verdana, Arial, sans-serif;
+  	line-height: 1;
+  	font-size: .9em;
+  	padding: 6px 0;
+  	color: #515151;
+  	border-top: 1px dotted #878787;
+  	border-bottom: 1px dotted #878787;
+  	font-weight: normal;
+  }
+  #sidebar h6, #sidebar-alternate h6 {
+  	margin: 1em 0;
+  	font-family: "Lucida Grande","Lucida Sans",Verdana, Arial, sans-serif;
+  	line-height: 1;
+  	font-size: .8em;
+  	padding: 6px 0;
+  	color: #515151;
+  	border-top: 1px dotted #878787;
+  	border-bottom: 1px dotted #878787;
+  	font-weight: normal;
+  }
+  #adsense {
+  	margin: 30px 14px;
+  }
+
+
+
+  /* Footer style
+  ----------------------------------------------- */
+  #footer {
+  	margin-bottom: 10px;
+  }
+  #footer hr {
+  	display: none;
+  }
+  #footer .wrapper {
+  	padding: 5px 20px;
+  }
+
+
+
+  /* Tweaks for Three-column layout
+  ----------------------------------------------- */
+  #threecolumn #sidebar .links {
+  	background: #F7F7F7;
+  }
+  #sidebar-alternate .alternate-content .wrapper {
+  	padding: 1px 10px;
+  }
+  #sidebar-alternate blockquote {
+  	margin: 0;
+  }
+
+
+
+  /* Tweaks for Two-column Left layout
+  ----------------------------------------------- */
+
+
+  /* Tweaks for Two-column Right layout
+  ----------------------------------------------- */
+
+
+  /* Tweaks for Two-column Liquid layout
+  ----------------------------------------------- */
+
+
+  /* Tweaks for One-column Liquid layout
+  ----------------------------------------------- */
+  /*
+
+  	-- -- -- -- -- -- --
+  	STYLE: Solitude (spice)
+  	-- -- -- -- -- -- --
+
+
+  /* Basic HTML style
+  ----------------------------------------------- */
+  a:link {
+  	color: #B76401;
+  	background: url(/-/includes/style/solitude/spice/bg_link.gif); 
+  }
+  a:visited {
+  	background: url(/-/includes/style/solitude/spice/bg_link.gif); 
+  }
+  body {
+  	background: #fff url(/-/includes/style/solitude/spice/bg_top.gif) top center repeat-x;
+  }
+  th {
+  	background: url(/-/includes/style/solitude/spice/bg_pattern.gif); 
+  }
+
+
+
+  /* Custom font definitions for spice style
+  ----------------------------------------------- */
+  h1 {
+  	color: #B76401;
+  }
+  h2 {
+  	color: #B76401;
+  }
+  h3 {
+  	color: #B76401;
+  }
+
+
+
+  /* Header style
+  ----------------------------------------------- */
+  #header {
+  	background: url(/-/includes/style/solitude/spice/bg_mast.gif) center center repeat-x;
+  }
+
+
+
+  /* Sidebar style
+  ----------------------------------------------- */
+  #sidebar h3, #sidebar-alternate h3 {
+  	color: #B76401;
+  }
+
+
+
+  /* Tweaks for Three-column layout
+  ----------------------------------------------- */
+  #sidebar-alternate .alternate-content {
+  	background: url(/-/includes/style/solitude/spice/bg_pattern.gif); 
+  }
+
+  /** END CUSTOM SKIN **/
+  </style>
+
+  <!-- Hack to avoid flash of unstyled content in IE -->
+  <script> </script>
+</head>
+
+<body id="onecolumn">
+  <div id="container">
+    <div class="wrapper">
+      <!-- /editable --><!-- /wrapper --><!-- /header -->
+     <img src="http://www.bolcer.org/gab-prof.jpg/gab-prof-full.jpg"><p>
+     <center>
+         <a href="http://www.ics.uci.edu/~gbolcer/inf111/">courses</a>
+         <a href="http://scholar.google.com/scholar?hl=en&lr=&q=bolcer&btnG=Search">citations</a>
+         <a href="http://keroseneandamatch.com">kerosene</a>
+         <a href="http://tinyurl.com/nooqxp">hightower</a>
+         <a href="http://encryptanet.com">encryptanet</a>
+         <a href="http://paycloud.com">paycloud</a>
+         <a href="http://endeavors.com">endeavors</a>
+         <a href="http://tinyurl.com/ksogjf">p2p</a>
+    </center><p>
+      <div id="main-content">
+        
+        <div class="wrapper">
+          <div class="content-item "><div id='g_body'><h4><font size="4" color="#000099"></font> </h4>
+<h4><font size="4" color="#000099">Dr. Gregory Alan Bolcer</font></h4>
+<p><b>A unique and talented individual with a blend of deep technical expertise and business development experience; well connected in the Internet and software industries; strong network security and open source background;  a pioneer in the Web application, Web protocol, and Peer to Peer (P2P) networking spaces; excellent early-stage fundraising skills; strong ties to government and academia; high profile, high-tech industry news and analyst presence; experience in both buy-side and sell-side mergers &amp; acquisitions.</b></p>
+<h2>Education</h2>
+<ul>
+<li><b><font color="#333333">1998 Ph.D. Info &amp; Computer Science, University of California, Irvine (UCI) </font></b>
+</li><li><b><font color="#333333">1993 M.S. Computer Science, Software Engineering, University of Southern California (USC) </font></b>
+</li><li><b><font color="#333333">1989 B.S. Info &amp; Computer Science, University of California, Irvine (UCI)</font></b></li></ul>
+<h2>Corporate</h2>
+<p><b><font color="#333333">October 2007 to present, Vice President Engineering, <a href="http://www.high-tower.com/">High Tower Software, Inc.</a><br></font></b></p>
+<ul><li>Restructured engineering organization to match business goals</li><li>Relaunched products &amp; responsible for re-factoring product into a service-oriented architecture</li><li>Recruited top tier technical talent from personal network<br></li><li>Operational responsibility for Software Engineering, Quality Assurance, and Information Security divisions <br></li><li>Delivered a series of product releases weeks and months ahead of schedule and under budget<br></li><li>Oversaw a yearly budget of over $3 million and up to 40 employees</li><li>Significantly contributed to growing the valuation of the company 5-10 times in first 12 months <br></li><li>Responsible for intellectual property and patent strategy and filings<br></li></ul><p><b><font color="#333333">January 2005 to October 2007, Founder &amp; Chief Software Architect, <a href="http://www.encryptanet.com/">Encryptanet, Inc.</a></font></b></p>
+<ul>
+<li><font color="#333333">Invented, designed, and implemented initial technology from concept to product</font> 
+</li><li><font color="#333333">Responsible for all aspects of company including, business plan, funding, staffing</font> 
+</li><li><font color="#333333">Responsible for intellectual property, patent strategy and filings </font>
+</li><li><font color="#333333">Managed, deployed, and maintained technology solutions for multiple customers &amp; partners including Forbes and several others</font></li></ul>
+<p><b><font color="#333333">March 2000 to January 2005, Founder &amp; Chief Technology Officer, <a href="http://www.endeavors.com/">Endeavors Technology, Inc.</a></font></b></p>
+<ul>
+<li><font color="#333333">Directed development of collaboration, Internet security, and streaming products</font> 
+</li><li><font color="#333333">Built up and managed partnerships with Microsoft, Akamai, Intel, Autodesk, MCI, HP, Altavista, RSA, Stellent, and Webex</font> 
+</li><li><font color="#333333">Worked with MCI, Verizon, EDS, AOL to design and test product offerings and services around technology</font> 
+</li><li><font color="#333333">Key business and corporate development roles including business plan development and due diligence leading to the acquisitions of Omnishift, StreamTheory</font></li></ul>
+<p><b><font color="#333333">March 1998 to March 2000, Founder &amp; CEO <a href="http://www.endeavors.com/">Endeavors Technology, Inc.</a></font></b></p>
+<ul>
+<li><font color="#333333">Licensed own DARPA funded technology from UC Irvine</font> 
+</li><li><font color="#333333">Bootstrapped business from garage to successful startup &amp; doubled shareholder value</font> 
+</li><li><font color="#333333">Negotiated sale to Tadpole Technology, PLC for $4 million plus long-term financing</font></li></ul>
+<p><b><font color="#333333">September 1989 to March 1998, Research Staff, <a href="http://www.ics.uci.edu/">UC Irvine Info. &amp; Computer Science</a></font></b></p>
+<ul>
+<li><font color="#333333">Internet Technologies research on Web protocols, security, computer-human interaction, Web development tools and technologies, collaboration, and Web-based workflow</font> 
+</li><li><font color="#333333">Oversaw $1 million/year Defense Advanced Research Projects Agency high tech research project; grants funded totaling more than $7 million</font> 
+</li><li><font color="#333333">Managed up to 8 full time employees, up to 40 students at a time in 10 week increments</font> 
+</li><li><font color="#333333">Taught senior level software engineering project course &amp; initiated very successful program that involved real-world projects from local corporations</font> 
+</li><li><font color="#333333">Worked with Netscape, Microsoft, HP, Sun and dozens of other companies to coordinate Web protocol standards development</font> 
+</li><li><font color="#333333">Licensed technology to Sun Microsystems</font></li></ul>
+<h2>Awards &amp; Recognition</h2>
+<ul>
+<li><font color="#333333">Donald Bren School of Information &amp; Computer Science Distinguished Alumnus of 2004 Lauds &amp; Laurels award recipient</font> 
+</li><li>Orange County Council of the AeA 2004, Best new design of a utility product service 
+</li><li>Secure Computing, Best new security product design finalist, 2004, London, UK 
+</li><li>2005 Computerworld Premier 100 IT leaders nominee 
+</li><li><font color="#333333">FastCompany.com&#39;s 2006 Global Reader&#39;s Challenge &quot;Fast 50&quot; finalist</font> 
+</li><li>Affiliate and Consultant, 4K-Associates, organizing group for the largest public key cryptography crack ever (<a href="http://www.4k-associates.com/4K-Associates/">4K Associates</a>) 
+</li><li>Institute for Software Research (ISR) affiliated member, University of California, Irvine 
+</li><li>Intel Peer to Peer Working Group Technical Architecture Council Chair, elected 2001</li></ul>
+<h2>Events &amp; Speakerships</h2>
+<ul>
+<li><font color="#333333">Microsoft Executive Circle Webcast: <a href="http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032241773&amp;Culture=en-US">Cost-Effective and Piracy-Free Software Deployment</a>, speaker, December 2003</font> 
+</li><li>Microsoft Executive Circle Webcast: <a href="http://www.microsoft.com/technet/itshowcase/webcasts.mspx">On Demand Applications Made Easy</a>, speaker, December 2003 
+</li><li>Ziff Davis <a href="http://www.business4site.com/speakers.html">Business 4Site panelist on Overcoming Organizational Resistance</a>, Los Angeles, CA June 2004 
+</li><li>Tech Coast Venture Network, <a href="http://tcvn.com/speakerbio.asp?speaker_id=56">panel on Raising Money</a>, Costa Mesa, CA March 2003 
+</li><li>Opal Financial Group, CIO &amp; Technology Officers Summit, Conference Co-Chair, Laguna Niguel, December 2002 
+</li><li>Financial Services Instant Messaging Association founding corporate member and liaison, October 2002 
+</li><li>IMPlanet, Jupiter Communications, September 2002 
+</li><li>Nokia Innovent <a href="http://www.nokia.com/BaseProject/Sites/NOKIA_MAIN_18022/CDA/Categories/AboutNokia/Research&amp;Venturing/Venturing/Innovent/InnoventPressArchive/_Content/_Static_Files/innoventroundtablebrochure.pdf">P2P Roundtable</a>, invited participate by Nokia CEO Pekka Ala-Pietila 
+</li><li>MIT Sloan eBusiness entrepreneur competition panel judge, 2002 
+</li><li>British American Business Council of Los Angeles liaison, 2001-2003 
+</li><li>IBM Academy of Technology, Invited Speaker on P2P Technologies by the Corporate Emerging Technology Committee, Yorktown, NY, April 2001 
+</li><li>Digital Hollywood Conference, Mobile Peer-to-Peer Computing, San Jose, April 2001 
+</li><li>O&#39;Reilly <a href="http://conferences.oreillynet.com/cs/p2p2001/view/e_spkr/508">P2P Conference, Speaker</a>, Building Peer Support into devices by scaling down the Web, Feb 2001 
+</li><li>Organizer Internet Scale Workshop series 1998-2000, <a href="http://www.isr.uci.edu/events/twist/wisen98/">WISEN</a>, <a href="http://www.isr.uci.edu/events/twist/twist99/">TWIST&#39;99</a>, <a href="http://www.isr.uci.edu/events/twist/twist2000/">TWIST&#39;2000</a> 
+</li><li>Co-organizer for the Bay Area Roundtable technical series, Palo Alto, 1995-1997</li></ul>
+<h2>Academic &amp; Commercial Publications</h2>
+<ul>
+<li><font color="#333333">Microsoft Customer Solution Business Case Study, Autodesk, Bolcer, G. 2003</font> 
+</li><li><font color="#333333">Intel Customer Case Study: Autodesk, Bolcer, G. 2003</font> 
+</li><li><font color="#333333">Trusting Technology: Secure Instant Messaging is Ready for Enterprise Adoptions, Bolcer, G., 2002</font> 
+</li><li><font color="#333333">Locking and Blocking: Secure Instant Messaging Countermeasure Architecture Issues, Bolcer, G., 2002</font> 
+</li><li><font color="#333333">P2P: How Peer-to-Peer Technology is Revolutionizing the Way We Do Business, Fattah, H. M., Dearborn Publishing, 2002, contributed interviews, quotes, and selected text.</font> 
+</li><li><font color="#333333">Peer-to-Peer: Building Secure, Scalable, and Manageable Networks, Moore D. and Hebeler, J., McGraw Hill, 2002, contributed interviews, quotes, and selected text.</font> 
+</li><li><font color="#333333">Peer-to-Peer Computing: Technologies for Sharing and Collaboration on the Net.  Barkai, D., Intel Press, 2001, contributed interviews, quotes, and selected text.</font> 
+</li><li><font color="#333333"><a href="etip2pwp.pdf">Peer-to-Peer Architectures and the Magi Open-Source Infrastructure</a>, Bolcer, G. and et al, Dec. 2000.</font></li><li><font color="#333333"><a href="IC-Magi-final.pdf">Magi: An Architecture for Mobile and Disconnected Workflow</a>, Bolcer, G.  IEEE Journal of Internet Computing, May-June, 2000.</font></li><li><font color="#333333"><a href="cacm98.pdf">Web-based Development of Complex Information Products</a>, Fielding, R., Whitehead, E. J., Anderson, K. Bolcer, G. and et al, Communications of the ACM, Vo 41, No 8, August 1998.</font><font color="#333333"> </font> 
+</li><li><font color="#333333"><a href="simple-workflow-WWW.pdf">SWAP: Leveraging the Web to Manage Workflow</a>, Bolcer, G. and Kaiser, G.,  IEEE Jounral of Internet Computing, Jan-Feb, 1999.</font> 
+</li><li><font color="#333333">Advanced Workflow Management Technologies, Bolcer, G. and Taylor, R. N., Journal of Software Process Improvement and Practice, 1998.</font> 
+</li><li><font color="#333333"><a href="Bolcer-Dissertation-Final.pdf">Flexible and Customizable Workflow Execution on the WWW</a>, Bolcer, G., Ph.D. Dissertation, 1998.</font></li><li>User Interface Design Assistance for Large-Scale Software.  Bolcer, G., Journal of Automated Software Engineering, Vo 2, No 3, September 1995. 
+</li><li>Chiron-1: A Software Architecture for User Interface Development, Maintenance, and Run-Tim Support, Taylor, R. N., Nies, K., Bolcer, G. and et al, ACM Transactions on Computer-Human Interaction, Vo 2, No 2, 1995.</li></ul>
+<h2>Press &amp; Interviews</h2>
+<ul>
+<li>Computerworld, Opinion: <a href="http://www.computerworld.com/hardwaretopics/hardware/story/0,10801,94089,00.html">Destination Desktop</a>, Mark Hall, cover story quoted with Bill Joy, June 2004 
+</li><li>SoCal Tech News, An Interview with Greg Bolcer, May 2004 
+</li><li>CEONetworking&#39;s Top Business Trends, Mitchell Levy, contributor 2000-2008 
+</li><li>Orange County Register, The Net&#39;s Next Napster, Eric Johnson, Color picture &amp; front page business section, Feb, 2001 
+</li><li>The Wall Street Transcript, <a href="TWST-Bolcer.pdf">Interview of Greg Bolcer of Endeavors Technology</a>, December 2001 
+</li><li>Financial Times, WAP: More Business Applications Needed, Joia Shillingford, September, 2000 
+</li><li>CNBC UK, Power Lunch, Endeavors MagiWAP Demo, December 2000 
+</li><li>1999-2004, Interviews and quotes in Infoworld, Computerworld, eWeek, ZDNet, ZDNet Asia, ZDNet Europe, Internet Week, Network World, Bloomberg, Reuters, Citywire, CNN, Computer Weekly, Internet World, Planet IT, Tech Republic, Business 2.0, The Economist, MIT Technology Review, Dr. Dobbs, The Associated Press, Wired, and others.</li></ul>
+<h2>Technology Expertise, Patents, and Filings</h2>
+<ul>
+<li>Micro-Apache Generic Interface, decentralized peer-to-peer technologies based on the Apache HTTP Server project, the Web Distributed Authoring and Versioning protocol, and a simple, distributed Public Key Infrastructure 
+</li><li>SWAP, Simple Workflow Access Protocol extensions to the HTTP and WebDAV Web protocols 
+</li><li>Desktop Web Services, client resident, personal Web service tools and automation using a client Web service proxy 
+</li><li>Patent Application: Client-Based Systems for Performing Network Transactions 
+</li><li>Patent Application: Server-Oriented Systems and Methods for Performing Network Transactions 
+</li><li>Patent Application: Electronic Systems and Methods for Regulating Access to Content Servers 
+</li><li>Patent Application: Electronic Systems and Methods for Dynamic Allocation of Charging for Content Access 
+</li><li>Patent Application: Enhanced Digital Certificates Usable in Network Transactions 
+</li><li>Patent Application: Systems and Methods for Protecting Financial Data in Network Transactions 
+</li><li>Patent Application: Systems and Methods for Performing Network Transactions using Digital Certificates 
+</li><li>Patent Application: Network Transactions and Access Using Multiple Digital Certificates 
+</li><li>Patent Application: Systems and Methods for Accessing Content Search Results 
+</li><li>Patent Application: Electronic Systems and Methods for Performing Trusted Purchases 
+</li><li>Patent Application: Systems and Methods for Invocation of Streaming Applications 
+</li><li>Patent Application: Systems and Methods for Purchasing Products over a Network 
+</li><li>Patent Application: Systems and Methods for Streaming Data through a Wireless Mobile Device 
+</li><li>Patent Application: Systems and Methods for Indexing Data in a Network Environment 
+</li><li>Patent Application: Systems and Methods for Conducting Electronic Media Transactions 
+</li><li>Patent Application: Systems and Methods for Converting Wireless Product codes to Uniform Resource Locators 
+</li><li>Patent Application: System &amp; Method for Selectively Granting Access to Digital Content</li><li>Patent Application: System for Parallel Processing of Network Events</li><li>Patent Application: System for Providing Security as a Service</li><li>Patent Application: System for Identifying Network Activity<br></li><li>Patent Application: System for Parallel Database Transactions (GPGPU Computing) <br></li></ul>
+<p> </p></div></div>
+          <div style="clear: both"></div>
+        </div>
+      </div>
+      <!-- /wrapper --><!-- /main-content -->
+      <div id="footer"><div class="wrapper">
+        <hr />
+        <p><div id='g_footer'><p></p><font color="#000099"><b>How to contact:</b> greg at bolcer dot org, +1.714.928.five.four.seven.six</font></div></p>
+        <div style="clear: both"></div>
+      </div></div>
+      <!-- /wrapper --><!-- /footer -->
+    </div>
+  </div>
+<!-- /wrapper --><!-- /container -->
+
+<div id="extraDiv1"><span></span></div><div id="extraDiv2"><span></span></div>
+<div id="extraDiv3"><span></span></div><div id="extraDiv4"><span></span></div>
+<div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+
+</body>
+</html>

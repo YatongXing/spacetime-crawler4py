@@ -1,0 +1,457 @@
+<!-- URL: https://wiki.ics.uci.edu/doku.php/hardware:cluster:openlab -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Openlab Linux Cluster @ ICS [Support Wiki]</title>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="hardware,cluster,openlab"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/css.php?css=assets/mikio.less"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/icons/fontawesome/css/all.min.css"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Support Wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php/hardware:cluster:openlab?do=index" title="Sitemap"/>
+<link rel="manifest" href="/lib/exe/manifest.php" crossorigin="use-credentials"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="/feed.php?mode=list&amp;ns=hardware:cluster"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="/doku.php/hardware:cluster:openlab?do=export_xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="/doku.php/hardware:cluster:openlab?do=export_raw"/>
+<link rel="canonical" href="https://wiki.ics.uci.edu/doku.php/hardware:cluster:openlab"/>
+<link rel="stylesheet" href="/lib/exe/css.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"/>
+<script >var NS='hardware:cluster';var JSINFO = {"plugins":{"gallery":{"defaults":{"thumbnailsize":{"default":"150x150"},"imagesize":{"default":"1600X1200"},"cache":{"default":true},"filter":{"default":""},"showname":{"default":false},"showtitle":{"default":false},"crop":{"default":true},"direct":{"default":false},"reverse":{"default":false},"recursive":{"default":false},"align":{"default":0},"cols":{"default":0},"limit":{"default":0},"offset":{"default":0},"paginate":{"default":0},"sort":{"default":"file"},"namespace":{"default":""}}}},"isadmin":0,"isauth":0,"move_renameokay":false,"move_allowrename":false,"plugin_slider":{"width":800,"mode":"horizontal","infiniteLoop":true,"hideControlOnEnd":false,"speed":500,"easing":null,"slideMargin":0,"startSlide":0,"randomStart":false,"captions":false,"ticker":false,"tickerHover":false,"adaptiveHeight":false,"adaptiveHeightSpeed":500,"video":false,"useCSS":true,"preloadImages":"visible","responsive":true,"pager":true,"pagerType":"full","pagerShortSeparator":"\/","controls":true,"nextText":"Next","prevText":"Prev","autoControls":false,"startText":"Start","stopText":"Stop","autoControlsCombine":false,"auto":false,"pause":4000,"autoStart":true,"autoDirection":"next","autoHover":false,"autoDelay":0,"minSlides":1,"maxSlides":1,"moveSlides":0,"slideWidth":0,"touchEnabled":true,"swipeThreshold":50,"oneToOneTouch":true,"preventDefaultSwipeX":true,"preventDefaultSwipeY":false},"SMILEY_CONF":{"8-)":"cool.svg","8-O":"eek.svg","8-o":"eek.svg",":-(":"sad.svg",":-)":"smile.svg","=)":"smile2.svg",":-\/":"doubt.svg",":-\\":"doubt2.svg",":-?":"confused.svg",":-D":"biggrin.svg",":-P":"razz.svg",":-o":"surprised.svg",":-O":"surprised.svg",":-x":"silenced.svg",":-X":"silenced.svg",":-|":"neutral.svg",";-)":"wink.svg","m(":"facepalm.svg","^_^":"fun.svg",":?:":"question.svg",":!:":"exclaim.svg","LOL":"lol.svg","FIXME":"fixme.svg","DELETEME":"deleteme.svg"},"id":"hardware:cluster:openlab","namespace":"hardware:cluster","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<script src="/lib/exe/jquery.php?tseed=8faf3dc90234d51a499f4f428a0eae43"></script>
+<script src="/lib/exe/js.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio-typeahead.js" defer="defer"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio.js" defer="defer"></script>
+<link rel="shortcut icon" href="/lib/tpl/mikio/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/mikio/images/apple-touch-icon.png" />
+</head>
+<body class="mikio">
+<div id="dokuwiki__site">
+    <div id="dokuwiki__top" class="site dokuwiki mode_show tpl_mikio    showSidebar hasSidebar"><nav class="mikio-navbar"><div class="mikio-container"><a class="mikio-navbar-brand" href="/doku.php/start" accesskey="h" title="Home [h]"><img src="/lib/exe/fetch.php/wiki:logo.png" class="mikio-navbar-brand-image" style="width:250px;max-width:none;max-height:none;"><div class="mikio-navbar-brand-title"><h1 class="mikio-navbar-brand-title-text">Support Wiki</h1><p class="claim mikio-navbar-brand-title-tagline"></p></div></a><div class="mikio-navbar-toggle"><span class="icon"></span></div><div class="mikio-navbar-collapse"><div class="mikio-nav-item"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="hardware:cluster:openlab"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form></div><ul class="mikio-nav"><li id="dokuwiki__pagetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_pagetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,235.38983,1277.8305)" id="g2991">
+<path d="M 128,0 H 1152 V 768 H 736 q -40,0 -68,28 -28,28 -28,68 v 416 H 128 V 0 z m 640,896 h 299 L 768,1195 V 896 z M
+1280,768 V -32 q 0,-40 -28,-68 -28,-28 -68,-28 H 96 q -40,0 -68,28 -28,28 -28,68 v 1344 q 0,40 28,68 28,28 68,28 h 544
+q 40,0 88,-20 48,-20 76,-48 l 408,-408 q 28,-28 48,-76 20,-48 20,-88 z" id="path2993" /></g></svg><span class="mikio-small-only">Page Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item revs" href="/doku.php/hardware:cluster:openlab?do=revisions" title="Old revisions"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></span><span>Old revisions</span></a><a class="mikio-nav-link mikio-dropdown-item backlink" href="/doku.php/hardware:cluster:openlab?do=backlink" title="Backlinks"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></span><span>Backlinks</span></a></div></li><li id="dokuwiki__sitetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_sitetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,121.49153,1285.4237)" id="g3027">
+<path d="m 1024,640 q 0,106 -75,181 -75,75 -181,75 -106,0 -181,-75 -75,-75 -75,-181 0,-106 75,-181 75,-75 181,-75 106,0
+181,75 75,75 75,181 z m 512,109 V 527 q 0,-12 -8,-23 -8,-11 -20,-13 l -185,-28 q -19,-54 -39,-91 35,-50 107,-138 10,-12
+10,-25 0,-13 -9,-23 -27,-37 -99,-108 -72,-71 -94,-71 -12,0 -26,9 l -138,108 q -44,-23 -91,-38 -16,-136 -29,-186 -7,-28
+-36,-28 H 657 q -14,0 -24.5,8.5 Q 622,-111 621,-98 L 593,86 q -49,16 -90,37 L 362,16 Q 352,7 337,7 323,7 312,18 186,132
+147,186 q -7,10 -7,23 0,12 8,23 15,21 51,66.5 36,45.5 54,70.5 -27,50 -41,99 L 29,495 Q 16,497 8,507.5 0,518 0,531 v 222
+q 0,12 8,23 8,11 19,13 l 186,28 q 14,46 39,92 -40,57 -107,138 -10,12 -10,24 0,10 9,23 26,36 98.5,107.5 72.5,71.5 94.5,
+71.5 13,0 26,-10 l 138,-107 q 44,23 91,38 16,136 29,186 7,28 36,28 h 222 q 14,0 24.5,-8.5 Q 914,1391 915,1378 l 28,-184
+q 49,-16 90,-37 l 142,107 q 9,9 24,9 13,0 25,-10 129,-119 165,-170 7,-8 7,-22 0,-12 -8,-23 -15,-21 -51,-66.5 -36,-45.5
+-54,-70.5 26,-50 41,-98 l 183,-28 q 13,-2 21,-12.5 8,-10.5 8,-23.5 z" id="path3029" />
+</g></svg><span class="mikio-small-only">Site Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item recent" href="/doku.php/hardware:cluster:openlab?do=recent" title="Recent Changes"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69V13m4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67V8M5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2H5m11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85z"/></svg></span><span>Recent Changes</span></a><a class="mikio-nav-link mikio-dropdown-item media" href="/doku.php/hardware:cluster:openlab?do=media&ns=hardware%3Acluster" title="Media Manager"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 15l4.5-6 3.5 4.5 2.5-3L21 15m1-11h-8l-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M2 6H0v14a2 2 0 0 0 2 2h18v-2H2V6z"/></svg></span><span>Media Manager</span></a><a class="mikio-nav-link mikio-dropdown-item index" href="/doku.php/hardware:cluster:openlab?do=index" title="Sitemap"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2z"/></svg></span><span>Sitemap</span></a></div></li><li id="dokuwiki__usertools" class="mikio-nav-dropdown"><a id="mikio_dropdown_usertools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,197.42373,1300.6102)"><path d="M
+1408,131 Q 1408,11 1335,-58.5 1262,-128 1141,-128 H 267 Q 146,-128 73,-58.5 0,11 0,131 0,184 3.5,234.5 7,285 17.5,343.5
+28,402 44,452 q 16,50 43,97.5 27,47.5 62,81 35,33.5 85.5,53.5 50.5,20 111.5,20 9,0 42,-21.5 33,-21.5 74.5,-48 41.5,
+-26.5 108,-48 Q 637,565 704,565 q 67,0 133.5,21.5 66.5,21.5 108,48 41.5,26.5 74.5,48 33,21.5 42,21.5 61,0 111.5,-20
+50.5,-20 85.5,-53.5 35,-33.5 62,-81 27,-47.5 43,-97.5 16,-50 26.5,-108.5 10.5,-58.5 14,-109 Q 1408,184 1408,131 z m
+-320,893 Q 1088,865 975.5,752.5 863,640 704,640 545,640 432.5,752.5 320,865 320,1024 320,1183 432.5,1295.5 545,1408 704,
+1408 863,1408 975.5,1295.5 1088,1183 1088,1024 z"/></g></svg><span class="mikio-small-only">User Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item login" href="/doku.php/hardware:cluster:openlab?do=login&sectok=" title="Log In"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></span><span>Log In</span></a></div></li></ul></div></div></nav><a name="dokuwiki__top" id="dokuwiki__top"></a><div class="mikio-hero"><div class="mikio-container"><div class="mikio-hero-text"><div class="mikio-breadcrumbs"><div class="mikio-container"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php/hardware:cluster:openlab"  class="breadcrumbs" title="hardware:cluster:openlab">Openlab Linux Cluster @ ICS</a></bdi></span></div></div><h1 class="mikio-hero-title">Openlab Linux Cluster @ ICS</h1><h2 class="mikio-hero-subtitle"></h2></div><div class="mikio-hero-image"><div class="mikio-tags"></div></div></div></div><main class="mikio-page"><div class="mikio-container"><aside class="mikio-sidebar mikio-sidebar-left"><a class="mikio-sidebar-toggle closed" href="#">Sidebar <span class="icon"></span></a><div class="mikio-sidebar-collapse"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="hardware:cluster:openlab"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form><div class="mikio-sidebar-content"><div><div id="nojs_indexmenu_92216708768e6d56a08415" data-jsajax="%26group%3D1" class="indexmenu_nojs">
+<ul class="idx">
+<li class="closed"><div class="li"><a href="/doku.php/accounts:accounts" class="indexmenu_idx_head" data-wiki-id="accounts:accounts">ICS Accounts</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/announce:announce" class="indexmenu_idx_head" data-wiki-id="announce:announce">Announcement and Maintenance</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/backups:backups" class="indexmenu_idx_head" data-wiki-id="backups:backups">Backups @ ICS</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/commands:commands" class="indexmenu_idx_head" data-wiki-id="commands:commands">Common Tasks and Commands</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/group:group" class="indexmenu_idx_head" data-wiki-id="group:group">Group Files</a></div></li>
+<li class="open"><div class="li"><a href="/doku.php/hardware:hardware" class="indexmenu_idx_head" data-wiki-id="hardware:hardware">Hardware Support</a></div>
+<ul class="idx">
+<li class="open"><div class="li"><a href="/doku.php/hardware:cluster?idx=hardware:cluster" class="indexmenu_idx open" data-wiki-id="">cluster</a></div>
+<ul class="idx">
+<li class="level3" ><div class="li"><a href="/doku.php/hardware:cluster:opengpu" class="wikilink1" title="hardware:cluster:opengpu" data-wiki-id="hardware:cluster:opengpu">OpenGPU Lab</a></div></li>
+<li class="level3" ><div class="li"><a href="/doku.php/hardware:cluster:openlab" class="wikilink1" title="hardware:cluster:openlab" data-wiki-id="hardware:cluster:openlab">Openlab Linux Cluster @ ICS</a></div></li>
+</ul>
+</li>
+<li class="closed"><div class="li"><a href="/doku.php/hardware:installation?idx=hardware:installation" class="indexmenu_idx" data-wiki-id="">installation</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/hardware:monitoring?idx=hardware:monitoring" class="indexmenu_idx" data-wiki-id="">monitoring</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/hardware:storage:storage" class="indexmenu_idx_head" data-wiki-id="hardware:storage:storage">Storage</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/hardware:labs_software" class="wikilink1" title="hardware:labs_software" data-wiki-id="hardware:labs_software">Labs: Software List and Other Resources</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/hardware:laptops" class="wikilink1" title="hardware:laptops" data-wiki-id="hardware:laptops">Laptop Checkout Policy</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/hardware:nvidia" class="wikilink1" title="hardware:nvidia" data-wiki-id="hardware:nvidia">Nvidia</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/hardware:wifi" class="wikilink1" title="hardware:wifi" data-wiki-id="hardware:wifi">WIFI @ UCI</a></div></li>
+</ul>
+</li>
+<li class="closed"><div class="li"><a href="/doku.php/instructional_support:instructional_support" class="indexmenu_idx_head" data-wiki-id="instructional_support:instructional_support">Instructional Support Resources</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/network:network" class="indexmenu_idx_head" data-wiki-id="network:network">Network</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/os?idx=os" class="indexmenu_idx" data-wiki-id="">os</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/policies?idx=policies" class="indexmenu_idx" data-wiki-id="">policies</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/projects?idx=projects" class="indexmenu_idx" data-wiki-id="">projects</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/remote_support?idx=remote_support" class="indexmenu_idx" data-wiki-id="">remote_support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/requesttracker?idx=requesttracker" class="indexmenu_idx" data-wiki-id="">requesttracker</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/research_support:research_support" class="indexmenu_idx_head" data-wiki-id="research_support:research_support">Research Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/security?idx=security" class="indexmenu_idx" data-wiki-id="">security</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/services?idx=services" class="indexmenu_idx" data-wiki-id="">services</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/software:software" class="indexmenu_idx_head" data-wiki-id="software:software">Software</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/virtual_environments:virtual_environments" class="indexmenu_idx_head" data-wiki-id="virtual_environments:virtual_environments">Virtual Environments</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/webapps:webapps" class="indexmenu_idx_head" data-wiki-id="webapps:webapps">ICS Web Applications</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/wiki?idx=wiki" class="indexmenu_idx" data-wiki-id="">wiki</a></div></li>
+</ul>
+</div></div></div></div></aside><div class="mikio-content" id="dokuwiki__content"><article class="mikio-article"><div class="mikio-toc"><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle"><svg class="mikio-iicon hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+style="fill:currentColor"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0
+76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16z"/></svg>Table of Contents<svg class="mikio-iicon down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+aria-hidden="true" style="fill:currentColor"><path d="M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9
+1.917-1.916z"/></svg></h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#openlab_linux_cluster_ics">Openlab Linux Cluster @ ICS</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#priority">Priority</a></div></li>
+<li class="level2"><div class="li"><a href="#home_directory">Home Directory</a></div></li>
+<li class="level2"><div class="li"><a href="#connecting_to_openlab">Connecting to Openlab</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#off-campus_access">Off-Campus Access</a></div></li>
+<li class="level3"><div class="li"><a href="#ssh_tunneling">SSH Tunneling</a></div></li>
+<li class="level3"><div class="li"><a href="#load_balancing">Load Balancing</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#donations">Donations</a></div></li>
+<li class="level2"><div class="li"><a href="#user_access">User Access</a></div></li>
+<li class="level2"><div class="li"><a href="#services_provided">Services Provided</a></div></li>
+<li class="level2"><div class="li"><a href="#code_editor_suggestions">Code Editor suggestions</a></div></li>
+<li class="level2"><div class="li"><a href="#troubleshooting">Troubleshooting</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#rsa_host_key_for_hostname_has_changed">&quot;RSA host key for &lt;hostname&gt; has changed&quot;</a></div></li>
+<li class="level3"><div class="li"><a href="#rc_dot_files">RC / DOT Files</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div><div class="mikio-article-content"><h1 class="sectionedit1" id="openlab_linux_cluster_ics" style="display:none">Openlab Linux Cluster @ ICS</h1>
+<div class="level1">
+
+<p>
+The ICS Instruction Openlab Linux Server cluster is designed for general-purpose computing at the School of ICS and is accessible to any user with an <a href="/doku.php/accounts:ics_home_directory" class="wikilink1" title="accounts:ics_home_directory" data-wiki-id="accounts:ics_home_directory">ICS Home Directory</a>.
+</p>
+
+<p>
+<strong>Openlab consists of between 40 and 80 bare metal compute nodes running Ubuntu 22.04 LTS.</strong>
+</p>
+
+<p>
+Students can connect to the cluster via any SSH client and will have access to the same ICS home directory as any other <a href="/doku.php/services:supported_os" class="wikilink1" title="services:supported_os" data-wiki-id="services:supported_os">ICS managed Linux system</a>  and <a href="/doku.php/virtual_environments:jupyterhub" class="wikilink1" title="virtual_environments:jupyterhub" data-wiki-id="virtual_environments:jupyterhub">OpenHub @ ICS</a>. This cluster is available off campus via SSH with SSH keys when not connected to the <a href="/doku.php/network:campus:campusvpn" class="wikilink1" title="network:campus:campusvpn" data-wiki-id="network:campus:campusvpn">campus VPN</a>.
+</p>
+
+</div>
+
+<h2 class="sectionedit2" id="priority">Priority</h2>
+<div class="level2">
+
+<p>
+Cluster priority is given to instruction first and then ICS researchers.
+</p>
+
+<p>
+In order to ensure that Openlab cluster remains available to instruction and researchers fairly, users may expect the following:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Long-running jobs</strong> must be submitted through our <a href="/doku.php/services:slurm" class="wikilink1" title="services:slurm" data-wiki-id="services:slurm">SLURM</a> job queueing system to balance resources.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Jobs prioritization</strong>: Jobs executed via the SLURM queueing system will be given priority over jobs running on the command line. </div>
+</li>
+<li class="level1 node"><div class="li"> <strong>Process management</strong>:</div>
+<ul>
+<li class="level2"><div class="li"> Processes running for longer than 2 hours will be reniced 19.</div>
+</li>
+<li class="level2"><div class="li"> Processes running for longer than 5 days will be suspended (<a href="/doku.php/hardware:cluster:openlab#exceptions" class="wikilink1" title="hardware:cluster:openlab" data-wiki-id="hardware:cluster:openlab">Exceptions</a>).</div>
+</li>
+<li class="level2"><div class="li"> Users with over 100 processes running will have their processes suspended (<a href="/doku.php/hardware:cluster:openlab#exceptions" class="wikilink1" title="hardware:cluster:openlab" data-wiki-id="hardware:cluster:openlab">Exceptions</a>).</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>File Cleanup</strong>: Files in the /tmp directory will be cleared after two weeks.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="recommendations">Recommendations</h4>
+<div class="level4">
+
+<p>
+Please use <a href="/doku.php/services:slurm" class="wikilink1" title="services:slurm" data-wiki-id="services:slurm">SLURM</a> for long-running or serial projects requiring more than one openlab node.  Processes running through SLURM may not be subject to all of the above guidelines.
+</p>
+
+</div>
+
+<h4 id="course_exceptions">Course Exceptions</h4>
+<div class="level4">
+
+<p>
+Instructors may contact heldpesk@ics.uci.edu in order to request course exceptions to any of these guidelines.
+</p>
+
+</div>
+
+<h4 id="exceptions_to_process_management_rules">Exceptions to Process Management Rules</h4>
+<div class="level4">
+
+<p>
+The following long-running processes will not be automatically reniced or suspended on the Openlab Linux cluster:
+</p>
+<ul>
+<li class="level1"><div class="li"> bash</div>
+</li>
+<li class="level1"><div class="li"> rbash</div>
+</li>
+<li class="level1"><div class="li"> csh</div>
+</li>
+<li class="level1"><div class="li"> dash</div>
+</li>
+<li class="level1"><div class="li"> ksh</div>
+</li>
+<li class="level1"><div class="li"> ksh93</div>
+</li>
+<li class="level1"><div class="li"> tcsh</div>
+</li>
+<li class="level1"><div class="li"> zsh</div>
+</li>
+<li class="level1"><div class="li"> screen</div>
+</li>
+<li class="level1"><div class="li"> tmux</div>
+</li>
+<li class="level1"><div class="li"> nologin</div>
+</li>
+<li class="level1"><div class="li"> nologin</div>
+</li>
+<li class="level1"><div class="li"> ksh</div>
+</li>
+<li class="level1"><div class="li"> rksh</div>
+</li>
+<li class="level1"><div class="li"> csh</div>
+</li>
+<li class="level1"><div class="li"> (sd-pam)</div>
+</li>
+<li class="level1"><div class="li"> sshd</div>
+</li>
+<li class="level1"><div class="li"> ssh-agent</div>
+</li>
+<li class="level1"><div class="li"> systemd</div>
+</li>
+<li class="level1"><div class="li"> dbus-daemon</div>
+</li>
+<li class="level1"><div class="li"> node</div>
+</li>
+<li class="level1"><div class="li"> vim</div>
+</li>
+<li class="level1"><div class="li"> remote-dev-serv</div>
+</li>
+<li class="level1"><div class="li"> fsnotifier</div>
+</li>
+<li class="level1"><div class="li"> ion.clangd.main</div>
+</li>
+<li class="level1"><div class="li"> ld-linux-x86-64</div>
+</li>
+<li class="level1"><div class="li"> fsnotifier</div>
+</li>
+<li class="level1"><div class="li"> cpptools</div>
+</li>
+<li class="level1"><div class="li"> cpptools-srv</div>
+</li>
+<li class="level1"><div class="li"> xdg-mime</div>
+</li>
+<li class="level1"><div class="li"> dbus-send</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit3" id="home_directory">Home Directory</h2>
+<div class="level2">
+
+<p>
+Your <a href="/doku.php/accounts:ics_home_directory" class="wikilink1" title="accounts:ics_home_directory" data-wiki-id="accounts:ics_home_directory">ICS home directory</a> is shared across all ICS-supported Linux hosts including the Openlab hosts.
+</p>
+
+</div>
+
+<h2 class="sectionedit4" id="connecting_to_openlab">Connecting to Openlab</h2>
+<div class="level2">
+
+<p>
+You may log in remotely from any host using an SSH client. 
+</p>
+
+<p>
+<a href="/doku.php/accounts:using_vscode_with_openlab" class="wikilink1" title="accounts:using_vscode_with_openlab" data-wiki-id="accounts:using_vscode_with_openlab">VSCode with SSH</a>
+</p>
+
+<p>
+Log in into one of the following domain names (e.g. <em>ssh openlab22.ics.uci.edu</em> or <em>ssh openlab.ics.uci.edu</em>). 
+</p>
+<div class="table sectionedit5"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Domain Name </th><th class="col1"> Operating System </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> openlab.ics.uci.edu </td><td class="col1"> Ubuntu 22.04 hosts only </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> opengpu.ics.uci.edu </td><td class="col1"> Ubuntu 22.04 hosts only</td>
+	</tr>
+</table></div>
+
+<p>
+<strong>NOTE</strong>: If you are running a long-running process, please take note of the hostname you are running it on. The name “openlab.ics.uci.edu” is a load balancer and may not direct you to the same host twice. You can determine the hostname by running the command `hostname` from the shell CLI. When you return to check on your process, you should SSH directly into that specific hostname instead of openlab.ics.uci.edu.
+</p>
+
+</div>
+
+<h3 class="sectionedit6" id="off-campus_access">Off-Campus Access</h3>
+<div class="level3">
+
+<p>
+<strong>Note</strong>:  Off-campus access requires <a href="/doku.php/accounts:ssh_keys" class="wikilink1" title="accounts:ssh_keys" data-wiki-id="accounts:ssh_keys">SSH keys</a>. Users connecting from off-campus cannot use passwords to log in to the Openlab cluster.
+</p>
+
+<p>
+What does ICS consider on campus:
+</p>
+<ul>
+<li class="level1"><div class="li"> Any host with a reverse dns name that ends in uci.edu.  This includes most campus hosts and hosts connected via VPN.</div>
+</li>
+<li class="level1"><div class="li"> Any host connected to the OIT VPN.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit7" id="ssh_tunneling">SSH Tunneling</h3>
+<div class="level3">
+
+<p>
+In order to create an SSH tunnel to the host that you have a process on, you <strong>cannot</strong> use the name openlab.ics.uci.edu.
+</p>
+
+<p>
+In the following example, the user has connected to Openlab and run Jupyterlab on port 5555.  They have run `hostname` and determined that the name of the host they have run jupyterlab on is <strong>circinus-2.ics.uci.edu</strong>.
+</p>
+<pre class="code">% ssh -L 8080:localhost:5555 luser@circinus-2.ics.uci.edu</pre>
+
+</div>
+
+<h3 class="sectionedit8" id="load_balancing">Load Balancing</h3>
+<div class="level3">
+
+<p>
+The name openlab.ics.uci.edu takes you to a load balancer.  The load balancer will send your connection request to the machine with the current lowest load.
+</p>
+
+<p>
+<strong>If your work requires you to work with multiple shells on the same host</strong>, then log in directly using a hostname instead of openlab.ics.uci.edu
+</p>
+
+</div>
+
+<h5 id="determining_a_hostname">Determining a Hostname</h5>
+<div class="level5">
+
+<p>
+In order to identify which openlab host you are on, run the command:
+</p>
+<pre class="code">hostname</pre>
+
+<p>
+In the following example, the user has logged into a host named circinus-30.ics.uci.edu:
+</p>
+<pre class="code">% hostname
+circinus-30</pre>
+
+</div>
+
+<h2 class="sectionedit9" id="donations">Donations</h2>
+<div class="level2">
+
+<p>
+Much of the Openlab cluster runs on donated hardware.  Feel free to contact ICS Computing Support if you have some spare hardware that you would like to donate.
+</p>
+
+</div>
+
+<h2 class="sectionedit10" id="user_access">User Access</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> All ICS users</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit11" id="services_provided">Services Provided</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="/doku.php/services:ssh_access" class="wikilink2" title="services:ssh_access" rel="nofollow" data-wiki-id="services:ssh_access">Shell</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php/services:slurm" class="wikilink1" title="services:slurm" data-wiki-id="services:slurm">SLURM job scheduling program</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php/virtual_environments:virtual_environments" class="wikilink1" title="virtual_environments:virtual_environments" data-wiki-id="virtual_environments:virtual_environments">ICS Virtual Environments</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit12" id="code_editor_suggestions">Code Editor suggestions</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="/doku.php/accounts:using_vscode_with_openlab" class="wikilink1" title="accounts:using_vscode_with_openlab" data-wiki-id="accounts:using_vscode_with_openlab">Visual Studio Code</a> (VSCode)</div>
+</li>
+<li class="level1 node"><div class="li"> vi</div>
+<ul>
+<li class="level2"><div class="li"> Cheat sheets for learning vi can be easily be searched for.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit13" id="troubleshooting">Troubleshooting</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit14" id="rsa_host_key_for_hostname_has_changed">&quot;RSA host key for &lt;hostname&gt; has changed&quot;</h3>
+<div class="level3">
+
+<p>
+If you receive an error “Hot key verification failed” when logging in, you may (if you are confident you are logging into the correct host) clear the offending key by issuing the following command, on most platforms, to clear the old host key and resolve the error:
+</p>
+<pre class="code">ssh-keygen -R &lt;hostname&gt;</pre>
+
+<p>
+If this does not work on your platform, please send a message to helpdesk@ics.uci.edu along with the output from the command.  Sending relevant screenshots is always appreciated.
+</p>
+
+</div>
+
+<h3 class="sectionedit15" id="rc_dot_files">RC / DOT Files</h3>
+<div class="level3">
+
+<p>
+ICS users may occasionally damage their dot files, which results in unusual-looking SSH prompts and/or being unable to use the “module” command.  
+</p>
+
+<p>
+If this is the case, click here for directions to <a href="https://swiki.ics.uci.edu/doku.php/accounts:restore_unix_dot_files" class="urlextern" title="https://swiki.ics.uci.edu/doku.php/accounts:restore_unix_dot_files" rel="ugc nofollow"> restore your DOT files</a>.  If this fails, contact <a href="https://swiki.ics.uci.edu/doku.php/start?s[]=helpdesk#contacting_ics_computing_support_helpdesk" class="urlextern" title="https://swiki.ics.uci.edu/doku.php/start?s[]=helpdesk#contacting_ics_computing_support_helpdesk" rel="ugc nofollow">helpdesk</a>.
+</p>
+
+</div><div style="clear:both"></div></div></article></div><nav id="dw__pagetools" class="hidden-print dw__pagetools"><ul class="tools"><li class="source"><a href="/doku.php/hardware:cluster:openlab?do=edit" class="source" title="Show pagesource [v]" accesskey="v"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></div><span class="a11y">Show pagesource</span></a></li><li class="revs"><a href="/doku.php/hardware:cluster:openlab?do=revisions" class="revs" title="Old revisions [o]" accesskey="o"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></div><span class="a11y">Old revisions</span></a></li><li class="backlink"><a href="/doku.php/hardware:cluster:openlab?do=backlink" class="backlink" title="Backlinks"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></div><span class="a11y">Backlinks</span></a></li><li class="top"><a href="#dokuwiki__top" class="top" title="Back to top [t]" accesskey="t"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></div><span class="a11y">Back to top</span></a></li></ul></nav></div></main><div class="mikio-page-fill"><div class="mikio-content" style="padding:0"></div></div><footer class="mikio-footer"><div class="doc"><bdi>hardware/cluster/openlab.txt</bdi> · Last modified: 2025/10/01 08:20</div><div class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license"><img src="/lib/images/license/badge/cc-by-nc-sa.png" alt="CC Attribution-Noncommercial-Share Alike 4.0 International" /></a> Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license" class="urlextern">CC Attribution-Noncommercial-Share Alike 4.0 International</a></bdi></div></footer>    <div class="no"><img src="/lib/exe/taskrunner.php?id=hardware%3Acluster%3Aopenlab&amp;1760917149" width="2" height="1" alt="" /></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!-- URL: http://www.ics.uci.edu/~eppstein/pubs/a-morin.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<title>David Eppstein - Publications</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll("script[type='math/tex']").forEach(function(el) {
+              el.outerHTML = "\\(" + el.textContent + "\\)";
+            });
+            document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+              el.outerHTML = "\\[" + el.textContent + "\\]";
+            });
+            var script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js";
+            document.head.appendChild(script);
+        }, false);
+    </script>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<h1>David Eppstein - Publications</h1>
+<hr><p>
+<h2>
+Publications with
+<a href="https://cglab.ca/~morin/">
+Pat Morin
+</a>
+</h2>
+<ul>
+<li><b>Spanning trees in multipartite geometric graphs</b>.<br>
+<a href="https://cglab.ca/~biniaz/">A. Biniaz</a>,
+<a href="https://jitbose.ca/">P. Bose</a>,
+D. Eppstein,
+<a href="https://people.scs.carleton.ca/~maheshwa/">A. Maheshwari</a>,
+<a href="https://cglab.ca/~morin/">P. Morin</a>, and
+<a href="https://people.scs.carleton.ca/~michiel/">M. Smid</a>.<br>
+<a href="https://arxiv.org/abs/1611.01661">arXiv:1611.01661</a>.<br>
+<a href="https://doi.org/10.1007/s00453-017-0375-4"><i>Algorithmica</i> 80
+(11): 3177&ndash;3191, 2018</a>.
+<p>
+We provide near-linear-time algorithms for minimum and maximum spanning
+trees on Euclidean graphs given by multicolored point sets, where each
+point forms a vertex, and each bichromatic pair of points forms an edge
+with length equal to their Euclidean distance.
+<p>
+<li><b>Minor-closed graph classes with bounded layered pathwidth</b>.<br>
+<a href="https://engineering.uottawa.ca/eecs/people/dujmovic-vida">V. Dujmovi&#263;</a>,
+D. Eppstein,
+<a href="https://di.ulb.ac.be/algo/gjoret/">G. Joret</a>,
+<a href="https://cglab.ca/~morin/">P. Morin</a>, and
+<a href="https://davidwooddavid.github.io/">D. R. Wood</a>.<br>
+<a href="https://arxiv.org/abs/1810.08314">arXiv:1810.08314</a>.<br>
+<a href="https://doi.org/10.1137/18M122162X"><i>SIAM J. Discrete Math</i> 34 (3): 1693&ndash;1709, 2020</a>.
+<p>
+A minor-closed graph family has a functional relation between diameter and path
+width (bounded local pathwidth) if and only if it excludes an apex-tree.
+The same graph families are also the ones with bounded layered pathwidth:
+a simultaneous path decomposition and layering (sequence of subsets of
+vertices with all edges connecting the same subset or consecutive
+subsets) so that the intersection of a bag and a layer has constant size.
+<p>
+<li><b>Stack-number is not bounded by queue-number</b>.<br>
+<a href="https://engineering.uottawa.ca/eecs/people/dujmovic-vida">V. Dujmovi&#263;</a>,
+D. Eppstein,
+<a href="https://vrs.amsi.org.au/student-profile-robert-hickingbotham/">R. Robert Hickingbotham</a>,
+<a href="https://cglab.ca/~morin/">P. Morin</a>, and
+<a href="https://davidwooddavid.github.io/">D. R. Wood</a>.<br>
+<a href="https://arxiv.org/abs/2011.04195">arXiv:2011.04195</a>.<br>
+<a href="https://doi.org/10.1007/s00493-021-4585-7"><i>Combinatorica</i> 42: 151&ndash;164, 2022</a>.
+<p>
+Stack number is also known as page number or book thickness; it is the
+minimum number of stacks needed so that you can process the vertices of
+a graph in some sequence, pushing each edge onto one of the stacks when
+you process its first endpoint and popping it from the same stack when
+you process its second endpoint. Queue number is defined in the same way
+using queues instead of stacks. We show that the strong products of
+triangular grids and high-degree stars have bounded queue number but
+unbounded stack number. This result disproves the
+Blankenship&ndash;Oporowski conjecture, according to which subdividing
+edges of a graph a constant number of times cannot decrease its stack
+number from non-constant to constant, because subdivisions of the same
+products also have bounded stack number. It also confirms a conjecture
+of Bonnet et al on the existence of graphs with bounded sparse
+twin-width and unbounded stack number.
+<p>
+<li><b>Product structure extension of the Alon&ndash;Seymour&ndash;Thomas theorem</b>.<br>
+M. Distel,
+<a href="https://engineering.uottawa.ca/eecs/people/dujmovic-vida">V. Dujmovi&#263;</a>,
+D. Eppstein,
+<a href="https://vrs.amsi.org.au/student-profile-robert-hickingbotham/">R. Robert Hickingbotham</a>,
+<a href="https://di.ulb.ac.be/algo/gjoret/">G. Joret</a>,
+<a href="https://page.math.tu-berlin.de/~micek/">P. Micek</a>,
+<a href="https://cglab.ca/~morin/">P. Morin</a>,
+M. T. Seweryn, and
+<a href="https://davidwooddavid.github.io/">D. R. Wood</a>.<br>
+<a href="https://arxiv.org/abs/2212.08739">arXiv:2212.08739</a>.<br>
+<a href="https://doi.org/10.1137/23M1591773"><i>SIAM J. Discrete
+Math.</i> 38 (3): 2095&ndash;2107, 2024</a>.<br>
+<p>
+The graphs in any nontrivial minor-closed graph family can be
+represented as strong products of a graph of treewidth 4 with a clique
+of size \(O(\sqrt{n})\). For planar graphs and \(K_{3,t}\)-minor-free
+graphs, the treewidth can be reduced to 2.
+<p>
+</ul>
+
+<hr><p>
+<a href="auth.html">Co-authors</a> &ndash;
+<a href="/~eppstein/pubs/">Publications</a> &ndash;
+<a href="/~eppstein/">David Eppstein</a> &ndash;
+<a href="/~theory/">Theory Group</a> &ndash;
+<a href="/">Inf. &amp; Comp. Sci.</a> &ndash;
+<a href="https://www.uci.edu/">UC Irvine</a>
+<p>
+<small>Semi-automatically <a href="filter.html">filtered</a>
+from a common source file.</small>
+</body></html>

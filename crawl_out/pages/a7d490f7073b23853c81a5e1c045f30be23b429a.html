@@ -1,0 +1,961 @@
+<!-- URL: https://wiki.ics.uci.edu/doku.php/virtual_environments:singularity -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Singularity @ ICS [Support Wiki]</title>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="virtual_environments,singularity"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/css.php?css=assets/mikio.less"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/icons/fontawesome/css/all.min.css"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Support Wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php/virtual_environments:singularity?do=index" title="Sitemap"/>
+<link rel="manifest" href="/lib/exe/manifest.php" crossorigin="use-credentials"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="/feed.php?mode=list&amp;ns=virtual_environments"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="/doku.php/virtual_environments:singularity?do=export_xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="/doku.php/virtual_environments:singularity?do=export_raw"/>
+<link rel="canonical" href="https://wiki.ics.uci.edu/doku.php/virtual_environments:singularity"/>
+<link rel="stylesheet" href="/lib/exe/css.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"/>
+<script >var NS='virtual_environments';var JSINFO = {"plugins":{"gallery":{"defaults":{"thumbnailsize":{"default":"150x150"},"imagesize":{"default":"1600X1200"},"cache":{"default":true},"filter":{"default":""},"showname":{"default":false},"showtitle":{"default":false},"crop":{"default":true},"direct":{"default":false},"reverse":{"default":false},"recursive":{"default":false},"align":{"default":0},"cols":{"default":0},"limit":{"default":0},"offset":{"default":0},"paginate":{"default":0},"sort":{"default":"file"},"namespace":{"default":""}}}},"isadmin":0,"isauth":0,"move_renameokay":false,"move_allowrename":false,"plugin_slider":{"width":800,"mode":"horizontal","infiniteLoop":true,"hideControlOnEnd":false,"speed":500,"easing":null,"slideMargin":0,"startSlide":0,"randomStart":false,"captions":false,"ticker":false,"tickerHover":false,"adaptiveHeight":false,"adaptiveHeightSpeed":500,"video":false,"useCSS":true,"preloadImages":"visible","responsive":true,"pager":true,"pagerType":"full","pagerShortSeparator":"\/","controls":true,"nextText":"Next","prevText":"Prev","autoControls":false,"startText":"Start","stopText":"Stop","autoControlsCombine":false,"auto":false,"pause":4000,"autoStart":true,"autoDirection":"next","autoHover":false,"autoDelay":0,"minSlides":1,"maxSlides":1,"moveSlides":0,"slideWidth":0,"touchEnabled":true,"swipeThreshold":50,"oneToOneTouch":true,"preventDefaultSwipeX":true,"preventDefaultSwipeY":false},"SMILEY_CONF":{"8-)":"cool.svg","8-O":"eek.svg","8-o":"eek.svg",":-(":"sad.svg",":-)":"smile.svg","=)":"smile2.svg",":-\/":"doubt.svg",":-\\":"doubt2.svg",":-?":"confused.svg",":-D":"biggrin.svg",":-P":"razz.svg",":-o":"surprised.svg",":-O":"surprised.svg",":-x":"silenced.svg",":-X":"silenced.svg",":-|":"neutral.svg",";-)":"wink.svg","m(":"facepalm.svg","^_^":"fun.svg",":?:":"question.svg",":!:":"exclaim.svg","LOL":"lol.svg","FIXME":"fixme.svg","DELETEME":"deleteme.svg"},"id":"virtual_environments:singularity","namespace":"virtual_environments","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<script src="/lib/exe/jquery.php?tseed=8faf3dc90234d51a499f4f428a0eae43"></script>
+<script src="/lib/exe/js.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio-typeahead.js" defer="defer"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio.js" defer="defer"></script>
+<link rel="shortcut icon" href="/lib/tpl/mikio/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/mikio/images/apple-touch-icon.png" />
+</head>
+<body class="mikio">
+<div id="dokuwiki__site">
+    <div id="dokuwiki__top" class="site dokuwiki mode_show tpl_mikio    showSidebar hasSidebar"><nav class="mikio-navbar"><div class="mikio-container"><a class="mikio-navbar-brand" href="/doku.php/start" accesskey="h" title="Home [h]"><img src="/lib/exe/fetch.php/wiki:logo.png" class="mikio-navbar-brand-image" style="width:250px;max-width:none;max-height:none;"><div class="mikio-navbar-brand-title"><h1 class="mikio-navbar-brand-title-text">Support Wiki</h1><p class="claim mikio-navbar-brand-title-tagline"></p></div></a><div class="mikio-navbar-toggle"><span class="icon"></span></div><div class="mikio-navbar-collapse"><div class="mikio-nav-item"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="virtual_environments:singularity"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form></div><ul class="mikio-nav"><li id="dokuwiki__pagetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_pagetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,235.38983,1277.8305)" id="g2991">
+<path d="M 128,0 H 1152 V 768 H 736 q -40,0 -68,28 -28,28 -28,68 v 416 H 128 V 0 z m 640,896 h 299 L 768,1195 V 896 z M
+1280,768 V -32 q 0,-40 -28,-68 -28,-28 -68,-28 H 96 q -40,0 -68,28 -28,28 -28,68 v 1344 q 0,40 28,68 28,28 68,28 h 544
+q 40,0 88,-20 48,-20 76,-48 l 408,-408 q 28,-28 48,-76 20,-48 20,-88 z" id="path2993" /></g></svg><span class="mikio-small-only">Page Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item revs" href="/doku.php/virtual_environments:singularity?do=revisions" title="Old revisions"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></span><span>Old revisions</span></a><a class="mikio-nav-link mikio-dropdown-item backlink" href="/doku.php/virtual_environments:singularity?do=backlink" title="Backlinks"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></span><span>Backlinks</span></a></div></li><li id="dokuwiki__sitetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_sitetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,121.49153,1285.4237)" id="g3027">
+<path d="m 1024,640 q 0,106 -75,181 -75,75 -181,75 -106,0 -181,-75 -75,-75 -75,-181 0,-106 75,-181 75,-75 181,-75 106,0
+181,75 75,75 75,181 z m 512,109 V 527 q 0,-12 -8,-23 -8,-11 -20,-13 l -185,-28 q -19,-54 -39,-91 35,-50 107,-138 10,-12
+10,-25 0,-13 -9,-23 -27,-37 -99,-108 -72,-71 -94,-71 -12,0 -26,9 l -138,108 q -44,-23 -91,-38 -16,-136 -29,-186 -7,-28
+-36,-28 H 657 q -14,0 -24.5,8.5 Q 622,-111 621,-98 L 593,86 q -49,16 -90,37 L 362,16 Q 352,7 337,7 323,7 312,18 186,132
+147,186 q -7,10 -7,23 0,12 8,23 15,21 51,66.5 36,45.5 54,70.5 -27,50 -41,99 L 29,495 Q 16,497 8,507.5 0,518 0,531 v 222
+q 0,12 8,23 8,11 19,13 l 186,28 q 14,46 39,92 -40,57 -107,138 -10,12 -10,24 0,10 9,23 26,36 98.5,107.5 72.5,71.5 94.5,
+71.5 13,0 26,-10 l 138,-107 q 44,23 91,38 16,136 29,186 7,28 36,28 h 222 q 14,0 24.5,-8.5 Q 914,1391 915,1378 l 28,-184
+q 49,-16 90,-37 l 142,107 q 9,9 24,9 13,0 25,-10 129,-119 165,-170 7,-8 7,-22 0,-12 -8,-23 -15,-21 -51,-66.5 -36,-45.5
+-54,-70.5 26,-50 41,-98 l 183,-28 q 13,-2 21,-12.5 8,-10.5 8,-23.5 z" id="path3029" />
+</g></svg><span class="mikio-small-only">Site Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item recent" href="/doku.php/virtual_environments:singularity?do=recent" title="Recent Changes"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69V13m4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67V8M5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2H5m11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85z"/></svg></span><span>Recent Changes</span></a><a class="mikio-nav-link mikio-dropdown-item media" href="/doku.php/virtual_environments:singularity?do=media&ns=virtual_environments" title="Media Manager"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 15l4.5-6 3.5 4.5 2.5-3L21 15m1-11h-8l-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M2 6H0v14a2 2 0 0 0 2 2h18v-2H2V6z"/></svg></span><span>Media Manager</span></a><a class="mikio-nav-link mikio-dropdown-item index" href="/doku.php/virtual_environments:singularity?do=index" title="Sitemap"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2z"/></svg></span><span>Sitemap</span></a></div></li><li id="dokuwiki__usertools" class="mikio-nav-dropdown"><a id="mikio_dropdown_usertools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,197.42373,1300.6102)"><path d="M
+1408,131 Q 1408,11 1335,-58.5 1262,-128 1141,-128 H 267 Q 146,-128 73,-58.5 0,11 0,131 0,184 3.5,234.5 7,285 17.5,343.5
+28,402 44,452 q 16,50 43,97.5 27,47.5 62,81 35,33.5 85.5,53.5 50.5,20 111.5,20 9,0 42,-21.5 33,-21.5 74.5,-48 41.5,
+-26.5 108,-48 Q 637,565 704,565 q 67,0 133.5,21.5 66.5,21.5 108,48 41.5,26.5 74.5,48 33,21.5 42,21.5 61,0 111.5,-20
+50.5,-20 85.5,-53.5 35,-33.5 62,-81 27,-47.5 43,-97.5 16,-50 26.5,-108.5 10.5,-58.5 14,-109 Q 1408,184 1408,131 z m
+-320,893 Q 1088,865 975.5,752.5 863,640 704,640 545,640 432.5,752.5 320,865 320,1024 320,1183 432.5,1295.5 545,1408 704,
+1408 863,1408 975.5,1295.5 1088,1183 1088,1024 z"/></g></svg><span class="mikio-small-only">User Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item login" href="/doku.php/virtual_environments:singularity?do=login&sectok=" title="Log In"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></span><span>Log In</span></a></div></li></ul></div></div></nav><a name="dokuwiki__top" id="dokuwiki__top"></a><div class="mikio-hero"><div class="mikio-container"><div class="mikio-hero-text"><div class="mikio-breadcrumbs"><div class="mikio-container"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php/virtual_environments:singularity"  class="breadcrumbs" title="virtual_environments:singularity">Singularity @ ICS</a></bdi></span></div></div><h1 class="mikio-hero-title">Singularity @ ICS</h1><h2 class="mikio-hero-subtitle"></h2></div><div class="mikio-hero-image"><div class="mikio-tags"></div></div></div></div><main class="mikio-page"><div class="mikio-container"><aside class="mikio-sidebar mikio-sidebar-left"><a class="mikio-sidebar-toggle closed" href="#">Sidebar <span class="icon"></span></a><div class="mikio-sidebar-collapse"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="virtual_environments:singularity"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form><div class="mikio-sidebar-content"><div><div id="nojs_indexmenu_92216708768e6d56a08415" data-jsajax="%26group%3D1" class="indexmenu_nojs">
+<ul class="idx">
+<li class="closed"><div class="li"><a href="/doku.php/accounts:accounts" class="indexmenu_idx_head" data-wiki-id="accounts:accounts">ICS Accounts</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/announce:announce" class="indexmenu_idx_head" data-wiki-id="announce:announce">Announcement and Maintenance</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/backups:backups" class="indexmenu_idx_head" data-wiki-id="backups:backups">Backups @ ICS</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/commands:commands" class="indexmenu_idx_head" data-wiki-id="commands:commands">Common Tasks and Commands</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/group:group" class="indexmenu_idx_head" data-wiki-id="group:group">Group Files</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/hardware:hardware" class="indexmenu_idx_head" data-wiki-id="hardware:hardware">Hardware Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/instructional_support:instructional_support" class="indexmenu_idx_head" data-wiki-id="instructional_support:instructional_support">Instructional Support Resources</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/network:network" class="indexmenu_idx_head" data-wiki-id="network:network">Network</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/os?idx=os" class="indexmenu_idx" data-wiki-id="">os</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/policies?idx=policies" class="indexmenu_idx" data-wiki-id="">policies</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/projects?idx=projects" class="indexmenu_idx" data-wiki-id="">projects</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/remote_support?idx=remote_support" class="indexmenu_idx" data-wiki-id="">remote_support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/requesttracker?idx=requesttracker" class="indexmenu_idx" data-wiki-id="">requesttracker</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/research_support:research_support" class="indexmenu_idx_head" data-wiki-id="research_support:research_support">Research Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/security?idx=security" class="indexmenu_idx" data-wiki-id="">security</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/services?idx=services" class="indexmenu_idx" data-wiki-id="">services</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/software:software" class="indexmenu_idx_head" data-wiki-id="software:software">Software</a></div></li>
+<li class="open"><div class="li"><a href="/doku.php/virtual_environments:virtual_environments" class="indexmenu_idx_head" data-wiki-id="virtual_environments:virtual_environments">Virtual Environments</a></div>
+<ul class="idx">
+<li class="closed"><div class="li"><a href="/doku.php/virtual_environments:services?idx=virtual_environments:services" class="indexmenu_idx" data-wiki-id="">services</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/virtual_environments:google_cloud" class="wikilink1" title="virtual_environments:google_cloud" data-wiki-id="virtual_environments:google_cloud">Google Cloud Platform (GCP)</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/virtual_environments:jupyterhub" class="wikilink1" title="virtual_environments:jupyterhub" data-wiki-id="virtual_environments:jupyterhub">jupyterhub</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/virtual_environments:singularity" class="wikilink1" title="virtual_environments:singularity" data-wiki-id="virtual_environments:singularity">Singularity @ ICS</a></div></li>
+</ul>
+</li>
+<li class="closed"><div class="li"><a href="/doku.php/webapps:webapps" class="indexmenu_idx_head" data-wiki-id="webapps:webapps">ICS Web Applications</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/wiki?idx=wiki" class="indexmenu_idx" data-wiki-id="">wiki</a></div></li>
+</ul>
+</div></div></div></div></aside><div class="mikio-content" id="dokuwiki__content"><article class="mikio-article"><div class="mikio-toc"><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle"><svg class="mikio-iicon hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+style="fill:currentColor"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0
+76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16z"/></svg>Table of Contents<svg class="mikio-iicon down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+aria-hidden="true" style="fill:currentColor"><path d="M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9
+1.917-1.916z"/></svg></h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#singularity_ics">Singularity @ ICS</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#external_documentation">External Documentation</a></div></li>
+<li class="level2"><div class="li"><a href="#internal_documentation">Internal Documentation</a></div></li>
+<li class="level2"><div class="li"><a href="#why_singularity">Why Singularity</a></div></li>
+<li class="level2"><div class="li"><a href="#special_circumstances">Special Circumstances</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#name_spaces">Name Spaces</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#usage">Usage</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#module">Module</a></div></li>
+<li class="level3"><div class="li"><a href="#shortcuts">Shortcuts</a></div></li>
+<li class="level3"><div class="li"><a href="#running_the_tensorflow_docker_container">Running the Tensorflow Docker Container</a></div></li>
+<li class="level3"><div class="li"><a href="#running_the_postgres_docker_container">Running the Postgres Docker Container</a></div></li>
+<li class="level3"><div class="li"><a href="#ollama">Ollama</a></div></li>
+<li class="level3"><div class="li"><a href="#gunicorn">Gunicorn</a></div></li>
+<li class="level3"><div class="li"><a href="#rocker_shiny_singularity_image">rocker/shiny Singularity Image</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#docker_conversions_examples">Docker Conversions (examples)</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#tomcat_docker">Tomcat Docker</a></div></li>
+<li class="level3"><div class="li"><a href="#mysql_docker">MySQL Docker</a></div></li>
+<li class="level3"><div class="li"><a href="#php-apache_docker">PHP-Apache Docker</a></div></li>
+<li class="level3"><div class="li"><a href="#rebuilding_php-apache_docker_with_additional_packages">Rebuilding PHP-Apache Docker with Additional Packages</a></div></li>
+<li class="level3"><div class="li"><a href="#shiny_server">Shiny Server</a></div></li>
+<li class="level3"><div class="li"><a href="#building_with_fake_root">Building with Fake Root</a></div></li>
+<li class="level3"><div class="li"><a href="#jupyterlab_scipy-notebook">Jupyterlab/SciPy-Notebook</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#inf124_spring_2021">INF124  Spring 2021</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#stopping_instances">Stopping Instances</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#other_examples">Other Examples</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#google_brain">Google Brain</a></div></li>
+<li class="level3"><div class="li"><a href="#using_slurm_with_and_nvidia_drivers">Using Slurm with and nVidia Drivers</a></div></li>
+<li class="level3"><div class="li"><a href="#faq">FAQ</a></div></li>
+<li class="level3"><div class="li"><a href="#related">Related</a></div></li>
+<li class="level3"><div class="li"><a href="#troubleshooting">Troubleshooting</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div><div class="mikio-article-content"><h1 class="sectionedit1" id="singularity_ics" style="display:none">Singularity @ ICS</h1>
+<div class="level1">
+
+</div>
+
+<h2 class="sectionedit2" id="external_documentation">External Documentation</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://sylabs.io/guides/3.5/user-guide/introduction.html" class="urlextern" title="https://sylabs.io/guides/3.5/user-guide/introduction.html" rel="ugc nofollow">https://sylabs.io/guides/3.5/user-guide/introduction.html</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://singularity.lbl.gov/quickstart" class="urlextern" title="https://singularity.lbl.gov/quickstart" rel="ugc nofollow">Quick Start</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://sylabs.io/guides/3.7/user-guide/singularity_and_docker.html" class="urlextern" title="https://sylabs.io/guides/3.7/user-guide/singularity_and_docker.html" rel="ugc nofollow">Singularity and Docker</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://sylabs.io/guides/3.5/user-guide/gpu.html" class="urlextern" title="https://sylabs.io/guides/3.5/user-guide/gpu.html" rel="ugc nofollow">GPU Support (NVIDIA CUDA &amp; AMD ROCm)</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://sylabs.io/guides/3.7/user-guide/definition_files.html#definition-files" class="urlextern" title="https://sylabs.io/guides/3.7/user-guide/definition_files.html#definition-files" rel="ugc nofollow">Singularity Definition Files</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://sylabs.io/guides/3.7/user-guide/singularity_and_docker.html#sec-singularity-build-def-files" class="urlextern" title="https://sylabs.io/guides/3.7/user-guide/singularity_and_docker.html#sec-singularity-build-def-files" rel="ugc nofollow">Singularity Definition and Docker Build Files</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit3" id="internal_documentation">Internal Documentation</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Using <a href="/doku.php/virtual_environments:cgroups" class="wikilink1" title="virtual_environments:cgroups" data-wiki-id="virtual_environments:cgroups">cgroups</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php/software:packages:singularity" class="wikilink1" title="software:packages:singularity" data-wiki-id="software:packages:singularity">Compilation</a></div>
+</li>
+<li class="level1 node"><div class="li"> Locally avaialble images</div>
+<ul>
+<li class="level2"><div class="li"> /home/sources/SingularityImages</div>
+</li>
+<li class="level2"><div class="li"> /home/inf124/Spring2020/containers</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="why_singularity">Why Singularity</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Security:  a user in the  container is the same user as the one running the container, so no privilege escalation possible.</div>
+</li>
+<li class="level1"><div class="li"> Ease of deployment:   There is no daemon running on root, the container is simply executed.</div>
+</li>
+<li class="level1"><div class="li"> No need to mount filesystems or do bind mappings to access devices</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="special_circumstances">Special Circumstances</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit6" id="name_spaces">Name Spaces</h3>
+<div class="level3">
+
+<p>
+<strong><a href="https://sylabs.io/guides/3.7/user-guide/fakeroot.html" class="urlextern" title="https://sylabs.io/guides/3.7/user-guide/fakeroot.html" rel="ugc nofollow">Fakeroot</a></strong>:  If you would like to use the fakeroot feature please send email to helpdesk@ics.uci.edu requesting that your username be added to the /etc/subuid and /etc/subgid files and given a 65536 uid/gid range.
+</p>
+
+<p>
+Furthermore, if the system is running CentOS7, the following option must be added to the kernel boot options:  <strong>namespace.unpriv_enable=1</strong>
+</p>
+
+</div>
+
+<h2 class="sectionedit7" id="usage">Usage</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit8" id="module">Module</h3>
+<div class="level3">
+
+<p>
+Use the <a href="/doku.php/commands:modules" class="wikilink1" title="commands:modules" data-wiki-id="commands:modules">ICS module</a> command to add singularity to your path:
+</p>
+<pre class="code">module load singularity</pre>
+
+<p>
+Use the following command to have singularity added to your environment every time you login:
+</p>
+<pre class="code">module initadd singularity</pre>
+
+</div>
+
+<h3 class="sectionedit9" id="shortcuts">Shortcuts</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="pulling_the_laughing_cow">Pulling the Laughing Cow</h4>
+<div class="level4">
+
+<p>
+Load the module.
+</p>
+<pre class="code">module load singularity</pre>
+
+<p>
+Pull the image:
+</p>
+<pre class="code">singularity pull docker://godlovedc/lolcow</pre>
+
+<p>
+Run the image;
+Pull the image:
+</p>
+<pre class="code">singularity run docker://godlovedc/lolcow</pre>
+
+</div>
+
+<h3 class="sectionedit10" id="running_the_tensorflow_docker_container">Running the Tensorflow Docker Container</h3>
+<div class="level3">
+
+<p>
+We have been successful using the singularity program to run the <a href="https://www.tensorflow.org/install/docker" class="urlextern" title="https://www.tensorflow.org/install/docker" rel="ugc nofollow">Tensorflow Docker container</a>.   Use the following commands on an ICS hosts with working GPU&#039;s:
+</p>
+<pre class="code">module load singularity
+singularity pull docker://tensorflow/tensorflow
+singularity   run --nv  docker://tensorflow/tensorflow</pre>
+
+<p>
+See <a href="/doku.php/software:tensorflow" class="wikilink1" title="software:tensorflow" data-wiki-id="software:tensorflow">Tensorflow</a> for more infon on Tensorflow @ ICS.
+</p>
+
+</div>
+
+<h3 class="sectionedit11" id="running_the_postgres_docker_container">Running the Postgres Docker Container</h3>
+<div class="level3">
+
+<p>
+Pull the docker image:
+</p>
+<pre class="code">singularity pull docker://postgres</pre>
+
+<p>
+Run the docker image with your own database files (the postgresql offered to the -B switches must be created first).
+</p>
+<pre class="code">POSTGRES_PASSWORD=hansiskewl PGDATA=/var/lib/postgresql/data/pgdata singularity \
+  run --writable --no-home \
+  -B ~/singularity/postgres/var/lib/postgresql/data:/var/lib/postgresql/data \
+  -B ~/singularity/postgres/var/run/postgresql:/var/run/postgresql  \
+  docker://postgres</pre>
+
+<p>
+You can get a default postgreseql.conf file this way:
+</p>
+<pre class="code">singularity exec docker://postgres  cat /usr/share/postgresql/postgresql.conf.sample  &gt; my-postgresql.conf</pre>
+
+<p>
+The database will be available on localhost:5432 by default.  Please send mail to helpdesk@ics.uci.edu if you require ports opened for the server.
+</p>
+
+</div>
+
+<h3 class="sectionedit12" id="ollama">Ollama</h3>
+<div class="level3">
+
+<p>
+<a href="https://hub.docker.com/r/ollama/ollama" class="urlextern" title="https://hub.docker.com/r/ollama/ollama" rel="ugc nofollow">Ollama Docker Container</a>
+</p>
+
+<p>
+User contributed solution:
+</p>
+<pre class="code">singularity build ollama.sif docker://ollama/ollama
+mkdir -p $HOME/ollama_data_singularity
+singularity instance start --nv --bind $HOME/ollama_data_singularity:/root/.ollama --env OLLAMA_HOST=0.0.0.0:11434 ollama.sif ollama_server
+singularity exec instance://ollama_server ollama serve &gt; ollama.log 2&gt;&amp;1 &amp;
+singularity exec instance://ollama_server ollama pull &quot;model&quot;</pre>
+
+<p>
+The service is running on port 11434 of the server running singularity. In this case it was on biaslab0 so the <abbr title="Uniform Resource Locator">URL</abbr> <a href="http://biaslab0.ics.uci.edu:11434" class="urlextern" title="http://biaslab0.ics.uci.edu:11434" rel="ugc nofollow">http://biaslab0.ics.uci.edu:11434</a>.
+</p>
+
+</div>
+
+<h3 class="sectionedit13" id="gunicorn">Gunicorn</h3>
+<div class="level3">
+<pre class="code">singularity build gunicorn.sif docker://tiangolo/meinheld-gunicorn-flask:python3.9-2025-09-29
+mkdir -p $HOME/gunicron_data_singularity
+singularity instance start --bind $HOME/gunicron_data_singularity:/root/.gunicron gunicorn.sif gunicorn_server</pre>
+
+</div>
+
+<h3 class="sectionedit14" id="rocker_shiny_singularity_image">rocker/shiny Singularity Image</h3>
+<div class="level3">
+
+<p>
+See <a href="/doku.php/virtual_environments:singularity:shiny" class="wikilink2" title="virtual_environments:singularity:shiny" rel="nofollow" data-wiki-id="virtual_environments:singularity:shiny">Shiny Server</a>
+</p>
+
+</div>
+
+<h2 class="sectionedit15" id="docker_conversions_examples">Docker Conversions (examples)</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit16" id="tomcat_docker">Tomcat Docker</h3>
+<div class="level3">
+
+<p>
+<a href="https://hub.docker.com/_/tomcat" class="urlextern" title="https://hub.docker.com/_/tomcat" rel="ugc nofollow">Tomcat Docker Page</a>
+</p>
+
+<p>
+This is how the docker pages suggest running the tomcat:9.0 container (you won&#039;t need to do this, we&#039;re just establishing a reference point).  This runs the version 9.0 of the tomcat container and maps host machine port 8888 to container port 8080.
+</p>
+<pre class="code">docker run -it --rm -p 8888:8080 tomcat:9.0</pre>
+
+<p>
+Pull the docker images
+</p>
+<pre class="code">cd ~/singularity
+singularity pull docker://tomcat</pre>
+<pre class="code">singularity build --sandbox ics124-tomcat:simg docker://tomcat</pre>
+
+<p>
+Create your own local dirs for <strong>webapps</strong>, and if you want to change any aspect of the configuration, <strong>conf</strong>.
+</p>
+
+<p>
+You are on your own to populate the webapps driectory, but you can capture the tomcat conf directory by running a shell on the systema nd using scp to copy the directory back intoy our ICS account:
+</p>
+<pre class="code">[5:16:58 hans@circinus-2]singularity  shell --no-home --writable  ics124-tomcat:simg                                                                             /home/hans/singularity
+Singularity ics124-tomcat:simg:/&gt; scp -rp /usr/local/tomcat/conf openlab:/home/hans/ics124/conf
+Could not create directory &#039;/home/hans/.ssh&#039;.
+The authenticity of host &#039;openlab (128.195.27.41)&#039; can&#039;t be established.
+ECDSA key fingerprint is SHA256:jddej7MJbNgEm3o2IcDpg5KcVXi6Vk/KmiY4u+esPpc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/hans/.ssh/known_hosts).
+hans@openlab&#039;s password: 
+catalina.policy                                                                                                                                       100%   13KB   4.5MB/s   00:00    
+catalina.properties                                                                                                                                   100% 7661     3.8MB/s   00:00    
+context.xml                                                                                                                                           100% 1338   731.1KB/s   00:00    
+jaspic-providers.xml                                                                                                                                  100% 1149   643.5KB/s   00:00    
+jaspic-providers.xsd                                                                                                                                  100% 2313     1.1MB/s   00:00    
+logging.properties                                                                                                                                    100% 3916     2.0MB/s   00:00    
+server.xml                                                                                                                                            100% 7588     3.6MB/s   00:00    
+tomcat-users.xml                                                                                                                                      100% 2164     1.4MB/s   00:00    
+tomcat-users.xsd                                                                                                                                      100% 2633     1.6MB/s   00:00    
+web.xml      </pre>
+
+<p>
+Make your changes to the configureation.   In this case, change the port you are running on:
+</p>
+<pre class="code">[5:18:51 hans@circinus-2]pwd                                                                                                                                     /home/hans/ics124/conf
+/home/hans/ics124/conf
+[5:18:58 hans@circinus-2]sed -e &#039;s/8080/8082/g&#039; -i server.xml  </pre>
+
+<p>
+Run with your new webapps dir and new port:
+</p>
+<pre class="code">singularity  run --no-home \
+  -B /home/hans/ics124/webapps:/usr/local/tomcat/webapps \
+  -B /home/hans/ics124/conf:/usr/local/tomcat/conf\
+  --writable  ics124-tomcat:simg</pre>
+
+<p>
+At this point I can see the service running on port 8082 on the singularity host.
+</p>
+
+</div>
+
+<h3 class="sectionedit17" id="mysql_docker">MySQL Docker</h3>
+<div class="level3">
+
+<p>
+<a href="https://hub.docker.com/_/mysql" class="urlextern" title="https://hub.docker.com/_/mysql" rel="ugc nofollow">MySQL Docker Page</a>
+</p>
+
+<p>
+Pull the docker images
+</p>
+<pre class="code">cd ~/singularity
+singularity pull docker://mysql:5.7</pre>
+<pre class="code">singularity build --sandbox ics124-mysql:simg docker://mysql:5.7</pre>
+
+<p>
+Create your own local dirs for <strong>data</strong>, and if you want to change any aspect of the configuration, <strong>conf</strong>.
+</p>
+
+<p>
+Run with your new webapps dir and new port:
+</p>
+<pre class="code">MYSQL_ROOT_PASSWORD=hansiskewl singularity  run --no-home \
+  -B /home/hans/ics124/data:/var/lib/mysql \
+  -B /home/hans/ics124/mysql:/etc/mysql/conf.d \
+  --writable  ics124-mysql:simg</pre>
+
+</div>
+
+<h3 class="sectionedit18" id="php-apache_docker">PHP-Apache Docker</h3>
+<div class="level3">
+
+<p>
+<a href="https://hub.docker.com/_/php" class="urlextern" title="https://hub.docker.com/_/php" rel="ugc nofollow">PHP-Apache Page</a>
+</p>
+<pre class="code">docker run --name my-apache-php-app -d php:7.2-apache</pre>
+
+<p>
+Pull the docker images inside your project directory.
+</p>
+<pre class="code">cd ~/singularity
+singularity pull docker://php:7.2-apache</pre>
+<pre class="code">singularity build --sandbox ics124-phpapache:simg docker://php:7.2-apache</pre>
+
+<p>
+Create your own local dirs for data, and if you want to change any aspect of the configuration, conf.
+</p>
+
+<p>
+Run with your new webapps dir and new port:
+</p>
+<pre class="code">singularity  run --no-home \
+  -B /home/hans/ics124/var/www/html:/var/www/html \
+  -B /home/hans/ics124/etc/apache2:/etc/apache2 \
+  --writable  ics124-phpapache:simg</pre>
+
+</div>
+
+<h3 class="sectionedit19" id="rebuilding_php-apache_docker_with_additional_packages">Rebuilding PHP-Apache Docker with Additional Packages</h3>
+<div class="level3">
+
+<p>
+<a href="https://hub.docker.com/_/php" class="urlextern" title="https://hub.docker.com/_/php" rel="ugc nofollow">PHP-Apache Page</a>
+</p>
+
+<p>
+Dockerfile
+</p>
+<pre class="code">FROM php:7.3-apache
+USER root
+RUN apt-get update &amp;&amp;  apt-get install -y \
+        php7.3-mysql/stable
+</pre>
+
+<p>
+In the same directory as your Dockerfile, run:
+</p>
+<pre class="code">docker build -t inf124-php73-apache .</pre>
+
+<p>
+Pull the docker images inside your project directory.
+</p>
+<pre class="code">singularity build --sandbox ics124-php73-apache:simg docker-daemon://inf124-php73-apache:latest</pre>
+
+<p>
+Create your own local dirs for data, and if you want to change any aspect of the configuration, conf.
+</p>
+
+<p>
+Run with your new webapps dir and new port:
+</p>
+<pre class="code">singularity  run --no-home \
+  -B /home/hans/ics124/var/www/html:/var/www/html \
+  -B /home/hans/ics124/etc/apache2:/etc/apache2 \
+  --writable  inf124-php73-apache:simg</pre>
+
+</div>
+
+<h3 class="sectionedit20" id="shiny_server">Shiny Server</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="build_from_scratch">Build from Scratch</h4>
+<div class="level4">
+<pre class="code">mkdir ~/singularity
+cd ~/singularity
+singularity pull docker://rocker/shiny-verse
+singularity build --sandbox shiny-vers:simg docker://rocker/shiny</pre>
+
+</div>
+
+<h4 id="use_images_in_home_sources_shiny-verse">Use images in /home/sources Shiny-Verse</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="connect_to_host_to_run_shiny_server">1) connect to host to run shiny server</h5>
+<div class="level5">
+<pre class="code">ssh openlab </pre>
+
+</div>
+
+<h5 id="note_the_server_you_connected_to">2) note the server you connected to</h5>
+<div class="level5">
+<pre class="code">hostname
+circinus-2    &lt;===  This will be used later</pre>
+
+</div>
+
+<h5 id="copy_config_files_and_update">3)  copy config files and update</h5>
+<div class="level5">
+<pre class="code">mkdir ~/singularity
+cp -rp /home/sources/SingularityImages/shiny.files ~/singularity/shiny</pre>
+
+<p>
+Need to add your {username}  as who will run the shiny server
+</p>
+<pre class="code">vi ~/singularity/shiny/shiny-server/shiny-server.conf
+     #change run as shiny; --&gt; run as {username} on line 10;
+     #if you need a different port then change 3838 --&gt; port of app on line 6</pre>
+
+</div>
+
+<h5 id="create_app_directory">4) create app directory</h5>
+<div class="level5">
+
+<p>
+we need to create a place to store our shiny apps
+</p>
+<pre class="code">mkdir ~/shiny</pre>
+
+<p>
+then copy the shiny apps to ~/shiny/
+putting each app in its own directory
+</p>
+
+</div>
+
+<h5 id="start_ics_shiny_verse_server">5) start ics shiny verse server</h5>
+<div class="level5">
+<pre class="code">singularity instance start  \
+    -B /home/$USER/shiny:/srv/shiny-server/apps \
+    -B /home/$USER/singularity/shiny/shiny-server:/etc/shiny-server \
+    -B /home/$USER/singularity/shiny/log:/var/log/shiny-server \
+    --no-home --writable \
+    /home/sources/SingularityImages/ics-shiny-verse:simg $USER-ics-shiny-verse
+    
+singularity run instance://$USER-ics-shiny-verse &amp;</pre>
+
+<p>
+<strong>NOTE</strong> for testing to see log statements to the screen leave off the &#039;&amp;&#039;
+</p>
+
+</div>
+
+<h5 id="now_test_that_the_shiny_server_is_running_by_open_your_browser_to">6) Now test that the shiny server is running by open your browser to</h5>
+<div class="level5">
+<pre class="code">http://circinus-2.ics.uc.edu:3838         &lt;- Change to appropriate host from step #2 
+http://circinus-2.ics.uc.edu:3838/apps    &lt;- should list your shiny apps
+</pre>
+
+</div>
+
+<h5 id="to_stop_the_server">7) To Stop the server</h5>
+<div class="level5">
+<pre class="code">singularity instance list      
+singularity instance stop $USER-ics-shiny-verse</pre>
+
+</div>
+
+<h4 id="remain_running_after_logout">Remain running after logout</h4>
+<div class="level4">
+
+<p>
+To have the shiny server remain running even after logout see 
+<a href="https://swiki.ics.uci.edu/doku.php/commands:screen" class="urlextern" title="https://swiki.ics.uci.edu/doku.php/commands:screen" rel="ugc nofollow">https://swiki.ics.uci.edu/doku.php/commands:screen</a>
+</p>
+
+</div>
+
+<h3 class="sectionedit21" id="building_with_fake_root">Building with Fake Root</h3>
+<div class="level3">
+
+<p>
+Email helpsdesk@ics.uci.edu and request to be added to the fakegroup list.  Once that is setup, sifs can be created from docker images by invoking the –fakeroot switche:
+</p>
+<pre class="code">singularity build --fakeroot lolcow:20230217 docker://godlovedc/lolcow</pre>
+<pre class="code">$ singularity run  --fakeroot lolcow/lolcow\:20230217 
+INFO:    Converting SIF file to temporary sandbox...
+ ________________________________________
+/ You prefer the company of the opposite \
+\ sex, but are well liked by your own.   /
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+INFO:    Cleaning up image...</pre>
+
+</div>
+
+<h3 class="sectionedit22" id="jupyterlab_scipy-notebook">Jupyterlab/SciPy-Notebook</h3>
+<div class="level3">
+
+<p>
+Pull the docker hub jupyter/scipy-notebook container and convert it into a sif with this command:
+</p>
+<pre class="code">singularity pull docker://jupyter/scipy-notebook</pre>
+
+<p>
+This created the imagefile scipy-notebook_latest.sif in the current directory.
+</p>
+
+<p>
+Execute the sif with teh following command:
+</p>
+<pre class="code">singularity exec --bind /home/hans:/tmp/hans scipy-notebook_latest.sif jupyter notebook --notebook test.ipynb  --no-browser -ip=0.0.0.0</pre>
+
+<p>
+Check the output for ways to connect to your new notebook.
+</p>
+
+</div>
+
+<h4 id="alternate_form">Alternate Form</h4>
+<div class="level4">
+<pre class="code">% singularity pull docker://jupyter/scipy-notebook
+% singularity exec --bind /home/hans:/tmp/hans scipy-notebook_latest.sif sh
+Singularity&gt; jupyter lab --no-browser</pre>
+
+</div>
+
+<h2 class="sectionedit23" id="inf124_spring_2021">INF124  Spring 2021</h2>
+<div class="level2">
+
+<p>
+These directions are provided as a template for inclusion in course lab documentation.
+</p>
+
+</div>
+
+<h4 id="ssh_into_openlab">1.  Ssh into Openlab</h4>
+<div class="level4">
+
+<p>
+Follow these instructions on how to ssh to the 
+<a href="/doku.php/instructional_support:openlab" class="wikilink1" title="instructional_support:openlab" data-wiki-id="instructional_support:openlab">openlab</a> cluster of hosts
+</p>
+
+</div>
+
+<h4 id="a_fetch_and_edit_your_configuration_files">2a.  Fetch and Edit your Configuration Files</h4>
+<div class="level4">
+
+<p>
+<strong>FIRST TIME ONLY</strong>
+</p>
+
+<p>
+Copy over your Spring2021 configuration folder (first time only).
+</p>
+<pre class="code">cp -rp /home/inf124/Spring2021/singularity.files ~/inf124</pre>
+<ul>
+<li class="level1 node"><div class="li"> Edit the <strong>~/inf124/conf/server.xml</strong> file </div>
+<ul>
+<li class="level2"><div class="li"> replace the string 8082 with the <strong>tomcat port</strong> assigned to you by the instructor </div>
+</li>
+<li class="level2"><div class="li"> (<strong>the number appears three times in this file</strong>).</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Edit the <strong>~/inf124/conf/server.xml</strong> file </div>
+<ul>
+<li class="level2"><div class="li"> replace the string 8005 with the <strong>tomcat shutdown port</strong> assigned to you by the instructor </div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li">  Edit the <strong>~/inf124/conf/tomcat-users.xml</strong>file</div>
+<ul>
+<li class="level2"><div class="li"> replace the username with your uci username, and password with a password of your choice</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Edit the <strong>~/inf124/mysql/my.cnf</strong> file </div>
+<ul>
+<li class="level3"><div class="li"> and replace the string 3307 with the <strong>mysql port</strong> assigned to you by the instructor. </div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Edit the <strong>~/inf124/etc/apache2/ports.conf</strong></div>
+<ul>
+<li class="level3"><div class="li"> and replace the string <strong>80 </strong> and <strong>443</strong> with the <strong>apache ports</strong> assigned to you by the instructor.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h4 id="b_add_the_singularity_app_to_your_environment">2b.   Add the singularity app to your environment:</h4>
+<div class="level4">
+
+<p>
+<strong>FIRST TIME ONLY</strong>
+</p>
+<pre class="code">module initadd singularity
+module load singularity</pre>
+
+</div>
+
+<h4 id="note_your_hostname">3.  Note your hostname</h4>
+<div class="level4">
+<pre class="code">[user@circinus-14 ~]# hostname
+circinus-14</pre>
+
+</div>
+
+<h4 id="prepare_and_run_your_tomcat_instance">4. Prepare and run your Tomcat instance:</h4>
+<div class="level4">
+
+<p>
+Prepare your tomcat instances with the singularity instanced start command:
+</p>
+<pre class="code">cd ~inf124/Spring2021/containers/
+singularity  instance start  -B ~/inf124/var/logs:/usr/local/tomcat/logs  -B ~/inf124/webapps:/usr/local/tomcat/webapps -B ~/inf124/conf:/usr/local/tomcat/conf --writable inf124-tomcat:simg $USER-tomcat </pre>
+
+<p>
+Execute your instance with the singularity run command shown below.   Optionally, include the “&amp;”  symbol to backgound the process so you get control back on the console:
+</p>
+<pre class="code">singularity run instance://$USER-tomcat &amp;</pre>
+
+</div>
+
+<h4 id="start_and_run_your_mysql_instance">5.  Start and run your MySQL Instance:</h4>
+<div class="level4">
+
+<p>
+Prepare your VM:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Password</strong> remember to personalize the passwords in your VM</div>
+</li>
+</ul>
+<pre class="code">cd ~inf124/Spring2021/containers/
+MYSQL_ROOT_PASSWORD=hansiskewl singularity  instance start -B ~/inf124/data:/var/lib/mysql -B ~/inf124/mysql:/etc/mysql/conf.d -B ~/inf124/var/run:/var/run --writable inf124-mysql:simg  $USER-mysql</pre>
+
+<p>
+Execute your instance with the singularity run command shown below.   Optionally, include the “&amp;”  symbol to backgound the process so you get control back on the console:
+</p>
+<pre class="code">singularity run instance://$USER-mysql &amp;</pre>
+
+</div>
+
+<h4 id="start_your_php_apache_instance">6.  Start your PHP Apache Instance:</h4>
+<div class="level4">
+<pre class="code">cd ~inf124/Spring2021/containers/
+singularity  instance start -B ~/inf124/etc/apache2:/etc/apache2 -B ~/inf124/var/www/html:/var/www/html -B ~/inf124/usr/local/etc/php:/usr/local/etc/php -B ~/inf124/var/log:/var/log --writable  inf124-php73-apache:simg  $USER-phpapache</pre>
+
+<p>
+Execute your instance with the singularity run command shown below.   Optionally, include the “&amp;”  symbol to backgound the process so you get control back on the console:
+</p>
+<pre class="code">singularity run instance://$USER-phpapache</pre>
+
+<p>
+*NOTE*:  For step 6 to work you must have ~/inf124/usr/local/etc/php and ~/inf124/var/log present in your home directory.   Please go back and look at the new steps in step2a above if they are not preset.
+</p>
+
+</div>
+
+<h4 id="test_tomcat">7. Test Tomcat:</h4>
+<div class="level4">
+
+<p>
+Test your tomcat server by connecting to it now.
+</p>
+<ul>
+<li class="level1 node"><div class="li"> Point your browser at <a href="http://circinus-14.ics.uci.edu" class="urlextern" title="http://circinus-14.ics.uci.edu" rel="ugc nofollow">http://circinus-14.ics.uci.edu</a>:<strong>8082</strong> </div>
+<ul>
+<li class="level3"><div class="li"> Change <em class="u">circinus-14</em> to the appropriate host from step #2a, the one you logged into.  </div>
+</li>
+<li class="level3"><div class="li"> Change the <em class="u">8082</em> number to the numbed assigned you by your instructor.</div>
+</li>
+<li class="level3"><div class="li"> Add /manager/html to the end of the url, and enter your login info when prompted</div>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="code">http://circinus-14.ics.uci.edu:8082/manager/html</pre>
+
+</div>
+
+<h4 id="test_mysql">8. Test Mysql:</h4>
+<div class="level4">
+
+<p>
+Connect to your mysql server:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>Port Number</strong>:  Substitute 3307 for the port number you specified in step #2a.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Password</strong>: Substitute the password example for the one you set when starting MySQL instance in step #5</div>
+</li>
+</ul>
+
+<p>
+Example:
+</p>
+<pre class="code">mysql -h circinus-14 -P 3307 -u root --password=hansiskewl  </pre>
+
+</div>
+
+<h4 id="test_apache">9. Test Apache:</h4>
+<div class="level4">
+
+<p>
+Test your Apache server by connecting to it now.
+</p>
+<ul>
+<li class="level1 node"><div class="li"> Point your browser at <a href="http://circinus-14.ics.uci.edu" class="urlextern" title="http://circinus-14.ics.uci.edu" rel="ugc nofollow">http://circinus-14.ics.uci.edu</a>:<strong>8080</strong></div>
+<ul>
+<li class="level3"><div class="li"> Change <em class="u">circinus-14</em> to the appropriate host from step #2a, the one you logged into.  </div>
+</li>
+<li class="level3"><div class="li"> Change the <em class="u">8080</em> number to the numbed assigned you by your instructor.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit24" id="stopping_instances">Stopping Instances</h3>
+<div class="level3">
+
+<p>
+Use the command `singularity instance stop` to stop your instances:
+</p>
+<pre class="code">singularity instance stop $USER-tomcat
+singularity instance stop $USER-mysql
+singularity instance stop $USER-phpapache</pre>
+
+</div>
+
+<h2 class="sectionedit25" id="other_examples">Other Examples</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit26" id="google_brain">Google Brain</h3>
+<div class="level3">
+<pre class="code">(base) [1:03:58 hans@arcus-13]singularity pull docker://gcr.io/deepmath/hol-light:latest                                                                                            /tmp
+INFO:    Converting OCI blobs to SIF format
+INFO:    Starting build...
+Getting image source signatures
+Copying blob sha256:cd784148e3483c2c86c50a48e535302ab0288bebd587accf40b714fffd0646b3
+ 2.10 MiB / 2.10 MiB [======================================================] 0s
+Copying blob sha256:95ae70b7d39f173627bc2165f9e7e3e441f950cde089e0220e5d6a0154485f04
+ 9.01 MiB / 9.01 MiB [======================================================] 0s
+Copying blob sha256:041b6225e8dc11f4dfc0e2d7166876199e45414f7fdec3ac155131a15cf64219
+ 6.59 MiB / 6.59 MiB [======================================================] 0s
+Copying config sha256:3575906fc4d6c3dbe993067b7fca7ff4ce14470237f597c8dd4c077171ecddcb
+ 1.41 KiB / 1.41 KiB [======================================================] 0s
+Writing manifest to image destination
+Storing signatures
+2020/06/15 13:04:08  info unpack layer: sha256:cd784148e3483c2c86c50a48e535302ab0288bebd587accf40b714fffd0646b3
+2020/06/15 13:04:08  info unpack layer: sha256:95ae70b7d39f173627bc2165f9e7e3e441f950cde089e0220e5d6a0154485f04
+2020/06/15 13:04:08  info unpack layer: sha256:041b6225e8dc11f4dfc0e2d7166876199e45414f7fdec3ac155131a15cf64219
+</pre>
+
+</div>
+
+<h3 class="sectionedit27" id="using_slurm_with_and_nvidia_drivers">Using Slurm with and nVidia Drivers</h3>
+<div class="level3">
+
+<p>
+<a href="https://singularity.lbl.gov/tutorial-gpu-drivers-open-mpi-mtls" class="urlextern" title="https://singularity.lbl.gov/tutorial-gpu-drivers-open-mpi-mtls" rel="ugc nofollow">Using Host libraries: GPU drivers and OpenMPI BTLs</a>
+</p>
+
+</div>
+
+<h3 class="sectionedit28" id="faq">FAQ</h3>
+<div class="level3">
+
+<p>
+There are not questions yet.
+</p>
+
+</div>
+
+<h3 class="sectionedit29" id="related">Related</h3>
+<div class="level3">
+
+<p>
+Using <a href="/doku.php/services:harbor" class="wikilink2" title="services:harbor" rel="nofollow" data-wiki-id="services:harbor">ICS Harbor</a> to store images.
+</p>
+
+</div>
+
+<h3 class="sectionedit30" id="troubleshooting">Troubleshooting</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="image_format_not_recognized">image format not recognized</h4>
+<div class="level4">
+<pre class="code">$ singularity pull https://hub.docker.com/r/hyc541978023/texera-deployment
+INFO:    Downloading network image
+2.3KiB / ??? [===========================================================================================================================================]  2.7 MiB/s 
+(base) hans@kiwi1 16:32:19 ~/singularity/kiwi1 
+$ singularity run  https://hub.docker.com/r/hyc541978023/texera-deployment
+INFO:    Downloading network image
+2.3KiB / ??? [===========================================================================================================================================]  4.3 MiB/s 
+FATAL:   could not open image /home/hans/.singularity/cache/net/6055c803d1ca03b4d869700ee0e8a92fa4b83244a923b45de843f5d90337f9d8: image format not recognized</pre>
+
+</div><div style="clear:both"></div></div></article></div><nav id="dw__pagetools" class="hidden-print dw__pagetools"><ul class="tools"><li class="source"><a href="/doku.php/virtual_environments:singularity?do=edit" class="source" title="Show pagesource [v]" accesskey="v"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></div><span class="a11y">Show pagesource</span></a></li><li class="revs"><a href="/doku.php/virtual_environments:singularity?do=revisions" class="revs" title="Old revisions [o]" accesskey="o"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></div><span class="a11y">Old revisions</span></a></li><li class="backlink"><a href="/doku.php/virtual_environments:singularity?do=backlink" class="backlink" title="Backlinks"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></div><span class="a11y">Backlinks</span></a></li><li class="top"><a href="#dokuwiki__top" class="top" title="Back to top [t]" accesskey="t"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></div><span class="a11y">Back to top</span></a></li></ul></nav></div></main><div class="mikio-page-fill"><div class="mikio-content" style="padding:0"></div></div><footer class="mikio-footer"><div class="doc"><bdi>virtual_environments/singularity.txt</bdi> · Last modified: 2025/10/02 10:59</div><div class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license"><img src="/lib/images/license/badge/cc-by-nc-sa.png" alt="CC Attribution-Noncommercial-Share Alike 4.0 International" /></a> Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license" class="urlextern">CC Attribution-Noncommercial-Share Alike 4.0 International</a></bdi></div></footer>    <div class="no"><img src="/lib/exe/taskrunner.php?id=virtual_environments%3Asingularity&amp;1760921828" width="2" height="1" alt="" /></div>
+</div>
+</body>
+</html>

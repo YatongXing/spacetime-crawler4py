@@ -1,0 +1,830 @@
+<!-- URL: https://www.ics.uci.edu/~dechter/courses/ics-275/fall-2022 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Dr. Rina Dechter @ UCI
+		</title>
+		<link href="../../../basic.css" rel="stylesheet">
+	</head>
+	<body alink="#00AAAA" bgcolor="#FFFFFF" link="#008080" vlink="#008080">
+		<center>
+   <table width="95%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+         <td class="title" valign="bottom">
+            <nobr>Dr. Rina Dechter - University of California at Irvine</nobr>
+         </td>
+         <td><img alt="ZOT!" align="right" valign="bottom" src="/~dechter/images/anteater-ics.gif"></td>
+      </tr>
+      <!--
+	  <tr>
+         <td colspan="2"><img height="2" src="/~dechter/images/transp-fill.gif"></td>
+      </tr>
+	  -->
+	  <!--
+      <tr>
+         <td colspan="2"><img width="100%" height="2"  src="/~dechter/images/black-fill.gif"></td>
+      </tr>
+	  -->
+      <tr valign=top>
+         <td>
+		    <!--<font color="ffaa00" size="3">-->
+		    <a href="/~dechter/index.html">home</a> |
+            <a href="/~dechter/publications.html">publications</a> |
+            <a href="/~dechter/books/">book</a> |
+            <a href="/~dechter/courses.html">courses</a> |
+            <a href="/~dechter/research.html">research</a>
+			<!--</font>-->
+         </td>
+         <td align=right>
+            <!--<font color=#008080>-->
+               Revised on
+               
+               Dec. 03, 2022
+            </font>
+         </td>
+      </tr>
+   </table>
+</center>
+		<br>
+		<br>
+		<center>
+			<br>
+<table width="90%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+  <td  colspan=2><img height="4" src="/~dechter/images/transp-fill.gif"></td>
+</tr>
+
+<tr>
+<td class=title>CS 275 - Fall 2022, Constraint Networks</td>
+</tr>
+
+<tr>
+  <td colspan=2><img width="100%" height="2"  src="/~dechter/images/black-fill.gif"></td>
+</tr>
+
+<tr>
+<td align=right>
+  <font color="#ffaa00">| <a href="index.shtml">main</a> |
+  <!-- <a href="project.shtml">project</a> | -->
+  					<!-- <a href="software.html">software</a> | -->
+ 					<!-- <a href="handouts.html">handouts</a> | -->
+ 					<!-- <a href="readings.html">references</a> ] -->
+</td>
+</tr>
+</table>
+
+			<table border="0" cellpadding="0" cellspacing="0" width="90%">
+				<tbody>
+					<tr>
+						<td colspan="2">
+								<strong><em>Instructor:</em></strong> Rina Dechter <br>
+								<strong><em>Days,Time:</em></strong> M/W, 11:00 am - 12:20 pm (PT) <br>
+								<strong><em>Classoom:</em></strong> <a target="_blank" rel="noopener noreferrer" href="https://classrooms.uci.edu/classroomtechnology/classrooms/dbh/dbh-1420"><mark>DBH 1420</mark></a><br>
+								<strong><em>Zoom Link:</em></strong> <a target="_blank" rel="noopener noreferrer" href="https://uci.zoom.us/j/94778709161">https://uci.zoom.us/j/94778709161</a><br>
+								<strong><em>Piazza Link:</em></strong> <a target="_blank" rel="noopener noreferrer" href="https://piazza.com/class/l841v59ppxx3xh/">https://piazza.com/class/l841v59ppxx3xh/</a><br>
+								<strong><em>Office hours:</em></strong> Wednesdays 1-2pm DBH 4232<br>
+							<p></p>
+							<hr noshade="noshade">
+							<p></p>
+							<div class="section">
+								Course Goals
+							</div>
+							<div class="justify" style="">
+								Constraint satisfaction is a simple but powerful tool. 
+								Constraints identify the impossible and reduce the realm of possibilities to effectively focus on the possible, 
+								allowing for a natural declarative formulation of what must be satisfied, without expressing how. The field of 
+								constraint reasoning  and satisfiability has matured over the last three decades with contributions from a diverse 
+								community of researchers in artificial intelligence, databases and programming languages, operations research, 
+								management science, and applied mathematics.
+								<p>
+								The purpose of this course is to familiarize students with the theory and techniques of constraint processing, 
+								using the constraint graphical model. This model offers a natural language for encoding world knowledge in areas 
+								such as scheduling, vision, diagnosis, prediction, design, hardware and software verification, and bio-informatics,
+								and it facilitates many computational tasks relevant to these domains such as constraint satisfaction, 
+								constraint optimization, counting and sampling. The course will focus on techniques for constraint processing. 
+								It will cover search and inference algorithms, consistency algorithms and structure based techniques and will focus 
+								on properties that facilitate efficient solutions. Extensions to general graphical models such as probabilistic 
+								networks, cost networks, and satisfiability-based schemes will be discussed.  This year we will  look at the potential 
+								collaboration between <strong>Constraint Processing and Neural Networks</strong>. We ask:  can neural networks help constraint processing,  
+								and vice-versa, can constraints representation and algorithms be relevant  to training neural networks? Students will 
+								have an opportunity to address such questions through recent literatures  in their projects.
+								</p>
+							</div>
+							<hr noshade="noshade">
+							<div class="section">
+								Textbook
+							</div>
+								Required textbook: Rina Dechter, <a target="_blank" rel="noopener noreferrer" href="http://www.ics.uci.edu/~dechter/books/">Constraint Processing</a>, Morgan Kaufmann<br>
+								<!--
+	  <hr noshade="noshade">
+
+	  <div class="section">Outline</div>
+	  <ul>
+		<li>The constraint network model, examples. Graph
+representations, Properties of binary networks: equivalence, the
+minimal and the projection networks. <br>
+		</li>
+		<li>Approximation algorithms: local-consistency vs.
+global-consistency, arc and path-consistency, directional-consistency,
+adaptive-consistency, relational-consistency, bucket-elimination. <br>
+		</li>
+		<li>Backtracking strategies: Look-ahead schemes:
+forward-checking, variable and value orderings, constraint propagation.
+The Davis-Putnam algorithms.
+Look-back schemes: backjumping, constraint learning. <br>
+		</li>
+		<li>Stochastic local search algorithms: SLS, GSAT, WSAT <br>
+		</li>
+		<li>Constraint-based tractable classes: row-convexity,
+tightness, looseness, implicational and functional constraints, Horn
+clauses. <br>
+		</li>
+		<li>Topology-based concepts and algorithms, tree-clustering,
+bucket-elimination. <br>
+		</li>
+		<li>Hybrids of search and inference; the (cycle)-cutset scheme,
+the w-cutset scheme, the seperator-based scheme, and the time-space
+tradeoff.<br>
+		</li>
+		<li>Constraint optimization. <br>
+		</li>
+			</ul>
+ -->
+							</p>
+							<p></p>
+							<hr noshade="noshade">
+							<div class="section">
+								<a id="resources" name="resources"></a>Grading Policy
+							</div>
+							<div style="">
+								Homework (70%), Project (30%).
+							</div>
+							<p></p>
+							<hr noshade="noshade">
+							<div class="section">
+								Assignments:
+							</div>
+							<div style="">
+								Weekly homework assignments and a final project.
+							</div>
+							<p></p>
+							<hr noshade="noshade">
+							<div class="section">
+								Project:
+							</div>
+							<div style="">
+	
+							<mark><a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/13PGu2yCaysHzyXwHPo_cumhen23RRfIN/edit?usp=share_link&ouid=118266020331631988838&rtpof=true&sd=true">Project Information</a></mark><br>
+						
+								<mark><a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/spreadsheets/d/1fA42GxE9laIjldP_a5fARJCDrdasEogi2_ej2SyC5v8/edit?usp=sharing">Project Sign-Up Sheet</a></mark> <br>
+<!--
+								<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/spreadsheets/d/1yd_X1b7i8yxFbWQRO3YvGjXbLnxqv9u4vG_As8ck484/edit?usp=sharing">Student Suggest Papers</a> <br>
+							-->
+							
+							</div>
+							<p></p>
+							<hr noshade="noshade">
+							<div class="section">
+								Syllabus:
+							</div><!--      
+	  <font color="red"><i>Subject to changes</i></font> -->
+							<p></p>
+							<!-- <h2>
+								
+	  <a target="_blank" rel="noopener noreferrer" href=project.shtml>Project Page</a>
+--> 
+	<!-- <a target="_blank" rel="noopener noreferrer" href="project/Projects-2016-v1.pdf">Project Information</a> 
+							</h2>-->
+							<div style="">
+								<table border="1" cellpadding="3" cellspacing="0" style="width: 920px; height: 1266px;">
+									<tbody>
+										<tr>
+											<td>
+												<b>Week</b>
+											</td>
+											<td>
+												<b>Topic</b>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<span style="font-weight: bold;">Slides</span><br>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<span style="font-weight: bold;">Lecture</span><br>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<span style="font-weight: bold;">Homework</span><br>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<span style="font-weight: bold;">Readings</span><br>
+											</td>
+											<td align="right">
+												<b>Date&nbsp;&nbsp;</b>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<nobr>Week 1</nobr>
+											</td>
+											<td>
+												<ul>
+													<li>
+														<font color="#990000">Chapters 1,2: Introductions to constraint network model. Graph representations, binary constraint networks.<br></font>
+													</li>
+												</ul>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<a target="_blank" rel="noopener noreferrer" href="slides/chapters-1-2-2022.pdf">Set 1</a>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/pqt_k0az244">Lec 1</a><br>
+												<br>
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/hHZENIiqkYY">Lec 2</a><br>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<a target="_blank" rel="noopener noreferrer" href="homework/hwk-1-2022.pdf">HW 1</a><br>
+												Due Wed 10/11<br>
+												11:59 PM (PT)
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												CP Ch.1-2
+												<!--
+												<a target="_blank" rel="noopener noreferrer" href="https://www.minizinc.org/doc-2.4.3/en/part_2_tutorial.html">MiniZinc Tutorial</a><br>
+												<a target="_blank" rel="noopener noreferrer" href="slides/OR-Tools_CP-SAT_Solver_Tutorial.pdf">OR-Tools Tutorial</a><br>
+												-->
+											</td>
+											<td align="right" valign="top">
+												9/26<br>
+												  <em><b><a href="https://uci.zoom.us/j/94778709161">VIRTUAL</a></b></em> <br>
+												  <br>
+												9/28<br>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Week 2
+											</td>
+											<td>
+												<ul>
+													<li>
+														<font color="#990000">Chapter 3: Constraint propagation and consistency enforcing algorithms, arc, path and i-consistency</font>
+													</li>
+												</ul>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<a target="_blank" rel="noopener noreferrer" href="slides/chapter3-2022a.pdf">Set 2a</a><br>
+<br>
+												<a target="_blank" rel="noopener noreferrer" href="slides/miniZinc Intro.pptx">MiniZinc Tutorial</a><br><br>
+										
+
+												<a target="_blank" rel="noopener noreferrer" href="slides/chapter3-2022b.pdf">Set 2b</a><br>
+												<br>
+											
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/93E-cjJtdIk">Lec 3</a><br>
+												
+												<br><a target="_blank" rel="noopener noreferrer" href="https://youtu.be/Eg-iaxzZTxo">Lec 4</a><br>
+												
+											</td>
+											<td style="vertical-align: top; width: 110px;"></td>
+											<td style="vertical-align: top; width: 110px;">
+CP Ch. 3</td>
+											<td align="right" valign="top">
+												10/3<br>
+												<br>
+												10/5<br>
+												<br>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<nobr>Week 3</nobr>
+											</td>
+											<td>
+												<ul>
+													<li>
+														<font color="#990000">Chapter 4: Graph concepts (induced-width), Directional consistency, Adaptive-consistency, bucket-elimination.</font>
+													</li>
+												</ul>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+											
+												<a target="_blank" rel="noopener noreferrer" href="slides/chapter4-2022.pdf">Set 3</a>
+											
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+											
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/JGFAiaWONBY">Lec 5</a><br>
+	<!--
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/IXkQSlBzkNg">Lec 6</a><br>
+												-->
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												
+												<a target="_blank" rel="noopener noreferrer" href="homework/hwk-2-2022.pdf">HW 2</a><br>
+												Due Wed 10/19<br>
+												11:59 PM (PT)
+												
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+CP Ch. 4
+											
+												<a target="_blank" rel="noopener noreferrer" href="https://www.ics.uci.edu/~dechter/publications/r112.pdf">Computing Tree Width</a><br><br>
+												<a target="_blank" rel="noopener noreferrer" href="https://www.ics.uci.edu/~csp/r181.pdf">Ordering Schemes</a><br>
+											
+											</td>
+											<td align="right" valign="top">
+												10/10<br>
+												<br>
+												10/12<br>
+												<br>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<nobr>Week 4</nobr>
+											</td>
+											<td>
+												<ul>
+													<li>
+														<font color="#990000">Chapter 5: Backtracking search: Look-ahead schemes: forward-checking, variable and value orderings. DPLL.</font>
+													</li>
+												</ul>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+										
+												<a target="_blank" rel="noopener noreferrer" href="slides/chapter5-2022.pdf">Set 4</a>
+										
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/yD3UXBVuARQ">Lec 7</a><br><br>
+
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/6R6r33RjQxI">Lec 8</a><br>
+												
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												
+												<a target="_blank" rel="noopener noreferrer" href="homework/hwk-3-2022.pdf">HW 3</a><br>
+												Due Wed 10/26<br>
+												11:59 PM (PT)
+												
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+											
+												<a target="_blank" rel="noopener noreferrer" href="https://www.ics.uci.edu/~dechter/courses/ics-275a/winter-2016/readings/constraint-propagation-bessiere.pdf">Constraint Propragation by Christian Bessiere</a><br><br>
+												
+											
+											</td>
+											<td align="right" valign="top">
+												10/17<br>
+												<br>
+												10/19<br>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<nobr>Week 5</nobr>
+											</td>
+											<td>
+												<ul>
+													<li>
+														<font color="#990000">Chapter 6: Backtracking search; Look-back schemes: backjumping, constraint learning. SAT solving and solvers (e.g., MAC, Minisat).</font>
+													</li>
+												</ul><font color="#990000"></font>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+											
+												<a target="_blank" rel="noopener noreferrer" href="slides/chapter6-2022.pdf">Set 5</a>
+										
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/tmoRnrVUdIo">Lec 9</a><br><br>
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/yy2Won-0auE">Lec 10</a><br>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<a target="_blank" rel="noopener noreferrer" href="homework/hwk-4-2022.pdf">HW 4</a><br>
+												Due Fri 11/4<br>
+												11:59 PM (PT)
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+
+											<a target="_blank" rel="noopener noreferrer" href="https://www.ics.uci.edu/~dechter/courses/ics-275a/winter-2016/readings/SATChapter3.pdf">Complete Algorithms by Darwiche and Pipatsrisawat</a><br>
+											<!--
+												<a href="https://github.com/niklasso/minisat">Minisat</a><br><br>
+												<a href="http://www.cs.rochester.edu/u/kautz/walksat/">WALKSAT</a><br><br>
+												<a href="http://reasoning.cs.ucla.edu/rsat/download.php">RSAT</a><br>
+											-->
+											</td>
+											<td align="right" valign="top">
+												10/24<br>
+												<br>
+												10/26<br>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<nobr>Week 6</nobr>
+											</td>
+											<td>
+												<ul>
+													<!--
+													<li>
+														<font color="#990000">Chapter 7:</font> <font color="#990000">Stochastic local search, SLS, GSAT, WSAT</font>
+													</li>
+													-->
+													<li>
+														<font color="#990000">Satisfiability Solving</font>
+													</li>
+													<li>
+														<font color="#990000">Stochastic Local Search</font>
+													</li>
+												</ul>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+											
+												<a target="_blank" rel="noopener noreferrer" href="slides/set7-2022.pdf">Set 6</a><br><br>
+
+												<a target="_blank" rel="noopener noreferrer" href="slides/Chapter7-2022.pdf">Set 7a</a><br>
+											
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/aYrPS17TPXY">Lec 11</a><br><br>
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/yMS1BjJHLGc">Lec 12</a><br>
+												
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1cJu38v_Il9LrcSxj8gieMOtRsrWWu9ZNfVd6GoxoWeY/edit?usp=sharing">Project HW</a> <br>
+												Due Fri 11/11<br>
+												11:59 PM (PT)
+												
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<a href="readings/SATHandbook-CDCL.pdf">SAT Handbook 
+CDCL</a>
+											</td>
+											<td align="right" valign="top">
+												10/31<br>
+												<br>
+												11/2 <br>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<nobr>Week 7</nobr>
+											</td>
+											<td>
+												<ul>
+													
+													<li>
+														<font color="#990000">Tree-Decomposition Schemes.<br></font>
+													</li>
+												</ul>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+
+												
+												<a target="_blank" rel="noopener noreferrer" href="slides/Chapter9-2022.pdf">Set 7b</a><br>
+										
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/1VyjAAc8vTE">Lec 13</a><br><br>
+
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/3KYa1xcFUaE">Lec 14</a><br>
+												
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<a target="_blank" rel="noopener noreferrer" href="homework/hwk-5-2022.pdf">HW 5</a><br>
+												Due Mon 11/14<br>
+												11:59 PM (PT)
+											</td>
+											<td style="vertical-align: top; width: 110px;"></td>
+											<td align="right" valign="top">
+												11/7<br>
+												<br>
+												11/9<br>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<nobr>Week 8</nobr>
+											</td>
+											<td>
+												<ul>
+													<li>
+														<font color="#990000">Chapter 13: Constraint Optimization</font>
+													</li>
+													<li>
+														<font color="#990000">AND/OR Search Spaces</font>
+													</li>
+												</ul>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+											
+												<a target="_blank" rel="noopener noreferrer" href="slides/chapter 13-optimization-2022.pdf">Set 8</a>
+											
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/eTK1vIGS7UI">Lec 15</a><br> <br>
+
+												<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/p13qIT33LEI">Lec 16</a><br>
+												
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+
+<a target="_blank" rel="noopener noreferrer" href="homework/hwk-6-2022.pdf">HW 6</a><br>
+												Due Mon 11/28<br>
+												11:59 PM (PT)
+
+</td>
+											<td style="vertical-align: top; width: 110px;">
+											<!--
+												<a href="http://www.ics.uci.edu/~dechter/publications/r126.pdf">AND/OR Search Spaces for Graphical Models</a>
+											-->
+											</td>
+											<td align="right" valign="top">
+												            
+												11/14<br>
+													<br>
+												11/16<br>
+
+											</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<nobr>Week 9</nobr>
+											</td>
+											<td>
+												<ul>
+													<!--<li>
+														<font color="#990000">Exam (11/30)</font>
+													</li>-->
+													<li>
+														<font color="#990000">Paper Presentations</font>
+													</li>
+												</ul>
+											</td>
+											<td style="vertical-align: top; width: 110px;"><br><br><mark>No Class 11/23</mark></td>
+
+											<td style="vertical-align: top; width: 110px;">
+<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/g7879S6crok">Lec17:Pres1-2</a><br>
+
+
+
+												<!--
+												<a target="_blank" rel="noopener noreferrer" href="https://uci.zoom.us/rec/share/dDXx2RSrL7WsqNXUkjLDgoxjMAEy66g3Bbl58yQcqse8jKIx35FMJliGd2KFnvrL.wBhCb2xuOhgjcha5?startTime=1606779125000">Pres 1-3</a><br>
+												<a target="_blank" rel="noopener noreferrer" href="https://uci.zoom.us/rec/share/mi12dCAV4s2-_dnpOFvzqkShs26IAeSfJGfr99BA9FQhaFhgHC7afEnFSqABL-je.FiwX9MqHk6_Vc-QN?startTime=1606952055000">Pres 4-6</a><br>
+												-->
+
+
+											</td>
+											<td style="vertical-align: top; width: 110px;"></td>
+											<td style="vertical-align: top; width: 110px;"></td>
+											<td align="right" valign="top">												       
+												11/21<br>
+												<br>
+												11/23<br>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<nobr>Week 10</nobr>
+											</td>
+											<td>
+												<ul>
+													<li>
+														<font color="#990000">Paper Presentations</font>
+													</li>
+													<!--<li>
+														<font color="#990000">Paper Presentations</font>
+													</li>-->
+												</ul>
+											</td>
+											<td style="vertical-align: top; width: 110px;"> <br> </td>
+											<td style="vertical-align: top; width: 110px;">
+<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/9LpAFtPbI9o">Lec18:Pres3-5</a>											<br>
+<br>
+<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/gbTZxh4Sv3Q">Lec19:Pres6-8</a><br>
+
+												<!--
+												<a target="_blank" rel="noopener noreferrer" href="https://uci.zoom.us/rec/share/M7-eFNfYXkSk20kputypItT3_bhQynYyR4dobCeAOKnJYMdRVemQuOX9HlGQVBmU.LFXeYCLfWK0hNmAi?startTime=1607383873000">Pres 7-9</a><br>
+												<a target="_blank" rel="noopener noreferrer" href="https://uci.zoom.us/rec/share/r2dZaJfQ9C3A5CIyMf7a1x0Kc-0PHS-edRbwR8ND99A7ykSRbaRlSU1sxlteIkbS.2KXeYDOCviKGsOEu">Pres 10-12</a><br>
+												-->
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												
+												Project Reports<br>
+												Due Wed 12/7<br>
+												11:59 PM (PT)
+												
+											</td>
+											<td style="vertical-align: top; width: 110px;"></td>
+											<td align="right" valign="top">												       
+												11/28<br>
+												<br>
+												11/30<br>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<nobr>Week 11</nobr>
+											</td>
+											<<td>
+												<ul>
+													<!--<li>
+														<font color="#990000">Paper Presentations</font>
+													</li>-->
+												</ul>
+											</td>
+											<td style="vertical-align: top; width: 110px;">
+												<br>
+											</td>
+											<td style="vertical-align: top; width: 110px;"></td>
+											<td style="vertical-align: top; width: 110px;"></td>
+											<!--<td style="vertical-align: top; width: 110px;">
+												<a target="_blank" rel="noopener noreferrer" href="final-exam/finalExam-2020.pdf">Final Exam</a><br>
+												Submit by <br>
+												06:00 PM (PT)
+											</td>-->
+											<td style="vertical-align: top; width: 110px;"></td>
+											<td align="right" valign="top">												       
+												<br>12/9<br>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<hr noshade="noshade">
+							<div class="section">
+								<a id="resources" name="resources"></a>Resources on the Internet
+							</div><!-- <ul>
+		<li><a target="_blank" rel="noopener noreferrer" href="http://www.lumina.com/">Analytica</a>
+(an alternative to spreadsheets) </li>
+		<li><a target="_blank" rel="noopener noreferrer" href="http://aima.cs.berkeley.edu/ai.html"> AI
+on the web </a> </li>
+		<li><a target="_blank" rel="noopener noreferrer" href="http://87.230.22.228/"> The
+constraint language Eclipse </a> </li>
+<ul><li><a target="_blank" rel="noopener noreferrer" href="http://87.230.22.228/doc/">On-line
+documentation</a> </li></ul>
+		<li><a
+ href="http://www.csplib.org/"> CSPlib
+of benchmark CSPs</a></li>
+
+<li>Relevant conferences:</li>
+<ul>
+<li><a target="_blank" rel="noopener noreferrer" href="http://www.cs.ualberta.ca/~ai/cp/">CP Conference Series</a></li>
+
+<li><a target="_blank" rel="noopener noreferrer" href="http://www.cpaior.org/">CP-AI-OR Conference Series</a></li>
+
+<li><a target="_blank" rel="noopener noreferrer" href="http://www.satisfiability.org/">SAT Conference Series</a></li>
+</ul>
+<li><a target="_blank" rel="noopener noreferrer" href="http://ai.uwaterloo.ca/~vanbeek/Constraints/constraints.html">Constraints
+	Journal</a></li>
+<li>REES application:</li>
+<UL>
+		<li><a target="_blank" rel="noopener noreferrer" href="http://graphmod.ics.uci.edu/files/rees3-setup.exe">Download
+		REES</A></li>
+		<LI><A href="homework/rees3.pdf">REES manual</A></LI>
+		<LI><a target="_blank" rel="noopener noreferrer" href="homework/cp03-rees3-poster-3.ppt">REES poster presentation</A></LI>
+	  </UL>
+	  </ul>-->
+							<ul>
+								<li>Books
+								</li>
+								<li style="list-style: none; display: inline">
+									<ul>
+										<li>
+											<a target="_blank" rel="noopener noreferrer" href="http://www.amazon.com/Constraint-Programming-Foundations-Artificial-Intelligence/dp/0444527265/ref=sip_rech_dp_7/188-9019290-4812028#reader_0444527265">Francesca Rossi, Peter van
+											Beek, Toby Walsh. Handbook of Constraint Programming. Elsevier Science, 2006</a>
+										</li>
+										<li>
+											<a target="_blank" rel="noopener noreferrer" href="http://www.amazon.com/dp/0262133415/ref=rdr_ext_sb_ti_sims_2">Kimball Marriott, Peter Stuckey. Programming with Constraints: An Introduction. The MIT Press, 1998</a>
+										</li>
+									</ul>
+								</li>
+								<li>Software links
+								</li>
+								<li style="list-style: none; display: inline">
+									<ul>
+										<li>MiniZinc modeling language
+											<ul>
+												<li>
+													<a target="_blank" rel="noopener noreferrer" href="https://www.minizinc.org/">MiniZinc page</a>
+												</li>
+												<li>
+													<a target="_blank" rel="noopener noreferrer" href="https://www.minizinc.org/doc-2.4.3/en/part_2_tutorial.html">Tutorial</a>
+												</li>
+											</ul>
+										</li>
+										<li>Numberjack modeling language
+											<ul>
+												<li>
+													<a target="_blank" rel="noopener noreferrer" href="https://github.com/eomahony/Numberjack">Numberjack GitHub</a>
+												</li>
+												<li>
+													<a target="_blank" rel="noopener noreferrer" href="slides/numberjacktutorial.pdf">Tutorial</a>
+												</li>
+											</ul>
+										</li>
+										<li>Google AI modeling language
+											<ul>
+												<li>
+													<a target="_blank" rel="noopener noreferrer" href="https://developers.google.com/optimization/cp">CP-SAT Solver</a>
+												</li>
+												<li>
+													<a target="_blank" rel="noopener noreferrer" href="https://developers.google.com/optimization/cp/cp_solver">Tutorial</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<!--<li>Links for Satisfiability
+								</li>
+								<li style="list-style: none; display: inline">
+									<ul>
+										<li>
+											<a target="_blank" rel="noopener noreferrer" href="http://www.csi.ucd.ie/staff/jpms/talks/talks.php#tutorials">Satisfiability tutorials by Joao Marques-Silva</a>
+										</li>
+										<li>
+											<a target="_blank" rel="noopener noreferrer" href="http://research.microsoft.com/en-us/people/lintaoz/satcourse.aspx">SAT Solving : A Mini Course</a>
+										</li>
+										<li>
+											<a target="_blank" rel="noopener noreferrer" href="http://lion.disi.unitn.it/intelligent-optimization//LION3/slides/parallelSAT.pdf">A satisfiability tutorial by Youssef Hamadi</a>
+										</li>
+										<li style="list-style: none; display: inline">
+											<ul></ul><br>
+											<br>
+											<br>
+										</li>
+									</ul>
+								</li>-->
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p></p>
+		</center><div id="footer"><centeR>
+<A HREF="http://www.ics.uci.edu">School of Information and Computer Science</A>
+<A HREF="http://www.uci.edu">University of California, Irvine, CA 92697-3435</a>
+<A HREF="http://www.ics.uci.edu/~dechter">Dr. Rina Dechter</A>
+
+<A HREF="mailto:dechter_at_ics.uci.edu">dechter at ics.uci.edu</A>
+
+</center></div>
+	</body>
+</html>

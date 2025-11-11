@@ -1,0 +1,353 @@
+<!-- URL: http://www.ics.uci.edu/~eppstein/pubs/geom-fold.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<title>David Eppstein - Publications</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll("script[type='math/tex']").forEach(function(el) {
+              el.outerHTML = "\\(" + el.textContent + "\\)";
+            });
+            document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+              el.outerHTML = "\\[" + el.textContent + "\\]";
+            });
+            var script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js";
+            document.head.appendChild(script);
+        }, false);
+    </script>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<h1>David Eppstein - Publications</h1>
+<hr><p>
+<h2>
+Folding and unfolding
+</h2>
+<ul>
+<li><b>A disk-packing algorithm for an origami magic trick</b>.<br>
+<a href="https://www.parc.xerox.com/csl/members/bern/">M. Bern</a>,
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+D. Eppstein, and
+B. Hayes.<br>
+<a href="BerDemEpp-Fun-98.ps.gz"><i>Int. Conf. Fun with
+Algorithms</i>, Elba, June 1998.<br>
+Proceedings in Informatics 4, Carleton Scientific, Waterloo, Canada, 1999,
+pp. 32&ndash;42</a>.<br>
+<i>Origami<sup>3</sup>: Proc. 3rd
+Int. Mtg. Origami Science, Math, and Education (Asilomar,
+California, 2001)</i>, A K Peters, 2002, pp. 17&ndash;28.
+<p>
+We apply techniques from "<a href="p-qpack.html">Quadrilateral meshing
+by circle packing</a>" to a magic trick of Houdini:
+fold a piece of paper so that with one straight cut, you can form your
+favorite polygon.
+<p>
+<li><b>Ununfoldable polyhedra</b>.<br>
+<a href="https://www.parc.xerox.com/csl/members/bern/">M. Bern</a>,
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+D. Eppstein,
+E. Kuo,
+<a href="https://www.cs.unc.edu/~mantler/">A. Mantler</a>, and
+<a href="https://www.cs.unc.edu/~snoeyink/">J. Snoeyink</a>.<br>
+<a href="https://arXiv.org/abs/cs.CG/9908003">arXiv:cs.CG/9908003</a>.<br>
+<a href="ftp://cs-archive.uwaterloo.ca/cs-archive/CS-99-04/">Tech. rep.
+CS-99-04, Univ. of Waterloo, Dept. of Computer Science, Aug. 1999</a>.<br>
+<a href="http://www.cccg.ca/proceedings/1999/fp38.pdf"><i>11th Canad. Conf. Comp. Geom.,</i> 1999</a>.<br>
+<a href="https://www.cs.jhu.edu/~cgc/abstracts99/old/eric.uptf.ps">4th CGC
+Worksh. Computational Geometry</a>, Johns Hopkins Univ., 1999.<br>
+<a href="https://doi.org/10.1016/S0925-7721(02)00091-3">
+<i>Comp. Geom. Theory &amp; Applications</i> (special
+issue for 4th CGC Worksh.) 24 (2): 51&ndash;62, 2003</a>.
+<p>
+We prove the existence of polyhedra in which all faces are convex,
+but which can not be cut along edges and folded flat.
+<p>
+Note variations in different versions: the CCCG one was only Bern,
+Demain, Eppstein, and Kuo, and the WCG one had the title "Ununfoldable
+polyhedra with triangular faces". The journal version uses the title
+"Ununfoldable polyhedra with convex faces" and
+the combined results from both conference versions.
+<p>
+<li><b>Hinged dissections of polyominos and polyforms</b>.<br>
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+<a href="https://martindemaine.org/">M. Demaine</a>,
+D. Eppstein,
+<a href="https://www.cs.purdue.edu/people/gnf/">G. Frederickson</a>,
+and
+<a href="https://www.stetson.edu/~efriedma/index.html">E. Friedman</a>.<br>
+<a href="https://arXiv.org/abs/cs.CG/9907018">arXiv:cs.CG/9907018</a>.<br>
+<a href="https://www.cs.ubc.ca/conferences/CCCG/elec_proc/fp37.pdf"><i>11th
+Canad. Conf. Comp. Geom.,</i> 1999</a>.<br>
+<i>Computational Geometry: Theory and Applications</i> 31 (3): 237&ndash;262, 2005
+(special issue for 11th CCCG).
+<p>
+We show that, for any n, there exists a mechanism formed by connecting
+polygons with hinges that can be folded into all possible n-ominos.
+Similar results hold as well for n-iamonds, n-hexes, and n-abolos.
+<p>
+<li><b>Hinged kite mirror dissection</b>.<br>
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/cs.CG/0106032">arXiv:cs.CG/0106032</a>.
+<p>
+We show that any polygon can be cut into kites, connected into a chain
+by hinges at their vertices, and that this hinged assemblage can be
+unfolded and refolded to form the mirror image of the polygon.
+<p>
+<li><b>Vertex-unfoldings of simplicial manifolds</b>.<br>
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+D. Eppstein,
+<a href="https://jeffe.cs.illinois.edu/">J. Erickson</a>,
+<a href="https://www.georgehart.com/">G. Hart</a>, and
+<a href="https://cs.smith.edu/~orourke/">J. O'Rourke</a>.<br>
+Tech. Reps. 071 and 072, Smith College, 2001.<br>
+<a href="https://arxiv.org/abs/cs.CG/0107023">arXiv:cs.CG/0107023</a> and
+<a href="https://arxiv.org/abs/cs.CG/0110054">cs.CG/0110054</a>.<br>
+<a href="https://portal.acm.org/citation.cfm?id=513429">
+<i>18th ACM Symp. Comp. Geom.,</i> Barcelona, 2002, pp. 237&ndash;243</a>.<br>
+<i>Discrete Geometry: In honor of W. Kuperberg's 60th birthday</i>,
+Pure and Appl. Math. 253, Marcel Dekker, pp. 215&ndash;228, 2003.
+<p>
+We unfold any polyhedron with triangular faces into a planar layout in
+which the triangles are disjoint and are connected in a sequence from
+vertex to vertex
+<p>
+(<a href="https://jeffe.cs.illinois.edu/pubs/vunfold.html">Jeff's
+pubs page</a>)
+<p>
+<li><b>Flat foldings of plane graphs with prescribed angles and edge lengths</b>.<br>
+<a href="https://zacharyabel.com/">Z. Abel</a>,
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+<a href="https://martindemaine.org/">M. Demaine</a>,
+D. Eppstein,
+<a href="https://cs.uwaterloo.ca/~alubiw/Site/Anna_Lubiw.html">A. Lubiw</a>, and
+<a href="https://www.jaist.ac.jp/~uehara/index-e.html">R. Uehara</a>.<br>
+<a href="https://arxiv.org/abs/1408.6771">arXiv:1408.6771</a>.<br>
+<i>22nd Int. Symp. Graph Drawing</i>, W&uuml;rzburg, Germany, 2014.<br>
+<a href="https://doi.org/10.1007/978-3-662-45803-7_23">Springer, <i>Lecture
+Notes in Comp. Sci.</i> 8871, 2014, pp. 272&ndash;283.</a><br>
+<a href="https://doi.org/10.20382/jocg.v9i1a3"><i>J. Computational
+Geometry</i> 9 (1): 74&ndash;93, 2018</a>.
+<p>
+Given a plane graph with fixed edge lengths, and an assignment of the
+angles 0, 180, and 360 to the angles between adjacent edges, we show how
+to test whether the angle assignment can be realized by an embedding of
+the graph as a flat folding on a line. As a consequence, we can
+determine whether two-dimensional cell complexes with one vertex can be
+flattened. The main idea behind the result is to show that each face of
+the graph can be folded independently of the other faces.
+<p>
+<li><b>Minimum forcing sets for Miura folding patterns</b>.<br>
+<a href="https://www.humboldt.edu/math/node/34">B. Ballinger</a>,
+<a href="https://www.csc.villanova.edu/~mdamian/">M. Damian</a>,
+D. Eppstein,
+<a href="https://www.cs.siena.edu/~flatland/">R. Flatland</a>,
+J. Ginepro, and
+<a href="https://mars.wne.edu/~thull/">T. Hull</a>.<br>
+<a href="https://arxiv.org/abs/1410.2231">arXiv:1410.2231</a>.<br>
+<a href="https://doi.org/10.1137/1.9781611973730.11"><i>26th ACM-SIAM Symp. on Discrete Algorithms</i>, San Diego, 2015, pp. 136&ndash;147</a>.
+<p>
+A forcing set for an origami crease pattern is a subset of the folds
+with the property that, if these folds are folded the correct way
+(mountain vs valley) the rest of the pattern also has to be folded the
+correct way. We use a combinatorial equivalence with three-colored grids
+to construct minimum-cardinality forcing sets for the Miura-ori folding
+pattern and for other patterns with differing folds along the same line
+segments.
+<p>
+(<a href="BalDamEpp-SODA-15-slides.pdf">Slides</a>)
+<p>
+<li><b>Folding a paper strip to minimize thickness</b>.<br>
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+D. Eppstein,
+<a href="https://math.mit.edu/directory/profile.php?pid=1468">A. Hesterberg</a>,
+<a href="https://www.alg.cei.uec.ac.jp/itohiro/">H. Ito</a>,
+<a href="https://cs.uwaterloo.ca/~alubiw/Site/Anna_Lubiw.html">A. Lubiw</a>,
+<a href="https://www.jaist.ac.jp/~uehara/index-e.html">R. Uehara</a>, and
+<a href="https://jazz.cias.osakafu-u.ac.jp/~uno/index-e.htm">Y. Uno</a>.<br>
+<a href="https://arxiv.org/abs/1411.6371"> arXiv:1411.6371</a>.<br>
+<i>9th International Workshop on Algorithms and Computation (WALCOM
+2015)</i>, Dhaka, Bangladesh.<br>
+<a href="https://doi.org/10.1007/978-3-319-15612-5_11">Springer, <i>Lecture Notes in Comp. Sci.</i> 8973 (2015), pp. 113&ndash;124</a>.<br>
+<a href="https://doi.org/10.1016/j.jda.2015.09.003"><i>Journal of Discrete
+Algorithms</i> 36: 18&ndash;26, 2016</a> (special issue for WALCOM).<br>
+<p>
+If a folding pattern for a flat origami is given, together with a
+mountain-valley assignment, there might still be multiple ways of
+folding it, depending on how some flaps of the pattern are arranged
+within pockets formed by folds elsewhere in the pattern. It turns out to
+be hard (but fixed-parameter tractable) to determine which of these ways
+is best with respect to minimizing the thickness of the folded pattern.
+<p>
+<li><b>Folding polyominoes into (poly)cubes</b>.<br>
+<a href="https://www.ist.tugraz.at/aichholzer/">O. Aichholzer</a>,
+<a href="https://www.swarthmore.edu/profile/michael-biro">M. Biro</a>,
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+<a href="https://martindemaine.org/">M. Demaine</a>,
+D. Eppstein,
+<a href="https://www.ibr.cs.tu-bs.de/users/fekete/?lang=en">S. P. Fekete</a>,
+<a href="https://math.mit.edu/directory/profile.php?pid=1468">A. Hesterberg</a>,
+<a href="https://www.win.tue.nl/~ikostits/">I. Kostitsyna</a>, and
+<a href="https://www.itn.liu.se/~chrsc91/">C. Schmidt</a>.<br>
+<a href="https://www.cccg.ca/proceedings/2015/37.pdf"><i>27th Canadian Conference on Computational Geometry</i>, Kingston, Ontario,
+Canada, 2015, pp.&nbsp;101&ndash;106</a>.<br>
+<a href="https://arxiv.org/abs/1712.09317">arXiv:1712.09317</a>.<br>
+<a href="https://doi.org/10.1142/S0218195918500048"><i>Int. J. Comp. Geom. &amp;
+Appl.</i> 28 (3): 197&ndash;226, 2018</a>.
+<p>
+We classify the polyominoes that can be folded to form the surface of a
+cube or polycube, in multiple different folding models that incorporate
+the type of fold (mountain or valley), the location of a fold (edges of
+the polycube only, or elsewhere such as along diagonals), and whether
+the folded polyomino is allowed to pass through the interior of the
+polycube or must stay on its surface.
+<p>
+<li><b>Rigid origami vertices: Conditions and forcing sets</b>.<br>
+<a href="https://zacharyabel.com/">Z. Abel</a>,
+<a href="https://www.jasoncantarella.com/">J. Cantarella</a>,
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+D. Eppstein,
+<a href="https://mars.wne.edu/~thull/">T. Hull</a>,
+<a href="https://scripts.mit.edu/~jasonku/">J. Ku</a>,
+<a href="https://www.langorigami.com/">R. Lang</a>, and
+<a href="https://www.tsg.ne.jp/TT/">T. Tachi</a>.<br>
+<a href="https://arxiv.org/abs/1507.01644">arXiv:1507.01644</a>.<br>
+<a href="https://doi.org/10.20382/jocg.v7i1a9"><i>J. Computational Geometry</i> 7 (1): 171&ndash;184, 2016</a>.
+<p>
+We give an exact characterization of the one-vertex origami folding
+patterns that can be folded rigidly, without bending the parts of the
+paper between the folds.
+<p>
+<li><b>Realization and connectivity of the graphs of origami flat foldings</b>.<br>
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/1808.06013">arXiv:1808.06013</a>.<br>
+<i>Proc. 26th Int. Symp. Graph Drawing</i>, Barcelona, 2018.<br>
+<a href="https://doi.org/10.1007/978-3-030-04414-5_38">Springer, <i>Lecture
+Notes in Comp. Sci.</i> 11282 (2018), pp. 541&ndash;554</a>.<br>
+<a href="https://doi.org/10.20382/jocg.v10i1a10"><i>J. Computational Geometry</i> 10 (1): 257&ndash;280, 2019</a>.
+<p>
+If you fold a piece of paper flat and unfold it again, the resulting
+crease pattern forms a planar graph. We prove that a tree can be
+realized in this way (with its leaves as diverging rays that reach the
+boundary of the paper) if and only if all internal vertices have odd
+degree greater than two. On the other hand, for a folding pattern on
+an infinite sheet of paper with an added vertex at infinity as the
+endpoint of all its rays, the resulting graph must be 2-vertex-connected
+and 4-edge-connected.
+<p>
+(<a href="Epp-GD-18.pdf">Slides</a>)
+<p>
+<li><b>Ununfoldable Polyhedra with 6 Vertices or 6 Faces</b>.<br>
+<a href="https://www.eecs.tufts.edu/~halves01/">H. A. Akitaya</a>,
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+D. Eppstein,
+<a href="https://www.tsg.ne.jp/TT/">T. Tachi</a>, and
+<a href="https://www.jaist.ac.jp/~uehara/index-e.html">R. Uehara</a>.<br>
+<a href="https://erikdemaine.org/papers/MinimalUnunfoldable_JCDCGGG2019/">22nd Japan Conference on Discrete and Computational Geometry, Graphs,
+and Games (JCDCG<sup>3</sup>), Tokyo, Japan, 2019, pp. 27&ndash;28</a>.<br>
+<a href="https://doi.org/10.1016/j.comgeo.2021.101857"><i>Comp. Geom. Theory &amp; Applications</i> 103: 101857, 2022</a>.<br>
+<p>
+We find a (nonconvex, but topologically equivalent to convex) polyhedron
+with seven vertices and six faces that cannot be unfolded to a flat
+polygon by cutting along its edges. Both the number of vertices and the
+number of faces are the minimum possible.
+The JCDCG<sup>3</sup> version used the title "Minimal ununfoldable polyhedron".
+<p>
+<li><b>Some polycubes have no edge-unzipping</b>.<br>
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+<a href="https://martindemaine.org/">M. Demaine</a>,
+D. Eppstein, and
+<a href="https://cs.smith.edu/~orourke/">J. O'Rourke</a>.<br>
+<a href="https://arxiv.org/abs/1907.08433">arXiv:1907.08433</a>.<br>
+<i><a href="http://cccg.ca/proceedings/2020/proceedings.pdf">Proc. 32nd Canadian Conference on Computational Geometry</a></i>, 2020, pp. 101&ndash;105.<br>
+<i>Geombinatorics</i> 31 (3): 101&ndash;109, 2022.<br>
+<p>
+We find polycubes that cannot be cut along a simple path through their
+vertices and edges and unfolded to form a flat polygon in the plane.
+<p>
+<li><b>Face flips in origami tessellations</b>.<br>
+<a href="https://www.eecs.tufts.edu/~halves01/">H. A. Akitaya</a>,
+<a href="https://engineering.uottawa.ca/eecs/people/dujmovic-vida">V. Dujmovi&#263;</a>,
+D. Eppstein,
+<a href="https://mars.wne.edu/~thull/">T. Hull</a>,
+K. Jain, and
+<a href="https://cs.uwaterloo.ca/~alubiw/Site/Anna_Lubiw.html">A. Lubiw</a>.<br>
+<a href="https://arxiv.org/abs/1910.05667">arXiv:1910.05667</a>.<br>
+<a href="https://doi.org/10.20382/jocg.v11i1a15"><i>J. Computational Geometry</i> 11 (1): 397&ndash;417, 2020</a>.
+<p>
+We study problems in which we are given an origami crease pattern and
+seek to reconfigure one locally flat foldable mountain-valley assignment
+into another by a sequence of operations that change the assignment
+around a single face of the crease pattern.
+<p>
+<li><b>Acutely triangulated, stacked, and very ununfoldable polyhedra</b>.<br>
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+<a href="https://martindemaine.org/">M. Demaine</a>, and
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/2007.14525">arXiv:2007.14525</a>.<br>
+<i><a href="http://cccg.ca/proceedings/2020/proceedings.pdf">Proc. 32nd Canadian Conference on Computational Geometry</a></i>, 2020, pp. 106&ndash;113.
+<p>
+We construct non-convex but topologically spherical polyhedra in which
+all faces are acute triangles, with no unfolded net.
+<p>
+<li><b>Locked and unlocked smooth embeddings of surfaces</b>.<br>
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/2206.12989">arXiv:2206.12989</a>.<br>
+<a href="https://www.torontomu.ca/content/dam/canadian-conference-computational-geometry-2022/papers/CCCG2022_paper_32.pdf"><i>34th Canadian Conference on Computational Geometry</i>, 2022, pp. 135&ndash;142</a>.<br>
+<a href="https://doi.org/10.57717/cgt.v2i2.28"><i>Computing in Geometry and Topology</i> 2 (2): 5.1&ndash;5.20, 2023</a>.
+<p>
+If a subset of the plane has a continuous shrinking motion of itself,
+then every smooth isometric embedding of that subset into 3d can be
+smoothly flattened. However, there exist subsets of the plane with
+holes, for which some smooth embeddings that are topologically
+equivalent to a flat embedding cannot be smoothly flattened.
+<p>
+(<a href="Epp-CCCG-22b.pdf">Slides</a>)
+<p>
+<li><b>A parameterized algorithm for flat folding</b>.<br>
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/2306.11939">arXiv:2306.11939</a>.<br>
+<a href="https://wadscccg2023.encs.concordia.ca/assets/pdf/CCCG_2023_proc.pdf"><i>Proc. 35th Canadian Conference on Computational Geometry</i>, 2023, pp. 35&ndash;42</a>.<br>
+<p>
+Testing whether an origami folding pattern can be folded flat is
+fixed-parameter tractable when parameterized by two parameters: the ply
+(maximum number of layers) of the folding, and the treewidth of a planar
+graph describing the arrangement of polygons in the flat-folded result.
+The dependence on treewidth is optimal under the exponential-time hypothesis.
+<p>
+Merged into "<a href="p-ccfold.html">Computational complexities of
+folding</a>" for journal submission.
+<p>
+<li><b>Computational complexities of folding</b>.<br>
+D. Eppstein.<br>
+<a href="Epp-OSME-24.pdf">Invited talk</a>,
+<i>8th International Meeting on Origami in Science, Mathematics and
+Education</i>, Melbourne, Australia, 2024.<br>
+<a href="Epp-JCDCG3-24.pdf">Invited talk</a>, <i>26th Japan Conference
+on Discrete and Computational Geometry, Graphs, and Games</i>, Tokyo, 2024.<br>
+<a href="https://arxiv.org/abs/2410.07666">arXiv:2410.07666</a>.<br>
+<i>Journal of Information Processing</i>, to appear.
+<p>
+We survey known hardness results on folding origami and prove several
+new ones: finding a flat-folded state is \(\mathsf{NP}\)-hard, but
+fixed-parameter tractable in a combination of ply and the treewidth of
+an associated graph. Finding a 3d-folded state cannot be expressed in
+closed form and cannot be computed by bounded-degree algebraic-root
+primitives.  Reconfiguring certain systems of overlapping origami
+squares, hinged to a table at one edge, is \(\mathsf{PSPACE}\)-complete,
+and counting the number of configurations is
+\(\#\mathsf{P}\)-complete. Testing flat-foldability of infinite fractal
+folding patterns (even on normal square origami paper) is undecidable.
+<p>
+</ul>
+
+<hr><p>
+<a href="geom.html">Geometry</a> &ndash;
+<a href="/~eppstein/pubs/">Publications</a> &ndash;
+<a href="/~eppstein/">David Eppstein</a> &ndash;
+<a href="/~theory/">Theory Group</a> &ndash;
+<a href="/">Inf. &amp; Comp. Sci.</a> &ndash;
+<a href="https://www.uci.edu/">UC Irvine</a>
+<p>
+<small>Semi-automatically <a href="filter.html">filtered</a>
+from a common source file.</small>
+</body></html>

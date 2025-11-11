@@ -1,0 +1,287 @@
+<!-- URL: https://ics.uci.edu/~givargis/courses/cs238p -->
+<html>
+  <title>Tony Givargis</title>
+  <meta name="description" content="Professor of Computer Science at UC Irvine">
+  <body><div style="margin:8%;">
+      <h1>CS 238P - Operating Systems</h1>
+      <h2>Prof. Tony Givargis</h2>
+
+      <p><i>Focuses on advanced and graduate-level topics in operating systems. Presents important recent developments in operating systems, topics not covered in undergraduate operating systems courses. This includes novel operating system designs and techniques to improve existing ones.</i></p>
+
+      <h3>Basics</h3>
+      <table>
+	<tr>
+	  <td>Lecture:</td>
+	  <td>TuTh 9:30-10:50 (SH 128)</td>
+	</tr><tr>
+	  <td>Office:</td>
+	  <td>Tu 3:00-4:00 (DBH 3038)</td>
+	</tr><tr>
+	  <td>Final Exam:</td>
+	  <td>Thu, Dec 11, 8:00-10:00am</td>
+	</tr><tr>
+	  <td>TAs:</td>
+	  <td>Mike Heddes (mheddes@uci.edu), Igor Nunes (igord@uci.edu)</td>
+	</tr><tr>
+	  <td>Grade:</td>
+	  <td>Projects 75%, Final Exam 25%, Extra Project Credit 10%</td>
+	</tr><tr>
+	  <td>Discussion:</td>
+	  <td><a href="https://canvas.eee.uci.edu/courses/75964">Canvas</a></td>
+	</tr><tr>
+	  <td>Submissions:</td>
+	  <td><a href="https://canvas.eee.uci.edu/courses/75964">Canvas</a></td>
+	</tr><tr>
+	  <td>Project Demo Schedule:</td>
+	  <td><a href="https://canvas.eee.uci.edu/courses/75964">Canvas</a></td>
+	</tr>
+      </table>
+
+      <h3>Rules</h3>
+      <ul>
+	<li>Attend discussion section for details on demos and grading</li>
+	<li>No mobile-phones during lecture (switch off or silent)</li>
+	<li>Late submissions not accepted</li>
+	<li>Information on this site will be updated, check often</li>
+	<li>For academic integrity see <a href="https://aisc.uci.edu/">campus policies</a></li>
+	<li>For add/drop deadlines see <a href="http://www.reg.uci.edu/enrollment/adc/adcpolicy.html">campus policies</a></li>
+	<li>Submit projects via Canvas by deadline</li>
+      </ul>
+
+      <h3>Lecture Topics</h3>
+
+      <p><i>Here's a preliminary overview of the main themes to be discussed in our upcoming lectures. Attendance at the lectures is essential for a comprehensive understanding. Our primary objective is to delve into advanced topics in Operating Systems, aiming to enhance our precision and push the boundaries of current knowledge. It is assumed that you have [some] familiarity with the following subjects.</i></p>
+
+      <ul>
+	<li>
+	  About the Course (<a href="lectures/Lecture0.pdf">slides</a>)
+	</li><li>
+	  Introduction (<a href="lectures/Lecture1.pdf">slides</a>)
+	  <ul>
+	    <li>CPU, Caches, Memory, I/O & Storage</li>
+	    <li>Monolithic vs Microkernel Operating Systems</li>
+	    <li>Hard, Firm & Soft Realtime Systems</li>
+	    <li>Bootstrap Loader (i.e., Booting)</li>
+	    <li>Resource Management</li>
+	    <li>Isolation & Security</li>
+	    <li>Scheduling</li>
+	  </ul>
+	</li>
+	<li>
+	  Advanced C Programming (<a href="lectures/Lecture2.pdf">slides</a>)
+	  <ul>
+	    <li>Standards & Portability</li>
+	    <li>Qualifiers, Specifiers, Declarators & Declarations</li>
+	    <li>Expressions, Statements, Functions & Translation Units</li>
+	    <li>Macros, Intrinsics & Inline Assembly</li>
+	    <li>Build Essentials (i.e., Toolchain)</li>
+	    <li>Obfuscation vs Abstraction</li>
+	    <li>Writing Robust Code</li>
+	  </ul>
+	</li>
+	<li>
+	  Process Management (<a href="lectures/Lecture3.pdf">slides</a>)
+	  <ul>
+	    <li>Processes, Threads & Signals</li>
+	    <li>Reentrant & Thread-Safe Code</li>
+	    <li>Parallelism, Concurrency & Synchronization</li>
+	    <li>Exception Handling & CPU Set/Jmp</li>
+	    <li>Fork & Exec</li>
+	    <li>Pipes & Memory Mapping</li>
+	    <li>Linking & Loading</li>
+	    <li>Load Balancing & CPU Affinity</li>
+	  </ul>
+	</li>
+	<li>
+	  Memory Management (<a href="lectures/Lecture4.pdf">slides</a>)
+	  <ul>
+	    <li>Physical vs Virtual</li>
+	    <li>User vs Kernel</li>
+	    <li>Heap vs Stack</li>
+	    <li>Segfault, Process Break & Dynamic Memory Allocation</li>
+	    <li>Non-Uniform Memory Access (NUMA)</li>
+	    <li>Memory Barrier & Atomic Instructions</li>
+	  </ul>
+	</li>
+	<li>
+	  Storage System (<a href="lectures/Lecture5.pdf">slides</a>)
+	  <ul>
+	    <li>Block Devices, HDDs, SSDs & CSDs</li>
+	    <li>I/O Scheduling, Q-Depth & Random vs Sequential I/O</li>
+	    <li>Synchronous, Asynchronous, Direct & Scatter/Gather I/O</li>
+	    <li>Compression, Encryption, Sharding, Replication & Erasure Codes, RAID</li>
+	    <li>Kernel Buffers</li>
+	    <li>File System</li>
+	    <li>Volume Manager</li>
+	  </ul>
+	</li>
+	<li>
+	  Kernel Modules & Device Drivers (<a href="lectures/Lecture6.pdf">slides</a>)
+	  <ul>
+	    <li>The File Interface</li>
+	    <li>The /proc File System</li>
+	    <li>Character vs Block Devices</li>
+	    <li>Direct Memory Access (DMA)</li>
+	    <li>Signals and Interrupts</li>
+	    <li>GPU/FPGA/TPU Accelerators</li>
+	  </ul>
+      </ul>
+
+      <h3>Projects</h3>
+
+      <p><i>The five upcoming projects are quite extensive and will demand substantial research and development efforts on your part. Due to our time constraints, we will supply a substantial portion of the necessary code for each project. Nonetheless, every project will include a crucial component that you are required to develop, test, and submit to earn full credit. Given the expansive nature and complexity of these projects, we will primarily cover the introductory material and code walkthrough during lectures. Consequently, attending these lectures is highly recommended.</i></p>
+
+      <p><i>A compressed/archived project folder can be downloaded here: <a href="projects.zip">projects.zip</a> Alternatively, try this:
+	<ul>
+	  <li>$ wget https://ics.uci.edu/~givargis/courses/cs238p/projects.zip</li>
+	</ul>
+      </li></p>
+
+      <p><i>Please ensure timely submission of your projects by packaging them into a single zip file. This zip file should include the following components, all organized within a dedicated directory: (1) your source code, (2) a README.txt file containing any special comments, issues, and/or notable features, (3) if applicable, an strace output from the invocation of your program, and (4) if applicable, a valgrind report demonstrating the absence of memory leaks. Please stay tuned for further details, which will be communicated during lectures.</i></p>
+
+      <ol>
+	<li>
+	  <b>JIT Compiled Expression Evaluator (October 10, 2025)</b>
+	  <p><i>Design a program that accepts a mathematical expression (a string containing the symbols: +, -, *, /, (, ), value). This program will dynamically generate a C program based on the input string, invoke a C compiler to create an equivalent loadable module, and then load and execute the machine code equivalent of the C program to produce the evaluated result of the expression. You may use the following to bootstrap the project:</i></p>
+	  <ul>
+	    <li><a href="projects/p1/Makefile">Makefile</a></li>
+	    <li><a href="projects/p1/system.h">system.h</a>, <a href="projects/p1/system.c">system.c</a></li>
+	    <li><a href="projects/p1/lexer.h">lexer.h</a>, <a href="projects/p1/lexer.c">lexer.c</a></li>
+	    <li><a href="projects/p1/parser.h">parser.h</a>, <a href="projects/p1/parser.c">parser.c</a></li>
+	    <li><a href="projects/p1/jitc.h">jitc.h</a>, <a href="projects/p1/jitc.c">jitc.c</a></li>
+	    <li><a href="projects/p1/main.c">main.c</a></li>
+	  </ul>
+	  <p><i>This project earns you 15% of your class credit. You can earn 2% extra-credit if you implement the sigmoid(double x) function that resides in your main program but is called from the generated C code to transform the final value of the expression (i.e., sigmoid(expression-value)).</i></p>
+	</li>
+	<li>
+	  <b>Userspace Dynamic Thread Scheduler (October 24, 2025)</b>
+	  <p><i>Develop a dynamic thread scheduler library with an API akin to the POSIX pthread library, providing the capability to create threads and enable cooperative concurrent execution among them. You may use the following to bootstrap the project:</i></p>
+	  <ul>
+	    <li><a href="projects/p2/Makefile">Makefile</a></li>
+	    <li><a href="projects/p2/system.h">system.h</a>, <a href="projects/p2/system.c">system.c</a></li>
+	    <li><a href="projects/p2/scheduler.h">scheduler.h</a>, <a href="projects/p2/scheduler.c">scheduler.c</a></li>
+	    <li><a href="projects/p2/main.c">main.c</a></li>
+	  </ul>
+	  <p><i>This project earns you 15% of your class credit. You can earn 2% extra-credit if you implement an automatic context switch (e.g., every second) from one thread to another without the need for the user threads to call scheduler_yield().</i></p>
+	</li>
+	<li>
+	  <b>Storage Class Memory Manager (November 7, 2025)</b>
+	  <p><i>Create a robust memory management system featuring an API reminiscent of the C malloc() function. This system will utilize a file as its underlying storage to ensure persistent data availability across different processes. You may use the following to bootstrap the project:</i></p>
+	  <ul>
+	    <li><a href="projects/p3/Makefile">Makefile</a></li>
+	    <li><a href="projects/p3/system.h">system.h</a>, <a href="projects/p3/system.c">system.c</a></li>
+	    <li><a href="projects/p3/term.h">term.h</a>, <a href="projects/p3/term.c">term.c</a></li>
+	    <li><a href="projects/p3/shell.h">shell.h</a>, <a href="projects/p3/shell.c">shell.c</a></li>
+	    <li><a href="projects/p3/scm.h">scm.h</a>, <a href="projects/p3/scm.c">scm.c</a></li>
+	    <li><a href="projects/p3/avl.h">avl.h</a>, <a href="projects/p3/avl.c">avl.c</a></li>
+	    <li><a href="projects/p3/main.c">main.c</a></li>
+	  </ul>
+	  <p><i>This project earns you 15% of your class credit. You can earn 2% extra credit by implementing the scm_free() function and showcasing the correctness of your implementation through the addition of the required code to enable a "remove" command for words.</i></p>
+	</li>
+	<li>
+	  <b>Key/Value File System (November 21, 2025)</b>
+	  <p><i>Develop a key/value file system that utilizes raw and direct I/O operations on a block device. Deploy your system on a loop-back device. Ensure that your implementation avoids reliance on kernel buffers for both reading and writing by incorporating efficient write buffering and read caching mechanisms to optimize performance. You may use the following to bootstrap the project:</i></p>
+	  <ul>
+	    <li><a href="projects/p4/Makefile">Makefile</a></li>
+	    <li><a href="projects/p4/system.h">system.h</a>, <a href="projects/p4/system.c">system.c</a></li>
+	    <li><a href="projects/p4/term.h">term.h</a>, <a href="projects/p4/term.c">term.c</a></li>
+	    <li><a href="projects/p4/device.h">device.h</a>, <a href="projects/p4/device.c">device.c</a></li>
+	    <li><a href="projects/p4/logfs.h">logfs.h</a>, <a href="projects/p4/logfs.c">logfs.c</a></li>
+	    <li><a href="projects/p4/kvraw.h">kvraw.h</a>, <a href="projects/p4/kvraw.c">kvraw.c</a></li>
+	    <li><a href="projects/p4/index.h">index.h</a>, <a href="projects/p4/index.c">index.c</a></li>
+	    <li><a href="projects/p4/kvdb.h">kvdb.h</a>, <a href="projects/p4/kvdb.c">kvdb.c</a></li>
+	    <li><a href="projects/p4/main.c">main.c</a></li>
+	  </ul>
+	  <p><i>This project earns you 15% of your class credit. You can earn 2% extra credit by implementing the ability to store and restore the state of the key/value file system on open/close. Modify the test programs to test this new behaviour.</i></p>
+	</li>
+	<li>
+	  <b>System Performance Monitor (December 5, 2025)</b>
+	  <p><i>Create a real-time system monitoring tool similar to the Unix top command that provides two different performance statistics in two different categories (e.g., CPU, memory, network, I/O). You may use the following to bootstrap the project:</i></p>
+	  <ul>
+	    <li><a href="projects/p5/Makefile">Makefile</a></li>
+	    <li><a href="projects/p5/system.h">system.h</a>, <a href="projects/p4/system.c">system.c</a></li>
+	    <li><a href="projects/p5/main.c">main.c</a></li>
+	  </ul>
+	  <p><i>This project earns you 15% of your class credit. You can earn 2% extra credit by adding a third category to your tool.</i></p>
+	</li>
+      </ol>
+
+      <h3>Tools</h3>
+
+      <p><i>These tools and environments are essential for successfully completing the projects in this course. Make sure to invest the time needed to attain a proficient level of skill with these applications and systems.</i></p>
+
+      <ul>
+	<li>make, gcc, gdb, gprof, gcov, nm</li>
+	<li>valgrind, strace, top, iostat</li>
+	<li>lsblk, dd, losetup</li>
+	<li>ifconfig, wget</li>
+	<li>man</li>
+	<li>
+	  emacs (<i>you may use a different editor or IDE</i>)
+	  <ul>
+	    <li><a href="resources/.emacs">.emacs</a></li>
+	  </ul>
+	</li>
+	<li>
+	  Linux Machine
+	  <ul>
+	    <li>
+	      <a href="https://ubuntu.com/download/server">Ubuntu Server 24.04.03 LTS</a>
+	      <ul>
+		<li><a href="resources/ubuntu-24.04-live-server-amd64.iso">ubuntu-24.04.3-live-server-amd64.iso</a></li>
+	      </ul>
+	    </li>
+	    <li>
+	      <a href="https://www.qemu.org">QEMU Machine Emulator & Virtualizer</a>
+	      <ul>
+		<li>
+		  <a href="https://mac.getutm.app">GUI Interface to QEMU</a>
+		  <ul>
+		    <li><a href="resources/UTM.dmg">UTM.dmg</a></li>
+		  </ul>
+		</li>
+	      </ul>
+	    </li>
+	    <li>
+	      Hardware Configuration
+	      <ul>
+		<li>X86_64</li>
+		<li>4 Cores</li>
+		<li>4GB RAM</li>
+		<li>24 GB Disk</li>
+	      </ul>
+	    </li>
+	    <li>
+	      Software Configuration
+	      <ul>
+		<li>$ sudo apt update</li>
+		<li>$ sudo apt install zip</li>
+		<li>$ sudo apt install wget</li>
+		<li>$ sudo apt install emacs</li>
+		<li>$ sudo apt install build-essential</li>
+		<li>$ sudo apt install valgrind</li>
+		<li>$ sudo apt install net-tools</li>
+		<li>$ sudo apt install openssh-server</li>
+	      </ul>
+	    </li>
+	  </ul>
+	</li>
+      </ul>
+
+      <h3>References</h3>
+
+      <p><i>The internet is full of an abundance of valuable resources, encompassing e-books, write-ups, blogs, and Wiki pages that delve into the various subjects covered in this course. Below, you'll find a mini-curated selection, though it's important to note that this list is not exhaustive. You are encouraged to assemble your personal compilation of references to support your learning journey in this course and beyond.</i></p>
+
+      <ul>
+	<li><a href="http://pages.cs.wisc.edu/~remzi/OSTEP/">Operating Systems: Three Easy Pieces</a></li>
+	<li><a href="https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html">The GNU C Reference Manual</a></li>
+	<li><a href="https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797">ANSI Escape Sequences</a></li>
+	<li><a href="https://www.kernel.org/doc/html/v4.10/process/coding-style.html">Linux Kernel Coding Style</a></li>
+	<li><a href="https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf">GNU Emacs Reference Card</a></li>
+	<li><a href="https://pdos.csail.mit.edu/6.828/2018/xv6.html">Xv6 Home Page</a></li>
+      </ul>
+
+      <p><i>*** Commitment to an inclusive learning environment: this class adheres to the philosophy that all community members should enjoy an environment free of any form of harassment, sexual misconduct or discrimination. Please be respectful and kind to one another. ***</i></p>
+
+  </div></body>
+</html>

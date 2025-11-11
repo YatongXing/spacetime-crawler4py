@@ -1,0 +1,584 @@
+<!-- URL: https://wiki.ics.uci.edu/doku.php/virtual_environments:google_cloud -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Google Cloud Platform (GCP) [Support Wiki]</title>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="virtual_environments,google_cloud"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/css.php?css=assets/mikio.less"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/icons/fontawesome/css/all.min.css"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Support Wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php/virtual_environments:google_cloud?do=index" title="Sitemap"/>
+<link rel="manifest" href="/lib/exe/manifest.php" crossorigin="use-credentials"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="/feed.php?mode=list&amp;ns=virtual_environments"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="/doku.php/virtual_environments:google_cloud?do=export_xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="/doku.php/virtual_environments:google_cloud?do=export_raw"/>
+<link rel="canonical" href="https://wiki.ics.uci.edu/doku.php/virtual_environments:google_cloud"/>
+<link rel="stylesheet" href="/lib/exe/css.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"/>
+<script >var NS='virtual_environments';var JSINFO = {"plugins":{"gallery":{"defaults":{"thumbnailsize":{"default":"150x150"},"imagesize":{"default":"1600X1200"},"cache":{"default":true},"filter":{"default":""},"showname":{"default":false},"showtitle":{"default":false},"crop":{"default":true},"direct":{"default":false},"reverse":{"default":false},"recursive":{"default":false},"align":{"default":0},"cols":{"default":0},"limit":{"default":0},"offset":{"default":0},"paginate":{"default":0},"sort":{"default":"file"},"namespace":{"default":""}}}},"isadmin":0,"isauth":0,"move_renameokay":false,"move_allowrename":false,"plugin_slider":{"width":800,"mode":"horizontal","infiniteLoop":true,"hideControlOnEnd":false,"speed":500,"easing":null,"slideMargin":0,"startSlide":0,"randomStart":false,"captions":false,"ticker":false,"tickerHover":false,"adaptiveHeight":false,"adaptiveHeightSpeed":500,"video":false,"useCSS":true,"preloadImages":"visible","responsive":true,"pager":true,"pagerType":"full","pagerShortSeparator":"\/","controls":true,"nextText":"Next","prevText":"Prev","autoControls":false,"startText":"Start","stopText":"Stop","autoControlsCombine":false,"auto":false,"pause":4000,"autoStart":true,"autoDirection":"next","autoHover":false,"autoDelay":0,"minSlides":1,"maxSlides":1,"moveSlides":0,"slideWidth":0,"touchEnabled":true,"swipeThreshold":50,"oneToOneTouch":true,"preventDefaultSwipeX":true,"preventDefaultSwipeY":false},"SMILEY_CONF":{"8-)":"cool.svg","8-O":"eek.svg","8-o":"eek.svg",":-(":"sad.svg",":-)":"smile.svg","=)":"smile2.svg",":-\/":"doubt.svg",":-\\":"doubt2.svg",":-?":"confused.svg",":-D":"biggrin.svg",":-P":"razz.svg",":-o":"surprised.svg",":-O":"surprised.svg",":-x":"silenced.svg",":-X":"silenced.svg",":-|":"neutral.svg",";-)":"wink.svg","m(":"facepalm.svg","^_^":"fun.svg",":?:":"question.svg",":!:":"exclaim.svg","LOL":"lol.svg","FIXME":"fixme.svg","DELETEME":"deleteme.svg"},"id":"virtual_environments:google_cloud","namespace":"virtual_environments","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<script src="/lib/exe/jquery.php?tseed=8faf3dc90234d51a499f4f428a0eae43"></script>
+<script src="/lib/exe/js.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio-typeahead.js" defer="defer"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio.js" defer="defer"></script>
+<link rel="shortcut icon" href="/lib/tpl/mikio/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/mikio/images/apple-touch-icon.png" />
+</head>
+<body class="mikio">
+<div id="dokuwiki__site">
+    <div id="dokuwiki__top" class="site dokuwiki mode_show tpl_mikio    showSidebar hasSidebar"><nav class="mikio-navbar"><div class="mikio-container"><a class="mikio-navbar-brand" href="/doku.php/start" accesskey="h" title="Home [h]"><img src="/lib/exe/fetch.php/wiki:logo.png" class="mikio-navbar-brand-image" style="width:250px;max-width:none;max-height:none;"><div class="mikio-navbar-brand-title"><h1 class="mikio-navbar-brand-title-text">Support Wiki</h1><p class="claim mikio-navbar-brand-title-tagline"></p></div></a><div class="mikio-navbar-toggle"><span class="icon"></span></div><div class="mikio-navbar-collapse"><div class="mikio-nav-item"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="virtual_environments:google_cloud"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form></div><ul class="mikio-nav"><li id="dokuwiki__pagetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_pagetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,235.38983,1277.8305)" id="g2991">
+<path d="M 128,0 H 1152 V 768 H 736 q -40,0 -68,28 -28,28 -28,68 v 416 H 128 V 0 z m 640,896 h 299 L 768,1195 V 896 z M
+1280,768 V -32 q 0,-40 -28,-68 -28,-28 -68,-28 H 96 q -40,0 -68,28 -28,28 -28,68 v 1344 q 0,40 28,68 28,28 68,28 h 544
+q 40,0 88,-20 48,-20 76,-48 l 408,-408 q 28,-28 48,-76 20,-48 20,-88 z" id="path2993" /></g></svg><span class="mikio-small-only">Page Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item revs" href="/doku.php/virtual_environments:google_cloud?do=revisions" title="Old revisions"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></span><span>Old revisions</span></a><a class="mikio-nav-link mikio-dropdown-item backlink" href="/doku.php/virtual_environments:google_cloud?do=backlink" title="Backlinks"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></span><span>Backlinks</span></a></div></li><li id="dokuwiki__sitetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_sitetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,121.49153,1285.4237)" id="g3027">
+<path d="m 1024,640 q 0,106 -75,181 -75,75 -181,75 -106,0 -181,-75 -75,-75 -75,-181 0,-106 75,-181 75,-75 181,-75 106,0
+181,75 75,75 75,181 z m 512,109 V 527 q 0,-12 -8,-23 -8,-11 -20,-13 l -185,-28 q -19,-54 -39,-91 35,-50 107,-138 10,-12
+10,-25 0,-13 -9,-23 -27,-37 -99,-108 -72,-71 -94,-71 -12,0 -26,9 l -138,108 q -44,-23 -91,-38 -16,-136 -29,-186 -7,-28
+-36,-28 H 657 q -14,0 -24.5,8.5 Q 622,-111 621,-98 L 593,86 q -49,16 -90,37 L 362,16 Q 352,7 337,7 323,7 312,18 186,132
+147,186 q -7,10 -7,23 0,12 8,23 15,21 51,66.5 36,45.5 54,70.5 -27,50 -41,99 L 29,495 Q 16,497 8,507.5 0,518 0,531 v 222
+q 0,12 8,23 8,11 19,13 l 186,28 q 14,46 39,92 -40,57 -107,138 -10,12 -10,24 0,10 9,23 26,36 98.5,107.5 72.5,71.5 94.5,
+71.5 13,0 26,-10 l 138,-107 q 44,23 91,38 16,136 29,186 7,28 36,28 h 222 q 14,0 24.5,-8.5 Q 914,1391 915,1378 l 28,-184
+q 49,-16 90,-37 l 142,107 q 9,9 24,9 13,0 25,-10 129,-119 165,-170 7,-8 7,-22 0,-12 -8,-23 -15,-21 -51,-66.5 -36,-45.5
+-54,-70.5 26,-50 41,-98 l 183,-28 q 13,-2 21,-12.5 8,-10.5 8,-23.5 z" id="path3029" />
+</g></svg><span class="mikio-small-only">Site Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item recent" href="/doku.php/virtual_environments:google_cloud?do=recent" title="Recent Changes"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69V13m4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67V8M5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2H5m11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85z"/></svg></span><span>Recent Changes</span></a><a class="mikio-nav-link mikio-dropdown-item media" href="/doku.php/virtual_environments:google_cloud?do=media&ns=virtual_environments" title="Media Manager"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 15l4.5-6 3.5 4.5 2.5-3L21 15m1-11h-8l-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M2 6H0v14a2 2 0 0 0 2 2h18v-2H2V6z"/></svg></span><span>Media Manager</span></a><a class="mikio-nav-link mikio-dropdown-item index" href="/doku.php/virtual_environments:google_cloud?do=index" title="Sitemap"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2z"/></svg></span><span>Sitemap</span></a></div></li><li id="dokuwiki__usertools" class="mikio-nav-dropdown"><a id="mikio_dropdown_usertools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,197.42373,1300.6102)"><path d="M
+1408,131 Q 1408,11 1335,-58.5 1262,-128 1141,-128 H 267 Q 146,-128 73,-58.5 0,11 0,131 0,184 3.5,234.5 7,285 17.5,343.5
+28,402 44,452 q 16,50 43,97.5 27,47.5 62,81 35,33.5 85.5,53.5 50.5,20 111.5,20 9,0 42,-21.5 33,-21.5 74.5,-48 41.5,
+-26.5 108,-48 Q 637,565 704,565 q 67,0 133.5,21.5 66.5,21.5 108,48 41.5,26.5 74.5,48 33,21.5 42,21.5 61,0 111.5,-20
+50.5,-20 85.5,-53.5 35,-33.5 62,-81 27,-47.5 43,-97.5 16,-50 26.5,-108.5 10.5,-58.5 14,-109 Q 1408,184 1408,131 z m
+-320,893 Q 1088,865 975.5,752.5 863,640 704,640 545,640 432.5,752.5 320,865 320,1024 320,1183 432.5,1295.5 545,1408 704,
+1408 863,1408 975.5,1295.5 1088,1183 1088,1024 z"/></g></svg><span class="mikio-small-only">User Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item login" href="/doku.php/virtual_environments:google_cloud?do=login&sectok=" title="Log In"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></span><span>Log In</span></a></div></li></ul></div></div></nav><a name="dokuwiki__top" id="dokuwiki__top"></a><div class="mikio-hero"><div class="mikio-container"><div class="mikio-hero-text"><div class="mikio-breadcrumbs"><div class="mikio-container"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php/virtual_environments:google_cloud"  class="breadcrumbs" title="virtual_environments:google_cloud">Google Cloud Platform (GCP)</a></bdi></span></div></div><h1 class="mikio-hero-title">Google Cloud Platform (GCP)</h1><h2 class="mikio-hero-subtitle"></h2></div><div class="mikio-hero-image"><div class="mikio-tags"></div></div></div></div><main class="mikio-page"><div class="mikio-container"><aside class="mikio-sidebar mikio-sidebar-left"><a class="mikio-sidebar-toggle closed" href="#">Sidebar <span class="icon"></span></a><div class="mikio-sidebar-collapse"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="virtual_environments:google_cloud"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form><div class="mikio-sidebar-content"><div><div id="nojs_indexmenu_92216708768e6d56a08415" data-jsajax="%26group%3D1" class="indexmenu_nojs">
+<ul class="idx">
+<li class="closed"><div class="li"><a href="/doku.php/accounts:accounts" class="indexmenu_idx_head" data-wiki-id="accounts:accounts">ICS Accounts</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/announce:announce" class="indexmenu_idx_head" data-wiki-id="announce:announce">Announcement and Maintenance</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/backups:backups" class="indexmenu_idx_head" data-wiki-id="backups:backups">Backups @ ICS</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/commands:commands" class="indexmenu_idx_head" data-wiki-id="commands:commands">Common Tasks and Commands</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/group:group" class="indexmenu_idx_head" data-wiki-id="group:group">Group Files</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/hardware:hardware" class="indexmenu_idx_head" data-wiki-id="hardware:hardware">Hardware Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/instructional_support:instructional_support" class="indexmenu_idx_head" data-wiki-id="instructional_support:instructional_support">Instructional Support Resources</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/network:network" class="indexmenu_idx_head" data-wiki-id="network:network">Network</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/os?idx=os" class="indexmenu_idx" data-wiki-id="">os</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/policies?idx=policies" class="indexmenu_idx" data-wiki-id="">policies</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/projects?idx=projects" class="indexmenu_idx" data-wiki-id="">projects</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/remote_support?idx=remote_support" class="indexmenu_idx" data-wiki-id="">remote_support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/requesttracker?idx=requesttracker" class="indexmenu_idx" data-wiki-id="">requesttracker</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/research_support:research_support" class="indexmenu_idx_head" data-wiki-id="research_support:research_support">Research Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/security?idx=security" class="indexmenu_idx" data-wiki-id="">security</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/services?idx=services" class="indexmenu_idx" data-wiki-id="">services</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/software:software" class="indexmenu_idx_head" data-wiki-id="software:software">Software</a></div></li>
+<li class="open"><div class="li"><a href="/doku.php/virtual_environments:virtual_environments" class="indexmenu_idx_head" data-wiki-id="virtual_environments:virtual_environments">Virtual Environments</a></div>
+<ul class="idx">
+<li class="closed"><div class="li"><a href="/doku.php/virtual_environments:services?idx=virtual_environments:services" class="indexmenu_idx" data-wiki-id="">services</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/virtual_environments:google_cloud" class="wikilink1" title="virtual_environments:google_cloud" data-wiki-id="virtual_environments:google_cloud">Google Cloud Platform (GCP)</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/virtual_environments:jupyterhub" class="wikilink1" title="virtual_environments:jupyterhub" data-wiki-id="virtual_environments:jupyterhub">jupyterhub</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/virtual_environments:singularity" class="wikilink1" title="virtual_environments:singularity" data-wiki-id="virtual_environments:singularity">Singularity @ ICS</a></div></li>
+</ul>
+</li>
+<li class="closed"><div class="li"><a href="/doku.php/webapps:webapps" class="indexmenu_idx_head" data-wiki-id="webapps:webapps">ICS Web Applications</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/wiki?idx=wiki" class="indexmenu_idx" data-wiki-id="">wiki</a></div></li>
+</ul>
+</div></div></div></div></aside><div class="mikio-content" id="dokuwiki__content"><article class="mikio-article"><div class="mikio-toc"><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle"><svg class="mikio-iicon hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+style="fill:currentColor"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0
+76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16z"/></svg>Table of Contents<svg class="mikio-iicon down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+aria-hidden="true" style="fill:currentColor"><path d="M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9
+1.917-1.916z"/></svg></h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#google_cloud_platform_gcp">Google Cloud Platform (GCP)</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#summary">Summary</a></div></li>
+<li class="level2"><div class="li"><a href="#external_documentation">External Documentation</a></div></li>
+<li class="level2"><div class="li"><a href="#google_cloud_engine_products">Google Cloud Engine Products</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#compute">Compute</a></div></li>
+<li class="level3"><div class="li"><a href="#storage">Storage</a></div></li>
+<li class="level3"><div class="li"><a href="#other_offerings">Other Offerings</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#uci_links">UCI Links</a></div></li>
+<li class="level2"><div class="li"><a href="#google_opportunities">Google Opportunities</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#apply_for_gcp_for_edu_grants">Apply for GCP for EDU Grants</a></div></li>
+<li class="level3"><div class="li"><a href="#nsf_big_data_grant">NSF Big Data Grant</a></div></li>
+<li class="level3"><div class="li"><a href="#southern_california_gcp_fundamentals_training">Southern California GCP Fundamentals Training</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#google_billing">Google Billing</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#management">Management</a></div></li>
+<li class="level3"><div class="li"><a href="#payments_profile">Payments Profile</a></div></li>
+<li class="level3"><div class="li"><a href="#full_billing_site">Full Billing  Site</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#google_resources">Google Resources</a></div></li>
+<li class="level2"><div class="li"><a href="#removing_outdated_page_from_google_search">Removing outdated page from Google Search</a></div></li>
+<li class="level2"><div class="li"><a href="#troubleshooting">Troubleshooting</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#adding_an_app_to_a_project">Adding an APP to a Project</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div><div class="mikio-article-content"><h1 class="sectionedit1" id="google_cloud_platform_gcp" style="display:none">Google Cloud Platform (GCP)</h1>
+<div class="level1">
+
+</div>
+
+<h2 class="sectionedit2" id="summary">Summary</h2>
+<div class="level2">
+
+<p>
+Google Cloud Platform is a set of modular cloud-based services that allow you to create anything from simple websites to complex applications.  Cloud Platform provides the building blocks so you can quickly develop everything from simple websites to complex applications.
+</p>
+
+<p>
+Google Cloud Platform is available to faculty, researchers and grad students via your <a href="http://www.ics.uci.edu/computing/email/google_apps.php" class="urlextern" title="http://www.ics.uci.edu/computing/email/google_apps.php" rel="ugc nofollow">ICS Google Apps Account</a>.
+</p>
+
+<p>
+Each ICS Google Apps account comes with a 60 day or $300 trial.  You will need to provide a valid credit card in order to sign up.
+</p>
+
+<p>
+If you would like to begin using the Google Cloud Platform please send email to <a href="http://www.ics.uci.edu/computing/email/google_apps.php" class="urlextern" title="http://www.ics.uci.edu/computing/email/google_apps.php" rel="ugc nofollow">helpdesk@ics.uci.edu</a>.  
+</p>
+
+</div>
+
+<h2 class="sectionedit3" id="external_documentation">External Documentation</h2>
+<div class="level2">
+
+<p>
+<a href="https://cloud.google.com/" class="urlextern" title="https://cloud.google.com/" rel="ugc nofollow">Google Cloud Platform</a>
+</p>
+
+</div>
+
+<h4 id="gcp_aws_project_management">GCP/AWS Project Management</h4>
+<div class="level4">
+
+<p>
+Computing support can step into an active or passive role in managing GCP or AWS assets.  Anything done in the ICS data center can likewise be done in the cloud including assignment of ics.uci.edu domain names.
+</p>
+<ul>
+<li class="level1"><div class="li"> Consulting and Billing Setup</div>
+</li>
+<li class="level1"><div class="li"> Provisioning (also automated provisioning via Terraform)</div>
+</li>
+<li class="level1"><div class="li"> Data Center Integration (Storage, compute, authentication, etc)</div>
+</li>
+<li class="level1"><div class="li"> <abbr title="Domain Name System">DNS</abbr> (use ics.uci.edu in GCP or AWS)</div>
+</li>
+<li class="level1"><div class="li"> Secure connection between campus and cloud.</div>
+</li>
+<li class="level1"><div class="li"> Configuration Management</div>
+</li>
+<li class="level1"><div class="li"> Single sign on authentication</div>
+</li>
+<li class="level1"><div class="li"> Integration with campus storage.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="google_cloud_engine_products">Google Cloud Engine Products</h2>
+<div class="level2">
+
+<p>
+<a href="https://cloud.google.com/products/" class="urlextern" title="https://cloud.google.com/products/" rel="ugc nofollow">GCP Products</a>
+</p>
+
+</div>
+
+<h3 class="sectionedit5" id="compute">Compute</h3>
+<div class="level3">
+
+<p>
+<a href="https://cloud.google.com/products/compute/" class="urlextern" title="https://cloud.google.com/products/compute/" rel="ugc nofollow">Cloud Compute</a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Convenient tools for provisioning and managing your VM.</div>
+</li>
+<li class="level1"><div class="li"> Extend current computing capabilities</div>
+</li>
+<li class="level1"><div class="li"> Share Data  </div>
+</li>
+<li class="level1"><div class="li"> Inexpensive, charged only apply when a VM is active  </div>
+</li>
+<li class="level1"><div class="li"> Cost effective way to increase compute power without investing capital. </div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit6" id="storage">Storage</h3>
+<div class="level3">
+
+<p>
+<a href="https://cloud.google.com/storage/" class="urlextern" title="https://cloud.google.com/storage/" rel="ugc nofollow">Cloud Storage</a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Unified Object Storage</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://cloud.google.com/storage/pricing#storage-pricing" class="urlextern" title="https://cloud.google.com/storage/pricing#storage-pricing" rel="ugc nofollow">Coldline</a> storage for data archival as low as $7 per TB per month.</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://cloud.google.com/storage/pricing#storage-pricing" class="urlextern" title="https://cloud.google.com/storage/pricing#storage-pricing" rel="ugc nofollow">Regional</a> storage for online data as low as $20 per TB per month.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit7" id="other_offerings">Other Offerings</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="https://cloud.google.com/products/machine-learning/" class="urlextern" title="https://cloud.google.com/products/machine-learning/" rel="ugc nofollow">Machine Learning Products</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://cloud.google.com/products/big-data/" class="urlextern" title="https://cloud.google.com/products/big-data/" rel="ugc nofollow">Big Data</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://cloud.google.com/genomics/" class="urlextern" title="https://cloud.google.com/genomics/" rel="ugc nofollow">Big Data Genomics</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit8" id="uci_links">UCI Links</h2>
+<div class="level2">
+
+<p>
+<a href="http://www.security.uci.edu/cloud.php" class="urlextern" title="http://www.security.uci.edu/cloud.php" rel="ugc nofollow">OIT:  Guidance on the Use of Cloud Services</a>
+</p>
+
+</div>
+
+<h2 class="sectionedit9" id="google_opportunities">Google Opportunities</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit10" id="apply_for_gcp_for_edu_grants">Apply for GCP for EDU Grants</h3>
+<div class="level3">
+
+<p>
+<a href="http://cloud.google.com/edu" class="urlextern" title="http://cloud.google.com/edu" rel="ugc nofollow">Apply for GCP for EDU Grants</a>
+Follow the hyperlink to apply for the GCP for EDU credit program. Once you apply, let helpdesk know so that we can help expedite the approval process. After you receive the grants, be sure to join the <a href="https://plus.google.com/communities/111655476625903302967" class="urlextern" title="https://plus.google.com/communities/111655476625903302967" rel="ugc nofollow">Google+ community</a> of professors who have also received grants as they often share ideas about curriculum and post questions. If you have any questions about the program, be sure to post in the community contact CloudEDUGrants@google.com  to get in touch with program managers. 
+</p>
+
+</div>
+
+<h3 class="sectionedit11" id="nsf_big_data_grant">NSF Big Data Grant</h3>
+<div class="level3">
+
+<p>
+<a href="https://www.nsf.gov/pubs/2017/nsf17534/nsf17534.htm" class="urlextern" title="https://www.nsf.gov/pubs/2017/nsf17534/nsf17534.htm" rel="ugc nofollow">NSF Big Data Grant</a>
+As of 2/17/2017, Google has resources that can help when applying for the NSF Big Data Grant.   Send a note to helpdesk and we&#039;ll help you with the Google technical point of contact so he can address any questions you might have as you prepare your grant application. 
+</p>
+
+</div>
+
+<h3 class="sectionedit12" id="southern_california_gcp_fundamentals_training">Southern California GCP Fundamentals Training</h3>
+<div class="level3">
+
+<p>
+<a href="https://cloud.google.com/training/courses/cp100a" class="urlextern" title="https://cloud.google.com/training/courses/cp100a" rel="ugc nofollow">Southern California GCP Fundamentals Training</a>: Google has confirmation that  a free fundamentals course (a $250 value!) at the end of March. It will likely be in their Venice Beach office.  Send mail to helpdesk@ics.uci.edu if you would like more information.
+</p>
+
+</div>
+
+<h2 class="sectionedit13" id="google_billing">Google Billing</h2>
+<div class="level2">
+
+<p>
+<strong>Note</strong>:  Ensure that you are signed into the Google Payments site using your <a href="/doku.php/accounts:faqs" class="wikilink1" title="accounts:faqs" data-wiki-id="accounts:faqs">ICS account</a>
+</p>
+
+<p>
+<a href="https://support.google.com/accounts/answer/1721977?hl=en&amp;co=GENIE.Platform%3DDesktop" class="urlextern" title="https://support.google.com/accounts/answer/1721977?hl=en&amp;co=GENIE.Platform%3DDesktop" rel="ugc nofollow">How to sign into mutlple Google Workspace Accounts</a>
+</p>
+
+</div>
+
+<h3 class="sectionedit14" id="management">Management</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="quick_start">Quick Start</h4>
+<div class="level4">
+
+<p>
+Ensure that you are signed into your ICS Gmail account and visit the following site:
+</p>
+
+<p>
+<a href="https://payments.google.com/" class="urlextern" title="https://payments.google.com/" rel="ugc nofollow">https://payments.google.com/</a>  - GCP payment Management Site
+</p>
+
+</div>
+
+<h4 id="external_documentation1">External Documentation</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <a href="https://support.google.com/accounts/answer/9244912?hl=en" class="urlextern" title="https://support.google.com/accounts/answer/9244912?hl=en" rel="ugc nofollow">Manage your Google payment info</a> - Google&#039;s documentation on Managing  your Google payment info:  </div>
+</li>
+<li class="level1"><div class="li"> <a href="https://support.google.com/googlepay/answer/7644078?visit_id=638337807394780910-625162633&amp;rd=1" class="urlextern" title="https://support.google.com/googlepay/answer/7644078?visit_id=638337807394780910-625162633&amp;rd=1" rel="ugc nofollow">How to verify your identify or payment info</a> - The following site provides additional information on verifying your payment information:</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="bill_pay_managers">Bill Pay Managers</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="invoices">Invoices</h5>
+<div class="level5">
+
+<p>
+Bill pay managers can retrieve invoices after logging to the <a href="https://payments.google.com/" class="urlextern" title="https://payments.google.com/" rel="ugc nofollow">https://payments.google.com</a> to retrieve invoices.
+</p>
+<ul>
+<li class="level1"><div class="li"> Choose the Subscriptions and Services tab at the top of the page.  </div>
+</li>
+<li class="level1"><div class="li"> Click on “mange” at the bottom of the card for the appropriate subscription</div>
+</li>
+<li class="level1"><div class="li"> On the next page, in the Transactions box, click on the down arrow icon to download the transaction information.  </div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="mail_settings">Mail Settings</h5>
+<div class="level5">
+
+<p>
+Bill pay managers may change their email settings by clicking on *Settings* at the top of this page <a href="https://payments.google.com/" class="urlextern" title="https://payments.google.com/" rel="ugc nofollow">https://payments.google.com</a>
+</p>
+<ol>
+<li class="level1"><div class="li"> Scroll down the page and click on *Mange Payment Users*</div>
+</li>
+<li class="level1"><div class="li"> Select your name</div>
+</li>
+<li class="level1"><div class="li"> In the box that unfurls, click on the information icon to read about the options.</div>
+</li>
+<li class="level1"><div class="li"> Click on the pencil icon to change your selection.</div>
+</li>
+</ol>
+
+</div>
+
+<h3 class="sectionedit15" id="payments_profile">Payments Profile</h3>
+<div class="level3">
+
+<p>
+Payment profiles can be used to compartmentalize access to payment profiles.
+</p>
+
+</div>
+
+<h4 id="external_documentation2">External Documentation</h4>
+<div class="level4">
+
+<p>
+<a href="https://support.google.com/paymentscenter/answer/9028746?hl=en" class="urlextern" title="https://support.google.com/paymentscenter/answer/9028746?hl=en" rel="ugc nofollow">Google Create and Manage your Payments Profile</a> ← not as helpful as google advertised.
+</p>
+
+</div>
+
+<h4 id="creating_a_payments_profile">Creating a Payments Profile</h4>
+<div class="level4">
+
+<p>
+Login to <a href="https://console.cloud.google.com/billing/" class="urlextern" title="https://console.cloud.google.com/billing/" rel="ugc nofollow">the billing console</a> as an admin.
+</p>
+
+<p>
+Select <strong>Create Account</strong>
+</p>
+
+<p>
+Give the account a meaningful name:  babaks-allofus
+</p>
+
+<p>
+Continue.
+</p>
+
+<p>
+On the next screen select “Create payments profile”.
+</p>
+
+<p>
+Give the profile another meaningful name:  ICS External Babaks AllofUs
+</p>
+
+</div>
+
+<h5 id="add_a_credit_card">Add a credit card.</h5>
+<div class="level5">
+
+<p>
+I usually start a zoom session to relay cc information through.
+<a href="/lib/exe/detail.php/virtual_environments:add-credit-or-debit-card.png?id=virtual_environments%3Agoogle_cloud" class="media" title="virtual_environments:add-credit-or-debit-card.png"><img src="/lib/exe/fetch.php/virtual_environments:add-credit-or-debit-card.png?w=400&amp;tok=7a7bfa" class="media" loading="lazy" alt="" width="400" /></a>
+</p>
+
+</div>
+
+<h5 id="assign_privilege">Assign privilege</h5>
+<div class="level5">
+
+<p>
+On the GCP billing console, chosse payment settings 
+</p>
+
+</div>
+
+<h5 id="associate_with_payment_program">Associate with Payment Program</h5>
+<div class="level5">
+
+<p>
+<a href="https://support.researchallofus.org/hc/en-us/articles/29349246123796-Enabling-and-Disabling-a-Google-Cloud-Platform-GCP-Billing-Account" class="urlextern" title="https://support.researchallofus.org/hc/en-us/articles/29349246123796-Enabling-and-Disabling-a-Google-Cloud-Platform-GCP-Billing-Account" rel="ugc nofollow">AllOfUS</a>
+</p>
+
+<p>
+That completes the payment profile creatin.
+</p>
+
+<p>
+<strong>Note:</strong> A payment profile may be created by any user and may be hidden from the ICS Computing Support management team.
+</p>
+
+</div>
+
+<h3 class="sectionedit16" id="full_billing_site">Full Billing  Site</h3>
+<div class="level3">
+
+<p>
+Advanced billing managers may also retrieve documents along with additional information such as usage and cost tables here:
+</p>
+
+<p>
+<a href="https://console.cloud.google.com/billing" class="urlextern" title="https://console.cloud.google.com/billing" rel="ugc nofollow">https://console.cloud.google.com/billing</a>
+</p>
+
+<p>
+Choose the appropriate organization  (typically <strong>ics.uci.edu</strong>) and then choose your project.   ICS computing support uses “Computing Support Billing Account.”   Chen LI uses “chenli-research” and Ramesh Jain uses “Ramesh Jain Billing Account”.
+</p>
+
+<p>
+After choosing your project, statements will be available on the left hand menu under “Documents”.  Receipts are available on the left hand menu under “Transactions&#039;&#039;.
+</p>
+
+<p>
+Send mail to helpdesk@ics.uci.edu if you feel you need access or are having trouble identifying which project to use.
+</p>
+
+</div>
+
+<h2 class="sectionedit17" id="google_resources">Google Resources</h2>
+<div class="level2">
+
+</div>
+
+<h4 id="examples_of_research_use_cases">Examples of Research Use Cases</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> <a href="http://journals.ametsoc.org/doi/full/10.1175/WAF-D-16-0075.1" class="urlextern" title="http://journals.ametsoc.org/doi/full/10.1175/WAF-D-16-0075.1" rel="ugc nofollow">Viability of Cloud Computing for Real-Time Numerical Weather Prediction</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://cloudplatform.googleblog.com/2016/11/Google-Cloud-HEPCloud-and-probing-the-nature-of-Nature.html" class="urlextern" title="https://cloudplatform.googleblog.com/2016/11/Google-Cloud-HEPCloud-and-probing-the-nature-of-Nature.html" rel="ugc nofollow">CERN Collaboration</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.zika-model.org/" class="urlextern" title="http://www.zika-model.org/" rel="ugc nofollow">Zika Modeling powered by Google Compute Engine (GCE)</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit18" id="removing_outdated_page_from_google_search">Removing outdated page from Google Search</h2>
+<div class="level2">
+
+<p>
+If there is a page that is outdated, you can request Google to update the search result for the page:
+</p>
+
+<p>
+<a href="https://search.google.com/search-console/remove-outdated-content" class="urlextern" title="https://search.google.com/search-console/remove-outdated-content" rel="ugc nofollow">https://search.google.com/search-console/remove-outdated-content</a>
+</p>
+
+</div>
+
+<h2 class="sectionedit19" id="troubleshooting">Troubleshooting</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit20" id="adding_an_app_to_a_project">Adding an APP to a Project</h3>
+<div class="level3">
+
+<p>
+<strong>Q.  Missing Required Permission</strong>
+</p>
+
+<p>
+User received message that they lacked required permission consumerprocurement.orders.place on their billing account.
+</p>
+
+<p>
+<strong>Fix</strong>
+</p>
+
+<p>
+Assign consumerprocurement.orders.place to the billing account:<a href="https://cloud.google.com/marketplace/docs/access-control#billing-account" class="urlextern" title="https://cloud.google.com/marketplace/docs/access-control#billing-account" rel="ugc nofollow">https://cloud.google.com/marketplace/docs/access-control#billing-account</a>
+</p>
+
+<p>
+Use the glcoud command
+</p>
+<pre class="code">gcloud beta billing accounts  get-iam-policy 0116C6-256853-AD1005</pre>
+
+<p>
+Push the new roles up:
+</p>
+<pre class="code">gcloud beta billing accounts  set-iam-policy 0116C6-256853-AD1005  roles.yaml</pre>
+
+<p>
+roles.yaml:
+</p>
+<pre class="code">bindings:
+- members:
+  - user:dutran@ics.uci.edu
+  - user:hans@ics.uci.edu
+  - user:juliojr@ics.uci.edu
+  - user:luciad@ics.uci.edu
+  - user:mlcarril@ics.uci.edu
+  - user:vipada@ics.uci.edu
+  - user:wdcohen@ics.uci.edu
+  role: roles/billing.admin
+- members:
+  - user:janet@ics.uci.edu
+  - user:juliojr@ics.uci.edu
+  role: roles/billing.viewer
+- members:
+  - user:rostami1@ics.uci.edu
+  role: roles/consumerprocurement.orderAdmin
+etag: BwXIMgb1514=
+version: 1</pre>
+
+</div><div style="clear:both"></div></div></article></div><nav id="dw__pagetools" class="hidden-print dw__pagetools"><ul class="tools"><li class="source"><a href="/doku.php/virtual_environments:google_cloud?do=edit" class="source" title="Show pagesource [v]" accesskey="v"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></div><span class="a11y">Show pagesource</span></a></li><li class="revs"><a href="/doku.php/virtual_environments:google_cloud?do=revisions" class="revs" title="Old revisions [o]" accesskey="o"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></div><span class="a11y">Old revisions</span></a></li><li class="backlink"><a href="/doku.php/virtual_environments:google_cloud?do=backlink" class="backlink" title="Backlinks"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></div><span class="a11y">Backlinks</span></a></li><li class="top"><a href="#dokuwiki__top" class="top" title="Back to top [t]" accesskey="t"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></div><span class="a11y">Back to top</span></a></li></ul></nav></div></main><div class="mikio-page-fill"><div class="mikio-content" style="padding:0"></div></div><footer class="mikio-footer"><div class="doc"><bdi>virtual_environments/google_cloud.txt</bdi> · Last modified: 2025/09/10 14:23</div><div class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license"><img src="/lib/images/license/badge/cc-by-nc-sa.png" alt="CC Attribution-Noncommercial-Share Alike 4.0 International" /></a> Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license" class="urlextern">CC Attribution-Noncommercial-Share Alike 4.0 International</a></bdi></div></footer>    <div class="no"><img src="/lib/exe/taskrunner.php?id=virtual_environments%3Agoogle_cloud&amp;1760921742" width="2" height="1" alt="" /></div>
+</div>
+</body>
+</html>

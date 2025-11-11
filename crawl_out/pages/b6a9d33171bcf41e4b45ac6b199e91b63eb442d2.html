@@ -1,0 +1,64 @@
+<!-- URL: http://seal.ics.uci.edu/projects/GenA11y/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83301040-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<head>
+<title>SEAL - GenA11y</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Reply-to" content="malek at uci dot edu">
+<meta http-equiv="Owner" content="Sam Malek">
+<meta name="Author" content="Sam Malek">
+<meta name="Generator" content="Emacs">
+<link rev="MADE" href="mailto:malek at uci dot edu">
+<link href="../../seal.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="wrapper">
+    
+<!-- *************** Beginning of content ****************** -->
+
+<h2>Enhancing Web Accessibility: Automated Detection of Issues with Generative AI</h2>
+
+<p>
+  Websites are integral to people's daily lives, with billions in use today. However, due to limited awareness of accessibility and its guidelines, developers often releaseweb apps that are inaccessible to people with disabilities, who make up around 16% of the global population. To ensure a baseline of accessibility, software engineers rely on automated checkers that assess a webpage's compliance based on predefined rules. Unfortunately, these tools typically cover only a small subset of accessibility guidelines and often overlook violations that require a semantic understanding of the webpage. The advent of generative AI, known for its ability to comprehend textual and visual content, has created new possibilities for detecting accessibility violations. We began by studying the most widely used guideline, WCAG, to determine the testable success criteria that generative AI could address. This led to the development of an automated tool called GenA11y, which extracts elements from a page related to each success criterion and inputs them into an LLM prompted to detect accessibility issues on the web. Evaluations of GenA11y showed its effectiveness, with a precision of 94.5% and a recall of 87.61%. Additionally, when tested on real websites, GenA11y identified an average of eight more types of accessibility violations than the combination of existing tools.
+</p>
+
+<img style="margin:10" ALT="The approach overview of GenA11y. GenA11y consists of two phases: (1) extracting related elements of each success criterion from a webpage and (2) prompting an LLM to detect accessibility issues." height="250" src=./method.png><br>
+
+<h3>Artifacts</h3>
+
+<p>
+The artifacts are publicly available <a href="https://github.com/seal-hub/GenA11y">here</a>.
+
+<h3>Publications</h3>
+
+More details about can be found in our publication below:
+<br>
+<ul class="paperlist">
+    <li><b>Enhancing Web Accessibility: Automated Detection of Issues with Generative AI</b><br> 
+      Ziyao He, Syed Fatiul Huq, and Sam Malek<br>
+    <i>Proceedings of the ACM on Software Engineering, Volume 2, Issue FSE 2025.</i>
+    <br>[<a href="./a11ydev.pdf">PDF</a>]
+    </li> 
+</ul>
+
+<!-- ***************** End of content ****************** -->
+<br><br>
+<div style="float:left">
+            <a href="http://www.ics.uci.edu/~seal/"><img ALT="[seal's logo]" height="200" src=../../seal.png></a>
+</div>
+<div style="float:right">
+            <a href="http://www.ics.uci.edu"><img ALT="[uci's logo]" style="padding-top: 40px" height="100" src=../../uci.jpg></a>
+</div>
+</div>
+</body>

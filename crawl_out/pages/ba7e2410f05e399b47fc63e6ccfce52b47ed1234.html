@@ -1,0 +1,436 @@
+<!-- URL: https://www.ics.uci.edu/~emilyo/alien-mastermind -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Alien Mastermind</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&family=Ubuntu&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/fd87467771.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row goal-row">
+      <img class="goal img-fluid" id="goal-0">
+      <img class="goal img-fluid" id="goal-1">
+      <img class="goal img-fluid" id="goal-2">
+      <img class="goal img-fluid" id="goal-3">
+    </div>
+
+  </div>
+  </div>
+
+  <div class="container">
+
+    <div class="col-container">
+      <div class="col-xs-4 col-md-3">
+        <div class="row rocket-grid">
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket0-0">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket0-1">
+            </div>
+          </div>
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket0-2">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket0-3">
+            </div>
+          </div>
+          <img class="img-responsive x" id="x-0">
+        </div>
+        <div class="row rocket-grid">
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket1-0">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket1-1">
+            </div>
+          </div>
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket1-2">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket1-3">
+            </div>
+          </div>
+          <img class="img-responsive x" id="x-1">
+        </div>
+        <div class="row rocket-grid">
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket2-0">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket2-1">
+            </div>
+          </div>
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket2-2">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket2-3">
+            </div>
+          </div>
+          <img class="img-responsive x" id="x-2">
+        </div>
+        <div class="row rocket-grid">
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket3-0">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket3-1">
+            </div>
+          </div>
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket3-2">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket3-3">
+            </div>
+          </div>
+          <img class="img-responsive x" id="x-3">
+        </div>
+        <div class="row rocket-grid">
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket4-0">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket4-1">
+            </div>
+          </div>
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket4-2">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket4-3">
+            </div>
+          </div>
+          <img class="img-responsive x" id="x-4">
+        </div>
+        <div class="row rocket-grid">
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket5-0">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket5-1">
+            </div>
+          </div>
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket5-2">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket5-3">
+            </div>
+          </div>
+          <img class="img-responsive x" id="x-5">
+        </div>
+        <div class="row rocket-grid">
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket6-0">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket6-1">
+            </div>
+          </div>
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket6-2">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket6-3">
+            </div>
+          </div>
+          <img class="img-responsive x" id="x-6">
+        </div>
+        <div class="row rocket-grid">
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket7-0">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket7-1">
+            </div>
+          </div>
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket7-2">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket7-3">
+            </div>
+          </div>
+          <img class="img-responsive x" id="x-7">
+        </div>
+        <div class="row rocket-grid">
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket8-0">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket8-1">
+            </div>
+          </div>
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket8-2">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket8-3">
+            </div>
+          </div>
+          <img class="img-responsive x" id="x-8">
+        </div>
+        <div class="row rocket-grid">
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket9-0">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket9-1">
+            </div>
+          </div>
+          <div class="row rocket-row">
+            <div class="rocket">
+              <img class="rocket-img" id="rocket9-2">
+            </div>
+            <div class="rocket">
+              <img class="rocket-img" id="rocket9-3">
+            </div>
+          </div>
+          <img class="img-responsive x" id="x-9">
+        </div>
+      </div>
+
+      <div class="col-xs-7 col-md-6">
+        <div class="row peg-row">
+          <div class="peg">
+            <img class="peg-img" id="peg0-0">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg0-1">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg0-2">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg0-3">
+          </div>
+        </div>
+        <div class="row peg-row">
+          <div class="peg">
+            <img class="peg-img" id="peg1-0">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg1-1">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg1-2">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg1-3">
+          </div>
+        </div>
+        <div class="row peg-row">
+          <div class="peg">
+            <img class="peg-img" id="peg2-0">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg2-1">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg2-2">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg2-3">
+          </div>
+        </div>
+        <div class="row peg-row">
+          <div class="peg">
+            <img class="peg-img" id="peg3-0">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg3-1">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg3-2">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg3-3">
+          </div>
+        </div>
+        <div class="row peg-row">
+          <div class="peg">
+            <img class="peg-img" id="peg4-0">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg4-1">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg4-2">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg4-3">
+          </div>
+        </div>
+        <div class="row peg-row">
+          <div class="peg">
+            <img class="peg-img" id="peg5-0">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg5-1">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg5-2">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg5-3">
+          </div>
+        </div>
+        <div class="row peg-row">
+          <div class="peg">
+            <img class="peg-img" id="peg6-0">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg6-1">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg6-2">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg6-3">
+          </div>
+        </div>
+        <div class="row peg-row">
+          <div class="peg">
+            <img class="peg-img" id="peg7-0">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg7-1">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg7-2">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg7-3">
+          </div>
+        </div>
+        <div class="row peg-row">
+          <div class="peg">
+            <img class="peg-img" id="peg8-0">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg8-1">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg8-2">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg8-3">
+          </div>
+        </div>
+        <div class="row peg-row">
+          <div class="peg">
+            <img class="peg-img" id="peg9-0">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg9-1">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg9-2">
+          </div>
+          <div class="peg">
+            <img class="peg-img" id="peg9-3">
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons-col col-xs-1 col-md-3">
+        <div class="color-buttons">
+          <!-- Color buttons get added here -->
+        </div>
+
+        <div class="row"></div>
+
+        <div class="row">
+          <button type="button" class="btn btn-non-color btn-outline-primary" id="btn-submit">Submit</button>
+          <button type="button" class="btn btn-non-color btn-outline-primary" id="btn-clear" title="Clear your current guess">Clear</button>
+        </div>
+
+        <div class="row"></div>
+
+        <div class="row">
+          <div class="dropdown show">
+            <a class="btn btn-non-color btn-outline-primary dropdown-toggle" title="Change level" href="#" role="button" id="level-dropdown"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Level:
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#level1">1</a>
+              <a class="dropdown-item" href="#level2">2</a>
+              <a class="dropdown-item" href="#level3">3</a>
+              <a class="dropdown-item" href="#level4">4</a>
+              <a class="dropdown-item" href="#level5">5</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <button type="button" class="btn btn-non-color btn-outline-primary" id="btn-new-game" title="Start a new game">New Game</button>
+          <button type="button" class="btn btn-non-color btn-outline-primary"
+            id="btn-instructions" title="See game instructions">Instructions</button>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="game.js" charset="utf-8"></script>
+</body>
+
+<footer>
+  <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>
+    from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</footer>
+
+</html>

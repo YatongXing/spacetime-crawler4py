@@ -1,0 +1,987 @@
+<!-- URL: https://www.ics.uci.edu/~dechter/courses/ics-295cr/2021-22_Q2_Winter -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Dr. Rina Dechter @ UCI
+		</title>
+		<link href="../../../basic.css" rel="stylesheet">
+	</head>
+	<body alink="#00AAAA" bgcolor="#FFFFFF" link="#008080" vlink="#008080">
+		<center>
+   <table width="95%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+         <td class="title" valign="bottom">
+            <nobr>Dr. Rina Dechter - University of California at Irvine</nobr>
+         </td>
+         <td><img alt="ZOT!" align="right" valign="bottom" src="/~dechter/images/anteater-ics.gif"></td>
+      </tr>
+      <!--
+	  <tr>
+         <td colspan="2"><img height="2" src="/~dechter/images/transp-fill.gif"></td>
+      </tr>
+	  -->
+	  <!--
+      <tr>
+         <td colspan="2"><img width="100%" height="2"  src="/~dechter/images/black-fill.gif"></td>
+      </tr>
+	  -->
+      <tr valign=top>
+         <td>
+		    <!--<font color="ffaa00" size="3">-->
+		    <a href="/~dechter/index.html">home</a> |
+            <a href="/~dechter/publications.html">publications</a> |
+            <a href="/~dechter/books/">book</a> |
+            <a href="/~dechter/courses.html">courses</a> |
+            <a href="/~dechter/research.html">research</a>
+			<!--</font>-->
+         </td>
+         <td align=right>
+            <!--<font color=#008080>-->
+               Revised on
+               
+               Mar. 09, 2022
+            </font>
+         </td>
+      </tr>
+   </table>
+</center>
+		<br>
+		<br>
+		<center>
+			<br>
+<table width="90%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+  <td  colspan=2><img height="4" src="/~dechter/images/transp-fill.gif"></td>
+</tr>
+
+<tr>
+<td class=title>CS 295 - Winter 2021-22, Causal Reasoning</td>
+</tr>
+
+<tr>
+  <td colspan=2><img width="100%" height="2"  src="/~dechter/images/black-fill.gif"></td>
+</tr>
+
+<tr>
+<td align=right>
+  <font color="#ffaa00">| <a href="index.shtml">main</a> |
+  <!-- <a href="project.shtml">project</a> | -->
+  					<!-- <a href="software.html">software</a> | -->
+ 					<!-- <a href="handouts.html">handouts</a> | -->
+ 					<!-- <a href="readings.html">references</a> ] -->
+</td>
+</tr>
+</table>
+
+			<table border="0" cellpadding="0" cellspacing="0" width="90%">
+				<tbody>
+					<tr>
+						<td colspan="2">
+								<strong><em>Instructor:</em></strong> Rina Dechter <br>
+								<strong><em>Days,Time:</em></strong> M/W, 11:00 am - 12:20 pm (PT) <br>
+								<strong><em>Classoom:</em></strong> <a href="https://classrooms.uci.edu/classrooms/dbh/dbh-1422/"> DBH 1422 </a> <br>
+								<strong><em>Zoom:</em></strong> <a href="https://uci.zoom.us/j/94278071276"> https://uci.zoom.us/j/94278071276 </a> <br>
+								<!--
+								<strong><em>Classoom:</em></strong> Zoom Meeting ID: 92451965137 - <a target="_blank" rel="noopener noreferrer" href="https://uci.zoom.us/j/92451965137">https://uci.zoom.us/j/92451965137</a><br>
+								-->
+								<strong><em>Office hours:</em></strong> Upon Request <br>
+								<!--<strong><em>Exam:</em></strong> TBD (tentatively, Wed, 06/09-2021, 8:00 am - 10:00 am (PT)) <br>-->
+							<p></p>
+							
+							
+							
+							<hr noshade="noshade">
+							<p></p>
+							<div class="section">
+								Course Description
+							</div>
+							<div class="justify" style="">
+								This course will cover topics in Causal Inference.  The course will run as a seminar 
+								where I will give lectures in the first half of the course and then students 
+								will be required to read and present papers based on chapters in books to the class
+								for the second half. 
+								There will be a course project which can be based on these selected papers and also  
+								several homework assignments. This course is intended for PhD students 
+								in the area of AI and Machine Learning, with 271 and 273 as prerequisite courses.  
+								Additionally, students who took CS 276 will have particularly good preparation for 
+								this course.  If you are a second-year master student that already took 271 and 273,
+								please talk to me to obtain approval.
+							</div>
+							
+							
+							
+							
+						<hr noshade="noshade">
+						<div class="section">
+							Course Topics
+						</div>
+						 &bull; Introduction: Causal Hierarchy <br>
+						 &bull; The Simpson Paradox <br>
+						 &bull; Structural Causal Models <br>
+						 &bull; Identification of Causal Effects <br>
+						 &bull; The Problem of Confounding and the Back-Door Criterion <br>
+						 &bull; Causal Calculus  <br>
+						 &bull; Linear Structural Causal Models  <br>
+						 &bull; Counterfactuals <br>
+						 &bull; Structural Learning <br>
+							 
+							 
+							 
+						<hr noshade="noshade">
+						<div class="section">
+							Textbooks
+						</div>
+							[P] Judea Pearl, Madelyn Glymour, Nicholas P. Jewell,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a target="_blank" rel="noopener noreferrer" href="http://bayes.cs.ucla.edu/PRIMER/">Causal Inference in Statistics: A Primer</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	Cambridge Pess, 2016. <br>
+							[C] Judea Pearl,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a target="_blank" rel="noopener noreferrer" href="http://bayes.cs.ucla.edu/BOOK-2K/">Causality: Models, Reasoning, and Inference</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	Cambridge Press, 2009. <br>
+							[W] Judea Pearl, Dana Mackenzie,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a target="_blank" rel="noopener noreferrer" href="http://bayes.cs.ucla.edu/WHY/">The Book of Why</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	Basic books, 2018. <br>
+							[PCH] E. Bareinboim, J. Correa, D. Ibeling, T. Icard,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a target="_blank" rel="noopener noreferrer" href="https://causalai.net/r60.pdf">On Pearl's Hierarchy and the Foundations of Causal Inference</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	Columbia University, 2020. (To appear in: <em>Probabilistic and Causal Inference: The Works of Judea Pearl</em>, ACM Turing Series). <br>
+							[Darwiche] Adnan Darwiche,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a target="_blank" rel="noopener noreferrer" href="http://www.amazon.com/dp/0521884381/">Modeling and Reasoning with Bayesian Networks</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	Cambridge Press, 2009. <br>
+							
+
+						<!--
+							</p>
+							<p></p>
+							<hr noshade="noshade">
+							<div class="section">
+								<a id="resources" name="resources"></a>Grading Policy
+							</div>
+							<div style="">
+								Homeworks and projects (80%), exam(s) (20%).
+							</div>
+						-->
+<!--						
+							<p></p>
+							<hr noshade="noshade">
+							<div class="section">
+								Assignments:
+							</div>
+							<div style="">
+								There will be weekly homework-assignments and a course project.
+							</div>
+-->							
+							
+							<p></p>
+							<hr noshade="noshade">
+							<div class="section">
+								Course Project: TBD
+							</div>
+							
+							<div style="">
+								<em>(You will need to be logged into Google with you UCI account to access.)</em><br>
+								<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1skDdwj39bmdLrpwLIsa5CDf_b0NHbKhh/edit?usp=sharing&ouid=106113509570845388715&rtpof=true&sd=true">Project Information</a> <br>
+								<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/spreadsheets/d/1Su28NK4jcc0Ri7v7dkDEx22MS7Jy7G7aP0OK97STgCE/edit?usp=sharing">Project Sign-Up Sheet</a> <br>
+							</div>
+
+							
+							
+							<p></p>
+							<hr noshade="noshade">
+							<div class="section">
+								Syllabus:
+							</div>
+								<table border="1" cellpadding="3" cellspacing="0" style="width: 1200px; height: 1266px;">
+									<tbody>
+									
+									<!-- row -->
+										<tr>
+											<td style="vertical-align: top; width: 50px;">
+												<b>Week</b>
+											</td>
+											<td style="vertical-align: top; width: 125px;">
+												<b>Topic</b>
+											</td>
+											<td style="vertical-align: top; width: 125px;">
+												<span style="font-weight: bold;">Lectures</span><br>
+											</td>
+											<td style="vertical-align: top; width: 125px;">
+												<span style="font-weight: bold;">Slides</span><br>
+											</td>
+											<td style="vertical-align: top; width: 125px;">
+												<span style="font-weight: bold;">Homework</span><br>
+											</td>
+											<td style="vertical-align: top; width: 125px;">
+												<span style="font-weight: bold;">Reading</span><br>
+											</td>
+											<td align="right" valign="top" width="115px">
+												<b>Date&nbsp;&nbsp;</b>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										
+									<!-- row -->
+										<tr>
+											<!-- week -->
+												<td valign="top">
+													<nobr>Week 1</nobr>
+												</td>
+											<!-- topic -->
+												<td>
+													<ul>
+														<li>
+															<font color="#990000"> Introduction: Pearl's Causal Hierarchy <br></font>
+														</li>
+														<li>
+															<font color="#990000"> Simpson Paradox, Causal Hierarchy, Defining Structural Causal Models <br></font>
+														</li>
+													</ul>
+												</td>
+											<!-- lectures -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/_nmtyEhPOv4">Lec 1</a><br>
+													<br><br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/Ncx9RX-WAzk">Lec 2</a><br>
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=230PsGBxkCo&list=PLxn-kpJHbPx2xsLWXrRuZLFc9RxLhP42s">ISAIM Interview of Judea Pearl</a><br>
+												</td>
+											<!-- slides -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/class1-W22.pdf">Slides 1</a><br>
+												</td>
+											<!-- homework -->
+												<td style="vertical-align: top; width: 110px;"></td>
+											<!-- reading -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													[W] Ch. 1 <br>
+													<br>
+													[P] Ch. 1 <br>
+													<br>
+													[PCH] Sec 1.1
+												</td>
+											<!-- dates -->
+												<td align="right" valign="top">
+													<br>
+													M 01/03<br>
+													<em><b> <a href="https://uci.zoom.us/j/94278071276">virtual (class zoom)</a> </b></em> <br>
+													<br>
+													W 01/05<br>
+													<em><b style="color:red;">11:00-11:30AM (PT)</b></em> <br>
+													<em><b> <a href="https://uci.zoom.us/j/94278071276">virtual (class zoom)</a> </b></em> <br>
+													<em><b style="color:red;">11:30AM (PT)</b></em> <br>
+													<em><b> <a href="https://oklahoma.zoom.us/j/93759367674?pwd=dTBTc0YzZGFyU3VrUllpRGtWbVVodz09">Zoom: Live ISAIM Interview of Judea Pearl</a> </b></em> <br>
+													<br>
+												</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										
+									<!-- row -->
+										<tr>
+											<!-- week -->
+												<td valign="top">
+													<nobr>Week 2</nobr>
+												</td>
+											<!-- topic -->
+												<td>
+													<ul>
+														<li>
+															<font color="#990000"> Structural Causal Models, d-Separation <br></font>
+														</li>
+														<li>
+															<font color="#990000"> Identification of Causal Effects <br></font>
+														</li>
+													</ul>
+												</td>
+											<!-- lectures -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/TtbpP0fdNAg">Lec 3</a><br>
+													<br><br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/ivwcNc2AtD4">Lec 4</a><br>
+												</td>
+											<!-- slides -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/class2-W22.pdf">Slides 2</a><br>
+													<!--
+													<a target="_blank" rel="noopener noreferrer" href="slides/CS295-class3-2021.pdf">Slides 3</a><br>
+													-->
+												</td>
+											<!-- homework -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="hw/hw-1.pdf">HW 1</a><br>
+												</td>
+											<!-- reading -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													[P] Ch. 2 <br>
+													<br>
+													[PCH] Sec 1.2 <br>
+													<br>
+													[Darwiche]: Ch. 4
+												</td>
+											<!-- dates -->
+												<td align="right" valign="top">
+													<br>
+													M 01/10<br>
+													<em><b> <a href="https://uci.zoom.us/j/94278071276">virtual (class zoom)</a> </b></em> <br>
+													<br>
+													W 01/12<br>
+													<em><b> <a href="https://uci.zoom.us/j/94278071276">virtual (class zoom)</a> </b></em> <br>
+													<br>
+												</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										
+									<!-- row -->
+										<tr>
+											<!-- week -->
+												<td valign="top">
+													<nobr>Week 3</nobr>
+												</td>
+											<!-- topic -->
+												<td>
+													<ul>
+														<li>
+															<font color="#990000"> Identification of Causal Effects <br></font>
+														</li>
+														<li>
+															<font color="#990000"> The Back-Door Criterion <br></font>
+														</li>
+													</ul>
+												</td>
+											<!-- lectures -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/UIXgScyIN2s">Lec 5</a><br>
+													<!--
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/jYaM5YckXU0">Lec 8</a><br>
+													<a target="_blank" rel="noopener noreferrer" href="">Lec 9</a><br>
+													-->
+												</td>
+											<!-- slides -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/class3-W22.pdf">Slides 3</a><br>
+													<!--
+													<a target="_blank" rel="noopener noreferrer" href="slides/CS295-class5-2021.pdf">Slides 5</a><br>
+													-->
+												</td>
+											<!-- homework -->
+												<td style="vertical-align: top; width: 110px;"></td>
+											<!-- reading -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													[P] Ch. 3 <br>
+													<br>
+													[C] Sec 1.3,
+													<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+													3.1-3.3
+												</td>
+											<!-- dates -->
+												<td align="right" valign="top">
+													<br>
+													M 01/17<br>
+													<em><b style="color:red;">[holiday]</b></em> <br>
+													<br>
+													W 01/19<br>
+													<em><b> <a href="https://uci.zoom.us/j/94278071276">virtual (class zoom)</a> </b></em> <br>
+													<br>
+												</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										
+									<!-- row -->
+										<tr>
+											<!-- week -->
+												<td valign="top">
+													<nobr>Week 4</nobr>
+												</td>
+											<!-- topic -->
+												<td>
+													<ul>
+														<li>
+															<font color="#990000"> The Front-Door Criterion <br></font>
+														</li>
+														<li>
+															<font color="#990000"> The DO Calculus <br></font>
+														</li>
+													</ul>
+												</td>
+											<!-- lectures -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/zYRYBtITqQ4">Lec 6</a><br>
+													<br><br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/Yw54d-nb0vY">Lec 7</a><br>
+													<!--
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/plFvJAquuAY">Lec 11</a><br>
+													-->
+												</td>
+											<!-- slides -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/class4-w22.pdf">Slides 4</a><br>
+												</td>
+											<!-- homework -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="hw/hw-2.pdf">HW 2</a><br>
+												</td>
+											<!-- reading -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													[C] Ch. 3.4-3.5 <br>
+													<br>
+													[P] Ch. 3 <br>
+													<br>
+													Biometrika 1995
+												</td>
+											<!-- dates -->
+												<td align="right" valign="top">
+													<br>
+													M 01/24<br>
+													<em><b> <a href="https://uci.zoom.us/j/94278071276">virtual (class zoom)</a> </b></em> <br>
+													W 01/26<br>
+													<em><b> <a href="https://uci.zoom.us/j/94278071276">virtual (class zoom)</a> </b></em> <br>
+													<br>
+												</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										
+									<!-- row -->
+										<tr>
+											<!-- week -->
+												<td valign="top">
+													<nobr>Week 5</nobr>
+												</td>
+											<!-- topic -->
+												<td>
+													<ul>
+														<li>
+															<font color="#990000"> Linear Structural Causal Models <br></font>
+														</li>
+													</ul>
+												</td>
+											<!-- lectures -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/F_UkXIj7sUE">Lec 8</a><br>
+													<br><br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/vM9-WMR88bg">Lec 9</a><br>
+													<!--
+													<a target="_blank" rel="noopener noreferrer" href="">Lec 14</a><br>
+													-->
+												</td>
+											<!-- slides -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/class5-linear-W22.pdf">Slides 5</a><br>
+													<br><br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/class5b-bucket-elimination-W22.pdf">Slides 5b</a><br>
+												</td>
+											<!-- homework -->
+												<td style="vertical-align: top; width: 110px;"></td>
+											<!-- reading -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													[P] Ch. 3.8 <br>
+													<br>
+													[C] Ch. 5 <br>
+												</td>
+											<!-- dates -->
+												<td align="right" valign="top">
+													<br>
+													M 01/31<br>
+													<em><b> <font color="blue">in-person</font> </b></em> <br>
+													<br>
+													W 02/02<br>
+													<em><b> <font color="blue">in-person</font> </b></em> <br>
+													<br>
+												</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										
+									<!-- row -->
+										<tr>
+											<!-- week -->
+												<td valign="top">
+													<nobr>Week 6</nobr>
+												</td>
+											<!-- topic -->
+												<td>
+													<ul>
+														<li>
+															<font color="#990000"> Counterfactuals <br></font>
+														</li>
+													</ul>
+												</td>
+											<!-- lectures -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/xQ1Xe249wY4">Lec 10</a><br>
+													<br><br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/v7YmhR-LgHM">Lec 11</a><br>
+												</td>
+											<!-- slides -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/class6-W22.pdf">Slides 6</a><br>
+												</td>
+											<!-- homework -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="hw/hw-3.pdf">HW 3</a><br>
+												</td>
+											<!-- reading -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													[P] Ch. 4 <br>
+													<br>
+													[C] Ch. 7 <br>
+												</td>
+											<!-- dates -->
+												<td align="right" valign="top">
+													<br>
+													M 02/07<br>
+													<em><b> <font color="blue">in-person</font> </b></em> <br>
+													<br>
+													W 02/09<br>
+													<em><b> <font color="blue">in-person</font> </b></em> <br>
+													<br>
+												</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										
+									<!-- row -->
+										<tr>
+											<!-- week -->
+												<td valign="top">
+													<nobr>Week 7</nobr>
+												</td>
+											<!-- topic -->
+												<td>
+													<ul>
+														<li>
+															<font color="#990000"> Algorithmic Approach for Identification <br></font>
+														</li>
+														<li>
+															<font color="#990000"> P1: Causal Discovery <br></font>
+														</li>
+													</ul>
+												</td>
+											<!-- lectures -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/HBWxm9tlWW0">Lec 12</a><br>
+													<br> <br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/baVN3zoXAOk">Lec P1 (Ofek Gila)</a><br>
+													<!--
+													<a target="_blank" rel="noopener noreferrer" href="https://mit.zoom.us/j/95424351092?pwd=Y2NycTFTcFhMVmZKM2puUzR0dTY2QT09">Thesis Def. Zoom</a><br>
+													-->
+												</td>
+											<!-- slides -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/class7-w22.pdf">Slides 7</a><br>
+													<br> <br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/classP1a-w22.pdf">Slides P1(a)</a><br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/classP1b-w22.pdf">Slides P1(b)</a><br>
+												</td>
+											<!-- homework -->
+												<td style="vertical-align: top; width: 110px;">
+													<!--
+													<a target="_blank" rel="noopener noreferrer" href="hw/hw-3.pdf">HW 3</a><br>
+													-->
+												</td>
+											<!-- reading -->
+												<td style="vertical-align: top; width: 110px;">
+=													<br>
+													<a target="_blank" rel="noopener noreferrer" href="reading/Theory_of_Inferred_Causation_R156.pdf">Theory of Inferred Causation</a><br>
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="reading/Causation_Prediction_and_Search.pdf">Causation, Prediction, and Search</a><br><em>(Ch. 5)</em)
+												</td>
+											<!-- dates -->
+												<td align="right" valign="top">
+													<br>
+													M 02/14<br>
+													<em><b> <font color="blue">in-person</font> </b></em> <br>
+													<br>
+													W 02/16<br>
+													<em><b> <font color="blue">in-person</font> </b></em> <br>
+													<br>
+												</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										
+									<!-- row -->
+										<tr>
+											<!-- week -->
+												<td valign="top">
+													<nobr>Week 8</nobr>
+												</td>
+											<!-- topic -->
+												<td>
+													<ul>
+														<li>
+															<font color="#990000"> P2: Learning Causal Effects via Weighted Empirical Risk Minimization <br></font>
+														</li>
+													</ul>
+												<!--
+													<ul>
+														<li>
+															<font color="#990000"> Detecting Latent Heterogeneity <br></font>
+														</li>
+														<li>
+															<font color="#990000"> Algorithmic Approach to Identification <br></font>
+														</li>
+													</ul>
+												-->
+												</td>
+											<!-- lectures -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/fey1wzk7Dyo">Lec P2</a><br>
+													<!--
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/EHcGi5alHm0">Lec 17</a><br>
+													-->
+												</td>
+											<!-- slides -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/classP2-w22-ShakilJiwa-Learning_Causal_Effects_via_Weighted_Empirical_Risk_Minimization.pdf">Slides P2</a><br>
+													<!--
+													<a target="_blank" rel="noopener noreferrer" href="slides/CS295-class8-algorithmic approach for identification.pdf">Slides 8</a><br>
+													-->
+												</td>
+											<!-- homework -->
+												<td style="vertical-align: top; width: 110px;"></td>
+											<!-- reading -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="reading/NeurIPS-2020-learning-causal-effects-via-weighted-empirical-risk-minimization-Paper.pdf">Learning Causal Effects via Weighted Empirical Risk Minimization</a><br>
+												<!--
+												-->
+												</td>
+											<!-- dates -->
+												<td align="right" valign="top">
+													<br>
+													M 02/21<br>
+													<em><b style="color:red;">[holiday]</b></em> <br>
+													<br>
+													W 02/23<br>
+													<em><b> <font color="blue">in-person</font> </b></em> <br>
+													<br>
+												</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										
+									<!-- row -->
+										<tr>
+											<!-- week -->
+												<td valign="top">
+													<nobr>Week 9</nobr>
+												</td>
+											<!-- topic -->
+												<td>
+													<ul>
+														<li>
+															<font color="#990000"> P3: Probabilistic Evaluation of Counterfactual Queries <br></font>
+														</li>
+														<li>
+															<font color="#990000"> P4: Estimating Causal Effects Using Weighting-Based Estimators <br></font>
+														</li>
+														<li>
+															<font color="#990000"> P5: Equivalence and Synthesis of Causal Models <br></font>
+														</li>
+														<li>
+															<font color="#990000"> P6: Probabilities of Causation - Three Counterfactual Interpretations and Their Identification <br></font>
+														</li>
+													</ul>
+												</td>
+											<!-- lectures -->
+												<td style="vertical-align: top; width: 110px;">
+													<br><br><br><br><br><br><br><br><br><br><br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/TGO-hlTo6do">Lec P5</a><br>
+													<br><br><br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/VQgvaBlvJ4s">Lec P6</a><br>
+												</td>
+											<!-- slides -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/classP3-w22-KoheiTsujio-Probabilistic_Evaluation_of_Counterfactual_Queries.pdf">Slides P3</a><br>
+													<br><br><br><br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/classP4-w22-AlexanderShmakov-Estimating_Causal_Effects_Using_Weighting-Based_Estimators.pdf">Slides P4</a><br>
+													<br><br><br><br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/classP5-w22-YangLe-Equivalence_and_Synthesis_of_Causal_Models.pdf">Slides P5</a><br>
+													<br><br><br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/classP6-w22-EdgarRobles-Probabilities_of_Causation.pdf">Slides P6</a><br>
+												</td>
+											<!-- homework -->
+												<td style="vertical-align: top; width: 110px;"></td>
+											<!-- reading -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="reading/Probabilistic Evaluation of Counterfactual Queries.pdf">Probabilistic Evaluation of Counterfactual Queries</a><br><br>
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="reading/Estimating Causal Effects Using Weighting-Based Estimators.pdf">Estimating Causal Effects Using Weighting-Based Estimators</a><br>
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="reading/Equivalence and Synthesis of Causal Models.pdf">Equivalence and Synthesis of Causal Models</a><br>
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="reading/Probabilities of Causation - Three Counterfactual Interpretations and Their Identification.pdf">Probabilities of Causation - Three Counterfactual Interpretations and Their Identification</a><br><br>
+												</td>
+											<!-- dates -->
+												<td align="right" valign="top">
+													<br>
+													M 02/28<br>
+													<em><b> <font color="blue">in-person</font> </b></em> <br>
+													<br><br><br><br><br><br><br><br>
+													W 03/02<br>
+													<em><b> <font color="blue">in-person</font> </b></em> <br>
+													<br>
+												</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										
+									<!-- row -->
+										<tr>
+											<!-- week -->
+												<td valign="top">
+													<nobr>Week 10</nobr>
+												</td>
+											<!-- topic -->
+												<td>
+													<ul>
+														<li>
+															<font color="#990000"> P7: Estimating Identifiable Causal Effects through Double Machine Learning <br></font>
+														</li>
+														<li>
+															<font color="#990000"> P8: Causal Inference Using Tractable Circuits <br></font>
+														</li>
+													</ul>
+												</td>
+											<!-- lectures -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/Xa4AiY116oA">Lec P7</a><br>
+													<br><br><br><br>
+													<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/UoVxgdDsCTo">Lec P8</a><br>
+												</td>
+											<!-- slides -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="slides/classP7-w22-JiapengZhao-Estimating_Identifiable_Causal_Effects_through_Double_Machine_Learning.pdf">Slides P7</a><br>
+												</td>
+											<!-- homework -->
+												<td style="vertical-align: top; width: 110px;"></td>
+											<!-- reading -->
+												<td style="vertical-align: top; width: 110px;">
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="reading/Estimating Identifiable Causal Effects through Double Machine Learning.pdf">Estimating Identifiable Causal Effects through Double Machine Learning</a><br>
+													<br>
+													<a target="_blank" rel="noopener noreferrer" href="reading/Causal Inference Using Tractable Circuits.pdf">Causal Inference Using Tractable Circuits</a><br>
+													<br>
+												</td>
+											<!-- dates -->
+												<td align="right" valign="top">
+													<br>
+													M 03/07<br>
+													<em><b> <font color="blue">in-person</font> </b></em> <br>
+													<br><br><br>
+													W 03/09<br>
+													<em><b> <font color="blue">in-person</font> </b></em> <br>
+													<br>
+												</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+										
+									<!-- row -->
+										<tr>
+											<!-- week -->
+												<td valign="top">
+													<nobr>Finals Week</nobr>
+												</td>
+											<!-- topic -->
+												<td>
+													<ul>
+														<li>
+															<font color="#990000"> TBD <br></font>
+														</li>
+													</ul>
+												</td>
+											<!-- slides -->
+												<td style="vertical-align: top; width: 110px;"></td>
+											<!-- lectures -->
+												<td style="vertical-align: top; width: 110px;"></td>
+											<!-- homework -->
+												<td style="vertical-align: top; width: 110px;"></td>
+											<!-- reading -->
+												<td style="vertical-align: top; width: 110px;"></td>
+											<!-- dates -->
+												<td align="right" valign="top">
+													F 03/18<br>
+													<br>
+												</td>
+										</tr>
+										<tr>
+											<td colspan="7">
+												<img height="2" src="black-fill.gif" width="100%">
+											</td>
+										</tr>
+																				
+									</tbody>
+								</table>
+							</div>
+							
+						<!-- Additional Resources -->
+						<hr noshade="noshade">
+						<div class="section">
+							Background Reading
+						</div>
+							[DF] Elias Bareinboim and Judea Pearl,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://www.pnas.org/content/113/27/7345">Causal inference and the data-fusion problem</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	PNAS, 2016. <br>
+							Jin Tian,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://ftp.cs.ucla.edu/pub/stat_ser/r309.pdf">Studies in Causal Reasoning and learning</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	University of California, Los Angeles, 2002. <br>
+							Jin Tian and Judea Pearl,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://ftp.cs.ucla.edu/pub/stat_ser/R290-A.pdf">A General Identification Condition for Causal Effects</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	AAAI, 2002. <br>
+							[PCH] E. Bareinboim, J. Correa, D. Ibeling, T. Icard,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://link.springer.com/article/10.1007%2Fs10472-008-9101-x">On the completeness of an identifiability algorithm for semi-Markovian models</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	Annals of Mathematics and Artificial Intelligence, 2008. <br>		
+							Karthika Mohan and Judea Pearl,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://ftp.cs.ucla.edu/pub/stat_ser/r473-reprint.pdf">Graphical Models for Processing Missing Data</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	Journal of the American Statistical Association, 2021. <br>	
+							[BMK] Judea Pearl,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a href="reading/biometrika_1995.pdf">Causal diagrams for empirical research</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	Biometrika, 1995. <br>
+							Daniel Kumor, Carlos Cinelli, Elias Bareinboim,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://causalai.net/r56.pdf">Efficient Identification in Linear Structural Causal Models with Auxiliary Cutsets</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	NeurIPS, 2019. <br>
+							Judea Pearl,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	<a href="https://ftp.cs.ucla.edu/pub/stat_ser/r409-corrected-reprint.pdf">Linear Models: A Useful “Microscope” for Causal Analysis</a>,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;	Journal of Causal Inference, 2013. <br>
+							
+						
+						
+						
+						<!--
+							<hr noshade="noshade">
+							<div class="section">
+								<a id="resources" name="resources"></a>Resources on the Internet
+							</div>
+							<ul>
+								<li>Books
+								</li>
+								<li style="list-style: none; display: inline">
+									<ul>
+										<li>
+											<a target="_blank" rel="noopener noreferrer" href="http://www.amazon.com/Constraint-Programming-Foundations-Artificial-Intelligence/dp/0444527265/ref=sip_rech_dp_7/188-9019290-4812028#reader_0444527265">Francesca Rossi, Peter van
+											Beek, Toby Walsh. Handbook of Constraint Programming. Elsevier Science, 2006</a>
+										</li>
+										<li>
+											<a target="_blank" rel="noopener noreferrer" href="http://www.amazon.com/dp/0262133415/ref=rdr_ext_sb_ti_sims_2">Kimball Marriott, Peter Stuckey. Programming with Constraints: An Introduction. The MIT Press, 1998</a>
+										</li>
+									</ul>
+								</li>
+								<li>Software links
+								</li>
+								<li style="list-style: none; display: inline">
+									<ul>
+										<li>Google AI modeling language
+											<ul>
+												<li>
+													<a target="_blank" rel="noopener noreferrer" href="https://developers.google.com/optimization/cp">CP-SAT Solver</a>
+												</li>
+												<li>
+													<a target="_blank" rel="noopener noreferrer" href="https://developers.google.com/optimization/cp/cp_solver">Tutorial</a>
+												</li>
+											</ul>
+										</li>
+										<li>MiniZinc modeling language
+											<ul>
+												<li>
+													<a target="_blank" rel="noopener noreferrer" href="https://www.minizinc.org/">MiniZinc page</a>
+												</li>
+												<li>
+													<a target="_blank" rel="noopener noreferrer" href="https://www.minizinc.org/doc-2.4.3/en/part_2_tutorial.html">Tutorial</a>
+												</li>
+											</ul>
+										</li>
+										<li>Numberjack modeling language
+											<ul>
+												<li>
+													<a target="_blank" rel="noopener noreferrer" href="https://github.com/eomahony/Numberjack">Numberjack GitHub</a>
+												</li>
+												<li>
+													<a target="_blank" rel="noopener noreferrer" href="slides/numberjacktutorial.pdf">Tutorial</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							-->
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p></p>
+		</center><div id="footer"><centeR>
+<A HREF="http://www.ics.uci.edu">School of Information and Computer Science</A>
+<A HREF="http://www.uci.edu">University of California, Irvine, CA 92697-3435</a>
+<A HREF="http://www.ics.uci.edu/~dechter">Dr. Rina Dechter</A>
+
+<A HREF="mailto:dechter_at_ics.uci.edu">dechter at ics.uci.edu</A>
+
+</center></div>
+	</body>
+</html>

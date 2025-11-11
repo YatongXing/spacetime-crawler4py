@@ -1,0 +1,451 @@
+<!-- URL: http://plrg.ics.uci.edu/psan -->
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+		<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="http://plrg.ics.uci.edu/wordpress/xmlrpc.php" />	
+<title>PSan &#8211; Programming Languages Research Group</title>
+<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Programming Languages Research Group &raquo; Feed" href="http://plrg.ics.uci.edu/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Programming Languages Research Group &raquo; Comments Feed" href="http://plrg.ics.uci.edu/comments/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/plrg.ics.uci.edu\/wordpress\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.3"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='http://plrg.ics.uci.edu/wordpress/wp-includes/css/dist/block-library/style.min.css?ver=6.8.3' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='attitude_style-css' href='http://plrg.ics.uci.edu/wordpress/wp-content/themes/attitude/style.css?ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='attitude-font-awesome-css' href='http://plrg.ics.uci.edu/wordpress/wp-content/themes/attitude/font-awesome/css/font-awesome.css?ver=6.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='google_fonts-css' href='//fonts.googleapis.com/css?family=PT+Sans%7CPhilosopher&#038;ver=6.8.3' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://plrg.ics.uci.edu/wordpress/wp-content/themes/attitude/library/js/html5.min.js?ver=3.7.3" id="html5-js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://plrg.ics.uci.edu/wordpress/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="http://plrg.ics.uci.edu/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="http://plrg.ics.uci.edu/wordpress/wp-content/themes/attitude/library/js/scripts.js?ver=6.8.3" id="attitude-scripts-js"></script>
+<script type="text/javascript" src="http://plrg.ics.uci.edu/wordpress/wp-content/themes/attitude/library/js/backtotop.js?ver=6.8.3" id="backtotop-js"></script>
+<link rel="https://api.w.org/" href="http://plrg.ics.uci.edu/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="http://plrg.ics.uci.edu/wp-json/wp/v2/pages/656" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://plrg.ics.uci.edu/wordpress/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+<link rel="canonical" href="http://plrg.ics.uci.edu/psan/" />
+<link rel='shortlink' href='http://plrg.ics.uci.edu/?p=656' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="http://plrg.ics.uci.edu/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fplrg.ics.uci.edu%2Fpsan%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="http://plrg.ics.uci.edu/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fplrg.ics.uci.edu%2Fpsan%2F&#038;format=xml" />
+
+</head>
+
+<body class="wp-singular page-template-default page page-id-656 wp-theme-attitude full-width-template">
+		
+	<div class="wrapper">
+				<header id="branding" >
+				
+	<div class="container clearfix">
+		<div class="hgroup-wrap clearfix">
+			<section class="hgroup-right">
+			
+			<div class="social-profiles clearfix">
+				<ul>
+			</ul>
+			</div><!-- .social-profiles -->	<form action="http://plrg.ics.uci.edu/" class="searchform clearfix" method="get">
+		<label class="assistive-text" for="s">Search</label>
+		<input type="text" placeholder="Search" class="s field" name="s">
+	</form><!-- .searchform -->
+				<button class="menu-toggle">Responsive Menu</button>
+			</section><!-- .hgroup-right -->	
+				<hgroup id="site-logo" class="clearfix">
+																		<h2 id="site-title"> 
+								<a href="http://plrg.ics.uci.edu/" title="Programming Languages Research Group" rel="home">
+									Programming Languages Research Group								</a>
+							</h2>
+																		
+				</hgroup><!-- #site-logo -->
+			
+		</div><!-- .hgroup-wrap -->
+	</div><!-- .container -->	
+		
+	<nav id="access" class="clearfix">
+					<div class="container clearfix"><ul class="root"><li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-34"><a href="http://plrg.ics.uci.edu/">Brian Demsky</a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="http://plrg.ics.uci.edu/students/">Students</a></li>
+<li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"><a href="http://plrg.ics.uci.edu/publications_page/">Publications</a></li>
+<li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current_page_ancestor menu-item-has-children menu-item-29"><a href="http://plrg.ics.uci.edu/software_page/">Software</a>
+<ul class="sub-menu">
+	<li id="menu-item-557" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-557"><a href="http://plrg.ics.uci.edu">Software Verifiers</a>
+	<ul class="sub-menu">
+		<li id="menu-item-663" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-656 current_page_item menu-item-663"><a href="http://plrg.ics.uci.edu/psan/" aria-current="page">PSan</a></li>
+		<li id="menu-item-638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-638"><a href="http://plrg.ics.uci.edu/yashme/">Yashme</a></li>
+		<li id="menu-item-585" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-585"><a href="http://plrg.ics.uci.edu/jaaru/">Jaaru</a></li>
+		<li id="menu-item-558" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-558"><a href="http://plrg.ics.uci.edu/satune/">Satune</a></li>
+		<li id="menu-item-455" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-455"><a href="http://plrg.ics.uci.edu/c11tester/">C11Tester</a></li>
+	</ul>
+</li>
+	<li id="menu-item-396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-396"><a href="http://plrg.ics.uci.edu/software-relaxed-mm/">Software for Relaxed Memory Models</a></li>
+	<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="http://plrg.ics.uci.edu/software_page/irvine-research-java-compiler/">Irvine Research Java Compiler</a></li>
+	<li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="http://plrg.ics.uci.edu/software_page/views/">Views</a></li>
+	<li id="menu-item-528" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-528"><a href="http://plrg.ics.uci.edu">Smart Home</a>
+	<ul class="sub-menu">
+		<li id="menu-item-520" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-520"><a href="http://plrg.ics.uci.edu/fidelius/">Fidelius</a></li>
+		<li id="menu-item-513" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-513"><a href="http://plrg.ics.uci.edu/iotcheck/">IoTCheck</a></li>
+		<li id="menu-item-487" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-487"><a href="http://plrg.ics.uci.edu/pingpong/">PingPong</a></li>
+		<li id="menu-item-358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-358"><a href="http://plrg.ics.uci.edu/vigilia/">Vigilia</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+</ul></div><!-- .container -->
+					</nav><!-- #access --> 		
+				</header>
+		
+				<div id="main" class="container clearfix">
+
+<div id="container">
+	
+
+<div id="content">	<section id="post-656" class="post-656 page type-page status-publish hentry">
+		<article>
+
+			
+			<header class="entry-header">
+    			<h1 class="entry-title">
+    				PSan    			</h1><!-- .entry-title -->
+  			</header>
+
+  			
+  			
+  			<div class="entry-content clearfix">
+    			
+<h2 class="wp-block-heading"><a href="PMRace: Detecting Persistency Races"></a><a href="#">Checking Robustness to Weak Persistency Models</a></h2>
+
+
+
+<p>Persistent memory (PM) technologies offer performance close to DRAM with persistence. Persistent memory enables programs to directly modify persistent data through normal load and store instructions bypassing heavyweight OS system calls for persistency. However, these stores are not made immediately made persistent, the developer must manually flush the corresponding cache lines to force the data to be written to persistent memory. While state-of-the-art testing tools can help developers find and fix persistency bugs, prior studies have shown fixing persistency bugs on average takes a couple of weeks for PM developers. The developer has to manually inspect the execution to identify the root cause of the problem. In addition, most of the existing state-of-the-art testing tools require heavy user annotations to detect bugs without visible symptoms such as a segmentation fault.</p>
+
+
+
+<p>We present robustness as a sufficient correctness condition to ensure that program executions are free from missing flush bugs. We develop an algorithm for checking robustness and have implemented this algorithm in the PSan tool. PSan can help developers both identify silent data corruption bugs and localize bugs in large traces to the problematic memory operations that are missing flush operations. We have evaluated PSan on a set of concurrent indexes, persistent memory libraries, and two popular real-world applications. We found 48 bugs in these benchmarks that 17 of them were not reported before.</p>
+
+
+
+<h2 class="wp-block-heading">Use PSan </h2>
+
+
+
+<p>This section shows how to set up PSan on any Linux machine. You can use our <a href="https://github.com/uci-plrg/psan-vagrant">artifact evaluation</a> to automatically set up PSan and PMDK, Redis, Memcached, and Recipe benchmarks on a virtual machine to repeat our experiments or download our pre-configured virtual machine to rerun our experiments. Otherwise, you can use the following step-by-step tutorial to setup up PSan and run it on your program on your machine.</p>
+
+
+
+<h3 class="wp-block-heading">Dependencies</h3>
+
+
+
+<p>To properly set up  PSan and Our benchmarks, some packages are required. Use the following commands to install all the necessary dependencies:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo apt-get update
+apt-get -y install cmake g++ clang pkg-config autoconf pandoc libevent-dev libseccomp-dev xsltproc</code></pre>
+
+
+
+<h3 class="wp-block-heading">Building PMCPass</h3>
+
+
+
+<p>PSan is implemented on top of Jaaru model checker. Jaaru requires an LLVM pass (i.e., PMCPass) to annotate all memory and cache operations of your tool. You can download the binary file from <a href="https://drive.google.com/drive/folders/1FH6uKohoSZXrf1Twq55ZUTI6DzNVYzts?usp=sharing">here</a> or build the PMCPass with LLVM. To build it you need to download LLVM and register our pass and build it:</p>
+
+
+
+<pre class="wp-block-code"><code>git clone https://github.com/llvm/llvm-project.git
+git clone https://github.com/uci-plrg/jaaru-llvm-pass
+cd llvm-project
+git checkout 7899fe9da8d8df6f19ddcbbb877ea124d711c54b
+cd ../jaaru-llvm-pass
+git checkout vagrant
+cd ..
+mv jaaru-llvm-pass llvm-project/llvm/lib/Transforms/PMCPass</code></pre>
+
+
+
+<p>To register our pass in LLVM append &#8216;add_subdirectory(PMCPass)&#8217;  to  CMakeLists.txt file in the &#8216;Transforms&#8217; directory by using the following command:</p>
+
+
+
+<pre class="wp-block-code"><code>echo "add_subdirectory(PMCPass)" &gt;&gt; llvm-project/llvm/lib/Transforms/CMakeLists.txt</code></pre>
+
+
+
+<p>After registering the pass, use the following commands to build the pass and LLVM:</p>
+
+
+
+<pre class="wp-block-code"><code>cd llvm-project
+mkdir build
+cd build
+cmake -DLLVM_ENABLE_PROJECTS=clang -G "Unix Makefiles" ../llvm
+make</code></pre>
+
+
+
+<p>To verify the building process was successful, our pass can be found in the following directory:</p>
+
+
+
+<pre class="wp-block-code"><code>touch llvm-project/build/lib/libPMCPass.so</code></pre>
+
+
+
+<h3 class="wp-block-heading">Setting up  PSan </h3>
+
+
+
+<p>This section shows how to set up PSan and use it to debug your tool. First, we need to checkout Jaaru, the underlying model checker, which contains PSan plugin. Then, use the following commands to build PSan:</p>
+
+
+
+<pre class="wp-block-code"><code>cd ~/
+git clone https://github.com/uci-plrg/jaaru.git
+mv jaaru pmcheck
+cd pmcheck/
+git checkout psan
+# Setting LLVMDIR and JAARUDIR in wrapper scripts
+sed -i 's/LLVMDIR=.*/LLVMDIR=~\/llvm-project\//g' Test/gcc
+sed -i 's/JAARUDIR=.*/JAARUDIR=~\/pmcheck\/bin\//g' Test/gcc
+sed -i 's/LLVMDIR=.*/LLVMDIR=~\/llvm-project\//g' Test/g++
+sed -i 's/JAARUDIR=.*/JAARUDIR=~\/pmcheck\/bin\//g' Test/g++
+# Building test cases
+make test</code></pre>
+
+
+
+<p>PSan supports different APIs to access the persistent memory including <a href="https://github.com/pmem/pmdk/">pmem </a>in PMDK library and volatile memory allocator (<a href="https://pmem.io/pmdk/manpages/linux/v1.3/libvmmalloc.3.html">libvmemmalloc</a>). In PMDK there are separate APIs for allocating persistent memory. However, libvmemmalloc overrides normal malloc APIs to allocate memory on persistent memory instead of RAM. If the tool-under-test uses libvmemmalloc, a flag needs to be set in PSan to activate the corresponding support. Otherwise, Jaaru supports pmem APIs by default. To enable libvmemmalloc, uncomment the following flag in &#8216;pmcheck/config.h&#8217; file and recompile Jaaru:  </p>
+
+
+
+<pre class="wp-block-code"><code>//In config.h file uncomment the following line
+#define ENABLE_VMEM</code></pre>
+
+
+
+<h3 class="wp-block-heading">Running PSan test cases</h3>
+
+
+
+<p>PSan test cases are located in the &#8216;Test&#8217; directory. To run them with PSan, we need to modify &#8216;run.sh&#8217; script to become as follows:</p>
+
+
+
+<pre class="wp-block-code"><code>#!/bin/bash
+export LD_LIBRARY_PATH=~/pmcheck/bin/
+# For Mac OSX
+export DYLD_LIBRARY_PATH=~/pmcheck/bin/
+export PMCheck="-o"
+echo $@
+$@</code></pre>
+
+
+
+<p>By using &#8216;PMCheck&#8217; environment variable, we can set different options for Jaaru. To see a full list of Jaaru&#8217;s options, set PMCheck=&#8221;&#8211;help&#8221; and run the test cases. For example, to run &#8216;<a href="https://github.com/uci-plrg/jaaru/blob/psan/Test/testverifier.cc">testverifier</a>&#8216; test case use the following commands:</p>
+
+
+
+<pre class="wp-block-code"><code>cd ~/pmcheck
+make test
+cd bin
+./run.sh testverifier</code></pre>
+
+
+
+<p>PMCheck=&#8221;-o&#8221; enables PSan plugin in Jaaru. PSan support different strategies in dealing with robustness violations: 1) Naive: which reports the bug and continues exploring the execution 2) Exit: which exits the execution once it finds a violation 3) Safe: which forces to explore robustness-free stores for each load. By default, PSan choose <strong>Naive</strong> strategy.  Other strategies can be selected by using &#8216;PMCheck&#8217; variable. For example for choosing <strong>Exist</strong> strategy use:</p>
+
+
+
+<pre class="wp-block-code"><code>export PMCheck="-o2"</code></pre>
+
+
+
+<p>PSan can operate in two different modes: 1) Random mode: which randomly selects and explore executions and 2) Model checking mode: which systematically insert crashes and explore executions. By default, <strong>Model Checking</strong> mode is selected for PSan. To enable model checking mode, we need to use &#8220;-x&#8221; option. For example, for activating <strong>random mode</strong> to exploring 100 random execution with <strong>Safe</strong> strategy, we need to run PSan with the following parameter:</p>
+
+
+
+<pre class="wp-block-code"><code>export PMCheck="-o3 -x100"</code></pre>
+
+
+
+<h3 class="wp-block-heading">Running your tools</h3>
+
+
+
+<p>To run your test cases, you need to compile your tool with PSan and our LLVM pass (i.e., PMCPass). To make this process easier, we use a coding pattern which is described as follows: If you check &#8216;pmcheck/Test&#8217; directory, there are 4 scripting files g++, gcc, clang, and clang++. In each of these files, we define appropriate flags for the compiler. You can modify &#8216;LLVMDIR&#8217; and &#8216;JAARUDIR&#8217; environment variables in these files to point to the location of LLVM and Jaaru (i.e., PMCheck) on your machine. Then, modify the building system of your tool to use these script wrappers instead of the actual compilers. For example, your &#8216;~/pmcheck/Test/g++&#8217; file can look like this:</p>
+
+
+
+<pre class="wp-block-code"><code>LLVMDIR=~/llvm-project/
+CC=${LLVMDIR}/build/bin/clang++
+LLVMPASS=${LLVMDIR}/build/lib/libPMCPass.so
+JAARUDIR=~/pmcheck/bin/
+$CC -Xclang -load -Xclang $LLVMPASS -L${JAARUDIR} -lpmcheck -Wno-unused-command-line-argument -Wno-address-of-packed-member -Wno-mismatched-tags -Wno-unused-private-field -Wno-constant-conversion -Wno-null-dereference $@</code></pre>
+
+
+
+<p>To verify the script wrappers you can build our test cases without any errors:</p>
+
+
+
+<pre class="wp-block-code"><code>cd ~/pmcheck/
+make test</code></pre>
+
+
+
+<h3 class="wp-block-heading">Debugging RECIPE</h3>
+
+
+
+<p>We tested PSan on <a href="https://github.com/utsaslab/RECIPE">RECIPE</a> benchmarks. RECIPE uses libvmemmalloc to access persistent memory, so vmem flag has to be activated to debug this benchmark (See Setting up PSan). Here you can download the working version of the RECIPE that contains our bug fixes: </p>
+
+
+
+<pre class="wp-block-code"><code>git clone https://github.com/uci-plrg/nvm-benchmarks
+cd nvm-benchmarks
+git checkout psan
+cd RECIPE</code></pre>
+
+
+
+<p>To compile and run any benchmarks, you need to modify the Makefile to change the compiler to point to the corresponding wrapper script. For example in FAST_FAIR makefile add the following line to &#8216;Makefile&#8217;:</p>
+
+
+
+<pre class="wp-block-code"><code>CXX=~/pmcheck/Test/g++</code></pre>
+
+
+
+<p>To run each test case, you need to modify the &#8216;run.sh&#8217; file in &#8216;FAST_FAIR&#8217; directory to look like the following:</p>
+
+
+
+<pre class="wp-block-code"><code>#!/bin/bash
+export LD_LIBRARY_PATH=~/pmcheck/bin/
+export PMCheck="-o2"
+$@</code></pre>
+
+
+
+<p>Now you can run RECIPE benchmarks by using &#8216;run.sh&#8217; script file. For instance, to run FAST_FAIR with two threads and 3 keys we use the following command:</p>
+
+
+
+<pre class="wp-block-code"><code>./run.sh ./example 3 2</code></pre>
+
+
+
+<h3 class="wp-block-heading">Debugging with GDB</h3>
+
+
+
+<p>PSan supports running under GDB to debug your program further. To use GDB, add &#8216;-g&#8217; option to &#8216;<strong>CFLAGS</strong>&#8216; and &#8216;<strong>CPPFLAGS</strong>&#8216; variables in <strong><em>pmcheck/common.mk</em></strong>. Then recompile PSan and your tool and use gdb to run your program. For example, you can run FAST_FAIR example with gdb by using the following commands: </p>
+
+
+
+<pre class="wp-block-code"><code>./run.sh gdb ./example
+(gdb) run 3 2</code></pre>
+
+
+
+<h2 class="wp-block-heading">Disclaimer</h2>
+
+
+
+<p>We make no warranties&nbsp;that PSan is free of errors.&nbsp;Please read the paper and the <a href="https://github.com/uci-plrg/jaaru/tree/psan">README</a> file to understand the tool&#8217;s limitations, capabilities, and how/where to use it.</p>
+
+
+
+<h2 class="wp-block-heading">Contact</h2>
+
+
+
+<p>Please feel free to contact us for more information. Bug reports are welcome, and we are happy to hear from our users and how PSan found persistency races in your programs.</p>
+
+
+
+<p>Contact Hamed Gorjiara at <a href="mailto:rtrimana@uci.edu">hgorjiar@uci.edu</a>, Weiyu Luo at <a href="mailto:weiyul7@uci.edu">weiyul7@uci.edu</a>, Alex Lee at  <a href="mailto:leea19@uci.edu">leea19@uci.edu</a>, Harry Xu at <a href="mailto:harryxu@g.ucla.edu">harryxu@g.ucla.edu</a>, or Brian Demsky at <a href="mailto:bdemsky@uci.edu">bdemsky@uci.edu</a>&nbsp;for any questions about PSan.</p>
+
+
+
+<h2 class="wp-block-heading">Copyright</h2>
+
+
+
+<p>Copyright © 2022 Regents of the University of California. All rights reserved.</p>
+    			  			</div>
+
+  			
+<div id="comments" class="comments-area">
+
+	
+	
+	
+</div><!-- #comments .comments-area -->
+		</article>
+	</section>
+</div><!-- #content --></div><!-- #container -->
+
+
+	   </div><!-- #main -->
+
+	   
+	   	
+	   
+	   <footer id="colophon" class="clearfix">
+			
+
+
+<div id="site-generator" class="clearfix">
+				<div class="container">
+			<div class="social-profiles clearfix">
+				<ul>
+			</ul>
+			</div><!-- .social-profiles --><div class="copyright">Copyright &copy;2025 <a href="http://plrg.ics.uci.edu/" title="Programming Languages Research Group" ><span>Programming Languages Research Group</span></a> | Theme by: <a href="http://themehorse.com" target="_blank" rel="noopener noreferrer" title="Theme Horse" ><span>Theme Horse</span></a> | Powered by: <a href="http://wordpress.org" target="_blank" rel="noopener noreferrer" title="WordPress"><span>WordPress</span></a></div><!-- .copyright --></div><!-- .container -->
+			</div><!-- #site-generator --><div class="back-to-top"><a href="#branding"></a></div>		</footer>
+	   
+			
+
+	</div><!-- .wrapper -->
+
+	 
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wordpress\/wp-*.php","\/wordpress\/wp-admin\/*","\/wordpress\/wp-content\/uploads\/*","\/wordpress\/wp-content\/*","\/wordpress\/wp-content\/plugins\/*","\/wordpress\/wp-content\/themes\/attitude\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+
+</body>
+</html>

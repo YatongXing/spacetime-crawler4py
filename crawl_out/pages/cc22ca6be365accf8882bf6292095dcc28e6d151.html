@@ -1,0 +1,2344 @@
+<!-- URL: https://swiki.ics.uci.edu/doku.php/research_support:slurm -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Slurm@ICS [Support Wiki]</title>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="research_support,slurm"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/css.php?css=assets/mikio.less"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/icons/fontawesome/css/all.min.css"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Support Wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php/research_support:slurm?do=index" title="Sitemap"/>
+<link rel="manifest" href="/lib/exe/manifest.php" crossorigin="use-credentials"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="/feed.php?mode=list&amp;ns=research_support"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="/doku.php/research_support:slurm?do=export_xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="/doku.php/research_support:slurm?do=export_raw"/>
+<link rel="canonical" href="https://wiki.ics.uci.edu/doku.php/research_support:slurm"/>
+<link rel="stylesheet" href="/lib/exe/css.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"/>
+<script >var NS='research_support';var JSINFO = {"plugins":{"gallery":{"defaults":{"thumbnailsize":{"default":"150x150"},"imagesize":{"default":"1600X1200"},"cache":{"default":true},"filter":{"default":""},"showname":{"default":false},"showtitle":{"default":false},"crop":{"default":true},"direct":{"default":false},"reverse":{"default":false},"recursive":{"default":false},"align":{"default":0},"cols":{"default":0},"limit":{"default":0},"offset":{"default":0},"paginate":{"default":0},"sort":{"default":"file"},"namespace":{"default":""}}}},"isadmin":0,"isauth":0,"move_renameokay":false,"move_allowrename":false,"plugin_slider":{"width":800,"mode":"horizontal","infiniteLoop":true,"hideControlOnEnd":false,"speed":500,"easing":null,"slideMargin":0,"startSlide":0,"randomStart":false,"captions":false,"ticker":false,"tickerHover":false,"adaptiveHeight":false,"adaptiveHeightSpeed":500,"video":false,"useCSS":true,"preloadImages":"visible","responsive":true,"pager":true,"pagerType":"full","pagerShortSeparator":"\/","controls":true,"nextText":"Next","prevText":"Prev","autoControls":false,"startText":"Start","stopText":"Stop","autoControlsCombine":false,"auto":false,"pause":4000,"autoStart":true,"autoDirection":"next","autoHover":false,"autoDelay":0,"minSlides":1,"maxSlides":1,"moveSlides":0,"slideWidth":0,"touchEnabled":true,"swipeThreshold":50,"oneToOneTouch":true,"preventDefaultSwipeX":true,"preventDefaultSwipeY":false},"SMILEY_CONF":{"8-)":"cool.svg","8-O":"eek.svg","8-o":"eek.svg",":-(":"sad.svg",":-)":"smile.svg","=)":"smile2.svg",":-\/":"doubt.svg",":-\\":"doubt2.svg",":-?":"confused.svg",":-D":"biggrin.svg",":-P":"razz.svg",":-o":"surprised.svg",":-O":"surprised.svg",":-x":"silenced.svg",":-X":"silenced.svg",":-|":"neutral.svg",";-)":"wink.svg","m(":"facepalm.svg","^_^":"fun.svg",":?:":"question.svg",":!:":"exclaim.svg","LOL":"lol.svg","FIXME":"fixme.svg","DELETEME":"deleteme.svg"},"id":"research_support:slurm","namespace":"research_support","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<script src="/lib/exe/jquery.php?tseed=8faf3dc90234d51a499f4f428a0eae43"></script>
+<script src="/lib/exe/js.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio-typeahead.js" defer="defer"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio.js" defer="defer"></script>
+<link rel="shortcut icon" href="/lib/tpl/mikio/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/mikio/images/apple-touch-icon.png" />
+</head>
+<body class="mikio">
+<div id="dokuwiki__site">
+    <div id="dokuwiki__top" class="site dokuwiki mode_show tpl_mikio    showSidebar hasSidebar"><nav class="mikio-navbar"><div class="mikio-container"><a class="mikio-navbar-brand" href="/doku.php/start" accesskey="h" title="Home [h]"><img src="/lib/exe/fetch.php/wiki:logo.png" class="mikio-navbar-brand-image" style="width:250px;max-width:none;max-height:none;"><div class="mikio-navbar-brand-title"><h1 class="mikio-navbar-brand-title-text">Support Wiki</h1><p class="claim mikio-navbar-brand-title-tagline"></p></div></a><div class="mikio-navbar-toggle"><span class="icon"></span></div><div class="mikio-navbar-collapse"><div class="mikio-nav-item"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="research_support:slurm"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form></div><ul class="mikio-nav"><li id="dokuwiki__pagetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_pagetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,235.38983,1277.8305)" id="g2991">
+<path d="M 128,0 H 1152 V 768 H 736 q -40,0 -68,28 -28,28 -28,68 v 416 H 128 V 0 z m 640,896 h 299 L 768,1195 V 896 z M
+1280,768 V -32 q 0,-40 -28,-68 -28,-28 -68,-28 H 96 q -40,0 -68,28 -28,28 -28,68 v 1344 q 0,40 28,68 28,28 68,28 h 544
+q 40,0 88,-20 48,-20 76,-48 l 408,-408 q 28,-28 48,-76 20,-48 20,-88 z" id="path2993" /></g></svg><span class="mikio-small-only">Page Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item revs" href="/doku.php/research_support:slurm?do=revisions" title="Old revisions"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></span><span>Old revisions</span></a><a class="mikio-nav-link mikio-dropdown-item backlink" href="/doku.php/research_support:slurm?do=backlink" title="Backlinks"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></span><span>Backlinks</span></a></div></li><li id="dokuwiki__sitetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_sitetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,121.49153,1285.4237)" id="g3027">
+<path d="m 1024,640 q 0,106 -75,181 -75,75 -181,75 -106,0 -181,-75 -75,-75 -75,-181 0,-106 75,-181 75,-75 181,-75 106,0
+181,75 75,75 75,181 z m 512,109 V 527 q 0,-12 -8,-23 -8,-11 -20,-13 l -185,-28 q -19,-54 -39,-91 35,-50 107,-138 10,-12
+10,-25 0,-13 -9,-23 -27,-37 -99,-108 -72,-71 -94,-71 -12,0 -26,9 l -138,108 q -44,-23 -91,-38 -16,-136 -29,-186 -7,-28
+-36,-28 H 657 q -14,0 -24.5,8.5 Q 622,-111 621,-98 L 593,86 q -49,16 -90,37 L 362,16 Q 352,7 337,7 323,7 312,18 186,132
+147,186 q -7,10 -7,23 0,12 8,23 15,21 51,66.5 36,45.5 54,70.5 -27,50 -41,99 L 29,495 Q 16,497 8,507.5 0,518 0,531 v 222
+q 0,12 8,23 8,11 19,13 l 186,28 q 14,46 39,92 -40,57 -107,138 -10,12 -10,24 0,10 9,23 26,36 98.5,107.5 72.5,71.5 94.5,
+71.5 13,0 26,-10 l 138,-107 q 44,23 91,38 16,136 29,186 7,28 36,28 h 222 q 14,0 24.5,-8.5 Q 914,1391 915,1378 l 28,-184
+q 49,-16 90,-37 l 142,107 q 9,9 24,9 13,0 25,-10 129,-119 165,-170 7,-8 7,-22 0,-12 -8,-23 -15,-21 -51,-66.5 -36,-45.5
+-54,-70.5 26,-50 41,-98 l 183,-28 q 13,-2 21,-12.5 8,-10.5 8,-23.5 z" id="path3029" />
+</g></svg><span class="mikio-small-only">Site Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item recent" href="/doku.php/research_support:slurm?do=recent" title="Recent Changes"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69V13m4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67V8M5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2H5m11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85z"/></svg></span><span>Recent Changes</span></a><a class="mikio-nav-link mikio-dropdown-item media" href="/doku.php/research_support:slurm?do=media&ns=research_support" title="Media Manager"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 15l4.5-6 3.5 4.5 2.5-3L21 15m1-11h-8l-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M2 6H0v14a2 2 0 0 0 2 2h18v-2H2V6z"/></svg></span><span>Media Manager</span></a><a class="mikio-nav-link mikio-dropdown-item index" href="/doku.php/research_support:slurm?do=index" title="Sitemap"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2z"/></svg></span><span>Sitemap</span></a></div></li><li id="dokuwiki__usertools" class="mikio-nav-dropdown"><a id="mikio_dropdown_usertools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,197.42373,1300.6102)"><path d="M
+1408,131 Q 1408,11 1335,-58.5 1262,-128 1141,-128 H 267 Q 146,-128 73,-58.5 0,11 0,131 0,184 3.5,234.5 7,285 17.5,343.5
+28,402 44,452 q 16,50 43,97.5 27,47.5 62,81 35,33.5 85.5,53.5 50.5,20 111.5,20 9,0 42,-21.5 33,-21.5 74.5,-48 41.5,
+-26.5 108,-48 Q 637,565 704,565 q 67,0 133.5,21.5 66.5,21.5 108,48 41.5,26.5 74.5,48 33,21.5 42,21.5 61,0 111.5,-20
+50.5,-20 85.5,-53.5 35,-33.5 62,-81 27,-47.5 43,-97.5 16,-50 26.5,-108.5 10.5,-58.5 14,-109 Q 1408,184 1408,131 z m
+-320,893 Q 1088,865 975.5,752.5 863,640 704,640 545,640 432.5,752.5 320,865 320,1024 320,1183 432.5,1295.5 545,1408 704,
+1408 863,1408 975.5,1295.5 1088,1183 1088,1024 z"/></g></svg><span class="mikio-small-only">User Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item login" href="/doku.php/research_support:slurm?do=login&sectok=" title="Log In"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></span><span>Log In</span></a></div></li></ul></div></div></nav><a name="dokuwiki__top" id="dokuwiki__top"></a><div class="mikio-hero"><div class="mikio-container"><div class="mikio-hero-text"><div class="mikio-breadcrumbs"><div class="mikio-container"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php/research_support:slurm"  class="breadcrumbs" title="research_support:slurm">Slurm@ICS</a></bdi></span></div></div><h1 class="mikio-hero-title">Slurm@ICS</h1><h2 class="mikio-hero-subtitle"></h2></div><div class="mikio-hero-image"><div class="mikio-tags"></div></div></div></div><main class="mikio-page"><div class="mikio-container"><aside class="mikio-sidebar mikio-sidebar-left"><a class="mikio-sidebar-toggle closed" href="#">Sidebar <span class="icon"></span></a><div class="mikio-sidebar-collapse"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="research_support:slurm"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form><div class="mikio-sidebar-content"><div><div id="nojs_indexmenu_92216708768e6d56a08415" data-jsajax="%26group%3D1" class="indexmenu_nojs">
+<ul class="idx">
+<li class="closed"><div class="li"><a href="/doku.php/accounts:accounts" class="indexmenu_idx_head" data-wiki-id="accounts:accounts">ICS Accounts</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/announce:announce" class="indexmenu_idx_head" data-wiki-id="announce:announce">Announcement and Maintenance</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/backups:backups" class="indexmenu_idx_head" data-wiki-id="backups:backups">Backups @ ICS</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/commands:commands" class="indexmenu_idx_head" data-wiki-id="commands:commands">Common Tasks and Commands</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/group:group" class="indexmenu_idx_head" data-wiki-id="group:group">Group Files</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/hardware:hardware" class="indexmenu_idx_head" data-wiki-id="hardware:hardware">Hardware Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/instructional_support:instructional_support" class="indexmenu_idx_head" data-wiki-id="instructional_support:instructional_support">Instructional Support Resources</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/network:network" class="indexmenu_idx_head" data-wiki-id="network:network">Network</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/os?idx=os" class="indexmenu_idx" data-wiki-id="">os</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/policies?idx=policies" class="indexmenu_idx" data-wiki-id="">policies</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/projects?idx=projects" class="indexmenu_idx" data-wiki-id="">projects</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/remote_support?idx=remote_support" class="indexmenu_idx" data-wiki-id="">remote_support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/requesttracker?idx=requesttracker" class="indexmenu_idx" data-wiki-id="">requesttracker</a></div></li>
+<li class="open"><div class="li"><a href="/doku.php/research_support:research_support" class="indexmenu_idx_head" data-wiki-id="research_support:research_support">Research Support</a></div>
+<ul class="idx">
+<li class="level2" ><div class="li"><a href="/doku.php/research_support:slurm" class="wikilink1" title="research_support:slurm" data-wiki-id="research_support:slurm">Slurm@ICS</a></div></li>
+</ul>
+</li>
+<li class="closed"><div class="li"><a href="/doku.php/security?idx=security" class="indexmenu_idx" data-wiki-id="">security</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/services?idx=services" class="indexmenu_idx" data-wiki-id="">services</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/software:software" class="indexmenu_idx_head" data-wiki-id="software:software">Software</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/virtual_environments:virtual_environments" class="indexmenu_idx_head" data-wiki-id="virtual_environments:virtual_environments">Virtual Environments</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/webapps:webapps" class="indexmenu_idx_head" data-wiki-id="webapps:webapps">ICS Web Applications</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/wiki?idx=wiki" class="indexmenu_idx" data-wiki-id="">wiki</a></div></li>
+</ul>
+</div></div></div></div></aside><div class="mikio-content" id="dokuwiki__content"><article class="mikio-article"><div class="mikio-toc"><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle"><svg class="mikio-iicon hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+style="fill:currentColor"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0
+76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16z"/></svg>Table of Contents<svg class="mikio-iicon down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+aria-hidden="true" style="fill:currentColor"><path d="M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9
+1.917-1.916z"/></svg></h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#slurm_ics">Slurm@ICS</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#changelog">Changelog</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#fall_2024">Fall 2024</a></div></li>
+<li class="level3"><div class="li"><a href="#spring_quarter_2023">Spring Quarter 2023</a></div></li>
+<li class="level3"><div class="li"><a href="#external_documentation">External Documentation</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#configuration">Configuration</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#compile_and_installation">Compile and Installation</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#running_slurm">Running Slurm</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#submitting_a_job">Submitting a Job</a></div></li>
+<li class="level3"><div class="li"><a href="#running_a_shell_on_a_slurm_only_cluster">Running A Shell on a Slurm Only Cluster</a></div></li>
+<li class="level3"><div class="li"><a href="#module">Module</a></div></li>
+<li class="level3"><div class="li"><a href="#slurm_partitions">Slurm Partitions</a></div></li>
+<li class="level3"><div class="li"><a href="#slurm_daemons">Slurm Daemons</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#commands">Commands</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#shortcuts">Shortcuts</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#writing_a_slurm_script_examples">Writing a Slurm Script (Examples)</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#hello_world">Hello World</a></div></li>
+<li class="level3"><div class="li"><a href="#sleepy_time">Sleepy time</a></div></li>
+<li class="level3"><div class="li"><a href="#mpi_fun_with_pi">MPI Fun with Pi</a></div></li>
+<li class="level3"><div class="li"><a href="#distributed_stress_test">Distributed Stress Test</a></div></li>
+<li class="level3"><div class="li"><a href="#array_job">Array Job</a></div></li>
+<li class="level3"><div class="li"><a href="#srun_inside_sbatch">SRUN inside SBATCH</a></div></li>
+<li class="level3"><div class="li"><a href="#single_core_single_gpu_job">Single core / single GPU job</a></div></li>
+<li class="level3"><div class="li"><a href="#multi-threaded_core_single_gpu_job">Multi-threaded core / single GPU job</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#view_available_resources">View Available Resources</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#pyslurm_api">PySlurm API</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#compilation">Compilation</a></div></li>
+<li class="level3"><div class="li"><a href="#using_the_pyslurm_api">Using the PySlurm API</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#security">Security</a></div></li>
+<li class="level1"><div class="li"><a href="#commands1">Commands</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#sacct">sacct</a></div></li>
+<li class="level3"><div class="li"><a href="#sacctmgr">sacctmgr</a></div></li>
+<li class="level3"><div class="li"><a href="#salloc">salloc</a></div></li>
+<li class="level3"><div class="li"><a href="#sbatch">sbatch</a></div></li>
+<li class="level3"><div class="li"><a href="#sbcast">sbcast</a></div></li>
+<li class="level3"><div class="li"><a href="#scancel">scancel</a></div></li>
+<li class="level3"><div class="li"><a href="#scontrol">scontrol</a></div></li>
+<li class="level3"><div class="li"><a href="#sdiag">sdiag</a></div></li>
+<li class="level3"><div class="li"><a href="#sinfo">sinfo</a></div></li>
+<li class="level3"><div class="li"><a href="#sprio">sprio</a></div></li>
+<li class="level3"><div class="li"><a href="#squeue">squeue</a></div></li>
+<li class="level3"><div class="li"><a href="#sreport">sreport</a></div></li>
+<li class="level3"><div class="li"><a href="#srun">srun</a></div></li>
+<li class="level3"><div class="li"><a href="#sshare">sshare</a></div></li>
+<li class="level3"><div class="li"><a href="#sstat">sstat</a></div></li>
+<li class="level3"><div class="li"><a href="#strigger">strigger</a></div></li>
+<li class="level3"><div class="li"><a href="#sview">sview</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#sge_equivalences">SGE Equivalences</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#job_submission">Job Submission</a></div></li>
+<li class="level3"><div class="li"><a href="#example_2">Example 2</a></div></li>
+<li class="level3"><div class="li"><a href="#job_reporting">Job Reporting</a></div></li>
+<li class="level3"><div class="li"><a href="#accounting">Accounting</a></div></li>
+<li class="level3"><div class="li"><a href="#alter_items_in_queue">Alter Items in Queue</a></div></li>
+<li class="level3"><div class="li"><a href="#other_equivalencies">Other Equivalencies</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#checkpointing">Checkpointing</a></div></li>
+<li class="level1"><div class="li"><a href="#states">States</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#drain">Drain</a></div></li>
+<li class="level3"><div class="li"><a href="#idle">Idle</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#qos_fair_share_queueing_and_limits">QOS,Fair Share Queueing, and Limits</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#configurationslurmconf">Configuration:  slurm.conf</a></div></li>
+<li class="level3"><div class="li"><a href="#documentation">Documentation</a></div></li>
+<li class="level3"><div class="li"><a href="#priority_setting">Priority setting</a></div></li>
+<li class="level3"><div class="li"><a href="#qos">QOS</a></div></li>
+<li class="level3"><div class="li"><a href="#fair_share">Fair Share</a></div></li>
+<li class="level3"><div class="li"><a href="#limits">Limits</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#troubleshooting">Troubleshooting</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#job_immediately_fail_cancelled">Job immediately fail/cancelled</a></div></li>
+<li class="level3"><div class="li"><a href="#why_is_my_job_not_running_why_is_my_job_still_in_pending">Why is my job not running? Why is my job still in PENDING?</a></div></li>
+<li class="level3"><div class="li"><a href="#nodelist_reason_messages">Nodelist Reason Messages</a></div></li>
+<li class="level3"><div class="li"><a href="#launch_failed_requeued_held">launch failed requeued held</a></div></li>
+<li class="level3"><div class="li"><a href="#fatalhybrid_mode_is_not_supported_mounted_cgroups_are">fatal: Hybrid mode is not supported. Mounted cgroups are</a></div></li>
+<li class="level3"><div class="li"><a href="#launch_failed_requeue_held">launch failed requeue held</a></div></li>
+<li class="level3"><div class="li"><a href="#unable_to_register_with_slurm_controller">Unable to register with slurm controller</a></div></li>
+<li class="level3"><div class="li"><a href="#debugging">Debugging</a></div></li>
+<li class="level3"><div class="li"><a href="#invalid_account_or_account_partition_combination_specified">Invalid account or account/partition combination specified</a></div></li>
+<li class="level3"><div class="li"><a href="#slurmctldfatalcluster_name_mismatch">slurmctld: fatal: CLUSTER NAME MISMATCH.</a></div></li>
+<li class="level3"><div class="li"><a href="#fatalunable_to_determine_this_slurmd_s_nodename">fatal: Unable to determine this slurmd&#039;s NodeName</a></div></li>
+<li class="level3"><div class="li"><a href="#partition_in_drain_state">Partition in drain state</a></div></li>
+<li class="level3"><div class="li"><a href="#network_unresponsive">Network Unresponsive</a></div></li>
+<li class="level3"><div class="li"><a href="#conflict_with_job_submission_paramteres">Conflict with Job Submission Paramteres</a></div></li>
+<li class="level3"><div class="li"><a href="#gpu_passthrough_from_host_to_vm">GPU Passthrough From Host to VM</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div><div class="mikio-article-content"><h1 class="sectionedit1" id="slurm_ics" style="display:none">Slurm@ICS</h1>
+<div class="level1">
+
+<p>
+Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters. We use slurm here at ICS in order to allow fair access to computer clusters for instruction and research.   
+</p>
+
+<p>
+<a href="/lib/exe/detail.php/services:sview-2.png?id=research_support%3Aslurm" class="media" title="services:sview-2.png"><img src="/lib/exe/fetch.php/services:sview-2.png?w=400&amp;tok=392ac1" class="media" loading="lazy" alt="" width="400" /></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit2" id="changelog">Changelog</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit3" id="fall_2024">Fall 2024</h3>
+<div class="level3">
+
+</div>
+
+<h5 id="vscode_with_slurm">VSCode with SLURM</h5>
+<div class="level5">
+
+<p>
+Directions on using <a href="/doku.php/accounts:using_vscode_with_slurm" class="wikilink1" title="accounts:using_vscode_with_slurm" data-wiki-id="accounts:using_vscode_with_slurm">VCSCode with SLURM</a>.
+</p>
+
+</div>
+
+<h3 class="sectionedit4" id="spring_quarter_2023">Spring Quarter 2023</h3>
+<div class="level3">
+
+</div>
+
+<h5 id="openlabfair_tree_fair_share_algorithm">Openlab: Fair Tree Fair Share Algorithm</h5>
+<div class="level5">
+
+<p>
+The <a href="https://slurm.schedmd.com/fair_tree.html" class="urlextern" title="https://slurm.schedmd.com/fair_tree.html" rel="ugc nofollow">Fair Tree Fairshare Algorithm</a> has been enabled and small job priority has been increased on the Openlab partitions in order to distribute consumable resources to as many users as possible and avoid situations where monolithic jobs lock up the cluster for hours and days at a time.
+</p>
+
+</div>
+
+<h5 id="openlab_gpu_cluster_slurm_only">Openlab GPU Cluster Slurm Only</h5>
+<div class="level5">
+
+<p>
+The Openlab GPU Openlab cluster is now slurm-only.   This means that users may no longer ssh directly into servers that are part of Openlab GPU slurm partition and start processes outside the slurm scheduler.  Users may still run a bash shell via srun in order to test or compile programs: 
+</p>
+<pre class="code">srun -N1 -n1 -p opengpu.p bash -i</pre>
+
+</div>
+
+<h3 class="sectionedit5" id="external_documentation">External Documentation</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="https://slurm.schedmd.com/" class="urlextern" title="https://slurm.schedmd.com/" rel="ugc nofollow">Official Documentation</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://slurm.schedmd.com/quickstart.html" class="urlextern" title="https://slurm.schedmd.com/quickstart.html" rel="ugc nofollow"> Quickstart Documentation</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://slurm.schedmd.com/tutorials.html" class="urlextern" title="https://slurm.schedmd.com/tutorials.html" rel="ugc nofollow">Tutorials</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://rcic.uci.edu/hpc3/HPC-Policy-Executive-Summary.pdf" class="urlextern" title="https://rcic.uci.edu/hpc3/HPC-Policy-Executive-Summary.pdf" rel="ugc nofollow">HPC3 Executive Summary</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://www.uppmax.uu.se/support/user-guides/sge-vs-slurm-comparison/" class="urlextern" title="https://www.uppmax.uu.se/support/user-guides/sge-vs-slurm-comparison/" rel="ugc nofollow">Comparison of SLURM and SGE</a></div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit6" id="configuration">Configuration</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit7" id="compile_and_installation">Compile and Installation</h3>
+<div class="level3">
+
+<p>
+See Also:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="/doku.php/software:packages:slurm" class="wikilink1" title="software:packages:slurm" data-wiki-id="software:packages:slurm">Software Packages SLURM (Complilation)</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="/doku.php/group:support:services:slurm_management" class="wikilink1" title="group:support:services:slurm_management" data-wiki-id="group:support:services:slurm_management">SLURM Management</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="/doku.php/accounts:using_vscode_with_slurm" class="wikilink1" title="accounts:using_vscode_with_slurm" data-wiki-id="accounts:using_vscode_with_slurm">Using VSCODE with SLURM </a></div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit8" id="running_slurm">Running Slurm</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit9" id="submitting_a_job">Submitting a Job</h3>
+<div class="level3">
+
+<p>
+Typically, any node in a Slurm partition may be used to submit jobs to that partition.
+</p>
+
+<p>
+There are two exceptions:
+</p>
+<ul>
+<li class="level1"><div class="li"> ava-m.p:  log in to the slurm-ava.ics.uci.edu host in order to submit jobs.</div>
+</li>
+<li class="level1"><div class="li"> opengpu.p:  log in to the openlab cluster in order to submit jobs to this queue.</div>
+</li>
+</ul>
+
+<p>
+Any of the <a href="/doku.php/hardware:cluster:openlab" class="wikilink1" title="hardware:cluster:openlab" data-wiki-id="hardware:cluster:openlab">openlab</a> hosts may be used to submit jobs to the public openlab Slurm cluster. 
+</p>
+
+</div>
+
+<h3 class="sectionedit10" id="running_a_shell_on_a_slurm_only_cluster">Running A Shell on a Slurm Only Cluster</h3>
+<div class="level3">
+
+<p>
+Some clusters, such as the Openlab GPU Openlab cluster, are accessible via slurm-only. This means that users may no longer ssh directly into these servers and run processes outside the slurm scheduler. 
+</p>
+
+<p>
+Users may still run a bash shell via srun in order to test or compile programs.  The following example the shell is run on the Openlab GPU partition:
+</p>
+<pre class="code">srun -N1 -n1 -p opengpu.p bash -i</pre>
+
+</div>
+
+<h3 class="sectionedit11" id="module">Module</h3>
+<div class="level3">
+
+<p>
+Use the <a href="/doku.php/commands:modules" class="wikilink1" title="commands:modules" data-wiki-id="commands:modules">module</a> command to add Slurm to your environment.
+</p>
+<pre class="code">module load slurm</pre>
+
+<p>
+Use the following command to update your profile rc files to load the module on login permanently:
+</p>
+<pre class="code">module initadd slurm</pre>
+
+</div>
+
+<h3 class="sectionedit12" id="slurm_partitions">Slurm Partitions</h3>
+<div class="level3">
+
+<p>
+These may not be current so run &#039;sinfo&#039; to see the partitions available to you to use.  Currently, please submit jobs from a host that you see from the &#039;sinfo&#039; output.
+</p>
+
+<p>
+The partitions for public use is opengpu.p and openlab.p.  The rest are queues for specific research groups.
+</p>
+<div class="table sectionedit13"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Partition </th><th class="col1"> Nodes </th><th class="col2"> Cores per Node </th><th class="col3"> CPU Core Types </th><th class="col4"> RAM </th><th class="col5"> Time Limit </th><th class="col6"> MaxJobs </th><th class="col7"> MPI Suitable? </th><th class="col8"> GPU   Capable </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0" rowspan="2"> opengpu.p </td><td class="col1"> korn </td><td class="col2"> 64 </td><td class="col3"> AMD EPYC 9124 </td><td class="col4"> 2TB </td><td class="col5"> 7 hours </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> 4 x NVIDIA RTX 4000 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> poison </td><td class="col1"> 40 </td><td class="col2"> Intel Xeon Silver 4114 @ 2.2GHz </td><td class="col3"> 96GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0" rowspan="5"> openlab.p </td><td class="col1"> circinus-[1-96] </td><td class="col2"> 24 </td><td class="col3"> Intel Xeon X5680 @ 3.33GHz </td><td class="col4"> 96GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> No </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> hermod </td><td class="col1"> 32 </td><td class="col2"> AMD Opteron 6276 @ 2.3GHz </td><td class="col3"> 192GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> No </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> odin </td><td class="col1"> 64 </td><td class="col2"> AMD Opteron 6378 @ 2.4GHz </td><td class="col3"> 512GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> No </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> tristram </td><td class="col1"> 32 </td><td class="col2"> AMD Opteron 6380 @ 2.5GHz </td><td class="col3"> 96GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> No </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> vulcan </td><td class="col1"> 56 </td><td class="col2"> AMD EPYC 7663 @ 2GHz </td><td class="col3"> 512GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> No </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0" rowspan="4"> ai4science.p </td><td class="col1"> blazar-1 </td><td class="col2"> 256 </td><td class="col3"> AMD EPYC 7702 @ 2.0GHz </td><td class="col4"> 512GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> Yes </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> blazar-2 </td><td class="col1"> 256 </td><td class="col2"> AMD EPYC 7H12 @ 2.6GHz </td><td class="col3"> 512GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"> hypernova </td><td class="col1"> 32 </td><td class="col2"> Intel Xeon E5-2650 @ 2.6GHz </td><td class="col3"> 64GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"> kilonova </td><td class="col1"> 48 </td><td class="col2"> Intel Xeon E5-2695 @ 2.4GHz </td><td class="col3"> 64GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> No </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"> ailab.p </td><td class="col1"> neuromancer <br/>
+wintermute </td><td class="col2"> 64 </td><td class="col3"> AMD Opteron 6276 @ 2.3GHz </td><td class="col4"> 256GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> No </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0" rowspan="4"> ava_m.p </td><td class="col1"> ava-m[0-1,3] </td><td class="col2"> 64 </td><td class="col3"> Intel Xeon Gold 5218 @ 2.3GHz </td><td class="col4"> 512GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> Yes </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"> ava-m2 </td><td class="col1"> 64 </td><td class="col2"> Intel Xeon Gold 5218 @ 2.3GHz </td><td class="col3"> 768GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"> ava-m4 </td><td class="col1"> 256 </td><td class="col2"> AMD EPYC 7662 @ 2.0GHz </td><td class="col3"> 768GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"> ava-m5 </td><td class="col1"> 192 </td><td class="col2"> AMD EPYC 7643 @ 2.3GHz </td><td class="col3"> 1024GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0" rowspan="4"> ava_s.p </td><td class="col1"> ava-s[0-1,3] </td><td class="col2"> 64 </td><td class="col3"> Intel Xeon Gold 5218 @ 2.3GHz </td><td class="col4"> 512GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> Yes </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"> ava-s2 </td><td class="col1"> 64 </td><td class="col2"> Intel Xeon Gold 5218 @ 2.3GHz </td><td class="col3"> 768GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"> ava-s4 </td><td class="col1"> 256 </td><td class="col2"> AMD EPYC 7662 @ 2.0GHz </td><td class="col3"> 768GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"> ava-s5 </td><td class="col1"> 192 </td><td class="col2"> AMD EPYC 7643 @ 2.3GHz </td><td class="col3"> 1024GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row21">
+		<td class="col0" rowspan="2"> bayonet.p </td><td class="col1"> bayonet-07 </td><td class="col2"> 4 </td><td class="col3 leftalign">   </td><td class="col4"> 15GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> No </td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"> bayonet-09 </td><td class="col1"> 8 </td><td class="col2"> Intel Xeon E5-1620 @ 3.5GHz </td><td class="col3"> 31GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row23">
+		<td class="col0" rowspan="4"> biodatascience.p </td><td class="col1"> benedictus </td><td class="col2"> 24 </td><td class="col3"> Intel Xeon X5675 @ 3.07GHz </td><td class="col4"> 96GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> No </td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"> invictus </td><td class="col1"> 24 </td><td class="col2"> Intel Xeon X5650 @ 2.67GHz </td><td class="col3"> 96GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> No </td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"> lucy </td><td class="col1"> 64 </td><td class="col2"> Intel Xeon Gold 5218 @ 2.3GHz </td><td class="col3"> 512GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row26">
+		<td class="col0"> velox </td><td class="col1"> 24 </td><td class="col2"> Intel Xeon E5-2630 @ 2.3GHz </td><td class="col3"> 256GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row27">
+		<td class="col0" rowspan="5"> datalab.p </td><td class="col1"> datalab-[5-6] </td><td class="col2"> 32 </td><td class="col3"> Intel Xeon E5-2620 @ 2.1GHz </td><td class="col4"> 256GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> No </td>
+	</tr>
+	<tr class="row28">
+		<td class="col0"> datalab-7 </td><td class="col1"> 24 </td><td class="col2"> Intel Xeon W-2265 @ 3.50GHz </td><td class="col3"> 256GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> No </td>
+	</tr>
+	<tr class="row29">
+		<td class="col0"> datalab-[8-11] </td><td class="col1"> 16 </td><td class="col2"> Intel Xeon E5620 @ 2.40GHz </td><td class="col3"> 96GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> No </td>
+	</tr>
+	<tr class="row30">
+		<td class="col0"> datalab-gpu1 </td><td class="col1"> 64 </td><td class="col2"> Intel Xeon Gold 5218 CPU @ 2.30GHz </td><td class="col3"> 256GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row31">
+		<td class="col0"> markov </td><td class="col1"> 16 </td><td class="col2"> Intel Xeon E7420  @ 2.13GHz </td><td class="col3"> 128GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> No </td>
+	</tr>
+	<tr class="row32">
+		<td class="col0"> drg.p </td><td class="col1"> drg.p </td><td class="col2"> 16 </td><td class="col3"> AMD EPYC 9175F @ 4.2 <abbr title="Gigahertz">GHz</abbr> </td><td class="col4 leftalign"> 192GB  </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7 leftalign">   </td><td class="col8"> 1 x NVIDIA RTX A6000 </td>
+	</tr>
+	<tr class="row33">
+		<td class="col0" rowspan="2"> liv.p </td><td class="col1"> bird </td><td class="col2"> 128 </td><td class="col3"> AMD EPYC 7763 64-Core Processor @ 1.5GHz </td><td class="col4"> 1024GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> 8 x NVIDIA RTX A6000 </td>
+	</tr>
+	<tr class="row34">
+		<td class="col0"> dizzy </td><td class="col1"> 128 </td><td class="col2 leftalign">   </td><td class="col3"> 1024GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> 4 x NVIDIA RTX A6000 </td>
+	</tr>
+	<tr class="row35">
+		<td class="col0" rowspan="2"> pedigree.p </td><td class="col1"> deepreasoning </td><td class="col2"> 64 </td><td class="col3"> AMD EPYC 7302 @ 3.0GHz </td><td class="col4"> 256GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> Yes </td>
+	</tr>
+	<tr class="row36">
+		<td class="col0"> pedigree-[1-27] </td><td class="col1"> 24 </td><td class="col2"> Intel Xeon X5650 @ 2.67GHz </td><td class="col3"> 24GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> No </td>
+	</tr>
+	<tr class="row37">
+		<td class="col0" rowspan="3"> stats.p </td><td class="col1"> stats-[1-2] <br/>
+csc64-1 </td><td class="col2"> 64 </td><td class="col3"> AMD Opteron 6276 @ 2.3GHz </td><td class="col4"> 256GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> No </td>
+	</tr>
+	<tr class="row38">
+		<td class="col0"> stats-4 </td><td class="col1"> 40 </td><td class="col2"> Intel Xeon E5-2640 v4 @ 2.40GHz </td><td class="col3"> 128GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> No </td>
+	</tr>
+	<tr class="row39">
+		<td class="col0"> stats-5 </td><td class="col1"> 80 </td><td class="col2"> Intel Xeon Gold 6242R CPU @ 3.10GHz </td><td class="col3"> 96GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> No </td>
+	</tr>
+	<tr class="row40">
+		<td class="col0"> titans.p </td><td class="col1"> cronus <br/>
+hyperion <br/>
+oceanus <br/>
+rhea <br/>
+tethys <br/>
+themis </td><td class="col2"> 48 </td><td class="col3"> AMD Opteron 6234 @ 2.4GHz </td><td class="col4"> 192GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> No </td>
+	</tr>
+	<tr class="row41">
+		<td class="col0" rowspan="3"> zhanglab.p </td><td class="col1"> galaxy </td><td class="col2"> 256 </td><td class="col3"> AMD EPYC 7662 @ 2.0GHz </td><td class="col4"> 1024GB </td><td class="col5 leftalign">   </td><td class="col6"> None </td><td class="col7"> Yes </td><td class="col8"> Yes </td>
+	</tr>
+	<tr class="row42">
+		<td class="col0"> laniakea </td><td class="col1"> 64 </td><td class="col2"> AMD EPYC 7302 @ 3.0GHz </td><td class="col3"> 1024GB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> Yes </td>
+	</tr>
+	<tr class="row43">
+		<td class="col0"> voyager </td><td class="col1"> 64 </td><td class="col2"> AMD EPYC 9554 @ 3.1GHz </td><td class="col3"> 1.5TB </td><td class="col4 leftalign">   </td><td class="col5"> None </td><td class="col6"> Yes </td><td class="col7"> 4 x NVIDIA H100 NVL </td>
+	</tr>
+</table></div>
+
+</div>
+
+<h3 class="sectionedit14" id="slurm_daemons">Slurm Daemons</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="slurm_controller_daemon_slurmctld">Slurm Controller Daemon (slurmctld)</h4>
+<div class="level4">
+
+<p>
+This daemon runs exclusively on the control nodes.  One control node is active at any time.   If the first control node is down for any reason, another control node will take over.   In this case it may be moot since the primary control node is also the only database node.
+</p>
+<ul>
+<li class="level1"><div class="li"> olivia-benson-v4.ics.uci.edu</div>
+</li>
+<li class="level1"><div class="li"> broadchurch-v1.ics.uci.edu</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="slurm_database_daemon_slurmdbd">Slurm Database Daemon (slurmdbd)</h4>
+<div class="level4">
+
+<p>
+The database node runs mariadb and is the repository for accounting information.
+</p>
+<ul>
+<li class="level1"><div class="li"> Hostname:  olivia-benson-v4.ics.uci.edu</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="slurm_daemon_slurmd">Slurm Daemon (slurmd)</h4>
+<div class="level4">
+
+<p>
+This daemon runs on all worker nodes.
+</p>
+
+</div>
+
+<h2 class="sectionedit15" id="commands">Commands</h2>
+<div class="level2">
+
+<p>
+<a href="https://wiki.fysik.dtu.dk/niflheim/Slurm_accounting" class="urlextern" title="https://wiki.fysik.dtu.dk/niflheim/Slurm_accounting" rel="ugc nofollow">https://wiki.fysik.dtu.dk/niflheim/Slurm_accounting</a>
+</p>
+<ul>
+<li class="level1"><div class="li"> sacct -displays accounting data for all jobs and job steps in the Slurm job accounting log or Slurm database</div>
+</li>
+<li class="level1"><div class="li"> sacctmgr - Used to view and modify Slurm account information.</div>
+</li>
+<li class="level1"><div class="li"> salloc - Obtain a Slurm job allocation (a set of nodes), execute a command, and then release the allocation when the command is finished.</div>
+</li>
+<li class="level1"><div class="li"> sattach - Attach to a Slurm job step</div>
+</li>
+<li class="level1"><div class="li"> sbatch  - Submit a batch script to Slurm.</div>
+</li>
+<li class="level1"><div class="li"> sbcast - transmit a file to the nodes allocated to a Slurm job</div>
+</li>
+<li class="level1"><div class="li"> scancel -Used to signal jobs or job steps that are under the control of Slurm.</div>
+</li>
+<li class="level1"><div class="li"> scontrol - view or modify Slurm configuration and state. </div>
+</li>
+<li class="level1"><div class="li"> sdiag - Scheduling diagnostic tool for Slurm</div>
+</li>
+<li class="level1"><div class="li"> sinfo - view information about Slurm nodes and partitions.</div>
+</li>
+<li class="level1"><div class="li"> sprio - view the factors that comprise a job&#039;s scheduling priority</div>
+</li>
+<li class="level1"><div class="li"> squeue - view information about jobs located in the Slurm scheduling queue</div>
+</li>
+<li class="level1"><div class="li"> sreport - generate reports from the slurm accounting data</div>
+</li>
+<li class="level1"><div class="li"> srun - Run parallel jobs</div>
+</li>
+<li class="level1"><div class="li"> sshare - Tool for listing the shares of associations to a cluster</div>
+</li>
+<li class="level1"><div class="li"> sstat - Display various status information of a running job/step</div>
+</li>
+<li class="level1"><div class="li"> strigger - Used set, get or clear Slurm trigger information</div>
+</li>
+<li class="level1"><div class="li"> sview - gui for interacting with Slurm.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit16" id="shortcuts">Shortcuts</h3>
+<div class="level3">
+<div class="table sectionedit17"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Description</th><th class="col1">Command</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">Run a single job</td><td class="col1">sbatch -p openlab.p hello_world.sh</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">Run an interactive bash shell on 1 node with 1 task on openlab partition </td><td class="col1">srun -N1 -n1 -p openlab.p bash -i </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">List running jobs</td><td class="col1">squeue</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">Cancel job number</td><td class="col1">scancel job#</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">Run 1 task for max 10 minutes</td><td class="col1">sbatch –ntasks=1 –time=10 pre_process.bash</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">Run on 2 nodes, 16 tasks at a time, 1000 tasks</td><td class="col1">sbatch –nodes=2 -t 1-1000 –ntasks-per-node=16 -J sbatch-500  sleeper2A.sh 5 1 </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">Allocated 2 nodes, 6 tasks per, srun hostname </td><td class="col1">salloc  -N2 -n6 srun hostname</td>
+	</tr>
+</table></div>
+
+</div>
+
+<h4 id="administrative_shortcuts">Administrative Shortcuts</h4>
+<div class="level4">
+<div class="table sectionedit18"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">Description</th><th class="col1">Command</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">Resume Node</td><td class="col1">scontrol update NodeName=circinus-1 State=resume</td>
+	</tr>
+</table></div>
+
+</div>
+
+<h1 class="sectionedit19" id="writing_a_slurm_script_examples">Writing a Slurm Script (Examples)</h1>
+<div class="level1">
+
+<p>
+In the examples below, the #SBATCH are not comments.  They are options used when the sbatch command is run.  For example, in the Hello World example, the job is being submitted to the openlab.p partition.
+</p>
+
+</div>
+
+<h3 class="sectionedit20" id="hello_world">Hello World</h3>
+<div class="level3">
+
+<p>
+Copy and paste this code snippet into your terminal window:
+</p>
+<pre class="code">cat &lt;&lt; EOF &gt; hello_world.sh
+#!/bin/bash
+#SBATCH -n 1                # Number of tasks to run (equal to 1 cpu/core per task)
+#SBATCH -N 1                # Ensure that all cores are on one machine
+#SBATCH -t 0-00:10          # Max Runtime in D-HH:MM, minimum of 10 minutes
+#SBATCH -p openlab.p   # Partition to submit to
+#SBATCH -o myoutput.out  # File to which STDOUT will be written, %j inserts jobid
+#SBATCH -e myerrors.err  # File to which STDERR will be written, %j inserts jobid
+
+perl -e &#039;print &quot;Hello World.\n&quot;&#039;
+EOF</pre>
+
+<p>
+Submit the job:
+</p>
+<pre class="code">sbatch hello_world.sh</pre>
+
+<p>
+Look for the results in the local directory in the myoutput.out and myerrors.err files.
+</p>
+
+<p>
+<strong>Note:</strong>  Use the %j substitution to generate unique, job based file names, e.g. myoutput_%j.out or myerrors_%j.err
+</p>
+
+<p>
+<strong>Note:</strong> To run on specific node(s), add to example above to run on circinus-1 only:
+</p>
+<pre class="code">#SBATCH -w circinus-1  # node(s) to run it on, comma delimited</pre>
+
+</div>
+
+<h3 class="sectionedit21" id="sleepy_time">Sleepy time</h3>
+<div class="level3">
+
+<p>
+Copy and past this code:
+</p>
+<pre class="code">cat &lt;&lt; EOF &gt; sleepy_time.sh
+#!/bin/bash
+#
+#SBATCH --job-name=sleepy_time
+#SBATCH --output=sleepy_time_%j.out
+#SBATCH --error=sleepy_time_%j.out
+#SBATCH --ntasks=1
+#SBATCH --time=10:00
+#SBATCH --mem-per-cpu=1
+
+srun hostname
+srun sleep 60
+EOF</pre>
+
+<p>
+Submit the job:
+</p>
+<pre class="code">sbatch sleepy_time.sh</pre>
+
+</div>
+
+<h3 class="sectionedit22" id="mpi_fun_with_pi">MPI Fun with Pi</h3>
+<div class="level3">
+
+<p>
+Grab the MPI_PI programs from github:
+</p>
+<pre class="code">git clone https://github.com/kiwenlau/MPI_PI</pre>
+
+<p>
+The Monte Carlo routines are silly, so go into Trapezoid1:
+</p>
+<pre class="code">cd MPI_PI/Trapezoid1</pre>
+
+<p>
+If running on CentOS, add the mpi directory to your path before starting:
+</p>
+<pre class="code">PATH=/usr/lib64/openmpi/bin:$PATH</pre>
+
+<p>
+Compile Trapezoid mpi_pi (don&#039;t forget to include the math library):
+</p>
+<pre class="code">mpicc -o pi mpi_pi.c -lm </pre>
+
+<p>
+Create a Batch file (make sure you include the PATH= line above if running on CentOS):
+</p>
+<pre class="code">#!/bin/bash
+
+# uncomment on CentOS
+# PATH=/usr/lib64/openmpi/bin:$PATH
+
+#SBATCH --job-name=you-are-kewl
+#SBATCH --output=you-are-kewl.out
+#SBATCH --partition=openlab.p
+
+for i in $(seq 1 8 )
+do
+mpirun -np $i ./pi
+done</pre>
+
+<p>
+Submit your batch job:
+</p>
+<pre class="code">sbatch -N 5 mpirun_batch.sh</pre>
+
+</div>
+
+<h3 class="sectionedit23" id="distributed_stress_test">Distributed Stress Test</h3>
+<div class="level3">
+<pre class="code">#!/bin/sh
+#
+# Script runs one process per node on ten nodes.   The stress test runs for 30 minutes and exits.
+#
+#SBATCH -n 1
+#SBATCH -N 10
+#SBATCH -t 30
+#SBATCH -p openlab.p
+#SBATCH -o myoutput_%j.out
+#SBATCH -e myoutput_%j.err
+
+cd /extra/baldig11/hans
+/home/hans/bin/stress -d 10</pre>
+
+<p>
+Execute it:
+</p>
+<pre class="code">sbatch distributed_stress_test.sh</pre>
+
+</div>
+
+<h3 class="sectionedit24" id="array_job">Array Job</h3>
+<div class="level3">
+
+<p>
+An array job will allow you to run parallel jobs.  This method does not take variables though.  See “SRUN inside SBATCH” for how to run parallel jobs but provide variables to each job.
+</p>
+
+<p>
+Put the following into a file ~/bin/arrayjob.sh and make it executable `chmod 700 ~/bin/arrayjob.sh`
+</p>
+<pre class="code">#!/bin/bash
+#SBATCH --job-name=array_job_test     # Job name
+#SBATCH --mail-type=FAIL              # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=email@ics.uci.edu # Where to send mail	
+#SBATCH --ntasks=1                    # Run a single task
+#SBATCH --mem=1gb                     # Job Memory
+#SBATCH --time=00:05:00               # Time limit hrs:min:sec
+#SBATCH --output=/home/hans/tmp/array_%A-%a.log      # Standard output and error log
+#SBATCH --array=1-5000                # Array range
+pwd; hostname; date
+
+echo This is task $SLURM_ARRAY_TASK_ID
+
+date</pre>
+
+</div>
+
+<h5 id="execute">Execute</h5>
+<div class="level5">
+
+<p>
+At the command prompt, enter:  
+</p>
+<pre class="code">sbatch ~/bin/arrayjob.sh`</pre>
+
+</div>
+
+<h3 class="sectionedit25" id="srun_inside_sbatch">SRUN inside SBATCH</h3>
+<div class="level3">
+
+<p>
+You can ask for a specific number of cores and memory using an SBATCH script.  Within the SBATCH script, you can assign out the resources that have been allocated via an SRUN command.  What makes this different than an array job is that you can pass in variables to each SRUN command.  
+</p>
+
+<p>
+The following is a simple example where 50 cores are requested.  Instead of the default 4GB memory per core assignment, I only asked for 1GB per core.  (This is necessary when there the number of cores x default memory is higher than the available memory in the server and hence would fail).  In this example, I am running the job only one specific node in the partition.  If you wish to run it on all nodes in the partition, then just remove the line with the “-w” option.
+</p>
+<pre class="code">#!/bin/bash
+#SBATCH -n 1                # Number of tasks to run (equal to 1 cpu/core per task)
+#SBATCH -N 1                # Ensure that all cores are on one machine
+#SBATCH -t 0-05:00          # Max Runtime in D-HH:MM, minimum of 10 minutes
+#SBATCH -p openlab.p   # Partition to submit to
+#SBATCH -w odin  # node(s) to run it on, comma delimited
+#SBATCH --mem-per-cpu=1024  # amount of memory to allocate per core, default is 4096 MB
+#SBATCH -o myoutput.out  # File to which STDOUT will be written, %j inserts jobid
+#SBATCH -e myerrors.err  # File to which STDERR will be written, %j inserts jobid
+
+# i is passed in as an argument to the srun_script.sh script
+for i in `seq 50`; do
+  srun --exclusive -p openlab.p -w odin --nodes 1 --ntasks 1 /home/dutran/scripts/slurm/srun_script.sh ${i} &amp;
+done
+
+# important to make sure the batch job won&#039;t exit before all the
+# simultaneous runs are completed.
+wait</pre>
+
+<p>
+The “wait” at the end of the script is important so do not delete it.  In this example, “i” was passed as an argument to an srun_script.sh:
+</p>
+<pre class="code">#!/bin/bash
+
+echo &quot;Hello World $1&quot; &gt;&gt; /tmp/srun_output.txt
+sleep $1</pre>
+
+<p>
+Before running the SBATCH script, it is beneficial to run the srun command in your script first to make sure there are no errors before trying out the sbatch script.
+</p>
+
+</div>
+
+<h3 class="sectionedit26" id="single_core_single_gpu_job">Single core / single GPU job</h3>
+<div class="level3">
+
+<p>
+If you need only a single CPU core and one GPU:
+</p>
+<pre class="code">#!/bin/bash
+#SBATCH --ntasks=1                # Number of tasks to run (equal to 1 cpu/core per task)
+#SBATCH --gres=gpu:1              # Number of GPUs (per node)
+#SBATCH --mem=4000M               # memory (per node)
+#SBATCH --time=0-03:00            # time (DD-HH:MM)
+./program                         # you can use &#039;nvidia-smi&#039; for a test</pre>
+
+</div>
+
+<h3 class="sectionedit27" id="multi-threaded_core_single_gpu_job">Multi-threaded core / single GPU job</h3>
+<div class="level3">
+
+<p>
+If you need only a 6 CPU core and one GPU:
+</p>
+<pre class="code">#!/bin/bash
+#SBATCH --cpus-per-task=6         # CPU cores/threads
+#SBATCH --gres=gpu:1              # Number of GPUs (per node)
+#SBATCH --mem=4000M               # memory (per node)
+#SBATCH --time=0-03:00            # time (DD-HH:MM)
+./program                         # you can use &#039;nvidia-smi&#039; for a test</pre>
+
+</div>
+
+<h2 class="sectionedit28" id="view_available_resources">View Available Resources</h2>
+<div class="level2">
+
+<p>
+Please see <a href="https://slurm.schedmd.com/sinfo.html" class="urlextern" title="https://slurm.schedmd.com/sinfo.html" rel="ugc nofollow">https://slurm.schedmd.com/sinfo.html</a> for further sinfo options.
+</p>
+
+<p>
+This will list information on the openlab20.p partitions of allocated resources:
+</p>
+<pre class="code">sinfo -p openlab.p --Format NodeList:30,StateCompact:10,FreeMem:15,AllocMem:10,Memory:10,CPUsState:15,CPUsLoad:10,GresUsed:35</pre>
+
+<p>
+Add -N to the above command to list resources per node.  Add -n with comma separated list of hosts to view available for those hosts only.
+</p>
+<pre class="code">NODELIST                      STATE     FREE_MEM       ALLOCMEM  MEMORY    CPUS(A/I/O/T)  CPU_LOAD  GRES_USED                       
+circinus-[50,52-76,78-94,96]  down*     85503-89736    0         96000     0/0/1056/1056  0.00-1.12 gpu:0,mps:0,bandwidth:0         
+circinus-[49,51]              mix       83852-84050    8000      96000     4/44/0/48      0.22-0.34 gpu:0,mps:0,bandwidth:0         
+circinus-95                   mix       80303          92160     96000     2/22/0/24      1.29      gpu:0,mps:0,bandwidth:0         
+circinus-77                   down      93486          0         96000     0/0/24/24      0.00      gpu:0,mps:0,bandwidth:0         </pre>
+
+<p>
+This will show you what is available and which nodes are down.
+</p>
+
+<p>
+It is less clear for circinus-[68,80] though.  There is 96000 <abbr title="Megabyte">MB</abbr> memory available per node, not 96000 <abbr title="Megabyte">MB</abbr> combined.  There is 8000 <abbr title="Megabyte">MB</abbr> allocated on 68 and 80.  The CPU count is the combined CPUs available between both nodes though with 4 allocated between the two of them and 44 left idle.  
+</p>
+
+<p>
+The rest of the circinus machines are idle.
+</p>
+
+<p>
+To further inspect what is available and allocated on circinus-68 CPU-wise, run:
+</p>
+<pre class="code">sinfo -p openlab20.p -n circinus-68 -o &quot;%11n %5a %10A %13C %10O %10e %m %15G %15h &quot;</pre>
+<pre class="code">HOSTNAMES   AVAIL NODES(A/I) CPUS(A/I/O/T) CPU_LOAD   FREE_MEM   MEMORY GRES            OVERSUBSCRIBE
+circinus-68 up    0/1        0/24/0/24     0.26       91897      96000 (null)          NO</pre>
+
+<p>
+This command will list CPU usage on all nodes in a partition:
+</p>
+<pre class="code">sinfo -p openlab20.p --Node -o &quot;%11n %5a %10A %13C %10O %10e %m %15G %15h &quot;</pre>
+
+</div>
+
+<h1 class="sectionedit29" id="pyslurm_api">PySlurm API</h1>
+<div class="level1">
+
+<p>
+<a href="https://github.com/PySlurm/pyslurm" class="urlextern" title="https://github.com/PySlurm/pyslurm" rel="ugc nofollow">PySlurm Git Repo</a>
+</p>
+
+</div>
+
+<h3 class="sectionedit30" id="compilation">Compilation</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="virtual_environment">Virtual Environment</h4>
+<div class="level4">
+
+<p>
+<a href="https://github.com/PySlurm/pyslurm/wiki/Installing-PySlurm" class="urlextern" title="https://github.com/PySlurm/pyslurm/wiki/Installing-PySlurm" rel="ugc nofollow">https://github.com/PySlurm/pyslurm/wiki/Installing-PySlurm</a>
+</p>
+
+<p>
+Load a python 3 module with a working version of virtualenv.   Version 3.7.1 will do:
+</p>
+<pre class="code">module load python/3.7.1</pre>
+
+<p>
+Create virtual environment:
+</p>
+<pre class="code">virtualenv pyslurmenv
+source pyslurmenv/bin/activate</pre>
+
+<p>
+Make sure Cython is installed 
+</p>
+<pre class="code">pip install Cython</pre>
+
+<p>
+Clone the pyslurm git repo:
+</p>
+<pre class="code">git clone https://github.com/PySlurm/pyslurm.git pyslurm.src
+cd pyslurm.src</pre>
+
+<p>
+Compile (I&#039;ve used the native gcc 4.8.5 on CentOS7)
+</p>
+<pre class="code">python setup.py  build --slurm-lib=/pkg/slurm/19.05.3-2/lib/ --slurm-inc=/pkg/slurm/19.05.3-2/include
+python setup.py  install</pre>
+
+</div>
+
+<h3 class="sectionedit31" id="using_the_pyslurm_api">Using the PySlurm API</h3>
+<div class="level3">
+
+<p>
+<a href="https://pyslurm.github.io/" class="urlextern" title="https://pyslurm.github.io/" rel="ugc nofollow">PySlurm API Documentation</a>
+</p>
+
+</div>
+
+<h1 class="sectionedit32" id="security">Security</h1>
+<div class="level1">
+
+<p>
+Jobs are transmitted to the running node via  plaintext.   Please do not incorporate sensitive data into your slurm scripts.  Use <a href="/doku.php/services:vault" class="wikilink1" title="services:vault" data-wiki-id="services:vault">Vault @ ICS</a> to store and retrieve sensitive data.
+</p>
+
+</div>
+
+<h1 class="sectionedit33" id="commands1">Commands</h1>
+<div class="level1">
+
+</div>
+
+<h3 class="sectionedit34" id="sacct">sacct</h3>
+<div class="level3">
+
+<p>
+This command will show allocated jobs and the number of GPUs assigned to it.
+</p>
+<pre class="code">sacct -a -X --format=JobID,AllocCPUS,ReqTres</pre>
+
+<p>
+This command shows jobs from the specfied start date:
+</p>
+<pre class="code"> sacct -S 2022-06-20</pre>
+
+<p>
+Show job account information for a specific job:
+</p>
+<pre class="code">sacct -j &lt;jobid&gt; --format=User,JobID,Jobname,partition,state,time,start,end,elapsed,MaxRss,MaxVMSize,nnodes,ncpus,nodelist</pre>
+
+<p>
+Show job submit information:
+</p>
+<pre class="code">sacct -j &lt;jobib&gt; --format=WorkDir%50,SubmitLine%50</pre>
+
+</div>
+
+<h3 class="sectionedit35" id="sacctmgr">sacctmgr</h3>
+<div class="level3">
+
+<p>
+This one setups up the MariaDB accounting database for the cluster:
+</p>
+<pre class="code">sacctmgr add cluster ics_general_use</pre>
+<pre class="code">sacctmgr show associations</pre>
+<pre class="code">sacctmgr show configuration</pre>
+
+</div>
+
+<h4 id="configure_qos">Configure QOS</h4>
+<div class="level4">
+
+<p>
+<a href="https://slurm.schedmd.com/qos.html" class="urlextern" title="https://slurm.schedmd.com/qos.html" rel="ugc nofollow">https://slurm.schedmd.com/qos.html</a>
+</p>
+
+</div>
+
+<h5 id="show_qos">Show QOS</h5>
+<div class="level5">
+<pre class="code">sacctmgr show qos format=name,priority</pre>
+
+</div>
+
+<h5 id="set_qos">Set QOS</h5>
+<div class="level5">
+<pre class="code">sacctmgr modify user peter set qos=openlab.qos</pre>
+
+</div>
+
+<h4 id="create_accounts">Create Accounts</h4>
+<div class="level4">
+
+<p>
+Example:
+</p>
+<pre class="code">sudo /pkg/slurm/19.05.3-2/bin/sacctmgr add account grad.a Description=&quot;ICS Grad Students&quot; Organization=ics parent=ics.a</pre>
+
+<p>
+Accounts are similar to UNIX groups:
+</p>
+<pre class="code">sacctmgr add account &lt;account_name.a&gt; Description=&quot;Bren School of Information and Computer Science&quot; Organization=ics </pre>
+<pre class="code">sacctmgr add account support.a Description=&quot;Computing Support Group&quot; Organization=sgroup parent=ics</pre>
+<pre class="code">sacctmgr add account baldig.a Description=&quot;Institute for Genomics and Bioinformatics&quot; Organization=igb parent=ics</pre>
+<pre class="code">sacctmgr add account ugrad.a Description=&quot;Undergraduate Instruction&quot; Organization=ics parent=inst</pre>
+
+</div>
+
+<h4 id="create_users">Create Users</h4>
+<div class="level4">
+<pre class="code">sacctmgr create user name=rnail18 DefaultAccount=sgroup.a
+sacctmgr create user name=yuzok DefaultAccount=igb.a</pre>
+<pre class="code">[11:17:49 root@addison-v9]sacctmgr create user name=sources DefaultAccount=sgroup                                      
+ Adding User(s)
+  sources
+ Settings =
+  Default Account = sgroup
+ Associations =
+  U = sources   A = sgroup     C = ics_genera
+Would you like to commit changes? (You have 30 seconds to decide)</pre>
+<pre class="code">sacctmgr add user rnail18 Account inst</pre>
+
+</div>
+
+<h4 id="list_users">List Users</h4>
+<div class="level4">
+
+<p>
+List all users:
+</p>
+<pre class="code">sacctmgr show user
+sacctmgr show user -s</pre>
+
+<p>
+List information of a specific user:
+</p>
+<pre class="code">sacctmgr show user &lt;username&gt;</pre>
+
+<p>
+List all accounts
+</p>
+<pre class="code">sacctmgr show account</pre>
+
+<p>
+List all user in an account 
+</p>
+<pre class="code">sacctmgr show account -s &lt;account&gt;</pre>
+
+<p>
+List users:
+</p>
+<pre class="code">sacctmgr show assoc format=account,user,partition where user=rnail</pre>
+
+</div>
+
+<h3 class="sectionedit36" id="salloc">salloc</h3>
+<div class="level3">
+
+<p>
+Needs an example
+</p>
+
+</div>
+
+<h3 class="sectionedit37" id="sbatch">sbatch</h3>
+<div class="level3">
+
+</div>
+
+<h3 class="sectionedit38" id="sbcast">sbcast</h3>
+<div class="level3">
+
+<p>
+Use sbatch to copy data to allocated nodes.
+</p>
+
+<p>
+The following allocates 100 nodes running bash, copies my_data to each of the 100 nodes and then executes a program, a.out.
+</p>
+<pre class="code">salloc -N100 bash
+sbacast  --force my_data /tmp/luser/my_data
+srun a.out</pre>
+
+</div>
+
+<h3 class="sectionedit39" id="scancel">scancel</h3>
+<div class="level3">
+
+<p>
+Cancel job # 77:
+</p>
+<pre class="code">scancel 77</pre>
+
+<p>
+Cancel job 77 step 1.
+</p>
+<pre class="code">scancel 77.1</pre>
+
+<p>
+Cancel all running and queued jobs:
+</p>
+<pre class="code">scancel --user=rnail18 --state=pending</pre>
+
+</div>
+
+<h3 class="sectionedit40" id="scontrol">scontrol</h3>
+<div class="level3">
+<pre class="code">scontrol show config</pre>
+
+<p>
+release a held job
+</p>
+<pre class="code">scrontrol release 77</pre>
+
+<p>
+Bring node back online:
+</p>
+<pre class="code">scontrol update NodeName=circinux-1 State=resume</pre>
+
+<p>
+Set a node down, hung_proc
+</p>
+<pre class="code">scontrol update NodeName=&lt;node&gt; State=down Reason=hung_proc</pre>
+
+<p>
+Lots of information about a job:
+</p>
+<pre class="code">scontrol show job
+scontrol show job 77</pre>
+
+</div>
+
+<h3 class="sectionedit41" id="sdiag">sdiag</h3>
+<div class="level3">
+
+<p>
+Needs an example.
+</p>
+
+</div>
+
+<h3 class="sectionedit42" id="sinfo">sinfo</h3>
+<div class="level3">
+
+<p>
+sinfo will show you the partitions your account is allowed to submit jobs to.
+</p>
+<pre class="code">sinfo</pre>
+<pre class="code">sinfo -j 54 </pre>
+<pre class="code">sinfo --summarize</pre>
+<pre class="code">sinfo --list-reasons --long</pre>
+<pre class="code">sinfo --Node --long</pre>
+
+<p>
+This will show the number of GPUs available and on which hosts:
+</p>
+<pre class="code">sinfo  -o &quot;%P %.10G %N&quot;</pre>
+
+<p>
+Load on each host:
+</p>
+<pre class="code">sinfo -e -o &quot;%n %O&quot; </pre>
+
+</div>
+
+<h3 class="sectionedit43" id="sprio">sprio</h3>
+<div class="level3">
+
+<p>
+If multifactor priority is set, then sprio will display the weighted factors available.
+</p>
+<pre class="code">sprio</pre>
+
+<p>
+This will show the priority for a specific jobid:
+</p>
+<pre class="code">sprio -j &lt;jobid&gt;</pre>
+
+</div>
+
+<h3 class="sectionedit44" id="squeue">squeue</h3>
+<div class="level3">
+
+</div>
+
+<h5 id="running_jobs">Running jobs</h5>
+<div class="level5">
+<pre class="code">squeue --states=running</pre>
+
+</div>
+
+<h5 id="running_jobs_for_use_luser">Running jobs for use luser</h5>
+<div class="level5">
+<pre class="code">squeue --states=running --user rnail18</pre>
+
+</div>
+
+<h3 class="sectionedit45" id="sreport">sreport</h3>
+<div class="level3">
+
+</div>
+
+<h3 class="sectionedit46" id="srun">srun</h3>
+<div class="level3">
+
+<p>
+<a href="https://slurm.schedmd.com/srun.html" class="urlextern" title="https://slurm.schedmd.com/srun.html" rel="ugc nofollow">srun man page</a>
+</p>
+
+</div>
+
+<h4 id="interactive_jobs">Interactive Jobs</h4>
+<div class="level4">
+
+<p>
+This will run an interactive session on a specific node in a specific partition with 4 GPUs allocated:
+</p>
+<pre class="code">srun -p datalab.p --gres=gpu:4 -w datalab-gpu1 bash</pre>
+
+<p>
+Running with 1 GPU on a specific host:
+</p>
+<pre class="code">srun -p biodatascience.p -w lucy --gres=gpu:1 --pty /bin/bash -i</pre>
+<ul>
+<li class="level1"><div class="li"> -p/–partition:  Request a specific partition for the resource allocation. </div>
+</li>
+<li class="level1"><div class="li"> -w/–nodelist:  Request a specific list of hosts</div>
+</li>
+<li class="level1"><div class="li"> –gres:  Specifies a comma delimited list of generic consumable resources.</div>
+</li>
+<li class="level1"><div class="li"> –pty:  execute task 0 in a terminal mode</div>
+</li>
+</ul>
+
+<p>
+You could run a docker container within a slurm job, however, docker still gets the resources from the root host rather than the node itself. So you have to be careful with what you allocate. In the following command, I specify 4 GPUs for the slurm job, and then I specify which devices Docker should get. However, we still don&#039;t know which GPUs Slurm gets specifically, so this needs more testing.
+</p>
+<pre class="code">srun -p ava_s.p -w ava-s0-v0  --gres=gpu:4 --pty docker run -it --rm --gpus &#039;&quot;device=0,1,2,3&quot;&#039; ubuntu</pre>
+
+</div>
+
+<h3 class="sectionedit47" id="sshare">sshare</h3>
+<div class="level3">
+
+</div>
+
+<h3 class="sectionedit48" id="sstat">sstat</h3>
+<div class="level3">
+
+</div>
+
+<h3 class="sectionedit49" id="strigger">strigger</h3>
+<div class="level3">
+<pre class="code">strigger --set   [OPTIONS...]
+strigger --get   [OPTIONS...]
+strigger --clear </pre>
+
+</div>
+
+<h3 class="sectionedit50" id="sview">sview</h3>
+<div class="level3">
+
+<p>
+Run this command to evoke the gui:
+</p>
+
+<p>
+<a href="/lib/exe/detail.php/services:sview1.png?id=research_support%3Aslurm" class="media" title="services:sview1.png"><img src="/lib/exe/fetch.php/services:sview1.png?w=400&amp;tok=8ae6d2" class="media" loading="lazy" title="
+
+" alt="
+
+" width="400" /></a>
+</p>
+
+</div>
+
+<h1 class="sectionedit51" id="sge_equivalences">SGE Equivalences</h1>
+<div class="level1">
+
+</div>
+
+<h3 class="sectionedit52" id="job_submission">Job Submission</h3>
+<div class="level3">
+<div class="table sectionedit53"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">SGE</th><th class="col1">SLURM</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">qsub</td><td class="col1"><a href="https://slurm.schedmd.com/sbatch.html" class="urlextern" title="https://slurm.schedmd.com/sbatch.html" rel="ugc nofollow">sbatch</a></td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">qstat -f -q OPENLLAB</td><td class="col1">squeue</td>
+	</tr>
+</table></div>
+
+</div>
+
+<h4 id="sge">SGE</h4>
+<div class="level4">
+<pre class="code">qsub \
+-q openlab.q \
+-o /home/$USER/myjob.out \
+-e /home/$USER/myjob.err \
+/home/$USER/bin/myjob.sh arg1 arg2 arg3 ...</pre>
+
+</div>
+
+<h4 id="slurm">Slurm</h4>
+<div class="level4">
+<pre class="code">sbatch \
+-p openlab.q \
+-o /home/$USER/myjob.%j.out \
+-e /home/$USER/myjob.%j.err \
+/home/$USER/bin/myjob.sh arg1 arg2 arg3</pre>
+
+</div>
+
+<h3 class="sectionedit54" id="example_2">Example 2</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="sge1">SGE</h4>
+<div class="level4">
+<pre class="code">qsub -l h_rt=72:00:00 -l s_rt=72:00:00 -q openlab.q \
+  -o $LOGS/$CASE.$i.$EXP.$SET.$count.out \
+  -e $LOGS/$CASE.$i.$EXP.$SET.$count.err \
+  /bin/sh python $SCRIPTS/$PYEXEC $f $i</pre>
+
+</div>
+
+<h4 id="slurm1">SLURM</h4>
+<div class="level4">
+<pre class="code">sbatch -t 72:00:00 -p openlab.p \
+  -o $LOGS/$CASE.$i.$EXP.$SET.$count.out \
+  -e $LOGS/$CASE.$i.$EXP.$SET.$count.err \
+  /bin/sh python $SCRIPTS/$PYEXEC $f $i</pre>
+
+</div>
+
+<h3 class="sectionedit55" id="job_reporting">Job Reporting</h3>
+<div class="level3">
+<div class="table sectionedit56"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">SGE</th><th class="col1">SLURM</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">qstat -u luser</td><td class="col1">squeue -u sources</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">qstat -j 77</td><td class="col1">squeue -j 77</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">qstat -explain [acE]</td><td class="col1">squeue -l</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">qstat -explain [acE]</td><td class="col1">scontrol show job</td>
+	</tr>
+</table></div>
+
+</div>
+
+<h3 class="sectionedit57" id="accounting">Accounting</h3>
+<div class="level3">
+<div class="table sectionedit58"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">SGE</th><th class="col1">SLURM</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">qacct -j 77</td><td class="col1">sacct -j 77</td>
+	</tr>
+</table></div>
+
+</div>
+
+<h3 class="sectionedit59" id="alter_items_in_queue">Alter Items in Queue</h3>
+<div class="level3">
+<div class="table sectionedit60"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">SGE</th><th class="col1">SLURM</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">qstat -j 77</td><td class="col1">sacct -j 77</td>
+	</tr>
+</table></div>
+
+</div>
+
+<h3 class="sectionedit61" id="other_equivalencies">Other Equivalencies</h3>
+<div class="level3">
+
+<p>
+SGE Command:  <strong>qsub</strong>
+</p>
+
+<p>
+Slurm Command:  <strong>sbatch</strong>
+</p>
+<div class="table sectionedit62"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0">SGE</th><th class="col1">SLURM</th><td class="col2"></td>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0">-V</td><td class="col1">–export=ALL</td><td class="col2"> All of the users environment will be loaded </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0">-q queue</td><td class="col1">-p parition</td><td class="col2">Request a specific partition for the resource allocation.</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0">-t 1:X </td><td class="col1">-a 1-X</td><td class="col2">Submit a job array, multiple jobs to be executed with identical parameters.</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0">-r y</td><td class="col1">–requeue</td><td class="col2">Specifies that the batch job should eligible to being requeue.</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0">-sync</td><td class="col1">-W</td><td class="col2">Do not exit until the submitted job terminates.</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0">-cwd</td><td class="col1">–chdir</td><td class="col2">Set the working directory of the batch script to directory before it is executed.</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0">-N</td><td class="col1">-J</td><td class="col2">Job name</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">-p</td><td class="col1">–nice</td><td class="col2">Run the job with an adjusted scheduling priority within Slurm.</td>
+	</tr>
+</table></div>
+
+<p>
+Old command in SGE:
+</p>
+<pre class="code">qsub \
+-p -1000 \
+-cwd \
+-o ~/sge_logs/&#039;$JOB_NAME-$HOSTNAME-$TASK_ID&#039; \
+-e ~/sge_logs/&#039;$JOB_NAME-$HOSTNAME-$TASK_ID&#039; \
+-t 1:100 \
+-N &quot;$JOB&quot; \
+-r y \
+-sync y \
+-V \
+&quot;$@&quot;</pre>
+
+<p>
+Equivalent in slurm:
+</p>
+<pre class="code">sbatch \
+--nice=1000 \
+--chdir=`pwd` \
+-o ~/slurm_logs/%j-%N-%t.out \
+-e ~/slurm_logs/%j-%N-%t.err \
+-sync y \
+-a 1-100 \
+-J MyJob \
+--requeue \
+-W \
+--export=ALL \
+&quot;$@&quot;</pre>
+
+</div>
+
+<h1 class="sectionedit63" id="checkpointing">Checkpointing</h1>
+<div class="level1">
+
+<p>
+Coming soon.
+</p>
+
+</div>
+
+<h1 class="sectionedit64" id="states">States</h1>
+<div class="level1">
+
+</div>
+
+<h3 class="sectionedit65" id="drain">Drain</h3>
+<div class="level3">
+
+<p>
+Jobe exited with code &gt; 0.   
+Use scontrol to resume. 
+Use sacct -j job# to pull up data.
+</p>
+
+</div>
+
+<h3 class="sectionedit66" id="idle">Idle</h3>
+<div class="level3">
+
+</div>
+
+<h1 class="sectionedit67" id="qos_fair_share_queueing_and_limits">QOS,Fair Share Queueing, and Limits</h1>
+<div class="level1">
+
+</div>
+
+<h3 class="sectionedit68" id="configurationslurmconf">Configuration:  slurm.conf</h3>
+<div class="level3">
+
+<p>
+In order for any of the following options to be effective, make sure that th limits option is included for AccountingSTroageEnforce in the slurm.conf file:
+</p>
+<pre class="code">AccountingStorageEnforce=associations,limits,qos</pre>
+
+</div>
+
+<h3 class="sectionedit69" id="documentation">Documentation</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="https://slurm.schedmd.com/resource_limits.html" class="urlextern" title="https://slurm.schedmd.com/resource_limits.html" rel="ugc nofollow">Resource adminsitration</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://slurm.schedmd.com/sacctmgr.html" class="urlextern" title="https://slurm.schedmd.com/sacctmgr.html" rel="ugc nofollow">sacctmgr</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://slurm.schedmd.com/accounting.html" class="urlextern" title="https://slurm.schedmd.com/accounting.html" rel="ugc nofollow">accounting</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://slurm.schedmd.com/high_throughput.html" class="urlextern" title="https://slurm.schedmd.com/high_throughput.html" rel="ugc nofollow">HA Guide</a></div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit70" id="priority_setting">Priority setting</h3>
+<div class="level3">
+<ol>
+<li class="level1 node"><div class="li"> Create qos and assign to users who should be able to use it.</div>
+<ul>
+<li class="level2"><div class="li"> sacctmgr create qos name=&lt;qos-name1&gt;</div>
+</li>
+<li class="level2"><div class="li"> sacctmgr create qos name=&lt;qos-name2&gt;</div>
+</li>
+<li class="level2"><div class="li"> sacctmgr modify user &lt;username&gt; set qos+=&lt;qos-name1&gt;,&lt;qos-name2&gt;</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Verify QOS is set for users:</div>
+<ul>
+<li class="level2"><div class="li"> sacctmgr show user &lt;username&gt; format=User,Account,QOS%45 -s</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> sacctmgr modify qos &lt;qos-name&gt; set Priority=50</div>
+<ul>
+<li class="level2"><div class="li"> Priority can range from 0-100.</div>
+</li>
+<li class="level2 node"><div class="li"> Verify QOS settings:</div>
+<ul>
+<li class="level3"><div class="li"> sacctmgr show qos format=Name%15,Priority</div>
+</li>
+</ul>
+</li>
+<li class="level2 node"><div class="li"> The value calculated depends on the PriorityWeightQOS, as it is normalized.  For example,</div>
+<ul>
+<li class="level3"><div class="li"> For PriorityWeightQOS=1000, priority will be 1000 when Priority=100.</div>
+</li>
+<li class="level3"><div class="li"> For PriorityWeightQOS=1000, priority will be 10 when Priority=1.</div>
+</li>
+<li class="level3"><div class="li"> For PriorityWeightQOS=10000, priority will be 10000 when Priority=100.</div>
+</li>
+<li class="level3"><div class="li"> For PriorityWeightQOS=10000, priority will be 100 when Priority=1.</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> To submit with qos created, in the sbatch script add:</div>
+<ul>
+<li class="level2"><div class="li"> #SBATCH -q &lt;qos-name&gt;</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> There is a way to make a qos default for all users.  </div>
+<ul>
+<li class="level2"><div class="li"> Add “QOS=&lt;qos-name&gt;” to PartitionName and make sure the QOS is added to the SLURM user or account.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Look at QOS column when typing “sprio” to view the priority QOS had on the submitted job.</div>
+<ul>
+<li class="level2"><div class="li"> sprio will only show pending jobs. </div>
+</li>
+</ul>
+</li>
+</ol>
+
+</div>
+
+<h3 class="sectionedit71" id="qos">QOS</h3>
+<div class="level3">
+
+<p>
+Show all QOS and settings:
+</p>
+<pre class="code">sacctmgr show qos </pre>
+
+<p>
+Since not all of the above information is important, you can pick what you want to see with the format option:
+</p>
+<pre class="code">sacctmgr show qos format=&quot;Name,MaxTresPerUser,MAxJob,MaxSubmit,Priority,MaxTRESPU,MaxJobsPU,UsageThresh,MaxTres,MaxTRESPerNode,MaxJobsPA&quot;</pre>
+
+<p>
+This will look similar to this:
+</p>
+<pre class="code">      Name     MaxTRESPU MaxJobs MaxSubmit   Priority     MaxTRESPU MaxJobsPU UsageThres       MaxTRES MaxTRESPerNode MaxJobsPA 
+---------- ------------- ------- --------- ---------- ------------- --------- ---------- ------------- -------------- --------- 
+    normal                                          0                                                                           </pre>
+
+<p>
+Assign a limit to a QOS, this will impact all jobs submitted using that QOS.  These limit the max jobs per account and per user to 30:
+</p>
+<pre class="code">sacctmgr modify qos set MaxJobsPU=30
+sacctmgr modify qos set MaxJobsPA=30</pre>
+
+<p>
+These commands clear the limit:
+</p>
+<pre class="code">sacctmgr modify qos set MaxJobsPU=-1
+sacctmgr modify qos set MaxJobsPA=-1</pre>
+
+<p>
+Change setting for a specific qos:
+</p>
+<pre class="code">sacctmgr modify qos name=openlab.qos  set MaxTRESPerNode=cpu=10</pre>
+
+<p>
+Allow a user to use alternate QOS:
+</p>
+<pre class="code">sacctmgr modify user rnail18 set qos=alt</pre>
+
+</div>
+
+<h4 id="calculating_ram">Calculating RAM</h4>
+<div class="level4">
+
+<p>
+The total ammount of RAM can be calculatd by summing the values in <strong>Memory</strong> column:
+</p>
+<pre class="code">sinfo -p openlab.p --Format NodeList:30,StateCompact:10,FreeMem:15,AllocMem:10,Memory:10,CPUsState:15,CPUsLoad:10,GresUsed:35 | grep mix</pre>
+
+</div>
+
+<h4 id="calculating_cpus">Calculating CPUs</h4>
+<div class="level4">
+<pre class="code">sinfo  -o %C</pre>
+
+</div>
+
+<h4 id="applying_the_qos">Applying the QOS</h4>
+<div class="level4">
+
+<p>
+The following will allows slurm to use about 85% of the calculated resources:
+</p>
+<pre class="code">sacctmgr modify qos  where qos=normal  set GrpTRES=cpu=2040,mem=7507200</pre>
+<pre class="code">sacctmgr show qos where qos=normal</pre>
+
+</div>
+
+<h3 class="sectionedit72" id="fair_share">Fair Share</h3>
+<div class="level3">
+
+<p>
+Fair Share is a way to ensure that no one group is hogging the resources in the cluster. Different groups is assign a percentage of resources. If a group constantly over subscribed their share, then their FairShare number goes down. The lower your number, the less priority your job has in the partition. On the other hand, if a group tends to utilize the resources assigned to them, their FairShare number goes up and thus resulting in a higher priority for their jobs. The FairShare number is calculated based on last 30 days of usage.
+</p>
+<pre class="code">rockford-v7# sshare -l
+Account                    User  RawShares  NormShares    RawUsage   NormUsage  EffectvUsage  FairShare    LevelFS                    GrpTRESMins                    TRESRunMins 
+-------------------- ---------- ---------- ----------- ----------- ----------- ------------- ---------- ---------- ------------------------------ ------------------------------ 
+root                                          0.000000  1350500301                  0.000000                                                      cpu=6347963208049,mem=2539186+ 
+ root                      root          1    0.125000           0    0.000000      0.000000   1.000000        inf                                cpu=0,mem=0,energy=0,node=0,b+ 
+ baldig.a                                1    0.125000           0    0.000000      0.000000                   inf                                cpu=0,mem=0,energy=0,node=0,b+ 
+ faculty.a                               1    0.125000   706791307    0.523355      0.523355              0.238844                                cpu=6347961961114,mem=2539184+ 
+ grad.a                                  1    0.125000    34002726    0.025178      0.025178              4.964676                                cpu=1246934,mem=20429774574,e+ 
+ guest.a                                 1    0.125000        2493    0.000002      0.000002            6.7691e+04                                cpu=0,mem=0,energy=0,node=0,b+ 
+ ops.a                                   1    0.125000      248869    0.000184      0.000184            678.316926                                cpu=0,mem=0,energy=0,node=0,b+ 
+ sgroup.a                                1    0.125000           0    0.000000      0.000000                   inf                                cpu=0,mem=0,energy=0,node=0,b+ 
+ ugrad.a                                 1    0.125000      401204    0.000297      0.000297            420.764570                                cpu=0,mem=0,energy=0,node=0,b+ </pre>
+<pre class="code">sacctmgr  modify account where account=root  set  fairshare=100
+sacctmgr  modify account where account=ugrad.a set  fairshare=36
+sacctmgr  modify account where account=guest.a set  fairshare=10
+sacctmgr  modify account where account=grad.a set  fairshare=30
+sacctmgr  modify account where account=faculty.a set  fairshare=20</pre>
+<pre class="code">rockford-v7# sshare -l                                                       
+Account                    User  RawShares  NormShares    RawUsage   NormUsage  EffectvUsage  FairShare    LevelFS                    GrpTRESMins                    TRESRunMins 
+-------------------- ---------- ---------- ----------- ----------- ----------- ------------- ---------- ---------- ------------------------------ ------------------------------ 
+root                                          0.000000   742144328                  0.000000                                                      cpu=6347963192569,mem=2539186+ 
+ root                      root          1    0.010000           0    0.000000      0.000000   1.000000        inf                                cpu=0,mem=0,energy=0,node=0,b+ 
+ baldig.a                                1    0.010000           0    0.000000      0.000000                   inf                                cpu=0,mem=0,energy=0,node=0,b+ 
+ faculty.a                              20    0.200000   707455356    0.953258      0.953258              0.209807                                cpu=6347961946294,mem=2539184+ 
+ grad.a                                 30    0.300000    34036628    0.045863      0.045863              6.541285                                cpu=1246274,mem=20418961134,e+ 
+ guest.a                                10    0.100000        2492    0.000003      0.000003            2.9769e+04                                cpu=0,mem=0,energy=0,node=0,b+ 
+ ops.a                                   1    0.010000      248784    0.000335      0.000335             29.830849                                cpu=0,mem=0,energy=0,node=0,b+ 
+ sgroup.a                                1    0.010000           0    0.000000      0.000000                   inf                                cpu=0,mem=0,energy=0,node=0,b+ 
+ ugrad.a                                36    0.360000      401066    0.000540      0.000540            666.153981                                cpu=0,mem=0,energy=0,node=0,b+</pre>
+
+</div>
+
+<h3 class="sectionedit73" id="limits">Limits</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="accounts">Accounts</h4>
+<div class="level4">
+<pre class="code">sacctmgr list account  grad.a withassoc</pre>
+<pre class="code">sacctmgr list account  grad.a withassoc where user=rnail18</pre>
+<pre class="code">sacctmgr list account grad.a withassoc format=&quot;Account,Org,User,GrpJobs,GrpNodes,GrpCPUs,GrpMem,GrpSubmit,GrpWall,GrpCPUMins,MAxJobs,Maxnodes,&quot; </pre>
+
+<p>
+Restrict grad.a to 30 CPUs
+</p>
+<pre class="code">sacctmgr modify account grad.a set GrpCPUs=30</pre>
+
+<p>
+Restrict user rnail.18 to 30 CPUs
+</p>
+<pre class="code">sacctmgr modify account grad.a where user=rnail18 set GrpCPUs=30</pre>
+
+<p>
+Limit all faculty.a accounts to MaxJobs of 900:
+</p>
+<pre class="code">sacctmgr modify account  where account=faculty.a set MaxJobs=900</pre>
+
+<p>
+Clear the MaxJobs setting for the faculty.a account.
+</p>
+<pre class="code">sacctmgr modify account  where account=faculty.a set MaxJobs=-1</pre>
+
+</div>
+
+<h4 id="associations">Associations</h4>
+<div class="level4">
+<pre class="code">sacctmgr show assoc format=cluster,user,qos</pre>
+
+</div>
+
+<h4 id="user">User</h4>
+<div class="level4">
+<pre class="code">sacctmgr list user -s where user=rnail18</pre>
+<pre class="code">sacctmgr modify  user where user=rnail18 set MaxJobs=1001 </pre>
+
+<p>
+View the number of running jobs
+</p>
+<pre class="code">% squeue | awk &#039;($4==&quot;rnail18&quot; &amp;&amp; $5==&quot;R&quot;){print}&#039; | wc      
+    200    1600   15848</pre>
+
+</div>
+
+<h1 class="sectionedit74" id="troubleshooting">Troubleshooting</h1>
+<div class="level1">
+
+</div>
+
+<h3 class="sectionedit75" id="job_immediately_fail_cancelled">Job immediately fail/cancelled</h3>
+<div class="level3">
+
+<p>
+When a job immediately fails or cancelled without reason (no output or error file) when sent from SLURM node A to run on SLURM node B, check that both hosts have the same directory structure as SLURM node A.
+</p>
+
+<p>
+Also check syslog for writing to directory errors on SLURM node A and B.  Possibly on slurm control node too.
+</p>
+
+</div>
+
+<h3 class="sectionedit76" id="why_is_my_job_not_running_why_is_my_job_still_in_pending">Why is my job not running? Why is my job still in PENDING?</h3>
+<div class="level3">
+
+<p>
+Jobs are given priority based on <a href="/doku.php/services:slurm#fair_share" class="wikilink1" title="services:slurm" data-wiki-id="services:slurm">Fair Share</a>. This is to ensure that no one user can hog all resources all the time.
+</p>
+
+<p>
+Also, you can view what <a href="/doku.php/services:slurm#view_available_resources" class="wikilink1" title="services:slurm" data-wiki-id="services:slurm">resources are available</a> and that could shed some lights on why a job is pending. Adjusting your resource requirement to what resources are available could move your job up in the queue.
+</p>
+
+<p>
+You can also use <a href="/doku.php/services:slurm#squeue" class="wikilink1" title="services:slurm" data-wiki-id="services:slurm">squeue</a>to view all jobs that are running/pending.
+</p>
+
+</div>
+
+<h3 class="sectionedit77" id="nodelist_reason_messages">Nodelist Reason Messages</h3>
+<div class="level3">
+
+<p>
+QOSGrpMemLimit:  A memory limit has been set on the cluster and sum of the jobs has exceeded this limit.   Jobs will be held until there is memory available.  These limits are often applied to systems that allow shell logins in order to preserve some memory.
+</p>
+
+<p>
+LaunchFailedRequeuHeld:  Typically, this means there was an error on the slurm node where the job ran.  It has been moved back into the queue and held.  It can be released with scancel.
+</p>
+
+<p>
+Resources:  There are not system resources to run additional jobs.  The jobs will be run when resources are avaialble.  This does not indicated that a qos or managed limit has been reached, but that the overall resources on the system have been maxed out.
+</p>
+
+</div>
+
+<h3 class="sectionedit78" id="launch_failed_requeued_held">launch failed requeued held</h3>
+<div class="level3">
+
+<p>
+This originates from a problem on the client.   Look in syslog on the slurmctl node to see where it has been assigned.  Check the client.   So far we have found OOM and misconfigured slurm.
+</p>
+<pre class="code">% grep 671945_47 /var/log/syslog
+Feb 16 07:56:17 rockford-v7 slurmctld[1716143]: sched/backfill: _start_job: Started JobId=671945_47(672346) in openlab.p on circinus-35
+Feb 16 07:56:18 rockford-v7 slurmctld[1716143]: Requeuing JobId=671945_47(672346)</pre>
+
+<p>
+Easy way to do it quickly:
+</p>
+<pre class="code">rockford-v7# foreach h in `squeue | grep launch | awk &#039;{print $1}&#039;`;do
+grep $h /var/log/syslog
+done</pre>
+
+<p>
+Quickly requeue them
+</p>
+<pre class="code">squeue | grep launch | awk &#039;{print $1}&#039; | xargs scontrol release</pre>
+
+<p>
+If problems persist, drain the node:
+</p>
+<pre class="code">rockford-v7# scontrol update NodeName=circinus-35 State=DRAIN  Reason=&quot;Maxed out&quot;</pre>
+
+<p>
+Resume
+</p>
+<pre class="code">rockford-v7# scontrol update NodeName=circinus-35 State=RESUME  Reason=&quot;Maxed out&quot;</pre>
+
+</div>
+
+<h3 class="sectionedit79" id="fatalhybrid_mode_is_not_supported_mounted_cgroups_are">fatal: Hybrid mode is not supported. Mounted cgroups are</h3>
+<div class="level3">
+
+<p>
+In Ubuntu 22.04, BOTH built-in SLURM and /pkg/slurm* package do not work because cgroup is version 2.  We needed it to run version 1 so that slurmd will start up.  We compiled the SLURM package 22.05.3 and still change the grub as well.  Saw an error on circinus-9 about SLURM starting up because of this.
+</p>
+<pre class="code">Feb 06 17:04:33 circinus-9.ics.uci.edu slurmd[634860]: fatal: Hybrid mode is not supported. Mounted cgroups are: 1:perf_event:/
+                                                       0::/system.slice/slurmd.service</pre>
+
+<p>
+To check if is version 2, run the following:
+</p>
+<pre class="code">stat -c %T -f /sys/fs/cgroup</pre>
+
+<p>
+If it says cgroup2fs, it is version 2.  If it says tmpfs, then it is version 1.
+</p>
+
+<p>
+We need to add this to the grub file (/etc/default/grub) to change it to tmpfs:
+</p>
+<pre class="code">GRUB_CMDLINE_LINUX=&quot;systemd.unified_cgroup_hierarchy=0&quot;</pre>
+
+<p>
+Then run <strong>update-grub</strong> and reboot.
+</p>
+
+</div>
+
+<h3 class="sectionedit80" id="launch_failed_requeue_held">launch failed requeue held</h3>
+<div class="level3">
+
+<p>
+The error message seemed to result from slurm nodes on openlab that did not have the above grub setting changed.
+</p>
+
+</div>
+
+<h3 class="sectionedit81" id="unable_to_register_with_slurm_controller">Unable to register with slurm controller</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="oom_killer_killed_my_process">OOM Killer killed my process</h4>
+<div class="level4">
+
+<p>
+You receive an error that indicates your job was liquidated by the OOM Killer.
+</p>
+<pre class="code">slurmstepd: error: Detected 1 oom-kill event(s) in step 8337246.batch
+cgroup. Some of your processes may have been killed by the cgroup
+out-of-memory handler.</pre>
+
+<p>
+First, check your code for a memory leak.  
+</p>
+
+<p>
+Second, if you are confident the code does not have a memory leak, you need to make sure you are on a cluster that has enough RAM.  The <a href="https://linux-mm.org/OOM_Killer" class="urlextern" title="https://linux-mm.org/OOM_Killer" rel="ugc nofollow">OOM-Killer</a> has an algorithm it follows in order to select a process to kill, and there may be memory pressure on the node you are running on and your process was just the one with the highest score.  In these cases:
+</p>
+<ol>
+<li class="level1"><div class="li"> Select a cluster that has a sufficient amount of memory for your work.</div>
+</li>
+<li class="level1"><div class="li"> Make sure you reserve an appropriate chunk of memory when submitting your job:  #SBATCH –mem=1gb  </div>
+</li>
+</ol>
+
+</div>
+
+<h4 id="nov_8_203811_addison-v9_slurmctld_18105errornode_medusa_has_low_cpu_count_4_80">Nov  8 20:38:11 addison-v9 slurmctld[18105]: error: Node medusa has low cpu count (4 &lt; 80)</h4>
+<div class="level4">
+
+<p>
+Make sure the slurm.conf reflects the true core count.  If it is too far off, then the slurmctld will not accept the slurmd node.
+</p>
+
+</div>
+
+<h3 class="sectionedit82" id="debugging">Debugging</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="slurmctld">slurmctld</h4>
+<div class="level4">
+<pre class="code">/pkg/slurm/19.05.3-2/sbin/slurmctld -v -D -f /etc/slurm/slurm.conf </pre>
+
+</div>
+
+<h3 class="sectionedit83" id="invalid_account_or_account_partition_combination_specified">Invalid account or account/partition combination specified</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="error_in_logs">Error in logs</h4>
+<div class="level4">
+
+<p>
+After user submitted hello_world.sh (for example) with sbatch command
+</p>
+<pre class="code">  Mar 23 14:28:06 addison-v9 slurmctld[28692]: error: User 13430 not found
+  Mar 23 14:28:06 addison-v9 slurmctld[28692]: _job_create: invalid account or partition for user 13430, account &#039;(null)&#039;, and partition &#039;openlab.p&#039;
+  Mar 23 14:28:06 addison-v9 slurmctld[28692]: _slurm_rpc_submit_batch_job: Invalid account or account/partition combination specified</pre>
+
+</div>
+
+<h4 id="error_on_cli">Error on cli</h4>
+<div class="level4">
+<pre class="code">srun: error: Unable to allocate resources: Invalid account or account/partition combination specified</pre>
+
+</div>
+
+<h4 id="solution">Solution</h4>
+<div class="level4">
+
+<p>
+Log into the slurm master and run the following commands to see which account the user is a member of:
+</p>
+
+<p>
+This will show what account user is part of.
+</p>
+<pre class="code">sacctmgr show assoc format=account,user,partition where user=&lt;username&gt;
+sacctmgr show user &lt;username&gt; -s </pre>
+
+<p>
+If a blank table is the result, then the will need to be created in slurm.  Create the user using the sacctmgr command and add to relevant accounts.  
+</p>
+
+<p>
+Account managment is typically handled by the /usr/local/bin/slurm-ldap/convert-accounts.py script on the slurm-master.
+</p>
+
+<p>
+Also, make sure the user is in one of the posix groups allowed to login to the host they are running their jobs on:
+</p>
+<pre class="code">getent group &lt;group_name&gt;</pre>
+
+<p>
+Use sinfo command to see which partition the user can submit jobs to.
+</p>
+
+</div>
+
+<h3 class="sectionedit84" id="slurmctldfatalcluster_name_mismatch">slurmctld: fatal: CLUSTER NAME MISMATCH.</h3>
+<div class="level3">
+
+<p>
+slurmctld has been started with “ClusterName=ics.c”, but read “ics_general_use” from the state files in StateSaveLocation.
+Running multiple clusters from a shared StateSaveLocation WILL CAUSE CORRUPTION.
+Remove /var/spool/slurm.state/clustername to override this safety check if this is intentional (e.g., the ClusterName has changed).
+[3:49:13 root@broadchurch-v1]cat /var/spool/slurm.state/clustername  
+</p>
+
+</div>
+
+<h4 id="solution1">Solution</h4>
+<div class="level4">
+
+<p>
+Do what the output tells you, rm /var/spool/slurm.state/clustername
+</p>
+
+</div>
+
+<h3 class="sectionedit85" id="fatalunable_to_determine_this_slurmd_s_nodename">fatal: Unable to determine this slurmd&#039;s NodeName</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="solution2">Solution</h4>
+<div class="level4">
+
+<p>
+Confirm that this host exists in the /etc/slurm/slurm.conf file.
+</p>
+
+</div>
+
+<h3 class="sectionedit86" id="partition_in_drain_state">Partition in drain state</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="solution3">Solution</h4>
+<div class="level4">
+
+<p>
+Resume the node on slurm. This also works for a down node.
+</p>
+
+</div>
+
+<h3 class="sectionedit87" id="network_unresponsive">Network Unresponsive</h3>
+<div class="level3">
+
+</div>
+
+<h3 class="sectionedit88" id="conflict_with_job_submission_paramteres">Conflict with Job Submission Paramteres</h3>
+<div class="level3">
+
+<p>
+Get job submission parameters:  
+</p>
+<pre class="code">scontrol show jobid -dd 1443301_15</pre>
+<pre class="code">JobId=1443301 ArrayJobId=1443301 ArrayTaskId=15 JobName=3.1.069
+   UserId=luser(XXX) GroupId=users(XXX) MCS_label=N/A
+   Priority=996 Nice=1000 Account=faculty.a QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   DerivedExitCode=0:0
+   RunTime=08:59:52 TimeLimit=UNLIMITED TimeMin=N/A
+   SubmitTime=2023-03-10T01:29:04 EligibleTime=2023-03-10T01:29:04
+   AccrueTime=2023-03-10T01:29:04
+   StartTime=2023-03-10T01:29:25 EndTime=Unknown Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2023-03-10T01:29:25 Scheduler=Main
+   Partition=openlab.p AllocNode:Sid=odin:2615644
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=odin
+   BatchHost=odin
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=1,mem=4000M,node=1,billing=1
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:1 CoreSpec=*
+   JOB_GRES=(null)
+     Nodes=odin CPU_IDs=2 Mem=4000 GRES=
+   MinCPUsNode=1 MinMemoryCPU=4000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/home/luser/bin/distrib_slurm_run /home/luser/bin /home/luser/.distrib_slurm/3.1.069,2023-03-10-01-29-04.PID4057160
+   WorkDir=/home/luser/src/bionets/SANA/MBioGRID/Predict
+   StdErr=/home/luser/SLURM_turds/3.1.069/1443301-%N-%t.err
+   StdIn=/dev/null
+   StdOut=/home/luser/SLURM_turds/3.1.069/1443301-%N-%t.out
+   Power=</pre>
+<pre class="code">squeue --states=running --user rnail18| wc
+
+sacctmgr show qos 
+
+sacctmgr show qos format=&quot;Name,MaxTresPerUser,MAxJob,MaxSubmit,Priority,MaxTRESPU,MaxJobsPU,UsageThresh,MaxTres,MaxTRESPerNode,MaxJobsPA&quot;
+
+sacctmgr modify qos 
+
+squeue -u rnail18
+
+sacctmgr show cluster
+
+% sacctmgr show assoc format=cluster,user,qos | grep rnail18
+
+sacctmgr list User  -s | egrep &quot;rnail18|Max&quot;
+
+sacctmgr modify user rnail18 set qos=normal
+
+squeue -u rnail18 | awk &#039;{print $1}&#039; | xargs -n1 scancel   
+
+scontrol show job 465924_1
+
+sacctmgr list account rnail18 withassoc where user=dfr format=account,GrpJobs,GrpNodes,GrpTRES,GrpMem,GrpSubmit,GrpWall,GrpTRESMins,MaxJobs,MaxNodes,MaxTRES,MaxSubmit,MaxWall,MaxTRESMin
+
+sacctmgr list account  rnail18  withassoc
+ 
+sacctmgr list user rnail18  withassoc 
+
+sacctmgr show qos format=&quot;Name,MaxTresPerUser,MAxJob,MaxSubmit,Priority,MaxTRESPU,MaxJobsPU,UsageThresh,MaxTres,MaxTRESPerNode,MaxJobsPA&quot;
+
+sacctmgr modify  qos  set MaxJobsPU=-1
+
+sacctmgr modify  qos  set MaxJobsPA=-1
+
+#
+AssocGrpCpuLimit
+
+sacctmgr list account grad.a withassoc format=&quot;Account,Org,User,GrpJobs,GrpNodes,GrpCPUs,GrpMem,GrpSubmit,GrpWall,GrpCPUMins,MAxJobs,Maxnodes,&quot; 
+
+sacctmgr list account grad.a where user=rnail18 withassoc format=&quot;Account,Org,User,GrpJobs,GrpNodes,GrpCPUs,GrpMem,GrpSubmit,GrpWall,GrpCPUMins,MAxJobs,Maxnodes,&quot;
+
+sacctmgr modify account grad.a where user=rnail18 set GrpCPUs=30</pre>
+<pre class="code"> sinfo  -o %C
+CPUS(A/I/O/T)
+762/1574/136/2472</pre>
+<pre class="code">sacct -a -X --format=JobID,AllocCPUS,ReqTRES%80,user |  less</pre>
+
+</div>
+
+<h3 class="sectionedit89" id="gpu_passthrough_from_host_to_vm">GPU Passthrough From Host to VM</h3>
+<div class="level3">
+
+<p>
+GPU Passthrough is a way for a virtual machine to access the host&#039;s GPUs. Keep in mind that passthrough only allows one machine to have access to the GPU driver. Either the VM gets access to it OR the host gets access to the GPU but not both. This passthrough used NVIDIA GPUs.
+</p>
+
+<p>
+<a href="https://docs.nvidia.com/vgpu/latest/grid-vgpu-user-guide/index.html#install-update-vgpu-ubuntu" class="urlextern" title="https://docs.nvidia.com/vgpu/latest/grid-vgpu-user-guide/index.html#install-update-vgpu-ubuntu" rel="ugc nofollow">https://docs.nvidia.com/vgpu/latest/grid-vgpu-user-guide/index.html#install-update-vgpu-ubuntu</a>
+</p>
+
+<p>
+Steps to allowing passthrough from the host:
+</p>
+
+<p>
+1. First, find the ID of your GPU by using the following command in conjunction with grepping the name of your GPU card. Write the ID down once you get it. For example, the name for my GPU was TITAN and then I found that the ID was 10de:1e02.
+</p>
+<pre class="code">lspci -nn | grep &quot;[NAME OF YOUR CARD]&quot;</pre>
+
+<p>
+2. Enable IOMMU feature, where you can see how devices are grouped and connected on your system. To enable, you have to edit the /etc/default/grub of your host and edit the <strong>GRUB_CMDLINE_LINUX_DEFAULT</strong>. Currently, it&#039;s set as an empty string, which defaults to the host getting access to all the devices that&#039;s connected to it. 
+</p>
+
+<p>
+We want to set the option to this:
+</p>
+<pre class="code">GRUB_CMDLINE_LINUX_DEFAULT=&quot;intel_iommu=on kvm.ignore_msrs=1 vfio-pci.ids=[The IDs you got previously]&quot;. For example, I would put 10de:1e02 in the vfio-pci.ids field.</pre>
+
+<p>
+Whenever you make a change to this file, make sure to run this command
+</p>
+<pre class="code">upgrade-grub</pre>
+
+<p>
+Reboot after doing this!
+</p>
+
+<p>
+3. To make sure changes were made at this point, running the following command will let you know if the kernal driver in use is vfio-pci.
+</p>
+<pre class="code">lspci -v | grep -e NVIDIA -e &quot;vfio&quot;</pre>
+
+<p>
+Now, you can proceed to the VM.
+</p>
+
+<p>
+4. On virt-manager, allocate all parts of the GPU so the VM can use it. This is the pass through PCI in libvirt.
+</p>
+
+<p>
+First, in virt-manager, select Add Hardware. Inside that window, click PCI Host Device, search for the GPU that you want to add, and make sure you add all its parts (including the Audio Controller) or else the VM won&#039;t be able to start because you can&#039;t do a half passthrough.
+</p>
+
+<p>
+5. Load the VM and run the following command:
+</p>
+<pre class="code">nvidia-smi</pre>
+
+<p>
+This will allow you to see if the VM has access to the GPUs now.
+</p>
+
+<p>
+Lastly, if the VM is still not able to see the GPUs, make sure CUDA is installed with nvidia. Also make sure the nvidia driver is compatible. If you have the wrong driver installed, the VM still may not be able to see the GPUs.
+</p>
+
+<p>
+To troubleshoot this issue:
+apt purge [current nvidia driver]
+apt remove [current nvidia driver]
+apt install [new/updated nvidia driver]
+</p>
+
+<p>
+No rebooting is necessary in this step. You should be able to see the GPUs using nvidia-smi after this.
+</p>
+
+</div><div style="clear:both"></div></div></article></div><nav id="dw__pagetools" class="hidden-print dw__pagetools"><ul class="tools"><li class="source"><a href="/doku.php/research_support:slurm?do=edit" class="source" title="Show pagesource [v]" accesskey="v"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></div><span class="a11y">Show pagesource</span></a></li><li class="revs"><a href="/doku.php/research_support:slurm?do=revisions" class="revs" title="Old revisions [o]" accesskey="o"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></div><span class="a11y">Old revisions</span></a></li><li class="backlink"><a href="/doku.php/research_support:slurm?do=backlink" class="backlink" title="Backlinks"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></div><span class="a11y">Backlinks</span></a></li><li class="top"><a href="#dokuwiki__top" class="top" title="Back to top [t]" accesskey="t"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></div><span class="a11y">Back to top</span></a></li></ul></nav></div></main><div class="mikio-page-fill"><div class="mikio-content" style="padding:0"></div></div><footer class="mikio-footer"><div class="doc"><bdi>research_support/slurm.txt</bdi> · Last modified: 2025/10/08 14:38</div><div class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license"><img src="/lib/images/license/badge/cc-by-nc-sa.png" alt="CC Attribution-Noncommercial-Share Alike 4.0 International" /></a> Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license" class="urlextern">CC Attribution-Noncommercial-Share Alike 4.0 International</a></bdi></div></footer>    <div class="no"><img src="/lib/exe/taskrunner.php?id=research_support%3Aslurm&amp;1760923322" width="2" height="1" alt="" /></div>
+</div>
+</body>
+</html>

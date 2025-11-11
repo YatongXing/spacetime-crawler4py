@@ -1,0 +1,151 @@
+<!-- URL: http://www.ics.uci.edu/~eppstein/161 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Algorithms</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<h1>CS 161, Spring 2019:<br> Design and Analysis of Algorithms</h1>
+
+<hr>
+
+<h2>General Course Information</h2>
+<p>The course will be taught by <a href="/~eppstein/">David
+Eppstein</a>, eppstein@uci.edu (office hours MW 4-5).
+The TAs are Arkadeep Adhikari, arkadeea@uci.edu, and Daokun Jiang, daokunj@uci.edu.</p>
+
+<p>The course meets for lectures Mondays, Wednesdays, and
+Fridays, from 11:00 &ndash; 11:50, in <a href="http://www.classrooms.uci.edu/GAC/HSLH100A.html">Howard Schneiderman Lecture Hall, Room HSLH 100A</a>. In addition there
+are four discussion sections.
+Students are expected
+to be enrolled in one of the discussion sections and to attend
+discussions regularly. We will not be taking attendance, and it is ok to attend a different discussion than the one you are enrolled in as long as space permits. At the discussion sections, the teaching assistant will go over homework and midterm
+solutions, give additional examples of topics covered in the lecture,
+and be available to answer questions.</p>
+
+<p>There is an online forum at Piazza (search for CS161). Lecture materials will not be distributed to the class; instead, you are encouraged to attend the lecture yourself and take your own notes. Recording the lectures for your own personal use, and sharing your materials with other students in the class is allowed, but other uses of recorded lectures (including making them available online) is forbidden.</p>
+
+<p>The course text will be "Algorithm Design and Applications" by
+Goodrich and Tamassia (Wiley, 2015). Coursework will consist of weekly homeworks (typically due on Fridays and posted on this page before the start of class on Monday of the week it is due)
+as well as two midterms and a comprehensive final exam. The overall
+grade will be determined 10% from homework, 25% from each midterm, and
+40% from the final. Homeworks will be graded 50% for effort,
+50% for correctness on one of the assigned problems (chosen arbitrarily
+from each problem set).</p>
+
+<p>Homeworks should be turned in through GradeScope. Group work on
+homeworks is permitted; however, each student
+should turn in his or her own copy of the homeworks. Some of the
+homework problems will ask you to perform calculations or trace the
+steps of an algorithm; you are welcome to use computer programs
+to solve these problems rather than doing everything by hand.
+Each week's
+homework assignment will be given on this web page. Homework is due by
+9:00pm on Fridays and must be turned in through dropbox
+on eee. No late
+homework will be accepted.
+Students who add the class after the start of quarter will be
+responsible for turning in all earlier homeworks by the following
+Friday. The lowest homework score of the quarter will be dropped from
+the course average.</p>
+
+<h2>Tentative Schedule</h2>
+
+<dl>
+<dt>Week 1: Introduction; data structures</dt>
+<dd>Intro/review [Goodrich & Tamassia, chapter 1]; Fibonacci numbers (Chapter 12)</dd>
+<dd>Priority queues and heapsort (Chapter 5)</dd>
+<dd>Hashing with linear probing (Chapter 6)</dd>
+<dd>Homework 1, due Friday, April 12: R-1.3, R-1.7, C-5.8, R-6.5.</dd>
+
+<dt>Week 2: Comparison sorting</dt>
+<dd>Merge sort, divide-and-conquer, and the master theorem
+(Chapters 8 and 11)</dd>
+<dd>Comparison sorting lower bounds (Chapter 8)</dd>
+<dd>Quick sort (Chapter 8)</dd>
+<dd>Homework 2, due Friday, April 19: R-8.5, C-8.9, R-11.1, C-11.3.</dd>
+
+<dt>Week 3: Selection and integer sorting</dt>
+<dd>Quickselect (Chapter 9)</dd>
+<dd>Bucket sort and stability (Chapter 9)</dd>
+<dd>Radix sort (Chapter 9)</dd>
+<dd>Homework 3, due Friday, April 26: R-9.1, R-9.5, C-9.2, C-9.4. For
+R-9.1, use the algorithms as presented in the text, without special
+tie-breaking rules; answer separately for the three-way quicksort of
+section 8.2 and the two-way in-place quicksort of section 8.2.2. For
+C-9.2, use an integer sorting algorithm, not hashing, and note that when
+comparing sets, duplicate elements don't change the comparison
+result.</dd>
+
+<dt>Week 4: Midterm; integer arithmetic</dt>
+<dd>Midterm Monday, April 22</dd>
+<dd>Karatsuba multiplication (Chapter 11)</dd>
+<dd>Modular exponentiation and RSA encryption (Chapter 24)</dd>
+<dd>Homework 4, due Friday, May 3: R-11.2, R-24.5, R-24.6, C-24.8.</dd>
+
+<dt>Week 5: Graph representation and traversal</dt>
+<dd>Graph representation (Chapter 13)</dd>
+<dd>Depth first search and strong connectivity (Chapter 13)</dd>
+<dd>Directed acyclic graphs and topological ordering (Chapter 13)</dd>
+<dd>Homework 5, due Friday, May 10: R-13.4, R-13.5, R-13.7, R-13.12.</dd>
+
+<dt>Week 6: Shortest paths and minimum spanning trees</dt>
+<dd>DAG and Bellman&ndash;Ford shortest paths (Chapter 14)</dd>
+<dd>Dijkstra's algorithm (Chapter 14)</dd>
+<dd>Minimum spanning trees (Chapter 15)</dd>
+<dd>Homework 6, due Friday, May 17: R-14.8, C-14.2, R-15.9, C-15.11.</dd>
+
+<dt>Week 7: Midterm; dynamic programming</dt>
+<dd>Midterm Monday, May 13</dd>
+<dd>Dynamic programming for computing solutions to recurrence relations (Chapter 12)</dd>
+<dd>Finding optimal game strategies (Chapter 12)</dd>
+<dd>Homework 7, due Friday, May 24: C-12.1, C-12.2, C-12.3, C-12.4</dd>
+
+<dt>Week 8: Dynamic programming applications</dt>
+<dd>Longest common subsequences (Chapter 12)</dd>
+<dd>The knapsack problem (Chapters 10 and 12)</dd>
+<dd>Homework 8, due Friday, May 31: R-10.1, R-12.5, C-12.11, A-12.3</dd>
+
+<dt>Week 9: Computational geometry</dt>
+<dd>Memorial day holiday, Monday, May 27.</dd>
+<dd>Convex hulls (Chapter 22)</dd>
+<dd>Closest pairs (Chapter 22)</dd>
+<dd>Homework 9, due Friday, June 7: R-22.8, C-22.1, C-22.5, C-22.15
+(hint: you can solve this problem using any efficient closest pair
+algorithm as a subroutine, without having to understand how it works).</dd>
+
+<dt>Week 10:</dt>
+<dd>Streaming algorithms (not in text;
+see <a href="http://dmac.rutgers.edu/Workshops/WGUnifyingTheory/Slides/cormode.pdf">Graham
+Cormode's slides on finding frequent items</a> and
+the <a href="https://en.wikipedia.org/wiki/Reservoir_sampling">Wikipedia
+article on reservoir sampling</a>)</dd>
+<dd>NP-completeness (Chapter 17)</dd>
+<dd>Approximation algorithms (Chapter 18)</dd>
+
+<dt>Final exam:</dt>
+<dd>Tuesday, June 11, 1:30-3:30pm</dd>
+</dl>
+
+<h2>Other Course-Related Information</h2>
+
+<p>The following material is from previous years' offerings of ICS 161.
+Some of these offerings were based on different texts (Baase and
+Cormen-Leiserson-Rivest), and covered a somewhat different range of
+topics.  You may find this material useful, but it is not required
+reading.</p>
+
+<ul><li><a href="syl.html">Lecture notes from Winter 1996</a></li>
+<li><a href="exams/">Sample exams from Winter 1998, Spring
+2005, and Fall 2015</a></li>
+<li><a href="python/">Python
+implementations of various algorithms</a>, <a
+href="/~eppstein/PADS/">more Python algorithm implementations</a>, and
+<a
+href="http://aspn.activestate.com/ASPN/Cookbook/Python?kwd=Algorithms">
+still more Python algorithms</a>.</li>
+</ul>
+</body>

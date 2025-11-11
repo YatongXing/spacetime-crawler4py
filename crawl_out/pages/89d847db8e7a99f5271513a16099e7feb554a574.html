@@ -1,0 +1,953 @@
+<!-- URL: http://pepito.proteomics.ics.uci.edu/epitome_stats/index.html -->
+<html><head><title>BEpro's Performance on the Epitome Dataset</title><link rel='stylesheet' type='text/css' href='../style.css' title='Default'>
+
+<script language="JavaScript">
+//here you place the ids of every element you want.
+function switchid(id){
+ if (document.getElementById) { // DOM3 = IE5, NS6
+  if (document.getElementById(id).style.display == 'none') {
+   document.getElementById(id).style.display = 'block';
+  } else {
+   document.getElementById(id).style.display = 'none';
+  }
+ } else {
+  if (document.layers) { // Netscape 4
+   if (document.id.display == 'none') {
+    document.id.display = 'block';
+   } else {
+    document.id.display = 'none';
+   }
+  } else { // IE 4
+   if (document.all.id.style.display = 'none') {
+    document.all.id.style.display = 'block';
+   } else {
+    document.all.id.style.display = 'none';   
+   }
+  }
+ }
+}
+</script>
+
+</head>
+<body style="margin-top: 30px;">
+<center>
+<img src="../BEpro.gif"><br>
+<span class='overall_header'><span style='font-weight: bolder'>Discotope Dataset</span> - 35 Families, 140 Protein Chains</span><br>
+<span class='overall_data'>
+Average Family ROC Area Under the Curve: <span style='color: red;'>0.683145022439</span><br>
+Average Family Precision-Recall Equal Point: <span style='color: red;'>0.256931812698</span><br>
+Average Family Average Precision: <span style='color: red;'>0.207523154401</span>
+</span><br>
+
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1wejF');">1wejF</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.46951<br>
+Precision-Recall Equal Point (Family Average): 0.13636<br>
+Average Precision (Family Average): 0.21234<br></span>
+
+<div class='protein' id='p1wejF' style='display:none;'><span class='protein_header'>PDB ID: 1wejF, length: 104</span> <a href="javascript:switchid('p1wejF');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.46951<br>
+Precision-Recall Equal Point: 0.13636<br>
+Average Precision: 0.21234<br>
+<img src='1wejF.roc.jpg'><img src='1wejF.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1r3iC');">1r3iC</a> <a href="javascript:switchid('p1k4cC');">1k4cC</a> <a href="javascript:switchid('p1r3kC');">1r3kC</a> <a href="javascript:switchid('p1r3jC');">1r3jC</a> <a href="javascript:switchid('p1k4dC');">1k4dC</a> <a href="javascript:switchid('p1r3lC');">1r3lC</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.632041666667<br>
+Precision-Recall Equal Point (Family Average): 0.169296666667<br>
+Average Precision (Family Average): 0.238256666667<br></span>
+
+<div class='protein' id='p1k4cC' style='display:none;'><span class='protein_header'>PDB ID: 1k4cC, length: 103</span> <a href="javascript:switchid('p1k4cC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.63012<br>
+Precision-Recall Equal Point: 0.15<br>
+Average Precision: 0.24028<br>
+<img src='1k4cC.roc.jpg'><img src='1k4cC.pr.jpg'></span><br></div>
+<div class='protein' id='p1r3jC' style='display:none;'><span class='protein_header'>PDB ID: 1r3jC, length: 103</span> <a href="javascript:switchid('p1r3jC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.63346<br>
+Precision-Recall Equal Point: 0.15789<br>
+Average Precision: 0.23333<br>
+<img src='1r3jC.roc.jpg'><img src='1r3jC.pr.jpg'></span><br></div>
+<div class='protein' id='p1r3iC' style='display:none;'><span class='protein_header'>PDB ID: 1r3iC, length: 103</span> <a href="javascript:switchid('p1r3iC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.62952<br>
+Precision-Recall Equal Point: 0.2<br>
+Average Precision: 0.24015<br>
+<img src='1r3iC.roc.jpg'><img src='1r3iC.pr.jpg'></span><br></div>
+<div class='protein' id='p1r3lC' style='display:none;'><span class='protein_header'>PDB ID: 1r3lC, length: 103</span> <a href="javascript:switchid('p1r3lC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.63409<br>
+Precision-Recall Equal Point: 0.15789<br>
+Average Precision: 0.23406<br>
+<img src='1r3lC.roc.jpg'><img src='1r3lC.pr.jpg'></span><br></div>
+<div class='protein' id='p1k4dC' style='display:none;'><span class='protein_header'>PDB ID: 1k4dC, length: 103</span> <a href="javascript:switchid('p1k4dC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.62892<br>
+Precision-Recall Equal Point: 0.15<br>
+Average Precision: 0.23835<br>
+<img src='1k4dC.roc.jpg'><img src='1k4dC.pr.jpg'></span><br></div>
+<div class='protein' id='p1r3kC' style='display:none;'><span class='protein_header'>PDB ID: 1r3kC, length: 103</span> <a href="javascript:switchid('p1r3kC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.63614<br>
+Precision-Recall Equal Point: 0.2<br>
+Average Precision: 0.24337<br>
+<img src='1r3kC.roc.jpg'><img src='1r3kC.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1ob1F');">1ob1F</a> <a href="javascript:switchid('p1ob1C');">1ob1C</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.67758<br>
+Precision-Recall Equal Point (Family Average): 0.295455<br>
+Average Precision (Family Average): 0.312035<br></span>
+
+<div class='protein' id='p1ob1F' style='display:none;'><span class='protein_header'>PDB ID: 1ob1F, length: 96</span> <a href="javascript:switchid('p1ob1F');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.664<br>
+Precision-Recall Equal Point: 0.27273<br>
+Average Precision: 0.30539<br>
+<img src='1ob1F.roc.jpg'><img src='1ob1F.pr.jpg'></span><br></div>
+<div class='protein' id='p1ob1C' style='display:none;'><span class='protein_header'>PDB ID: 1ob1C, length: 95</span> <a href="javascript:switchid('p1ob1C');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.69116<br>
+Precision-Recall Equal Point: 0.31818<br>
+Average Precision: 0.31868<br>
+<img src='1ob1C.roc.jpg'><img src='1ob1C.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1fnsA');">1fnsA</a> <a href="javascript:switchid('p1oakA');">1oakA</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.913205<br>
+Precision-Recall Equal Point (Family Average): 0.360295<br>
+Average Precision (Family Average): 0.34062<br></span>
+
+<div class='protein' id='p1oakA' style='display:none;'><span class='protein_header'>PDB ID: 1oakA, length: 196</span> <a href="javascript:switchid('p1oakA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.9388<br>
+Precision-Recall Equal Point: 0.25<br>
+Average Precision: 0.19299<br>
+<img src='1oakA.roc.jpg'><img src='1oakA.pr.jpg'></span><br></div>
+<div class='protein' id='p1fnsA' style='display:none;'><span class='protein_header'>PDB ID: 1fnsA, length: 196</span> <a href="javascript:switchid('p1fnsA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.88761<br>
+Precision-Recall Equal Point: 0.47059<br>
+Average Precision: 0.48825<br>
+<img src='1fnsA.roc.jpg'><img src='1fnsA.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1qleB');">1qleB</a> <a href="javascript:switchid('p1ar1B');">1ar1B</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.594125<br>
+Precision-Recall Equal Point (Family Average): 0.01724<br>
+Average Precision (Family Average): 0.122955<br></span>
+
+<div class='protein' id='p1ar1B' style='display:none;'><span class='protein_header'>PDB ID: 1ar1B, length: 252</span> <a href="javascript:switchid('p1ar1B');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.6094<br>
+Precision-Recall Equal Point: 0.03448<br>
+Average Precision: 0.13622<br>
+<img src='1ar1B.roc.jpg'><img src='1ar1B.pr.jpg'></span><br></div>
+<div class='protein' id='p1qleB' style='display:none;'><span class='protein_header'>PDB ID: 1qleB, length: 252</span> <a href="javascript:switchid('p1qleB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.57885<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.10969<br>
+<img src='1qleB.roc.jpg'><img src='1qleB.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1bj1W');">1bj1W</a> <a href="javascript:switchid('p1bj1V');">1bj1V</a> <a href="javascript:switchid('p1cz8W');">1cz8W</a> <a href="javascript:switchid('p1cz8V');">1cz8V</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.890735<br>
+Precision-Recall Equal Point (Family Average): 0.662395<br>
+Average Precision (Family Average): 0.75525<br></span>
+
+<div class='protein' id='p1cz8W' style='display:none;'><span class='protein_header'>PDB ID: 1cz8W, length: 94</span> <a href="javascript:switchid('p1cz8W');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.89015<br>
+Precision-Recall Equal Point: 0.67857<br>
+Average Precision: 0.7661<br>
+<img src='1cz8W.roc.jpg'><img src='1cz8W.pr.jpg'></span><br></div>
+<div class='protein' id='p1cz8V' style='display:none;'><span class='protein_header'>PDB ID: 1cz8V, length: 94</span> <a href="javascript:switchid('p1cz8V');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.88834<br>
+Precision-Recall Equal Point: 0.66667<br>
+Average Precision: 0.76241<br>
+<img src='1cz8V.roc.jpg'><img src='1cz8V.pr.jpg'></span><br></div>
+<div class='protein' id='p1bj1W' style='display:none;'><span class='protein_header'>PDB ID: 1bj1W, length: 94</span> <a href="javascript:switchid('p1bj1W');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.8959<br>
+Precision-Recall Equal Point: 0.65217<br>
+Average Precision: 0.74802<br>
+<img src='1bj1W.roc.jpg'><img src='1bj1W.pr.jpg'></span><br></div>
+<div class='protein' id='p1bj1V' style='display:none;'><span class='protein_header'>PDB ID: 1bj1V, length: 94</span> <a href="javascript:switchid('p1bj1V');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.88855<br>
+Precision-Recall Equal Point: 0.65217<br>
+Average Precision: 0.74447<br>
+<img src='1bj1V.roc.jpg'><img src='1bj1V.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1qfuA');">1qfuA</a> <a href="javascript:switchid('p1kenE');">1kenE</a> <a href="javascript:switchid('p1kenC');">1kenC</a> <a href="javascript:switchid('p1kenA');">1kenA</a> <a href="javascript:switchid('p2virC');">2virC</a> <a href="javascript:switchid('p1eo8A');">1eo8A</a> <a href="javascript:switchid('p2visC');">2visC</a> <a href="javascript:switchid('p2vitC');">2vitC</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.55333375<br>
+Precision-Recall Equal Point (Family Average): 0.07145<br>
+Average Precision (Family Average): 0.1114925<br></span>
+
+<div class='protein' id='p1kenE' style='display:none;'><span class='protein_header'>PDB ID: 1kenE, length: 320</span> <a href="javascript:switchid('p1kenE');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.54968<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.02926<br>
+<img src='1kenE.roc.jpg'><img src='1kenE.pr.jpg'></span><br></div>
+<div class='protein' id='p2vitC' style='display:none;'><span class='protein_header'>PDB ID: 2vitC, length: 267</span> <a href="javascript:switchid('p2vitC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.64182<br>
+Precision-Recall Equal Point: 0.04<br>
+Average Precision: 0.12563<br>
+<img src='2vitC.roc.jpg'><img src='2vitC.pr.jpg'></span><br></div>
+<div class='protein' id='p1kenC' style='display:none;'><span class='protein_header'>PDB ID: 1kenC, length: 320</span> <a href="javascript:switchid('p1kenC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.67324<br>
+Precision-Recall Equal Point: 0.21622<br>
+Average Precision: 0.19126<br>
+<img src='1kenC.roc.jpg'><img src='1kenC.pr.jpg'></span><br></div>
+<div class='protein' id='p1eo8A' style='display:none;'><span class='protein_header'>PDB ID: 1eo8A, length: 319</span> <a href="javascript:switchid('p1eo8A');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.25571<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.05304<br>
+<img src='1eo8A.roc.jpg'><img src='1eo8A.pr.jpg'></span><br></div>
+<div class='protein' id='p1qfuA' style='display:none;'><span class='protein_header'>PDB ID: 1qfuA, length: 317</span> <a href="javascript:switchid('p1qfuA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.31867<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.06408<br>
+<img src='1qfuA.roc.jpg'><img src='1qfuA.pr.jpg'></span><br></div>
+<div class='protein' id='p2virC' style='display:none;'><span class='protein_header'>PDB ID: 2virC, length: 267</span> <a href="javascript:switchid('p2virC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.64156<br>
+Precision-Recall Equal Point: 0.03846<br>
+Average Precision: 0.13067<br>
+<img src='2virC.roc.jpg'><img src='2virC.pr.jpg'></span><br></div>
+<div class='protein' id='p2visC' style='display:none;'><span class='protein_header'>PDB ID: 2visC, length: 267</span> <a href="javascript:switchid('p2visC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.62911<br>
+Precision-Recall Equal Point: 0.07692<br>
+Average Precision: 0.12645<br>
+<img src='2visC.roc.jpg'><img src='2visC.pr.jpg'></span><br></div>
+<div class='protein' id='p1kenA' style='display:none;'><span class='protein_header'>PDB ID: 1kenA, length: 320</span> <a href="javascript:switchid('p1kenA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.71688<br>
+Precision-Recall Equal Point: 0.2<br>
+Average Precision: 0.17155<br>
+<img src='1kenA.roc.jpg'><img src='1kenA.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1ottA');">1ottA</a> <a href="javascript:switchid('p1otsA');">1otsA</a> <a href="javascript:switchid('p1otsB');">1otsB</a> <a href="javascript:switchid('p1otuB');">1otuB</a> <a href="javascript:switchid('p1otuA');">1otuA</a> <a href="javascript:switchid('p1ottB');">1ottB</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.806691666667<br>
+Precision-Recall Equal Point (Family Average): 0.0675866666667<br>
+Average Precision (Family Average): 0.119768333333<br></span>
+
+<div class='protein' id='p1ottB' style='display:none;'><span class='protein_header'>PDB ID: 1ottB, length: 441</span> <a href="javascript:switchid('p1ottB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.80757<br>
+Precision-Recall Equal Point: 0.08696<br>
+Average Precision: 0.12579<br>
+<img src='1ottB.roc.jpg'><img src='1ottB.pr.jpg'></span><br></div>
+<div class='protein' id='p1otuB' style='display:none;'><span class='protein_header'>PDB ID: 1otuB, length: 441</span> <a href="javascript:switchid('p1otuB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.81059<br>
+Precision-Recall Equal Point: 0.09091<br>
+Average Precision: 0.12325<br>
+<img src='1otuB.roc.jpg'><img src='1otuB.pr.jpg'></span><br></div>
+<div class='protein' id='p1ottA' style='display:none;'><span class='protein_header'>PDB ID: 1ottA, length: 444</span> <a href="javascript:switchid('p1ottA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.80903<br>
+Precision-Recall Equal Point: 0.04545<br>
+Average Precision: 0.11993<br>
+<img src='1ottA.roc.jpg'><img src='1ottA.pr.jpg'></span><br></div>
+<div class='protein' id='p1otuA' style='display:none;'><span class='protein_header'>PDB ID: 1otuA, length: 444</span> <a href="javascript:switchid('p1otuA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.80209<br>
+Precision-Recall Equal Point: 0.04762<br>
+Average Precision: 0.11225<br>
+<img src='1otuA.roc.jpg'><img src='1otuA.pr.jpg'></span><br></div>
+<div class='protein' id='p1otsA' style='display:none;'><span class='protein_header'>PDB ID: 1otsA, length: 444</span> <a href="javascript:switchid('p1otsA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.80423<br>
+Precision-Recall Equal Point: 0.04762<br>
+Average Precision: 0.11307<br>
+<img src='1otsA.roc.jpg'><img src='1otsA.pr.jpg'></span><br></div>
+<div class='protein' id='p1otsB' style='display:none;'><span class='protein_header'>PDB ID: 1otsB, length: 441</span> <a href="javascript:switchid('p1otsB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.80664<br>
+Precision-Recall Equal Point: 0.08696<br>
+Average Precision: 0.12432<br>
+<img src='1otsB.roc.jpg'><img src='1otsB.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1kxtC');">1kxtC</a> <a href="javascript:switchid('p1kxtE');">1kxtE</a> <a href="javascript:switchid('p1kxvB');">1kxvB</a> <a href="javascript:switchid('p1kxvA');">1kxvA</a> <a href="javascript:switchid('p1kxqD');">1kxqD</a> <a href="javascript:switchid('p1kxqB');">1kxqB</a> <a href="javascript:switchid('p1kxqC');">1kxqC</a> <a href="javascript:switchid('p1kxqA');">1kxqA</a> <a href="javascript:switchid('p1kxtA');">1kxtA</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.703355555556<br>
+Precision-Recall Equal Point (Family Average): 0.16616<br>
+Average Precision (Family Average): 0.173582222222<br></span>
+
+<div class='protein' id='p1kxqD' style='display:none;'><span class='protein_header'>PDB ID: 1kxqD, length: 496</span> <a href="javascript:switchid('p1kxqD');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.68761<br>
+Precision-Recall Equal Point: 0.35<br>
+Average Precision: 0.28579<br>
+<img src='1kxqD.roc.jpg'><img src='1kxqD.pr.jpg'></span><br></div>
+<div class='protein' id='p1kxqB' style='display:none;'><span class='protein_header'>PDB ID: 1kxqB, length: 496</span> <a href="javascript:switchid('p1kxqB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.67892<br>
+Precision-Recall Equal Point: 0.36842<br>
+Average Precision: 0.28007<br>
+<img src='1kxqB.roc.jpg'><img src='1kxqB.pr.jpg'></span><br></div>
+<div class='protein' id='p1kxqC' style='display:none;'><span class='protein_header'>PDB ID: 1kxqC, length: 496</span> <a href="javascript:switchid('p1kxqC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.66528<br>
+Precision-Recall Equal Point: 0.33333<br>
+Average Precision: 0.26395<br>
+<img src='1kxqC.roc.jpg'><img src='1kxqC.pr.jpg'></span><br></div>
+<div class='protein' id='p1kxqA' style='display:none;'><span class='protein_header'>PDB ID: 1kxqA, length: 496</span> <a href="javascript:switchid('p1kxqA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.65521<br>
+Precision-Recall Equal Point: 0.29412<br>
+Average Precision: 0.24468<br>
+<img src='1kxqA.roc.jpg'><img src='1kxqA.pr.jpg'></span><br></div>
+<div class='protein' id='p1kxtA' style='display:none;'><span class='protein_header'>PDB ID: 1kxtA, length: 496</span> <a href="javascript:switchid('p1kxtA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.72589<br>
+Precision-Recall Equal Point: 0.03704<br>
+Average Precision: 0.10666<br>
+<img src='1kxtA.roc.jpg'><img src='1kxtA.pr.jpg'></span><br></div>
+<div class='protein' id='p1kxtC' style='display:none;'><span class='protein_header'>PDB ID: 1kxtC, length: 496</span> <a href="javascript:switchid('p1kxtC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.75148<br>
+Precision-Recall Equal Point: 0.07407<br>
+Average Precision: 0.12138<br>
+<img src='1kxtC.roc.jpg'><img src='1kxtC.pr.jpg'></span><br></div>
+<div class='protein' id='p1kxtE' style='display:none;'><span class='protein_header'>PDB ID: 1kxtE, length: 496</span> <a href="javascript:switchid('p1kxtE');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.73396<br>
+Precision-Recall Equal Point: 0.03846<br>
+Average Precision: 0.10787<br>
+<img src='1kxtE.roc.jpg'><img src='1kxtE.pr.jpg'></span><br></div>
+<div class='protein' id='p1kxvB' style='display:none;'><span class='protein_header'>PDB ID: 1kxvB, length: 496</span> <a href="javascript:switchid('p1kxvB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.70013<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.08026<br>
+<img src='1kxvB.roc.jpg'><img src='1kxvB.pr.jpg'></span><br></div>
+<div class='protein' id='p1kxvA' style='display:none;'><span class='protein_header'>PDB ID: 1kxvA, length: 496</span> <a href="javascript:switchid('p1kxvA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.73172<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.07158<br>
+<img src='1kxvA.roc.jpg'><img src='1kxvA.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1nmaN');">1nmaN</a> <a href="javascript:switchid('p1a14N');">1a14N</a> <a href="javascript:switchid('p1nccN');">1nccN</a> <a href="javascript:switchid('p1ncbN');">1ncbN</a> <a href="javascript:switchid('p1ncdN');">1ncdN</a> <a href="javascript:switchid('p1nmcA');">1nmcA</a> <a href="javascript:switchid('p1nmcN');">1nmcN</a> <a href="javascript:switchid('p1ncaN');">1ncaN</a> <a href="javascript:switchid('p1nmbN');">1nmbN</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.892758888889<br>
+Precision-Recall Equal Point (Family Average): 0.406418888889<br>
+Average Precision (Family Average): 0.447858888889<br></span>
+
+<div class='protein' id='p1ncdN' style='display:none;'><span class='protein_header'>PDB ID: 1ncdN, length: 389</span> <a href="javascript:switchid('p1ncdN');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.87347<br>
+Precision-Recall Equal Point: 0.44828<br>
+Average Precision: 0.4189<br>
+<img src='1ncdN.roc.jpg'><img src='1ncdN.pr.jpg'></span><br></div>
+<div class='protein' id='p1nmaN' style='display:none;'><span class='protein_header'>PDB ID: 1nmaN, length: 378</span> <a href="javascript:switchid('p1nmaN');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.89496<br>
+Precision-Recall Equal Point: 0.36<br>
+Average Precision: 0.36804<br>
+<img src='1nmaN.roc.jpg'><img src='1nmaN.pr.jpg'></span><br></div>
+<div class='protein' id='p1a14N' style='display:none;'><span class='protein_header'>PDB ID: 1a14N, length: 388</span> <a href="javascript:switchid('p1a14N');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.892<br>
+Precision-Recall Equal Point: 0.375<br>
+Average Precision: 0.40675<br>
+<img src='1a14N.roc.jpg'><img src='1a14N.pr.jpg'></span><br></div>
+<div class='protein' id='p1nmcN' style='display:none;'><span class='protein_header'>PDB ID: 1nmcN, length: 388</span> <a href="javascript:switchid('p1nmcN');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.89565<br>
+Precision-Recall Equal Point: 0.34783<br>
+Average Precision: 0.46396<br>
+<img src='1nmcN.roc.jpg'><img src='1nmcN.pr.jpg'></span><br></div>
+<div class='protein' id='p1nmbN' style='display:none;'><span class='protein_header'>PDB ID: 1nmbN, length: 388</span> <a href="javascript:switchid('p1nmbN');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.8774<br>
+Precision-Recall Equal Point: 0.33333<br>
+Average Precision: 0.43304<br>
+<img src='1nmbN.roc.jpg'><img src='1nmbN.pr.jpg'></span><br></div>
+<div class='protein' id='p1ncbN' style='display:none;'><span class='protein_header'>PDB ID: 1ncbN, length: 389</span> <a href="javascript:switchid('p1ncbN');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.85042<br>
+Precision-Recall Equal Point: 0.43333<br>
+Average Precision: 0.38673<br>
+<img src='1ncbN.roc.jpg'><img src='1ncbN.pr.jpg'></span><br></div>
+<div class='protein' id='p1nmcA' style='display:none;'><span class='protein_header'>PDB ID: 1nmcA, length: 388</span> <a href="javascript:switchid('p1nmcA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.89565<br>
+Precision-Recall Equal Point: 0.34783<br>
+Average Precision: 0.46396<br>
+<img src='1nmcA.roc.jpg'><img src='1nmcA.pr.jpg'></span><br></div>
+<div class='protein' id='p1nccN' style='display:none;'><span class='protein_header'>PDB ID: 1nccN, length: 389</span> <a href="javascript:switchid('p1nccN');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.88295<br>
+Precision-Recall Equal Point: 0.48276<br>
+Average Precision: 0.50107<br>
+<img src='1nccN.roc.jpg'><img src='1nccN.pr.jpg'></span><br></div>
+<div class='protein' id='p1ncaN' style='display:none;'><span class='protein_header'>PDB ID: 1ncaN, length: 389</span> <a href="javascript:switchid('p1ncaN');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.97233<br>
+Precision-Recall Equal Point: 0.52941<br>
+Average Precision: 0.58828<br>
+<img src='1ncaN.roc.jpg'><img src='1ncaN.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1bgxT');">1bgxT</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.6813<br>
+Precision-Recall Equal Point (Family Average): 0.13235<br>
+Average Precision (Family Average): 0.14094<br></span>
+
+<div class='protein' id='p1bgxT' style='display:none;'><span class='protein_header'>PDB ID: 1bgxT, length: 828</span> <a href="javascript:switchid('p1bgxT');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.6813<br>
+Precision-Recall Equal Point: 0.13235<br>
+Average Precision: 0.14094<br>
+<img src='1bgxT.roc.jpg'><img src='1bgxT.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1ezvE');">1ezvE</a> <a href="javascript:switchid('p1kyoP');">1kyoP</a> <a href="javascript:switchid('p1kyoE');">1kyoE</a> <a href="javascript:switchid('p1p84E');">1p84E</a> <a href="javascript:switchid('p1kb9E');">1kb9E</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.766304<br>
+Precision-Recall Equal Point (Family Average): 0.13442<br>
+Average Precision (Family Average): 0.247222<br></span>
+
+<div class='protein' id='p1kyoP' style='display:none;'><span class='protein_header'>PDB ID: 1kyoP, length: 185</span> <a href="javascript:switchid('p1kyoP');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.7971<br>
+Precision-Recall Equal Point: 0.13043<br>
+Average Precision: 0.25626<br>
+<img src='1kyoP.roc.jpg'><img src='1kyoP.pr.jpg'></span><br></div>
+<div class='protein' id='p1ezvE' style='display:none;'><span class='protein_header'>PDB ID: 1ezvE, length: 185</span> <a href="javascript:switchid('p1ezvE');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.75621<br>
+Precision-Recall Equal Point: 0.125<br>
+Average Precision: 0.24236<br>
+<img src='1ezvE.roc.jpg'><img src='1ezvE.pr.jpg'></span><br></div>
+<div class='protein' id='p1kyoE' style='display:none;'><span class='protein_header'>PDB ID: 1kyoE, length: 185</span> <a href="javascript:switchid('p1kyoE');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.75647<br>
+Precision-Recall Equal Point: 0.125<br>
+Average Precision: 0.24489<br>
+<img src='1kyoE.roc.jpg'><img src='1kyoE.pr.jpg'></span><br></div>
+<div class='protein' id='p1p84E' style='display:none;'><span class='protein_header'>PDB ID: 1p84E, length: 185</span> <a href="javascript:switchid('p1p84E');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.76398<br>
+Precision-Recall Equal Point: 0.16667<br>
+Average Precision: 0.24789<br>
+<img src='1p84E.roc.jpg'><img src='1p84E.pr.jpg'></span><br></div>
+<div class='protein' id='p1kb9E' style='display:none;'><span class='protein_header'>PDB ID: 1kb9E, length: 185</span> <a href="javascript:switchid('p1kb9E');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.75776<br>
+Precision-Recall Equal Point: 0.125<br>
+Average Precision: 0.24471<br>
+<img src='1kb9E.roc.jpg'><img src='1kb9E.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1g9mG');">1g9mG</a> <a href="javascript:switchid('p1g9nG');">1g9nG</a> <a href="javascript:switchid('p1rzkG');">1rzkG</a> <a href="javascript:switchid('p1gc1G');">1gc1G</a> <a href="javascript:switchid('p1rzjG');">1rzjG</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.451462<br>
+Precision-Recall Equal Point (Family Average): 0.0<br>
+Average Precision (Family Average): 0.046392<br></span>
+
+<div class='protein' id='p1g9nG' style='display:none;'><span class='protein_header'>PDB ID: 1g9nG, length: 306</span> <a href="javascript:switchid('p1g9nG');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.43187<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.03723<br>
+<img src='1g9nG.roc.jpg'><img src='1g9nG.pr.jpg'></span><br></div>
+<div class='protein' id='p1rzkG' style='display:none;'><span class='protein_header'>PDB ID: 1rzkG, length: 306</span> <a href="javascript:switchid('p1rzkG');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.39085<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.05683<br>
+<img src='1rzkG.roc.jpg'><img src='1rzkG.pr.jpg'></span><br></div>
+<div class='protein' id='p1g9mG' style='display:none;'><span class='protein_header'>PDB ID: 1g9mG, length: 305</span> <a href="javascript:switchid('p1g9mG');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.48551<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.04115<br>
+<img src='1g9mG.roc.jpg'><img src='1g9mG.pr.jpg'></span><br></div>
+<div class='protein' id='p1gc1G' style='display:none;'><span class='protein_header'>PDB ID: 1gc1G, length: 297</span> <a href="javascript:switchid('p1gc1G');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.51716<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.03847<br>
+<img src='1gc1G.roc.jpg'><img src='1gc1G.pr.jpg'></span><br></div>
+<div class='protein' id='p1rzjG' style='display:none;'><span class='protein_header'>PDB ID: 1rzjG, length: 305</span> <a href="javascript:switchid('p1rzjG');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.43192<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.05828<br>
+<img src='1rzjG.roc.jpg'><img src='1rzjG.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p2hmiB');">2hmiB</a> <a href="javascript:switchid('p1n6qB');">1n6qB</a> <a href="javascript:switchid('p1hysB');">1hysB</a> <a href="javascript:switchid('p1n5yB');">1n5yB</a> <a href="javascript:switchid('p1j5oB');">1j5oB</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.94124<br>
+Precision-Recall Equal Point (Family Average): 0.39887<br>
+Average Precision (Family Average): 0.45294<br></span>
+
+<div class='protein' id='p1j5oB' style='display:none;'><span class='protein_header'>PDB ID: 1j5oB, length: 430</span> <a href="javascript:switchid('p1j5oB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.94683<br>
+Precision-Recall Equal Point: 0.4<br>
+Average Precision: 0.40757<br>
+<img src='1j5oB.roc.jpg'><img src='1j5oB.pr.jpg'></span><br></div>
+<div class='protein' id='p1n6qB' style='display:none;'><span class='protein_header'>PDB ID: 1n6qB, length: 429</span> <a href="javascript:switchid('p1n6qB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.94632<br>
+Precision-Recall Equal Point: 0.41176<br>
+Average Precision: 0.53352<br>
+<img src='1n6qB.roc.jpg'><img src='1n6qB.pr.jpg'></span><br></div>
+<div class='protein' id='p1n5yB' style='display:none;'><span class='protein_header'>PDB ID: 1n5yB, length: 429</span> <a href="javascript:switchid('p1n5yB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.94632<br>
+Precision-Recall Equal Point: 0.41176<br>
+Average Precision: 0.5308<br>
+<img src='1n5yB.roc.jpg'><img src='1n5yB.pr.jpg'></span><br></div>
+<div class='protein' id='p2hmiB' style='display:none;'><span class='protein_header'>PDB ID: 2hmiB, length: 430</span> <a href="javascript:switchid('p2hmiB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.92449<br>
+Precision-Recall Equal Point: 0.33333<br>
+Average Precision: 0.36017<br>
+<img src='2hmiB.roc.jpg'><img src='2hmiB.pr.jpg'></span><br></div>
+<div class='protein' id='p1hysB' style='display:none;'><span class='protein_header'>PDB ID: 1hysB, length: 425</span> <a href="javascript:switchid('p1hysB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.94224<br>
+Precision-Recall Equal Point: 0.4375<br>
+Average Precision: 0.43264<br>
+<img src='1hysB.roc.jpg'><img src='1hysB.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1h0dC');">1h0dC</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.58652<br>
+Precision-Recall Equal Point (Family Average): 0.09524<br>
+Average Precision (Family Average): 0.19933<br></span>
+
+<div class='protein' id='p1h0dC' style='display:none;'><span class='protein_header'>PDB ID: 1h0dC, length: 122</span> <a href="javascript:switchid('p1h0dC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.58652<br>
+Precision-Recall Equal Point: 0.09524<br>
+Average Precision: 0.19933<br>
+<img src='1h0dC.roc.jpg'><img src='1h0dC.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1nsnS');">1nsnS</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.45915<br>
+Precision-Recall Equal Point (Family Average): 0.06452<br>
+Average Precision (Family Average): 0.19739<br></span>
+
+<div class='protein' id='p1nsnS' style='display:none;'><span class='protein_header'>PDB ID: 1nsnS, length: 138</span> <a href="javascript:switchid('p1nsnS');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.45915<br>
+Precision-Recall Equal Point: 0.06452<br>
+Average Precision: 0.19739<br>
+<img src='1nsnS.roc.jpg'><img src='1nsnS.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1mhpB');">1mhpB</a> <a href="javascript:switchid('p1mhpA');">1mhpA</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.71695<br>
+Precision-Recall Equal Point (Family Average): 0.32182<br>
+Average Precision (Family Average): 0.350475<br></span>
+
+<div class='protein' id='p1mhpB' style='display:none;'><span class='protein_header'>PDB ID: 1mhpB, length: 192</span> <a href="javascript:switchid('p1mhpB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.72346<br>
+Precision-Recall Equal Point: 0.36364<br>
+Average Precision: 0.39723<br>
+<img src='1mhpB.roc.jpg'><img src='1mhpB.pr.jpg'></span><br></div>
+<div class='protein' id='p1mhpA' style='display:none;'><span class='protein_header'>PDB ID: 1mhpA, length: 184</span> <a href="javascript:switchid('p1mhpA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.71044<br>
+Precision-Recall Equal Point: 0.28<br>
+Average Precision: 0.30372<br>
+<img src='1mhpA.roc.jpg'><img src='1mhpA.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1jpsT');">1jpsT</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.58978<br>
+Precision-Recall Equal Point (Family Average): 0.25714<br>
+Average Precision (Family Average): 0.22872<br></span>
+
+<div class='protein' id='p1jpsT' style='display:none;'><span class='protein_header'>PDB ID: 1jpsT, length: 200</span> <a href="javascript:switchid('p1jpsT');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.58978<br>
+Precision-Recall Equal Point: 0.25714<br>
+Average Precision: 0.22872<br>
+<img src='1jpsT.roc.jpg'><img src='1jpsT.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1orsC');">1orsC</a> <a href="javascript:switchid('p1orqC');">1orqC</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.59043<br>
+Precision-Recall Equal Point (Family Average): 0.0<br>
+Average Precision (Family Average): 0.096755<br></span>
+
+<div class='protein' id='p1orsC' style='display:none;'><span class='protein_header'>PDB ID: 1orsC, length: 132</span> <a href="javascript:switchid('p1orsC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.62379<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.12493<br>
+<img src='1orsC.roc.jpg'><img src='1orsC.pr.jpg'></span><br></div>
+<div class='protein' id='p1orqC' style='display:none;'><span class='protein_header'>PDB ID: 1orqC, length: 223</span> <a href="javascript:switchid('p1orqC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.55707<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.06858<br>
+<img src='1orqC.roc.jpg'><img src='1orqC.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1iqdC');">1iqdC</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.80088<br>
+Precision-Recall Equal Point (Family Average): 0.40909<br>
+Average Precision (Family Average): 0.36386<br></span>
+
+<div class='protein' id='p1iqdC' style='display:none;'><span class='protein_header'>PDB ID: 1iqdC, length: 156</span> <a href="javascript:switchid('p1iqdC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.80088<br>
+Precision-Recall Equal Point: 0.40909<br>
+Average Precision: 0.36386<br>
+<img src='1iqdC.roc.jpg'><img src='1iqdC.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1n8zC');">1n8zC</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.72443<br>
+Precision-Recall Equal Point (Family Average): 0.04545<br>
+Average Precision (Family Average): 0.07554<br></span>
+
+<div class='protein' id='p1n8zC' style='display:none;'><span class='protein_header'>PDB ID: 1n8zC, length: 581</span> <a href="javascript:switchid('p1n8zC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.72443<br>
+Precision-Recall Equal Point: 0.04545<br>
+Average Precision: 0.07554<br>
+<img src='1n8zC.roc.jpg'><img src='1n8zC.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1qfwA');">1qfwA</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.65455<br>
+Precision-Recall Equal Point (Family Average): 0.1<br>
+Average Precision (Family Average): 0.16324<br></span>
+
+<div class='protein' id='p1qfwA' style='display:none;'><span class='protein_header'>PDB ID: 1qfwA, length: 87</span> <a href="javascript:switchid('p1qfwA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.65455<br>
+Precision-Recall Equal Point: 0.1<br>
+Average Precision: 0.16324<br>
+<img src='1qfwA.roc.jpg'><img src='1qfwA.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1jrhI');">1jrhI</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.64574<br>
+Precision-Recall Equal Point (Family Average): 0.27778<br>
+Average Precision (Family Average): 0.27409<br></span>
+
+<div class='protein' id='p1jrhI' style='display:none;'><span class='protein_header'>PDB ID: 1jrhI, length: 95</span> <a href="javascript:switchid('p1jrhI');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.64574<br>
+Precision-Recall Equal Point: 0.27778<br>
+Average Precision: 0.27409<br>
+<img src='1jrhI.roc.jpg'><img src='1jrhI.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1v7nV');">1v7nV</a> <a href="javascript:switchid('p1v7nX');">1v7nX</a> <a href="javascript:switchid('p1v7mV');">1v7mV</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.56866<br>
+Precision-Recall Equal Point (Family Average): 0.115396666667<br>
+Average Precision (Family Average): 0.179786666667<br></span>
+
+<div class='protein' id='p1v7nV' style='display:none;'><span class='protein_header'>PDB ID: 1v7nV, length: 145</span> <a href="javascript:switchid('p1v7nV');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.47865<br>
+Precision-Recall Equal Point: 0.08333<br>
+Average Precision: 0.16101<br>
+<img src='1v7nV.roc.jpg'><img src='1v7nV.pr.jpg'></span><br></div>
+<div class='protein' id='p1v7mV' style='display:none;'><span class='protein_header'>PDB ID: 1v7mV, length: 145</span> <a href="javascript:switchid('p1v7mV');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.48367<br>
+Precision-Recall Equal Point: 0.12<br>
+Average Precision: 0.1638<br>
+<img src='1v7mV.roc.jpg'><img src='1v7mV.pr.jpg'></span><br></div>
+<div class='protein' id='p1v7nX' style='display:none;'><span class='protein_header'>PDB ID: 1v7nX, length: 138</span> <a href="javascript:switchid('p1v7nX');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.74366<br>
+Precision-Recall Equal Point: 0.14286<br>
+Average Precision: 0.21455<br>
+<img src='1v7nX.roc.jpg'><img src='1v7nX.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1rvf1');">1rvf1</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.61998<br>
+Precision-Recall Equal Point (Family Average): 0.15789<br>
+Average Precision (Family Average): 0.10718<br></span>
+
+<div class='protein' id='p1rvf1' style='display:none;'><span class='protein_header'>PDB ID: 1rvf1, length: 273</span> <a href="javascript:switchid('p1rvf1');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.61998<br>
+Precision-Recall Equal Point: 0.15789<br>
+Average Precision: 0.10718<br>
+<img src='1rvf1.roc.jpg'><img src='1rvf1.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1rvf3');">1rvf3</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.79971<br>
+Precision-Recall Equal Point (Family Average): 0.0<br>
+Average Precision (Family Average): 0.03926<br></span>
+
+<div class='protein' id='p1rvf3' style='display:none;'><span class='protein_header'>PDB ID: 1rvf3, length: 236</span> <a href="javascript:switchid('p1rvf3');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.79971<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.03926<br>
+<img src='1rvf3.roc.jpg'><img src='1rvf3.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1rvf2');">1rvf2</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.99213<br>
+Precision-Recall Equal Point (Family Average): 0.0<br>
+Average Precision (Family Average): 0.33333<br></span>
+
+<div class='protein' id='p1rvf2' style='display:none;'><span class='protein_header'>PDB ID: 1rvf2, length: 255</span> <a href="javascript:switchid('p1rvf2');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.99213<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.33333<br>
+<img src='1rvf2.roc.jpg'><img src='1rvf2.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1v7nK');">1v7nK</a> <a href="javascript:switchid('p1v7nJ');">1v7nJ</a> <a href="javascript:switchid('p1v7nI');">1v7nI</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.755226666667<br>
+Precision-Recall Equal Point (Family Average): 0.02564<br>
+Average Precision (Family Average): 0.0925366666667<br></span>
+
+<div class='protein' id='p1v7nK' style='display:none;'><span class='protein_header'>PDB ID: 1v7nK, length: 217</span> <a href="javascript:switchid('p1v7nK');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.80476<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.09191<br>
+<img src='1v7nK.roc.jpg'><img src='1v7nK.pr.jpg'></span><br></div>
+<div class='protein' id='p1v7nJ' style='display:none;'><span class='protein_header'>PDB ID: 1v7nJ, length: 217</span> <a href="javascript:switchid('p1v7nJ');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.82517<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.10084<br>
+<img src='1v7nJ.roc.jpg'><img src='1v7nJ.pr.jpg'></span><br></div>
+<div class='protein' id='p1v7nI' style='display:none;'><span class='protein_header'>PDB ID: 1v7nI, length: 217</span> <a href="javascript:switchid('p1v7nI');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.63575<br>
+Precision-Recall Equal Point: 0.07692<br>
+Average Precision: 0.08486<br>
+<img src='1v7nI.roc.jpg'><img src='1v7nI.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1fe8C');">1fe8C</a> <a href="javascript:switchid('p1fe8B');">1fe8B</a> <a href="javascript:switchid('p1fe8A');">1fe8A</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.72016<br>
+Precision-Recall Equal Point (Family Average): 0.36667<br>
+Average Precision (Family Average): 0.343403333333<br></span>
+
+<div class='protein' id='p1fe8C' style='display:none;'><span class='protein_header'>PDB ID: 1fe8C, length: 187</span> <a href="javascript:switchid('p1fe8C');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.71561<br>
+Precision-Recall Equal Point: 0.36667<br>
+Average Precision: 0.34515<br>
+<img src='1fe8C.roc.jpg'><img src='1fe8C.pr.jpg'></span><br></div>
+<div class='protein' id='p1fe8B' style='display:none;'><span class='protein_header'>PDB ID: 1fe8B, length: 186</span> <a href="javascript:switchid('p1fe8B');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.72393<br>
+Precision-Recall Equal Point: 0.36667<br>
+Average Precision: 0.33514<br>
+<img src='1fe8B.roc.jpg'><img src='1fe8B.pr.jpg'></span><br></div>
+<div class='protein' id='p1fe8A' style='display:none;'><span class='protein_header'>PDB ID: 1fe8A, length: 186</span> <a href="javascript:switchid('p1fe8A');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.72094<br>
+Precision-Recall Equal Point: 0.36667<br>
+Average Precision: 0.34992<br>
+<img src='1fe8A.roc.jpg'><img src='1fe8A.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1i9rA');">1i9rA</a> <a href="javascript:switchid('p1i9rB');">1i9rB</a> <a href="javascript:switchid('p1i9rC');">1i9rC</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.60528<br>
+Precision-Recall Equal Point (Family Average): 0.293713333333<br>
+Average Precision (Family Average): 0.298776666667<br></span>
+
+<div class='protein' id='p1i9rA' style='display:none;'><span class='protein_header'>PDB ID: 1i9rA, length: 143</span> <a href="javascript:switchid('p1i9rA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.59284<br>
+Precision-Recall Equal Point: 0.27273<br>
+Average Precision: 0.2783<br>
+<img src='1i9rA.roc.jpg'><img src='1i9rA.pr.jpg'></span><br></div>
+<div class='protein' id='p1i9rB' style='display:none;'><span class='protein_header'>PDB ID: 1i9rB, length: 143</span> <a href="javascript:switchid('p1i9rB');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.61561<br>
+Precision-Recall Equal Point: 0.31429<br>
+Average Precision: 0.31474<br>
+<img src='1i9rB.roc.jpg'><img src='1i9rB.pr.jpg'></span><br></div>
+<div class='protein' id='p1i9rC' style='display:none;'><span class='protein_header'>PDB ID: 1i9rC, length: 143</span> <a href="javascript:switchid('p1i9rC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.60739<br>
+Precision-Recall Equal Point: 0.29412<br>
+Average Precision: 0.30329<br>
+<img src='1i9rC.roc.jpg'><img src='1i9rC.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1kiqC');">1kiqC</a> <a href="javascript:switchid('p1a2yC');">1a2yC</a> <a href="javascript:switchid('p1jtpL');">1jtpL</a> <a href="javascript:switchid('p1jtpM');">1jtpM</a> <a href="javascript:switchid('p1kirC');">1kirC</a> <a href="javascript:switchid('p1dzbX');">1dzbX</a> <a href="javascript:switchid('p1dzbY');">1dzbY</a> <a href="javascript:switchid('p1ic7Y');">1ic7Y</a> <a href="javascript:switchid('p1fbiY');">1fbiY</a> <a href="javascript:switchid('p1g7jC');">1g7jC</a> <a href="javascript:switchid('p1nbzC');">1nbzC</a> <a href="javascript:switchid('p1p2cC');">1p2cC</a> <a href="javascript:switchid('p1melL');">1melL</a> <a href="javascript:switchid('p1j1pY');">1j1pY</a> <a href="javascript:switchid('p1jttL');">1jttL</a> <a href="javascript:switchid('p1jtoM');">1jtoM</a> <a href="javascript:switchid('p1jtoL');">1jtoL</a> <a href="javascript:switchid('p1fbiX');">1fbiX</a> <a href="javascript:switchid('p1j1xY');">1j1xY</a> <a href="javascript:switchid('p1dqjC');">1dqjC</a> <a href="javascript:switchid('p1c08C');">1c08C</a> <a href="javascript:switchid('p1kipC');">1kipC</a> <a href="javascript:switchid('p1ic5Y');">1ic5Y</a> <a href="javascript:switchid('p1jhlA');">1jhlA</a> <a href="javascript:switchid('p1g7hC');">1g7hC</a> <a href="javascript:switchid('p1ua6Y');">1ua6Y</a> <a href="javascript:switchid('p1g7lC');">1g7lC</a> <a href="javascript:switchid('p1melM');">1melM</a> <a href="javascript:switchid('p1j1oY');">1j1oY</a> <a href="javascript:switchid('p1g7mC');">1g7mC</a> <a href="javascript:switchid('p1fdlY');">1fdlY</a> <a href="javascript:switchid('p1nbyC');">1nbyC</a> <a href="javascript:switchid('p1vfbC');">1vfbC</a> <a href="javascript:switchid('p1ndmC');">1ndmC</a> <a href="javascript:switchid('p1bvkC');">1bvkC</a> <a href="javascript:switchid('p1bvkF');">1bvkF</a> <a href="javascript:switchid('p1ndgC');">1ndgC</a> <a href="javascript:switchid('p1mlcF');">1mlcF</a> <a href="javascript:switchid('p1mlcE');">1mlcE</a> <a href="javascript:switchid('p2iffY');">2iffY</a> <a href="javascript:switchid('p1g7iC');">1g7iC</a> <a href="javascript:switchid('p1bqlY');">1bqlY</a> <a href="javascript:switchid('p1op9B');">1op9B</a> <a href="javascript:switchid('p1ic4Y');">1ic4Y</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.687221590909<br>
+Precision-Recall Equal Point (Family Average): 0.268023181818<br>
+Average Precision (Family Average): 0.2978475<br></span>
+
+<div class='protein' id='p1g7lC' style='display:none;'><span class='protein_header'>PDB ID: 1g7lC, length: 129</span> <a href="javascript:switchid('p1g7lC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.63139<br>
+Precision-Recall Equal Point: 0.2381<br>
+Average Precision: 0.21358<br>
+<img src='1g7lC.roc.jpg'><img src='1g7lC.pr.jpg'></span><br></div>
+<div class='protein' id='p1fbiY' style='display:none;'><span class='protein_header'>PDB ID: 1fbiY, length: 129</span> <a href="javascript:switchid('p1fbiY');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.60232<br>
+Precision-Recall Equal Point: 0.23077<br>
+Average Precision: 0.25036<br>
+<img src='1fbiY.roc.jpg'><img src='1fbiY.pr.jpg'></span><br></div>
+<div class='protein' id='p1g7jC' style='display:none;'><span class='protein_header'>PDB ID: 1g7jC, length: 129</span> <a href="javascript:switchid('p1g7jC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.61148<br>
+Precision-Recall Equal Point: 0.15789<br>
+Average Precision: 0.18466<br>
+<img src='1g7jC.roc.jpg'><img src='1g7jC.pr.jpg'></span><br></div>
+<div class='protein' id='p1nbzC' style='display:none;'><span class='protein_header'>PDB ID: 1nbzC, length: 128</span> <a href="javascript:switchid('p1nbzC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.55525<br>
+Precision-Recall Equal Point: 0.125<br>
+Average Precision: 0.14496<br>
+<img src='1nbzC.roc.jpg'><img src='1nbzC.pr.jpg'></span><br></div>
+<div class='protein' id='p1bvkC' style='display:none;'><span class='protein_header'>PDB ID: 1bvkC, length: 129</span> <a href="javascript:switchid('p1bvkC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.64996<br>
+Precision-Recall Equal Point: 0.22727<br>
+Average Precision: 0.22853<br>
+<img src='1bvkC.roc.jpg'><img src='1bvkC.pr.jpg'></span><br></div>
+<div class='protein' id='p1bqlY' style='display:none;'><span class='protein_header'>PDB ID: 1bqlY, length: 129</span> <a href="javascript:switchid('p1bqlY');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.78876<br>
+Precision-Recall Equal Point: 0.47826<br>
+Average Precision: 0.59201<br>
+<img src='1bqlY.roc.jpg'><img src='1bqlY.pr.jpg'></span><br></div>
+<div class='protein' id='p1bvkF' style='display:none;'><span class='protein_header'>PDB ID: 1bvkF, length: 129</span> <a href="javascript:switchid('p1bvkF');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.67152<br>
+Precision-Recall Equal Point: 0.28571<br>
+Average Precision: 0.24261<br>
+<img src='1bvkF.roc.jpg'><img src='1bvkF.pr.jpg'></span><br></div>
+<div class='protein' id='p1p2cC' style='display:none;'><span class='protein_header'>PDB ID: 1p2cC, length: 129</span> <a href="javascript:switchid('p1p2cC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.97395<br>
+Precision-Recall Equal Point: 0.7<br>
+Average Precision: 0.81278<br>
+<img src='1p2cC.roc.jpg'><img src='1p2cC.pr.jpg'></span><br></div>
+<div class='protein' id='p1kiqC' style='display:none;'><span class='protein_header'>PDB ID: 1kiqC, length: 129</span> <a href="javascript:switchid('p1kiqC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.66364<br>
+Precision-Recall Equal Point: 0.26316<br>
+Average Precision: 0.21424<br>
+<img src='1kiqC.roc.jpg'><img src='1kiqC.pr.jpg'></span><br></div>
+<div class='protein' id='p1melL' style='display:none;'><span class='protein_header'>PDB ID: 1melL, length: 127</span> <a href="javascript:switchid('p1melL');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.77116<br>
+Precision-Recall Equal Point: 0.18182<br>
+Average Precision: 0.34302<br>
+<img src='1melL.roc.jpg'><img src='1melL.pr.jpg'></span><br></div>
+<div class='protein' id='p1melM' style='display:none;'><span class='protein_header'>PDB ID: 1melM, length: 127</span> <a href="javascript:switchid('p1melM');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.77692<br>
+Precision-Recall Equal Point: 0.2<br>
+Average Precision: 0.35984<br>
+<img src='1melM.roc.jpg'><img src='1melM.pr.jpg'></span><br></div>
+<div class='protein' id='p1ndgC' style='display:none;'><span class='protein_header'>PDB ID: 1ndgC, length: 127</span> <a href="javascript:switchid('p1ndgC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.6513<br>
+Precision-Recall Equal Point: 0.31034<br>
+Average Precision: 0.31269<br>
+<img src='1ndgC.roc.jpg'><img src='1ndgC.pr.jpg'></span><br></div>
+<div class='protein' id='p1jtoM' style='display:none;'><span class='protein_header'>PDB ID: 1jtoM, length: 129</span> <a href="javascript:switchid('p1jtoM');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.81733<br>
+Precision-Recall Equal Point: 0.28571<br>
+Average Precision: 0.39837<br>
+<img src='1jtoM.roc.jpg'><img src='1jtoM.pr.jpg'></span><br></div>
+<div class='protein' id='p1jtoL' style='display:none;'><span class='protein_header'>PDB ID: 1jtoL, length: 129</span> <a href="javascript:switchid('p1jtoL');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.76502<br>
+Precision-Recall Equal Point: 0.18182<br>
+Average Precision: 0.33859<br>
+<img src='1jtoL.roc.jpg'><img src='1jtoL.pr.jpg'></span><br></div>
+<div class='protein' id='p1mlcF' style='display:none;'><span class='protein_header'>PDB ID: 1mlcF, length: 129</span> <a href="javascript:switchid('p1mlcF');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.76083<br>
+Precision-Recall Equal Point: 0.45455<br>
+Average Precision: 0.54507<br>
+<img src='1mlcF.roc.jpg'><img src='1mlcF.pr.jpg'></span><br></div>
+<div class='protein' id='p1mlcE' style='display:none;'><span class='protein_header'>PDB ID: 1mlcE, length: 129</span> <a href="javascript:switchid('p1mlcE');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.7791<br>
+Precision-Recall Equal Point: 0.47619<br>
+Average Precision: 0.55514<br>
+<img src='1mlcE.roc.jpg'><img src='1mlcE.pr.jpg'></span><br></div>
+<div class='protein' id='p1ic4Y' style='display:none;'><span class='protein_header'>PDB ID: 1ic4Y, length: 129</span> <a href="javascript:switchid('p1ic4Y');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.67751<br>
+Precision-Recall Equal Point: 0.28571<br>
+Average Precision: 0.31065<br>
+<img src='1ic4Y.roc.jpg'><img src='1ic4Y.pr.jpg'></span><br></div>
+<div class='protein' id='p1j1pY' style='display:none;'><span class='protein_header'>PDB ID: 1j1pY, length: 129</span> <a href="javascript:switchid('p1j1pY');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.6682<br>
+Precision-Recall Equal Point: 0.35484<br>
+Average Precision: 0.33043<br>
+<img src='1j1pY.roc.jpg'><img src='1j1pY.pr.jpg'></span><br></div>
+<div class='protein' id='p1fbiX' style='display:none;'><span class='protein_header'>PDB ID: 1fbiX, length: 129</span> <a href="javascript:switchid('p1fbiX');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.65079<br>
+Precision-Recall Equal Point: 0.28571<br>
+Average Precision: 0.23437<br>
+<img src='1fbiX.roc.jpg'><img src='1fbiX.pr.jpg'></span><br></div>
+<div class='protein' id='p1jttL' style='display:none;'><span class='protein_header'>PDB ID: 1jttL, length: 129</span> <a href="javascript:switchid('p1jttL');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.73519<br>
+Precision-Recall Equal Point: 0.22222<br>
+Average Precision: 0.29337<br>
+<img src='1jttL.roc.jpg'><img src='1jttL.pr.jpg'></span><br></div>
+<div class='protein' id='p1a2yC' style='display:none;'><span class='protein_header'>PDB ID: 1a2yC, length: 129</span> <a href="javascript:switchid('p1a2yC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.60688<br>
+Precision-Recall Equal Point: 0.1<br>
+Average Precision: 0.1924<br>
+<img src='1a2yC.roc.jpg'><img src='1a2yC.pr.jpg'></span><br></div>
+<div class='protein' id='p1j1xY' style='display:none;'><span class='protein_header'>PDB ID: 1j1xY, length: 129</span> <a href="javascript:switchid('p1j1xY');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.66835<br>
+Precision-Recall Equal Point: 0.33333<br>
+Average Precision: 0.32462<br>
+<img src='1j1xY.roc.jpg'><img src='1j1xY.pr.jpg'></span><br></div>
+<div class='protein' id='p1j1oY' style='display:none;'><span class='protein_header'>PDB ID: 1j1oY, length: 129</span> <a href="javascript:switchid('p1j1oY');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.67215<br>
+Precision-Recall Equal Point: 0.32258<br>
+Average Precision: 0.33453<br>
+<img src='1j1oY.roc.jpg'><img src='1j1oY.pr.jpg'></span><br></div>
+<div class='protein' id='p1g7mC' style='display:none;'><span class='protein_header'>PDB ID: 1g7mC, length: 129</span> <a href="javascript:switchid('p1g7mC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.62431<br>
+Precision-Recall Equal Point: 0.25<br>
+Average Precision: 0.20427<br>
+<img src='1g7mC.roc.jpg'><img src='1g7mC.pr.jpg'></span><br></div>
+<div class='protein' id='p1dqjC' style='display:none;'><span class='protein_header'>PDB ID: 1dqjC, length: 129</span> <a href="javascript:switchid('p1dqjC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.67374<br>
+Precision-Recall Equal Point: 0.33333<br>
+Average Precision: 0.32619<br>
+<img src='1dqjC.roc.jpg'><img src='1dqjC.pr.jpg'></span><br></div>
+<div class='protein' id='p1fdlY' style='display:none;'><span class='protein_header'>PDB ID: 1fdlY, length: 129</span> <a href="javascript:switchid('p1fdlY');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.72419<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.08585<br>
+<img src='1fdlY.roc.jpg'><img src='1fdlY.pr.jpg'></span><br></div>
+<div class='protein' id='p1jtpL' style='display:none;'><span class='protein_header'>PDB ID: 1jtpL, length: 129</span> <a href="javascript:switchid('p1jtpL');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.82201<br>
+Precision-Recall Equal Point: 0.28571<br>
+Average Precision: 0.31946<br>
+<img src='1jtpL.roc.jpg'><img src='1jtpL.pr.jpg'></span><br></div>
+<div class='protein' id='p1jtpM' style='display:none;'><span class='protein_header'>PDB ID: 1jtpM, length: 129</span> <a href="javascript:switchid('p1jtpM');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.8521<br>
+Precision-Recall Equal Point: 0.3<br>
+Average Precision: 0.44804<br>
+<img src='1jtpM.roc.jpg'><img src='1jtpM.pr.jpg'></span><br></div>
+<div class='protein' id='p1nbyC' style='display:none;'><span class='protein_header'>PDB ID: 1nbyC, length: 129</span> <a href="javascript:switchid('p1nbyC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.5084<br>
+Precision-Recall Equal Point: 0.11765<br>
+Average Precision: 0.13939<br>
+<img src='1nbyC.roc.jpg'><img src='1nbyC.pr.jpg'></span><br></div>
+<div class='protein' id='p1kirC' style='display:none;'><span class='protein_header'>PDB ID: 1kirC, length: 129</span> <a href="javascript:switchid('p1kirC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.66411<br>
+Precision-Recall Equal Point: 0.26316<br>
+Average Precision: 0.2188<br>
+<img src='1kirC.roc.jpg'><img src='1kirC.pr.jpg'></span><br></div>
+<div class='protein' id='p2iffY' style='display:none;'><span class='protein_header'>PDB ID: 2iffY, length: 129</span> <a href="javascript:switchid('p2iffY');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.79655<br>
+Precision-Recall Equal Point: 0.56522<br>
+Average Precision: 0.60307<br>
+<img src='2iffY.roc.jpg'><img src='2iffY.pr.jpg'></span><br></div>
+<div class='protein' id='p1op9B' style='display:none;'><span class='protein_header'>PDB ID: 1op9B, length: 130</span> <a href="javascript:switchid('p1op9B');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.29331<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.08695<br>
+<img src='1op9B.roc.jpg'><img src='1op9B.pr.jpg'></span><br></div>
+<div class='protein' id='p1kipC' style='display:none;'><span class='protein_header'>PDB ID: 1kipC, length: 129</span> <a href="javascript:switchid('p1kipC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.61866<br>
+Precision-Recall Equal Point: 0.21053<br>
+Average Precision: 0.18864<br>
+<img src='1kipC.roc.jpg'><img src='1kipC.pr.jpg'></span><br></div>
+<div class='protein' id='p1dzbX' style='display:none;'><span class='protein_header'>PDB ID: 1dzbX, length: 129</span> <a href="javascript:switchid('p1dzbX');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.73011<br>
+Precision-Recall Equal Point: 0.15385<br>
+Average Precision: 0.18632<br>
+<img src='1dzbX.roc.jpg'><img src='1dzbX.pr.jpg'></span><br></div>
+<div class='protein' id='p1dzbY' style='display:none;'><span class='protein_header'>PDB ID: 1dzbY, length: 129</span> <a href="javascript:switchid('p1dzbY');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.76282<br>
+Precision-Recall Equal Point: 0.16667<br>
+Average Precision: 0.19343<br>
+<img src='1dzbY.roc.jpg'><img src='1dzbY.pr.jpg'></span><br></div>
+<div class='protein' id='p1ic5Y' style='display:none;'><span class='protein_header'>PDB ID: 1ic5Y, length: 129</span> <a href="javascript:switchid('p1ic5Y');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.67347<br>
+Precision-Recall Equal Point: 0.32258<br>
+Average Precision: 0.33246<br>
+<img src='1ic5Y.roc.jpg'><img src='1ic5Y.pr.jpg'></span><br></div>
+<div class='protein' id='p1jhlA' style='display:none;'><span class='protein_header'>PDB ID: 1jhlA, length: 129</span> <a href="javascript:switchid('p1jhlA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.75788<br>
+Precision-Recall Equal Point: 0.23529<br>
+Average Precision: 0.24915<br>
+<img src='1jhlA.roc.jpg'><img src='1jhlA.pr.jpg'></span><br></div>
+<div class='protein' id='p1ic7Y' style='display:none;'><span class='protein_header'>PDB ID: 1ic7Y, length: 129</span> <a href="javascript:switchid('p1ic7Y');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.68621<br>
+Precision-Recall Equal Point: 0.34483<br>
+Average Precision: 0.32488<br>
+<img src='1ic7Y.roc.jpg'><img src='1ic7Y.pr.jpg'></span><br></div>
+<div class='protein' id='p1vfbC' style='display:none;'><span class='protein_header'>PDB ID: 1vfbC, length: 129</span> <a href="javascript:switchid('p1vfbC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.65548<br>
+Precision-Recall Equal Point: 0.22727<br>
+Average Precision: 0.23578<br>
+<img src='1vfbC.roc.jpg'><img src='1vfbC.pr.jpg'></span><br></div>
+<div class='protein' id='p1c08C' style='display:none;'><span class='protein_header'>PDB ID: 1c08C, length: 129</span> <a href="javascript:switchid('p1c08C');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.68754<br>
+Precision-Recall Equal Point: 0.33333<br>
+Average Precision: 0.33206<br>
+<img src='1c08C.roc.jpg'><img src='1c08C.pr.jpg'></span><br></div>
+<div class='protein' id='p1ua6Y' style='display:none;'><span class='protein_header'>PDB ID: 1ua6Y, length: 129</span> <a href="javascript:switchid('p1ua6Y');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.6761<br>
+Precision-Recall Equal Point: 0.32143<br>
+Average Precision: 0.31058<br>
+<img src='1ua6Y.roc.jpg'><img src='1ua6Y.pr.jpg'></span><br></div>
+<div class='protein' id='p1g7iC' style='display:none;'><span class='protein_header'>PDB ID: 1g7iC, length: 129</span> <a href="javascript:switchid('p1g7iC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.64737<br>
+Precision-Recall Equal Point: 0.21053<br>
+Average Precision: 0.20057<br>
+<img src='1g7iC.roc.jpg'><img src='1g7iC.pr.jpg'></span><br></div>
+<div class='protein' id='p1ndmC' style='display:none;'><span class='protein_header'>PDB ID: 1ndmC, length: 129</span> <a href="javascript:switchid('p1ndmC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.59181<br>
+Precision-Recall Equal Point: 0.1875<br>
+Average Precision: 0.15702<br>
+<img src='1ndmC.roc.jpg'><img src='1ndmC.pr.jpg'></span><br></div>
+<div class='protein' id='p1g7hC' style='display:none;'><span class='protein_header'>PDB ID: 1g7hC, length: 129</span> <a href="javascript:switchid('p1g7hC');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.64258<br>
+Precision-Recall Equal Point: 0.26316<br>
+Average Precision: 0.20556<br>
+<img src='1g7hC.roc.jpg'><img src='1g7hC.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1egjA');">1egjA</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.87868<br>
+Precision-Recall Equal Point (Family Average): 0.625<br>
+Average Precision (Family Average): 0.64433<br></span>
+
+<div class='protein' id='p1egjA' style='display:none;'><span class='protein_header'>PDB ID: 1egjA, length: 101</span> <a href="javascript:switchid('p1egjA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.87868<br>
+Precision-Recall Equal Point: 0.625<br>
+Average Precision: 0.64433<br>
+<img src='1egjA.roc.jpg'><img src='1egjA.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1g6vA');">1g6vA</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.3537<br>
+Precision-Recall Equal Point (Family Average): 0.0<br>
+Average Precision (Family Average): 0.06127<br></span>
+
+<div class='protein' id='p1g6vA' style='display:none;'><span class='protein_header'>PDB ID: 1g6vA, length: 256</span> <a href="javascript:switchid('p1g6vA');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.3537<br>
+Precision-Recall Equal Point: 0.0<br>
+Average Precision: 0.06127<br>
+<img src='1g6vA.roc.jpg'><img src='1g6vA.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p1mvfE');">1mvfE</a> <a href="javascript:switchid('p1mvfD');">1mvfD</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.503515<br>
+Precision-Recall Equal Point (Family Average): 0.40497<br>
+Average Precision (Family Average): 0.44758<br></span>
+
+<div class='protein' id='p1mvfE' style='display:none;'><span class='protein_header'>PDB ID: 1mvfE, length: 44</span> <a href="javascript:switchid('p1mvfE');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.4765<br>
+Precision-Recall Equal Point: 0.38889<br>
+Average Precision: 0.39246<br>
+<img src='1mvfE.roc.jpg'><img src='1mvfE.pr.jpg'></span><br></div>
+<div class='protein' id='p1mvfD' style='display:none;'><span class='protein_header'>PDB ID: 1mvfD, length: 44</span> <a href="javascript:switchid('p1mvfD');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.53053<br>
+Precision-Recall Equal Point: 0.42105<br>
+Average Precision: 0.5027<br>
+<img src='1mvfD.roc.jpg'><img src='1mvfD.pr.jpg'></span><br></div>
+</div>
+<div class='family'><span class='family_header'>Protein Family IDs: <a href="javascript:switchid('p2jelP');">2jelP</a> </span><br>
+<span class='family_data'>ROC Area Under the Curve (Family Average): 0.68374<br>
+Precision-Recall Equal Point (Family Average): 0.41667<br>
+Average Precision (Family Average): 0.47626<br></span>
+
+<div class='protein' id='p2jelP' style='display:none;'><span class='protein_header'>PDB ID: 2jelP, length: 85</span> <a href="javascript:switchid('p2jelP');">Hide</a><br>
+<span class='protein_data'>ROC Area Under the Curve: 0.68374<br>
+Precision-Recall Equal Point: 0.41667<br>
+Average Precision: 0.47626<br>
+<img src='2jelP.roc.jpg'><img src='2jelP.pr.jpg'></span><br></div>
+</div>
+</center>
+</body></html>

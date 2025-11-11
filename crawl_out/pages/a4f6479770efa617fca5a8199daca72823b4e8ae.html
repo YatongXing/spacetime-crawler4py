@@ -1,0 +1,130 @@
+<!-- URL: https://password.ics.uci.edu/ssp/?action=sendtoken -->
+
+<html lang="en">
+<head>
+    <title>Self service password</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="LDAP Tool Box" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/self-service-password.css" />
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="images/favicon.ico" rel="shortcut icon" />
+     <style>
+       html, body {
+         background: url("images/plain-gray-background.jpg") no-repeat center fixed;
+         background-size: cover;
+       }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="panel panel-success">
+<div class="panel-body">
+
+    <div class="navbar-wrapper">
+
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.php"><i class="fa fa-fw fa-home"></i> Self service password</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                                <li class="">
+                  <a href="?action=resetbyquestions"
+                     data-toggle="menu-popover"
+                     data-content="Reset your password by answering questions"
+                  ><i class="fa fa-fw fa-question-circle"></i> Question</a>
+                </li>
+                                                <li class="active">
+                  <a href="?action=sendtoken"
+                     data-toggle="menu-popover"
+                     data-content="Email a password reset link"
+                  ><i class="fa fa-fw fa-envelope"></i> Email</a>
+                </li>
+                                                                <li class="">
+                  <a href="?action=changesshkey"
+                     data-toggle="menu-popover"
+                     data-content="Change your SSH Key"
+                  ><i class="fa fa-fw fa-terminal"></i> SSH Key</a>
+                </li>
+                              </ul>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+<a href="index.php" alt="Home">
+<img src="images/uci-ics.jpg" alt="Logo" class="logo img-responsive center-block" />
+</a>
+
+
+<div class="result alert alert-success">
+<p><i class="fa fa-fw fa-check-square" aria-hidden="true"></i> Email a password reset link</p>
+</div>
+
+
+<div class="help alert alert-warning"><p><i class="fa fa-fw fa-info-circle"></i> Enter your user name and your recovery email address to reset your password. When you receive the email, click the link inside to complete the password reset.</p></div>
+
+<div class="alert alert-info">
+<form action="#" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label for="login" class="col-sm-4 control-label">Login</label>
+        <div class="col-sm-8">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+                <input type="text" name="login" id="login" value="" class="form-control" placeholder="Login" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="mail" class="col-sm-4 control-label">Recovery Address</label>
+        <div class="col-sm-8">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-fw fa-envelope-o"></i></span>
+                <input type="email" name="mail" id="mail" class="form-control" placeholder="Recovery Address" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-8">
+            <button type="submit" class="btn btn-success">
+                <i class="fa fa-fw fa-check-square-o"></i> Send            </button>
+        </div>
+    </div>
+</form>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // Menu links popovers
+        $('[data-toggle="menu-popover"]').popover({
+            trigger: 'hover',
+            placement: 'bottom',
+            container: 'body' // Allows the popover to be larger than the menu button
+        });
+    });
+</script>
+</body>
+</html>

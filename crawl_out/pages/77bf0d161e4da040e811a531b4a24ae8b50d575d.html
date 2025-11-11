@@ -1,0 +1,353 @@
+<!-- URL: https://grape.ics.uci.edu/wiki/public/wiki/cs221-2019-spring-project4 -->
+
+<!DOCTYPE html>
+<html lang="en-US">   <head>
+    <!-- # block head (placeholder in theme.html) -->
+        <!-- # block head (content inherited from layout.html) -->
+    <title>
+      cs221-2019-spring-project4     – Public
+
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script>
+        if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+        </script><![endif]-->
+
+    <link rel="start"  href="/wiki/public/wiki" />
+    <link rel="search"  href="/wiki/public/search" />
+    <link rel="help"  href="/wiki/public/wiki/TracGuide" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/trac.css" type="text/css" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/wiki.css" type="text/css" />
+    <link rel="icon"  href="/wiki/public/chrome/site/favicon.ico" type="image/x-icon" />
+    <link rel="alternate"  href="/wiki/public/wiki/cs221-2019-spring-project4?format=txt" title="Plain Text" type="text/x-trac-wiki" />
+    <noscript>
+      <style>
+        .trac-noscript { display: none !important }
+      </style>     </noscript>
+    <script src="/wiki/public/chrome/common/js/jquery.js"></script>
+    <script src="/wiki/public/chrome/common/js/babel.js"></script>
+    <script src="/wiki/public/chrome/common/js/trac.js"></script>
+    <script src="/wiki/public/chrome/common/js/search.js"></script>
+    <script src="/wiki/public/chrome/common/js/folding.js"></script>
+    <script src="/wiki/public/chrome/common/js/wiki.js"></script>
+    <script>
+      jQuery(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])")
+            .prop("autocomplete", "off").datepicker();
+          // Input current date when today is pressed.
+          var _goToToday = $.datepicker._gotoToday;
+          $.datepicker._gotoToday = function(id) {
+            _goToToday.call(this, id);
+            this._selectDate(id)
+          };
+          $(".trac-datetimepicker:not([readonly])")
+            .prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <!--   # include 'site_head.html' (layout.html) -->
+    <!--   end of site_head.html -->
+    <!-- # endblock head (content inherited from layout.html) -->
+
+
+    <script>
+      jQuery(function($) {
+        wikiColumn($("#wikipage"));
+      });
+    </script>
+    <!-- # endblock head (placeholder in theme.html) -->
+  </head> 
+  <body>
+    <!-- # block body (content inherited from theme.html) -->
+    <!--   # include 'site_header.html' (theme.html) -->
+    <!--   end of site_header.html -->
+
+    <div id="banner">
+      <div id="header">
+        <a id="logo"
+           href="http://www.ics.uci.edu/">
+          <img  alt="ICS Logo" height="67" src="/wiki/public/chrome/site/ics.jpg" width="128" /></a>
+
+
+      </div>
+      <form id="search" action="/wiki/public/search" method="get">
+      </form>
+          <div id="metanav" class="nav">
+      <ul><li  class="first"><a href="/wiki/public/login">Login</a></li><li ><a href="/wiki/public/prefs">Preferences</a></li><li ><a href="/wiki/public/about">About Trac</a></li><li  class="last"><a href="/wiki/public/register">Register</a></li></ul>
+    </div>
+
+    </div>
+        <div id="mainnav" class="nav">
+    </div>
+
+
+    <div id="main"
+         >
+
+<div id="pagepath" class="noprint">
+<a class="pathentry first" title="View WikiStart"
+   href="/wiki/public/wiki">wiki:</a><a href="/wiki/public/wiki/cs221-2019-spring-project4"
+     title="View cs221-2019-spring-project4"
+     class="pathentry">cs221-2019-spring-project4</a></div>      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li  class="first last"><a href="/wiki/public/wiki/cs221-2019-spring-project4?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+
+      
+
+      
+
+      <!-- # block content (placeholder in theme.html) -->
+    <div id="content" class="wiki narrow">
+
+      <div class="wikipage searchable">
+        <div id="wikipage" class="trac-content borderless"><h1 class="section" id="CS221:Project4-RA:Ranking">CS221: Project 4 - RA: Ranking</h1>
+<p>
+<strong>Test Cases Due:     <del>Week 9 Tue. (May 28)</del> Week 9 Th. (May 30), Due on Github as Pull Requests</strong><br />
+<strong>Review Due:           <del>Week 9 Fri. (May 31)</del> Week 9 Sun (June 2),  Due on Github as Pull Requests Comments</strong><br />
+<strong>Final Code Due:     Week 10, Sun. (June 9),  Due on Github.</strong><br />
+</p>
+<h2 class="section" id="CodingTasks">Coding Tasks</h2>
+<ol><li>Implement TF-IDF ranking (Cosine) (10 points)
+</li><li>Implement PageRank and run with ICS websites (5 points)
+</li></ol><h2 class="section" id="TestingTasks">Testing Tasks</h2>
+<ol><li>Write at least <strong>1</strong> test case for a task (2 points)
+</li><li>Review the test cases of two teams (2 points)
+</li></ol><p>
+Total: 19 points 
+</p>
+<h2 class="section" id="Overview">Overview</h2>
+<p>
+In this project, you'll implement two ranking methods: TF-IDF (Cosine) and PageRank. 
+</p>
+<h2 class="section" id="Task1:ImplementTF-IDFranking.">Task 1: Implement TF-IDF ranking.</h2>
+<p>
+Modify <strong>both</strong> your InvertedIndex from Project 2 and PositionalIndex from Project 3 to include all necessary information to calculate TF-IDF scores. Implement the following <code>searchTfIdf</code> function that returns the top-K documents ranked by TF-IDF scores.
+</p>
+<p>
+First, we'll go over an example to calculate TF-IDF Cosine scores using the vector space model.
+</p>
+<pre class="wiki">Segment 1 
+	d1: “new york city” 
+	d2: “los angeles city” 
+Segment 2
+ 	d1: “new york post”
+Query q: "new new city". (We use two copies of "new" on purpose.)
+
+Number of documents in the system: 3.
+
+Document frequency for query keywords:
+	new  = 2 {s1d1, s2d1}
+	city = 2 {s1d1, s1d2}
+
+IDF:
+	new  = log(3/2) ≈ 0.18
+	city = log(3/2) ≈ 0.18
+
+TF (Term frequency):
+	new  = {s1d1: 1, s2d1: 1, query: 2}
+	city = {s1d1: 1, s1d2: 1, query: 1}
+
+TF-IDF vectors of documents and query:
+	s1d1  = [new: 1 * IDF(new), city: 1 * IDF(city)] = [0.18, 0.18]
+	s1d2  = [new: 0,            city: 1 * IDF(city)] = [0   , 0.18]
+	s2d1  = [new: 1 * IDF(new), city: 0]             = [0.18, 0   ]
+	query = [new: 2 * IDF(new), city: 1 * IDF(city)] = [0.36, 0.18]
+
+Cosine similarity between the query and each document:
+	sim(s1d1, q) = s1d1 · query / ‖s1d1‖ = (0.18 * 0.36 + 0.18 * 0.18) / sqrt(0.18^2 + 0.18^2) ≈ 0.38
+	sim(s1d2, q) = (0 * 0.36 + 0.18 * 0.18) / sqrt(0 + 0.18^2) = 0.18
+	sim(s2d1, q) = (0.18 * 0.36 + 0 * 0.18) / sqrt(0.18^2 + 0) = 0.36
+
+So the ranked order of the documents is: [s1d1, s2d1, s1d2].
+</pre><p>
+Next we'll discuss a two-pass method to calculate these scores.  For each query keyword, since it has inverted lists in multiple LSM segments, in order to compute its global IDF, we need to know the frequency of this word in each segment.  In the first pass, we access each segment to retrieve the frequency of each query keyword, as well as the number of documents within the segment, and use these values to calculate the IDF's of the query keywords.
+</p>
+<p>
+In the second pass, within each segment, we traverse the inverted list of a query keyword, and use the (local) TF for each document and the (global) IDF of the keyword to compute the TF-IDF value for this keyword and this document.  We accumulate the product of this value and the corresponding TF-IDF value of the query keyword in order to compute the dot product of the document and the query.  Furthermore, for each document, since we need to normalize its TF-IDF vector by its length, we also need to accumulate the squares of the TF-IDF's of the query keywords in this document.  The following is the pseudo code:
+</p>
+<pre class="wiki">Map&lt;DocID, Double&gt; dotProductAccumulator; //  DocID is &lt;SegmentID, LocalDocID&gt;
+Map&lt;DocID, Double&gt; vectorLengthAccumulator;
+
+for each segment:
+  for each query token w:
+    for each docID on the postingList of w:
+      tfidf = TF(w, docID) * IDF(w);
+      dotProductAccumulator[docID] += tfidf * queryTfIdf[w];
+      vectorLengthAccumulator[docID] += tfidf ^ 2;
+
+  for each docID in this segment
+    score(docID) =  dotProductAccumulator[docID] / sqrt(vectorLengthAccumulator[docID]);
+</pre><p>
+In this method, we need to store a double (IDF) for each query keyword.  In addition, for each segment, for each of its documents, we need to store 2 doubles.
+</p>
+<p>
+Notice that since we want to return topK documents, we need to maintain a global priority queue of K docIDs.  After visiting each segment, we only need to add the top-K docIDs of this segment into this priority query and free the space for the docIDs of this segment.
+</p>
+<p>
+To implement the method, you need the following API functions for each segment:
+</p>
+<pre class="wiki">
+public int getNumDocuments(int segmentNum);
+
+public int getDocumentFrequency(int segmentNum, String token);
+
+/**
+ * Performs top-K ranked search using TF-IDF.
+ * Returns an iterator that returns the top K documents with highest TF-IDF scores.
+ *
+ * Each element is a pair of &lt;Document, Double (TF-IDF Score)&gt;.
+ *
+ * If parameter `topK` is null, then returns all the matching documents.
+ *
+ * Unlike Boolean Query and Phrase Query where order of the documents doesn't matter,
+ * for ranked search, order of the document returned by the iterator matters.
+ *
+ * @param keywords, a list of keywords in the query
+ * @param topK, number of top documents weighted by TF-IDF, all documents if topK is null
+ * @return a iterator of top-k ordered documents matching the query
+ */
+public Iterator&lt;Pair&lt;Document, Double&gt;&gt; searchTfIdf(List&lt;String&gt; keywords, Integer topK)
+
+</pre><h2 class="section" id="Task2:ImplementPageRank.">Task 2: Implement PageRank.</h2>
+<p>
+Note: the description of this task could have minor changes.
+</p>
+<p>
+In this task, you'll run the PageRank algorithm on the collection of ICS websites we provided, index all the ICS website documents, and combine PageRank with the TF-IDF weighted search results.
+</p>
+<p>
+Download the provided <a class="ext-link" href="https://drive.google.com/open?id=1tuToOHHDNIAR30yGSxnslxksWpPlZRNa"><span class="icon">​</span>webpages zip file</a>. Here are the description of what's in the zip file:
+</p>
+<ul><li>The "url.tsv" file contains the mapping of a webpage ID to the original URL of the webpage. 
+</li><li>The "id-graph.tsv" file contains the graph of the webpages. Each line is an edge in the graph represented as a pair of two document IDs. The first is the "from" documentID and the second is the "to" document ID. 
+</li><li>The "cleaned" folder contains the web page documents with its documentID as the file name. All web page files are already cleaned - all HTML tags are removed and only plain text are kept. In each file, the first line is the documentID, the second line is the original URL, and the third line is the text of the HTML document.
+</li></ul><p>
+Implement the following <code>IcsSearchEngine</code> class.
+</p>
+<pre class="wiki">public class IcsSearchEngine {
+
+    /**
+     * Initializes an IcsSearchEngine from the directory containing the documents and the
+     *
+     */
+    public static IcsSearchEngine createSearchEngine(Path documentDirectory, InvertedIndexManager indexManager) {
+        return new IcsSearchEngine(documentDirectory, indexManager);
+    }
+
+    private IcsSearchEngine(Path documentDirectory, InvertedIndexManager indexManager) {
+    }
+
+    /**
+     * Writes all ICS web page documents in the document directory to the inverted index.
+     */
+    public void writeIndex() {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Computes the page rank score from the id-graph file in the document directory.
+     * The results of the computation can be saved in a class variable and will be later retrieved by `getPageRankScores`.
+     */
+    public void computePageRank() {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Gets the page rank score of all documents previously computed. Must be called after `computePageRank`.
+     * Returns a list of &lt;DocumentID - Score&gt; Pairs that is sorted by score in descending order (high scores first).
+     */
+    public List&lt;Pair&lt;Integer, Double&gt;&gt; getPageRankScores() {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * Searches the ICS document corpus and returns the top K documents ranked by combining TF-IDF and PageRank.
+     *
+     * The search process should first retrieve ALL the top documents from the InvertedIndex by TF-IDF rank,
+     * by calling `searchTfIdf(query, null)`.
+     *
+     * Then the corresponding PageRank score of each document should be retrieved. (`computePageRank` will be called beforehand)
+     * For each document, the combined score is  tfIdfScore + pageRankWeight * pageRankScore.
+     *
+     * Finally, the top K documents of the combined score are returned. Each element is a pair of &lt;Document, combinedScore&gt;
+     *
+     *
+     * Note: We could get the Document ID by reading the first line of the document.
+     * This is a workaround because our project doesn't support multiple fields. We cannot keep the documentID in a separate column.
+     */
+    public Iterator&lt;Document&gt; searchQuery(List&lt;String&gt; query, int topK, double pageRankWeight) {
+        throw new UnsupportedOperationException();
+    }
+
+}
+
+</pre><h2 class="section" id="Testcases">Test cases</h2>
+<p>
+Please follow the similar general guideline and procedure as previous projects. Here are the <a class="ext-link" href="https://docs.google.com/spreadsheets/d/1_iwJOT-bnYDk9tWNNy61GCyi1kRN7s3VHdn5h_2T1DA/edit#gid=915349265"><span class="icon">​</span>test case assignments</a>. Note for this project, you only need to write at least 1 test case. You should put your test case in package <code>edu.uci.ics.cs221.index.ranking</code>.
+</p>
+</div>
+        <div class="trac-modifiedby">
+          <span>
+            <a href="/wiki/public/wiki/cs221-2019-spring-project4?action=diff&amp;version=15" title="Version 15 by Zuozhi Wang">Last modified</a>
+ <a class="timeline" href="/wiki/public/timeline?from=2019-05-30T13%3A19%3A36-07%3A00&amp;precision=second" title="See timeline at May 30, 2019, 1:19:36 PM">6 years ago</a>          </span>
+          <span class="trac-print">
+            Last modified on May 30, 2019, 1:19:36 PM
+          </span>
+        </div>
+      </div>
+
+
+
+
+
+<div class="trac-help">
+  <strong>Note:</strong>
+ See   <a href="/wiki/public/wiki/TracWiki">TracWiki</a>
+ for help on using the wiki.
+</div>
+    </div>
+        <!-- # block content (content inherited from layout.html) -->
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first last">
+          <a rel="nofollow" href="/wiki/public/wiki/cs221-2019-spring-project4?format=txt"
+              class="">
+            Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    <!-- # endblock content (content inherited from layout.html) -->
+
+      <!-- # endblock content (placeholder in theme.html) -->
+    </div>
+
+    <div id="footer"><hr/>
+      <a id="tracpowered" href="https://trac.edgewall.org/"
+         ><img src="/wiki/public/chrome/common/trac_logo_mini.png" height="30"
+               width="107" alt="Trac Powered"/></a>
+      <p class="left">
+Powered by         <a href="/wiki/public/about"><strong>Trac 1.5.3</strong></a>
+        <br />
+ By         <a href="http://www.edgewall.org/">Edgewall Software</a>
+.      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+    <!--   # include 'site_footer.html' (theme.html) -->
+    <!--   end of site_footer.html -->
+    <!-- # endblock body (content inherited from theme.html) -->
+  </body> </html>

@@ -1,0 +1,221 @@
+<!-- URL: https://grape.ics.uci.edu/wiki/public/wiki/cs222p-2018-fall-setup-gdb-on-macos -->
+
+<!DOCTYPE html>
+<html lang="en-US">   <head>
+    <!-- # block head (placeholder in theme.html) -->
+        <!-- # block head (content inherited from layout.html) -->
+    <title>
+      cs222p-2018-fall-setup-gdb-on-macos     – Public
+
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script>
+        if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+        </script><![endif]-->
+
+    <link rel="start"  href="/wiki/public/wiki" />
+    <link rel="search"  href="/wiki/public/search" />
+    <link rel="help"  href="/wiki/public/wiki/TracGuide" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/trac.css" type="text/css" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/wiki.css" type="text/css" />
+    <link rel="icon"  href="/wiki/public/chrome/site/favicon.ico" type="image/x-icon" />
+    <link rel="alternate"  href="/wiki/public/wiki/cs222p-2018-fall-setup-gdb-on-macos?format=txt" title="Plain Text" type="text/x-trac-wiki" />
+    <noscript>
+      <style>
+        .trac-noscript { display: none !important }
+      </style>     </noscript>
+    <script src="/wiki/public/chrome/common/js/jquery.js"></script>
+    <script src="/wiki/public/chrome/common/js/babel.js"></script>
+    <script src="/wiki/public/chrome/common/js/trac.js"></script>
+    <script src="/wiki/public/chrome/common/js/search.js"></script>
+    <script src="/wiki/public/chrome/common/js/folding.js"></script>
+    <script src="/wiki/public/chrome/common/js/wiki.js"></script>
+    <script>
+      jQuery(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])")
+            .prop("autocomplete", "off").datepicker();
+          // Input current date when today is pressed.
+          var _goToToday = $.datepicker._gotoToday;
+          $.datepicker._gotoToday = function(id) {
+            _goToToday.call(this, id);
+            this._selectDate(id)
+          };
+          $(".trac-datetimepicker:not([readonly])")
+            .prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <!--   # include 'site_head.html' (layout.html) -->
+    <!--   end of site_head.html -->
+    <!-- # endblock head (content inherited from layout.html) -->
+
+
+    <script>
+      jQuery(function($) {
+        wikiColumn($("#wikipage"));
+      });
+    </script>
+    <!-- # endblock head (placeholder in theme.html) -->
+  </head> 
+  <body>
+    <!-- # block body (content inherited from theme.html) -->
+    <!--   # include 'site_header.html' (theme.html) -->
+    <!--   end of site_header.html -->
+
+    <div id="banner">
+      <div id="header">
+        <a id="logo"
+           href="http://www.ics.uci.edu/">
+          <img  alt="ICS Logo" height="67" src="/wiki/public/chrome/site/ics.jpg" width="128" /></a>
+
+
+      </div>
+      <form id="search" action="/wiki/public/search" method="get">
+      </form>
+          <div id="metanav" class="nav">
+      <ul><li  class="first"><a href="/wiki/public/login">Login</a></li><li ><a href="/wiki/public/prefs">Preferences</a></li><li ><a href="/wiki/public/about">About Trac</a></li><li  class="last"><a href="/wiki/public/register">Register</a></li></ul>
+    </div>
+
+    </div>
+        <div id="mainnav" class="nav">
+    </div>
+
+
+    <div id="main"
+         >
+
+<div id="pagepath" class="noprint">
+<a class="pathentry first" title="View WikiStart"
+   href="/wiki/public/wiki">wiki:</a><a href="/wiki/public/wiki/cs222p-2018-fall-setup-gdb-on-macos"
+     title="View cs222p-2018-fall-setup-gdb-on-macos"
+     class="pathentry">cs222p-2018-fall-setup-gdb-on-macos</a></div>      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li  class="first last"><a href="/wiki/public/wiki/cs222p-2018-fall-setup-gdb-on-macos?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+
+      
+
+      
+
+      <!-- # block content (placeholder in theme.html) -->
+    <div id="content" class="wiki narrow">
+
+      <div class="wikipage searchable">
+        <div id="wikipage" class="trac-content borderless"><div class="wikipage" style="background-color:#f2f3f4"><h2 class="section" id="SetupGDBonMacOS">Setup GDB on MacOS</h2>
+<p>
+This guide details the set up of the GDB debugger on MacOS High Sierra 10.13.6. It works as of Sep 26th, 2018. Please be alerted it is not straightforward to do this. If you spend too much time but still cannot make GDB work properly on your MacOS, an intermediate solution is to install a LinuxVM to do the development.
+</p>
+<ol><li>Install homebrew (a package manager for mac). <code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code>
+</li><li>Install GDB 8.0.1. Be alerted that the latest GDB version(8.11) cannot work properly with MacOS because of some bugs. Instead, we have to explicitly install an older version of GDB.
+<ul><li><code>brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/9ec9fb27a33698fc7636afce5c1c16787e9ce3f3/Formula/gdb.rb</code><br />
+</li><li><code>brew pin gdb</code>
+</li></ul></li><li>Type <code>gdb --version</code>, make sure you find the version is 8.0.1.
+</li><li>Type <code>echo "set startup-with-shell off" &gt;&gt; ~/.gdbinit</code>
+</li><li>Certify the installed gdb
+<ul><li>Open Keychain Access (an app under Utilities folder)
+</li><li>In menu, open Keychain Access &gt; Certificate Assistant &gt; Create a certificate
+</li><li>Give it a name (e.g. gdb-cert). Identity type: Self Signed Root. Certificate type: Code Signing. Check: let me override defaults.
+</li><li>Continue until "specify a location for..."
+</li><li>Set Keychain location to System
+</li><li>Create certificate and close Certificate Assistant.
+</li><li>Find certificate (e.g., gdb-cert) in System keychain.
+</li><li>Double click the certificate
+</li><li>Expand Trust, set Code signing to always trust
+</li><li>Restart taskgated in terminal: killall taskgated
+</li><li>Codesign gdb using your certificate: <code>codesign -fs gdb-cert /usr/local/bin/gdb</code>
+</li></ul></li><li>Now let's check whether GDB works. Open eclipse, right click your project <code>cs222p</code>, and click Debug As -&gt; Debug Configurations. Add your main program (one of the test cases), and configure the path of the GDB properly (typically its under /usr/local/bin/gdb, and command file is /Users/username/.gdbinit). Finally click Debug to see if works.
+</li></ol><p>
+<a href="/wiki/public/attachment/wiki/cs222p-2018-fall-setup-gdb-on-macos/gdb.png" style="padding:0; border:none"><img src="/wiki/public/raw-attachment/wiki/cs222p-2018-fall-setup-gdb-on-macos/gdb.png" width="800px" /></a>
+</p>
+<ol start="7"><li>If you see your program stops at the first line of the main function, and you can use Step Into (F5), Step Over (F6) etc. properly, then your GDB is now working properly! Congratulations!
+</li><li>Otherwise, let's try this step to disable the SIP (system integrity projection) of MacOS. Note: disabling SIP could result in security leaks of your system, and you should decide whether to continue based on your own risk!
+<ul><li>Shut down your mac and restart in recovery mode (hold down command+R until apple logo appears)
+</li><li>Open terminal window
+</li><li>Modify System Integrity Protection to allow debugging: <code>csrutil enable --without debug</code>
+</li><li>Reboot your Mac
+</li></ul></li><li>Go back to step 6 to try again. It should work now, but it still doesn't work, you can checkout some other materials. <a class="ext-link" href="https://stackoverflow.com/questions/49001329/gdb-doesnt-work-on-macos-high-sierra-10-13-3/49104154#49104154"><span class="icon">​</span>Stackoverflow</a> <a class="ext-link" href="https://gist.github.com/danisfermi/17d6c0078a2fd4c6ee818c954d2de13c"><span class="icon">​</span>Setup GDB on MacOS</a>. If it still doesn't work, maybe it's better to switch to a linux virtual machine.
+</li></ol></div></div>
+        <div class="trac-modifiedby">
+          <span>
+            <a href="/wiki/public/wiki/cs222p-2018-fall-setup-gdb-on-macos?action=diff&amp;version=3" title="Version 3 by Qiushi Bai">Last modified</a>
+ <a class="timeline" href="/wiki/public/timeline?from=2018-10-03T21%3A42%3A39-07%3A00&amp;precision=second" title="See timeline at Oct 3, 2018, 9:42:39 PM">7 years ago</a>          </span>
+          <span class="trac-print">
+            Last modified on Oct 3, 2018, 9:42:39 PM
+          </span>
+        </div>
+      </div>
+
+
+
+
+
+<div id="attachments">
+  <h3  class="foldable">
+    Attachments
+    <span class="trac-count">(1)</span></h3>
+  <div>
+    <ul>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222p-2018-fall-setup-gdb-on-macos/gdb.png" title="View attachment">gdb.png</a><a href="/wiki/public/raw-attachment/wiki/cs222p-2018-fall-setup-gdb-on-macos/gdb.png"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="405070 bytes">395.6 KB</span>
+) - added by <span class="trac-author">Qiushi Bai</span> <a class="timeline" href="/wiki/public/timeline?from=2018-09-30T09%3A47%3A50-07%3A00&amp;precision=second" title="See timeline at Sep 30, 2018, 9:47:50 AM">7 years ago</a>.
+      </li>
+    </ul>
+    <p>
+  Download all attachments as:
+  <a rel="nofollow" href="/wiki/public/zip-attachment/wiki/cs222p-2018-fall-setup-gdb-on-macos/">.zip</a>
+</p>
+
+  </div>
+</div>
+<div class="trac-help">
+  <strong>Note:</strong>
+ See   <a href="/wiki/public/wiki/TracWiki">TracWiki</a>
+ for help on using the wiki.
+</div>
+    </div>
+        <!-- # block content (content inherited from layout.html) -->
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first last">
+          <a rel="nofollow" href="/wiki/public/wiki/cs222p-2018-fall-setup-gdb-on-macos?format=txt"
+              class="">
+            Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    <!-- # endblock content (content inherited from layout.html) -->
+
+      <!-- # endblock content (placeholder in theme.html) -->
+    </div>
+
+    <div id="footer"><hr/>
+      <a id="tracpowered" href="https://trac.edgewall.org/"
+         ><img src="/wiki/public/chrome/common/trac_logo_mini.png" height="30"
+               width="107" alt="Trac Powered"/></a>
+      <p class="left">
+Powered by         <a href="/wiki/public/about"><strong>Trac 1.5.3</strong></a>
+        <br />
+ By         <a href="http://www.edgewall.org/">Edgewall Software</a>
+.      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+    <!--   # include 'site_footer.html' (theme.html) -->
+    <!--   end of site_footer.html -->
+    <!-- # endblock body (content inherited from theme.html) -->
+  </body> </html>

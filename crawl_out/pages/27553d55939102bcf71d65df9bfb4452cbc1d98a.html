@@ -1,0 +1,210 @@
+<!-- URL: https://grape.ics.uci.edu/wiki/public/wiki/cs222p-2017-fall-project2-grading -->
+
+<!DOCTYPE html>
+<html lang="en-US">   <head>
+    <!-- # block head (placeholder in theme.html) -->
+        <!-- # block head (content inherited from layout.html) -->
+    <title>
+      cs222p-2017-fall-project2-grading     – Public
+
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script>
+        if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+        </script><![endif]-->
+
+    <link rel="start"  href="/wiki/public/wiki" />
+    <link rel="search"  href="/wiki/public/search" />
+    <link rel="help"  href="/wiki/public/wiki/TracGuide" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/trac.css" type="text/css" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/wiki.css" type="text/css" />
+    <link rel="icon"  href="/wiki/public/chrome/site/favicon.ico" type="image/x-icon" />
+    <link rel="alternate"  href="/wiki/public/wiki/cs222p-2017-fall-project2-grading?format=txt" title="Plain Text" type="text/x-trac-wiki" />
+    <noscript>
+      <style>
+        .trac-noscript { display: none !important }
+      </style>     </noscript>
+    <script src="/wiki/public/chrome/common/js/jquery.js"></script>
+    <script src="/wiki/public/chrome/common/js/babel.js"></script>
+    <script src="/wiki/public/chrome/common/js/trac.js"></script>
+    <script src="/wiki/public/chrome/common/js/search.js"></script>
+    <script src="/wiki/public/chrome/common/js/folding.js"></script>
+    <script src="/wiki/public/chrome/common/js/wiki.js"></script>
+    <script>
+      jQuery(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])")
+            .prop("autocomplete", "off").datepicker();
+          // Input current date when today is pressed.
+          var _goToToday = $.datepicker._gotoToday;
+          $.datepicker._gotoToday = function(id) {
+            _goToToday.call(this, id);
+            this._selectDate(id)
+          };
+          $(".trac-datetimepicker:not([readonly])")
+            .prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <!--   # include 'site_head.html' (layout.html) -->
+    <!--   end of site_head.html -->
+    <!-- # endblock head (content inherited from layout.html) -->
+
+
+    <script>
+      jQuery(function($) {
+        wikiColumn($("#wikipage"));
+      });
+    </script>
+    <!-- # endblock head (placeholder in theme.html) -->
+  </head> 
+  <body>
+    <!-- # block body (content inherited from theme.html) -->
+    <!--   # include 'site_header.html' (theme.html) -->
+    <!--   end of site_header.html -->
+
+    <div id="banner">
+      <div id="header">
+        <a id="logo"
+           href="http://www.ics.uci.edu/">
+          <img  alt="ICS Logo" height="67" src="/wiki/public/chrome/site/ics.jpg" width="128" /></a>
+
+
+      </div>
+      <form id="search" action="/wiki/public/search" method="get">
+      </form>
+          <div id="metanav" class="nav">
+      <ul><li  class="first"><a href="/wiki/public/login">Login</a></li><li ><a href="/wiki/public/prefs">Preferences</a></li><li ><a href="/wiki/public/about">About Trac</a></li><li  class="last"><a href="/wiki/public/register">Register</a></li></ul>
+    </div>
+
+    </div>
+        <div id="mainnav" class="nav">
+    </div>
+
+
+    <div id="main"
+         >
+
+<div id="pagepath" class="noprint">
+<a class="pathentry first" title="View WikiStart"
+   href="/wiki/public/wiki">wiki:</a><a href="/wiki/public/wiki/cs222p-2017-fall-project2-grading"
+     title="View cs222p-2017-fall-project2-grading"
+     class="pathentry">cs222p-2017-fall-project2-grading</a></div>      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li  class="first last"><a href="/wiki/public/wiki/cs222p-2017-fall-project2-grading?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+
+      
+
+      
+
+      <!-- # block content (placeholder in theme.html) -->
+    <div id="content" class="wiki narrow">
+
+      <div class="wikipage searchable">
+        <div id="wikipage" class="trac-content borderless"><h1 class="section" id="Project2GradingRubrics">Project 2 Grading Rubrics</h1>
+<p>
+<strong>Full Credit: 100 points</strong><br />
+<strong>Extra Credit: 10 points</strong>
+</p>
+<ol><li>Follow the submission requirements (5%)
+<ul><li>Code is structured as required
+</li><li>Makefile works
+</li><li>Code compiles and links correctly
+</li></ul></li></ol><p>
+  
+</p>
+<blockquote>
+<p>
+Please make sure that your submission follows these requirements and can be unzipped and built by running the script we provided. Failure to follow the instructions could make your project unable to build on our machines, which may result in loss of points.
+</p>
+</blockquote>
+<ol start="2"><li>Project Report (5%)
+<ul><li>Clearly document the design of your project (the record format, the page format, the page format in the file, and the meta-data) using the template file that we have provided.
+</li><li>Explain the implementation of important functions such as updateTuple and deleteTuple.
+</li></ul></li></ol><ol start="3"><li>Debugging screenshot and Valgrind reports(5%)
+<ul><li>One screenshot of debugging your program and two Valgrind reports of two different test cases are submitted.
+</li></ul></li></ol><ol start="4"><li>Implementation details (15%)
+<ul><li>Implement all the required functionalities
+</li><li>Implementation should follow the basic requirements of the project. For example, both catalog information and table files should persist on disk. After RM is shut down and restarted, catalog and data should be able to be loaded correctly.
+</li></ul></li></ol><ol start="5"><li>Pass the provided test suite. (50%)
+<ul><li>Each of which is graded as pass/fail.<br />
+</li></ul></li></ol><p>
+ 
+</p>
+<ol start="6"><li>Pass the private test suite. (20%)
+<ul><li>There are private tests, each of which is graded as pass/fail.<br />
+</li></ul></li></ol><ol start="7"><li>Extra credit work: Implement the following functionalities and pass the provided extra credit test cases: (10%)
+<ul><li>addAttributes/dropAttributes
+</li></ul></li></ol><p>
+ 
+</p>
+<blockquote>
+<p>
+Note that those methods should internally use the corresponding methods of the record-based file manager. 
+</p>
+</blockquote>
+</div>
+        <div class="trac-modifiedby">
+          <span>
+            <a href="/wiki/public/wiki/cs222p-2017-fall-project2-grading?action=diff&amp;version=1" title="Version 1 by Zuozhi Wang">Last modified</a>
+ <a class="timeline" href="/wiki/public/timeline?from=2017-10-10T18%3A57%3A08-07%3A00&amp;precision=second" title="See timeline at Oct 10, 2017, 6:57:08 PM">8 years ago</a>          </span>
+          <span class="trac-print">
+            Last modified on Oct 10, 2017, 6:57:08 PM
+          </span>
+        </div>
+      </div>
+
+
+
+
+
+<div class="trac-help">
+  <strong>Note:</strong>
+ See   <a href="/wiki/public/wiki/TracWiki">TracWiki</a>
+ for help on using the wiki.
+</div>
+    </div>
+        <!-- # block content (content inherited from layout.html) -->
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first last">
+          <a rel="nofollow" href="/wiki/public/wiki/cs222p-2017-fall-project2-grading?format=txt"
+              class="">
+            Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    <!-- # endblock content (content inherited from layout.html) -->
+
+      <!-- # endblock content (placeholder in theme.html) -->
+    </div>
+
+    <div id="footer"><hr/>
+      <a id="tracpowered" href="https://trac.edgewall.org/"
+         ><img src="/wiki/public/chrome/common/trac_logo_mini.png" height="30"
+               width="107" alt="Trac Powered"/></a>
+      <p class="left">
+Powered by         <a href="/wiki/public/about"><strong>Trac 1.5.3</strong></a>
+        <br />
+ By         <a href="http://www.edgewall.org/">Edgewall Software</a>
+.      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+    <!--   # include 'site_footer.html' (theme.html) -->
+    <!--   end of site_footer.html -->
+    <!-- # endblock body (content inherited from theme.html) -->
+  </body> </html>

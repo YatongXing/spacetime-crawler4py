@@ -1,0 +1,185 @@
+<!-- URL: https://grape.ics.uci.edu/wiki/public/prefs/advanced -->
+
+
+<!DOCTYPE html>
+<html lang="en-US">   <head>
+    <!-- # block head (placeholder in theme.html) -->
+    <!-- # block head (content inherited from layout.html) -->
+    <title>
+      Preferences:
+      Advanced
+          – Public
+
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script>
+        if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+        </script><![endif]-->
+
+    <link rel="start"  href="/wiki/public/wiki" />
+    <link rel="search"  href="/wiki/public/search" />
+    <link rel="help"  href="/wiki/public/wiki/TracGuide" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/trac.css" type="text/css" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/prefs.css" type="text/css" />
+    <link rel="icon"  href="/wiki/public/chrome/site/favicon.ico" type="image/x-icon" />
+    <noscript>
+      <style>
+        .trac-noscript { display: none !important }
+      </style>     </noscript>
+    <script src="/wiki/public/chrome/common/js/jquery.js"></script>
+    <script src="/wiki/public/chrome/common/js/babel.js"></script>
+    <script src="/wiki/public/chrome/common/js/trac.js"></script>
+    <script src="/wiki/public/chrome/common/js/search.js"></script>
+    <script src="/wiki/public/chrome/common/js/folding.js"></script>
+    <script>
+      jQuery(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])")
+            .prop("autocomplete", "off").datepicker();
+          // Input current date when today is pressed.
+          var _goToToday = $.datepicker._gotoToday;
+          $.datepicker._gotoToday = function(id) {
+            _goToToday.call(this, id);
+            this._selectDate(id)
+          };
+          $(".trac-datetimepicker:not([readonly])")
+            .prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <!--   # include 'site_head.html' (layout.html) -->
+    <!--   end of site_head.html -->
+    <!-- # endblock head (content inherited from layout.html) -->
+    <!-- # endblock head (placeholder in theme.html) -->
+  </head> 
+  <body>
+    <!-- # block body (content inherited from theme.html) -->
+    <!--   # include 'site_header.html' (theme.html) -->
+    <!--   end of site_header.html -->
+
+    <div id="banner">
+      <div id="header">
+        <a id="logo"
+           href="http://www.ics.uci.edu/">
+          <img  alt="ICS Logo" height="67" src="/wiki/public/chrome/site/ics.jpg" width="128" /></a>
+
+
+      </div>
+      <form id="search" action="/wiki/public/search" method="get">
+      </form>
+          <div id="metanav" class="nav">
+      <ul><li  class="first"><a href="/wiki/public/login">Login</a></li><li  class="active"><a href="/wiki/public/prefs">Preferences</a></li><li ><a href="/wiki/public/about">About Trac</a></li><li  class="last"><a href="/wiki/public/register">Register</a></li></ul>
+    </div>
+
+    </div>
+        <div id="mainnav" class="nav">
+    </div>
+
+
+    <div id="main"
+         >
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <hr />
+      </div>
+
+      
+
+      
+
+      <!-- # block content (placeholder in theme.html) -->
+    <div id="content" class="prefs">
+      <h1>Preferences</h1>
+      <p>
+This page lets you customize your personal settings for this site. These settings are stored on the server and are identified by a session key stored in a browser cookie. That cookie allows your settings to be restored on subsequent visits.      </p>
+
+      <ul id="tabs">
+        <li>
+          <a href="/wiki/public/prefs">General</a>
+        </li>
+        <li class="active" id="tab_advanced">
+          Advanced
+        </li>
+        <li id="tab_localization">
+          <a href="/wiki/public/prefs/localization">Localization</a>
+        </li>
+        <li id="tab_notification">
+          <a href="/wiki/public/prefs/notification">Notifications</a>
+        </li>
+        <li id="tab_pygments">
+          <a href="/wiki/public/prefs/pygments">Syntax Highlighting</a>
+        </li>
+        <li id="tab_userinterface">
+          <a href="/wiki/public/prefs/userinterface">User Interface</a>
+        </li>
+      </ul>
+
+      <div id="tabcontent">
+        <form id="userprefs" action="#" method="post">
+          <input type="hidden" name="__FORM_TOKEN" value="bfe5c591aaef944305040ac0" />
+
+
+      <table>
+        <tr class="field">
+          <th><label for="newsid">Session key:</label></th>
+          <td>
+            <input type="text" id="newsid" name="newsid" size="30"
+                   value="06e70bc73dc7521156e78740" />
+            <input type="submit" name="change" value="Change" />
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>
+            <p class="hint">
+The session key is used to identify stored custom settings and session data on the server. Although it is automatically generated by default, you may change it to something easier to remember at any time if you wish to load your settings in a different web browser.            </p>
+          </td>
+        </tr>
+        <tr class="field">
+         <th><label for="loadsid">Restore session:</label></th>
+          <td>
+            <input type="text" id="loadsid" name="loadsid" size="30" value="" />
+            <input type="submit" name="restore" value="Load" />
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>
+            <p class="hint">
+You may load a previously created session by entering the corresponding session key below. This lets you share settings between multiple computers and web browsers.            </p>
+          </td>
+        </tr>
+      </table>
+        </form>
+      </div>
+    </div>
+        <!-- # block content (content inherited from layout.html) -->
+    <!-- # endblock content (content inherited from layout.html) -->
+
+      <!-- # endblock content (placeholder in theme.html) -->
+    </div>
+
+    <div id="footer"><hr/>
+      <a id="tracpowered" href="https://trac.edgewall.org/"
+         ><img src="/wiki/public/chrome/common/trac_logo_mini.png" height="30"
+               width="107" alt="Trac Powered"/></a>
+      <p class="left">
+Powered by         <a href="/wiki/public/about"><strong>Trac 1.5.3</strong></a>
+        <br />
+ By         <a href="http://www.edgewall.org/">Edgewall Software</a>
+.      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+    <!--   # include 'site_footer.html' (theme.html) -->
+    <!--   end of site_footer.html -->
+    <!-- # endblock body (content inherited from theme.html) -->
+  </body> </html>

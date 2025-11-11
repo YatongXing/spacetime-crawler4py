@@ -1,0 +1,223 @@
+<!-- URL: https://grape.ics.uci.edu/wiki/public/wiki/cs122b-2019-winter-project1-git -->
+
+<!DOCTYPE html>
+<html lang="en-US">   <head>
+    <!-- # block head (placeholder in theme.html) -->
+        <!-- # block head (content inherited from layout.html) -->
+    <title>
+      cs122b-2019-winter-project1-git     – Public
+
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script>
+        if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+        </script><![endif]-->
+
+    <link rel="start"  href="/wiki/public/wiki" />
+    <link rel="search"  href="/wiki/public/search" />
+    <link rel="help"  href="/wiki/public/wiki/TracGuide" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/trac.css" type="text/css" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/wiki.css" type="text/css" />
+    <link rel="icon"  href="/wiki/public/chrome/site/favicon.ico" type="image/x-icon" />
+    <link rel="alternate"  href="/wiki/public/wiki/cs122b-2019-winter-project1-git?format=txt" title="Plain Text" type="text/x-trac-wiki" />
+    <noscript>
+      <style>
+        .trac-noscript { display: none !important }
+      </style>     </noscript>
+    <script src="/wiki/public/chrome/common/js/jquery.js"></script>
+    <script src="/wiki/public/chrome/common/js/babel.js"></script>
+    <script src="/wiki/public/chrome/common/js/trac.js"></script>
+    <script src="/wiki/public/chrome/common/js/search.js"></script>
+    <script src="/wiki/public/chrome/common/js/folding.js"></script>
+    <script src="/wiki/public/chrome/common/js/wiki.js"></script>
+    <script>
+      jQuery(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])")
+            .prop("autocomplete", "off").datepicker();
+          // Input current date when today is pressed.
+          var _goToToday = $.datepicker._gotoToday;
+          $.datepicker._gotoToday = function(id) {
+            _goToToday.call(this, id);
+            this._selectDate(id)
+          };
+          $(".trac-datetimepicker:not([readonly])")
+            .prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <!--   # include 'site_head.html' (layout.html) -->
+    <!--   end of site_head.html -->
+    <!-- # endblock head (content inherited from layout.html) -->
+
+
+    <script>
+      jQuery(function($) {
+        wikiColumn($("#wikipage"));
+      });
+    </script>
+    <!-- # endblock head (placeholder in theme.html) -->
+  </head> 
+  <body>
+    <!-- # block body (content inherited from theme.html) -->
+    <!--   # include 'site_header.html' (theme.html) -->
+    <!--   end of site_header.html -->
+
+    <div id="banner">
+      <div id="header">
+        <a id="logo"
+           href="http://www.ics.uci.edu/">
+          <img  alt="ICS Logo" height="67" src="/wiki/public/chrome/site/ics.jpg" width="128" /></a>
+
+
+      </div>
+      <form id="search" action="/wiki/public/search" method="get">
+      </form>
+          <div id="metanav" class="nav">
+      <ul><li  class="first"><a href="/wiki/public/login">Login</a></li><li ><a href="/wiki/public/prefs">Preferences</a></li><li ><a href="/wiki/public/about">About Trac</a></li><li  class="last"><a href="/wiki/public/register">Register</a></li></ul>
+    </div>
+
+    </div>
+        <div id="mainnav" class="nav">
+    </div>
+
+
+    <div id="main"
+         >
+
+<div id="pagepath" class="noprint">
+<a class="pathentry first" title="View WikiStart"
+   href="/wiki/public/wiki">wiki:</a><a href="/wiki/public/wiki/cs122b-2019-winter-project1-git"
+     title="View cs122b-2019-winter-project1-git"
+     class="pathentry">cs122b-2019-winter-project1-git</a></div>      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li  class="first last"><a href="/wiki/public/wiki/cs122b-2019-winter-project1-git?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+
+      
+
+      
+
+      <!-- # block content (placeholder in theme.html) -->
+    <div id="content" class="wiki narrow">
+
+      <div class="wikipage searchable">
+        <div id="wikipage" class="trac-content borderless"><p>
+Suppose the CS122B team 999 contains 2 members (Bob and Alice). We will see how they use Git to collaborate in the CS122B class.
+</p>
+<p>
+Setting up Git:
+</p>
+<ol><li>Each student creates a github account, and shares his/her github username with the CS122B staff on this <a class="ext-link" href="https://docs.google.com/spreadsheets/d/1Nmx75Oh0yf8S4BbqQJsGPdWuIJCqAooMkh1YHc1qzpU/edit#gid=0"><span class="icon">​</span>spreadsheet</a>.
+</li><li>The staff will send each of them an invitation to join the “UCI-chenli-teaching” organization. Both accept the invitation and are added to the organisation.
+</li><li>Bob creates a repository called “cs122b-winter19-team-999” on Github.com under this organization. Make sure to make it “private” (default setting). The repository is initially empty.
+</li></ol><p>
+Using Git:
+</p>
+<ol><li>On his local machine, Bob installs a Git client by following the instructions <a class="ext-link" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"><span class="icon">​</span>here</a>.
+</li><li>He then does the following:
+</li></ol><pre class="wiki">shell&gt; mkdir mycs122b-projects
+shell&gt; cd mycs122b-projects
+shell&gt; git init
+shell&gt; echo "Cool project" &gt; README.md          - creates a README file
+shell&gt; git status          - check the status of the repository
+shell&gt; git add README.md          - The file is initially untracked by Git. 'git add' moves it to staged.
+shell&gt; git status           - check the status of the repository after staging the file
+shell&gt; git commit -m "First Commit"          - The staged files are committed locally.
+shell&gt; git status          - check the status of the repository after committing the file
+</pre><ol start="3"><li>The local repository now has to be linked to the remote repository. For that Bob does the following:
+</li></ol><pre class="wiki">shell&gt; git remote add origin https://github.com/UCI-Chenli-teaching/cs122b-winter19-team-999.git 
+shell&gt; git push -u origin master
+</pre><ol start="4"><li>Bob now wants to start on project 1. He creates a new branch from the master branch for this task.
+</li></ol><pre class="wiki">shell&gt; git branch            - This command is used to check which branch you are on and what branches are there in your repository. master should be highlighted as you are on master branch. 
+shell&gt; git checkout -b bob-feature1            - This command creates a new branch and copies all the code from the previous (i.e. master in our case) branch into the new branch. 
+shell&gt; mkdir project1 
+shell&gt; cd project1 
+shell&gt; echo "SELECT * FROM stars" &gt; mysql-script.sql 
+shell&gt; git add mysql-script.sql 
+shell&gt; git commit -m "added mysql command"   - commits changes locally to bob-feature1 
+shell&gt; git push --set-upstream origin bob-feature1   - creates a remote tracking branch
+shell&gt;
+</pre><ol start="5"><li>Alice wants to contribute too. First Bob needs to invite Alice as a contributor to this repository on the Github web site.  Then she can see the repository. She does the following:
+</li></ol><pre class="wiki">shell&gt; mkdir gitclones 
+shell&gt; cd gitclones 
+shell&gt; git clone https://&lt;Alice's username&gt;@github.com/UCI-Chenli-teaching/cs122b-winter19-team-999.git             - brings the repository onto her local machine 
+shell&gt; cd cs122b-winter19-team-999 
+shell&gt; git checkout bob-feature1    - Change from the master branch to the branch bob-feature1 branch. 
+shell&gt; cd project1
+MODIFY THE FILE add mysql-script.sql
+shell&gt; git add mysql-script.sql 
+shell&gt; git status
+shell&gt; git config  user.email "alince@alice.com"
+shell&gt; git config  user.name "Alice Smith"
+shell&gt; git commit -m "minor changes" 
+shell&gt; git push             - pushes the commit to bob-feature1 remote branch
+shell&gt;
+</pre><ol start="6"><li>Bob wants to continue coding. Before proceeding to modify any files, he needs to do 'git pull' so that the local branch pulls the latest code from the remote branch.  In particular, Bob does:
+</li></ol><pre class="wiki">shell&gt; git branch        - to see which branch he is on. He sees he is on bob-feature1 branch. 
+shell&gt; git pull             - pulls the latest code. Bob now sees the changes that Alice pushed.
+</pre><ol start="7"><li>Bob and Alice can also use github to create a pull request from the <code>bob-feature1</code> branch to the <code>master</code> branch to do code reviews. Check this <a class="ext-link" href="https://www.youtube.com/watch?v=oFYyTZwMyAg"><span class="icon">​</span>video</a> to learn this process.
+</li></ol></div>
+        <div class="trac-modifiedby">
+          <span>
+            <a href="/wiki/public/wiki/cs122b-2019-winter-project1-git?action=diff&amp;version=10" title="Version 10 by chenli">Last modified</a>
+ <a class="timeline" href="/wiki/public/timeline?from=2019-01-16T22%3A19%3A42-08%3A00&amp;precision=second" title="See timeline at Jan 16, 2019, 10:19:42 PM">7 years ago</a>          </span>
+          <span class="trac-print">
+            Last modified on Jan 16, 2019, 10:19:42 PM
+          </span>
+        </div>
+      </div>
+
+
+
+
+
+<div class="trac-help">
+  <strong>Note:</strong>
+ See   <a href="/wiki/public/wiki/TracWiki">TracWiki</a>
+ for help on using the wiki.
+</div>
+    </div>
+        <!-- # block content (content inherited from layout.html) -->
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first last">
+          <a rel="nofollow" href="/wiki/public/wiki/cs122b-2019-winter-project1-git?format=txt"
+              class="">
+            Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    <!-- # endblock content (content inherited from layout.html) -->
+
+      <!-- # endblock content (placeholder in theme.html) -->
+    </div>
+
+    <div id="footer"><hr/>
+      <a id="tracpowered" href="https://trac.edgewall.org/"
+         ><img src="/wiki/public/chrome/common/trac_logo_mini.png" height="30"
+               width="107" alt="Trac Powered"/></a>
+      <p class="left">
+Powered by         <a href="/wiki/public/about"><strong>Trac 1.5.3</strong></a>
+        <br />
+ By         <a href="http://www.edgewall.org/">Edgewall Software</a>
+.      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+    <!--   # include 'site_footer.html' (theme.html) -->
+    <!--   end of site_footer.html -->
+    <!-- # endblock body (content inherited from theme.html) -->
+  </body> </html>

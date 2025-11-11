@@ -1,0 +1,295 @@
+<!-- URL: https://checkin.ics.uci.edu/about -->
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Checkin - About</title>
+
+    
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="f2Z-SAVfSchmC-zxUDycK8sQEES4beBysYfZZDkZYpk5PzEPWjwKpz5zjrszV9hjm193Nokl0B3W3ZxXdX8Wzg==">
+
+<link href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.21/af-2.3.5/b-1.6.2/b-colvis-1.6.2/b-flash-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/rg-1.1.2/rr-1.2.7/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.css" rel="stylesheet">
+<link href="/assets/a1f143cf/css/bootstrap.css" rel="stylesheet">
+<link href="/css/site.css" rel="stylesheet">
+<script src="/assets/56bc4c2f/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.21/af-2.3.5/b-1.6.2/b-colvis-1.6.2/b-flash-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/rg-1.1.2/rr-1.2.7/sc-2.0.2/sp-1.1.1/sl-1.3.1/datatables.min.js"></script></head>
+<body>
+
+
+
+
+<!-- main div defaulted to ".wrap" which uses full screen width (no margin) -->
+
+<!-- .container uses narrower screen (width: 100%; margin: auto;) but had slight 
+      side padding which was bad in mobile -->
+
+<!-- using container  and adding p-0 and m-0 for mobile might work  -->
+
+<div class='wrap container MOBILEp-0 MOBILEm-0'>       
+
+
+
+<style>
+
+    #header {
+        background-color: #0064a4;
+        NAHpadding: 0.5em;
+
+        clear: left;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    #app-name {
+        /*padding: 10px 20px;*/
+        font-size: 36px;
+        font-weight: bold;
+        color: white;
+        display: inline-block;
+        /*vertical-align: top;*/
+    }
+
+    #logoImg {height: 50px;}
+
+    .navbar  { background-color: #1B3D6D; }     /* main UCI blue (#0064a4) added to the top 'header' bar, so use this darker blue for the menu */
+
+    /* the menu links were originally more transparent: 0.5 -> 0.75 (normal->hover) */
+    /* lessen the transparency for the new dark-blue menu bar  */
+    .navbar-dark .navbar-nav .nav-link  { color: rgba(255, 255, 255, 0.75); }
+    .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus  { color: rgba(255, 255, 255, 0.95); }
+
+
+    @media only screen and (max-width: 600px)
+    {
+        #app-name { font-size: 24px; }
+        #header img  { width: 100%; }
+        #header .uci-col {max-width: 50%; }
+
+        .navbar  { background-color: #e0e0f0; }     /* try uci dark blue: #1b3d6d */
+
+        .nav-pills .nav-item  { border: 1px solid lightgrey;
+                                background-color: #f8f8f8;
+                                border-radius: 3px; }
+        .nav-pills .nav-item a.nav-link :not(.active)  { color: pink; }     /* this didn't work, so had to use both the following */
+        .nav-pills .nav-item a.nav-link  { color: #444; }
+        .nav-pills .nav-item a.nav-link.active  { color: #fff; }
+    }
+
+
+
+    .wrap > .container { padding: 1em; }        /* site.css has a very large padding for this */
+
+
+
+</style>
+
+
+
+    <div id='header'>
+        <div id='app-name' class='col-auto my-auto'>Checkin @</div>
+        <div class='col-6 uci-col'><img id="logoImg" src="/images/uc_irvine_wordmark.png" alt=""></div>
+    </div><!-- header -->
+
+
+
+
+
+    <nav class='navbar navbar-expand   navbar-dark   '>      <!-- navbar-expand is always expanded -->
+
+
+
+    <ul id="w0" class="navbar-nav nav"><li class="nav-item"><a class="nav-link" href="/meeting/admin">Home</a></li>
+<li class="nav-item"><a class="nav-link active" href="/about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="/site/login">Login</a></li></ul>
+</nav>
+
+
+
+
+
+
+
+    <div class="container">
+                        
+
+
+<div class='row my-3'>
+  <div class='col'>    
+    <div class='card bg-light'>    
+      <div class='card-body'>
+
+        <div class='row'>
+
+          <div class='col'>
+            <h2>The Problem</h2>
+              To quickly and reliably get a record of who is in attendance: <br>
+              <ul>
+                <li>Where </li>
+                <li>When </li>
+                <li>Quick, Simple, & Reliable </li>
+              </ul>
+          </div>
+
+          <div class='col'>    
+            <h2><b>Checkin</b></h2>
+              <ul>
+                <li>Authenticated Login </li>
+                <li>Location sensing & Word of the Day </li>
+                <li>Submission time-stamp </li>
+                <li>Student-owned devices & Instructor's self-service web interface/tools </li>
+                <li>Reliable: All of the above </li>
+              </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+
+<div class='row mb-3'>
+  <div class='col'>    
+    <div class='card bg-light'>
+      <div class='card-body'>    
+        <h2>Contact</h2>    
+          If you would like to use checking for your class or have any other questions, 
+          please email  <a href='mailto:helpdesk@ics.uci.edu?Subject=Checkin Questions'>helpdesk@ics.uci.edu</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class='row mb-3'>
+  <div class='col'>    
+    <div class='card bg-light'>
+      <div class='card-body'>    
+
+        <h2>Recent Usage</h2>
+
+<div  id='' class='' >
+                            <table  class='display' id='example' style='width: ;' >
+                                <thead>
+	<tr>
+		<th class='Quarter'>Quarter</th>
+		<th class='Courses'>Courses</th>
+		<th class='Total Checkins'>Total Checkins</th>
+	</tr>
+</thead>
+
+                                <tbody>
+<tr class=''>
+		<td class='Quarter'>FALL 2025</td>
+		<td class='Courses'>CHEM-11 : NEW CHEM STUDNT SEM<br>CHEM-1A : GENERAL CHEMISTRY<br>CHEM-200 : CONDUCT OF RESEARCH<br>CHEM-51A : ORGANIC CHEMISTRY<br>COGS-119 : LEARNING & MEMORY<br>COMPSCI-132 : COMPUTER NETWORKS<br>COMPSCI-200S : SEM IN COMPSCI RSCH<br>ECPS-216 : IOT SYS & SOFTWARE<br>EECS-12 : INTRO PROGRAMMING<br>EECS-159A : SENIOR PROJECT I<br>EECS-20 : COMP SYS AND PROG<br>ICS-139W : CRITICAL WRITING<br>IN4MATX-131 : HUMAN CMPTR INTRACT<br>IN4MATX-151 : PROJECT MANAGEMENT<br>IN4MATX-161 : SOC ANLYS OF CMPTNG<br>IN4MATX-43 : INTRO SOFTWARE ENGR<br>MATH-1B : PRE-CALCULUS II<br>MGMT FE-251A : FE:MKTING RESEARCH<br>MUSIC-162 : CONCERT CHOIR<br>PHRMSCI-1 : NEW STUDENT SEMINAR<br>PHYSICS-50 : MATH METHODS<br>PHYSIO-215A : INTERGR IMMUNOL I<br>STATS-280 : SEMINAR IN STATS<br>UNI STU-1 : FRESHMAN EXPERIENCE<br>UNI STU-3 : AI INNOVATION<br>UPPP-146 : PRNCPL ECO PLAN&POL</td>
+		<td class='Total Checkins'>20,369</td>
+</tr>
+<tr class=''>
+		<td class='Quarter'>SPRING 2025</td>
+		<td class='Courses'>ARABIC-51 : INTRO TO THE KORAN<br>ART HIS-42C : ARTS OF JAPAN<br>BIO SCI-M119 : ADV TOP IMMUNOLOGY<br>CHEM-101W : WRITING FOR CHEM<br>CHEM-1C : GENERAL CHEMISTRY<br>CHEM-200 : CONDUCT OF RESEARCH<br>COMPSCI-200S : SEM IN COMPSCI RSCH<br>ECON-100C : INTER ECONOMICS III<br>ECON-13 : GLOBAL ECONOMY<br>EECS-111 : SYSTEM SOFTWARE<br>EECS-31L : INTRO DIG LOGIC LAB<br>ENGRCEE-295 : SEMINARS IN CEE<br>GDIM-129 : HORROR IN GAMING<br>HISTORY-60 : MAKING MDRN SCIENCE<br>ICS-11 : INTERNET PUBLIC POL<br>ICS-139W : CRITICAL WRITING<br>IN4MATX-132 : ADV TOPICS IN HCI<br>IN4MATX-134 : PROJ IN USER INT SW<br>IN4MATX-151 : PROJECT MANAGEMENT<br>IN4MATX-174 : HEALTH DATA ANALYT<br>INTL ST-183CW : SEM CONFLICT RESOLU<br>LPS-60 : MAKING MDRN SCIENCE<br>MGMT-171 : SOCIAL MEDIA<br>MGMT-191W : BUSINESS COMMUN<br>NET SYS-295 : NET SYS SEMINAR<br>PHYSICS-106W : ADV DATA & WRITING<br>PHYSICS-3A : BASIC PHYSICS I<br>SOC SCI-172AW : AMERICAN CULTURE<br>STATS-280 : SEMINAR IN STATS<br>UNI STU-H30C : ENVIRON SUSTAIN II</td>
+		<td class='Total Checkins'>54,000</td>
+</tr>
+<tr class=''>
+		<td class='Quarter'>WINTER 2025</td>
+		<td class='Courses'>CHEM-1A : GENERAL CHEMISTRY<br>CHEM-1B : GENERAL CHEMISTRY<br>COMPSCI-161 : DES&ANALYS OF ALGOR<br>COMPSCI-200S : SEM IN COMPSCI RSCH<br>ECPS-234 : CAPSTONE DES PREP<br>EECS-159B : SENIOR PROJECT II<br>ENGRCEE-195 : SEMINARS IN CEE<br>ENGRCEE-295 : SEMINARS IN CEE<br>GDIM-161 : MULTIPLAYER PROJECT<br>IN4MATX-131 : HUMAN CMPTR INTRACT<br>IN4MATX-161 : SOC ANLYS OF CMPTNG<br>IN4MATX-162W : ORGNIZATNL INFO SYS<br>IN4MATX-172 : PROJ HEALTH IN4MATX<br>IN4MATX-191B : SENIOR DESIGN PROJ<br>INNO-291B : BUS CREAT:PITCHDECK<br>MATH-1B : PRE-CALCULUS II<br>MGMT-105 : INTRO TO MARKETING<br>MGMT-132A : INDIVIDUAL TAXATION<br>MGMT-133 : CORP &PRTNRSHIP TAX<br>MGMT-155 : BRAND MANAGEMENT<br>MGMT-191W : BUSINESS COMMUN<br>MGMTMBA-290 : GLBL CNSUMR INSIGHT<br>MUSIC-162 : CONCERT CHOIR<br>NET SYS-295 : NET SYS SEMINAR<br>PHILOS-5 : CONTEMP MORAL PRBLM<br>PHYSIO-215B : INTEGR IMMUNOL II<br>SOC SCI-183CW : SEM CONFLICT RESOLU<br>STATS-280 : SEMINAR IN STATS<br>UNI STU-3 : ANTEATER TO ANTREPR<br>UPPP-140 : GLOBALMETROPOLIS</td>
+		<td class='Total Checkins'>56,413</td>
+</tr>
+<tr class=''>
+		<td class='Quarter'>FALL 2024</td>
+		<td class='Courses'>CHEM-1A : GENERAL CHEMISTRY<br>CHEM-200 : CONDUCT OF RESEARCH<br>COMPSCI-132 : COMPUTER NETWORKS<br>COMPSCI-161 : DES&ANALYS OF ALGOR<br>COMPSCI-200S : SEM IN COMPSCI RSCH<br>ECPS-216 : IOT SYS & SOFTWARE<br>EECS-12 : INTRO PROGRAMMING<br>EECS-145 : ELECTRCL ENGR ANLYS<br>EECS-159A : SENIOR PROJECT I<br>EECS-20 : COMP SYS AND PROG<br>ENGRCEE-170 : INTRO FLUID MECHS<br>ICS-139W : CRITICAL WRITING<br>ICS-6N : COMP LINEAR ALGEBRA<br>IN4MATX-131 : HUMAN CMPTR INTRACT<br>IN4MATX-161 : SOC ANLYS OF CMPTNG<br>IN4MATX-171 : INTRO TO HEALTH INF<br>IN4MATX-191A : SENIOR DESIGN PROJ<br>IN4MATX-43 : INTRO SOFTWARE ENGR<br>MATH-1A : PRE-CALCULUS I<br>MATH-1B : PRE-CALCULUS II<br>MGMT FE-251A : FE:MKTING RESEARCH<br>MGMT-191W : BUSINESS COMMUN<br>MUSIC-160 : UNIV ORCHESTRA<br>MUSIC-162 : CONCERT CHOIR<br>NET SYS-295 : NET SYS SEMINAR<br>PHRMSCI-1 : NEW STUDENT SEMINAR<br>PHYSIO-215 : INTEGRATIVE IMMUNOL<br>SOC SCI-183CW : SEM CONFLICT RESOLU<br>STATS-280 : SEMINAR IN STATS<br>UNI STU-3 : AI INNOVATION</td>
+		<td class='Total Checkins'>67,490</td>
+</tr>
+<tr class=''>
+		<td class='Quarter'>SUMMER SESSION 2 2024</td>
+		<td class='Courses'>IN4MATX-171 : INTRO TO HEALTH INF</td>
+		<td class='Total Checkins'>213</td>
+</tr>
+</tbody>
+
+                                <tfoot>
+	<tr>
+		<th class='Quarter'>Quarter</th>
+		<th class='Courses'>Courses</th>
+		<th class='Total Checkins'>Total Checkins</th>
+	</tr>
+</tfoot>
+
+                            </table>
+
+                        </div>
+      </div>
+    </div>
+  </div>
+</div>         </div>
+<!--</div>--> <!-- moved this closing div until after footer, goes with '.container' -->
+
+
+
+<footer class="footer   h-100 my-auto p-1   ">
+    <div class="container text-center">
+
+        
+        <div>&copy; BrenSchool ICS 2025</div>
+
+    </div>
+</footer>
+
+</div>
+
+
+<script src="/assets/84fdc49f/yii.js"></script>
+<script src="/assets/a1f143cf/js/bootstrap.bundle.js"></script>
+<script>jQuery(function ($) {
+$(function(){
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+    //var oTableexample = $('#example').DataTable(
+    oTableexample = $('#example').DataTable(
+                        {
+
+
+                            stateSave: true,
+                            dom : 'frtlip',
+
+                            
+      "bSort":false,
+      "searching":false,
+            "columnDefs": [
+                    {"targets":1, "width":"60%"},
+                    { "searchable": false, "targets": [0,1,2] } ,
+                    { className: "dt-right", "targets": 2 },
+                    ],
+    
+                         }
+
+                    );
+
+        oTableexample.columns().eq( 0 ).each( function ( colIdx ) {
+            if( !oTableexample.settings()[0].aoColumns[colIdx].bSearchable ){
+                oTableexample.column( colIdx ).footer().innerHTML='';
+        }
+        oTableexample.draw();
+
+        $( 'input', oTableexample.column( colIdx ).footer() ).on( 'keyup change', function () {
+            oTableexample
+                    .column( colIdx )
+                    .search( this.value )
+                    .draw();
+            } );
+        } );
+   });
+});</script></body>
+</html>

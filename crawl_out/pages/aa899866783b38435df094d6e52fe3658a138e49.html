@@ -1,0 +1,54 @@
+<!-- URL: http://www.ics.uci.edu/~eppstein/pubs/p-cpack.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<title>David Eppstein - Publications</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll("script[type='math/tex']").forEach(function(el) {
+              el.outerHTML = "\\(" + el.textContent + "\\)";
+            });
+            document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+              el.outerHTML = "\\[" + el.textContent + "\\]";
+            });
+            var script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js";
+            document.head.appendChild(script);
+        }, false);
+    </script>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<h1>David Eppstein - Publications</h1>
+<hr><p>
+<h2>
+</h2>
+<ul>
+<li><b>Faster circle packing with application to nonobtuse triangulation</b>.<br>
+D. Eppstein.<br>
+<a href="Epp-TR-94-33.pdf">Tech. Rep. 94-33</a>, ICS, UCI 1994.<br>
+<i>Int. J. Comp. Geom. &amp; Appl.</i> 7 (5): 485&ndash;491, 1997.
+<p>
+Speeds up a triangulation algorithm of Bern et al.
+["<a href="https://www.nas.nasa.gov/Pubs/TechReports/RNRreports/jruppert/RNR-94-003/RNR-94-003.html">Linear-Size
+Nonobtuse Triangulation of Polygons</a>"] by finding a
+collection of disjoint circles
+which connect up the holes in a non-simple polygon.
+The method is to use a
+<a href="mst.html">minimum spanning tree</a> to find a collection of
+overlapping circles, then shrink them one by one to reduce the number of
+overlaps, using Sleator and
+Tarjan's dynamic tree data structure to keep track of the
+connectivity of the shrunken circles.
+<p>
+</ul>
+
+<hr><p>
+<a href="/~eppstein/pubs/">Publications</a> &ndash;
+<a href="/~eppstein/">David Eppstein</a> &ndash;
+<a href="/~theory/">Theory Group</a> &ndash;
+<a href="/">Inf. &amp; Comp. Sci.</a> &ndash;
+<a href="https://www.uci.edu/">UC Irvine</a>
+<p>
+<small>Semi-automatically <a href="filter.html">filtered</a>
+from a common source file.</small>
+</body></html>

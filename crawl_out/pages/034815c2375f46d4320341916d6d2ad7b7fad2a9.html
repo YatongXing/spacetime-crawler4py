@@ -1,0 +1,966 @@
+<!-- URL: https://www.ics.uci.edu/~dechter/courses/ics-276/2023-24_Q2-Winter -->
+<html>
+
+<head>
+	<title> Dr. Rina Dechter @ UCI </title>
+	<link rel=Stylesheet href="/~dechter/basic.css">
+</head>
+
+<body bgcolor="#ffffff" alink="#00aaaa" link="#008080" vlink="#008080">
+
+<center>
+   <table width="95%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+         <td class="title" valign="bottom">
+            <nobr>Dr. Rina Dechter - University of California at Irvine</nobr>
+         </td>
+         <td><img alt="ZOT!" align="right" valign="bottom" src="/~dechter/images/anteater-ics.gif"></td>
+      </tr>
+      <!--
+	  <tr>
+         <td colspan="2"><img height="2" src="/~dechter/images/transp-fill.gif"></td>
+      </tr>
+	  -->
+	  <!--
+      <tr>
+         <td colspan="2"><img width="100%" height="2"  src="/~dechter/images/black-fill.gif"></td>
+      </tr>
+	  -->
+      <tr valign=top>
+         <td>
+		    <!--<font color="ffaa00" size="3">-->
+		    <a href="/~dechter/index.html">home</a> |
+            <a href="/~dechter/publications.html">publications</a> |
+            <a href="/~dechter/books/">book</a> |
+            <a href="/~dechter/courses.html">courses</a> |
+            <a href="/~dechter/research.html">research</a>
+			<!--</font>-->
+         </td>
+         <td align=right>
+            <!--<font color=#008080>-->
+               Revised on
+               
+               Nov. 11, 2024
+            </font>
+         </td>
+      </tr>
+   </table>
+</center>
+<br>
+<center>
+<table width="90%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+  <td  colspan=2><img height="4" src="/~dechter/images/transp-fill.gif"></td>
+</tr>
+
+<tr>
+<td class=title>CS 276 - Causal and Probabilistic Reasoning with Graphical Models <br>
+2023-24, Winter (Q2) 
+</td>
+</tr>
+
+<tr>
+  <td colspan=2><img width="100%" height="2"  src="/~dechter/images/black-fill.gif"></td>
+</tr>
+
+<tr>
+<td align=right>
+  <font color="#ffaa00">[ <a href="index.shtml">main</a> |
+  					<a href="software.shtml">software</a> |
+ 					<!-- <a href="handouts.html">handouts</a> | -->
+ 					<a href="readings.shtml">references</a> ]
+</td>
+</tr>
+</table>
+</center>
+
+<br><br>
+
+<center>
+
+
+<table border=0 cellspacing=0 cellpadding=0 width="90%">
+
+<!--
+ <div>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td>
+  <p class=section>Course Project
+  <p>
+  <li> The project information is available at: <a href="project/Project-Information-2024.pdf"> Project Information </a> 
+  <li> The deadline for proposals is May 21st in class. Also send your proposals by email.<br>
+  <li> Please upload summary of proposals to: <a
+  href="https://docs.google.com/spreadsheets/d/17GMS0pBMtC0lS6ix7fhI3NRoxr_t8-W9a_yWWo6q3cg/edit?usp=sharing"> Proposal
+  Summary (anyone at UCI with the link can edit) </a><br><br>
+  </td>
+  </tr>
+</div>
+-->
+
+<img border=0 width=100% height=2 src="../../../~dechter/images/black-fill.gif">
+
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+ 
+
+							
+  <td>
+  <p class=section><b>Course Reference</b>
+  <p>
+  </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+  <ul type=disc>
+   <!-- <em>Instructor:&nbsp;</em>      <strong>Rina Dechter</strong><br>
+   <em>Days/Time:&nbsp;</em>       <strong>M/W 11am-12:20pm</strong> <br>
+   <em>Room:&nbsp;</em>            <strong><a href="https://classrooms.uci.edu/classroomtechnology/classrooms/dbh/dbh-1300">DBH 1300</a></strong> <br>
+   <em>Zoom:&nbsp;</em>            <strong><a href="#">TBD</a></strong> <br>
+   <em>Ed Discussion:&nbsp;</em>   <strong><a href="#">TBD</a></strong> <br>
+   <em>Office hour:&nbsp;</em>     <strong>M 2pm, DBH 4232</strong> -->
+   <strong><em>Instructor:&nbsp;</em>   </strong>   Rina Dechter<br>
+   <strong><em>TA:&nbsp;</em>           </strong>   Nick Cohen<br>
+   <strong><em>Days/Time:&nbsp;</em>    </strong>   M/W 11am-12:20pm <br>
+   <strong><em>Room:&nbsp;</em>         </strong>   <a href="https://classrooms.uci.edu/classroomtechnology/classrooms/dbh/dbh-1300">DBH 1300</a> <br>
+   <strong><em>Zoom:&nbsp;</em>         </strong>   <a href="https://uci.zoom.us/j/93822218749">https://uci.zoom.us/j/93822218749</a> <br>
+   <strong><em>Ed Discussion:&nbsp;</em></strong>   <a href="https://edstem.org/us/courses/49867/discussion/">https://edstem.org/us/courses/49867/discussion/</a> <br>
+   <strong><em>Office hour:&nbsp;</em>  </strong>   M 3pm-4pm, DBH 4232 <br>
+   <strong><em>TA Office hour:&nbsp;</em>  </strong>   M 10am-11am, DBH 4243
+  </ul>
+  
+  <!-- <em><b style="color:#9F000F">IMPORTANT NOTE:</b> Some classes will be taught purely virtually via Zoom, while others will be taught in person.   -->
+  <!-- Please refer to the course calendar at the end of the page for updates on whether classes will be taught in person or virtually via Zoom.</em> -->
+
+  <img border=0 width=100% height=2 src="../../../~dechter/images/black-fill.gif">
+
+  <div style="100%">
+  <p class=section><b>Course Description</b></p>
+  
+  <p>
+	One of the main challenges in building intelligent systems is the ability to
+	perform causal inference under uncertainty. Graphical models, which include
+	Bayesian networks and their extension into structural causal models offer a
+	powerful and successful methodology of operationalizing causal inference in a
+	wide spectrum of applications. Intelligent systems based on Bayesian networks
+	are being used in a variety of real-world applications including diagnosis,
+	sensor fusion, on-line help systems, credit assessment, bioinformatics and data
+	mining. Causal reasoning is at the core of human reasoning and thus should play
+	a central part in artificial intelligence and in machine learning.
+
+  <p>
+	The objective of this course is to provide an in-depth exposition of causal
+	reasoning under uncertainty using structural causal models and Bayesian
+	networks. Both theoretical underpinnings and practical considerations will be
+	covered, with a special emphasis on exploring reasoning within the ladder of
+	causation that include 1. Association, 2. Intervention, 3. Counterfactual.
+  </div>
+
+  <img border=0 width=100% height=2 src="../../../~dechter/images/black-fill.gif">
+
+
+  <div>
+  <p class=section><b>Prerequisites</b></p>
+  </div>
+  <ul type=disc>
+   <li>Familiarity with basic concepts of probability theory. </li>
+   <li>Knowledge of basic computer science, algorithms and programming principles. </li>
+   <li>Previous exposure to AI is desirable but not required. </li>
+  </ul>
+  
+
+	 <div>
+	  <p class=section>Target Students:</p>
+	  </div>
+	  <p class=MsoNormal>
+		  This course is intended for PhD students in the area of AI, Machine Learning, and Statistics,  
+		  and also appropriate for students from other disciplines with interest in causality and having
+		  relevant AI/ML/Statistics background.
+	  </p>
+
+
+
+
+  <img border=0 width=100% height=2 src="../../../~dechter/images/black-fill.gif">
+
+      <div>
+      <p class="section"><b>Course material</b></p>
+      
+		<p>The course will be based on the following primary sources:</p>
+		<ul>
+          <li>[Primer] <a href="http://bayes.cs.ucla.edu/PRIMER/">Judea Pearl, Madelyn Glymour, Nicholas P. Jewell, "Causal Inference in Statistics: A Primer"</a></li>
+          <li>[Causality] <a href="http://bayes.cs.ucla.edu/BOOK-2K/">Judea Pearl, "Causality: Models, Reasoning, and Inference"</a></li>
+          <li>[Why] <a href="http://bayes.cs.ucla.edu/WHY/">Judea Pearl, "Book of Why"</a></li>
+          <li>[Darwiche] <A href="http://www.amazon.com/dp/0521884381/">Adnan Darwiche, "Modeling and Reasoning with Bayesian Networks"</a></li>
+          <li>[Dechter] <a href="https://dl.acm.org/doi/10.5555/3348514">Rina Dechter, "Reasoning with Probabilistic and Deterministic Graphical Models: Exact Algorithms"</a></li>
+		</ul>
+		
+		<p>Additional sources:</p>
+		<ul>
+          <li>[Scholk&ouml;pf] <a href="https://www.dropbox.com/s/rxbi9gu3zmczd6f/jonas-causality-book.pdf?dl=0"> Jonas Peters, Dominik Janzing, and Bernhard Scholk&ouml;pf, "Elements of Causal Inference; Foundations and Learning Algorithms"</a></li>
+          <li>[Tian] <a href="https://ftp.cs.ucla.edu/pub/stat_ser/r309.pdf"> Jin Tian, "Studies in Causal reasoning and Learning" (Dissertation)</a></li>
+		</ul>
+				
+		</div>
+
+  <img border=0 width=100% height=2 src="../../../~dechter/images/black-fill.gif">                  
+                  <div>
+                     <p class=section>Course Topics</p>
+					 <!--<h2>Course Topics</h2>-->
+                  </div>
+                  <ol type=disc>
+						<li>Probabilistic Graphical Models, Structural causal models,The Causal Hierarchy.</li>
+						<li>Bayesian and Markov Networks: Representing independencies by graphs. d-seperation.</li>
+						<li>Algorithms for probabilistic reasoning (Bucket-elimination for summation and optimization, Join-trees, The induced-width.).</li>
+						<li>Sampling schemes for graphical models (MCMC and Importance Sampling).</li>
+						<li>Structural Causal Models; Identification of Causal Effect; The problem of confounding.</li>
+						<li>The Back-Door and Front-Door Criteria and the Do-Calculus.</li>
+						<li>Linear Causal Models.</li>
+						<li>Counterfactuals.</li>
+						<li>Algorithms for identification using c-components. The ID algorithm.</li>
+						<li>Learning Bayesian networks and Causal graphs (causal discovery).</li>
+                  </ol>
+
+
+
+
+
+	 <div>
+	  <p class=section>Homework Assignments:</p>
+	  </div>
+	  <p class=MsoNormal>There will be four homework, each given roughly a week to complete.</p>
+
+	 <div>
+	  <p class=section>Course Project:</p>
+	  </div>
+	  <p class=MsoNormal>
+		  Each student will also be engaged in a project based on papers from recent literature. 
+		  The project will involve learning about and preseting an assigned paper/literature in class
+		  and writing a project report.
+      <br><br>
+      <a target="_blank" rel="noopener noreferrer" href="project/Project-Information-2024.pdf">Project Information</a> <br>
+      <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/spreadsheets/d/1dLww7W1OQaCteffkqPsT4ZIUcZipkGnx/edit?usp=sharing&ouid=107397429416650453726&rtpof=true&sd=true">Project Sign-Up Sheet</a> <br>
+	  </p>
+
+
+
+
+
+	  <div>
+	  <p class=section>Grading Policy:</p>
+	  </div>
+	  <p class=MsoNormal>Homework (70%), Course Project (15% presentation + 15% report = 30% total)</p>
+
+
+
+	  <br>
+	  
+		<p></p>
+	<hr noshade="noshade">
+	<!-- <div class="section"> -->
+	<!-- <p class="section"><b>Course Project</b></p> -->
+	<!-- </div> -->
+	<!-- <div style=""> -->
+		<!-- <em>(You will need to be logged into Google with you UCI account to access.)</em><br> -->
+		<!-- <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1f-5xbMmiU11q0rUzksbxmd17WjxunksU/edit?usp=sharing&ouid=106113509570845388715&rtpof=true&sd=true">Project Information Page</a> <br> -->
+		
+	<!-- </div> -->
+	
+	<!-- <br> -->
+
+
+
+      <div>
+      <p class=section><b>Syllabus</b></p>
+      </div>
+
+      <table border="1" cellpadding="3" cellspacing="0" style="width: 1300px; height: 1266px;">
+                  <tbody>
+                  <!-- row -->
+                    <tr>
+                      <td>
+                        <b>Week</b>
+                      </td>
+                      <td>
+                        <b>Topic</b>
+                      </td>
+                      <td style="vertical-align: top; width: 110px;">
+                        <span style="font-weight: bold;">Lectures</span><br>
+                      </td>
+                      <td style="vertical-align: top; width: 110px;">
+                        <span style="font-weight: bold;">Slides</span><br>
+                      </td>
+                      <td style="vertical-align: top; width: 110px;">
+                        <span style="font-weight: bold;">Homework</span><br>
+                      </td>
+                      <td style="vertical-align: top; width: 220px;">
+                        <span style="font-weight: bold;">Reading</span><br>
+                      </td>
+                      <td style="vertical-align: top; width: 110px;" align="right">
+                        <b>Date&nbsp;&nbsp;</b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <img height="2" src="black-fill.gif" width="100%">
+                      </td>
+                    </tr>
+                    
+                  <!-- row -->
+                    <tr>
+                      <!-- week -->
+                        <td valign="top">
+                          <nobr>Week 1</nobr>
+                        </td>
+                      <!-- topic -->
+                        <td>
+                          <ul>
+							<br>
+                            <li>
+                              <font color="#990000"> Probabilistic Graphical Models and Causal Bayesian Networks <br></font>
+                            </li>
+							<br>
+                            <li>
+                              <font color="#990000"> Bayesian and Markov Networks: Representing independencies by graphs <br></font>
+                            </li>
+                          </ul>
+                        </td>
+                      <!-- lectures -->
+                        <td style="vertical-align: top; width: 110px;">
+                          <br>
+						  <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/3wXW473I3zA">Lec 1</a><br>
+						  <br> <br> <br>
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/tsDJywEOvWg">Lec 2</a><br>
+                        </td>
+                      <!-- slides -->
+                        <td style="vertical-align: top; width: 110px;">
+						  <br>
+                          <a target="_blank" rel="noopener noreferrer" href="slides/class1-2024.pdf">Slides 1</a><br>
+						  <br> <br> <br>
+                          <a target="_blank" rel="noopener noreferrer" href="slides/class2-2024.pdf">Slides 2</a><br>
+                        </td>
+                      <!-- homework -->
+                        <td style="vertical-align: top; width: 110px;">
+						</td> 
+                      <!-- reading -->
+                        <td style="vertical-align: top; width: 110px;">
+							<br>
+                          [Darwiche] Ch. 1, 3, 4<br><br>
+                          [Russell-Norvig] Ch. 13<br>
+                        </td>
+                      <!-- dates -->
+                        <td align="right" valign="top">
+						<br>
+                          M 1/8<br>
+                          <br> <br>
+                          W 1/10 <br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <img height="2" src="black-fill.gif" width="100%">
+                      </td>
+                    </tr>
+                    
+                  <!-- row -->
+                    <tr>
+                      <!-- week -->
+                        <td valign="top">
+                          <nobr>Week 2</nobr>
+                        </td>
+                      <!-- topic -->
+                        <td>
+                          <ul>
+							<br>
+                            <br>
+                            <br>
+                            <li>
+                              <font color="#990000"> Bayesian and Markov Networks: Representing independencies by graphs <br></font> 
+                            </li> 
+                            <br>
+                            <li>
+                              <font color="#990000"> The notion of d-separation<br></font>
+                            </li>
+                          </ul>
+                        </td>
+                      <!-- lectures -->
+                        <td style="vertical-align: top; width: 110px;">
+							<br><br><br><br><br><br>
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/yIMuQJv2Q4A">Lec 3</a><br>
+						  <br> <br> <br>
+                          <!-- <a target="_blank" rel="noopener noreferrer" href="https://uci.zoom.us/rec/share/T1kBK2n8VC5EJMEK6bogCiJsIkJJcGKs_X1ukkT3KWXNvxF_gFsSLkAXPImgAs2s.UOBLJTYt9x7naEDT">Lec 4</a><br> -->
+                        </td>
+                      <!-- slides -->
+                        <td style="vertical-align: top; width: 110px;">
+                          <br><br><br><br><br><br>
+                          <a target="_blank" rel="noopener noreferrer" href="slides/class3-2024.pdf">Slides 3</a><br>
+                           <br> <br> <br>
+                          <!-- <a target="_blank" rel="noopener noreferrer" href="slides/class4-2021.pdf">Slides 4</a><br> -->
+                        </td>
+                      <!-- homework -->
+                        <td style="vertical-align: top; width: 110px;">
+							<br><br><br><br>
+                          <!-- <a target="_blank" rel="noopener noreferrer" href="hw/hw1_2024.pdf">HW 1</a><br>  -->
+                        </td>
+                      <!-- reading -->
+                        <td style="vertical-align: top; width: 110px;">
+                          <br><br><br><br><br>
+                          [Darwiche] Ch. 4
+                        </td>
+                      <!-- dates -->
+                        <td align="right" valign="top">
+						<br>
+                          <span style="color: red;">M 1/15 <br>(No Class!!!)</span><br>
+                          <br> <br>
+                          W 1/17 <br>
+						  <br>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <img height="2" src="black-fill.gif" width="100%">
+                      </td>
+                    </tr>
+                    
+                  <!-- row -->
+                    <tr>
+                      <!-- week -->
+                        <td valign="top">
+                          <nobr>Week 3</nobr>
+                        </td>
+                      <!-- topic -->
+                        <td>
+                          <ul>
+							<br>
+                            <li>
+                              <font color="#990000"> Variational algorithms for probabilistic graphical models (Bucket-elimination for summation and optimization) <br></font>
+                            </li>
+                            <li>
+                              <font color="#990000"> Join-trees; Belief propagation; The induced-width <br></font>
+                            </li>
+                          </ul>
+                        </td>
+                      <!-- lectures -->
+                        <td style="vertical-align: top; width: 110px;">
+						<br>
+						<!-- Lec 5 Rec Unavail. -->
+                       <br>
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/6IX4AfynOTg">Lec 4</a><br><br>
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/zuLS_CXRc7g">Lec 5</a><br>
+                        </td>
+                      <!-- slides -->
+                        <td style="vertical-align: top; width: 110px;">
+                        	 <br>
+                          <a target="_blank" rel="noopener noreferrer" href="slides/class3b-2024.pdf">Slides 4</a><br><br>
+                          <a target="_blank" rel="noopener noreferrer" href="slides/GenIE.pdf">GenIE</a><br><br>
+                          <a target="_blank" rel="noopener noreferrer" href="slides/class5-2024.pdf">Slides 5</a><br>
+                        </td>
+                      <!-- homework -->
+                        <td style="vertical-align: top; width: 110px;">
+						</td>
+                      <!-- reading -->
+                        <td style="vertical-align: top; width: 110px;">
+							<br>
+							[Dechter] Ch. 4, 5.1-5.2<br><br>
+							[Darwiche] Ch. 6
+                        </td>
+                      <!-- dates -->
+                        <td align="right" valign="top">
+						<br>
+                          M 1/22 <br>
+                          <br> <br>
+                          W 1/24 <br>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <img height="2" src="black-fill.gif" width="100%">
+                      </td>
+                    </tr>
+                    
+                  <!-- row -->
+                    <tr>
+                      <!-- week -->
+                        <td valign="top">
+                          <nobr>Week 4</nobr>
+                        </td>
+                      <!-- topic -->
+                        <td>
+                          <ul>
+							<br>
+                            <li>
+                              <font color="#990000">  Structural Causal Models; Identification of Causal Effect; The problem of confounding<br></font>
+                            </li>
+                           <!-- <li>
+                              <font color="#990000"> The DO Calculus <br></font>
+                            </li> -->
+                          </ul>
+                        </td>
+                      <!-- lectures -->
+                        <td style="vertical-align: top; width: 110px;">
+                          <br>
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/7JMSyZM9S3g">Lec 6</a><br>
+                          <br> <br> 
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/76OB2EH1JxY">Lec 7</a><br>
+						  <br>
+                         <!-- <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/iynr5Gz_ikc">Lec 9</a><br>
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/fLoeVPBs9I4">Lec 10</a><br>
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/plFvJAquuAY">Lec 11</a><br> -->
+                        </td>s
+                      <!-- slides -->
+                        <td style="vertical-align: top; width: 110px;">
+                          <br>
+                          <a target="_blank" rel="noopener noreferrer" href="slides/class6-2024.pdf">Slides 6</a><br>
+                         <a target="_blank" rel="noopener noreferrer" href="slides/class7-2024.pdf">Slides 7</a><br>
+                        </td>
+                      <!-- homework -->
+                       <td style="vertical-align: top; width: 110px;">
+							<br>
+                          <!-- <a target="_blank" rel="noopener noreferrer" href="hw/hw2_2024.pdf">HW 2</a><br>  -->
+                        </td>
+                      <!-- reading -->
+                        <td style="vertical-align: top; width: 110px;">
+						<br>
+            [Dechter] ch.  3.4
+						<br>
+						<br>
+            [Primer] ch. 1, ch 2
+                        </td>
+					<!-- dates -->
+                        <td align="right" valign="top">
+						<br>
+                          M 1/29 <br>
+                          <br> <br>
+                          W 1/31 <br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <img height="2" src="black-fill.gif" width="100%">
+                      </td>
+                    </tr>
+                    
+                  <!-- row -->
+                    <tr>
+                      <!-- week -->
+                        <td valign="top">
+                          <nobr>Week 5</nobr>
+                        </td>
+                      <!-- topic -->
+                        <td>
+                          <ul>
+							<br>
+                            <li>
+                              <font color="#990000"> The Back-Door Criterion <br></font>
+                            </li>
+                          </ul>
+                        </td>
+                      <!-- lectures -->
+                        <td style="vertical-align: top; width: 110px;">
+                          <br>
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/aohig8Nr3m0">Lec 8</a><br>
+                           <br> <br> 
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/NlKIPoAwngo">Lec 9</a><br> <br>
+
+
+                         <!-- <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/ayQ_nCe3LHo">Lec 12</a><br>
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/2Wdc0jAt5es">Lec 13</a><br> -->
+                          <!--<a target="_blank" rel="noopener noreferrer" href="">Lec 14</a><br>-->
+                        </td>
+                      <!-- slides -->
+                        <td style="vertical-align: top; width: 110px;">
+                        	<br>
+                          <a target="_blank" rel="noopener noreferrer" href="slides/class8-2024.pdf">Slides 8</a><br>
+                          <a target="_blank" rel="noopener noreferrer" href="slides/class9-2024.pdf">Slides 9</a><br>
+                          <!-- <a target="_blank" rel="noopener noreferrer" href="slides/CS295-class5b-2021 (Linear SCM).pdf">Slides 5b</a><br> -->
+                        </td>
+                      <!-- homework -->
+                        <td style="vertical-align: top; width: 110px;"> 
+                        	<br>
+                          <!-- <br> <br> <br><a target="_blank" rel="noopener noreferrer" href="hw/hwk3-2021.pdf">HW 3</a><br> <br>   -->
+						  </td>
+                      <!-- reading -->
+                        <td style="vertical-align: top; width: 110px;">
+						<br>
+                          [Primer] Ch. 3 <br><br>
+                          [causality] 1.3, 3.1-3,3
+
+
+                        </td>
+                      <!-- dates -->
+                        <td align="right" valign="top">
+						<br>
+                          M 2/5 <br>
+                          <br> <br>
+                          W 2/7 <br>
+						  <br>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <img height="2" src="black-fill.gif" width="100%">
+                      </td>
+                    </tr>
+                    
+                  <!-- row -->
+                    <tr>
+                      <!-- week -->
+                        <td valign="top">
+                          <nobr>Week 6</nobr>
+                        </td>
+                      <!-- topic -->
+                        <td>
+                          <ul>
+							<br>
+                            <li>
+                              <font color="#990000"> Front-Door <br></font>
+                            </li>
+                            <li>
+                              <font color="#990000"> Do-Calculous <br></font>
+                            </li>
+                          </ul>
+                        </td>
+                      <!-- lectures -->
+                        <td style="vertical-align: top; width: 110px;">
+                        	<br>
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/EPkcFZr_TNs">Lec 10</a><br><br>
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/4R5al2n5pL4">Lec 11</a><br>
+                           <br> <br> 
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/---p-qqOwHY">Lec 12</a><br> <br>
+                        </td>
+                      <!-- slides -->
+                        <td style="vertical-align: top; width: 110px;">
+                        	<br>
+                          <a target="_blank" rel="noopener noreferrer" href="slides/class10-2024.pdf">Slides 10</a><br>
+                          <!-- <a target="_blank" rel="noopener noreferrer" href="slides/class8-2021.pdf">Slides 8</a><br> -->
+                        </td>
+                      <!-- homework -->
+                        <td style="vertical-align: top; width: 110px;">
+                        	<br>
+                          <!-- <br> <br> <br><a target="_blank" rel="noopener noreferrer" href="hw/hw3_2024.pdf">HW 3</a><br> <br>  -->
+
+                        </td>
+                      <!-- reading -->
+                        <td style="vertical-align: top; width: 110px;">
+						<br>
+            [Primer] ch. 3.4-3.6 <br><br>
+            [Causality] 3.4
+                          
+                         <br>
+                        </td>
+                      <!-- dates -->
+                        <td align="right" valign="top">
+						<br>
+                          M 2/12 <br>
+                          <br> <br>
+                          W 2/14 <br>
+                          <br>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <img height="2" src="black-fill.gif" width="100%">
+                      </td>
+                    </tr>
+                    
+                  <!-- row -->
+                    <tr>
+                      <!-- week -->
+                        <td valign="top">
+                          <nobr>Week 7</nobr>
+                        </td>
+                      <!-- topic -->
+                        <td>
+                          <ul>
+							<br>
+              <li>
+                <font color="#990000"> Algorithms for identification using c-components <br></font>
+              </li>
+              <!-- <li>
+                <font color="#990000"> Learning Bayesian networks from data (the EM Algorithm) <br></font>
+              </li> -->
+                          </ul>
+                        </td>
+                      <!-- lectures -->
+                        <td style="vertical-align: top; width: 110px;">
+                        	<br>
+							<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/1Da8G4ErbZ0">Lec 12</a>
+                           <br> <br> <br>
+							<!-- <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/Z7Gvxrdruo4">Lec 14</a><br> -->
+                        </td>
+                      <!-- slides -->
+                        <td style="vertical-align: top; width: 110px;">
+                        	<br>
+							<a target="_blank" rel="noopener noreferrer" href="slides/class11-2024.pdf">Slides 11</a><br><br><br>
+                        </td>
+                      <!-- homework -->
+                        <td style="vertical-align: top; width: 110px;">
+                       <!--   <a target="_blank" rel="noopener noreferrer" href="hw/hw-3.pdf">HW 3</a><br> -->
+                        </td>
+                      <!-- reading -->
+                        <td style="vertical-align: top; width: 110px;">
+						<br>
+							[Primer] Ch. 4 <br><br>
+							[Causality] Ch. 7
+						<br>                        
+                        </td>
+                      <!-- dates -->
+                        <td align="right" valign="top">
+						<br>
+                          <span style="color: red;">M 2/19 <br>(No Class!!!)</span><br>
+                          <br> <br>
+                          W 2/21 <br>
+                          <br>
+                          
+                        </td>
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <img height="2" src="black-fill.gif" width="100%">
+                      </td>
+                    </tr>
+                    
+                  <!-- row -->
+                    <tr>
+                      <!-- week -->
+                        <td valign="top">
+                          <nobr>Week 8</nobr>
+                        </td>
+                      <!-- topic -->
+                        <td>
+                          <ul>
+							<br>
+                        <li>
+                          <font color="#990000"> Linear Structural Causal Models <br></font>
+                        </li>
+          <br>
+                      <li>
+                          <font color="#990000"> Counterfacturals <br></font>
+                        </li>
+                          </ul>
+                        </td>
+                      <!-- lectures -->
+                        <td style="vertical-align: top; width: 110px;">
+                        	<br> 
+							<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/-rx38wFAt4I">Lec 13</a>
+							<br> <br> <br>
+							<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/2HohG2WJuuE">Lec 14</a><br>
+							<br>
+                      <!--    <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/DG7sV1BJtVc">Lec P3</a><br>
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/EHcGi5alHm0">Lec 17</a><br> -->
+                        </td>
+                      <!-- slides -->
+                      <br>
+                        <td style="vertical-align: top; width: 110px;">
+                        	<br> 
+                        	<a target="_blank" rel="noopener noreferrer" href="slides/lcm.pdf">Slides 12</a><br><br><br>
+                            <a target="_blank" rel="noopener noreferrer" href="slides/class13-2024.pdf">Slides 13</a><br>
+
+                        </td>
+                      <!-- homework -->
+                      <td style="vertical-align: top; width: 110px;">
+                        <br>
+                        <!-- <br> <br> <br><a target="_blank" rel="noopener noreferrer" href="hw/hw4_2024.pdf">HW 4</a><br> <br>  -->
+
+                      </td>
+                      <!-- reading -->
+                        <td style="vertical-align: top; width: 110px;">
+						<br>
+                         _
+						 <br>
+                        </td>
+                      <!-- dates -->
+                        <td align="right" valign="top">
+						<br>
+                          M 2/26 <br>
+                          <br> <br>
+                          W 2/28 <br>
+                          <br>
+                         
+                        </td>
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <img height="2" src="black-fill.gif" width="100%">
+                      </td>
+                    </tr>
+                    
+                  <!-- row -->
+                    <tr>
+                      <!-- week -->
+                        <td valign="top">
+                          <nobr>Week 9</nobr>
+                        </td>
+                      <!-- topic -->
+                        <td>
+                          <ul>
+							<br>
+
+                           <li>
+                              <font color="#990000"> Learning graphical models <br></font>
+                            </li>
+                          </ul>
+                        </td>
+                      <!-- lectures -->
+                        <td style="vertical-align: top; width: 110px;">
+                        	<br> 
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/hgY7N-PX9hc">Lec 15</a><br><br>
+                        	<br> 
+                          <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/HDAaeXrEG_Y">Lec 16</a><br>
+                        </td>
+                      <!-- slides -->
+                        <td style="vertical-align: top; width: 110px;"><br>
+                          <a target="_blank" rel="noopener noreferrer" href="slides/class14-2024.pdf">Slides 14</a><br><br><br>
+                        </td>
+                      <!-- homework -->
+                        <td style="vertical-align: top; width: 110px;">
+                        	<br>
+							<!-- <a target="_blank" rel="noopener noreferrer" href="hw/hwk5-2021.pdf">HW 5</a><br> <br>  -->
+
+						</td>
+                      <!-- reading -->
+                        <td style="vertical-align: top; width: 110px;">
+						<br>
+							_
+                        </td>
+                      <!-- dates -->
+                        <td align="right" valign="top">
+						<br>
+                          M 3/4 <br>
+                          <br> <br>
+                          W 3/6  <br>
+							<br>
+            </ul>
+                        
+                          
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <img height="2" src="black-fill.gif" width="100%">
+                      </td>
+                    </tr>
+                    
+                  <!-- row -->
+                    <tr>
+                      <!-- week -->
+                        <td valign="top">
+                          <nobr>Week 10</nobr>
+                        </td>
+                      <!-- topic -->
+                        <td>
+                          <ul>
+							<br>
+                            <li>
+                              <font color="#990000"> Student Project Presentations <br></font>
+                            </li>
+                          </ul>
+                        </td>
+                      <!-- lectures -->
+                        <td style="vertical-align: top; width: 110px;">
+							<br>
+							<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/c1Re8siWRD4">Lec P1</a><br>
+							<br><br>
+							<a target="_blank" rel="noopener noreferrer" href="https://youtu.be/ghx4OvXvbyw">Lec P2</a><br>
+                        </td>
+                      <!-- slides -->
+                        <td style="vertical-align: top; width: 110px;">
+                         <a target="_blank" rel="noopener noreferrer" href="slides/markov-slides.pdf">Markov Equivalence in Cyclic Directed Graphs</a><br><br>
+                         <a target="_blank" rel="noopener noreferrer" href="slides/causal-information-splitting.pdf">Causal Information Splitting</a><br><br>
+                         <a target="_blank" rel="noopener noreferrer" href="slides/NeSyPresentation.pdf">Neural Probabilistic Logic Programming in Discrete-Continuous Domains</a><br><br>
+                         <a target="_blank" rel="noopener noreferrer" href="slides/Causal-Relation-Learning.pdf">Causal Relation Learning</a><br><br>
+                         <a target="_blank" rel="noopener noreferrer" href="slides/RAJ.pdf">Causal Effect Estimation</a><br><br>
+                         <a target="_blank" rel="noopener noreferrer" href="slides/erikurzua.pdf">Counterfactual Image Editing</a><br>
+                        </td>
+                      <!-- homework -->
+                        <td style="vertical-align: top; width: 110px;"></td>
+                      <!-- reading -->
+                        <td style="vertical-align: top; width: 110px;">
+						<br>
+                        </td>
+                      <!-- dates -->
+                        <td align="right" valign="top">
+						<br>
+                          M 3/11 <br>
+							  <br><br>
+                          W 3/13 <br>
+							  <br>
+
+                         
+                        </td>
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <img height="2" src="black-fill.gif" width="100%">
+                      </td>
+                    </tr>
+                    
+                  <!-- row -->
+                    <tr>
+                      <!-- week -->
+                        <td valign="top">
+                          <nobr>Finals Week</nobr>
+                        </td>
+                      <!-- topic -->
+                        <td>
+                          <ul>
+							<br>
+                            <li>
+                              <font color="#990000"> Project Reports Due <br></font>
+                            </li>
+                          </ul>
+                        </td>
+                      <!-- lectures -->
+                        <td style="vertical-align: top; width: 110px;">
+							<br>
+							<!-- <a target="_blank" rel="noopener noreferrer" href="https://youtu.be/8-vP6q-OAOA">Lec P3</a><br> -->
+						</td>
+                      <!-- slides -->
+                        <td style="vertical-align: top; width: 110px;"></td>
+                      <!-- homework -->
+                        <td style="vertical-align: top; width: 110px;"></td>
+                      <!-- reading -->
+                        <td style="vertical-align: top; width: 110px;"></td>
+                      <!-- dates -->
+                        <td align="right" valign="top">
+                          <br>
+
+                          F 3/22, 8-10am <br>
+							  <br>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td colspan="7">
+                        <img height="2" src="black-fill.gif" width="100%">
+                      </td>
+                    </tr>
+                                        
+                  </tbody>
+                </table>
+
+
+      <!--- HERE-->
+
+      
+
+
+  </td>
+ </tr>
+</table>
+
+</div>
+
+
+<!--- Begin Footer --><div id="footer"><centeR>
+<A HREF="http://www.ics.uci.edu">School of Information and Computer Science</A>
+<A HREF="http://www.uci.edu">University of California, Irvine, CA 92697-3435</a>
+<A HREF="http://www.ics.uci.edu/~dechter">Dr. Rina Dechter</A>
+
+<A HREF="mailto:dechter_at_ics.uci.edu">dechter at ics.uci.edu</A>
+
+</center></div><!--- End Footer --></div>
+
+</center>
+
+</body>
+
+</html>

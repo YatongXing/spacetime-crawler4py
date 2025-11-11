@@ -1,0 +1,69 @@
+<!-- URL: http://seal.ics.uci.edu/projects/groundhog/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83301040-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<head>
+<title>SEAL - Energy Testing Oracle</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Reply-to" content="malek at uci dot edu">
+<meta http-equiv="Owner" content="Sam Malek">
+<meta name="Author" content="Sam Malek">
+<meta name="Generator" content="Emacs">
+<link rev="MADE" href="mailto:malek at uci dot edu">
+<link href="../../seal.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="wrapper">
+    
+<!-- *************** Beginning of content ****************** -->
+
+<h2>Groundhog: An Automated Accessibility Crawler for Mobile Apps</h2>
+
+<p>
+Accessibility is a critical software quality affecting more than 15% of the world’s population with some form of disabilities. Modern mobile platforms, i.e., iOS and Android, provide guidelines and testing tools for developers to assess the accessibility of their apps. The main focus of the testing tools is on examining a particular screen’s compliance with some predefined rules derived from accessibility guidelines. Unfortunately, these tools cannot detect accessibility issues that manifest themselves in interactions with apps using assistive services, e.g., screen readers. A few recent studies have proposed assistive-service driven testing; however, they require manually constructed inputs from developers to evaluate a specific screen or presume availability of UI test cases. In this work, we propose an automated accessibility crawler for mobile apps, Groundhog, that explores an app with the purpose of finding accessibility issues without any manual effort from developers. Groundhog assesses the functionality of UI elements in an app with and without assistive services and pinpoints accessibility issues with an intuitive video of how to replicate them. Our experiments show Groundhog is highly effective in detecting accessibility barriers that existing techniques cannot discover. Powered by Groundhog, we conducted an empirical study on a large set of real-world apps and found new classes of critical accessibility issues that should be the focus of future work in this area.
+</p>
+
+<h3>How does Groundhog work?</h3>
+<p>
+Groundhog utilizes an App Crawler to explore different states of the app.After each change in the app,App Crawler invokes the Snapshot Manager to capture a VM snapshot if the current state (screen) has not already been seen.Snapshot Manager provides the VMSnapshots to Action Extractor,where all the possible actions on the given state of the are sequently extracted.Groundhog then tries to locate the elements and perform these actions on them using three different proxies: TouchProxy, TalkBackProxy, and AbstractProxy. Finally, the new state of the app after performing the action is provided to the Oracle along with the initial app state. Oracle assesses if each proxy successfully performs the action and produces the final report.
+</p>
+
+<img style="margin:10" ALT="[A11yPuppetry picture]" height="300" src=./approach.png><br>
+
+<h3>Artifacts</h3>
+
+<p>
+The artifacts are publicly available <a href="https://github.com/seal-hub/Groundhog">here</a>.
+
+<h3>Publications</h3>
+
+More details about can be found in our publication below:
+<br>
+<ul class="paperlist">
+    <li><b>Groundhog: An Automated Accessibility Crawler for Mobile Apps</b><br> 
+    Navid Salehnamadi, Forough Mehralian, and Sam Malek<br>
+    <i>The IEEE/ACM International Conference on Automated Software Engineering (ASE ’22), Rochester, MI, USA, October 2022.</i>
+    <br>[<a href="./2023_CHI_A11y_Puppetry.pdf">PDF</a>]
+    </li> 
+</ul>
+
+<!-- ***************** End of content ****************** -->
+<br><br>
+<div style="float:left">
+            <a href="http://www.ics.uci.edu/~seal/"><img ALT="[seal's logo]" height="200" src=../../seal.png></a>
+</div>
+<div style="float:right">
+            <a href="http://www.ics.uci.edu"><img ALT="[uci's logo]" style="padding-top: 40px" height="100" src=../../uci.jpg></a>
+</div>
+</div>
+</body>

@@ -1,0 +1,1019 @@
+<!-- URL: http://www.ics.uci.edu/~eppstein/pubs/geom-misc.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<title>David Eppstein - Publications</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll("script[type='math/tex']").forEach(function(el) {
+              el.outerHTML = "\\(" + el.textContent + "\\)";
+            });
+            document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+              el.outerHTML = "\\[" + el.textContent + "\\]";
+            });
+            var script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js";
+            document.head.appendChild(script);
+        }, false);
+    </script>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<h1>David Eppstein - Publications</h1>
+<hr><p>
+<h2>
+Miscellaneous geometry
+</h2>
+<ul>
+<li><b>Horizon theorems for lines and polygons</b>.<br>
+<a href="https://www.parc.xerox.com/csl/members/bern/">M. Bern</a>,
+D. Eppstein, 
+<a href="https://www.cse.psu.edu/~plassman/">P. Plassman</a>,
+and F. Yao.<br>
+<a href="BerEppPla-DCG-91.pdf"><i>Discrete and Computational Geometry:
+Papers from the DIMACS Special Year</i>,
+J. Goodman, R. Pollack, and W. Steiger, eds.,<br>
+<i>DIMACS Series in Discrete Mathematics and Theoretical Computer Science</i> 6,
+Amer. Math. Soc., 1991, 45&ndash;66</a>.
+<p>
+The total complexity of the cells in a line arrangement
+that are cut by another line is at most 15<i>n</i>/2.
+The complexity of cells cut by a convex <i>k</i>-gon
+is O(<i>n</i> &alpha;(<i>n,</i><i>k</i>)).  The first bound is tight,
+but it remains open whether the second is, or whether
+only linear complexity is possible.
+<p>
+<li><b>Visibility with a moving point of view</b>.<br>
+<a href="https://www.parc.xerox.com/csl/members/bern/">M. Bern</a>,
+<a href="https://www.cs.Princeton.EDU/~dpd/">D.P. Dobkin</a>,
+D. Eppstein, and 
+<a href="https://www.lac.uic.edu/NCDM/grossman.html">R. Grossman</a>.<br>
+<a href="https://portal.acm.org/citation.cfm?id=320188">
+<i>1st ACM-SIAM Symp. Discrete Algorithms,</i>
+San Francisco, 1990, pp. 107&ndash;118</a>.<br>
+<a href="BerDobEpp-Algo-94.pdf"><i>Algorithmica</i> 11: 360&ndash;378, 1994</a>.
+<p>
+An investigation of 3d visibility problems in which the viewing
+position moves along a straight flight path, with various
+assumptions on the complexity of the viewed scene.
+<p>
+<li><b>Asymptotic speed-ups in constructive solid geometry</b>.<br>
+D. Eppstein.<br>
+<a href="Epp-TR-92-87.pdf">Tech. Rep. 92-87</a>, ICS, UCI, 1992.<br>
+<i>Algorithmica</i> 13: 462&ndash;471, 1995.
+<p>
+Finds boundary representations of CSG objects.
+Uses techniques from dynamic graph algorithms,
+including a tree partitioning technique of Frederickson
+and a new data structure for maintaining the value
+of a Boolean expression with changing variables
+in time O(log <i>n</i> / log log <i>n</i>) per update.
+<p>
+<li><b>Application Challenges to Computational Geometry</b>.<br>
+The
+<a href="a-cgitf.html">
+Computational Geometry Impact Task Force
+</a>
+Report.<br>
+<a href="https://www.cs.princeton.edu/research/techreps/TR-521-96">Tech.
+Rep. TR-521-96</a>, Princeton University, April 1996.<br>
+Advances in Discrete and Computational Geometry &ndash; Proc. 1996 AMS-IMS-SIAM
+Joint Summer Research Conf. Discrete and Computational Geometry: Ten
+Years Later, Contemporary Mathematics 223, Amer. Math. Soc., 1999, pp. 407&ndash;423.
+<p>
+<li><b>Emerging challenges in computational topology</b>.<br>
+<a href="https://www.parc.xerox.com/csl/members/bern/">M. Bern</a>,
+D. Eppstein, et al.<br>
+<a href="https://arXiv.org/abs/cs.CG/9909001">arXiv:cs.CG/9909001</a>.<br>
+<p>
+This is the report from the ACM Workshop on Computational Topology
+run by Marshall and myself in Miami Beach, June 1999.
+It details goals, current research, and recommendations
+in this emerging area of collaboration between computer science and
+mathematics.
+<p>
+<li><b>Fat 4-polytopes and fatter 3-spheres</b>.<br>
+D. Eppstein,
+<a href="https://www.math.ucdavis.edu/~greg/">G. Kuperberg</a>,
+and
+<a href="https://www.math.tu-berlin.de/~ziegler/">G. Ziegler</a>.<br>
+<a href="https://arXiv.org/abs/math.CO/0204007">arXiv:math.CO/0204007</a>.<br>
+<i>Discrete Geometry: In honor of W. Kuperberg's 60th birthday</i>,
+Pure and Appl. Math. 253, Marcel Dekker, pp. 239&ndash;265, 2003.
+<p>
+We introduce the fatness parameter of a 4-dimensional polytope P,
+(f<sub>1</sub>+f<sub>2</sub>)/(f<sub>0</sub>+f<sub>3</sub>).  It is open
+whether all 4-polytopes have bounded fatness.
+We describe a <a href="geom-hyperbolic.html">hyperbolic geometry</a>
+construction that produces
+4-polytopes with fatness &gt;&nbsp;5.048, as well as the first infinite
+family of 2-simple, 2-simplicial 4-polytopes and an improved lower bound
+on the average kissing number of finite
+<a href="geom-circle.html">sphere packings</a> in R<sup>3</sup>.
+We show that fatness is not bounded for the more general class of
+strongly regular CW decompositions of the 3-sphere.
+<p>
+<li><b>M&ouml;bius-invariant natural neighbor interpolation</b>.<br>
+<a href="https://www.parc.xerox.com/csl/members/bern/">M. Bern</a>
+and D. Eppstein.<br>
+<a href="https://arxiv.org/abs/cs.CG/0207081">arXiv:cs.CG/0207081</a>.<br>
+<a href="https://portal.acm.org/citation.cfm?id=644130">
+<i>14th ACM-SIAM Symp. Discrete Algorithms,</i>
+Baltimore, 2003, pp. 128&ndash;129</a>.
+<p>
+Natural neighbor interpolation is a well-known technique for fitting a
+surface to scattered data, with some nice properties including
+smoothness everywhere except the data and exact fitting of linear functions.
+The interpolated surface is formed from a weighted combination of data
+values at the "natural neighbors" (neighbors in the Delaunay
+triangulation), with weights related to Voronoi cell areas.
+We describe a variation of natural neighbor interpolation, using
+different weights based on Delaunay circle angles, that remains
+invariant when the data is transformed by M&ouml;bius transformations,
+and reconstructs harmonic functions in the limit of dense data on a circle.
+<p>
+(<a href="BerEpp-SODA-03.pdf">SODA talk slides</a>)
+<p>
+<li><b>Optimized color gamuts for tiled displays</b>.<br>
+<a href="https://www.parc.xerox.com/csl/members/bern/">M. Bern</a>
+and D. Eppstein.<br>
+<a href="https://arxiv.org/abs/cs.CG/0212007">arXiv:cs.CG/0212007</a>.<br>
+<a href="https://portal.acm.org/citation.cfm?id=777834">
+<i>19th ACM Symp. Comp. Geom.,</i> San Diego, 2003, pp. 274&ndash;281</a>.
+<p>
+We consider the problem of finding a large color space that can be
+generated by all units in multi-projector tiled display systems. Viewing
+the problem geometrically as one of finding a large parallelepiped
+within the intersection of multiple parallelepipeds, and using
+colorimetric principles to define a volume-based objective function for
+comparing feasible solutions, we develop an algorithm for finding the
+optimal gamut in time O(n<sup>3</sup>), where n denotes the number of
+projectors in the system. We also discuss more efficient
+<a href="geom-lp.html">quasiconvex programming</a> algorithms for
+alternative objective functions based on
+maximizing the quality of the color space extrema.
+<p>
+(<a href="BerEpp-SCG-03-talk.pdf">SCG talk slides</a>)
+<p>
+<li><b>M&ouml;bius transformations in scientific computing</b>.<br>
+D. Eppstein.<br>
+Talk at SIAM Conf. on Computational Science and
+Engineering, San Diego, 2003.
+<p>
+This talk, for the CSE session on
+<a href="https://list.odu.edu/listinfo/csc">combinatorial scientific
+computing</a>,
+surveys my work with Marshall Bern on
+<a href="p-omt.html">optimal M&ouml;bius transformation</a> and
+<a href="p-minni.html">M&ouml;bius-invariant natural neighbor
+transformation.</a>
+<p>
+(<a href="Epp-CSE-03.pdf">Slides</a>)
+<p>
+<li><b>Guest editor's forward</b>.<br>
+D. Eppstein.<br>
+<i>Disc. Comp. Geom.</i> 30: 1&ndash;2, 2003
+(special issue for 17th Symp. Comp. Geom.)
+<p>
+<li><b>Uninscribable four-regular polyhedron</b>.<br>
+<a href="/~dillenco/">M. Dillencourt</a>
+and D. Eppstein.<br>
+<a href="http://www.eg-models.de/models/Polytopes/2003.08.001/_direct_link.html"><i>Electronic Geometry Models</i> 2003.08.001</a>.
+<p>
+We find an example of a three-dimensional polyhedron,
+with four edges per vertex, that can not be placed in convex
+position with all vertices on the surface of a sphere.
+<p>
+<li><b>Guard placement for efficient point-in-polygon proofs.</b><br>
+D. Eppstein,
+<a href="https://www.ics.uci.edu/~goodrich/">M. T. Goodrich</a>,
+and
+<a href="https://www.ics.uci.edu/~nodari/">N. Sitchinava</a>.<br>
+<a href="https://arxiv.org/abs/cs.CG/0603057">arXiv:cs.CG/0603057</a>.<br>
+<i>23rd ACM Symp. Comp. Geom.,</i> Gyeongju, South Korea, 2007, pp. 27&ndash;36.
+<p>
+The problem is to place as few wedges as possible in the plane
+such that a desired polygon can be formed as some monotone Boolean
+combination of the wedges. The motivation is for wireless devices to
+prove that they are located within a target area by their ability to
+communicate with a subset of base stations (the wedges).
+We provide upper and lower bounds on the number of wedges needed
+for several classes of polygons.
+<p>
+<li><b>Straight skeletons of three-dimensional polyhedra</b>.<br>
+<a href="https://www.cs.technion.ac.il/~barequet/">G. Barequet</a>,
+D. Eppstein,
+<a href="https://www.ics.uci.edu/~goodrich/">M. T. Goodrich</a>, and
+<a href="https://www.cs.technion.ac.il/people/avaxman/">A. Vaxman</a>.<br>
+<a href="https://arxiv.org/abs/0805.0022">arXiv:0805.0022</a>.<br>
+<i>Proc. 16th European Symp. Algorithms</i>, Karlsruhe, Germany,
+2008.<br>
+<a href="https://doi.org/10.1007/978-3-540-87744-8_13">Springer, <i>Lecture Notes in Comp. Sci.</i> 5193, 2008, pp. 148&ndash;160.</a>
+<p>
+A <a href="geom-ss.html">straight skeleton</a> is defined by the locus of points crossed by the
+edges and vertices of a polyhedron as it undergoes a continuous
+shrinking process in which the faces move inwards at constant speed. We
+resolve some ambiguities in the definition of these shapes, define
+efficient algorithms for polyhedra with axis-parallel faces, show that
+arbitrary polyhedra have strictly more complicated straight skeletons,
+and report on results from an implementation of our algorithm for
+arbitrary polyhedra.
+<p>
+<li><b>Self-overlapping curves revisited</b>.<br>
+D. Eppstein and
+E. Mumford.<br>
+<a href="https://arxiv.org/abs/0806.1724">arXiv:0806.1724</a>.<br>
+<a href="https://doi.org/10.1137/1.9781611973068.19"><i>20th ACM-SIAM Symp. Discrete Algorithms,</i>
+New York, 2009, pp. 160&ndash;169</a>.<br>
+<p>
+We consider problems of determining when a curve in the plane is the
+projection of a 3d surface with no vertical tangents. Several problems
+of this type are NP-complete, but can be solved in polynomial time if a
+casing of the curve is also given.
+<p>
+(<a href="EppMum-SODA-09-slides.pdf">Elena's SODA talk slides</a>)
+<p>
+<li><b>Planar Voronoi diagrams for sums of convex functions, smoothed
+distance and dilation</b>.<br>
+<a href="https://www.middlebury.edu/~dickerso/">M. Dickerson</a>,
+D. Eppstein, and
+<a href="https://kwortman.ecs.fullerton.edu/">K. Wortman</a>.<br>
+<a href="https://arxiv.org/abs/0812.0607">arXiv:0812.0607</a>.<br>
+<a href="https://doi.org/10.1109/ISVD.2010.12"><i>7th Int. Symp. Voronoi Diagrams in Science and Engineering (ISVD
+2010)</i>, Quebec City, Canada, pp. 13&ndash;22</a>.
+<p>
+Investigates Voronoi diagrams for a "smoothed distance" in which the
+distance between two points p and q is inversely weighted by the
+perimeter of triangle opq for a fixed point o, its relation to dilation
+of star networks centered at o, and its generalization to minimization
+diagrams of certain convex functions. When the function to be minimized
+is suitably well-behaved, its level sets form pseudocircles, the
+bisectors of the minimization diagram form pseudoline arrangements, and
+the diagram itself has linear complexity.
+<p>
+<li><b>Area-universal rectangular layouts</b>.<br>
+D. Eppstein,
+E. Mumford,
+<a href="https://www.win.tue.nl/~speckman/">B. Speckmann</a>, and
+<a href="https://www.tue.nl/staff/k.a.b.verbeek">K. Verbeek</a>.<br>
+<a href="https://arxiv.org/abs/0901.3924">arXiv:0901.3924</a>.<br>
+<i>25th Eur. Worksh. Comp. Geom.</i>, Brussels, Belgium, 2009.<br>
+<a href="https://doi.org/10.1145/1542362.1542411"><i>25th ACM Symp. Comp. Geom.,</i> Aarhus, Denmark, 2009, pp. 267&ndash;276</a>.
+<p>
+A partition of a rectangle into smaller
+rectangles is "area-universal" if any vector of areas for the smaller
+rectangles can be realized by a combinatorially equivalent partition.
+These partitions may be applied, for instance, to cartograms, stylized
+maps in which the shapes of countries have been distorted so that their
+areas represent numeric data about the countries. We characterize
+area-universal layouts, describe algorithms for finding them, and
+discuss related problems. The algorithms for constructing area-universal
+layouts are based on the distributive lattice structure of the set of
+all layouts of a given dual graph.
+<p>
+Merged with
+"<a href="p-orientation-constrained">Orientation-constrained rectangular layouts</a>"
+to form the journal version, "<a href="p-aucrl.html">Area-universal and constrained rectangular layouts</a>".
+<p>
+(<a href="EppMumSpe-SCG-09-slides.pdf">SoCG talk slides</a>)
+<p>
+<li><b>Animating a continuous family of two-site distance function
+Voronoi diagrams (and a proof of a complexity bound on the number of
+non-empty regions)</b>.<br>
+<a href="https://www.middlebury.edu/~dickerso/">M. Dickerson</a>
+and D. Eppstein.<br>
+<a href="https://doi.org/10.1145/1542362.1542380"><i>25th ACM Symp. Comp. Geom.,</i> Aarhus, Denmark, 2009, video and
+multimedia track, pp. 92&ndash;93</a>.
+<p>
+We investigate distance from a pair of sites defined as the sum of the
+distances to each site minus a parameter times the distance between the
+two sites. A given set of n sites defines n(n-1)/2 pairs and n(n-1)/2
+distances in this way, from which we can determine a Voronoi diagram. As
+we show, for a wide range of parameters, the diagram has relatively few
+regions because the pairs that have nonempty
+Voronoi regions must be Delaunay edges.
+<p>
+<li><b>Orientation-constrained rectangular layouts</b>.<br>
+D. Eppstein and
+E. Mumford.<br>
+<a href="https://arxiv.org/abs/0904.4312">arXiv:0904.4312</a>.<br>
+Algorithms and Data Structures Symposium (WADS), Banff, Canada.<br>
+Springer, <i>Lecture Notes in Comp. Sci.</i> 5664, 2009, pp. 266&ndash;277.
+<p>
+We show how to find a stylized map in which regions have been replaced
+by rectangles, preserving adjacencies between regions, with constraints
+on the orientations of adjacencies between regions. For an arbitrary
+dual graph representing a set of adjacencies, and an arbitrary set of
+orientation constraints, we can determine whether there exists a
+rectangular map satisfying those constraints in polynomial time. The
+algorithm is based on a representation of the set of all layouts for a
+given dual graph as a distributive lattice, and on Birkhoff's
+representation theorem for distributive lattices.
+<p>
+Merged with "<a href="p-area-universal.html">Area-universal rectangular layouts</a>"
+to form the journal version, "<a href="p-aucrl.html">Area-universal and constrained rectangular layouts</a>".
+<p>
+(<a href="WADS09-talks/cartograms.pdf">Slides</a>)
+<p>
+<li><b>Graph-theoretic solutions to computational geometry problems</b>.<br>
+D. Eppstein.<br>
+<a href="Epp-WG-09-talk.pdf">Invited talk</a> at the 35th International
+Workshop on Graph-Theoretic Concepts in Computer Science (WG 2009),
+Montpellier, France, 2009.<br>
+Springer, <i>Lecture Notes in Comp. Sci.</i> 5911, 2009, pp. 1&ndash;16.<br>
+<a href="https://arxiv.org/abs/0908.3916">arXiv:0908.3916</a>.
+<p>
+We survey problems in computational geometry that may be solved by
+constructing an auxiliary graph from the problem and solving a
+graph-theoretic problem on the auxiliary graph. The problems considered
+include the art gallery problem, partitioning into rectangles, minimum
+diameter clustering, bend minimization in cartogram construction, mesh
+stripification, optimal angular resolution, and metric embedding.
+<p>
+<li><b>Curvature-aware fundamental cycles</b>.<br>
+<a href="https://www.ics.uci.edu/~pablo/">P. Diaz-Gutierrez</a>,
+D. Eppstein, and
+<a href="https://www.ics.uci.edu/~gopi/">M. Gopi</a>.<br>
+<a href="https://www.ics.uci.edu/~pablo/articles/PG2009.pdf">17th Pacific Conf. Computer Graphics and Applications, Jeju, Korea,
+2009</a>.<br>
+<a href="https://doi.org/10.1111/j.1467-8659.2009.01580.x"><i>Computer
+Graphics Forum</i> 28 (7): 2015&ndash;2024, 2009</a>.
+<p>
+Considers heuristic modifications to the tree-cotree decomposition of my
+earlier paper <a href="p-dyngen.html">Dynamic generators of
+topologically embedded graphs</a>, to make the set of fundamental cycles
+found as part of the decomposition follow the contours of a given
+geometric model.
+<p>
+<li><b>Going off-road: transversal complexity in road networks</b>.<br>
+D. Eppstein,
+<a href="https://www.ics.uci.edu/~goodrich/">M. T. Goodrich</a>, and
+<a href="https://www.ics.uci.edu/~ltrott/">L. Trott</a>.<br>
+<a href="https://arxiv.org/abs/0909.2891">arXiv:0909.2891</a>.<br>
+<a href="https://doi.org/10.1145/1653771.1653778">Proc. 17th ACM
+SIGSPATIAL Int. Conf. Advances in Geographic Information Systems,
+Seattle, 2009, pp. 23&ndash;32</a>.
+<p>
+Shows both theoretically and experimentally that the number of times a
+random line crosses a road network is asymptotically upper bounded by
+the square root of the number of road segments.
+<p>
+<li><b>Optimally fast incremental Manhattan plane embedding and planar
+tight span construction</b>.<br>
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/0909.1866">arXiv:0909.1866</a>.<br>
+<a href="https://doi.org/10.20382/jocg.v2i1a8"><i>J. Computational Geometry</i> 2 (1): 144&ndash;182, 2011</a>.
+<p>
+Shows that, when the tight span of a finite metric space is homeomorphic
+to a subset of the plane, it has the geometry of
+a <a href="p-manhattan">Manhattan orbifold</a> and can be constructed in
+time linear in the size of the input distance matrix. As a consequence,
+it can be tested in the same time whether a metric space is isometric to
+a subset of the L<sub>1</sub> plane.
+<p>
+<li><b>Hyperconvexity and metric embedding</b>.<br>
+D. Eppstein.<br>
+<a href="Epp-5HWGT-09.pdf">Invited talk</a>
+at <a href="https://www.hamilton.tcd.ie/events/gt/gt2009.htm">Fifth
+William Rowan Hamilton Geometry and Topology Workshop</a>,
+Dublin, Ireland, 2009.<br>
+Invited talk at <a href="https://www.ipam.ucla.edu/programs/cmaws2/">IPAM Workshop on Combinatorial Geometry</a>, UCLA, 2009.
+<p>
+Surveys hyperconvex metric spaces, tight spans, and  my work
+on <a href="p-manhattan.html">Manhattan
+orbifolds</a>, <a href="p-manhattan2.html">tight span construction</a>,
+and <a href="p-oesm.html">optimal embedding into star metrics</a>.
+<p>
+<li><b>Cloning Voronoi diagrams via retroactive data structures</b>.<br>
+<a href="https://www.middlebury.edu/~dickerso/">M. Dickerson</a>,
+D. Eppstein, and
+<a href="https://www.ics.uci.edu/~goodrich/">M. T. Goodrich</a>.<br>
+<a href="https://arxiv.org/abs/1006.1921">arXiv:1006.1921</a>.<br>
+<i>18th Eur. Symp. Algorithms</i>, Liverpool, 2010.<br>
+<a href="https://doi.org/10.1007/978-3-642-15775-2_31">Springer, <i>Lecture
+Notes in
+Comp. Sci.</i> 6346, 2010, pp. 362&ndash;373</a>.<br>
+<p>
+We analyze the security of an online geometric database that allows
+planar nearest-neighbor queries but that does not wish the entire database to
+be copied by a competitor. We show that, under several models of how the
+query answers are returned, the database can be copied in a linear or
+near-linear number of queries. Our method for the competitor to copy the
+database is based on simulating Fortune's sweep-line algorithm for
+Voronoi diagrams, backtracking when the simulation discovers the
+existence of another point that invalidates earlier parts of the Voronoi
+diagram construction, and using retroactive data structures to perform
+the backtracking steps efficiently.
+<p>
+<li><b>Regular labelings and geometric structures</b>.<br>
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/1007.0221">arXiv:1007.0221</a>.<br>
+Invited to 22nd Canadian Conference on Computational Geometry (CCCG 2010).<br>
+Invited to <i>Proc. 21st International Symposium on Algorithms and Computation
+(ISAAC 2010)</i>, Jeju, Korea, 2010.<br>
+<a href="https://doi.org/10.1007/978-3-642-17517-6_1">Springer, <i>Lecture
+Notes in
+Comp. Sci.</i> 6506, 2010, p. 1</a>.<br>
+<p>
+We survey regular labelings for straight-line embedding of planar graphs
+on grids, rectangular partitions, and <a href="p-steinitz.html">orthogonal polyhedra</a>, and the many
+similarities between these different types of labeling.
+<p>
+(<a href="Epp-CCCG-10.pdf">CCCG talk slides</a>)
+<p>
+<li><b>Privacy-preserving data-oblivious geometric algorithms for
+geographic data</b>.<br>
+D. Eppstein,
+<a href="https://www.ics.uci.edu/~goodrich/">M. T. Goodrich</a>, and
+<a href="https://www.cs.brown.edu/people/rt/home.html">R. Tamassia</a>.<br>
+<a href="https://doi.org/10.1145/1869790.1869796"><i>Proc. 18th ACM SIGSPATIAL Int. Conf. Advances in Geographic
+Information Systems (ACM GIS 2010)</i>, San Jose, California, pp. 13&ndash;22</a>.<br>
+<a href="https://arxiv.org/abs/1009.1904">arXiv:1009.1904</a>.
+<p>
+An algorithm is data-oblivious if the memory access patterns it makes
+depend only on the input size and not on the actual input values;
+data-oblivious algorithms are an important building block of
+cryptographic protocols that allow algorithmic tasks to be solved by
+parties who each have some subset of the input data that they do not
+wish to reveal. We show how to solve several basic geometric problems
+data-obliviously, including construction of convex hulls, quadtrees, and
+well-separated pair decompositions, and computation of closest pairs and
+all nearest neighbors.
+<p>
+<li><b>Bounds on the complexity of halfspace intersections when the
+bounded faces have small dimension</b>.<br>
+D. Eppstein and
+<a href="https://www.ics.uci.edu/~mloffler/">M. L&ouml;ffler</a>.<br>
+<i>Proc. 27th ACM Symp. on Computational Geometry</i>, Paris, 2011, pp. 361&ndash;368.<br>
+<a href="https://arxiv.org/abs/1103.2575">arXiv:1103.2575</a>.<br>
+<a href="https://doi.org/10.1007/s00454-013-9503-3"><i>Discrete Comput. Geom.</i> 50 (1): 1&ndash;21, 2013</a>.
+<p>
+Suppose that <i>P</i> is the intersection of <i>n</i> halfspaces in
+<i>D</i> dimensions, but that the bounded faces of <i>P</i> are at most
+<i>d</i>-dimensional, for some <i>d</i> that is much smaller than
+<i>D</i>. Then in this case we show that the number of vertices of
+<i>P</i> is <i>O</i>(<i>n</i><sup><i>d</i></sup>), independent
+of&nbsp;<i>D</i>. We also investigate related bounds on the number of
+bounded faces of all dimensions of&nbsp;<i>P</i>, and algorithms for
+efficiently listing the vertices and bounded faces of&nbsp;<i>P</i>.
+<li><b>On 2-site Voronoi diagrams under geometric distance functions</b>.<br>
+<a href="https://www.cs.technion.ac.il/~barequet/">G. Barequet</a>,
+<a href="https://www.middlebury.edu/~dickerso/">M. Dickerson</a>,
+D. Eppstein,
+D. Hodorkovsky, and
+K. Vyatkina.<br>
+<a href="https://eurocg11.inf.ethz.ch/abstracts/14.pdf"><i>27th Eur. Worksh. Comp. Geom.</i>, Antoniushaus Morschach,
+Switzerland, 2011, pp. 59&ndash;62</a>.<br>
+<a href="https://doi.org/10.1109/ISVD.2011.13"><i>Proc. 8th Int. Symp. Voronoi Diagrams in Science and
+Engineering</i>, Qing Dao, China, 2011, pp. 31&ndash;38</a>.<br>
+<a href="https://arxiv.org/abs/1105.4130">arXiv:1105.4130</a>.<br>
+<a href="https://doi.org/10.1007/s11390-013-1328-2"><i>J. Computer Science and Technology</i> 28 (2): 267&ndash;277, 2013</a>.
+<p>
+We study the combinatorial complexity of generalized Voronoi diagrams
+that determine the closest two point sites to a query point, where the
+distance from the query point to a pair of sites is a combination of the
+individual distances to the sites and the distance from one site in the
+pair to the other.
+<p>
+<li><b>Adjacency-preserving spatial treemaps</b>.<br>
+<a href="https://www.win.tue.nl/~kbuchin/">K. Buchin</a>,
+D. Eppstein,
+<a href="https://www.ics.uci.edu/~mloffler/">M. L&ouml;ffler</a>,
+<a
+href="https://www.ac.tuwien.ac.at/people/noellenburg/">M. N&ouml;llenburg</a>, and
+<a href="https://www-ma2.upc.edu/rsilveira/">R. I. Silveira</a>.<br>
+<a href="https://arxiv.org/abs/1105.0398">arXiv:1105.0398</a>.<br>
+<i>12th International Symposium on Algorithms and Data Structures (WADS 2011)</i>, New York,
+2011.<br>
+Springer, <i>Lecture Notes in Comp. Sci.</i> 6844, 2011, pp. 159&ndash;170.<br>
+<a href="https://doi.org/10.20382/jocg.v7i1a6"><i>J. Computational Geometry</i> 7 (1): 100&ndash;122, 2016</a>.
+<p>
+We study the recursive partitions of rectangles into sets of rectangles,
+and partitions of those rectangles into smaller rectangles, to form
+stylized visualizations of hierarchically subdivided geographic regions.
+There are several variations of varying difficulty depending on how much
+of the geographic information from the input we require the output to preserve.
+<p>
+<li><b>Tracking moving objects with few handovers</b>.<br>
+D. Eppstein,
+<a href="https://www.ics.uci.edu/~goodrich/">M. T. Goodrich</a>, and
+<a href="https://www.ics.uci.edu/~mloffler/">M. L&ouml;ffler</a>.<br>
+<a href="https://arxiv.org/abs/1105.0392">arXiv:1105.0392</a>.<br>
+<i>12th International Symposium on Algorithms and Data Structures (WADS 2011)</i>, New York,
+2011.<br>
+Springer, <i>Lecture Notes in Comp. Sci.</i> 6844, 2011, pp. 362&ndash;373.
+<p>
+We apply competitive analysis to the problem of deciding online which cell
+phone tower to change to when a phone moves out of the coverage region
+of the tower it is connected to. We show that, when the coverage regions
+have constant ply (at most a constant number of them overlap any point
+of the plane) it is possible to get within a constant factor of the
+minimum possible number of handovers that an offline algorithm could achieve.
+<p>
+<li><b>Improved grid map layout by point set matching</b>.<br>
+D. Eppstein,
+<a href="https://www.cs.uu.nl/~marc/">M. van Kreveld</a>,
+<a href="https://www.win.tue.nl/~speckman/">B. Speckmann</a>, and
+<a href="https://fstaals.net/">F. Staals</a>.<br>
+<i>28th European Workshop on Computational Geometry (EuroCG'12)</i>, Assisi,
+Italy, 2012.<br>
+<i>6th IEEE Pacific Visualization Conf. (PacificVis)</i>, Sydney, Australia, 2013.<br>
+<a href="https://doi.org/10.1142/S0218195915500077"><i>Int. J. Comput. Geom. Appl.</i> 25 (2): 101&ndash;122, 2015</a>.
+<p>
+We study the problem of matching geographic regions to points in a
+regular grid, minimizing the distance between each region's centroid and
+the corresponding grid point, and preserving as much as possible the
+relative orientations between pairs of regions.
+<p>
+<li><b>Area-universal and constrained rectangular layouts</b>.<br>
+D. Eppstein,
+E. Mumford,
+<a href="https://www.win.tue.nl/~speckman/">B. Speckmann</a>, and
+<a href="https://www.tue.nl/staff/k.a.b.verbeek">K. Verbeek</a>.<br>
+<a href="https://doi.org/10.1137/110834032"><i>SIAM J. Computing</i> 41 (3): 537&ndash;564, 2012</a>.
+<p>
+A combined journal version of
+"<a href="p-area-universal.html">Area-universal rectangular layouts</a>"
+and
+"<a href="p-orientation-constrained">Orientation-constrained
+rectangular layouts</a>".
+<p>
+(<a href="EppMumSpe-SJC-12.pdf">Local copy of article</a>)
+<p>
+<li><b>UOBPRM: a uniform distributed obstacle-based PRM</b>.<br>
+<a href="https://parasol.tamu.edu/people/hyeh/">H.-Y. Yeh</a>,
+<a href="https://parasol.tamu.edu/people/sthomas/">S. Thomas</a>,
+D. Eppstein, and
+<a href="https://parasol.tamu.edu/~amato/">N. Amato</a>.<br>
+<a href="https://doi.org/10.1109/IROS.2012.6385875"><i>IEEE/RSJ International
+Conference on Intelligent Robots and Systems (IROS 2012)</i>,
+Vilamoura, Algarve, Portugal, 2012, pp. 2655&ndash;2662</a>.
+<p>
+We use a method based on intersecting obstacles with line segments in
+order to uniformly sample from obstacle surfaces in the probabilistic
+roadmap method for robot motion planning.
+<p>
+<li><b>Set-difference range queries</b>.<br>
+D. Eppstein,
+<a href="https://www.ics.uci.edu/~goodrich/">M. T. Goodrich</a>, and
+<a href="https://www.ics.uci.edu/~jsimons/">J. Simons</a>.<br>
+<a href="https://arxiv.org/abs/1306.3482">arXiv:1306.3482</a>.<br>
+<i>25th Canadian Conference on Computational Geometry</i>, Waterloo,
+Canada, 2013.
+<p>
+We show how to use invertible Bloom filters as part of range searching
+data structures that determine the differences between the members of two
+sets that lie in a given query range.
+<p>
+(<a href="EppGooSim-CCCG-13-slides.pdf">Slides</a>)
+<p>
+<li><b>Finding all maximal subsequences with hereditary properties</b>.<br>
+<a href="https://www.bokal.net/">D. Bokal</a>,
+<a href="https://www.fmf.uni-lj.si/~cabello/">S. Cabello</a>,
+and D. Eppstein.<br>
+<i>Proc. 31st Int. Symp. on Computational Geometry</i>, Eindhoven, the
+Netherlands, June 2015.<br>
+<a href="https://doi.org/10.4230/LIPIcs.SOCG.2015.240">Leibniz International
+Proceedings in Informatics (LIPIcs) 34, pp. 240&ndash;254</a>.
+<p>
+We study problems in which the input is a sequence of points in the
+plane and we wish
+to find, for each position in the sequence, the longest contiguous
+subsequence that begins at that position and has some geometric
+property. For many natural properties we can find all such maximal
+subsequences in linear or near-linear time.
+<p>
+(<a href="BokCabEpp-GD-15-slides.pdf">Slides</a>)
+<p>
+<li><b>Approximate greedy clustering and distance selection for graph metrics</b>.<br>
+D. Eppstein,
+<a href="https://sarielhp.org/">S. Har-Peled</a>, and
+<a href="https://web.cse.ohio-state.edu/~tasos/">A. Sidiropoulos</a>.<br>
+<a href="https://arxiv.org/abs/1507.01555">arXiv:1507.01555</a>.<br>
+<a href="https://doi.org/10.20382/jocg.v11i1a25"><i>J. Computational Geometry</i> 11 (1): 629&ndash;652, 2020</a>.
+<p>
+We provide fast approximation algorithms for the farthest-first
+traversal of graph metrics.
+<p>
+<li><b>Covering many points with a small-area box</b>.<br>
+<a href="https://www.win.tue.nl/~mdberg/">M. De Berg</a>,
+<a href="https://www.fmf.uni-lj.si/~cabello/">S. Cabello</a>,
+<a href="https://otfried.org/index.html">O. Cheong</a>,
+D. Eppstein, and
+<a href="https://www.ai6.uni-bayreuth.de/en/members/christian-knauer-en.html">C. Knauer</a>.<br>
+<a href="https://arxiv.org/abs/1612.02149">arXiv:1612.02149</a>.<br>
+<a href="https://doi.org/10.20382/jocg.v10i1a8"><i>J. Computational
+Geometry</i> 10 (1): 207&ndash;222, 2019</a>.<br>
+<p>
+We give an efficient algorithm for finding the smallest axis-parallel
+rectangle covering a given number of points out of a larger set of
+points in the plane.
+<p>
+<li><b>Forbidden configurations in discrete geometry</b>.<br>
+D. Eppstein.<br>
+Paul Erd&#337;s Memorial Lecture, 29th Canadian Conference on
+Computational Geometry, Ottawa, Canada, 2017.<br>
+Invited talk, 20th Japan Conference on Discrete
+and Computational Geometry, Graphs, and Games, Tokyo, 2017.<br>
+Invited talk, 5th International Combinatorics Conference, Melbourne,
+Australia, 2017.<br>
+Invited talk, Southern California Theory Day, Irvine, California, 2018.<br>
+<a href="https://www.cambridge.org/eppstein">Cambridge University Press, 2018</a>.
+<p>
+We survey problems on finite sets of points in the Euclidean plane that
+are monotone under removal of points and depend only on the order-type
+of the points, and the subsets of points (forbidden configurations) that
+prevent a point set from having a given monotone property.
+<p>
+(<a href="Epp-CCCG-17.pdf">CCCG talk slides</a> &ndash;
+<a href="https://youtu.be/E-7cmjqEbbY?list=PL7Q1MpbNe0pnan3gYPHK_-GEdpnvpRUfi">CCCG
+talk video</a> &ndash;
+<a href="Epp-SCTD-18.pdf">SCTD talk slides</a> &ndash;
+<a href="https://www.ics.uci.edu/~eppstein/forbidden/">Updates, errata, and reviews</a>)
+<p>
+<li><b>Grid peeling and the affine curve-shortening flow</b>.<br>
+D. Eppstein,
+<a href="https://sarielhp.org/">S. Har-Peled</a>, and
+<a href="https://www.gabrielnivasch.org/">G. Nivasch</a>.<br>
+<a href="https://doi.org/10.1137/1.9781611975055.10"><i>Proc. Algorithm
+Engineering &amp; Experiments (ALENEX 2018)</i>,
+New Orleans, 2018, pp. 109&ndash;116</a>.<br>
+<a href="https://doi.org/10.1080/10586458.2018.1466379"><i>Experimental Mathematics</i> 29 (3): 306&ndash;316, 2020</a>.
+<p>
+We conjecture, based on experiments, that approximating a convex shape
+by the set of grid points inside it, for a fine enough grid, and then
+finding the convex layers of the resulting point set, produces curves
+that are close to those produced by affine curve-shortening, a
+continuous process on smooth curves.
+<p>
+<li><b>Geometric fingerprint matching via
+oriented point-set pattern matching</b>.<br>
+D. Eppstein,
+<a href="https://www.ics.uci.edu/~goodrich/">M. T. Goodrich</a>,
+J. Jorgensen, and
+M. Torres.<br>
+<a href="https://arxiv.org/abs/1808.00561">arXiv:1808.00561</a><br>
+<a href="https://www.cs.umanitoba.ca/~cccg2018/papers/proceedings.pdf"><i>Proc. 30th Canadian Conference on
+Computational Geometry</i>, Winnepeg, Canada, 2018, pp. 98&ndash;113</a>.<br>
+<p>
+When matching fingerprints, the data involves planar points each of
+which has an associated direction. Motivated by this application, we
+consider point matching problems
+in which the distance between points combines both their translational
+distance and the rotation needed to make their directions align.
+We provide fast and simple approximation schemes for matching oriented
+point sets under the directed Hausdorff distance with different allowed
+groups of transformations.
+<p>
+<li><b>The parameterized complexity of finding point sets with
+hereditary properties</b>.<br>
+D. Eppstein and
+D. Lokshtanov.<br>
+<a href="https://arxiv.org/abs/1808.02162">arXiv:1808.02162</a><br>
+<i>Proc. 13th International Symposium on Parameterized and Exact
+Computation (IPEC 2018)</i>, Helsinki, Finland, 2018.<br>
+<a href="https://doi.org/10.4230/LIPIcs.IPEC.2018.11">Leibniz International Proceedings in Informatics (LIPIcs) 115, 2018, pp. 11:1&ndash;11:14</a>.
+<p>
+We exhibit a hereditary property of planar point sets (depending only on
+the order type of a point set) such that under standard assumptions
+there is no fixed-parameter-tractable algorithm to find a <i>k</i>-point
+subset with the property. On the other hand, several natural classes of
+properties have FPT algorithms for this problem, including the
+properties that are true for all collinear point sets or false for at
+least one convex polygon.
+<p>
+(<a href="EppLok-IPEC-18-slides.pdf">Slides</a>)
+<p>
+<li><b>Counting polygon triangulations is hard</b>.<br>
+D. Eppstein.<br>
+<a href="http://arxiv.org/abs/1903.04737">arXiv:1903.04737</a>.<br>
+<i>Proc. 35th Int. Symp. on Computational Geometry</i>, Portland, Oregon, June 2019.<br>
+<a href="https://doi.org/10.4230/LIPIcs.SoCG.2019.33">Leibniz International
+Proceedings in Informatics (LIPIcs) 129, 2019, pp. 33:1&ndash;33:17</a>.<br>
+<a href="https://doi.org/10.1007/s00454-020-00251-7">Discrete Comput. Geom. 64 (4): 1210&ndash;1234, 2020 (special issue for SoCG 2019)</a>.
+<p>
+Given a polygon with holes, it is #P-complete to determine how many
+triangulations it has.
+<p>
+(<a href="Epp-UCLA-19.pdf">UCLA seminar talk slides</a> &mdash;
+<a href="Epp-SoCG-19-counting-slides.pdf">SoCG slides</a>)
+<p>
+<li><b>Graphs in nature</b>.</br>
+D. Eppstein.<br>
+Invited talk at Symposium on Geometry Processing, Milan, Italy, July 2019.<br>
+Invited talk at Algorithms and Data Structures Symposium, Edmonton, Canada, August 2019.<br>
+Invited talk at International Colloquium on Graph Theory and
+Combinatorics, Montpellier, France, July 2022.<br>
+<p>
+I survey results on characterizing the graphs formed on planar surfaces
+according to several natural processes: motorcycle graphs, Gilbert
+tessellations, and the contact graphs of line segments from needle-like
+crystal growth and crack formation; the graphs of planar soap bubble
+foams; and graphs representing the fold patterns of crumpled paper.
+<p>
+(<a href="Epp-WADS-19.pdf">WADS slides</a> &ndash;
+<a href="Epp-ICGT-22.pdf">ICGT slides</a>)
+<p>
+<li><b>New results in sona drawing: hardness and TSP separation</b>.<br>
+<a href="https://chiumk.github.io/">M.-W. Chiu</a>,
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+<a href="https://martindemaine.org/">M. Demaine</a>,
+D. Eppstein,
+<a href="https://groups.csail.mit.edu/mac/users/bob/">R. Hearn</a>,
+<a href="https://math.mit.edu/directory/profile.php?pid=1468">A. Hesterberg</a>,
+<a href="https://engineering.tufts.edu/people/faculty/matias-korman">M. Korman</a>,
+<a href="https://www.ist.tugraz.at/parada/">I. Parada</a>, and
+M. Rudoy.<br>
+<a href="https://arxiv.org/abs/2007.15784">arXiv:2007.15784</a>.<br>
+<i><a href="http://cccg.ca/proceedings/2020/proceedings.pdf">Proc. 32nd Canadian Conference on Computational Geometry</a></i>, 2020, pp. 63&ndash;72.
+<p>
+A sona drawing is a self-crossing curve in the plane that separates each
+of a given system of points into its own region. We show that it is hard
+to find the shortest such curve, and we explore how much shorter than
+the TSP it can be.
+<p>
+<li><b>On polyhedral realization with isosceles triangles</b>.<br>
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/2009.00116">arXiv:2009.00116</a>.<br>
+<a href="https://doi.org/10.1007/s00373-021-02314-9"><i>Graphs and Combinatorics</i> 37 (4): 1247&ndash;1269, 2021</a>.<br>
+<p>
+We find convex polyhedra with all faces triangular that cannot be
+realized with all faces isosceles, and new families of convex polyhedra
+with congruent isosceles-triangle faces.
+<p>
+<li><b>Geometric dominating sets &ndash; A minimum version of the
+no-three-in-line problem</b>.<br>
+<a href="https://www.ist.tugraz.at/aichholzer/">O. Aichholzer</a>,
+D. Eppstein, and
+E.-M. Hainzl.<br>
+<a href="http://eurocg21.spbu.ru/wp-content/uploads/2021/04/proceedings.pdf">37th European Workshop on Computational Geometry (EuroCG 2021)</a>, pp. 17:1&ndash;17:7.<br>
+<a href="https://arxiv.org/abs/2203.13170">arXiv:2203.13170</a>.<br>
+<a href="https://doi.org/10.1016/j.comgeo.2022.101913"><i>Comp. Geom. Theory &amp; Applications</i> 108: 101913, 2023 (special issue for EuroCG)</a>.<br>
+<p>
+We study how few points can be placed in a grid so that all
+remaining grid points are collinear with two of the placed points.
+<p>
+<li><b>Multifold tiles of polyominoes and convex lattice polygons</b>.<br>
+K. Chida,
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+<a href="https://martindemaine.org/">M. Demaine</a>,
+D. Eppstein,
+<a href="https://math.mit.edu/directory/profile.php?pid=1468">A. Hesterberg</a>,
+T. Horiyama,
+<a href="https://di.ulb.ac.be/algo/iacono/">J. Iacono</a>,
+<a href="https://www.alg.cei.uec.ac.jp/itohiro/">H. Ito</a>,
+<a href="http://cgm.cs.mcgill.ca/~sl/">S. Langerman</a>,
+<a href="https://www.jaist.ac.jp/~uehara/index-e.html">R. Uehara</a>, and
+<a href="https://jazz.cias.osakafu-u.ac.jp/~uno/index-e.htm">Y. Uno</a>.<br>
+<a href="http://www.math.science.cmu.ac.th/tjcdcggg/Book-abstract.pdf"><i>23rd Thailand-Japan Conference on Discrete and Computational
+Geometry, Graphs, and Games</i>, 2021, pp. 28&ndash;29</a>.<br>
+<a href="https://thaijmath2.in.cmu.ac.th/index.php/thaijmath/article/view/1559"><i>Thai Journal of Mathematics</i> 21 (4): 957&ndash;978, 2023</a>.
+<p>
+We investigate shapes whose congruent copies can cover the plane
+exactly \(k\) times per point, but not a number of times that is a
+nonzero integer
+smaller than \(k\). We find polyominoes with this property for all \(k\ge 2\), and convex integer-coordinate polygons with this property for \(k=5\)
+and for all \(k\ge 7\).
+<p>
+<li><b>Orthogonal dissection into few rectangles</b>.<br>
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/2206.10675">arXiv:2206.10675</a>.<br>
+<a href="https://www.torontomu.ca/content/dam/canadian-conference-computational-geometry-2022/papers/CCCG2022_paper_33.pdf"><i>34th Canadian Conference on Computational Geometry</i>, 2022, pp. 143&ndash;150</a>.<br>
+<a href="https://doi.org/10.1007/s00454-023-00614-w"><i>Discrete Comput. Geom.</i> 73 (1): 129&ndash;148, 2025</a>.<br>
+<p>
+The rank of the Dehn invariant of an orthogonal polygon equals the
+minimum number of rectangles into which it can be transformed by
+axis-parallel cuts, translation, and gluing. This allows the minimum
+number of rectangles to be calculated in polynomial time.
+<p>
+(<a href="Epp-CCCG-22a.pdf">Slides</a>)
+<p>
+<li><b>Reflections in an octagonal mirror maze</b>.<br>
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/2206.11413">arXiv:2206.11413</a>.<br>
+<a href="https://www.torontomu.ca/content/dam/canadian-conference-computational-geometry-2022/papers/CCCG2022_paper_31.pdf"><i>34th Canadian Conference on Computational Geometry</i>, 2022, pp. 129&ndash;134</a>.<br>
+<p>
+For two-dimensional scenes consisting of mirrors and opaque walls that
+are either axis-parallel or with slope &pm;1, with integer endpoints,
+it is possible to determine the eventual destination of rational light
+rays in time polynomial in the description complexity of the scene, even
+though the number of reflections before a ray reaches this destination
+may be exponential. The solution involves transforming the problem into one
+involving interval exchange transformations and from there into another
+problem involving normal curves on topological surfaces.
+<p>
+(<a href="Epp-CCCG-22c.pdf">Slides</a>)
+<p>
+<li><b>Geodesic paths passing through all faces on a polyhedron</b>.<br>
+<a href="https://erikdemaine.org/">E. Demaine</a>,
+<a href="https://martindemaine.org/">M. Demaine</a>,
+D. Eppstein,
+<a href="https://www.alg.cei.uec.ac.jp/itohiro/">H. Ito</a>,
+Y. Katayama,
+W. Maruyama, and
+<a href="https://jazz.cias.osakafu-u.ac.jp/~uno/index-e.htm">Y. Uno</a>.<br>
+<a href="https://www.rs.tus.ac.jp/jcdcggg/JCDCG3-2022Proceedings(r2).pdf"><i>24th Japan Conference on Discrete and Computational Geometry, Graphs, and Games</i>, 2022, pp. 58&ndash;59</a>.<br>
+<p>
+Which convex polyhedra have the property that there exist two points on
+the surface of the polyhedron whose shortest path passes through all of
+the faces of the polyhedron? The answer is yes for the tetrahedron, and
+for certain prisms, but no for all other regular polyhedra.
+<p>
+<li><b>Non-crossing Hamiltonian paths and cycles in output-polynomial time</b>.<br>
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/2303.00147">arXiv:2303.00147</a>.<br>
+<i>Proc. 39th International Symposium on Computational Geometry (SoCG 2023)</i>.<br>
+<a href="https://doi.org/10.4230/LIPIcs.SoCG.2023.29">Leibniz
+International Proceedings in Informatics (LIPIcs) 258, 2023,
+pp. 29:1&ndash;29:16</a>.<br>
+<a href="https://doi.org/10.1007/s00453-024-01255-y"><i>Algorithmica</i> 86: 3027&ndash;3053, 2024</a>.
+<p>
+For any point set, the numbers of non-crossing paths, non-crossing
+Hamiltonian paths, non-crossing surrounding polygons, and non-crossing
+Hamiltonian cycles can be bounded above and below by functions of two
+simple parameters: the minimum number of points whose deletion leaves a
+collinear subset, and the number of points interior to the convex hull.
+Because their bounds have the same form, the numbers of the two types of
+paths are bounded by polynomials of each other, as are the numbers of
+the two types of polygons. We use these relations to list non-crossing
+Hamiltonian paths and polygonalizations in time polynomial in the number
+of outputs.
+<p>
+(<a href="Epp-SoCG-23.pdf">Talk slides</a>)
+<p>
+<li><b>Widths of geometric graphs</b>.<br>
+D. Eppstein.<br>
+Invited talk, <a href="https://www.lirmm.fr/~wlochet/workshop/">Workshop
+on Parameterized Algorithms for Geometric Problems</a>, CG Week 2023.<br>
+<p>
+Many computational geometry problems can be solved by transforming them
+into a graph problem on a geometric graph. When the graph has low width,
+for some form of graph width, this can often lead to efficient classical
+or parameterized algorithms. We survey the geometric graphs that always
+have low width, the geometric graphs that can have high width, and the
+opportunities for parameterization obtained by studying low-width
+instances of graphs that sometimes have high width.
+<p>
+(<a href="Epp-WPAGP-23.pdf">Talk slides</a>)
+<p>
+<li><b>Geometric graphs with unbounded flip-width</b>.<br>
+D. Eppstein and
+<a href="https://web.math.princeton.edu/~rm1850/">R. McCarty</a>.<br>
+<a href="https://arxiv.org/abs/2306.12611">arXiv:2306.12611</a>.<br>
+<a href="https://wadscccg2023.encs.concordia.ca/assets/pdf/CCCG_2023_proc.pdf"><i>Proc. 35th Canadian Conference on Computational Geometry</i>, 2023, pp. 197&ndash;208</a>.
+<p>
+We show that many constructions for dense geometric graphs produce
+graphs of unbounded flip-width, frustrating the search for natural
+classes of graphs that have bounded flip-width but unbounded twin-width.
+<p>
+<li><b>Non-Euclidean Erd&#337;s&ndash;Anning theorems</b>.<br>
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/2401.06328">arXiv:2401.06328</a>.<br>
+<i>41st International Symposium on Computational Geometry (SoCG 2025)</i>, Kanazawa, Japan.<br>
+<a href="https://doi.org/10.4230/LIPIcs.SoCG.2025.46">Leibniz
+International Proceedings in Informatics (LIPIcs) 332, 2023,
+pp. 46:1&ndash;46:15</a>.<br>
+<p>
+Non-collinear point sets with integer distances must be finite, for
+strictly convex distance functions on the plane, for two-dimensional
+complete Riemannian manifolds of bounded genus, and for geodesic
+distance on convex surfaces in 3d.
+<p>
+(<a href="Epp-SoCG-25-slides.pdf">SoCG talk slides</a>)
+<p>
+<li><b>Well-separated multiagent path traversal</b>.<br>
+G. Dilman,
+D. Eppstein,
+<a href="https://weber.itn.liu.se/~valpo40/">V. Polishchuk</a>, and
+<a href="https://www.itn.liu.se/~chrsc91/">C. Schmidt</a>.<br>
+<a href="https://cosc.brocku.ca/~rnishat/CCCG_2024_proceedings.pdf"><i>Proc. 36th Canadian Conference on Computational Geometry</i>, 2024, pp. 137&ndash;144</a>.
+<p>
+We find algorithms and lower bounds for scheduling a sequence of release
+times for robots to follow the same path as each other, traversing the
+path at uniform speeds, and not colliding.
+<p>
+<li><b>Noncrossing longest paths and cycles</b>.<br>
+<a href="https://research.engineering.nyu.edu/~greg/">G. Aloupis</a>,
+<a href="https://cglab.ca/~biniaz/">A. Biniaz</a>,
+<a href="https://jitbose.ca/">P. Bose</a>,
+<a href="https://cglab.ca/~jdecaruf/">J.-L. De Carufel</a>,
+D. Eppstein,
+<a href="https://people.scs.carleton.ca/~maheshwa/">A. Maheshwari</a>,
+S. Odak,
+<a href="https://people.scs.carleton.ca/~michiel/">M. Smid</a>,
+<a href="http://csabatoth.org/">C. T&oacute;th</a>, and
+<a href="https://kam.mff.cuni.cz/~valtr/">P. Valtr</a>.<br>
+<i>32nd International Symposium on Graph Drawing and Network
+Visualization</i>.<br>
+<a href="https://doi.org/10.4230/LIPIcs.GD.2024.36">Leibniz
+International Proceedings in Informatics (LIPIcs) 320, 2024,
+pp. 36:1&ndash;36:17</a>.<br>
+<a href="https://arxiv.org/abs/2410.05580">arXiv:2410.05580</a>.<br>
+<i>Graphs and Combinatorics</i>, to appear.
+<p>
+The shortest path or cycle through given planar points (the solution to
+the traveling salesperson problem) never crosses itself: any crossing
+can be eliminated by a local move that shortens the tour. One might
+think that, correspondingly, the longest path or cycle through enough
+planar points always crosses itself. We show that this is not the case:
+there exist arbitrarily large point sets for which the longest path or
+cycle has no crossing.
+<p>
+<li><b>Computational geometry with probabilistically noisy primitive operations</b>.<br>
+D. Eppstein,
+<a href="https://www.ics.uci.edu/~goodrich/">M. T. Goodrich</a>,
+and V. Sridhar.<br>
+<a href="https://arxiv.org/abs/2501.07707">arXiv:2501.07707</a>.<br>
+<i>Proc. 19th Algorithms and Data Structures Symposium (WADS 2025)</i>.<br>
+<a href="https://doi.org/10.4230/LIPIcs.WADS.2025.24">Leibniz
+International Proceedings in Informatics (LIPIcs) 349, 2025,
+pp. 24:1&ndash;24:20</a>.<br>
+<p>
+An algorithm that uses Boolean primitive operations, like comparisons,
+that may be erroneous with some small independent probability per call,
+may be made to run correctly with high probability by repeating each
+primitive enough times to be sure its majority result is correct, but
+this incurs a logarithmic time penalty. Prior work avoids this penalty
+for sorting; we extend this speedup to algorithms in computational
+geometry that can be formulated using path search in DAGs.  Applications
+of our "path-guided pushdown random walk" technique include point
+location, plane sweep, convex hulls, and Delaunay triangulation.
+<p>
+<li><b>Better late than never: the complexity of arrangements of polyhedra</b>.<br>
+<a href="https://cis.poly.edu/~aronov/">B. Aronov</a>,
+<a href="http://algeo.kyonggi.ac.kr/">S. W. Bae</a>,
+<a href="https://otfried.org/index.html">O. Cheong</a>,
+D. Eppstein,
+<a href="https://www.ai6.uni-bayreuth.de/en/members/christian-knauer-en.html">C. Knauer</a>, and
+<a href="https://www-tcs.cs.uni-sb.de/">R. Seidel</a>.
+<br>
+<a href="https://kam.mff.cuni.cz/conferences/eurocg2025/booklet2025.pdf"><i>41st European Workshop on Computational Geometry (EuroCG 2025)</i>,
+Liblice, Czech Republic, pp. 62:1&ndash;62:4.<br>
+<a href="https://arxiv.org/abs/2506.03960">arXiv:2506.03960</a>.<br>
+<p>
+My 1994 paper "<a href="p-1-steiner.html">On the number of minimal
+1-Steiner trees</a>" with Aronov and Bern, in some preliminary
+manuscript versions, included a bound of \(O(m^{\lceil
+d/2\rceil}n^{\lfloor d/2\rfloor})\) on the complexity of an arrangement
+of \(m\) convex polytopes given as intersections of a total of \(n\)
+halfspaces, interpolating between the upper bound theorem for polytopes
+and the complexity of hyperplane arrangements. However, the manuscript
+and the proof were lost. This paper re-proves the result, with better
+care for the degenerate cases.
+<p>
+<li><b>Decremental greedy polygons and polyhedra without sharp angles</b>.<br>
+D. Eppstein.<br>
+<a href="https://arxiv.org/abs/2507.04538">arXiv:2507.04538</a>.<br>
+<a href="https://cccg-wads-2025.eecs.yorku.ca/cccg-papers/33.pdf"><i>Proc. 37th
+Canadian Conference on Computational Geometry</i>, 2025,
+pp. 85&ndash;91</a>.<br>
+<p>
+For given elements and a quality function of an element in a subset,
+monotonically non-increasing with respect to removals of other elements,
+we can find the max-min-quality subset by a decremental greedy algorithm
+that repeatedly removes low-quality subsets. We apply this method to
+find the max-min-angle polygon for points in the plane, the
+max-min-weight cycle in a directed graph, and several generalizations of
+both problems.
+<p>
+<li><b>Instance-optimal computational geometry made easier and sensitive to sortedness</b>.<br>
+D. Eppstein,
+<a href="https://www.ics.uci.edu/~goodrich/">M. T. Goodrich</a>,
+A. M. Illickan, and
+C. A. To.<br>
+<a href="https://arxiv.org/abs/2508.20489">arXiv:2508.20489</a>.<br>
+<a href="https://cccg-wads-2025.eecs.yorku.ca/cccg-papers/22.pdf"><i>Proc. 37th
+Canadian Conference on Computational Geometry</i>, 2025,
+pp. 53&ndash;61.</a><br>
+<p>
+We define a notion of structural entropy of point sets under which a set
+has low entropy when it can be covered by few disjoint triangles that
+are either entirely under the hull of the input or presorted, and show
+that we can find the hull in time sensitive to this
+entropy. Generalizations of the same technique apply to geometric
+maxima, lower envelopes, and visibility polygons.
+<p>
+<li><b>Bicriteria polygon aggregation with arbitrary shapes</b>.<br>
+<a href="https://tcs.cs.uni-bonn.de/doku.php/staff/lotteblank">L. Blank</a>,
+D. Eppstein,
+<a href="https://www.uni-bonn.de/de/forschung-lehre/forschungsprofil/transdisziplinaere-forschungsbereiche/modelling/mitgliederverzeichnis/jan-henrik-haunert">J.-H. Haunert</a>,
+<a href="http://herman.haverkort.net/">H. Haverkort</a>,
+<a href="https://hyperbolictilings.wordpress.com/">B. Kolbe</a>,
+<a href="https://ca.cs.uni-bonn.de/doku.php?id=people:mayer">P. Mayer</a>,
+<a href="https://www.apm.tuwien.ac.at/people/Mutzel.html">P. Mutzel</a>,
+<a href="https://www.igg.uni-bonn.de/geoinfo/en/team/naumann">A. Naumann</a>, and
+<a href="https://ca.cs.uni-bonn.de/doku.php?id=people:sauer">J. Sauer</a>.<br>
+<a href="https://arxiv.org/abs/2507.11212">arXiv:2507.11212</a>.<br>
+<p>
+</ul>
+
+<hr><p>
+<a href="geom.html">Geometry</a> &ndash;
+<a href="/~eppstein/pubs/">Publications</a> &ndash;
+<a href="/~eppstein/">David Eppstein</a> &ndash;
+<a href="/~theory/">Theory Group</a> &ndash;
+<a href="/">Inf. &amp; Comp. Sci.</a> &ndash;
+<a href="https://www.uci.edu/">UC Irvine</a>
+<p>
+<small>Semi-automatically <a href="filter.html">filtered</a>
+from a common source file.</small>
+</body></html>

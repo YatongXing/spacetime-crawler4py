@@ -1,0 +1,122 @@
+<!-- URL: http://www.ics.uci.edu/~eppstein/164 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Computational Geometry</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<h1>CS 164/266, Fall 2025:<br>
+Computational Geometry</h1>
+
+<hr>
+<p></p>
+
+<h2>General Course Information</h2>
+
+<p>The two courses CS 164 (for undergraduates) and CS 266 (for graduate
+students) are co-located: they will have the same lectures,
+but different homework and exam problems.
+They will be taught by <a href="/~eppstein/">David
+Eppstein</a>, eppstein@uci.edu  (office hours Fridays 1:30 - 2:30 in Bren 4082). The teaching assistant is Cole Groen (office hours Tuesdays 2-3 in ICS 458C and Wednesdays 12-1 in ICS 458F). There is an online discussion forum on Ed Discussion.</p>
+
+<p>For both courses, I will assign weekly practice problem sets at the start of each week, covering that week's material, and I strongly recommend that all students do these, but they will not be collected and graded. Instead, solutions will be posted at the end of the week to "Resources" in Ed Discussion, and you can expect to see similar problems (or even in some cases the same problems) on the exams. For CS 266, I will also post a weekly graduate reading assignment from the computational geometry research literature; students are expected to understand at least the introductions to these papers, and I may include questions on these in the exams. There will be three exams (two midterms and a final) each covering the material from roughly one third of the class (not comprehensive), each equally weighted in the overall course grade. Exams will be closed book, closed notes, and closed friends.</p>
+
+<p>The course text is <i>Computational Geometry Algorithms and
+Applications</i>, 3nd ed., by de Berg, van Kreveld, Overmars, and
+Cheong (Springer-Verlag, 2008). An electronic version is available
+for no charge from UCI internet addresses at <a
+href="http://link.springer.com/book/10.1007/978-3-540-77974-2">
+SpringerLink</a>.</p>
+
+<p>The combined lecture for both courses will meet physically on Tuesdays and Thursdays, 12:30–1:50pm, in <a href="https://classrooms.uci.edu/classroomtechnology/classrooms/mstb/mstb-118">MSTB 118</a>. The final exam will be in the same place on Friday, December 12, 10:30AM–12:30PM. Lectures will also be in person only. Links to the lecture notes for each topic will be posted on this page prior to each lecture. Except for students with special arrangements through the UCI Disability Services Center, all exams will be in person only.</p>
+    
+<h2>Tentative Schedule</h2>
+
+<dl>
+<dt><b>Week 0</b> (September 25).</dt>
+<dd>&nbsp;</dd>
+<dd><b>No lecture.</b></dd>
+<dd>&nbsp;</dd>
+<dt><b>Week 1</b> (September 30, October 2).</dt>
+<dd>&nbsp;</dd>
+<dd>Coordinate systems and geometric primitives; convex hulls [Chap. 1]</dd>
+<dd>Projective geometry; line segment intersection [Chap. 2; Sec. 8.2]</dd>
+<dd>&nbsp;</dd>
+<dd>Lecture slides: <a href="lecture1.pdf">Tuesday</a>; <a href="lecture2.pdf">Thursday</a>
+<dd>&nbsp;</dd>
+<dd>Graduate reading: <a href="https://arxiv.org/abs/2409.19784">Making Quickhull More Like Quicksort: A Simple Randomized Output-Sensitive Convex Hull Algorithm</a> (Goodrich & Kitagawa, arXiv:2409.19784)</dd>
+<dd>&nbsp;</dd>
+<dd><a href="f25-ps1.html">Practice problem set 1</a></dd>
+<dd>&nbsp;</dd>
+<dt><b>Week 2</b> (October 7, 9).</dt>
+<dd>&nbsp;</dd>
+<dd>Arrangements of lines [Chap. 8]</dd>
+<dd>Polygon triangulation [Chap. 3]</dd>
+<dd>&nbsp;</dd>
+<dd>Lecture slides: <a href="lecture3.pdf">Tuesday</a>; <a href="lecture4.pdf">Thursday</a>
+<dd>&nbsp;</dd>
+<dd>Graduate reading: <a href="https://arxiv.org/abs/1701.05475">Irrational Guards are Sometimes Needed</a> (Abrahamsen, Adamaszek, and Miltzow, arXiv:1701.05475). There's <a href=">https://doi.org/10.1145/3486220">a stronger result by the same authors in _JACM_ 2021</a> but I think the 2017 paper is easier to read.</a>
+<dd>&nbsp;</dd>
+<dd><a href="f25-ps2.html">Practice problem set 2</a></dd>
+<dd>&nbsp;</dd>
+<dt><b>Week 3</b> (October 14, 16).</dt>
+<dd>&nbsp;</dd>
+<dd>Visibility and shortest paths [Chap. 15]</dd>
+<dd>Quadtrees and mesh generation [Chap. 14]</dd>
+<dd>&nbsp;</dd>
+<dd>Lecture slides: <a href="lecture5.pdf">Tuesday</a>; <a href="lecture6.pdf">Thursday</a>
+<dd>&nbsp;</dd>
+<dd>Graduate reading: <a href="https://doi.org/10.1137/1.9781611973068.32">Approximate Euclidean shortest paths amid convex obstacles</a> (Agarwal, Sharathkumar, and Yu, SODA 2009).
+<dd>&nbsp;</dd>
+<dd><a href="f25-ps3.html">Practice problem set 3</a></dd>
+<dd>&nbsp;</dd>
+<dt><b>Week 4</b> (October 21, 23).</dt>
+<dd>&nbsp;</dd>
+<dd><b>First midterm exam</b>, Tuesday, October 21</dd>
+<dd>Three-dimensional convex hulls [Chap. 11].</dd>
+<dd>&nbsp;</dd>
+<dt><b>Week 5</b> (October 28, 30).</dt>
+<dd>&nbsp;</dd>
+<dd>Linear programming and LP-type problems [Chap. 4].</dd>
+<dd>&nbsp;</dd>
+<dt><b>Week 6</b> (November 4, 6).</dt>
+<dd>&nbsp;</dd>
+<dd>Point location and the locus method [Chap. 6]</dd>
+<dd>Voronoi diagrams [Chap. 7]</dd>
+<dd>&nbsp;</dd>
+<dt><b>Week 7</b> (November 11, 13).</dt>
+<dd>&nbsp;</dd>
+<dd>Delaunay triangulations and minimum spanning trees [Chap. 9]</dd>
+<dd><b>Second midterm exam</b>, Thursday, November 13</dd>
+<dd>&nbsp;</dd>
+<dt><b>Week 8</b> (November 28, 20).</dt>
+<dd>&nbsp;</dd>
+<dd>Binary space partitions and ray shooting [Chap. 12]</dd>
+<dd>Range counting, kD-trees, and quadtrees [Chap. 5]</dd>
+<dd>&nbsp;</dd>
+<dt><b>Week 9</b> (November 25, 27).</dt>
+<dd>&nbsp;</dd>
+<dd>Range reporting, onion layers, and fractional cascading [Chap. 5]</dd>
+<dd><b>Thanksgiving holiday</b>, November 27<dd>
+<dd>&nbsp;</dd>
+<dt><b>Week 10</b> (December 2, 4).</dt>
+<dd>&nbsp;</dd>
+<dd>Segment trees and interval trees [Chap. 10]</dd>
+<dd>Motion planning and configuration spaces [Chap. 13]</dd>
+<dd>&nbsp;</dd>
+<dt><b>Final exam week</b>.</dt>
+<dd>&nbsp;</dd>
+<dd>Final exam, December 12, 10:30AM–12:30PM</dd>
+</dl>
+
+<p>Sample exams from past years (not guaranteed to cover the same material
+as this year):</p>
+<ul><li><a href="w07-midterm.pdf">Midterm, Winter 2007</a></li>
+<li><a href="s08-midterm.pdf">Midterm, Spring 2008</a></li>
+<li><a href="s19-final.pdf">Final, Spring 2019</a></li>
+</ul>
+</body>
+</html>

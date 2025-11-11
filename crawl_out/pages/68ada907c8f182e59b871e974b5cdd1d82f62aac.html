@@ -1,0 +1,595 @@
+<!-- URL: https://swiki.ics.uci.edu/doku.php/commands:file_security -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Understanding and Setting UNIX File Permissions [Support Wiki]</title>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="commands,file_security"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/css.php?css=assets/mikio.less"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/icons/fontawesome/css/all.min.css"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Support Wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php/commands:file_security?do=index" title="Sitemap"/>
+<link rel="manifest" href="/lib/exe/manifest.php" crossorigin="use-credentials"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="/feed.php?mode=list&amp;ns=commands"/>
+<link rel="edit" title="Edit this page" href="/doku.php/commands:file_security?do=edit"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="/doku.php/commands:file_security?do=export_xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="/doku.php/commands:file_security?do=export_raw"/>
+<link rel="canonical" href="https://wiki.ics.uci.edu/doku.php/commands:file_security"/>
+<link rel="stylesheet" href="/lib/exe/css.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"/>
+<script >var NS='commands';var JSINFO = {"plugins":{"gallery":{"defaults":{"thumbnailsize":{"default":"150x150"},"imagesize":{"default":"1600X1200"},"cache":{"default":true},"filter":{"default":""},"showname":{"default":false},"showtitle":{"default":false},"crop":{"default":true},"direct":{"default":false},"reverse":{"default":false},"recursive":{"default":false},"align":{"default":0},"cols":{"default":0},"limit":{"default":0},"offset":{"default":0},"paginate":{"default":0},"sort":{"default":"file"},"namespace":{"default":""}}}},"isadmin":0,"isauth":0,"move_renameokay":false,"move_allowrename":false,"plugin_slider":{"width":800,"mode":"horizontal","infiniteLoop":true,"hideControlOnEnd":false,"speed":500,"easing":null,"slideMargin":0,"startSlide":0,"randomStart":false,"captions":false,"ticker":false,"tickerHover":false,"adaptiveHeight":false,"adaptiveHeightSpeed":500,"video":false,"useCSS":true,"preloadImages":"visible","responsive":true,"pager":true,"pagerType":"full","pagerShortSeparator":"\/","controls":true,"nextText":"Next","prevText":"Prev","autoControls":false,"startText":"Start","stopText":"Stop","autoControlsCombine":false,"auto":false,"pause":4000,"autoStart":true,"autoDirection":"next","autoHover":false,"autoDelay":0,"minSlides":1,"maxSlides":1,"moveSlides":0,"slideWidth":0,"touchEnabled":true,"swipeThreshold":50,"oneToOneTouch":true,"preventDefaultSwipeX":true,"preventDefaultSwipeY":false},"SMILEY_CONF":{"8-)":"cool.svg","8-O":"eek.svg","8-o":"eek.svg",":-(":"sad.svg",":-)":"smile.svg","=)":"smile2.svg",":-\/":"doubt.svg",":-\\":"doubt2.svg",":-?":"confused.svg",":-D":"biggrin.svg",":-P":"razz.svg",":-o":"surprised.svg",":-O":"surprised.svg",":-x":"silenced.svg",":-X":"silenced.svg",":-|":"neutral.svg",";-)":"wink.svg","m(":"facepalm.svg","^_^":"fun.svg",":?:":"question.svg",":!:":"exclaim.svg","LOL":"lol.svg","FIXME":"fixme.svg","DELETEME":"deleteme.svg"},"id":"commands:file_security","namespace":"commands","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<script src="/lib/exe/jquery.php?tseed=8faf3dc90234d51a499f4f428a0eae43"></script>
+<script src="/lib/exe/js.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio-typeahead.js" defer="defer"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio.js" defer="defer"></script>
+<link rel="shortcut icon" href="/lib/tpl/mikio/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/mikio/images/apple-touch-icon.png" />
+</head>
+<body class="mikio">
+<div id="dokuwiki__site">
+    <div id="dokuwiki__top" class="site dokuwiki mode_show tpl_mikio    showSidebar hasSidebar"><nav class="mikio-navbar"><div class="mikio-container"><a class="mikio-navbar-brand" href="/doku.php/start" accesskey="h" title="Home [h]"><img src="/lib/exe/fetch.php/wiki:logo.png" class="mikio-navbar-brand-image" style="width:250px;max-width:none;max-height:none;"><div class="mikio-navbar-brand-title"><h1 class="mikio-navbar-brand-title-text">Support Wiki</h1><p class="claim mikio-navbar-brand-title-tagline"></p></div></a><div class="mikio-navbar-toggle"><span class="icon"></span></div><div class="mikio-navbar-collapse"><div class="mikio-nav-item"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="commands:file_security"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form></div><ul class="mikio-nav"><li id="dokuwiki__pagetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_pagetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,235.38983,1277.8305)" id="g2991">
+<path d="M 128,0 H 1152 V 768 H 736 q -40,0 -68,28 -28,28 -28,68 v 416 H 128 V 0 z m 640,896 h 299 L 768,1195 V 896 z M
+1280,768 V -32 q 0,-40 -28,-68 -28,-28 -68,-28 H 96 q -40,0 -68,28 -28,28 -28,68 v 1344 q 0,40 28,68 28,28 68,28 h 544
+q 40,0 88,-20 48,-20 76,-48 l 408,-408 q 28,-28 48,-76 20,-48 20,-88 z" id="path2993" /></g></svg><span class="mikio-small-only">Page Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item revs" href="/doku.php/commands:file_security?do=revisions" title="Old revisions"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></span><span>Old revisions</span></a><a class="mikio-nav-link mikio-dropdown-item backlink" href="/doku.php/commands:file_security?do=backlink" title="Backlinks"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></span><span>Backlinks</span></a></div></li><li id="dokuwiki__sitetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_sitetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,121.49153,1285.4237)" id="g3027">
+<path d="m 1024,640 q 0,106 -75,181 -75,75 -181,75 -106,0 -181,-75 -75,-75 -75,-181 0,-106 75,-181 75,-75 181,-75 106,0
+181,75 75,75 75,181 z m 512,109 V 527 q 0,-12 -8,-23 -8,-11 -20,-13 l -185,-28 q -19,-54 -39,-91 35,-50 107,-138 10,-12
+10,-25 0,-13 -9,-23 -27,-37 -99,-108 -72,-71 -94,-71 -12,0 -26,9 l -138,108 q -44,-23 -91,-38 -16,-136 -29,-186 -7,-28
+-36,-28 H 657 q -14,0 -24.5,8.5 Q 622,-111 621,-98 L 593,86 q -49,16 -90,37 L 362,16 Q 352,7 337,7 323,7 312,18 186,132
+147,186 q -7,10 -7,23 0,12 8,23 15,21 51,66.5 36,45.5 54,70.5 -27,50 -41,99 L 29,495 Q 16,497 8,507.5 0,518 0,531 v 222
+q 0,12 8,23 8,11 19,13 l 186,28 q 14,46 39,92 -40,57 -107,138 -10,12 -10,24 0,10 9,23 26,36 98.5,107.5 72.5,71.5 94.5,
+71.5 13,0 26,-10 l 138,-107 q 44,23 91,38 16,136 29,186 7,28 36,28 h 222 q 14,0 24.5,-8.5 Q 914,1391 915,1378 l 28,-184
+q 49,-16 90,-37 l 142,107 q 9,9 24,9 13,0 25,-10 129,-119 165,-170 7,-8 7,-22 0,-12 -8,-23 -15,-21 -51,-66.5 -36,-45.5
+-54,-70.5 26,-50 41,-98 l 183,-28 q 13,-2 21,-12.5 8,-10.5 8,-23.5 z" id="path3029" />
+</g></svg><span class="mikio-small-only">Site Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item recent" href="/doku.php/commands:file_security?do=recent" title="Recent Changes"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69V13m4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67V8M5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2H5m11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85z"/></svg></span><span>Recent Changes</span></a><a class="mikio-nav-link mikio-dropdown-item media" href="/doku.php/commands:file_security?do=media&ns=commands" title="Media Manager"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 15l4.5-6 3.5 4.5 2.5-3L21 15m1-11h-8l-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M2 6H0v14a2 2 0 0 0 2 2h18v-2H2V6z"/></svg></span><span>Media Manager</span></a><a class="mikio-nav-link mikio-dropdown-item index" href="/doku.php/commands:file_security?do=index" title="Sitemap"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2z"/></svg></span><span>Sitemap</span></a></div></li><li id="dokuwiki__usertools" class="mikio-nav-dropdown"><a id="mikio_dropdown_usertools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,197.42373,1300.6102)"><path d="M
+1408,131 Q 1408,11 1335,-58.5 1262,-128 1141,-128 H 267 Q 146,-128 73,-58.5 0,11 0,131 0,184 3.5,234.5 7,285 17.5,343.5
+28,402 44,452 q 16,50 43,97.5 27,47.5 62,81 35,33.5 85.5,53.5 50.5,20 111.5,20 9,0 42,-21.5 33,-21.5 74.5,-48 41.5,
+-26.5 108,-48 Q 637,565 704,565 q 67,0 133.5,21.5 66.5,21.5 108,48 41.5,26.5 74.5,48 33,21.5 42,21.5 61,0 111.5,-20
+50.5,-20 85.5,-53.5 35,-33.5 62,-81 27,-47.5 43,-97.5 16,-50 26.5,-108.5 10.5,-58.5 14,-109 Q 1408,184 1408,131 z m
+-320,893 Q 1088,865 975.5,752.5 863,640 704,640 545,640 432.5,752.5 320,865 320,1024 320,1183 432.5,1295.5 545,1408 704,
+1408 863,1408 975.5,1295.5 1088,1183 1088,1024 z"/></g></svg><span class="mikio-small-only">User Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item login" href="/doku.php/commands:file_security?do=login&sectok=" title="Log In"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></span><span>Log In</span></a></div></li></ul></div></div></nav><a name="dokuwiki__top" id="dokuwiki__top"></a><div class="mikio-hero"><div class="mikio-container"><div class="mikio-hero-text"><div class="mikio-breadcrumbs"><div class="mikio-container"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php/commands:file_security"  class="breadcrumbs" title="commands:file_security">Understanding and Setting UNIX File Permissions</a></bdi></span></div></div><h1 class="mikio-hero-title">Understanding and Setting UNIX File Permissions</h1><h2 class="mikio-hero-subtitle"></h2></div><div class="mikio-hero-image"><div class="mikio-tags"></div></div></div></div><main class="mikio-page"><div class="mikio-container"><aside class="mikio-sidebar mikio-sidebar-left"><a class="mikio-sidebar-toggle closed" href="#">Sidebar <span class="icon"></span></a><div class="mikio-sidebar-collapse"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="commands:file_security"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form><div class="mikio-sidebar-content"><div><div id="nojs_indexmenu_92216708768e6d56a08415" data-jsajax="%26group%3D1" class="indexmenu_nojs">
+<ul class="idx">
+<li class="closed"><div class="li"><a href="/doku.php/accounts:accounts" class="indexmenu_idx_head" data-wiki-id="accounts:accounts">ICS Accounts</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/announce:announce" class="indexmenu_idx_head" data-wiki-id="announce:announce">Announcement and Maintenance</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/backups:backups" class="indexmenu_idx_head" data-wiki-id="backups:backups">Backups @ ICS</a></div></li>
+<li class="open"><div class="li"><a href="/doku.php/commands:commands" class="indexmenu_idx_head" data-wiki-id="commands:commands">Common Tasks and Commands</a></div>
+<ul class="idx">
+<li class="level2" ><div class="li"><a href="/doku.php/commands:advanced_unix" class="wikilink1" title="commands:advanced_unix" data-wiki-id="commands:advanced_unix">Advanced Unix Commands</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/commands:basic_unix" class="wikilink1" title="commands:basic_unix" data-wiki-id="commands:basic_unix">Basic Unix Commands</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/commands:file_security" class="wikilink1" title="commands:file_security" data-wiki-id="commands:file_security">Understanding and Setting UNIX File Permissions</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/commands:git" class="wikilink1" title="commands:git" data-wiki-id="commands:git">Git Commands and Hints</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/commands:gsu" class="wikilink1" title="commands:gsu" data-wiki-id="commands:gsu">gsu</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/commands:keytool" class="wikilink1" title="commands:keytool" data-wiki-id="commands:keytool">Keytool</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/commands:modules" class="wikilink1" title="commands:modules" data-wiki-id="commands:modules">Modules</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/commands:mount_ntfs" class="wikilink1" title="commands:mount_ntfs" data-wiki-id="commands:mount_ntfs">Mount NTFS USB on Linux</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/commands:screen" class="wikilink1" title="commands:screen" data-wiki-id="commands:screen">Screen</a></div></li>
+</ul>
+</li>
+<li class="closed"><div class="li"><a href="/doku.php/group:group" class="indexmenu_idx_head" data-wiki-id="group:group">Group Files</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/hardware:hardware" class="indexmenu_idx_head" data-wiki-id="hardware:hardware">Hardware Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/instructional_support:instructional_support" class="indexmenu_idx_head" data-wiki-id="instructional_support:instructional_support">Instructional Support Resources</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/network:network" class="indexmenu_idx_head" data-wiki-id="network:network">Network</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/os?idx=os" class="indexmenu_idx" data-wiki-id="">os</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/policies?idx=policies" class="indexmenu_idx" data-wiki-id="">policies</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/projects?idx=projects" class="indexmenu_idx" data-wiki-id="">projects</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/remote_support?idx=remote_support" class="indexmenu_idx" data-wiki-id="">remote_support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/requesttracker?idx=requesttracker" class="indexmenu_idx" data-wiki-id="">requesttracker</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/research_support:research_support" class="indexmenu_idx_head" data-wiki-id="research_support:research_support">Research Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/security?idx=security" class="indexmenu_idx" data-wiki-id="">security</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/services?idx=services" class="indexmenu_idx" data-wiki-id="">services</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/software:software" class="indexmenu_idx_head" data-wiki-id="software:software">Software</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/virtual_environments:virtual_environments" class="indexmenu_idx_head" data-wiki-id="virtual_environments:virtual_environments">Virtual Environments</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/webapps:webapps" class="indexmenu_idx_head" data-wiki-id="webapps:webapps">ICS Web Applications</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/wiki?idx=wiki" class="indexmenu_idx" data-wiki-id="">wiki</a></div></li>
+</ul>
+</div></div></div></div></aside><div class="mikio-content" id="dokuwiki__content"><article class="mikio-article"><div class="mikio-toc"><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle"><svg class="mikio-iicon hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+style="fill:currentColor"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0
+76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16z"/></svg>Table of Contents<svg class="mikio-iicon down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+aria-hidden="true" style="fill:currentColor"><path d="M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9
+1.917-1.916z"/></svg></h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#understanding_and_setting_unix_file_permissions">Understanding and Setting UNIX File Permissions</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#introduction">1. Introduction</a></div></li>
+<li class="level2"><div class="li"><a href="#theory_of_operation">2. Theory of Operation</a></div></li>
+<li class="level2"><div class="li"><a href="#setting_unix_file_permissions">3. Setting UNIX File Permissions</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#ls_-l">3.1. &#039;ls -l&#039;</a></div></li>
+<li class="level3"><div class="li"><a href="#chmod">3.2. &#039;chmod&#039;</a></div></li>
+<li class="level3"><div class="li"><a href="#chgrp">3.3. &#039;chgrp&#039;</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#finding_files_with_unwanted_permissions">4. Finding Files with Unwanted Permissions</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#find_all_files_accessible_by_other_in_any_way">4.1. Find All Files Accessible by &#039;Other&#039; in Any Way</a></div></li>
+<li class="level3"><div class="li"><a href="#find_all_files_readable_by_other">4.2. Find All Files Readable by &#039;Other&#039;</a></div></li>
+<li class="level3"><div class="li"><a href="#find_all_files_writable_by_other">4.3. Find All Files Writable by &#039;Other&#039;</a></div></li>
+<li class="level3"><div class="li"><a href="#find_all_files_executable_by_user_or_group_and_writable_by_other">4.4. Find All Files Executable by User or Group, and Writable by &#039;Other&#039;</a></div></li>
+<li class="level3"><div class="li"><a href="#find_all_files_owned_by_a_specific_group">4.5. Find All Files Owned by a Specific Group</a></div></li>
+<li class="level3"><div class="li"><a href="#find_all_files_not_owned_by_a_specific_group">4.6. Find All Files Not Owned by a Specific Group</a></div></li>
+<li class="level3"><div class="li"><a href="#save_find_results_into_a_file">4.7. Save Find Results into a File</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#further_resources">5. Further Resources</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div><div class="mikio-article-content"><h1 class="sectionedit1" id="understanding_and_setting_unix_file_permissions" style="display:none">Understanding and Setting UNIX File Permissions</h1>
+<div class="level1">
+
+</div>
+<div class="secedit editbutton_section editbutton_1"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[Understanding and Setting UNIX File Permissions] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="understanding_and_setting_unix_file_permissions" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1-63" /><button type="submit" title="Understanding and Setting UNIX File Permissions">Edit</button></div></form></div>
+<h2 class="sectionedit2" id="introduction">1. Introduction</h2>
+<div class="level2">
+
+<p>
+This guide gives a brief introduction to UNIX file permissions, provides instructions on how to perform a simple configuration of UNIX file permissions, and shows how to find files that may have more permissive settings than intended.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_2"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[1. Introduction] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="introduction" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="64-330" /><button type="submit" title="1. Introduction">Edit</button></div></form></div>
+<h2 class="sectionedit3" id="theory_of_operation">2. Theory of Operation</h2>
+<div class="level2">
+
+<p>
+UNIX assigns file permissions to three broad categories:
+</p>
+<ol>
+<li class="level1"><div class="li"> The user that owns the file</div>
+</li>
+<li class="level1"><div class="li"> The group that owns the file</div>
+</li>
+<li class="level1"><div class="li"> Everyone else (a.k.a &#039;world&#039; or &#039;other&#039;)  </div>
+</li>
+</ol>
+
+<p>
+Each permission category can be assigned three permissions:
+</p>
+<ol>
+<li class="level1"><div class="li"> (r ) ead</div>
+</li>
+<li class="level1"><div class="li"> (w) rite</div>
+</li>
+<li class="level1"><div class="li"> e (x) ecute</div>
+</li>
+</ol>
+
+<p>
+UNIX permissions can be represented as symbols and as octal digits. Fig. 1 shows a table of possible values:
+</p>
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign">Octal	</th><th class="col1 leftalign">Symbol	</th><th class="col2 leftalign">Permission  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">  0	</td><td class="col1 centeralign">  —	</td><td class="col2">No Permissions </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">  1	</td><td class="col1 centeralign">  –x	</td><td class="col2">Execute </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">  2	</td><td class="col1 centeralign">  -w-	</td><td class="col2">Write </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">  3	</td><td class="col1 centeralign">  -wx	</td><td class="col2">Write and Execute </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">  4	</td><td class="col1 centeralign">  r–	</td><td class="col2">Read </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 centeralign">  5	</td><td class="col1 centeralign">  r-x	</td><td class="col2">Read and Execute </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 centeralign">  6	</td><td class="col1 centeralign">  rw-	</td><td class="col2">Read and Write </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 centeralign">  7	</td><td class="col1 centeralign">  rwx	</td><td class="col2">Read, Write, and Execute </td>
+	</tr>
+</table></div>
+
+<p>
+<em>Fig. 1: Table of Permission Combinations</em>
+</p>
+
+<p>
+The effect of these permissions varies by file type. There are numerous file types, but this guide will only deal with the following types:
+</p>
+<ol>
+<li class="level1"><div class="li"> &#039;-&#039; — Regular file</div>
+</li>
+<li class="level1"><div class="li"> &#039;d&#039; — Directory</div>
+</li>
+</ol>
+
+<p>
+When applied to a regular file, UNIX permissions have the following effect:
+</p>
+<ol>
+<li class="level1"><div class="li"> Read permission allows the file to be opened</div>
+</li>
+<li class="level1"><div class="li"> Write permission allows the file to be modified</div>
+</li>
+<li class="level1"><div class="li"> Execute permission allows the file to be executed directly from the shell if it is a script or binary file</div>
+</li>
+</ol>
+
+<p>
+When applied to a directory, UNIX permissions have the following effect:
+</p>
+<ol>
+<li class="level1"><div class="li"> Read permission allows the directory contents to be listed</div>
+</li>
+<li class="level1"><div class="li"> Write permission allows files or directories to be created or deleted within the directory</div>
+</li>
+<li class="level1"><div class="li"> Execute permission allows the directory contents to be accessed</div>
+</li>
+</ol>
+
+<p>
+UNIX permissions closest to the user take precedence. User permissions take priority over group permissions for the user who owns a file or directory, and both user and group permissions take priority over the &#039;other&#039; permissions for the user and group who owns the file.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_3"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[2. Theory of Operation] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="theory_of_operation" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="331-2108" /><button type="submit" title="2. Theory of Operation">Edit</button></div></form></div>
+<h2 class="sectionedit5" id="setting_unix_file_permissions">3. Setting UNIX File Permissions</h2>
+<div class="level2">
+
+<p>
+There are three utilities used for managing UNIX permissions:
+</p>
+<pre class="code">ls -l  — Displays a detailed list of directory contents
+chmod  — Changes permissions
+chgrp  — Changes group owners</pre>
+
+</div>
+<div class="secedit editbutton_section editbutton_5"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[3. Setting UNIX File Permissions] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="setting_unix_file_permissions" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2109-2345" /><button type="submit" title="3. Setting UNIX File Permissions">Edit</button></div></form></div>
+<h3 class="sectionedit6" id="ls_-l">3.1. &#039;ls -l&#039;</h3>
+<div class="level3">
+
+<p>
+The ls command outputs a list of files and directories within a given directory, and the &#039;-l&#039; option provides a detailed list of the directory contents (including permissions).
+</p>
+
+<p>
+Fig. 2 shows the output of &#039;ls -l&#039; on a test file with each section labeled. The portions of the output related to the UNIX file system permissions are colored red:
+</p>
+
+<p>
+<a href="/lib/exe/detail.php/commands:perms1.png?id=commands%3Afile_security" class="media" title="commands:perms1.png"><img src="/lib/exe/fetch.php/commands:perms1.png?w=600&amp;tok=4c16c4" class="media" loading="lazy" alt="" width="600" /></a>
+</p>
+
+<p>
+<em>Fig. 2: Labeled output of &#039;ls -l&#039;</em>
+</p>
+
+<p>
+The output of Fig. 2 tells us the following:
+</p>
+<ol>
+<li class="level1"><div class="li"> The &#039;-&#039; file type indicates that this is a regular file</div>
+</li>
+<li class="level1"><div class="li"> &#039;rwx&#039; permissions for user indicates that the user who owns this file has read, write, and execute permissions for   the file</div>
+</li>
+<li class="level1"><div class="li"> &#039;r-x&#039; permissions for group indicates that the group who owns this file has read and execute permissions for the file</div>
+</li>
+<li class="level1"><div class="li"> &#039;—&#039; permissions for &#039;other&#039; (i.e. everyone else) means that everyone other than the user or group who owns the file has no access to the file</div>
+</li>
+<li class="level1"><div class="li"> The file is owned by user &#039;walbert&#039; and group &#039;support&#039;</div>
+</li>
+</ol>
+
+</div>
+<div class="secedit editbutton_section editbutton_6"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[3.1. &#039;ls -l&#039;] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="ls_-l" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2346-3352" /><button type="submit" title="3.1. &#039;ls -l&#039;">Edit</button></div></form></div>
+<h3 class="sectionedit7" id="chmod">3.2. &#039;chmod&#039;</h3>
+<div class="level3">
+
+<p>
+The chmod command changes the permission on a given file or directory by setting permissions in two ways:
+</p>
+<ol>
+<li class="level1"><div class="li"> Using symbols</div>
+</li>
+<li class="level1"><div class="li"> Using octal values</div>
+</li>
+</ol>
+
+<p>
+This guide uses primarily octal values because they can be entered quickly. For more information on using symbols, refer to the chmod man page.
+</p>
+
+<p>
+When using octal values, a series of three digits defines the permissions for user, group, and other in that order. For example, a three-digit octal value of 640 would translate to read and write permissions for the user, read permission for the group, and no permission for others. When using octal values to define permissions, the new octal value entered will replace the existing permissions on the file or directory.
+</p>
+
+<p>
+(There is an optional leading digit which sets the setuid, setgid, and sticky bits. Usage of these permissions bits are outside the scope of this guide.)
+</p>
+
+<p>
+The following examples show common uses of chmod. After the chmod command, the output of the ls -l command is shown to demonstrate how the file permissions should look. Refer to the table in Fig. 1 for explanations of the octal values.
+</p>
+
+<p>
+3.2.1. Access for Only Yourself
+</p>
+<pre class="code">$ chmod 600 test_file
+$ ls -l test_file
+-rw------- 1 walbert ugrad 0 Nov  5 15:58 test_file</pre>
+
+<p>
+3.2.2. Write Access for Yourself and Read Access for Your Group
+</p>
+<pre class="code">$ chmod 640 test_file
+$ ls -l test_file
+-rw-r----- 1 walbert ugrad 0 Nov  5 15:58 test_file</pre>
+
+<p>
+3.2.3. Write Access for Yourself and Read Access for Everyone Else
+</p>
+<pre class="code">$ chmod 644 test_file
+$ ls -l test_file
+-rw-r--r-- 1 walbert ugrad 0 Nov  5 15:58 test_file</pre>
+
+<p>
+3.2.4. Write and Execute Access for Yourself Only
+</p>
+<pre class="code">$ chmod 700 test_file
+$ ls -l test_file
+-rwx------ 1 walbert ugrad 0 Nov  5 15:58 test_file</pre>
+
+<p>
+3.2.5. Write and Execute Access for Yourself, and Execute Access for Everyone
+</p>
+<pre class="code">$ chmod 755 test_file
+$ ls -l test_file
+-rwxr-xr-x 1 walbert ugrad 0 Nov  5 15:58 test_file</pre>
+
+<p>
+3.2.6. Write Access to a Directory for Yourself, and Read Access for Your Group
+</p>
+<pre class="code">$ chmod 750 test_directory
+$ ls -l -d test_directory
+drwxr-x--- 2 walbert ugrad 2.0K Nov  5 15:59 test_directory/</pre>
+
+<p>
+3.2.7. Remove All Non-User Access to a Directory and its Sub Directories (the -R for recursive denotes this)
+</p>
+<pre class="code">$ chmod -R go-rwx test_directory
+$ ls -l -R test_directory
+test_directory/:
+total 4.0K
+drwx------ 3 walbert ugrad 2.0K Nov  5 16:53 foo/
+-rw------- 1 walbert ugrad    0 Nov  5 16:20 test_file
+
+test_directory/foo:
+total 4.0K
+drwx------ 3 walbert ugrad 2.0K Nov  5 16:53 bar/
+-rw------- 1 walbert ugrad    0 Nov  5 16:53 test1
+
+test_directory/foo/bar:
+total 4.0K
+drwx------ 2 walbert ugrad 2.0K Nov  5 16:53 baz/
+-rw------- 1 walbert ugrad    0 Nov  5 16:53 test2
+
+test_directory/foo/bar/baz:
+total 0
+-rw------- 1 walbert ugrad 0 Nov  5 16:53 test3</pre>
+
+<p>
+In this case, symbolic permission assignment was used, as octal permission assignments usually do not produce the intended result when applied recursively. The symbolic permissions used in this example, &#039;go-rwx&#039;, can be translated as “for group and other—remove read, write, and execute permissions.”
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_7"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[3.2. &#039;chmod&#039;] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="chmod" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="3353-6508" /><button type="submit" title="3.2. &#039;chmod&#039;">Edit</button></div></form></div>
+<h3 class="sectionedit8" id="chgrp">3.3. &#039;chgrp&#039;</h3>
+<div class="level3">
+
+<p>
+The chgrp command changes the group ownership on a given file or directory.
+</p>
+
+<p>
+Changing group ownership may be necessary when sharing files and directories with other members of your research group.
+</p>
+
+<p>
+3.3.1. Changing the Group Ownership of a File
+</p>
+<pre class="code">$ chgrp support test_file
+$ ls -l test_file
+-rw-rw---- 1 walbert support 0 Nov  5 15:58 test_file</pre>
+
+<p>
+3.3.2. Changing the Group Ownership of a Directory and its Contents (denoted by -R)
+</p>
+<pre class="code">$ chgrp -R support test_directory
+$ ls -l -R test_directory
+test_directory:
+total 4.0K
+drwx------ 3 walbert support 2.0K Nov  5 16:53 foo/
+-rw------- 1 walbert support    0 Nov  5 16:20 test_file
+
+test_directory/foo:
+total 4.0K
+drwx------ 3 walbert support 2.0K Nov  5 16:53 bar/
+-rw------- 1 walbert support    0 Nov  5 16:53 test1
+
+test_directory/foo/bar:
+total 4.0K
+drwx------ 2 walbert support 2.0K Nov  5 16:53 baz/
+-rw------- 1 walbert support    0 Nov  5 16:53 test2
+
+test_directory/foo/bar/baz:
+total 0
+-rw------- 1 walbert support 0 Nov  5 16:53 test3</pre>
+
+</div>
+<div class="secedit editbutton_section editbutton_8"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[3.3. &#039;chgrp&#039;] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="chgrp" /><input type="hidden" name="codeblockOffset" value="7" /><input type="hidden" name="range" value="6509-7551" /><button type="submit" title="3.3. &#039;chgrp&#039;">Edit</button></div></form></div>
+<h2 class="sectionedit9" id="finding_files_with_unwanted_permissions">4. Finding Files with Unwanted Permissions</h2>
+<div class="level2">
+
+<p>
+This section provides information on the use of the find command to search for and display files and directories with permissions that may be undesirable. All examples in this section will output results in the format typically provided by ls -l.
+</p>
+
+<p>
+All search examples will use the following format:
+</p>
+
+<p>
+find /dir/name -perm /005 -type f -print0 | xargs -0 ls -l
+</p>
+
+<p>
+Explanation of these options:
+/dir/name — Directory being searched
+-perm — Instructs find to match files based on given permissions
+-type f — Instructs find to match only regular files
+-print0 — Sends output to stdout using the null character
+xargs — Command that builds another command to execute based on the content of stdin
+-0 — Use the null character as the item delimiter
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_9"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[4. Finding Files with Unwanted Permissions] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="finding_files_with_unwanted_permissions" /><input type="hidden" name="codeblockOffset" value="9" /><input type="hidden" name="range" value="7552-8358" /><button type="submit" title="4. Finding Files with Unwanted Permissions">Edit</button></div></form></div>
+<h3 class="sectionedit10" id="find_all_files_accessible_by_other_in_any_way">4.1. Find All Files Accessible by &#039;Other&#039; in Any Way</h3>
+<div class="level3">
+<pre class="code">$ find ~ -perm /007 -type f -print0 | xargs -0 ls -l</pre>
+
+<p>
+This will display all files within your home directory that have read, write, or execute permissions for &#039;other.&#039; This is useful for getting a general idea of what others can access in your home directory.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_10"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[4.1. Find All Files Accessible by &#039;Other&#039; in Any Way] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="find_all_files_accessible_by_other_in_any_way" /><input type="hidden" name="codeblockOffset" value="9" /><input type="hidden" name="range" value="8359-8698" /><button type="submit" title="4.1. Find All Files Accessible by &#039;Other&#039; in Any Way">Edit</button></div></form></div>
+<h3 class="sectionedit11" id="find_all_files_readable_by_other">4.2. Find All Files Readable by &#039;Other&#039;</h3>
+<div class="level3">
+<pre class="code">$ find . -perm /004 -type f -print0 | xargs -0 ls -l</pre>
+
+<p>
+This will display all files within the current working directory that are world-readable. Many of these files will be &#039;common&#039; files (such as shared libraries, icons, etc.) located in hidden directories, which are generally harmless. Any private files that appear on this list (e.g., private SSH keys or files on non-hidden directories) should be investigated.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_11"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[4.2. Find All Files Readable by &#039;Other&#039;] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="find_all_files_readable_by_other" /><input type="hidden" name="codeblockOffset" value="10" /><input type="hidden" name="range" value="8699-9180" /><button type="submit" title="4.2. Find All Files Readable by &#039;Other&#039;">Edit</button></div></form></div>
+<h3 class="sectionedit12" id="find_all_files_writable_by_other">4.3. Find All Files Writable by &#039;Other&#039;</h3>
+<div class="level3">
+<pre class="code">$ find /extra/research0 -perm /002 -type f -print0 | xargs -0 ls -l</pre>
+
+<p>
+This will display all files in the /extra/research0 directory that are writable by &#039;other.&#039; Any files that appear in this list should be investigated, and in most cases, permissions should be changed to something more restrictive.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_12"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[4.3. Find All Files Writable by &#039;Other&#039;] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="find_all_files_writable_by_other" /><input type="hidden" name="codeblockOffset" value="11" /><input type="hidden" name="range" value="9181-9547" /><button type="submit" title="4.3. Find All Files Writable by &#039;Other&#039;">Edit</button></div></form></div>
+<h3 class="sectionedit13" id="find_all_files_executable_by_user_or_group_and_writable_by_other">4.4. Find All Files Executable by User or Group, and Writable by &#039;Other&#039;</h3>
+<div class="level3">
+<pre class="code">$ find ~ -perm -102 -type f -print0 | xargs -0 ls -l  # User
+$ find ~ -perm -012 -type f -print0 | xargs -0 ls -l  # Group</pre>
+
+<p>
+This will display all files in your home directory that are both world-writable and executable by either the user or the group that owns the file. Files that are user-executable and world-writable are a major security vulnerability and should be fixed immediately unless you know exactly what you are doing.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_13"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[4.4. Find All Files Executable by User or Group, and Writable by &#039;Other&#039;] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="find_all_files_executable_by_user_or_group_and_writable_by_other" /><input type="hidden" name="codeblockOffset" value="12" /><input type="hidden" name="range" value="9548-10079" /><button type="submit" title="4.4. Find All Files Executable by User or Group, and Writable by &#039;Other&#039;">Edit</button></div></form></div>
+<h3 class="sectionedit14" id="find_all_files_owned_by_a_specific_group">4.5. Find All Files Owned by a Specific Group</h3>
+<div class="level3">
+<pre class="code">$ find ~ -group NameOfGroup -type f -print0 | xargs -0 ls -l</pre>
+
+<p>
+This will display all files in your home directory that are owned by the specified group.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_14"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[4.5. Find All Files Owned by a Specific Group] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="find_all_files_owned_by_a_specific_group" /><input type="hidden" name="codeblockOffset" value="13" /><input type="hidden" name="range" value="10080-10304" /><button type="submit" title="4.5. Find All Files Owned by a Specific Group">Edit</button></div></form></div>
+<h3 class="sectionedit15" id="find_all_files_not_owned_by_a_specific_group">4.6. Find All Files Not Owned by a Specific Group</h3>
+<div class="level3">
+
+<p>
+$ find . -not -group NameOfGroup -type f -print0 | xargs -0 ls -l
+</p>
+
+<p>
+This will display all files in the current working directory that are not owned by the specified group.
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_15"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[4.6. Find All Files Not Owned by a Specific Group] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="find_all_files_not_owned_by_a_specific_group" /><input type="hidden" name="codeblockOffset" value="14" /><input type="hidden" name="range" value="10305-10537" /><button type="submit" title="4.6. Find All Files Not Owned by a Specific Group">Edit</button></div></form></div>
+<h3 class="sectionedit16" id="save_find_results_into_a_file">4.7. Save Find Results into a File</h3>
+<div class="level3">
+
+<p>
+If you expect the find command to yield a long list of results, consider adding <em>&gt; file_perms.txt</em> to the end of your command.  
+</p>
+
+<p>
+This is the same command as above, but the output of the search results will be written to a file instead of being displayed on your screen:
+</p>
+
+<p>
+$ find . -not -group NameOfGroup -type f -print0 | xargs -0 ls -l &gt; file_perms.txt
+</p>
+
+</div>
+<div class="secedit editbutton_section editbutton_16"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[4.7. Save Find Results into a File] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="save_find_results_into_a_file" /><input type="hidden" name="codeblockOffset" value="14" /><input type="hidden" name="range" value="10538-10944" /><button type="submit" title="4.7. Save Find Results into a File">Edit</button></div></form></div>
+<h2 class="sectionedit17" id="further_resources">5. Further Resources</h2>
+<div class="level2">
+
+<p>
+For detailed documentation on the commands used in this guide, see the man pages for the following commands:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://linux.die.net/man/1/ls" class="urlextern" title="http://linux.die.net/man/1/ls" rel="ugc nofollow">ls</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://linux.die.net/man/1/chmod" class="urlextern" title="http://linux.die.net/man/1/chmod" rel="ugc nofollow">chmod</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://linux.die.net/man/1/chgrp" class="urlextern" title="http://linux.die.net/man/1/chgrp" rel="ugc nofollow">chgrp</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://linux.die.net/man/1/find" class="urlextern" title="http://linux.die.net/man/1/find" rel="ugc nofollow">find</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://linux.die.net/man/1/xargs" class="urlextern" title="http://linux.die.net/man/1/xargs" rel="ugc nofollow">xargs</a></div>
+</li>
+</ul>
+
+<p>
+For other resources on the commands used in this guide (and UNIX file system permissions in general), see:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://en.wikipedia.org/wiki/File_system_permissions" class="urlextern" title="http://en.wikipedia.org/wiki/File_system_permissions" rel="ugc nofollow">Wikipedia — File system permissions</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://en.wikipedia.org/wiki/Chmod" class="urlextern" title="http://en.wikipedia.org/wiki/Chmod" rel="ugc nofollow">Wikipedia — chmod</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://en.wikipedia.org/wiki/Chgrp" class="urlextern" title="http://en.wikipedia.org/wiki/Chgrp" rel="ugc nofollow">Wikipedia — chgrp</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.ibm.com/developerworks/linux/library/l-lpic1-v3-104-5/" class="urlextern" title="http://www.ibm.com/developerworks/linux/library/l-lpic1-v3-104-5/" rel="ugc nofollow">IBM — Learn Linux, 101: Manage file permissions and ownership</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://tldp.org/LDP/intro-linux/html/sect_03_04.html" class="urlextern" title="http://tldp.org/LDP/intro-linux/html/sect_03_04.html" rel="ugc nofollow">TLDP — 3.4.1. Access rights: Linux&#039;s first line of defense</a></div>
+</li>
+</ul>
+
+</div>
+<div class="secedit editbutton_section editbutton_17"><form class="button btn_secedit" method="post" action="/doku.php/commands:file_security"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1617837384" /><input type="hidden" name="summary" value="[5. Further Resources] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="further_resources" /><input type="hidden" name="codeblockOffset" value="14" /><input type="hidden" name="range" value="10945-" /><button type="submit" title="5. Further Resources">Edit</button></div></form></div><div style="clear:both"></div></div></article></div><nav id="dw__pagetools" class="hidden-print dw__pagetools"><ul class="tools"><li class="edit"><a href="/doku.php/commands:file_security?do=edit" class="edit" title="Edit this page [e]" accesskey="e"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></div><span class="a11y">Edit this page</span></a></li><li class="revs"><a href="/doku.php/commands:file_security?do=revisions" class="revs" title="Old revisions [o]" accesskey="o"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></div><span class="a11y">Old revisions</span></a></li><li class="backlink"><a href="/doku.php/commands:file_security?do=backlink" class="backlink" title="Backlinks"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></div><span class="a11y">Backlinks</span></a></li><li class="top"><a href="#dokuwiki__top" class="top" title="Back to top [t]" accesskey="t"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></div><span class="a11y">Back to top</span></a></li></ul></nav></div></main><div class="mikio-page-fill"><div class="mikio-content" style="padding:0"></div></div><footer class="mikio-footer"><div class="doc"><bdi>commands/file_security.txt</bdi> · Last modified: 2021/04/07 16:16</div><div class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license"><img src="/lib/images/license/badge/cc-by-nc-sa.png" alt="CC Attribution-Noncommercial-Share Alike 4.0 International" /></a> Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license" class="urlextern">CC Attribution-Noncommercial-Share Alike 4.0 International</a></bdi></div></footer>    <div class="no"><img src="/lib/exe/taskrunner.php?id=commands%3Afile_security&amp;1760921658" width="2" height="1" alt="" /></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!-- URL: https://grape.ics.uci.edu/wiki/public/wiki/cs222p-2017-fall-project1-create-project -->
+
+<!DOCTYPE html>
+<html lang="en-US">   <head>
+    <!-- # block head (placeholder in theme.html) -->
+        <!-- # block head (content inherited from layout.html) -->
+    <title>
+      cs222p-2017-fall-project1-create-project     – Public
+
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script>
+        if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+        </script><![endif]-->
+
+    <link rel="start"  href="/wiki/public/wiki" />
+    <link rel="search"  href="/wiki/public/search" />
+    <link rel="help"  href="/wiki/public/wiki/TracGuide" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/trac.css" type="text/css" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/wiki.css" type="text/css" />
+    <link rel="icon"  href="/wiki/public/chrome/site/favicon.ico" type="image/x-icon" />
+    <link rel="alternate"  href="/wiki/public/wiki/cs222p-2017-fall-project1-create-project?format=txt" title="Plain Text" type="text/x-trac-wiki" />
+    <noscript>
+      <style>
+        .trac-noscript { display: none !important }
+      </style>     </noscript>
+    <script src="/wiki/public/chrome/common/js/jquery.js"></script>
+    <script src="/wiki/public/chrome/common/js/babel.js"></script>
+    <script src="/wiki/public/chrome/common/js/trac.js"></script>
+    <script src="/wiki/public/chrome/common/js/search.js"></script>
+    <script src="/wiki/public/chrome/common/js/folding.js"></script>
+    <script src="/wiki/public/chrome/common/js/wiki.js"></script>
+    <script>
+      jQuery(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])")
+            .prop("autocomplete", "off").datepicker();
+          // Input current date when today is pressed.
+          var _goToToday = $.datepicker._gotoToday;
+          $.datepicker._gotoToday = function(id) {
+            _goToToday.call(this, id);
+            this._selectDate(id)
+          };
+          $(".trac-datetimepicker:not([readonly])")
+            .prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <!--   # include 'site_head.html' (layout.html) -->
+    <!--   end of site_head.html -->
+    <!-- # endblock head (content inherited from layout.html) -->
+
+
+    <script>
+      jQuery(function($) {
+        wikiColumn($("#wikipage"));
+      });
+    </script>
+    <!-- # endblock head (placeholder in theme.html) -->
+  </head> 
+  <body>
+    <!-- # block body (content inherited from theme.html) -->
+    <!--   # include 'site_header.html' (theme.html) -->
+    <!--   end of site_header.html -->
+
+    <div id="banner">
+      <div id="header">
+        <a id="logo"
+           href="http://www.ics.uci.edu/">
+          <img  alt="ICS Logo" height="67" src="/wiki/public/chrome/site/ics.jpg" width="128" /></a>
+
+
+      </div>
+      <form id="search" action="/wiki/public/search" method="get">
+      </form>
+          <div id="metanav" class="nav">
+      <ul><li  class="first"><a href="/wiki/public/login">Login</a></li><li ><a href="/wiki/public/prefs">Preferences</a></li><li ><a href="/wiki/public/about">About Trac</a></li><li  class="last"><a href="/wiki/public/register">Register</a></li></ul>
+    </div>
+
+    </div>
+        <div id="mainnav" class="nav">
+    </div>
+
+
+    <div id="main"
+         >
+
+<div id="pagepath" class="noprint">
+<a class="pathentry first" title="View WikiStart"
+   href="/wiki/public/wiki">wiki:</a><a href="/wiki/public/wiki/cs222p-2017-fall-project1-create-project"
+     title="View cs222p-2017-fall-project1-create-project"
+     class="pathentry">cs222p-2017-fall-project1-create-project</a></div>      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li  class="first last"><a href="/wiki/public/wiki/cs222p-2017-fall-project1-create-project?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+
+      
+
+      
+
+      <!-- # block content (placeholder in theme.html) -->
+    <div id="content" class="wiki narrow">
+
+      <div class="wikipage searchable">
+        <div id="wikipage" class="trac-content borderless"><div class="wikipage" style="background-color:#f2f3f4"><p>
+<strong>Download and deploy the codebase of Project 1</strong> 
+</p>
+<ul><li><strong>Download the codebase of Project 1</strong> <br />
+</li></ul><blockquote>
+<p>
+Please download the <a class="attachment" href="/wiki/public/attachment/wiki/cs222p-2017-fall-project1-create-project/codebase.zip" title="Attachment 'codebase.zip' in cs222p-2017-fall-project1-create-project">codebase</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222p-2017-fall-project1-create-project/codebase.zip" title="Download">​</a> onto your own computer. Unzip the file.
+</p>
+</blockquote>
+<ul><li><strong>Deploy the codebase</strong>
+</li></ul><ul><li><strong>If you are developing in Eclipse</strong><br />
+</li></ul><blockquote>
+<blockquote>
+<p>
+Please note that we used the latest version of Eclipse for C++ (Oxygen) from <a class="ext-link" href="http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers/oxygen1"><span class="icon">​</span>http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers/oxygen1</a>, and if you use a different version, you may find instructions not match the menus perfectly.<br />
+</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>
+Read the readme.txt under codebase.<br />
+</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>
+Create a new C++ project named "cs222p" in Eclipse. <strong>If you are using a Mac, select MacOSX GCC. If you are using Linux, use Linux GCC.</strong> <br />
+</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>
+Create a folder named "src" under cs222p, and another folder named "rbf" under src.
+</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>
+Copy all files in "codebase/rbf" under the rbf folder you have just created, and copy makefile.inc from "codebase" under the "src" folder you have just created.
+</p>
+</blockquote>
+</blockquote>
+<p>
+<br />
+</p>
+<blockquote>
+<p>
+There are 13 test cases, and each of these test cases is a stand-alone application that contains its own main() method, so Eclipse cannot compile the test cases properly when they are together. To handle this, we use our own makefile to build these test cases, instead of letting Eclipse generate one for us. To do this, right click "cs222p" project, and select "properties -&gt; C/C++Build", unclick "Generate Makefiles automatically", and set build location to "${workspace_loc:/cs222p/src/rbf}" (you can simply click "Workspace..." and select properly).
+</p>
+</blockquote>
+<blockquote>
+<p>
+At this point, your project structure is similar to this picture (created by using MacOSX GCC toolchain) :<br /><a href="/wiki/public/attachment/wiki/cs222p-2017-fall-project1-create-project/eclipse_project1_picture.png" style="padding:0; border:none"><img src="/wiki/public/raw-attachment/wiki/cs222p-2017-fall-project1-create-project/eclipse_project1_picture.png" width="250px" /></a>
+</p>
+</blockquote>
+<blockquote>
+<p>
+Compile a test by doing Project -&gt; Build All. After the cs222p binary is created in a test folder, Right click the binary and click "Run As"/"Run Configurations", double click on "C/C++ Application" to create a new application and use "Search Project" to choose the test to want to run. Then click "Run" to run this test case.
+</p>
+</blockquote>
+<p>
+<a href="/wiki/public/attachment/wiki/cs222p-2017-fall-project1-create-project/eclipse_project1_run_as_configuration.png" style="padding:0; border:none"><img src="/wiki/public/raw-attachment/wiki/cs222p-2017-fall-project1-create-project/eclipse_project1_run_as_configuration.png" width="600px" /></a>
+</p>
+<blockquote>
+<p>
+Since we let Eclipse to read our makefile to build the project, it should work properly (there should be no difference of invoking it in Eclipse or command line.) If it does not work in Eclipse, please first try to make things work in your command line. 
+</p>
+</blockquote>
+<blockquote>
+<p>
+After you confirm that all test cases work properly, you can use the command-line tool to compile and test your code. In the end, the assistants will use the automated test script to test your code.
+</p>
+</blockquote>
+<p>
+  
+</p>
+<ul><li><strong>If you are not using Eclipse</strong> <br />
+</li></ul><blockquote>
+<blockquote>
+<p>
+Read the readme.txt under ./codebase/.<br />
+</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>
+Go to the codebase, and modify the CODEROOT in makefile.inc properly (you may skip it initially, but only modify it when the rest steps do not work). <br />
+</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>
+Go to folder "rbf", and type in:
+</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>
+make clean<br />
+</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>
+make<br />
+</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>
+./rbftest1<br />
+</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>
+You will be able to see the output.
+</p>
+</blockquote>
+</blockquote>
+</div></div>
+        <div class="trac-modifiedby">
+          <span>
+            <a href="/wiki/public/wiki/cs222p-2017-fall-project1-create-project?action=diff&amp;version=14" title="Version 14 by Zuozhi Wang">Last modified</a>
+ <a class="timeline" href="/wiki/public/timeline?from=2017-10-04T15%3A17%3A13-07%3A00&amp;precision=second" title="See timeline at Oct 4, 2017, 3:17:13 PM">8 years ago</a>          </span>
+          <span class="trac-print">
+            Last modified on Oct 4, 2017, 3:17:13 PM
+          </span>
+        </div>
+      </div>
+
+
+
+
+
+<div id="attachments">
+  <h3  class="foldable">
+    Attachments
+    <span class="trac-count">(3)</span></h3>
+  <div>
+    <ul>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222p-2017-fall-project1-create-project/codebase.zip" title="View attachment">codebase.zip</a><a href="/wiki/public/raw-attachment/wiki/cs222p-2017-fall-project1-create-project/codebase.zip"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="30802 bytes">30.1 KB</span>
+) - added by <span class="trac-author">Zuozhi Wang</span> <a class="timeline" href="/wiki/public/timeline?from=2017-09-27T11%3A49%3A53-07%3A00&amp;precision=second" title="See timeline at Sep 27, 2017, 11:49:53 AM">8 years ago</a>.
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222p-2017-fall-project1-create-project/eclipse_project1_run_as_configuration.png" title="View attachment">eclipse_project1_run_as_configuration.png</a><a href="/wiki/public/raw-attachment/wiki/cs222p-2017-fall-project1-create-project/eclipse_project1_run_as_configuration.png"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="224541 bytes">219.3 KB</span>
+) - added by <span class="trac-author">Chen Luo</span> <a class="timeline" href="/wiki/public/timeline?from=2017-09-30T19%3A55%3A24-07%3A00&amp;precision=second" title="See timeline at Sep 30, 2017, 7:55:24 PM">8 years ago</a>.
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222p-2017-fall-project1-create-project/eclipse_project1_picture.png" title="View attachment">eclipse_project1_picture.png</a><a href="/wiki/public/raw-attachment/wiki/cs222p-2017-fall-project1-create-project/eclipse_project1_picture.png"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="91924 bytes">89.8 KB</span>
+) - added by <span class="trac-author">Chen Luo</span> <a class="timeline" href="/wiki/public/timeline?from=2017-09-30T19%3A57%3A27-07%3A00&amp;precision=second" title="See timeline at Sep 30, 2017, 7:57:27 PM">8 years ago</a>.
+      </li>
+    </ul>
+    <p>
+  Download all attachments as:
+  <a rel="nofollow" href="/wiki/public/zip-attachment/wiki/cs222p-2017-fall-project1-create-project/">.zip</a>
+</p>
+
+  </div>
+</div>
+<div class="trac-help">
+  <strong>Note:</strong>
+ See   <a href="/wiki/public/wiki/TracWiki">TracWiki</a>
+ for help on using the wiki.
+</div>
+    </div>
+        <!-- # block content (content inherited from layout.html) -->
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first last">
+          <a rel="nofollow" href="/wiki/public/wiki/cs222p-2017-fall-project1-create-project?format=txt"
+              class="">
+            Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    <!-- # endblock content (content inherited from layout.html) -->
+
+      <!-- # endblock content (placeholder in theme.html) -->
+    </div>
+
+    <div id="footer"><hr/>
+      <a id="tracpowered" href="https://trac.edgewall.org/"
+         ><img src="/wiki/public/chrome/common/trac_logo_mini.png" height="30"
+               width="107" alt="Trac Powered"/></a>
+      <p class="left">
+Powered by         <a href="/wiki/public/about"><strong>Trac 1.5.3</strong></a>
+        <br />
+ By         <a href="http://www.edgewall.org/">Edgewall Software</a>
+.      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+    <!--   # include 'site_footer.html' (theme.html) -->
+    <!--   end of site_footer.html -->
+    <!-- # endblock body (content inherited from theme.html) -->
+  </body> </html>

@@ -1,0 +1,1149 @@
+<!-- URL: https://www.stat.uci.edu/oc_covid_model/about.html -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>About</title>
+
+<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">UC Irvine COVID Modeling</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fas fa-newspaper"></span>
+     
+    Latest Report
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fas fa-hotel"></span>
+     
+    City Reports
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="anaheim.html">Anaheim</a>
+    </li>
+    <li>
+      <a href="irvine.html">Irvine</a>
+    </li>
+    <li>
+      <a href="santa-ana.html">Santa Ana</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fas fa-archive"></span>
+     
+    Archived Reports
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="2021-04-21_2021-05-26.html">Apr 21 - May 26</a>
+    </li>
+    <li>
+      <a href="2021-04-14_2021-05-19.html">Apr 14 - May 19</a>
+    </li>
+    <li>
+      <a href="2021-04-07_2021-05-12.html">Apr  7 - May 12</a>
+    </li>
+    <li>
+      <a href="2021-03-31_2021-05-05.html">Mar 31 - May  5</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="about.html">
+    <span class="fas fa-users"></span>
+     
+    About
+  </a>
+</li>
+<li>
+  <a href="license.html">
+    <span class="fas fa-gavel"></span>
+     
+    License
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/damonbayer/uci_covid_modeling2">
+    <span class="fab fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">About</h1>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2021-06-02
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>uci_covid_modeling2/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2.9000). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdamonbayerucicovidmodeling2tree2a1089ecc379d30d15775d41b4de0fc4e5832c68targetblank2a1089ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/damonbayer/uci_covid_modeling2/tree/2a1089ecc379d30d15775d41b4de0fc4e5832c68" target="_blank">2a1089e</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomdamonbayerucicovidmodeling2tree2a1089ecc379d30d15775d41b4de0fc4e5832c68targetblank2a1089ea" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/damonbayer/uci_covid_modeling2/tree/2a1089ecc379d30d15775d41b4de0fc4e5832c68" target="_blank">2a1089e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
+    Ignored:    analysis/.DS_Store
+    Ignored:    code/.DS_Store
+    Ignored:    code/.Rhistory
+    Ignored:    code/models/.DS_Store
+    Ignored:    code/models/model_death_reporting_delay/.DS_Store
+    Ignored:    code/models/model_death_reporting_delay/.Rhistory
+    Ignored:    code/models/model_no_reporting_delay/.DS_Store
+    Ignored:    code/results/.DS_Store
+    Ignored:    code/results/2020-11-01_2020-12-06/.DS_Store
+    Ignored:    code/results/2020-11-08_2020-12-13/.DS_Store
+    Ignored:    code/results/2020-11-15_2020-12-20/.DS_Store
+    Ignored:    code/results/2020-11-22_2020-12-27/.DS_Store
+    Ignored:    code/results/2020-12-02_2021-01-06/.DS_Store
+    Ignored:    code/results/2020-12-16_2021-01-20/.DS_Store
+    Ignored:    code/results/2020-12-23_2021-01-27/.DS_Store
+    Ignored:    code/results/2021-02-10_2021-03-17/.DS_Store
+    Ignored:    code/results/2021-02-17_2021-03-24/.DS_Store
+    Ignored:    data/.DS_Store
+    Ignored:    data/from_OCHCA/
+    Ignored:    renv/
+
+Untracked files:
+    Untracked:  analysis/2021-04-21_2021-05-26.Rmd
+    Untracked:  analysis/2021-04-21_2021-05-26_anaheim.Rmd
+    Untracked:  analysis/2021-04-21_2021-05-26_irvine.Rmd
+    Untracked:  analysis/2021-04-21_2021-05-26_santa-ana.Rmd
+    Untracked:  code/results/2021-04-21_2021-05-26/
+
+Unstaged changes:
+    Modified:   analysis/_site.yml
+    Modified:   code/process_ochca_data.R
+    Modified:   data/data_for_calcat.csv
+    Modified:   data/death_delay_ecdf.rds
+    Modified:   data/oc_city_data.csv
+    Modified:   data/oc_data.csv
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/about.Rmd</code>) and HTML (<code>docs/about.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/2a1089ecc379d30d15775d41b4de0fc4e5832c68/docs/about.html" target="_blank">2a1089e</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-05-24
+</td>
+<td>
+2021-05-24 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/355781320e3bca3ed42fdb0ec9fd99207e897a40/docs/about.html" target="_blank">3557813</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-05-17
+</td>
+<td>
+2021-05-17 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/44473d00aadd0fb5985f36b684afcba6a6e0bd60/docs/about.html" target="_blank">44473d0</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-05-10
+</td>
+<td>
+2021-05-10 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/9e38bb89eec2df90379cc09eeff7b816dd53bae6/docs/about.html" target="_blank">9e38bb8</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-05-04
+</td>
+<td>
+2021-05-03 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/8994d5e1b92c3f1193e1ffc86a83d2ae3d157c84/docs/about.html" target="_blank">8994d5e</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-04-27
+</td>
+<td>
+2021-04-26 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/bdae734aa8b0e4b5306786d3db4bbfc0dd5ff66f/docs/about.html" target="_blank">bdae734</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-04-19
+</td>
+<td>
+2021-04-19 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/391f6a14c58f0011d5e9b10ddafbb803a91e55e8/docs/about.html" target="_blank">391f6a1</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-04-12
+</td>
+<td>
+2021-04-12 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/ed4a33e6673beb09dd33b87667e645b9a8dd70a5/docs/about.html" target="_blank">ed4a33e</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-04-05
+</td>
+<td>
+2021-04-05 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/b33b72f9abbce4aa74907378b940f4b3820ed57a/docs/about.html" target="_blank">b33b72f</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-03-29
+</td>
+<td>
+2021-03-29 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/cd13e0006eda99448d3593d491a25bcb406d4e04/docs/about.html" target="_blank">cd13e00</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-03-16
+</td>
+<td>
+2021-03-15 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/4d1bc4dc1d19c236eaec6ad24371c1418c7d1946/docs/about.html" target="_blank">4d1bc4d</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-03-01
+</td>
+<td>
+2021-03-01 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/0eccc36f38a2556405c49664a9c0e9652cd6b3a1/docs/about.html" target="_blank">0eccc36</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-02-22
+</td>
+<td>
+2021-02-15 Backfill
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/31485c41b57e15c50ee17c2601abe81538409e5d/docs/about.html" target="_blank">31485c4</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-02-22
+</td>
+<td>
+2021-02-22 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/20a5e54cb59969f61161719fa0a80eea7b9d1d91/docs/about.html" target="_blank">20a5e54</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-02-16
+</td>
+<td>
+Revert “2021-02-16 Update”
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/0f96253ae4b285f5e72cb8caf009433f3951594e/docs/about.html" target="_blank">0f96253</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-02-16
+</td>
+<td>
+2021-02-16 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/5c63d558de94c302a7716d2ce55e059cc0d42faa/docs/about.html" target="_blank">5c63d55</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-02-09
+</td>
+<td>
+2021-02-08 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/436e28640064cf7025f02aca752b03d1e56d6e01/docs/about.html" target="_blank">436e286</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-02-01
+</td>
+<td>
+2021-02-01 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/8bc06d3dd1589ccb9b279ccc496c6f1dfe8002aa/docs/about.html" target="_blank">8bc06d3</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-01-27
+</td>
+<td>
+Backfill 2020-01-18 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/8da4f62b577b4b77e6bd14bbfabfd969b4ceb07b/docs/about.html" target="_blank">8da4f62</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-01-27
+</td>
+<td>
+Fix historical cumulative deaths
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/28db989e997cb799e57190e202468b9a7be57862/docs/about.html" target="_blank">28db989</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-01-26
+</td>
+<td>
+2020-01-25 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/11f4456777793965673df85ea044ca44b8d8d23c/docs/about.html" target="_blank">11f4456</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-01-20
+</td>
+<td>
+Revert “2020-01-18 Update”
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/847f3bd26b3dc5bb1c057c470f84769238093d85/docs/about.html" target="_blank">847f3bd</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-01-19
+</td>
+<td>
+2020-01-18 Update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/518b7bf07b419eadcbc03373159da4a9be05e7e7/docs/about.html" target="_blank">518b7bf</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-01-12
+</td>
+<td>
+Small plot tweaks
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/b3e230f7441ce14651280101ab8790c34f7366b4/docs/about.html" target="_blank">b3e230f</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-01-12
+</td>
+<td>
+Show Probability of Death Reporting in Model Inputs Plots
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/63bcbfdec0853a9c895c7f50fd5aa5f117156324/docs/about.html" target="_blank">63bcbfd</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-01-11
+</td>
+<td>
+2021-01-11 Update, Close #2, Account for Death Reporting Delays
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/68805a085788304a0160c35efbd8032e54355cf2/docs/about.html" target="_blank">68805a0</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-01-06
+</td>
+<td>
+Fix Icons
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/f70916bfa5b8e648b64baff81bb9383fb0068a09/docs/about.html" target="_blank">f70916b</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2021-01-06
+</td>
+<td>
+2021-01-14 City &amp; County Updates
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/damonbayer/uci_covid_modeling2/blob/d4cbb1a8d1751d3845d7f37fe885b6e9324a821b/analysis/about.Rmd" target="_blank">d4cbb1a</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2020-12-29
+</td>
+<td>
+about page update (Close #5)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/d4cbb1a8d1751d3845d7f37fe885b6e9324a821b/docs/about.html" target="_blank">d4cbb1a</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2020-12-29
+</td>
+<td>
+about page update (Close #5)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/5c9b5373181d93abd61c6e5aebf66b6854f1b219/docs/about.html" target="_blank">5c9b537</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2020-12-29
+</td>
+<td>
+City Reports
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/damonbayer/uci_covid_modeling2/blob/dcffe20d2a3e74da7266cbdc71a107b8225b008f/analysis/about.Rmd" target="_blank">dcffe20</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2020-12-16
+</td>
+<td>
+Initial Commit
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/damonbayer/uci_covid_modeling2/dcffe20d2a3e74da7266cbdc71a107b8225b008f/docs/about.html" target="_blank">dcffe20</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2020-12-16
+</td>
+<td>
+Initial Commit
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/damonbayer/uci_covid_modeling2/blob/6e35bec752163711535eb946455efdace4b90390/analysis/about.Rmd" target="_blank">6e35bec</a>
+</td>
+<td>
+Damon Bayer
+</td>
+<td>
+2020-12-09
+</td>
+<td>
+Start workflowr project.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div id="about" class="section level2">
+<h2>About</h2>
+<p>This website provides reports on the dynamics and future trends of spread of SARS-CoV-2 in Orange County, CA. Please visit the <a href="https://github.com/damonbayer/uci_covid_modeling2">github</a> for details on the code, and read the <a href="https://arxiv.org/abs/2009.02654">manuscript</a> associated with this endeavor for further methodological details.</p>
+<p><a href="https://www.stat.uci.edu" target="_blank"><img src = "assets/UCI14_2Line_ICS_Dept_Stats_blue.png" class="center"/></a> <a href="https://infectiousdiseaseinitiative.uci.edu" target="_blank"><img src = "assets/U
+CI19_Infectious_Disease_Science_Int_2L_blue.png"/ width="33%"></a>      <a href="https://www.niaid.nih.gov" target="_blank"><img src = "assets/niaid_logo.png"/ width="30%"></a>      <a href="https://www.ochealthinfo.com" target="_blank"><img src = "assets/ochca_logo.png"/ width="30%"></a></p>
+<div id="authors" class="section level3">
+<h3>Authors</h3>
+<p>Damon Bayer, Isaac Goldstein, and Vladimir N. Minin<br> Department of Statistics, University of California, Irvine</p>
+<p>Jon Fintzi, Keith Lumbard, and Emily Ricotta<br> National Institute of Allergy and Infectious Diseases</p>
+<p>Richard Chhuon, Alissa Dratch, Matthew Zahn<br> Orange County Health Care Agency</p>
+</div>
+<div id="contact" class="section level3">
+<h3>Contact</h3>
+<p><a href="https://vnminin.github.io/">Vladimir Minin</a></p>
+</div>
+</div>
+<div id="methodology" class="section level2">
+<h2>Methodology</h2>
+<div id="data" class="section level3">
+<h3>Data</h3>
+<p>We use data provided by <a href="https://www.ochealthinfo.com">OCHCA</a>. An aggregated version of our data is available in the <a href="https://github.com/vnminin/uci_covid_modeling/tree/master/data">github</a>. Crucially, we exclude repeat tests given to patients who test positive (which happens when patients are hospitalized). Our data may not correspond with publicly available data.</p>
+<p>We also do not analyze data in real time. This is because case, test, and death counts are often updated retroactively, and we wish to give data collectors time to provide complete results. Typically, there will be at least a ten day gap between the present day and the final date analyzed in the most recent report.</p>
+</div>
+<div id="statistical-methodology" class="section level3">
+<h3>Statistical methodology</h3>
+<p>Our analysis relies on a six compartment mechanistic model of the pandemic. We then use Bayesian inference to provide inference on key disease dynamics and make predictions on future observed cases and deaths. Further descriptions of the methodology are available in the <a href="https://arxiv.org/abs/2009.02654">manuscript</a>.</p>
+</div>
+<div id="software" class="section level3">
+<h3>Software</h3>
+<p>We used the <a href="https://www.r-project.org/">R</a> software environment, <a href="https://www.tidyverse.org/">tidyverse</a> and <a href="https://jdblischak.github.io/workflowr/">workflowr</a> packages for this website. Our analysis was conducted in <a href="https://github.com/fintzij/stemr">stemr</a>.</p>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+http://docs.mathjax.org/en/latest/configuration.html.  This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

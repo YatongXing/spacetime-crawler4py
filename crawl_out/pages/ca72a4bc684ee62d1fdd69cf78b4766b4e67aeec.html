@@ -1,0 +1,706 @@
+<!-- URL: https://www.ics.uci.edu/~dechter/courses/ics-295cr/2024-25_Q2_Winter -->
+<html>
+<head>
+  <title>Dr. Rina Dechter @ UCI</title>
+  <link rel=Stylesheet href="/~dechter/basic.css">
+</head>
+<body style="background-color: rgb(255, 255, 255);" alink="#00aaaa" link="#008080" vlink="#008080">
+<center>
+   <table width="95%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+         <td class="title" valign="bottom">
+            <nobr>Dr. Rina Dechter - University of California at Irvine</nobr>
+         </td>
+         <td><img alt="ZOT!" align="right" valign="bottom" src="/~dechter/images/anteater-ics.gif"></td>
+      </tr>
+      <!--
+	  <tr>
+         <td colspan="2"><img height="2" src="/~dechter/images/transp-fill.gif"></td>
+      </tr>
+	  -->
+	  <!--
+      <tr>
+         <td colspan="2"><img width="100%" height="2"  src="/~dechter/images/black-fill.gif"></td>
+      </tr>
+	  -->
+      <tr valign=top>
+         <td>
+		    <!--<font color="ffaa00" size="3">-->
+		    <a href="/~dechter/index.html">home</a> |
+            <a href="/~dechter/publications.html">publications</a> |
+            <a href="/~dechter/books/">book</a> |
+            <a href="/~dechter/courses.html">courses</a> |
+            <a href="/~dechter/research.html">research</a>
+			<!--</font>-->
+         </td>
+         <td align=right>
+            <!--<font color=#008080>-->
+               Revised on
+               
+               Mar. 14, 2025
+            </font>
+         </td>
+      </tr>
+   </table>
+</center>
+<br>
+<br>
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="90%">
+  <tbody>
+    <tr>
+      <td><img src="/%7Edechter/images/transp-fill.gif" height="4"></td>
+    </tr>
+    <tr>
+      <td class="title">
+      <h3><span style="font-weight: bold;">CompSci 295 - Causal Inference for Reinforcement Learning (Winter 2025)<br>
+      </span></h3>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="/%7Edechter/images/black-fill.gif" height="2"
+ width="100%"></td>
+    </tr>
+    <tr>
+      <td align="right"> <a href="resources.htm"><span
+ style="text-decoration: underline;"></span></a><span
+ style="text-decoration: underline;"></span><a href="slides.html"></a><a
+ style="font-weight: bold;" href="resources.html"><span
+ style="text-decoration: underline;"></span></a> </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+<span style="font-weight: bold;"></span><br>
+<table style="width: 1076px; height: 430px;" border="0" cellpadding="0"
+ cellspacing="0">
+  <tbody>
+    <tr>
+      <td colspan="2">
+		<strong><em>Instructor:</em></strong> Rina Dechter <br>
+		<strong><em>Days,Time:</em></strong> M/W, 11:00 am - 12:20 pm (PT) <br>
+		<strong><em>Classoom:</em></strong> <a href="https://classrooms.uci.edu/classroomtechnology/classrooms/dbh/dbh-1300"> DBH 1300 </a> <br>
+		<strong><em>Zoom Link:</em></strong> <a href="https://uci.zoom.us/j/94542138848"> https://uci.zoom.us/j/94542138848 </a> <br>
+		<strong><em>Office hours:</em></strong> Upon Request <br>
+      <hr noshade="noshade">
+      <p> </p>
+The class will cover topics in Causal reasoning focusing primarily on Reinforcement learning.  The class will run as a seminar. I will give the first few introductory classes. Students will present present papers from the literature or chapters in books and complete a final project.  There may also be some homework assignments. The course is intended primarily for <em><strong>PhD</strong></em> students in the area of AI and Machine Learning, but sufficient preparation in AI and Machine learning is expected and required (at least one of  <em><strong> CS 171, 271, 273  or 276</strong></em>).
+	
+
+
+
+
+
+	
+
+<h2><span style="font-weight: bold;">Relevant sources (books or classes)</span></h2>
+
+<h3><strong>On Graphical Models:</strong></h3>
+
+<ul>
+  <li>[Dechter-book]  <a href="https://dl.acm.org/doi/10.5555/3348514">Reasoning With Probabilistic and Deterministic Graphical Models: Exact Algorithms</a>  <br> 
+  Rina Dechter</li>
+  <li>[Dechter-class] <a href="https://ics.uci.edu/~dechter/courses/ics-276/fall_2024/">Course: Causal and Probabilistic Reasoning with Graphical Models</a>  <br> 
+  Rina Dechter</li>
+</ul>
+
+<h3><strong>On Causality:</strong></h3>
+
+<ul>
+  <li>[Primer]  <a href="http://bayes.cs.ucla.edu/PRIMER/">Causal Inference in Statistics: A Primer</a>  <br> 
+  Judea Pearl, Madelyn Glymour, Nicholas P. Jewell</li>
+  <li>[CMRI] <a href="http://bayes.cs.ucla.edu/BOOK-2K/">Causality: Models, Reasoning, and Inference</a> <br> 
+  Judea Pearl</li>
+  <li>[Why] <a href="http://bayes.cs.ucla.edu/WHY/">The Book of Why</a> <br> 
+  Judea Pearl, Dana Mackenzie</li>
+  <li>[PH] <a href="https://causalai.net/r60.pdf">On Pearl's Hierarchy and the Foundations of Causal Inference</a>  <br> 
+  Elias Bareinboim, Juan D. Correa, Duligur Ibeling, Thomas Icard</li>
+  <li>[CAI] <a href="https://canvas.eee.uci.edu/courses/69889/files/folder/Resources?preview=29636445">Causal Artificial Intelligence: A Roadmap for Building Causally Intelligent Systems</a> <em>(preliminary draft)</em> <br> 
+  Elias Bareinboim</li>
+</ul>
+
+<h3><span style="font-weight: bold;">On Reinforcement Learning:</span></h3>
+<ul>
+  <li><a href="http://incompleteideas.net/book/RLbook2018.pdf">Reinforcement Learning: An Introduction</a><br>
+  Richard S. Sutton and Andrew G. Barto</li>
+  <li><a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html">UCL Course on Reinforcement Learning</a><br>
+  David Silver</li>
+  <li><a href="https://en.wikipedia.org/wiki/Reinforcement_learning#Research">Reinforcement Learning: Wikipedia</a></li>
+</ul>
+
+
+
+
+
+<h3><span style="font-weight: bold;">Tutorials:</span></h3>
+
+<h4><span style="font-weight: bold;">Videos:</span></h3>
+<ul>
+  <li><a href="https://crl.causalai.net/">Causal Reinforcement Learning</a><br>
+  Elias Bareinboim ICML 2020 tutorial series connecting causal inference and reinforcement learning, and describing specific Causal RL tasks, with list of related background papers.</li>
+  <li><a href="https://www.youtube.com/watch?v=QLDvRkuETkU&list=PLTKW0gfpXTtspF7Q9BALVNmoNQhVkpCTJ&index=2">Towards Causal RL</a><br>
+  Part of an NSF seminar series, Elias Bareinboim's tutorial introducing Causal Reinforcement Learning and motivating its potential.</li>
+  <li><a href="https://www.youtube.com/watch?v=k2hC2jxAmBI">Causal Fairness Analysis</a><br>
+  Part of ICML 2020, Elias Bareinboim and Drago Plecko's presentation on using causality to address fairness issues in AI decision making.</li>
+  
+  
+</ul><h4><span style="font-weight: bold;">Papers:</span></h3>
+<ul>
+  <li><a href="https://arxiv.org/abs/2403.04221">Why Online Reinforcement Learning is Causal</a><br>
+  Oliver Schulte, Pascal Poupart</li>
+  <li><a href="https://arxiv.org/abs/2307.01452">Causal Reinforcement Learning: A Survey</a><br>
+  Zhihong Deng, Jing Jiang, Guodong Long, Chengqi Zhang</li>
+  <li><a href="https://arxiv.org/abs/2206.15475">Causal Machine Learning: A Survey and Open Problems</a><br>
+  Jean Kaddour, Aengus Lynch, Qi Liu, Matt J. Kusner, Ricardo Silva</li>
+</ul>
+
+
+
+
+
+
+
+
+<h3><span style="font-weight: bold;">Causal RL</span></h3>
+<ul>
+  <li><a href="papers/r65.pdf">An Introduction to Causal Reinforcement Learning</a><br>
+  Elias Bareinboim, Junzhe Zhang, Sanghack Lee</li>
+</ul>
+
+
+
+
+
+
+<h4><span style="font-weight: bold;">Elias Bareinboim Papers Related to Task 1: Causal Online To Offline Learning</span></h3>
+<ul>
+  <li><a href="https://causalai.net/r25.pdf">Transfer Learning in Multi-Armed Bandits: A Causal Approach</a><br>
+  Junzhe Zhang, Elias Bareinboim</li>
+  <li><a href="https://causalai.net/r48.pdf">Near-Optimal Reinforcement Learning in Dynamic Treatment Regimes</a><br>
+  Junzhe Zhang, Elias Bareinboim</li>
+  <li><a href="https://causalai.net/r57.pdf">Designing Optimal Dynamic Treatment Regimes: A Causal Reinforcement Learning Approach</a><br>
+  Junzhe Zhang, Elias Bareinboim</li>
+  <li><a href="https://arxiv.org/abs/2003.05623">Off-policy Policy Evaluation For Sequential Decisions Under Unobserved Confounding</a><br>
+  Hongseok Namkoong, Ramtin Keramati, Steve Yadlowsky, Emma Brunskill</li>
+</ul>
+
+
+
+
+
+<h4><span style="font-weight: bold;">Elias Bareinboim Papers Related to Task 2: When and Where to Intervene? (refining the policy space)</span></h3>
+<ul>
+  <li><a href="https://causalai.net/r36.pdf">Structural Causal Bandits: Where to Intervene?</a><br>
+  Sanghack Lee, Elias Bareinboim</li>
+  <li><a href="https://causalai.net/r40.pdf">Structural Causal Bandits with Non-manipulable Variables</a><br>
+  Sanghack Lee, Elias Bareinboim</li>
+  <li><a href="https://causalai.net/r63.pdf">Characterizing Optimal Mixed Policies: Where to Intervene and What to Observe</a><br>
+  Sanghack Lee, Elias Bareinboim</li>
+  <li><a href="https://causalai.net/r84.pdf">Online Reinforcement Learning for Mixed Policy Scopes</a><br>
+  Junzhe Zhang, Elias Bareinboim</li>
+</ul>
+
+
+
+
+
+<h4><span style="font-weight: bold;">Elias Bareinboim Papers Related to Task 3: Counterfactual Decision-Making (changing optimization function based on intentionality, free will, and autonomy)</span></h3>
+<ul>
+  <li><a href="https://ftp.cs.ucla.edu/pub/stat_ser/r460.pdf">Bandits with Unobserved Confounders: A Causal Approach</a><br>
+  Elias Bareinboim, Andrew Forney</li>
+  <li><a href="https://causalai.net/r26.pdf">Counterfactual Data-Fusion for Online Reinforcement Learners</a><br>
+  Andrew Forney, Judea Pearl, Elias Bareinboim</li>
+  <li><a href="https://causalai.net/r39.pdf">Counterfactual Randomization: Rescuing Experimental Studies from Obscured Confounding</a><br>
+  Andrew Forney, Elias Bareinboim</li>
+  <li><a href="https://causalai.net/r64.pdf">Can Humans Be out of the Loop?</a><br>
+  Junzhe Zhang, Elias Bareinboim</li>
+</ul>
+
+
+
+
+
+<h4><span style="font-weight: bold;">Elias Bareinboim Papers Related to Task 7: Causal Curriculum Learning</span></h3>
+<ul>
+  <li><a href="https://causalai.net/r102.pdf">Causally Aligned Curriculum Learning</a><br>
+  Mingxuan Li, Junzhe Zhang, Elias Bareinboim</li>
+</ul>
+
+
+
+
+
+
+
+
+<h3><span style="font-weight: bold;">Additional Papers:</span></h3>
+<ul>
+  <li><a href="https://arxiv.org/abs/2107.02729">AdaRL: What, Where, and How to Adapt in Transfer Reinforcement Learning</a><br>
+  Biwei Huang, Fan Feng, Chaochao Lu, Sara Magliacane, Kun Zhang</li>
+  <li><a href="https://arxiv.org/abs/2407.20651">Towards Generalizable Reinforcement Learning via Causality-Guided Self-Adaptive Representations</a><br>
+  Yupei Yang, Biwei Huang, Fan Feng, Xinyue Wang, Shikui Tu, Lei Xu</li>
+  <li><a href="https://arxiv.org/abs/2306.06561">Learning World Models with Identifiable Factorization</a><br>
+  Yu-Ren Liu, Biwei Huang, Zhengmao Zhu, Honglong Tian, Mingming Gong, Yang Yu, Kun Zhang</li>
+  <li><a href="https://arxiv.org/abs/2110.12468">False Correlation Reduction for Offline Reinforcement Learning
+</a><br>
+  Zhihong Deng, Zuyue Fu, Lingxiao Wang, Zhuoran Yang, Chenjia Bai, Tianyi Zhou, Zhaoran Wang, Jing Jiang</li>
+  <li><a href="https://arxiv.org/abs/2106.14421">Causal Reinforcement Learning using Observational and Interventional Data</a><br>
+  Maxime Gasse, Damien Grasset, Guillaume Gaudron, Pierre-Yves Oudeyer</li>
+  <li><a href="https://arxiv.org/abs/2208.06267">Causal Imitation Learning with Unobserved Confounders</a><br>
+  Junzhe Zhang, Daniel Kumor, Elias Bareinboim</li>
+  <li><a href="https://arxiv.org/abs/2006.12311">Provably Efficient Causal Reinforcement Learning with Confounded Observational Data</a><br>
+  Lingxiao Wang, Zhuoran Yang, Zhaoran Wang</li>
+  <li><a href="https://arxiv.org/abs/2010.04296">CausalWorld: A Robotic Manipulation Benchmark for Causal Structure and Transfer Learning</a><br>
+  Ossama Ahmed, Frederik Träuble, Anirudh Goyal, Alexander Neitz, Yoshua Bengio, Bernhard Schölkopf, Manuel Wüthrich, Stefan Bauer</li>
+  <li><a href="https://arxiv.org/abs/2210.06964">Causality-driven Hierarchical Structure Discovery for Reinforcement Learning</a><br>
+  Shaohui Peng, Xing Hu, Rui Zhang, Ke Tang, Jiaming Guo, Qi Yi, Ruizhi Chen, Xishan Zhang, Zidong Du, Ling Li, Qi Guo, Yunji Chen</li>
+</ul>
+
+  <!-- DELETED -->
+  <!-- <li> -->
+    <!-- <a href="https://arxiv.org/abs/2211.16583">Offline Policy Evaluation and Optimization under Confounding</a><br> -->
+    <!-- Chinmaya Kausik, Yangyi Lu, Kevin Tan, Maggie Makar, Yixin Wang, Ambuj Tewari -->
+  <!-- </li> -->
+
+
+
+
+
+<h3><span style="font-weight: bold;">Papers and Lectures on Fairness</span></h3>
+<ul>
+  <li><a href="https://www.cs.columbia.edu/~dplecko/#teaching">Course on Causal Fairness Analysis</a> and <a href="https://www.cs.columbia.edu/~dplecko/#papers">related papers</a><br>
+  Drago Plecko</li>
+</ul>
+
+
+
+
+
+<h3><span style="font-weight: bold;">From Pearl's group: Personal decision making, Robustness</span></h3>
+<ul>
+  <li><a href="https://www.degruyter.com/document/doi/10.1515/jci-2022-0050/html">Personalized decision making – A conceptual introduction</a><br>
+  Scott Mueller, Judea Pearl</li>
+  <li><a href="https://ftp.cs.ucla.edu/pub/stat_ser/r488-reprint.pdf">Unit Selection Based on Counterfactual Logic</a><br>
+  Ang Li, Judea Pearl</li>
+  <li><a href="https://ftp.cs.ucla.edu/pub/stat_ser/r450-reprint.pdf">Causal inference and the data-fusion problem</a><br>
+  Elias Bareinboim, Judea Pearl</li>
+  <li><a href="https://ftp.cs.ucla.edu/pub/stat_ser/r400-reprint.pdf">External Validity: From Do-Calculus to Transportability Across Populations</a><br>
+  Judea Pearl, Elias Bareinboim</li>
+</ul>
+
+
+
+
+
+
+
+
+<h2><span style="font-weight: bold;">Tools for RL:</span></h2>
+<ul>
+	  <li><a href="https://www.quora.com/What-are-some-tools-you-can-use-for-reinforcement-learning">Miscellaneous Tools for RL</a>
+	  <p>
+</ul>
+
+
+
+<h2><span style="font-weight: bold;">Course Project</span></h2>
+Each student will also be engaged in a project based on papers from recent literature. The project will involve learning about and preseting an assigned paper/literature in class and a final project report.
+
+<ul>
+	  <li><a href="homework/PROJECT-295-W25">Project Description</a>
+	  <li><a href="https://docs.google.com/spreadsheets/d/1ROojG9YWps9WMAhJcz1lHu1bba-GB6K_I4jyuuZA0ao/edit?usp=sharing">Project Sign-up Sheet</a>
+	  <p>
+</ul>
+
+
+	 
+      <h2><span style="font-weight: bold;">Schedule</span></h2>
+      </td>
+    </tr>
+    <tr>
+      <td><img src="/%7Edechter/images/black-fill.gif" height="2"
+ width="100%"></td>
+    </tr>
+  </tbody>
+</table>
+<table style="width: 1079px; height: 369px;" border="3" cellpadding="5"
+ cellspacing="1">
+     <colgroup>
+       <col span="1" style="width: 10%;">
+       <col span="1" style="width: 10%;">
+       <col span="1" style="width: 60%;">
+	   <col span="1" style="width: 20%;">
+    </colgroup>
+  <tbody>
+    <tr>
+      <td><b>Week</b> </td>
+      <td> <b>Date</b> </td>
+      <td> <b>Topic</b> </td>
+      <td> <b>Readings and Links</b> </td>
+    </tr>
+    <tr>
+      <td>Week 1 </td>
+      <td> M 01/06,<br> W 01/08 </td>
+      <td>
+			<!-- week topicss -->
+			Tutorial on Causal Probabilistic Graphical Models
+      </td>
+      <td>
+			<!-- readings and links -->
+			<u>Assignments</u> <br>
+			- <a href="homework/HWK1-295-W25.pdf">HW 1</a><br>
+			<br>
+			<u>Slides</u> <br>
+			- <a href="slides/class1-W25.pdf">Slides 1</a><br>
+			- <a href="slides/class2-W25.pdf">Slides 2</a><br>
+			<br>
+			<u>Related Resources</u> <br>
+			- [Primer] <br>
+			- [Dechter-book] <br>
+			- [Dechter-class]
+      </td>
+    </tr>
+    <tr>
+      <td> Week 2 </td>
+      <td> M 01/13,<br> W 01/15 </td>
+      <td>
+			<!-- week topicss -->
+			Introduction to Reinforcement Learning
+      </td>
+      <td>
+			<!-- readings and links -->
+			<u>Slides</u> <br>
+			- <a href="slides/class3a-W25.pdf">Slides 3</a><br>
+			- <a href="slides/class3b-W25.pdf">Slides 4</a><br>
+      </td>
+    </tr>
+    <tr>
+      <td>Week 3<br>
+      </td>
+      <td> <s style="color: darkred;"> M 01/20 </s>,<br> W 01/22 </td>
+      <td>
+			<!-- week topicss -->
+			<u>Presentations</u><br>
+			1. <strong>Jiapeng Zhao</strong>: "Introduction to Causal Reinforcement Learning" [<a href="https://ics.uci.edu/~dechter/courses/ics-295cr/2024-25_Q2_Winter/papers/r65.pdf">pdf</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Rina Dechter)
+			<br><br>
+      </td>
+     <td> 
+			<!-- readings and links -->
+			<u>Slides</u> <br>
+			- <a href="presentations/P1 - Jiapeng Zhao - An Introduction to Causal Reinforcement Learning.pdf">P1 Slides</a><br>
+	</td>
+    </tr>
+    <tr>
+      <td> Week 4 </td>
+      <td> M 01/27,<br> W 01/29 </td>
+      <td>
+			<!-- week topicss -->
+			<u>Presentations</u><br>
+			
+			1.(cont'd) <strong>Jiapeng Zhao</strong>: "Introduction to Causal Reinforcement Learning" 
+			[<a href="https://ics.uci.edu/~dechter/courses/ics-295cr/2024-25_Q2_Winter/papers/r65.pdf">pdf</a>]
+			[<a href="https://youtu.be/NzA0Jyou_L4">video</a> (part II of presentation)]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Rina Dechter)
+			<br><br>
+			
+			2. <strong>Omar Samiullah</strong>: "Transfer Learning in Multi-Armed Bandits: A Causal Approach" 
+			[<a href="https://causalai.net/r25.pdf">pdf</a>]
+			[<a href="https://youtu.be/VEkyAsjOUwo">video (full)</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Annie Raichev)
+			<br><br>
+			
+			3. <strong>Jared Macshane</strong>: "Online Reinforcement Learning for Mixed Policy Scopes" 
+			[<a href="https://causalai.net/r84.pdf">pdf</a>]
+			[<a href="https://youtu.be/UbB1DgZv_K8">video</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Bryan Vela)
+			<br><br>
+			
+<!-- 			<br>
+			<i>On standby...</i>
+			<br><br>
+			
+			4. <strong>David Lee</strong>: "Designing Optimal Dynamic Treatment Regimes: A Causal Reinforcement Learning Approach" [<a href="https://causalai.net/r57.pdf">pdf</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Shaoyuan Xie)
+			<br><br> -->
+
+      </td>
+      <td>
+			<!-- readings and links -->
+			<u>Assignments</u> <br>
+			- <a href="homework/HWK2-295-W25.pdf">HW 2</a><br>
+			<br>
+			<u>Slides</u> <br>
+			- <a href="presentations/P1 - Jiapeng Zhao - An Introduction to Causal Reinforcement Learning.pdf">P1 Slides</a><br>
+			- <a href="presentations/P2 - Omar Samiullah - Transfer Learning in Multi-Armed Bandits_ A Causal Approach.pdf">P2 Slides</a><br>
+			- <a href="presentations/P3 - Jared Macshane - Online Reinforcement Learning for Mixed Policy Scopes.pdf">P3 Slides</a><br>
+	  </td>
+    </tr>
+    <tr>
+      <td>Week 5 </td>
+      <td> M 02/03,<br><s style="color: darkred;"> W 02/05</s>, <br> <strong style="color:blue">Th 02/06</strong>  </td>
+      <td>
+			<!-- week topicss -->			
+			<u>Presentations (M 02/03)</u><br>
+			
+			2.(cont'd) <strong>Omar Samiullah</strong>: "Transfer Learning in Multi-Armed Bandits: A Causal Approach" 
+			[<a href="https://causalai.net/r25.pdf">pdf</a>]
+			[<a href="https://youtu.be/VEkyAsjOUwo">video (full)</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Annie Raichev)
+			<br><br>
+			
+			4. <strong>David Lee</strong>: "Designing Optimal Dynamic Treatment Regimes: A Causal Reinforcement Learning Approach"
+			[<a href="https://causalai.net/r57.pdf">pdf</a>]
+			[<a href="https://youtu.be/glXEs81Wh8U">video</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Shaoyuan Xie)
+			<br><br>	
+			
+
+			<!-- <br> -->
+			<!-- <i>On standby...</i> -->
+			<!-- <br><br> -->
+			
+			<!-- 5. <strong>Michael Mulder</strong>: "Causal Imitation Learning Via Inverse Reinforcement Learning" [<a href="https://causalai.net/r89.pdf">pdf</a>] and "Causal Imitation Learning with Unobserved Confounders" [<a href="https://causalai.net/r66.pdf">pdf</a>] -->
+			<!-- <br> -->
+			<!-- &nbsp;&nbsp;&nbsp; -->
+			<!-- (Discussant: Omar Samiullah) -->
+			<!-- <br><br> -->
+			
+			
+			<!-- <strong style="color:blue">Workshop on Causal Reasoning at UCI (02/06)</strong><br> -->
+			<!-- (Please attend at least one session from the <a href="https://docs.google.com/document/d/14N9SfDekoL_qXzZrdv6iIn7gQXuAJd43kG1hIIYdM0I/edit?usp=sharing">agenda</a>) -->
+			<!-- <br><br> -->
+
+      </td>
+      <td>
+			<!-- readings and links -->
+			<u>Assignments</u> <br>
+			- <a href="homework/HWK3-295-W25.pdf">HW 3</a><br>
+			<br>
+			
+			<u>Slides</u> <br>
+			- <a href="presentations/P2 - Omar Samiullah - Transfer Learning in Multi-Armed Bandits_ A Causal Approach.pdf">P2 Slides</a><br>
+			- <a href="presentations/P4 - David Lee - Designing Optimal Dynamic Treatment Regimes_ A Causal Reinforcement Learning Approach.pdf">P4 Slides</a><br>
+			
+			<br><br>
+			<a style="color:blue" href="https://docs.google.com/document/d/14N9SfDekoL_qXzZrdv6iIn7gQXuAJd43kG1hIIYdM0I/edit?usp=sharing">Agenda for Workshop on Causal Reasoning at UCI</a><br>
+
+	  </td>
+    </tr>
+    <tr>
+      <td>Week 6 </td>
+      <td> M 02/10,<br> W 02/12 </td>
+      <td>
+			<!-- week topicss -->			
+			<u>Presentations</u><br>
+						
+			5. <strong>Michael Mulder</strong>: "Causal Imitation Learning Via Inverse Reinforcement Learning" [<a href="https://causalai.net/r89.pdf">pdf</a>]
+			and "Causal Imitation Learning with Unobserved Confounders" 
+			[<a href="https://causalai.net/r66.pdf">pdf</a>]
+			[<a href="https://youtu.be/XfzlBrCRj-0">video</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Omar Samiullah)
+			<br><br>						
+			
+			6. <strong>Annie Raichev</strong>: "Causal Reinforcement Learning using Observational and Interventional Data" 
+			[<a href="https://arxiv.org/pdf/2106.14421">pdf</a>]
+			[<a href="https://youtu.be/Iw7C3t0_SWw">video</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Brandon Vela)
+			<br><br>						
+
+      </td>
+      <td> 
+			<!-- readings and links -->
+			<u>Assignments</u> <br>
+			- <a href="homework/HWK4-295-W25.pdf">HW 4</a><br>
+			
+			<br>
+			<u>Slides</u> <br>
+			- <a href="presentations/P5 - Michael Mulder - Causal Imitation Learning via Inverse Reinforcement Learning.pdf">P5 Slides</a><br>
+			- <a href="presentations/P6 - Annie Raichev - Causal Reinforcement Learning using Observational and Interventional Data.pdf">P6 Slides</a><br>
+	  </td>
+    </tr>
+    <tr>
+      <td>Week 7 </td>
+      <td> <s style="color: darkred;"> M 02/17 </s>,<br> W 02/19 </td>
+      <td>
+			<!-- week topicss -->			
+			<u>Presentations</u><br>
+						
+			7. <strong>Jay Yoo</strong>: "Personalized decision making - A conceptual introduction" 
+			[<a href="https://www.degruyter.com/document/doi/10.1515/jci-2022-0050/html">pdf</a>]
+			and "Unit Selection Based on Counterfactual Logic" [<a href="https://ftp.cs.ucla.edu/pub/stat_ser/r488-reprint.pdf">pdf</a>]
+			[<a href="https://youtu.be/t6ggtrpPbcg">video</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Jared Macshane)
+			<br><br>									
+      </td>
+      <td> 
+			<!-- readings and links -->
+			<u>Assignments</u> <br>
+			- <a href="homework/HWK5-295-W25.pdf">HW 5</a><br>
+			
+			<br>
+			<u>Slides</u> <br>
+			- <a href="presentations/P7 - Jay Yoo - Personalized Decision Making_ A Conceptual Introduction.pdf">P7 Slides</a><br>
+	  </td>
+    </tr>
+    <tr>
+      <td>Week 8<br>
+      </td>
+      <td>M 02/24,<br> W 02/26<br>
+      </td>
+      <td>
+			<!-- week topicss -->
+			<u>Presentations</u><br>
+						
+			8. <strong>Bryan Vela</strong>: "Fairness in Decision-Making - The Causal Explanation Formula" 
+			[<a href="papers/Fairness in Decision-Making - The Causal Explanation Formula.pdf">pdf</a>] 
+			[<a href="https://youtu.be/NfaCuuVlfOw">video</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: David Lee)
+			<br><br>	
+
+			9. <strong>Brandon Vela</strong>: "Can Humans Be out of the Loop?" 
+			[<a href="https://causalai.net/r64.pdf">pdf</a>] 
+			[<a href="https://youtu.be/tVo9PEAqWU8">video</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Michael Mulder)
+			<br><br>							
+	
+      </td>
+      <td>
+			<!-- readings and links -->
+			<u>Assignments</u> <br>
+			- See HW 5 from week 8<br>
+			- <a href="homework/HWK6-295-W25.pdf">HW 6</a><br>
+			
+			<br>
+			<u>Slides</u> <br>
+			- <a href="presentations/P8 - Bryan Vela - Fairness in Decision-Making - The Causal Explanation Formula.pdf">P8 Slides</a><br>
+			- <a href="presentations/P9 - Brandon Vela - Can Humans Be Out of the Loop.pdf">P9 Slides</a><br>
+	  </td>
+    </tr>
+    <tr>
+      <td>Week 9<br>
+      </td>
+      <td>M 03/03,<br> W 03/05<br>
+      </td>
+      <td>
+			<!-- week topicss -->
+			<u>Presentation (Wednesday [<a style="color: blue;">in-person</a>])</u><br>
+						
+			10. <strong>Shaoyuan Xie</strong>: "Towards Generalizable Reinforcement Learning via Causality-Guided Self-Adaptive Representations" 
+			[<a href="https://arxiv.org/pdf/2407.20651">pdf</a>]
+			[<a href="https://youtu.be/MbpYYHJ2_BA">video</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Jay Yoo)
+			<br><br>	
+      </td>
+      <td>	
+			<!-- readings and links -->
+			<u>Assignments</u> <br>
+			- <a href="homework/HWK7-295-W25.pdf">HW 7</a><br>
+			
+			<br>
+			<u>Slides</u> <br>
+			- <a href="presentations/P10 - Shaoyuan Xie - Towards Generalizable Reinforcement Learning via Causality-Guided Self-Adaptive Representations.pdf">P10 Slides</a><br>
+      </td>
+    </tr>
+    <tr>
+      <td>Week 10<br>
+      </td>
+      <td>M 03/10,<br> W 03/12<br>
+      </td>
+      <td>
+			<!-- week topicss -->
+			<u>Presentations</u><br>
+						
+			11. <strong>Jiapeng Zhao</strong>: "The Causal-Neural Connection: Expressiveness, Learnability, and Inference" 
+			[<a href="https://arxiv.org/pdf/2107.00793">pdf</a>]
+			[<a href="https://youtu.be/CA0v5sqRlTE">video</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Class)
+			<br><br>
+			
+			12. <strong>(Guest Speaker) Mingxuan Li</strong>: "Automatic Reward Shaping from Confounded Offline Data" 
+			[<a href="papers/Automatic Reward Shaping from Confounded Offline Data">pdf</a>]
+			[<a href="https://youtu.be/svf4nPW4UmM">video</a>]
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			(Discussant: Class)
+			<br><br>
+	  </td>
+      <td>
+			<!-- readings and links -->
+			<u>Assignments</u> <br>
+			- See HW 7 from Week 9<br>
+			- <a href="homework/PROJECT-295-W25">Final projects</a> due Wednesday, March 19th<br>
+			
+			<br>
+			<u>Slides</u> <br>
+			- <a href="presentations/P11 - Jiapeng Zhao - The Causal-Neural Connection_ Expressiveness-Learnability-and-Inference.pdf">P11 Slides</a><br>
+			- <a href="presentations/P12 - Mingxuan Li - Automatic Reward Shaping from Confounded Offline Data.pdf">P12 Slides</a><br>
+
+	  </td>
+    </tr>
+	<tr>
+      <td>Finals Week<br>
+      </td>
+      <td>F 03/21,<br> 8:00-10:00am <br>
+      </td>
+      <td>
+			<!-- week topicss -->
+      </td>
+      <td>	
+			<!-- readings and links -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+</p>
+<br>
+<table style="width: 1076px; height: 430px;" border="0" cellpadding="0"
+ cellspacing="0">
+ <rr><td>
+ 
+
+</td></tr>
+ 
+ </table>
+
+
+</center>
+<div id="footer"><centeR>
+<A HREF="http://www.ics.uci.edu">School of Information and Computer Science</A>
+<A HREF="http://www.uci.edu">University of California, Irvine, CA 92697-3435</a>
+<A HREF="http://www.ics.uci.edu/~dechter">Dr. Rina Dechter</A>
+
+<A HREF="mailto:dechter_at_ics.uci.edu">dechter at ics.uci.edu</A>
+
+</center></div>
+</body>
+</html>

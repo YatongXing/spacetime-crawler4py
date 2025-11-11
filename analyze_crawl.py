@@ -1,17 +1,3 @@
-#!/usr/bin/env python3
-# analyze_crawl.py
-#
-# Usage examples:
-#   python analyze_crawl.py --manifest crawl_out/manifest.tsv --report crawl_out/report.json
-#   python analyze_crawl.py --pages_dir crawl_out/pages --report crawl_out/report.json
-#   python analyze_crawl.py --worker_log Worker-0.log --worker_log Worker-1.log
-#
-# This script aggregates four required metrics for CS121 A2:
-#   1) Unique page count (URL uniqueness ignores fragment only)
-#   2) Longest page by word count (HTML markup excluded)
-#   3) Top-K most common words (stopwords removed)
-#   4) Subdomains under uci.edu with counts (alphabetical)
-
 import argparse
 import csv
 import os
@@ -23,7 +9,7 @@ from urllib.parse import urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup
 
-# ---------- Stopwords (fallback) ----------
+# Stopwords (fallback)
 DEFAULT_STOPWORDS = {
     "a","about","above","after","again","against","all","am","an","and","any","are","as","at",
     "be","because","been","before","being","below","between","both","but","by",
@@ -46,7 +32,7 @@ DEFAULT_STOPWORDS = {
     "you","your","yours","yourself","yourselves",
 }
 
-# ---------- Tokenization ----------
+# Tokenization
 # Ignore single-letter tokens to prevent 's', 'e', ... from dominating counts
 WORD_RE = re.compile(r"[a-z]{2,}")
 

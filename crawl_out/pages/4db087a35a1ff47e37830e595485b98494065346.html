@@ -1,0 +1,1679 @@
+<!-- URL: https://ics.uci.edu/~achio/docs/smartspec/gui-toolkit -->
+<!DOCTYPE html>
+<!-- This site was created with Hugo Blox. https://hugoblox.com -->
+<!-- Last Published: September 4, 2025 --><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Hugo Blox Builder 5.9.7" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/~achio/css/vendor-bundle.min.26c458e6907dc03073573976b7f4044e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/~achio/css/wowchemy.5691485ce8e88de823038b8e3d90ec13.css" />
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/~achio/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/~achio/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Andrew Chio" />
+
+
+
+
+
+  
+
+<meta name="description" content="GUI Toolkit to define/modify SmartSPEC data models" />
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://ics.uci.edu/~achio/docs/smartspec/gui-toolkit/" />
+<link rel="canonical" href="https://ics.uci.edu/~achio/docs/smartspec/gui-toolkit/" />
+
+
+
+  <link rel="manifest" href="/~achio/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/~achio/media/icon_hu16b2b2a9f74b6c833e6b10b3d3ea4276_17907_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/~achio/media/icon_hu16b2b2a9f74b6c833e6b10b3d3ea4276_17907_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://ics.uci.edu/~achio/media/icon_hu16b2b2a9f74b6c833e6b10b3d3ea4276_17907_512x512_fill_lanczos_center_3.png" />
+
+
+
+  
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Andrew Chio" />
+<meta property="og:url" content="https://ics.uci.edu/~achio/docs/smartspec/gui-toolkit/" />
+<meta property="og:title" content="GUI Toolkit | Andrew Chio" />
+<meta property="og:description" content="GUI Toolkit to define/modify SmartSPEC data models" /><meta property="og:image" content="https://ics.uci.edu/~achio/media/icon_hu16b2b2a9f74b6c833e6b10b3d3ea4276_17907_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+
+  
+    <meta property="og:updated_time" content="2023-01-01T00:00:00&#43;00:00" />
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    <link rel="alternate" href="/~achio/docs/smartspec/gui-toolkit/index.xml" type="application/rss+xml" title="Andrew Chio" />
+  
+
+  
+
+
+  
+  <title>GUI Toolkit | Andrew Chio</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="833b2d91a4e30d6e92c493c3687a5c4b" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/~achio/js/wowchemy-init.min.9e4214442a7711d35691acd58f6f6361.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header header--fixed">
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/~achio/">Andrew Chio</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/~achio/">Andrew Chio</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/~achio/"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/~achio/#experience"><span>Experience</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/~achio/#awards"><span>Awards</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/~achio/projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/~achio/publication"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/~achio/#news"><span>News</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/~achio/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/~achio/uploads/CV_Andrew_Chio.pdf"><span>CV</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+        
+          SmartSPEC
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+  <button class="form-control sidebar-search js-search d-none d-md-flex">
+    <i class="fas fa-search pr-2"></i>
+    <span class="sidebar-search-text">Search...</span>
+    <span class="sidebar-search-shortcut">/</span>
+  </button>
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      <ul class="nav docs-sidenav">
+        <li><a href="/~achio/docs/"><i class="fas fa-arrow-left pr-1"></i>Docs</a></li>
+      </ul>
+
+      
+      
+        
+          
+        
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/~achio/docs/smartspec/">SmartSPEC</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/~achio/docs/smartspec/installation/">Installation</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/~achio/docs/smartspec/data-models/">Data Models</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/~achio/docs/smartspec/scenario-learning/">Scenario Learning</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/~achio/docs/smartspec/scenario-generation/">Scenario Generation</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link  active" href="/~achio/docs/smartspec/gui-toolkit/">GUI Toolkit</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/~achio/docs/smartspec/how-to-cite/">How to Cite</a>
+    
+
+    
+      </div>
+    
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#tutorial">Tutorial</a>
+      <ul>
+        <li><a href="#setting-up-the-configuration-file">Setting up the Configuration file</a></li>
+        <li><a href="#setting-up-spaces-and-backdrops">Setting up Spaces and Backdrops</a></li>
+        <li><a href="#setting-up-metaevents-and-metapeople">Setting up MetaEvents and MetaPeople</a></li>
+        <li><a href="#declaring-metaevents-and-metapeople">Declaring MetaEvents and MetaPeople</a></li>
+        <li><a href="#refining-metaevents-and-metapeople">Refining MetaEvents and MetaPeople</a></li>
+      </ul>
+    </li>
+    <li><a href="#running-the-gui-toolkit">Running the GUI Toolkit</a>
+      <ul>
+        <li><a href="#linux-command-line">Linux Command Line</a></li>
+        <li><a href="#windows-command-line">Windows Command Line</a></li>
+        <li><a href="#using-an-ide">Using an IDE</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <div class="docs-article-container">
+        
+      </div>
+
+      
+      
+      
+
+      <div class="docs-article-container">
+        
+        <h1>GUI Toolkit</h1>
+
+        <article class="article-style">
+
+          
+          
+
+          <h2 id="overview">Overview</h2>
+<p>To aid in the manual definition/modification of SmartSPEC data models, we provide a SmartSPEC GUI Toolkit. See below for details.</p>
+<h2 id="tutorial">Tutorial</h2>
+<p>In this tutorial, we will describe how the SmartSPEC GUI can be used to generate a scenario. The tutorial scenario and its corresponding data can be found in the <a href="https://github.com/andrewgchio/SmartSPEC" target="_blank" rel="noopener">SmartSPEC GitHub Repository</a>. The source code is located in the <code>gui-src</code> directory, while the data is in the <code>scenario-generation/data/data-gui</code> directory.</p>
+<h3 id="setting-up-the-configuration-file">Setting up the Configuration file</h3>
+<p>The SmartSPEC GUI first requires that a configuration file is defined or loaded. This configuration file will contain information about how people and events should be automatically generated, the duration that the simulation should run, and the paths to other required input files. To initialize a configuration file, start by going to <strong>Config &gt; Add/Edit Config</strong>. This will create a new window with several configuration options, as seen below.</p>
+<figure>
+    <img src="config-form.png" alt="Input form for Config File">
+    <figcaption align="center">Input form for Config File.</figcaption>
+</figure>
+<ul>
+<li><strong>People and Events</strong>. In the configuration options for people and events, two main entry fields are presented: <code>Number</code> and <code>Generation Strategy</code>. The <code>Number</code> field indicates the number of people / events that should be in the designed scenario, and must be set to a non-negative integer. The <code>Generation Strategy</code> field indicates the manner in which people / events will be produced. It must be set to one of &ldquo;all&rdquo;, &ldquo;diff&rdquo;, or &ldquo;none&rdquo;. If the generation strategy is set to &ldquo;all&rdquo;, then <code>Number</code> new people / events will be produced. If the generation strategy is set to &ldquo;diff&rdquo;, then one person / event from each metaperson / metaevent will first be generated (up to <code>Number</code>), followed by additional people / events (up to <code>Number</code>). If the generation strategy is set to &ldquo;none&rdquo;, then manually defined people / events will be used. Note that <code>Number</code> should still be set to &ldquo;0&rdquo; in this case.</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    <em>Tip</em>: It is recommended that the generation strategy for both people and events are set to either &ldquo;all&rdquo; or &ldquo;diff&rdquo; to reduce manual effort.
+  </div>
+</div>
+<ul>
+<li>
+<p><strong>Synthetic Data Generator</strong>. In the configuration options for the synthetic data generator, the start / end date should be specified. These indicate the start / end dates of the entire simulation. Both dates must be in the format <code>YYYY-MM-DD</code>, and the start date must be before the end date.</p>
+</li>
+<li>
+<p><strong>Paths to Files</strong>. The last configuration option requires a parent (base) directory in which all other input files should be located. Click the &ldquo;Select Directory&rdquo; button and select the directory to store all other input files. The selected directory should be displayed in the config menu window afterwards.</p>
+</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    <em>Tip</em>: It is recommended that the SmartSPEC GUI is run on the same machine in which the SmartSPEC code will be run, since absolute file paths to SmartSPEC input will be recorded in the configuration file.
+  </div>
+</div>
+<p><strong>Saving</strong>. After all configuration options are specified, click the &ldquo;Save&rdquo; button to save the configuration file. If this is successful, then the SmartSPEC GUI should display &ldquo;Saved config file: <code>config-filepath</code>&rdquo; in the output pane. By default, the name of the configuration file is set to <code>config.txt</code>.</p>
+<p><strong>Loading</strong>. If a configuration file has already been defined, then it can be loaded by going to <strong>Config &gt; Load Config File</strong>, which will open a prompt to select a configuration file. If this is successful, then the SmartSPEC GUI should display &ldquo;Loaded config file <code>config-filepath</code>&rdquo; in the output pane.</p>
+<div class="alert alert-note">
+  <div>
+    <strong>Important</strong>: The base directory specified in the loaded configuration file (under <code>filepaths/generated-files</code>) should be the same as the directory where the configuration file exists.
+  </div>
+</div>
+<h3 id="setting-up-spaces-and-backdrops">Setting up Spaces and Backdrops</h3>
+<p>After setting up the configuration files, the underlying space in which the simulation will take place should be defined. This will consist of two main steps: loading space backdrops and defining a space graph.</p>
+<h4 id="backdrops">Backdrops</h4>
+<p>Space backdrops are images of the layout / floor plan of the space. They are used to indicate where certain spaces should be located. A new space backdrop can be loaded by going to <strong>Spaces &gt; Load Backdrop</strong>. This will create a new window as shown below.</p>
+<figure>
+    <img src="backdrop-form.png" alt="Input form for Backdrop File">
+    <figcaption align="center">Input form for Backdrop File.</figcaption>
+</figure>
+<ul>
+<li>
+<p><strong>Floor</strong>. The floor entry is used to provide a semantic name for the floor to define. It will be displayed in the title of the tab dedicated to the provided backdrop. The floor name cannot contain parenthesis and must be unique (i.e., duplicate floor names should not be used).</p>
+</li>
+<li>
+<p><strong>Z-Coordinate</strong>. The z-coordinate represents the &ldquo;height&rdquo; of the floor, or the distance (e.g., in meters) above ground level. Similar to the floor name, the z-coordinate should be unique for each backdrop.</p>
+</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    <strong>Important</strong>: The z-coordinates used for different floors should be on the same &ldquo;scale&rdquo; defined as for image coordinates (e.g., in meters).
+  </div>
+</div>
+<ul>
+<li><strong>Image</strong>. The image data entry prompts for an image to display as the layout of the floor. Click the &ldquo;Select&rdquo; button to select the backdrop image. The selected file name should be displayed in the backdrops form window afterwards.</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    The size (i.e., width, height) of the uploaded image must be modified as desired before loading it into the SmartSPEC GUI. Resizing the image in the GUI is not yet supported.
+  </div>
+</div>
+<ul>
+<li><strong>Coordinates</strong>. The image coordinates are used to define the top left / bottom right corners of the image. Conceptually, these numbers should define the physical location of the top left / bottom right corner (e.g., in meters). The xy-coordinate specified for the bottom right corner must be <em>larger</em> than the xy-coordinate specified for the top left corner in value (i.e., x-coordinates will increase by going right; y-coordinates will increase by going down).</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    <strong>Important</strong>: The coordinates specified here should be on the same &ldquo;scale&rdquo; defined as for z-coordinates (e.g., in meters).
+  </div>
+</div>
+<p><strong>Saving</strong>. After all data entries are entered, click the &ldquo;Save&rdquo; button to save the backdrop. If this is successful, then the SmartSPEC GUI should display &ldquo;Saved backdrops file: <code>backdrops-filepath</code>&rdquo; in the output pane, and the new backdrop should be displayed in the main window, as shown below.</p>
+<figure>
+    <img src="after-backdrops.png" alt="SmartSPEC GUI after defined backdrop">
+    <figcaption align="center">SmartSPEC GUI after defined backdrop.</figcaption>
+</figure>
+<h4 id="space-nodes-and-edges">Space Nodes and Edges</h4>
+<p>SmartSPEC internally uses a space graph to represent logical spaces and their neighbors. An example of a fully defined space graph can be seen below. In general, this must be done visually on the loaded space backdrop.</p>
+<figure>
+    <img src="backdrop-with-spaces.png" alt="SmartSPEC GUI after defined spaces">
+    <figcaption align="center">SmartSPEC GUI after defined spaces.</figcaption>
+</figure>
+<ul>
+<li><strong>Adding a new space node</strong>. To add a new space node, right-click on an appropriate location on the space backdrop, and select the context menu item to add a new space (i.e., <strong>Right-Click &gt; Add new space</strong>). This will open a new window with partially-filled data entries for a new space, as seen below. The <code>description</code> field is optional and serves as a semantic label for the space; the <code>capacity</code> field must be a non-negative integer representing the maximum number of people that can physically be in the room.</li>
+</ul>
+<figure>
+    <img src="space-form.png" alt="Input form for Space File">
+    <figcaption align="center">Input form for Space File.</figcaption>
+</figure>
+<div class="alert alert-note">
+  <div>
+    After a space is added, hovering over a space node will show a small tooltip with the ID and description of the space.
+  </div>
+</div>
+<div class="alert alert-note">
+  <div>
+    A pink circle will be temporarily drawn on the space backdrop as a placeholder for the location of the new space. This will turn into a red circle after the space is properly initialized.
+  </div>
+</div>
+<div class="alert alert-note">
+  <div>
+    Spaces must all have a unique ID. Once a space is created, it cannot change its ID.
+  </div>
+</div>
+<div class="alert alert-note">
+  <div>
+    <strong>Important</strong>: One of the space nodes defined must be the special &ldquo;outside&rdquo; space node from which all people enter / exit the smart space. It is recommended to set the capacity to some large number.
+  </div>
+</div>
+<ul>
+<li><strong>Editing a space node</strong>. If a previously defined space node needs to be edited, then right-click on the node and select the option to <code>Edit space XX</code>. This will open another window with the data associated with the selected space.</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    ID field of an edited space cannot be modified; delete the node and create a new one if the ID needs to be changed.
+  </div>
+</div>
+<ul>
+<li>
+<p><strong>Deleting a space node</strong>. If a previously defined space nodes needs to be deleted, then right-click on the node and select the option to <code>Delete space XX</code>. The node and its associated edges should be then removed.</p>
+</li>
+<li>
+<p><strong>Space Edges on the same floor</strong>. After adding space nodes in the SmartSPEC GUI, space edges (which indicate that a person can travel directly between the two spaces) can be defined by clicking one node, dragging the line that is drawn to another node, and releasing. If the two nodes are not yet neighbors, then adding an edge between them will make them neighbors. Otherwise, if an edge already exists between the two nodes, it will be deleted.</p>
+</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    <em>Tip</em>: It is recommended that all space nodes are defined first, before neighbors are added.
+  </div>
+</div>
+<ul>
+<li><strong>Space Edges between different floors</strong>. The SmartSPEC GUI calls nodes that can be used to access different floors a &ldquo;z-neighbor&rdquo;. Conceptually, z-neighbor nodes should represent stairs, elevators, etc. To add a z-neighbor, right click on a node and select the option to <code>Add new z-neighbor</code>. Then, select the space (on a different floor) to add as a z-neighbor. Similarly, z-neighbors can be removed by right-clicking on a node and selecting the option to <code>Delete z-neighbor</code>. The output pane will display appropriate messages if successful.</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    A space that has a z-neighbor to a floor above or below it will be denoted with a triangle pointing up or down, respectively. A space that has a z-neighbor to floors above and below it will be denoted with a diamond.
+  </div>
+</div>
+<div class="alert alert-note">
+  <div>
+    <strong>Important</strong>: If there are multiple floors to simulate, at least one node on each floor should be a z-neighbor to another floor in order to be reachable.
+  </div>
+</div>
+<p><strong>Saving</strong>. By default, the spaces JSON file is not saved after each change to the spaces graph. Instead, go to <strong>Spaces &gt; Save Spaces File</strong> to write the spaces JSON file. If successful, the output pane should display &ldquo;Saved spaces file: <code>spaces-path</code>&rdquo;.</p>
+<p><strong>Loading</strong>. If a spaces JSON file has already been defined, then it can be loaded by going to <strong>Spaces &gt; Load Spaces File</strong>. This will open a prompt to select a spaces JSON file, and if successful, will display &ldquo;Loaded spaces file: <code>spaces-path</code>&rdquo;.</p>
+<h3 id="setting-up-metaevents-and-metapeople">Setting up MetaEvents and MetaPeople</h3>
+<p>After setting up the spaces graph, the metaevents and metapeople for the simulated scenario should be defined. This will consist of three steps: setting up time profiles, declaring both metaevents and metapeople, and then refining metaevents / metapeople.</p>
+<h4 id="setting-up-time-profiles">Setting up Time Profiles</h4>
+<p>Time profiles are used by both metaevents and metapeople to specify when an event would occur, and when a person enters / exits the smart space, respectively. The general definition for both metaevents and metapeople are the same, as they both indicate periods of time.</p>
+<figure>
+    <img src="time-profile-form.png" alt="Input form for Time Profiles">
+    <figcaption align="center">Input form for Time Profiles.</figcaption>
+</figure>
+<ul>
+<li><strong>Defining Time Profiles</strong>. To define a new time profile, click <strong>Time Profiles &gt; Add New Time Profile</strong>, which will open a new window with a time profile form. The <code>Name / Description</code> entry is used provide a semantic label for the time profile, and should not contain parenthesis. The <code>Start Date/Time</code> and <code>End Date/Time</code> data fields are used to indicate the start date/time and end date/time for the time profile. In general, a date should be provided in the first box, the mean time in the second box, and a standard deviation time in the third box. Dates should be in the format <code>yyyy-MM-dd</code>, while times should be in the format <code>HH:MM</code>.
+The entries for required time need two times (a mean time and a standard deviation time), and indicates the amount of time to spend between the given start/end time.
+The recurrence field is used to indicate the frequency of the time profile. Two recurrent patterns are provided: &ldquo;day&rdquo; and &ldquo;week&rdquo;. If &ldquo;week&rdquo; is selected, then the days of the week must also be specified. The figure above shows an example of the data entries for time profiles.</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    The SmartSPEC GUI provides a simplified view of time profiles. Currently, it does not support recurrence for months or years.
+  </div>
+</div>
+<div class="alert alert-note">
+  <div>
+    <em>Tip</em>: Both time profiles for metaevents and metapeople must be defined in this step. It is recommended that the time profiles for metaevents generally span significantly less time than metapeople. This is since a time profile for an event determines when it occurs in the day, while a time profile for a person determines when they are in the smart space.
+  </div>
+</div>
+<p><strong>Saving</strong>. In general, time profiles are not saved into a file after definition. Instead, go to <strong>Time Profiles &gt; Save Time Profile File</strong> to write a time profile file. The default name for a time profile file is <code>TimeProfiles.json</code>.</p>
+<div class="alert alert-note">
+  <div>
+    The format in which time profiles are saved in this file is <em>not</em> the same as the format in which time profiles need to be saved for metaevents and metapeople.
+  </div>
+</div>
+<p><strong>Loading</strong>. If a time profile JSON file has already been defined by the SmartSPEC GUI previously, then it can be loaded by going to <strong>Time Profiles &gt; Load Time Profiles File</strong>. This will open a prompt to select a time profiles JSON file. If successful, the output pane will display &ldquo;Loaded time profiles file: <code>time-profiles-file</code>&rdquo;.</p>
+<div class="alert alert-note">
+  <div>
+    The format in which time profiles are saved in this file is <em>not</em> the same as the format in which time profiles need to be saved for metaevents and metapeople.
+  </div>
+</div>
+<h3 id="declaring-metaevents-and-metapeople">Declaring MetaEvents and MetaPeople</h3>
+<p>Since both metaevents and metapeople rely upon each other, the SmartSPEC GUI requires that users first &ldquo;declare&rdquo; all the different metaevents and metapeople for the simulation. In general, this will ease the difficulty in later defining proper metaevents and metapeople. To declare metaevents, go to <strong>MetaEvents &gt; Declare MetaEvents</strong>. Similarly, to declare metapeople, go to <strong>MetaPeople &gt; Declare MetaPeople</strong>.</p>
+<p>The declaration form for both metaevents and metapeople are in the same format as seen below.</p>
+<figure>
+    <img src="metaperson-declare-form.png" alt="Input Declaration form for MetaPeople">
+    <figcaption align="center">Input Declaration form for MetaPeople.</figcaption>
+</figure>
+<ul>
+<li><strong>MetaEvent ID / MetaPerson ID</strong>. The leftmost data entry box is for the metaevent ID / metaperson ID. This should be a unique integer with respect to the metamodel.</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    <em>Tip</em>: While a metaevent and a metaperson may have the same &ldquo;id&rdquo;, it is recommended to keep them separate for ease of interpretation.
+  </div>
+</div>
+<ul>
+<li>
+<p><strong>Description</strong>. The middle data entry box should contain a semantic description of the metaevent / metaperson.</p>
+</li>
+<li>
+<p><strong>Probability</strong>. The third data entry box should contain the &ldquo;probability&rdquo; of each metaevent / metaperson in the simulated space. In particular, the &ldquo;probability&rdquo; for a metaevent is the expected number of derived events of the given metaevent type. On the other hand, the &ldquo;probability&rdquo; for a metaperson denotes the proportion of the population that is expected to be of given metaperson type.</p>
+</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    The total &ldquo;probability&rdquo; across all metaevents / metapeople does <em>not</em> need to sum to 1; the SmartSPEC simulator will normalize the input numbers.
+  </div>
+</div>
+<ul>
+<li><strong>Adding / Removing entries</strong>. To add a new row, click on the <code>Add new</code> button located towards the bottom of the window. On the other hand, to remove a particular row, click on the button &ldquo;-&rdquo; to right of the desired row.</li>
+</ul>
+<p><strong>Saving</strong>. After declaring all relevant metaevents / metapeople, click &ldquo;Save&rdquo; at the bottom of the window to process all entries. The output pane will list all metaevents / metapeople that were properly declared.</p>
+<div class="alert alert-note">
+  <div>
+    <strong>Important</strong>: All relevant metaevents / metapeople should be declared upfront with the correct ID during this step. Currently, we do not support modification of declared entry IDs (after saving).
+  </div>
+</div>
+<h3 id="refining-metaevents-and-metapeople">Refining MetaEvents and MetaPeople</h3>
+<p>Once all metaevents and metapeople are declared, both metaevents and metapeople must be individually refined to properly be initialized. To edit a metaevent, go to <strong>MetaEvents &gt; Edit MetaEvent&hellip;</strong>. Similarly, to edit a metaperson, go to <strong>MetaPerson &gt; Edit MetaPerson&hellip;</strong>. Examples for the metapeople and metaevents forms can be seen below.</p>
+<figure>
+    <img src="metaperson-form.png" alt="Input form for MetaPeople">
+    <figcaption align="center">Input form for MetaPeople.</figcaption>
+</figure>
+<figure>
+    <img src="metaevent-form.png" alt="Input form for MetaEvents">
+    <figcaption align="center">Input form for MetaEvents.</figcaption>
+</figure>
+<p>The form for metaevents should be filled as follows, for each declared metaevent:</p>
+<ul>
+<li>
+<p><strong>MetaEvent ID, Description, and Probability</strong>. Using the dropdown entry box for the metaevent ID, a particular metaevent to edit should be selected. The description and probability are then filled in according to the data provided to the declaration form.</p>
+</li>
+<li>
+<p><strong>Spaces</strong>. The dropdown menu should be used to select the different types of spaces in which the metaevent could be hosted. The &ldquo;+&rdquo; and &ldquo;-&rdquo; buttons are used to add / remove the selected space. The list of spaces in which the metaevent can occur are listed next to the data entry boxes.</p>
+</li>
+<li>
+<p><strong>Time Profiles</strong>. To add time profiles for the metaevent, click <code>Add new...</code>, which will create a new row in the time profiles entry box. Here, a profile should be selected, and its relative probability should be entered. A time profile can be removed by clicking the button with &ldquo;-&rdquo;. Duplicate time profiles should not be entered.</p>
+</li>
+<li>
+<p><strong>Capacity</strong>. The attendance capacity in the &ldquo;Capacity&rdquo; entry box is used to indicate requirements for event attendance. Click on <code>Add new...</code> to add a new attendance capacity requirement. Then, use the dropdown menu to select a metaperson. The first text field indicates the average maximum capacity of the given type of metaperson, while the second text field indicates a corresponding standard deviation. Rows can be removed by clicking the &ldquo;-&rdquo; button.</p>
+</li>
+</ul>
+<p><strong>Saving</strong>. By default, the metaevents JSON file is not saved after each individual metaevent is edited. Go to <strong>MetaEvents &gt; Save MetaEvents File</strong> to write the metaevents file. The output pane should display &ldquo;Saved metaevents file: <code>&lt;metaevents-path&gt;</code>&rdquo; if successful.</p>
+<p>The form for metapeople should be filled as follows, for each declared metaperson:</p>
+<ul>
+<li>
+<p><strong>MetaPerson ID, Description, and Counts</strong>. Using the dropdown entry box for the metaperson ID, a particular metaperson to edit should be selected. The description and relative count (i.e., proportion of the population) are then filled in according to the data provided to the declaration form.</p>
+</li>
+<li>
+<p><strong>Time Profiles</strong>. The process to add time profiles to metapeople is similar to that for metaevents. In particular, to add time profiles for the metaperson, click <code>Add new...</code>, which will create a new row in the time profiles entry box. Here, a profile should be selected, and its relative probability should be entered. A time profile can be removed by clicking the button with &ldquo;-&rdquo;. Duplicate time profiles should not be entered.</p>
+</li>
+<li>
+<p><strong>Event Affinity</strong>. Each metaperson should indicate their affinity towards different metaevent types. To add a new affinity, click <code>Add new...</code> for the capacity data entry field, which will create a new affinity data entry row. Use the dropdown to select the metaevent, and enter the corresponding affinity in the text box. In general, the affinity should be a non-negative floating point number (or integer, if desired), that relatively denotes the probability of attending different types of metaevents. Duplicate metaevents should not be listed.</p>
+</li>
+</ul>
+<p><strong>Saving</strong>. By default, the metapeople JSON file is not saved after each individual metaperson is edited. Go to <strong>MetaPeople &gt; Save MetaPeople File</strong> to write the metapeople file. The output pane should display &ldquo;Saved metapeople file: <code>&lt;metapeople-path&gt;</code>&rdquo; if successful.</p>
+<p>After all appropriate metapeople and metaevents are defined and saved, the SmartSPEC scenario generation code can be run with the config file as generated by the SmartSPEC GUI.</p>
+<h2 id="running-the-gui-toolkit">Running the GUI Toolkit</h2>
+<p>The GUI Toolkit should be run in the <code>gui-src</code> directory. See compilation and run instructions below.</p>
+<h3 id="linux-command-line">Linux Command Line</h3>
+<p>Compile:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">javac <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -cp <span class="s2">&#34;&lt;path-to-json-simple&gt;:&lt;path-to-ini4j&gt;&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --module-path &lt;path-to-javafx&gt; <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --add-modules javafx.controls <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    controller/*.java <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    form/*.java <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    model/*.java <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    modelutils/*.java <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    view/*.java <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    viewutils/*.java <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    application/Main.java
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    The multiline separator (<code>\</code>) is used for clarity and can be omitted.
+  </div>
+</div>
+<p>Run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -cp <span class="s2">&#34;.:&lt;path-to-json-simple&gt;:&lt;path-to-ini4j&gt;&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --module-path &lt;path-to-javafx&gt; <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --add-modules javafx.controls <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    application.Main
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    <p>Note the following:</p>
+<ul>
+<li>the classpath is prefixed by <code>.:</code></li>
+<li><code>application.Main</code> is used as the main program</li>
+</ul>
+  </div>
+</div>
+<h3 id="windows-command-line">Windows Command Line</h3>
+<p>Compile:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">javac <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -cp <span class="s2">&#34;&lt;path-to-json-simple&gt;;&lt;path-to-ini4j&gt;&#34;</span> ^
+</span></span><span class="line"><span class="cl">    --module-path &lt;path-to-javafx&gt; ^
+</span></span><span class="line"><span class="cl">    --add-modules javafx.controls ^
+</span></span><span class="line"><span class="cl">    controller<span class="se">\\</span>*.java ^
+</span></span><span class="line"><span class="cl">    form<span class="se">\\</span>*.java ^
+</span></span><span class="line"><span class="cl">    model<span class="se">\\</span>*.java ^
+</span></span><span class="line"><span class="cl">    modelutils<span class="se">\\</span>*.java ^
+</span></span><span class="line"><span class="cl">    view<span class="se">\\</span>*.java ^
+</span></span><span class="line"><span class="cl">    viewutils<span class="se">\\</span>*.java ^
+</span></span><span class="line"><span class="cl">    application<span class="se">\\</span>Main.java
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    The multiline separator (<code>^</code>) is used for clarity and can be omitted.
+  </div>
+</div>
+<p>Run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -cp <span class="s2">&#34;.;&lt;path-to-json-simple&gt;;&lt;path-to-ini4j&gt;&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --module-path &lt;path-to-javafx&gt; <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --add-modules javafx.controls <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    application.Main
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    <p>Note the following:</p>
+<ul>
+<li>the classpath is prefixed by <code>.;</code></li>
+<li><code>application.Main</code> is used as the main program</li>
+</ul>
+  </div>
+</div>
+<h3 id="using-an-ide">Using an IDE</h3>
+<p>In general, you must: (i) add the jar dependencies to the build path of the project; and (ii) add the arguments <code>--module-path &lt;path-to-javafx&gt; --add-modules javafx.controls</code> to the run configurations.</p>
+
+
+        </article>
+
+        
+
+
+
+
+
+        
+
+
+
+        
+        
+        <div class="article-widget">
+          
+<div class="post-nav">
+  
+  
+</div>
+
+        </div>
+        
+      </div>
+
+      <div class="body-footer">
+        <p>Last updated on Jan 1, 2023</p>
+
+        
+
+
+
+
+        
+
+
+
+
+        
+
+
+      </div>
+
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2025 Andrew Chio
+  </p>
+  
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+
+
+<script src="/~achio/js/vendor-bundle.min.391d344a129df56f7ad674c2c2ed04e8.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js" integrity="sha256-aQmOEF2ZD4NM/xt4hthzREIo/2PFkOX/g01WjxEV7Ys=" crossorigin="anonymous"></script>
+<script>
+  anchors.add();
+</script>
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":false}</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/~achio/en/js/wowchemy.min.a2b3bbb295c930f6c5da30bf20bbd50e.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/~achio/js/wowchemy-publication.9c0e895144aef5a693008b5c5d450147.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

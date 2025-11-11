@@ -1,0 +1,641 @@
+<!-- URL: https://grape.ics.uci.edu/wiki/public/wiki/cs222-2016-fall -->
+
+<!DOCTYPE html>
+<html lang="en-US">   <head>
+    <!-- # block head (placeholder in theme.html) -->
+        <!-- # block head (content inherited from layout.html) -->
+    <title>
+      cs222-2016-fall     – Public
+
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script>
+        if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+        </script><![endif]-->
+
+    <link rel="start"  href="/wiki/public/wiki" />
+    <link rel="search"  href="/wiki/public/search" />
+    <link rel="help"  href="/wiki/public/wiki/TracGuide" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/trac.css" type="text/css" />
+    <link rel="stylesheet"  href="/wiki/public/chrome/common/css/wiki.css" type="text/css" />
+    <link rel="icon"  href="/wiki/public/chrome/site/favicon.ico" type="image/x-icon" />
+    <link rel="alternate"  href="/wiki/public/wiki/cs222-2016-fall?format=txt" title="Plain Text" type="text/x-trac-wiki" />
+    <noscript>
+      <style>
+        .trac-noscript { display: none !important }
+      </style>     </noscript>
+    <script src="/wiki/public/chrome/common/js/jquery.js"></script>
+    <script src="/wiki/public/chrome/common/js/babel.js"></script>
+    <script src="/wiki/public/chrome/common/js/trac.js"></script>
+    <script src="/wiki/public/chrome/common/js/search.js"></script>
+    <script src="/wiki/public/chrome/common/js/folding.js"></script>
+    <script src="/wiki/public/chrome/common/js/wiki.js"></script>
+    <script>
+      jQuery(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])")
+            .prop("autocomplete", "off").datepicker();
+          // Input current date when today is pressed.
+          var _goToToday = $.datepicker._gotoToday;
+          $.datepicker._gotoToday = function(id) {
+            _goToToday.call(this, id);
+            this._selectDate(id)
+          };
+          $(".trac-datetimepicker:not([readonly])")
+            .prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <!--   # include 'site_head.html' (layout.html) -->
+    <!--   end of site_head.html -->
+    <!-- # endblock head (content inherited from layout.html) -->
+
+
+    <script>
+      jQuery(function($) {
+        wikiColumn($("#wikipage"));
+      });
+    </script>
+    <!-- # endblock head (placeholder in theme.html) -->
+  </head> 
+  <body>
+    <!-- # block body (content inherited from theme.html) -->
+    <!--   # include 'site_header.html' (theme.html) -->
+    <!--   end of site_header.html -->
+
+    <div id="banner">
+      <div id="header">
+        <a id="logo"
+           href="http://www.ics.uci.edu/">
+          <img  alt="ICS Logo" height="67" src="/wiki/public/chrome/site/ics.jpg" width="128" /></a>
+
+
+      </div>
+      <form id="search" action="/wiki/public/search" method="get">
+      </form>
+          <div id="metanav" class="nav">
+      <ul><li  class="first"><a href="/wiki/public/login">Login</a></li><li ><a href="/wiki/public/prefs">Preferences</a></li><li ><a href="/wiki/public/about">About Trac</a></li><li  class="last"><a href="/wiki/public/register">Register</a></li></ul>
+    </div>
+
+    </div>
+        <div id="mainnav" class="nav">
+    </div>
+
+
+    <div id="main"
+         >
+
+<div id="pagepath" class="noprint">
+<a class="pathentry first" title="View WikiStart"
+   href="/wiki/public/wiki">wiki:</a><a href="/wiki/public/wiki/cs222-2016-fall"
+     title="View cs222-2016-fall"
+     class="pathentry">cs222-2016-fall</a></div>      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <ul>
+          <li  class="first last"><a href="/wiki/public/wiki/cs222-2016-fall?action=history">History</a></li>
+        </ul>
+        <hr />
+      </div>
+
+      
+
+      
+
+      <!-- # block content (placeholder in theme.html) -->
+    <div id="content" class="wiki narrow">
+
+      <div class="wikipage searchable">
+        <div id="wikipage" class="trac-content borderless"><p>
+</p><div class="wiki-toc">
+<ol>
+  <li>
+    <a href="#CS122CCS222Fall2016:PrinciplesofDataManagement">CS122C/CS222 Fall 2016: Principles of Data Management</a>
+    <ol>
+      <li>
+        <a href="#CoursePersonnel">Course Personnel</a>
+      </li>
+      <li>
+        <a href="#Announcements">Announcements</a>
+        <ol>
+          <li>
+            <a href="#Syllabus">Syllabus</a>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <a href="#Projects">Projects</a>
+      </li>
+      <li>
+        <a href="#ScheduleLocation">Schedule &amp; Location</a>
+      </li>
+      <li>
+        <a href="#CourseInformation">Course Information</a>
+        <ol>
+          <li>
+            <a href="#CourseDescription">Course Description</a>
+          </li>
+          <li>
+            <a href="#GradingBreakdown">Grading Breakdown</a>
+          </li>
+          <li>
+            <a href="#Textbooks">Textbooks</a>
+          </li>
+          <li>
+            <a href="#OtherReadings">Other Readings</a>
+          </li>
+          <li>
+            <a href="#ClassParticipation">Class Participation</a>
+          </li>
+          <li>
+            <a href="#ClassDiscussionForum">Class Discussion Forum</a>
+          </li>
+          <li>
+            <a href="#ProgrammingProject">Programming Project</a>
+          </li>
+          <li>
+            <a href="#ComprehensiveExamOption">Comprehensive Exam Option</a>
+          </li>
+          <li>
+            <a href="#NoticeaboutProjects">Notice about Projects</a>
+          </li>
+          <li>
+            <a href="#ProjectLatePolicy">Project Late Policy</a>
+          </li>
+          <li>
+            <a href="#CheatingPolicy">Cheating Policy</a>
+          </li>
+          <li>
+            <a href="#CCResources">C/C++ Resources</a>
+          </li>
+          <li>
+            <a href="#MidtermExam">Midterm Exam</a>
+          </li>
+          <li>
+            <a href="#FinalExam">Final Exam</a>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+</div><p>
+</p>
+<h1 class="section" id="CS122CCS222Fall2016:PrinciplesofDataManagement">CS122C/CS222 Fall 2016: Principles of Data Management</h1>
+<h2 class="section" id="CoursePersonnel">Course Personnel</h2>
+<p>
+<em>Instructor:</em> <br /> Chen Li<br /> E-Mail: chenli AT ics DOT uci DOT edu <br /> Office: DBH 2092 <br /> Office hours: Tue 11:00-noon, Thu 2 - 3 pm <br />
+</p>
+<p>
+<em>Assistant:</em> <br />Te-Yu Chen <br /> E-mail: teyuc AT uci DOT edu <br /> Office: DBH 3219 <br /> Reader hours: Mon/Wed 14:00-15:00<br /> <br />Eun-Jeong Shin <br /> E-mail: ejshin1 AT uci DOT edu <br /> Office: DBH 2099 <br /> Reader hours: Fri 11:00-noon<br />
+</p>
+<p>
+Online Discussion: <a class="ext-link" href="https://piazza.com/uci/fall2016/cs222cs122c/home"><span class="icon">​</span>https://piazza.com/uci/fall2016/cs222cs122c/home</a>
+</p>
+<ul><li>Please use Piazza properly.  It's a place for students to exchange ideas.  Don't post "easy" or "random" questions without much thinking.
+</li><li>To encourage students to actively participate in Piazza discussions and provide high-quality answers, we will select two students with the best Piazza performance. Each student will get 2% extra credits in the overall scores.
+</li></ul><h2 class="section" id="Announcements">Announcements</h2>
+<ul><li>The deadline to drop the course is Sept 29, Thursday, before the lecture.  After that, "you are in"!
+</li><li>For students who are still on the waiting list, please continue attending the lectures.  We have increased the enrollment capacity to 79 to accommodate the demand.
+</li><li>For all students, please notice that the first project is already online, and you are encouraged to start working on it soon.
+</li></ul><h3 class="section" id="Syllabus">Syllabus</h3>
+<table class="wiki">
+<tr><td> <strong>Date</strong> </td><td> <strong>Topic</strong> </td><td> <strong>Readings</strong> </td><td> <strong>Notes</strong> 
+</td></tr><tr><td> 09/22/16, Th </td><td> DBMS Architecture </td><td> Ch. 1; Chamberlin et al 1981 </td><td style="text-align: right"> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture01.pdf" title="Attachment 'cs222-lecture01.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture01.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture01.ppt" title="Attachment 'cs222-lecture01.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture01.ppt" title="Download">​</a>, guest lecture by Prof. Mike Carey
+</td></tr><tr><td> 09/27/16, Tu </td><td> Course Overview, Project 1, Disks and Files </td><td> Ch. 9.1-9.4; Stonebraker 1981 </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture02.pdf" title="Attachment 'cs222-lecture02.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture02.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture02.ppt" title="Attachment 'cs222-lecture02.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture02.ppt" title="Download">​</a> 
+</td></tr><tr><td> 09/29/16, Th </td><td> Page structure, Heap Files, </td><td> Ch. 9.5-9.8 </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture03.pdf" title="Attachment 'cs222-lecture03.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture03.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture03.ppt" title="Attachment 'cs222-lecture03.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture03.ppt" title="Download">​</a> 
+</td></tr><tr><td> 10/04/16, Tu </td><td> Catalogs, Buffer Manager, </td><td> Ch. 8-8.4 </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture04.pdf" title="Attachment 'cs222-lecture04.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture04.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture04.ppt" title="Attachment 'cs222-lecture04.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture04.ppt" title="Download">​</a> 
+</td></tr><tr><td> 10/06/16, Th </td><td> Project 2, Heap Files, Sorted files </td><td> ditto </td><td> ditto 
+</td></tr><tr><td> 10/11/16, Tu </td><td> Index Overview and ISAM Tree Index </td><td> ditto </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture05.pdf" title="Attachment 'cs222-lecture05.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture05.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture05.ppt" title="Attachment 'cs222-lecture05.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture05.ppt" title="Download">​</a> 
+</td></tr><tr><td> 10/13/16, Th </td><td> Schema versioning, B+ tree </td><td> Ch. 10; Graefe 2011 (Sec. 1-3) </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes06.pdf" title="Attachment 'cs222-notes06.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes06.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes06.ppt" title="Attachment 'cs222-notes06.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes06.ppt" title="Download">​</a> 
+</td></tr><tr><td> 10/18/16, Tu </td><td> B+ tree </td><td> ditto </td><td> ditto 
+</td></tr><tr><td> 10/20/16, Th </td><td> Static Hashing, Extendible Hashing, Linear Hashing </td><td> Ch. 11; Fagin et al 1979; Litwin 1980 </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes07.pdf" title="Attachment 'cs222-notes07.pdf' in cs222-2016-fall">PDF07</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes07.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes07.ppt" title="Attachment 'cs222-notes07.ppt' in cs222-2016-fall">PPT07</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes07.ppt" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes08.pdf" title="Attachment 'cs222-notes08.pdf' in cs222-2016-fall">PDF08</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes08.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes08.ppt" title="Attachment 'cs222-notes08.ppt' in cs222-2016-fall">PPT08</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes08.ppt" title="Download">​</a> 
+</td></tr><tr><td> 10/25/16, Tu </td><td> Indexing and Performance </td><td> Ch. 8.5-8.6 </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes09.pdf" title="Attachment 'cs222-notes09.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes09.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes09.ppt" title="Attachment 'cs222-notes09.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes09.ppt" title="Download">​</a> 
+</td></tr><tr><td> 10/27/16, Th </td><td> Project 3, ditto </td><td> ditto </td><td> ditto 
+</td></tr><tr><td> 11/01/16, Tu </td><td> Midterm (<a class="ext-link" href="http://www.classrooms.uci.edu/gac/ICF.html"><span class="icon">​</span>extra class room, ICF101</a>) </td><td> </td><td> 
+</td></tr><tr><td> 11/03/16, Th </td><td> External Sorting </td><td> Ch. 13 </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes10.pdf" title="Attachment 'cs222-notes10.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes10.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes10.ppt" title="Attachment 'cs222-notes10.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes10.ppt" title="Download">​</a>,  
+</td></tr><tr><td> 11/08/16, Tu </td><td> Selection, Projection </td><td> Ch. 14.1 - 14.3   </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes11.pdf" title="Attachment 'cs222-notes11.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes11.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes11.ppt" title="Attachment 'cs222-notes11.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes11.ppt" title="Download">​</a> 
+</td></tr><tr><td> 11/10/16, Th </td><td> Join </td><td> Ch. 14.4  </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes12.pdf" title="Attachment 'cs222-notes12.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes12.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes12.ppt" title="Attachment 'cs222-notes12.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes12.ppt" title="Download">​</a> 
+</td></tr><tr><td> 11/15/16, Tu </td><td> Set operations, Aggregation, Query Plans </td><td> Ch. 14.5, 14.6, Ch. 12  </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes13.pdf" title="Attachment 'cs222-notes13.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes13.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes13.ppt" title="Attachment 'cs222-notes13.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes13.ppt" title="Download">​</a> 
+</td></tr><tr><td> 11/17/16, Th </td><td> Project 4, ditto </td><td> Ditto </td><td>  
+</td></tr><tr><td> 11/22/16, Tu </td><td> Cost estimation </td><td> Ch. 15.2 </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes14.pdf" title="Attachment 'cs222-notes14.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes14.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes14.pptx" title="Attachment 'cs222-notes14.pptx' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes14.pptx" title="Download">​</a> 
+</td></tr><tr><td> 11/29/16, Tu </td><td> Plan Optimization (System-R) </td><td> Ch. 15.3, <a class="ext-link" href="https://www.cs.berkeley.edu/~brewer/cs262/3-selinger79.pdf"><span class="icon">​</span>Selinger et al 1979</a> </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes15.pdf" title="Attachment 'cs222-notes15.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes15.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes15.ppt" title="Attachment 'cs222-notes15.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes15.ppt" title="Download">​</a> 
+</td></tr><tr><td> 12/01/16, Th </td><td> System-R Optimizer, Open Topics, Course Wrap Up </td><td> Ditto </td><td> <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes16.pdf" title="Attachment 'cs222-notes16.pdf' in cs222-2016-fall">PDF</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes16.pdf" title="Download">​</a>, <a class="attachment" href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes16.ppt" title="Attachment 'cs222-notes16.ppt' in cs222-2016-fall">PPT</a><a class="trac-rawlink" href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes16.ppt" title="Download">​</a> 
+</td></tr></table>
+<h2 class="section" id="Projects">Projects</h2>
+<p>
+The project is structured as a four-part, team-based, software development exercise:
+</p>
+<table class="wiki">
+<tr><td> <strong>Project</strong> </td><td> <strong>Due Date</strong> </td><td> <strong>Topic</strong> </td><td> <strong>Teams</strong> </td><td> <strong>Proportions (45%)</strong> </td><td> <strong>Graded By</strong> 
+</td></tr><tr><td> <a href="https://grape.ics.uci.edu/wiki/public/wiki/cs222-2016-fall-project1">Project 1</a> </td><td> Wed, Oct. 5 </td><td> Record-Based File Manager (RBF) </td><td> Solo Project </td><td> 8% </td><td> Te-Yu 
+</td></tr><tr><td> <a href="https://grape.ics.uci.edu/wiki/public/wiki/cs222-2016-fall-project2">Project 2</a> </td><td> Wed, Oct. 26 </td><td> Relation Manager (RM) </td><td> Pair Project </td><td> 12% </td><td> Eun-Jeong 
+</td></tr><tr><td> <a href="https://grape.ics.uci.edu/wiki/public/wiki/cs222-2016-fall-project3">Project 3</a> </td><td> Thu, Nov. 17 </td><td> Index Manager (IX) </td><td> Pair Project </td><td> 13% </td><td> Te-Yu 
+</td></tr><tr><td> <a href="https://grape.ics.uci.edu/wiki/public/wiki/cs222-2016-fall-project4">Project 4</a> </td><td> Thu, Dec. 1 </td><td> Query Engine (QE) </td><td> Pair Project </td><td> 12% </td><td> Eun-Jeong 
+</td></tr></table>
+<p>
+<a class="ext-link" href="https://docs.google.com/spreadsheets/d/1SHL3umdz_FRp6QIVAd0VHzz8ez-NOM509O3AAES-rok/edit?usp=sharing"><span class="icon">​</span>Project team sign-up sheet</a>
+</p>
+<h2 class="section" id="ScheduleLocation">Schedule &amp; Location</h2>
+<p>
+<strong>Lecture</strong> <br /> Days: Tuesdays and Thursdays <br /> Time: 9:30 am – 10:50 am <br /> Location: <a class="ext-link" href="http://www.classrooms.uci.edu/GAC/MSTB120.html"><span class="icon">​</span>MSTB 120</a>
+</p>
+<hr />
+<h2 class="section" id="CourseInformation">Course Information</h2>
+<h3 class="section" id="CourseDescription">Course Description</h3>
+<p>
+This course provides an implementor's view of database management systems. It covers fundamental principles and implementation techniques, issues, and trade-offs related to database management systems. Topics covered include storage management, buffer management, record-oriented file systems, access methods, query processing, and query optimization. This course is a must for those students wishing to explore database management as an area of research and/or who plan on taking CS223 or CS224. A significant portion of database systems research as well as industrial database and information system development deals with adapting the basic database techniques covered in this course to new advances in hardware and software technologies or to the requirements of different applications and data types. <br /> <br /> <em>Prerequisites:</em> CS 122A (Introduction to Data Management), CS 143A (Principles of Operating Systems), and CS 152 (Computer Systems Architecture).  Please don't attempt this class without the required background!  (Doing so has not proven to be a great idea for students historically. :-))
+</p>
+<h3 class="section" id="GradingBreakdown">Grading Breakdown</h3>
+<p>
+Class Participation: 5% <br /> Midterm Exam: 25% <br /> Final Exam: 25% <br /> Four-Part Programming Project: 45%
+</p>
+<p>
+This mixture of grading criteria for CS222 is intended to give equal "excelling opportunities" to both thinkers and do-ers. It's also intended to avoid overly weighting either team-based performance or individual performance. <strong>This is a hands-on project class, so expect to put a significant effort into your projects.</strong> The exams will be comprehensive with respect to the course material and will also ping you individually with respect to project knowledge, so be sure that you and your project partner make design decisions together. The two exams will be closed-book, but you may bring an 8.5"x11" two-sided cheat sheet to each exam if you like.
+</p>
+<p>
+For all the graded projects and exams, if you disagree with the grading, you can discuss with us within two weeks after they are returned. After that, all the grades will be finalized.
+</p>
+<h3 class="section" id="Textbooks">Textbooks</h3>
+<p>
+Required: <em>Database Management Systems</em>, 3rd edition, by R. Ramakrishnan and J. Gehrke, McGraw Hill, 2003. <br /> Recommended: <em>Readings in Database Systems</em>, 4th edition, by J. Hellerstein and M. Stonebraker, MIT Press, 2005. <br />
+</p>
+<h3 class="section" id="OtherReadings">Other Readings</h3>
+<p>
+The following papers are mostly drawn from the Hellerstein and Stonebraker book or can be found via UCI's ACM Digital Library subscription (<a class="ext-link" href="http://dl.acm.org"><span class="icon">​</span>http://dl.acm.org</a>).  You will be responsible both for the material covered in the lectures and the material covered in the readings listed in the Syllabus below. <br />
+</p>
+<ul><li>Abadi, D., Madden, S., and Hachem, N. 2008. Column-stores vs. Row-stores: How Different are They Really?. <em>Proc. ACM SIGMOD Intl. Conf. on Management of Data</em> (Vancouver, Canada, June 2008).
+</li><li>Alsubaiee, S., et a., 2014. AsterixDB: a scalable, open source BDMS. Proc. VLDB Endow. 7, 14 (Oct. 2014), 1905-1916.
+</li><li>Chamberlin, D., et al, 1981. A history and evaluation of System R. <em>Commun. ACM</em> 24, 10 (Oct. 1981), 632-646.
+</li><li>Dean, J., and Ghemawat, S., 2004. MapReduce: Simplified data processing on large clusters. <em>Proc. 6th USENIX Symp. on Op. Sys. Design and Impl. (OSDI'04)</em> (San Francisco, CA, December 2004).
+</li><li>DeWitt, D. and Gray, J. 1992. Parallel database systems: The future of high performance database systems. <em>Commun. ACM</em> 35, 6 (June 1992), 85-98.
+</li><li>Fagin, R., et al, 1979. Extendible Hashing—A fast access method for dynamic files. <em>ACM Trans. Database Syst.</em> 4, 3 (Sept. 1979), 315-344.
+</li><li>Graefe, G., 2011. Modern B-Tree Techniques. <em>Foundations and Trends in Databases</em> 3, 4 (Sept. 2011) 203-402. (Available from the UCI intranet at: <a class="ext-link" href="http://dx.doi.org/10.1561/1900000028"><span class="icon">​</span>http://dx.doi.org/10.1561/1900000028</a>)
+</li><li>Guttman, A. 1984. R-trees: A dynamic index structure for spatial searching. <em>Proc. ACM SIGMOD Intl. Conf. on Management of Data</em> (Boston, Massachusetts, June 1984).
+</li><li>Litwin, W., 1980. Linear hashing: A new tool for file and table addressing. <em>Proc. 6th Int'l. Conf. on Very Large Data Bases</em>, Montreal, Oct. 1980.
+</li><li>Nievergelt, J., Hinterberger, H., and Sevcik, K. C. 1984. The Grid File: An adaptable, symmetric multikey file structure. <em>ACM Trans. Database Syst.</em> 9, 1 (March 1984), 38-71. <em>(optional)</em>
+</li><li>Selinger, P. G. et al, 1979. Access path selection in a relational database management system. <em>Proc. ACM SIGMOD Int'l. Conf. on Management of Data</em> (Boston, Massachusetts, May-June 1979).
+</li><li>Shapiro, L. D. 1986. Join processing in database systems with large main memories. <em>ACM Trans. Database Syst.</em> 11, 3 (Aug. 1986), 239-264.
+</li><li>Stonebraker, M. 1981. Operating system support for database management. <em>Commun. ACM</em> 24, 7 (July 1981), 412-418.
+</li></ul><h3 class="section" id="ClassParticipation">Class Participation</h3>
+<p>
+As mentioned above, a small fraction of the course grade will be for "class participation". At various times I will ask for feedback via EEE or Piazza, and everyone will be expected to respond.  This feedback will help me guide the lectures, projects, etc., during this quarter and future quarters.  This small but important portion of your grade will be determined largely by whether or not you participate online.  (Note that it'll be easy to get the full participation credit - you will just have to be enrolled on Piazza and then answer these infrequent surveys by their deadlines, which by the way will also include the final "instructor evaluation" at the end of the course.)  5% of the class participation grade will be based on online participation.
+</p>
+<h3 class="section" id="ClassDiscussionForum">Class Discussion Forum</h3>
+<p>
+We will be using Piazza for online class discussions. This system is highly catered to getting you help fast and efficiently from classmates, the Reader(s), and the instructor. Rather than emailing questions to any of us on the teaching staff, we'll ask you to post your questions on Piazza. If you have any problems or feedback for the developers, email team@….  Please make Piazza participation (at least monitoring the activity there) a part of your regular CS122C/222 routine!
+</p>
+<p>
+You can find our class page at: <a class="ext-link" href="https://piazza.com/uci/fall2016/cs222cs122c/home"><span class="icon">​</span>https://piazza.com/uci/fall2016/cs222cs122c/home</a>
+</p>
+<h3 class="section" id="ProgrammingProject">Programming Project</h3>
+<p>
+This class is intended to teach the principles involved in DBMS implementation, so it will include a significant programming component.  The project will be aimed at giving you a sense of what goes on inside a DBMS, and what the issues and challenges are in building a system "now" that will be managing data of various user-defined shapes and sizes "later".  You will try your hand at record-based file storage, indexing, and relational runtime system programming (a.k.a. query operators).  The language for the project will be C++ - hopefully you either have C++ experience or you have Java experience and can learn C++ quickly.  Our assistant(s) will run the project, and they can provide you with additional suggestions for material to help you "spin up" on C++ programming, debugging, and tools in case you need to do a bit of remedial work on the side in order to tackle the project successfully.  The course has the same requirements for both graduate students and undergraduate students.
+</p>
+<h3 class="section" id="ComprehensiveExamOption">Comprehensive Exam Option</h3>
+<p>
+Computer Science graduate students wishing to satisfy the MS Comprehensive Exam requirement in Database Systems via CS222 should notify the instructor and the Student Advising Office (SAO) of this intention via e-mail before the day of the final exam. For such students, a weighted mix of your midterm and final exam performance will be used to determine your MS Comprehensive Exam grade (P or F) at the end of the course, and this grade will be reported to SAO. Students who do not pass successfully can try the exam again the next time CS 222 is offered by taking the midterm and final exams in that offering of the course; hopefully this will not be necessary for anyone. (Students who do this are advised to informally audit the next offering of the class; this is because the course emphasis and expected knowledge can vary a bit by term and by instructor, and also because you'll probably need the review to pass.)
+</p>
+<hr />
+<h3 class="section" id="NoticeaboutProjects">Notice about Projects</h3>
+<ul><li>Students should work on parts 2-4 of the project in groups of two. Please let us know about your group by following the instructions that will be provided via Piazza when the time comes to do so. (In general, you should keep a close eye on Piazza all throughout the quarter!)
+</li><li>Students who strongly prefer to work alone for one reason or another may do so by requesting permission from the instructor — although it’s not advisable, and you will not get any “discount” on the assignment requirements if you opt to take this path.
+</li><li><em>Students are allowed to add attributes, methods, and classes, as long as the public signatures provided in the codebase are kept and implemented.</em> <br /> We will be testing your code by calling the methods that are declared in the signatures.
+</li><li>Students also have the freedom to use other open-source libraries or packages (e.g., Gtest and Boost) to implement and test their code. Just please make sure that you: (1) get the okay from a Reader before using any additional packages; (2) list such packages clearly in your project document; and (3) write your makefile correctly so that your project can still be built by calling the 'make' command.
+</li></ul><h3 class="section" id="ProjectLatePolicy">Project Late Policy</h3>
+<ul><li>The official due date for each assignment is listed here on the wiki, and it is expected that students will turn most work in on or before that date.
+</li><li>We will offer a 48-hour "grace period" for each assignment, and will therefore accept solution submissions that are turned in within 48 hours of the due date (i.e., less than two days late).  No need to ask - this time is yours in the event that you need it for some unforeseen reason.  If you use it, your score will be deducted by 5% (out of 100%).  You are recommended NOT to use the grace period, as you will lose not only 5%, but also valuable time from the next assignment's working period for every hour that you run late.
+</li><li>Late assignments after the grace period will NOT be accepted, so do always aim to be on time! (Please don't even ask, as this is what the two-day grace period is intended for. :-))
+</li></ul><h3 class="section" id="CheatingPolicy">Cheating Policy</h3>
+<p>
+Cheating is an area where the instructor for this course has absolutely no patience or sympathy whatsoever. You are all here to learn, and cheating defeats that purpose and is unfair to your fellow students. Students will be expected to adhere to the UCI and ICS Academic Honesty policies (and should see <a class="ext-link" href="http://www.editor.uci.edu/catalogue/appx/appx.2.htm#academic"><span class="icon">​</span>http://www.editor.uci.edu/catalogue/appx/appx.2.htm#academic</a> and <a class="ext-link" href="http://www.ics.uci.edu/ugrad/policies/index.php#academic_honesty"><span class="icon">​</span>http://www.ics.uci.edu/ugrad/policies/index.php#academic_honesty</a> to read their details). Any student found to be cheating or aiding others in cheating will be academically prosecuted to the maximum extent possible — so you will fail the course with no option for a second chance. This policy will be strictly adhered to; no exceptions will be possible regardless of the impact it may have on your studies, your work plans, your visa status, or anything else. Don’t cheat and you won’t have issues. Just say <em>no</em> to cheating!
+</p>
+<h3 class="section" id="CCResources">C/C++ Resources</h3>
+<ul><li>A helpful reference for C/C++ libraries: <a class="ext-link" href="http://www.cplusplus.com/reference/"><span class="icon">​</span>http://www.cplusplus.com/reference/</a>
+</li><li>A tutorial on programming in C/C++ and guide on related resources: <a class="ext-link" href="http://www.cprogramming.com/tutorial.html#c++tutorial"><span class="icon">​</span>http://www.cprogramming.com/tutorial.html#c++tutorial</a>
+</li><li>A tutorial on learning C++ for Java programmers: <a class="ext-link" href="http://pages.cs.wisc.edu/~hasti/cs368/CppTutorial/index.html"><span class="icon">​</span>http://pages.cs.wisc.edu/~hasti/cs368/CppTutorial/index.html</a>
+</li></ul><h3 class="section" id="MidtermExam">Midterm Exam</h3>
+<p>
+Time Nov. 1, Tuesday, In-class. Closed books.  You can bring an A4-sized "cheat sheet."
+</p>
+<h3 class="section" id="FinalExam">Final Exam</h3>
+<p>
+Thursday, December 8, 2016, 8:00 a.m. - 10:00 a.m <br />  Usual classroom and an extra classroom <a class="ext-link" href="http://www.classrooms.uci.edu/gac/ICF.html"><span class="icon">​</span>Interim Classroom Facility (ICF) 101</a>. Closed books, Closed notes. You can bring an A4-sized "cheat sheet."  The exam will cover all materials taught in this quarter, with a more emphasis on those after the midterm.
+</p>
+</div>
+        <div class="trac-modifiedby">
+          <span>
+            <a href="/wiki/public/wiki/cs222-2016-fall?action=diff&amp;version=61" title="Version 61 by chenli">Last modified</a>
+ <a class="timeline" href="/wiki/public/timeline?from=2016-11-30T23%3A12%3A47-08%3A00&amp;precision=second" title="See timeline at Nov 30, 2016, 11:12:47 PM">9 years ago</a>          </span>
+          <span class="trac-print">
+            Last modified on Nov 30, 2016, 11:12:47 PM
+          </span>
+        </div>
+      </div>
+
+
+
+
+
+<div id="attachments">
+  <h3  class="foldable">
+    Attachments
+    <span class="trac-count">(36)</span></h3>
+  <div>
+    <ul>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture01.ppt" title="View attachment">cs222-lecture01.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture01.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="1154048 bytes">1.1 MB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-09-20T08%3A58%3A20-07%3A00&amp;precision=second" title="See timeline at Sep 20, 2016, 8:58:20 AM">9 years ago</a>.
+        <q>Lecture 01: PPTX</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture01.pdf" title="View attachment">cs222-lecture01.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture01.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="447433 bytes">436.9 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-09-20T08%3A58%3A44-07%3A00&amp;precision=second" title="See timeline at Sep 20, 2016, 8:58:44 AM">9 years ago</a>.
+        <q>Lecture 01: PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture02.ppt" title="View attachment">cs222-lecture02.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture02.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="1303552 bytes">1.2 MB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-09-26T23%3A25%3A57-07%3A00&amp;precision=second" title="See timeline at Sep 26, 2016, 11:25:57 PM">9 years ago</a>.
+        <q>Notes 02 PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture02.pdf" title="View attachment">cs222-lecture02.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture02.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="441974 bytes">431.6 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-09-26T23%3A26%3A18-07%3A00&amp;precision=second" title="See timeline at Sep 26, 2016, 11:26:18 PM">9 years ago</a>.
+        <q>Notes 02 PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture03.pdf" title="View attachment">cs222-lecture03.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture03.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="235919 bytes">230.4 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-09-28T20%3A39%3A53-07%3A00&amp;precision=second" title="See timeline at Sep 28, 2016, 8:39:53 PM">9 years ago</a>.
+        <q>Lecture 03: PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture03.ppt" title="View attachment">cs222-lecture03.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture03.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="825344 bytes">806.0 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-09-28T20%3A41%3A47-07%3A00&amp;precision=second" title="See timeline at Sep 28, 2016, 8:41:47 PM">9 years ago</a>.
+        <q>Lecture 03: PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture04.pdf" title="View attachment">cs222-lecture04.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture04.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="274045 bytes">267.6 KB</span>
+) - added by <span class="trac-author">teyuc</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-03T14%3A33%3A08-07%3A00&amp;precision=second" title="See timeline at Oct 3, 2016, 2:33:08 PM">9 years ago</a>.
+        <q>Lecture 04: PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture04.ppt" title="View attachment">cs222-lecture04.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture04.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="486400 bytes">475.0 KB</span>
+) - added by <span class="trac-author">teyuc</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-03T14%3A33%3A42-07%3A00&amp;precision=second" title="See timeline at Oct 3, 2016, 2:33:42 PM">9 years ago</a>.
+        <q>Lecture 04: PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture05.ppt" title="View attachment">cs222-lecture05.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture05.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="2382336 bytes">2.3 MB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-05T15%3A56%3A27-07%3A00&amp;precision=second" title="See timeline at Oct 5, 2016, 3:56:27 PM">9 years ago</a>.
+        <q>Lecture 05: PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-lecture05.pdf" title="View attachment">cs222-lecture05.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-lecture05.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="151278 bytes">147.7 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-05T15%3A56%3A39-07%3A00&amp;precision=second" title="See timeline at Oct 5, 2016, 3:56:39 PM">9 years ago</a>.
+        <q>Lecture 05: PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes06.ppt" title="View attachment">cs222-notes06.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes06.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="3526656 bytes">3.4 MB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-10T21%3A54%3A03-07%3A00&amp;precision=second" title="See timeline at Oct 10, 2016, 9:54:03 PM">9 years ago</a>.
+        <q>Notes 06 PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes06.pdf" title="View attachment">cs222-notes06.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes06.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="199854 bytes">195.2 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-10T21%3A54%3A38-07%3A00&amp;precision=second" title="See timeline at Oct 10, 2016, 9:54:38 PM">9 years ago</a>.
+        <q>Notes 06 PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes07.pdf" title="View attachment">cs222-notes07.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes07.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="180442 bytes">176.2 KB</span>
+) - added by <span class="trac-author">teyuc</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-17T16%3A18%3A30-07%3A00&amp;precision=second" title="See timeline at Oct 17, 2016, 4:18:30 PM">9 years ago</a>.
+        <q>Notes 07 PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes07.ppt" title="View attachment">cs222-notes07.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes07.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="486912 bytes">475.5 KB</span>
+) - added by <span class="trac-author">teyuc</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-17T16%3A19%3A00-07%3A00&amp;precision=second" title="See timeline at Oct 17, 2016, 4:19:00 PM">9 years ago</a>.
+        <q>Notes 07 PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/2010-fall-midterm.pdf" title="View attachment">2010-fall-midterm.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/2010-fall-midterm.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="155722 bytes">152.1 KB</span>
+) - added by <span class="trac-author">Joyce Shin</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-18T16%3A45%3A47-07%3A00&amp;precision=second" title="See timeline at Oct 18, 2016, 4:45:47 PM">9 years ago</a>.
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/2010-fall-midterm-solution.pdf" title="View attachment">2010-fall-midterm-solution.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/2010-fall-midterm-solution.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="914739 bytes">893.3 KB</span>
+) - added by <span class="trac-author">Joyce Shin</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-18T16%3A45%3A56-07%3A00&amp;precision=second" title="See timeline at Oct 18, 2016, 4:45:56 PM">9 years ago</a>.
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes08.ppt" title="View attachment">cs222-notes08.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes08.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="1289728 bytes">1.2 MB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-19T23%3A52%3A29-07%3A00&amp;precision=second" title="See timeline at Oct 19, 2016, 11:52:29 PM">9 years ago</a>.
+        <q>Lecture 08: PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes08.pdf" title="View attachment">cs222-notes08.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes08.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="220133 bytes">215.0 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-19T23%3A52%3A46-07%3A00&amp;precision=second" title="See timeline at Oct 19, 2016, 11:52:46 PM">9 years ago</a>.
+        <q>Lecture 08: PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes09.ppt" title="View attachment">cs222-notes09.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes09.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="2565120 bytes">2.4 MB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-24T11%3A09%3A47-07%3A00&amp;precision=second" title="See timeline at Oct 24, 2016, 11:09:47 AM">9 years ago</a>.
+        <q>Notes 09 PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes09.pdf" title="View attachment">cs222-notes09.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes09.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="163189 bytes">159.4 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-24T11%3A10%3A12-07%3A00&amp;precision=second" title="See timeline at Oct 24, 2016, 11:10:12 AM">9 years ago</a>.
+        <q>Notes 09 PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes10.ppt" title="View attachment">cs222-notes10.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes10.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="983040 bytes">960.0 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-26T17%3A56%3A27-07%3A00&amp;precision=second" title="See timeline at Oct 26, 2016, 5:56:27 PM">9 years ago</a>.
+        <q>Notes 10 PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes10.pdf" title="View attachment">cs222-notes10.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes10.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="261393 bytes">255.3 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-10-26T17%3A56%3A47-07%3A00&amp;precision=second" title="See timeline at Oct 26, 2016, 5:56:47 PM">9 years ago</a>.
+        <q>Notes 10 PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes11.ppt" title="View attachment">cs222-notes11.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes11.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="337920 bytes">330.0 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-11-02T22%3A46%3A57-07%3A00&amp;precision=second" title="See timeline at Nov 2, 2016, 10:46:57 PM">9 years ago</a>.
+        <q>Lecture 11: PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes11.pdf" title="View attachment">cs222-notes11.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes11.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="144896 bytes">141.5 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-11-02T22%3A47%3A17-07%3A00&amp;precision=second" title="See timeline at Nov 2, 2016, 10:47:17 PM">9 years ago</a>.
+        <q>Lecture 11: PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes12.ppt" title="View attachment">cs222-notes12.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes12.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="1117696 bytes">1.1 MB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-11-07T21%3A48%3A21-08%3A00&amp;precision=second" title="See timeline at Nov 7, 2016, 9:48:21 PM">9 years ago</a>.
+        <q>Lecture 12: PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes12.pdf" title="View attachment">cs222-notes12.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes12.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="344205 bytes">336.1 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-11-07T21%3A48%3A41-08%3A00&amp;precision=second" title="See timeline at Nov 7, 2016, 9:48:41 PM">9 years ago</a>.
+        <q>Lecture 12: PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/2016-fall-midterm-solution.pdf" title="View attachment">2016-fall-midterm-solution.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/2016-fall-midterm-solution.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="1019285 bytes">995.4 KB</span>
+) - added by <span class="trac-author">Joyce Shin</span> <a class="timeline" href="/wiki/public/timeline?from=2016-11-10T22%3A28%3A09-08%3A00&amp;precision=second" title="See timeline at Nov 10, 2016, 10:28:09 PM">9 years ago</a>.
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes13.ppt" title="View attachment">cs222-notes13.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes13.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="509952 bytes">498.0 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-11-14T09%3A22%3A42-08%3A00&amp;precision=second" title="See timeline at Nov 14, 2016, 9:22:42 AM">9 years ago</a>.
+        <q>Notes 13 PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes13.pdf" title="View attachment">cs222-notes13.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes13.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="230662 bytes">225.3 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-11-14T09%3A23%3A01-08%3A00&amp;precision=second" title="See timeline at Nov 14, 2016, 9:23:01 AM">9 years ago</a>.
+        <q>Notes 13 PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes14.pptx" title="View attachment">cs222-notes14.pptx</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes14.pptx"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="312848 bytes">305.5 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-11-16T21%3A33%3A50-08%3A00&amp;precision=second" title="See timeline at Nov 16, 2016, 9:33:50 PM">9 years ago</a>.
+        <q>Lecture 14: PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes14.pdf" title="View attachment">cs222-notes14.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes14.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="302449 bytes">295.4 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-11-16T21%3A35%3A09-08%3A00&amp;precision=second" title="See timeline at Nov 16, 2016, 9:35:09 PM">9 years ago</a>.
+        <q>Lecture 14: PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/2012-fall-final-solution.pdf" title="View attachment">2012-fall-final-solution.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/2012-fall-final-solution.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="184886 bytes">180.6 KB</span>
+) - added by <span class="trac-author">teyuc</span> <a class="timeline" href="/wiki/public/timeline?from=2016-11-22T15%3A08%3A03-08%3A00&amp;precision=second" title="See timeline at Nov 22, 2016, 3:08:03 PM">9 years ago</a>.
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes15.ppt" title="View attachment">cs222-notes15.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes15.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="760320 bytes">742.5 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-11-28T23%3A15%3A41-08%3A00&amp;precision=second" title="See timeline at Nov 28, 2016, 11:15:41 PM">9 years ago</a>.
+        <q>Lecture 15: PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes15.pdf" title="View attachment">cs222-notes15.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes15.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="276726 bytes">270.2 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-11-28T23%3A16%3A05-08%3A00&amp;precision=second" title="See timeline at Nov 28, 2016, 11:16:05 PM">9 years ago</a>.
+        <q>Lecture 15: PDF</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes16.ppt" title="View attachment">cs222-notes16.ppt</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes16.ppt"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="1481216 bytes">1.4 MB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-12-01T11%3A14%3A54-08%3A00&amp;precision=second" title="See timeline at Dec 1, 2016, 11:14:54 AM">9 years ago</a>.
+        <q>Notes 16: PPT</q>
+      </li>
+      <li>
+        <a href="/wiki/public/attachment/wiki/cs222-2016-fall/cs222-notes16.pdf" title="View attachment">cs222-notes16.pdf</a><a href="/wiki/public/raw-attachment/wiki/cs222-2016-fall/cs222-notes16.pdf"
+          class="trac-rawlink" title="Download">&#8203;</a>
+ (<span title="1013724 bytes">990.0 KB</span>
+) - added by <span class="trac-author">chenli</span> <a class="timeline" href="/wiki/public/timeline?from=2016-12-01T11%3A15%3A07-08%3A00&amp;precision=second" title="See timeline at Dec 1, 2016, 11:15:07 AM">9 years ago</a>.
+        <q>Notes 16: PDF</q>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="trac-help">
+  <strong>Note:</strong>
+ See   <a href="/wiki/public/wiki/TracWiki">TracWiki</a>
+ for help on using the wiki.
+</div>
+    </div>
+        <!-- # block content (content inherited from layout.html) -->
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first last">
+          <a rel="nofollow" href="/wiki/public/wiki/cs222-2016-fall?format=txt"
+              class="">
+            Plain Text</a>
+        </li>
+      </ul>
+    </div>
+    <!-- # endblock content (content inherited from layout.html) -->
+
+      <!-- # endblock content (placeholder in theme.html) -->
+    </div>
+
+    <div id="footer"><hr/>
+      <a id="tracpowered" href="https://trac.edgewall.org/"
+         ><img src="/wiki/public/chrome/common/trac_logo_mini.png" height="30"
+               width="107" alt="Trac Powered"/></a>
+      <p class="left">
+Powered by         <a href="/wiki/public/about"><strong>Trac 1.5.3</strong></a>
+        <br />
+ By         <a href="http://www.edgewall.org/">Edgewall Software</a>
+.      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+    <!--   # include 'site_footer.html' (theme.html) -->
+    <!--   end of site_footer.html -->
+    <!-- # endblock body (content inherited from theme.html) -->
+  </body> </html>

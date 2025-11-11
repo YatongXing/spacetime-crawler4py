@@ -1,0 +1,416 @@
+<!-- URL: https://swiki.ics.uci.edu/doku.php/security:fireeye -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Trellix FireEye Endpoint Protection by OIT [Support Wiki]</title>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="security,fireeye"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/css.php?css=assets/mikio.less"/>
+<link type="text/css" rel="stylesheet" href="/lib/tpl/mikio/icons/fontawesome/css/all.min.css"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="Support Wiki"/>
+<link rel="start" href="/"/>
+<link rel="contents" href="/doku.php/security:fireeye?do=index" title="Sitemap"/>
+<link rel="manifest" href="/lib/exe/manifest.php" crossorigin="use-credentials"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="/feed.php?mode=list&amp;ns=security"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="/doku.php/security:fireeye?do=export_xhtml"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="/doku.php/security:fireeye?do=export_raw"/>
+<link rel="canonical" href="https://wiki.ics.uci.edu/doku.php/security:fireeye"/>
+<link rel="stylesheet" href="/lib/exe/css.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"/>
+<script >var NS='security';var JSINFO = {"plugins":{"gallery":{"defaults":{"thumbnailsize":{"default":"150x150"},"imagesize":{"default":"1600X1200"},"cache":{"default":true},"filter":{"default":""},"showname":{"default":false},"showtitle":{"default":false},"crop":{"default":true},"direct":{"default":false},"reverse":{"default":false},"recursive":{"default":false},"align":{"default":0},"cols":{"default":0},"limit":{"default":0},"offset":{"default":0},"paginate":{"default":0},"sort":{"default":"file"},"namespace":{"default":""}}}},"isadmin":0,"isauth":0,"move_renameokay":false,"move_allowrename":false,"plugin_slider":{"width":800,"mode":"horizontal","infiniteLoop":true,"hideControlOnEnd":false,"speed":500,"easing":null,"slideMargin":0,"startSlide":0,"randomStart":false,"captions":false,"ticker":false,"tickerHover":false,"adaptiveHeight":false,"adaptiveHeightSpeed":500,"video":false,"useCSS":true,"preloadImages":"visible","responsive":true,"pager":true,"pagerType":"full","pagerShortSeparator":"\/","controls":true,"nextText":"Next","prevText":"Prev","autoControls":false,"startText":"Start","stopText":"Stop","autoControlsCombine":false,"auto":false,"pause":4000,"autoStart":true,"autoDirection":"next","autoHover":false,"autoDelay":0,"minSlides":1,"maxSlides":1,"moveSlides":0,"slideWidth":0,"touchEnabled":true,"swipeThreshold":50,"oneToOneTouch":true,"preventDefaultSwipeX":true,"preventDefaultSwipeY":false},"SMILEY_CONF":{"8-)":"cool.svg","8-O":"eek.svg","8-o":"eek.svg",":-(":"sad.svg",":-)":"smile.svg","=)":"smile2.svg",":-\/":"doubt.svg",":-\\":"doubt2.svg",":-?":"confused.svg",":-D":"biggrin.svg",":-P":"razz.svg",":-o":"surprised.svg",":-O":"surprised.svg",":-x":"silenced.svg",":-X":"silenced.svg",":-|":"neutral.svg",";-)":"wink.svg","m(":"facepalm.svg","^_^":"fun.svg",":?:":"question.svg",":!:":"exclaim.svg","LOL":"lol.svg","FIXME":"fixme.svg","DELETEME":"deleteme.svg"},"id":"security:fireeye","namespace":"security","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<script src="/lib/exe/jquery.php?tseed=8faf3dc90234d51a499f4f428a0eae43"></script>
+<script src="/lib/exe/js.php?t=mikio&amp;tseed=dd62e92af955c8604066261db907b52f"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio-typeahead.js" defer="defer"></script>
+<script type="text/javascript" src="/lib/tpl/mikio/assets/mikio.js" defer="defer"></script>
+<link rel="shortcut icon" href="/lib/tpl/mikio/images/favicon.ico" />
+<link rel="apple-touch-icon" href="/lib/tpl/mikio/images/apple-touch-icon.png" />
+</head>
+<body class="mikio">
+<div id="dokuwiki__site">
+    <div id="dokuwiki__top" class="site dokuwiki mode_show tpl_mikio    showSidebar hasSidebar"><nav class="mikio-navbar"><div class="mikio-container"><a class="mikio-navbar-brand" href="/doku.php/start" accesskey="h" title="Home [h]"><img src="/lib/exe/fetch.php/wiki:logo.png" class="mikio-navbar-brand-image" style="width:250px;max-width:none;max-height:none;"><div class="mikio-navbar-brand-title"><h1 class="mikio-navbar-brand-title-text">Support Wiki</h1><p class="claim mikio-navbar-brand-title-tagline"></p></div></a><div class="mikio-navbar-toggle"><span class="icon"></span></div><div class="mikio-navbar-collapse"><div class="mikio-nav-item"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="security:fireeye"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form></div><ul class="mikio-nav"><li id="dokuwiki__pagetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_pagetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,235.38983,1277.8305)" id="g2991">
+<path d="M 128,0 H 1152 V 768 H 736 q -40,0 -68,28 -28,28 -28,68 v 416 H 128 V 0 z m 640,896 h 299 L 768,1195 V 896 z M
+1280,768 V -32 q 0,-40 -28,-68 -28,-28 -68,-28 H 96 q -40,0 -68,28 -28,28 -28,68 v 1344 q 0,40 28,68 28,28 68,28 h 544
+q 40,0 88,-20 48,-20 76,-48 l 408,-408 q 28,-28 48,-76 20,-48 20,-88 z" id="path2993" /></g></svg><span class="mikio-small-only">Page Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item revs" href="/doku.php/security:fireeye?do=revisions" title="Old revisions"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></span><span>Old revisions</span></a><a class="mikio-nav-link mikio-dropdown-item backlink" href="/doku.php/security:fireeye?do=backlink" title="Backlinks"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></span><span>Backlinks</span></a></div></li><li id="dokuwiki__sitetools" class="mikio-nav-dropdown"><a id="mikio_dropdown_sitetools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,121.49153,1285.4237)" id="g3027">
+<path d="m 1024,640 q 0,106 -75,181 -75,75 -181,75 -106,0 -181,-75 -75,-75 -75,-181 0,-106 75,-181 75,-75 181,-75 106,0
+181,75 75,75 75,181 z m 512,109 V 527 q 0,-12 -8,-23 -8,-11 -20,-13 l -185,-28 q -19,-54 -39,-91 35,-50 107,-138 10,-12
+10,-25 0,-13 -9,-23 -27,-37 -99,-108 -72,-71 -94,-71 -12,0 -26,9 l -138,108 q -44,-23 -91,-38 -16,-136 -29,-186 -7,-28
+-36,-28 H 657 q -14,0 -24.5,8.5 Q 622,-111 621,-98 L 593,86 q -49,16 -90,37 L 362,16 Q 352,7 337,7 323,7 312,18 186,132
+147,186 q -7,10 -7,23 0,12 8,23 15,21 51,66.5 36,45.5 54,70.5 -27,50 -41,99 L 29,495 Q 16,497 8,507.5 0,518 0,531 v 222
+q 0,12 8,23 8,11 19,13 l 186,28 q 14,46 39,92 -40,57 -107,138 -10,12 -10,24 0,10 9,23 26,36 98.5,107.5 72.5,71.5 94.5,
+71.5 13,0 26,-10 l 138,-107 q 44,23 91,38 16,136 29,186 7,28 36,28 h 222 q 14,0 24.5,-8.5 Q 914,1391 915,1378 l 28,-184
+q 49,-16 90,-37 l 142,107 q 9,9 24,9 13,0 25,-10 129,-119 165,-170 7,-8 7,-22 0,-12 -8,-23 -15,-21 -51,-66.5 -36,-45.5
+-54,-70.5 26,-50 41,-98 l 183,-28 q 13,-2 21,-12.5 8,-10.5 8,-23.5 z" id="path3029" />
+</g></svg><span class="mikio-small-only">Site Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item recent" href="/doku.php/security:fireeye?do=recent" title="Recent Changes"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69V13m4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67V8M5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2H5m11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85z"/></svg></span><span>Recent Changes</span></a><a class="mikio-nav-link mikio-dropdown-item media" href="/doku.php/security:fireeye?do=media&ns=security" title="Media Manager"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 15l4.5-6 3.5 4.5 2.5-3L21 15m1-11h-8l-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M2 6H0v14a2 2 0 0 0 2 2h18v-2H2V6z"/></svg></span><span>Media Manager</span></a><a class="mikio-nav-link mikio-dropdown-item index" href="/doku.php/security:fireeye?do=index" title="Sitemap"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 3h6v4H3V3m12 7h6v4h-6v-4m0 7h6v4h-6v-4m-2-4H7v5h6v2H5V9h2v2h6v2z"/></svg></span><span>Sitemap</span></a></div></li><li id="dokuwiki__usertools" class="mikio-nav-dropdown"><a id="mikio_dropdown_usertools" class="nav-link dropdown-toggle" href="#" role="button"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg class="mikio-iicon" xmlns="http://www.w3.org/2000/svg"
+viewBox="0 -256 1792 1792" style="fill:currentColor"><g transform="matrix(1,0,0,-1,197.42373,1300.6102)"><path d="M
+1408,131 Q 1408,11 1335,-58.5 1262,-128 1141,-128 H 267 Q 146,-128 73,-58.5 0,11 0,131 0,184 3.5,234.5 7,285 17.5,343.5
+28,402 44,452 q 16,50 43,97.5 27,47.5 62,81 35,33.5 85.5,53.5 50.5,20 111.5,20 9,0 42,-21.5 33,-21.5 74.5,-48 41.5,
+-26.5 108,-48 Q 637,565 704,565 q 67,0 133.5,21.5 66.5,21.5 108,48 41.5,26.5 74.5,48 33,21.5 42,21.5 61,0 111.5,-20
+50.5,-20 85.5,-53.5 35,-33.5 62,-81 27,-47.5 43,-97.5 16,-50 26.5,-108.5 10.5,-58.5 14,-109 Q 1408,184 1408,131 z m
+-320,893 Q 1088,865 975.5,752.5 863,640 704,640 545,640 432.5,752.5 320,865 320,1024 320,1183 432.5,1295.5 545,1408 704,
+1408 863,1408 975.5,1295.5 1088,1183 1088,1024 z"/></g></svg><span class="mikio-small-only">User Tools</span></a><div class="mikio-dropdown closed"><a class="mikio-nav-link mikio-dropdown-item login" href="/doku.php/security:fireeye?do=login&sectok=" title="Log In"><span class="mikio-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 17.25V14H3v-4h7V6.75L15.25 12 10 17.25M8 2h9a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4h2v4h9V4H8v4H6V4a2 2 0 0 1 2-2z"/></svg></span><span>Log In</span></a></div></li></ul></div></div></nav><a name="dokuwiki__top" id="dokuwiki__top"></a><div class="mikio-hero"><div class="mikio-container"><div class="mikio-hero-text"><div class="mikio-breadcrumbs"><div class="mikio-container"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="/doku.php/security:fireeye"  class="breadcrumbs" title="security:fireeye">Trellix FireEye Endpoint Protection by OIT</a></bdi></span></div></div><h1 class="mikio-hero-title">Trellix FireEye Endpoint Protection by OIT</h1><h2 class="mikio-hero-subtitle"></h2></div><div class="mikio-hero-image"><div class="mikio-tags"></div></div></div></div><main class="mikio-page"><div class="mikio-container"><aside class="mikio-sidebar mikio-sidebar-left"><a class="mikio-sidebar-toggle closed" href="#">Sidebar <span class="icon"></span></a><div class="mikio-sidebar-collapse"><form action="/doku.php/start" method="get" role="search" class="search doku_form mikio-search" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="security:fireeye"><div class="no"><input name="q" type="text" class="edit search_typeahead" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value=""><button value="1" type="submit" title="Search"><svg xmlns="http://www.w3.org/2000/svg" class="mikio-iicon" viewbox="0 0 32 32" aria-hidden="true" style="fill:currentColor"><path d="M27 24.57l-5.647-5.648a8.895 8.895 0 0 0 1.522-4.984C22.875 9.01 18.867 5 13.938 5 9.01 5 5 9.01 5 13.938c0 4.929 4.01 8.938 8.938 8.938a8.887 8.887 0 0 0 4.984-1.522L24.568 27 27 24.57zm-13.062-4.445a6.194 6.194 0 0 1-6.188-6.188 6.195 6.195 0 0 1 6.188-6.188 6.195 6.195 0 0 1 6.188 6.188 6.195 6.195 0 0 1-6.188 6.188z"></path></svg></button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form><div class="mikio-sidebar-content"><div><div id="nojs_indexmenu_92216708768e6d56a08415" data-jsajax="%26group%3D1" class="indexmenu_nojs">
+<ul class="idx">
+<li class="closed"><div class="li"><a href="/doku.php/accounts:accounts" class="indexmenu_idx_head" data-wiki-id="accounts:accounts">ICS Accounts</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/announce:announce" class="indexmenu_idx_head" data-wiki-id="announce:announce">Announcement and Maintenance</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/backups:backups" class="indexmenu_idx_head" data-wiki-id="backups:backups">Backups @ ICS</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/commands:commands" class="indexmenu_idx_head" data-wiki-id="commands:commands">Common Tasks and Commands</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/group:group" class="indexmenu_idx_head" data-wiki-id="group:group">Group Files</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/hardware:hardware" class="indexmenu_idx_head" data-wiki-id="hardware:hardware">Hardware Support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/instructional_support:instructional_support" class="indexmenu_idx_head" data-wiki-id="instructional_support:instructional_support">Instructional Support Resources</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/network:network" class="indexmenu_idx_head" data-wiki-id="network:network">Network</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/os?idx=os" class="indexmenu_idx" data-wiki-id="">os</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/policies?idx=policies" class="indexmenu_idx" data-wiki-id="">policies</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/projects?idx=projects" class="indexmenu_idx" data-wiki-id="">projects</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/remote_support?idx=remote_support" class="indexmenu_idx" data-wiki-id="">remote_support</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/requesttracker?idx=requesttracker" class="indexmenu_idx" data-wiki-id="">requesttracker</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/research_support:research_support" class="indexmenu_idx_head" data-wiki-id="research_support:research_support">Research Support</a></div></li>
+<li class="open"><div class="li"><a href="/doku.php/security?idx=security" class="indexmenu_idx open" data-wiki-id="">security</a></div>
+<ul class="idx">
+<li class="level2" ><div class="li"><a href="/doku.php/security:campusvpn" class="wikilink1" title="security:campusvpn" data-wiki-id="security:campusvpn">UCI Campus VPN</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/security:duo" class="wikilink1" title="security:duo" data-wiki-id="security:duo">🔐 Duo Multi-Factor Authentication</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/security:fireeye" class="wikilink1" title="security:fireeye" data-wiki-id="security:fireeye">Trellix FireEye Endpoint Protection by OIT</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/security:nessusagent" class="wikilink1" title="security:nessusagent" data-wiki-id="security:nessusagent">Tenable Nessus Agent</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/security:oitvulnerabilityscanner" class="wikilink1" title="security:oitvulnerabilityscanner" data-wiki-id="security:oitvulnerabilityscanner">Vulnerability Scanning</a></div></li>
+<li class="level2" ><div class="li"><a href="/doku.php/security:securingservices" class="wikilink1" title="security:securingservices" data-wiki-id="security:securingservices">Securing Open Services on Campus Computing</a></div></li>
+</ul>
+</li>
+<li class="closed"><div class="li"><a href="/doku.php/services?idx=services" class="indexmenu_idx" data-wiki-id="">services</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/software:software" class="indexmenu_idx_head" data-wiki-id="software:software">Software</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/virtual_environments:virtual_environments" class="indexmenu_idx_head" data-wiki-id="virtual_environments:virtual_environments">Virtual Environments</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/webapps:webapps" class="indexmenu_idx_head" data-wiki-id="webapps:webapps">ICS Web Applications</a></div></li>
+<li class="closed"><div class="li"><a href="/doku.php/wiki?idx=wiki" class="indexmenu_idx" data-wiki-id="">wiki</a></div></li>
+</ul>
+</div></div></div></div></aside><div class="mikio-content" id="dokuwiki__content"><article class="mikio-article"><div class="mikio-toc"><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle"><svg class="mikio-iicon hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+style="fill:currentColor"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0
+76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16
+16v40c0 8.837 7.163 16 16 16z"/></svg>Table of Contents<svg class="mikio-iicon down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+aria-hidden="true" style="fill:currentColor"><path d="M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9
+1.917-1.916z"/></svg></h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#trellix_fireeye_endpoint_protection_by_oit">Trellix FireEye Endpoint Protection by OIT</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#notes_and_observations_by_pnimsomb">Notes and Observations by pnimsomb</a></div></li>
+<li class="level2"><div class="li"><a href="#external_documentation">External Documentation</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#self_installation">Self Installation</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#linux">Linux</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#installation">Installation</a></div></li>
+<li class="level3"><div class="li"><a href="#notes_from_ryan_bakonis_rbakonis_uciedu">Notes (from Ryan Bakonis, rbakonis@uci.edu)</a></div></li>
+<li class="level3"><div class="li"><a href="#installing_using_bigfix">Installing Using BigFix</a></div></li>
+<li class="level3"><div class="li"><a href="#manual_installation_instructions">Manual Installation Instructions</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#other_notes">Other Notes</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#ics_host_sets">ICS Host Sets</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div><div class="mikio-article-content"><h1 class="sectionedit1" id="trellix_fireeye_endpoint_protection_by_oit" style="display:none">Trellix FireEye Endpoint Protection by OIT</h1>
+<div class="level1">
+
+</div>
+
+<h2 class="sectionedit2" id="notes_and_observations_by_pnimsomb">Notes and Observations by pnimsomb</h2>
+<div class="level2">
+
+<p>
+The anti-virus portion of FireEye seems to only be activated/enabled/installed for clients that have an ICS IP address range. By default (for the rest of the campus), FireEye is only set for threat detection, not with AV. Ryan Bakonis (before leaving UCI) mentioned there needs to be a common identifier for OIT Security to create a policy, so we settled on IP address range when Sophos licensing expired.
+</p>
+
+<p>
+As of July 2022, the simplest way to get FireEye with the AV part installed/activated is to physically plug in the desktop/laptop being set up to an ICS managed ethernet connection. If the device has no ethernet port, try one of the USB-to-ethernet adapters. Alternatively, the WiFi within the Support suite area, ICS Zone, will also give an IP address within the ICS range. Setting up a computer using the main campus WiFi (UCInet Mobile Access or eduroam) will only enable the default threat detection portion. If a computer has already been setup with only the threat detection portion, then email security@uci.edu to request the AV portion be manually enabled/installed. OIT Security will need some form of identifier, so something like an IP address or hostname.
+</p>
+
+</div>
+
+<h2 class="sectionedit3" id="external_documentation">External Documentation</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ucirvine.sharepoint.com/:w:/r/sites/OIT-Security-Team/_layouts/15/Doc.aspx?sourcedoc=%7Bbd3969e8-9367-4459-b9fe-c0379fd53369%7D&amp;action=view&amp;wdAccPdf=0&amp;wdEmbedFS=1" class="urlextern" title="https://ucirvine.sharepoint.com/:w:/r/sites/OIT-Security-Team/_layouts/15/Doc.aspx?sourcedoc=%7Bbd3969e8-9367-4459-b9fe-c0379fd53369%7D&amp;action=view&amp;wdAccPdf=0&amp;wdEmbedFS=1" rel="ugc nofollow">OIT Trellix Endpoint Security Linux Install Instructions</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://www.trellix.com/" class="urlextern" title="https://www.trellix.com/" rel="ugc nofollow">Treillix.com</a>: Includes download and installation instructions.</div>
+</li>
+</ul>
+
+</div>
+
+<h1 class="sectionedit4" id="self_installation">Self Installation</h1>
+<div class="level1">
+
+</div>
+
+<h2 class="sectionedit5" id="linux">Linux</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit6" id="installation">Installation</h3>
+<div class="level3">
+
+<p>
+Note: Installation on <a href="/doku.php/services:supported_os" class="wikilink1" title="services:supported_os" data-wiki-id="services:supported_os">managed hosts</a>is handled by our <a href="/doku.php/services:puppet" class="wikilink1" title="services:puppet" data-wiki-id="services:puppet">Puppet</a> or <a href="/doku.php/services:ansible" class="wikilink2" title="services:ansible" rel="nofollow" data-wiki-id="services:ansible">ansible</a> configuration systems.
+</p>
+
+</div>
+
+<h4 id="installing_from_the_ics_custom_repo">Installing from the ICS Custom Repo</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="ubuntu_2004">Ubuntu 20.04+</h5>
+<div class="level5">
+
+<p>
+Install the ICS custom repo on your Ubuntu host by running the following as root:
+</p>
+<pre class="code">cat &lt;&lt; EOF &gt;&gt; /etc/apt/sources.list.d/ics-custom.list
+deb [trusted=yes arch=amd64] https://repo.ics.uci.edu/ubuntu/ jammy main
+EOF
+apt update</pre>
+
+</div>
+
+<h5 id="centso7">CentSO7</h5>
+<div class="level5">
+
+<p>
+Running the following block of code will add the ICS-custom repository, and set it disabled, to a CentOS7 host as root.
+</p>
+<pre class="code">cat &lt;&lt; EOF &gt;&gt; /etc/yum.repos.d/ICS-custom.repo``[ICS-custom]  
+name=CentOS-7 - ICS Custom Applications
+baseurl=ftp://ftp.ics.uci.edu/pub/centos0/ics-custom-repo  
+enabled=0
+gpgcheck=0  
+priority=10
+EOF</pre>
+
+</div>
+
+<h5 id="other_operating_systems">Other Operating Systems</h5>
+<div class="level5">
+
+<p>
+Please follow the directions in the  <a href="https://ucirvine.sharepoint.com/:w:/r/sites/OIT-Security-Team/_layouts/15/Doc.aspx?sourcedoc=%7Bbd3969e8-9367-4459-b9fe-c0379fd53369%7D&amp;action=view&amp;wdAccPdf=0&amp;wdEmbedFS=1" class="urlextern" title="https://ucirvine.sharepoint.com/:w:/r/sites/OIT-Security-Team/_layouts/15/Doc.aspx?sourcedoc=%7Bbd3969e8-9367-4459-b9fe-c0379fd53369%7D&amp;action=view&amp;wdAccPdf=0&amp;wdEmbedFS=1" rel="ugc nofollow">Trellix Endpoint Security Installation documentation</a>.
+</p>
+
+</div>
+
+<h4 id="install_the_package">Install the Package</h4>
+<div class="level4">
+
+<p>
+Once the ICS-custom repo has been installed, the following <abbr title="Operating System">OS</abbr> specific commands may be issued to install the package.
+</p>
+
+</div>
+
+<h5 id="ubuntu_20041">Ubuntu 20.04+</h5>
+<div class="level5">
+<pre class="code">apt update 
+apt install xagt</pre>
+
+</div>
+
+<h5 id="centos7">CentOS7</h5>
+<div class="level5">
+<pre class="code">yum clean all 
+yum --enablerepo=ICS-custom install xagt</pre>
+
+</div>
+
+<h4 id="configure">Configure</h4>
+<div class="level4">
+
+<p>
+In order to configure you client, please download the attached agent_config.json and then run the following command as root:
+</p>
+<pre class="code">/opt/fireeye/bin/xagt -i agent_config.json</pre>
+
+</div>
+
+<h4 id="start_the_service">Start the Service</h4>
+<div class="level4">
+
+<p>
+Ensure the service has been started as root:
+</p>
+<pre class="code"> systemctl enable xagt systemctl start xagt</pre>
+
+</div>
+
+<h4 id="confirm">Confirm</h4>
+<div class="level4">
+
+<p>
+<a href="/lib/exe/detail.php/security:screenshot-2025-08-01-120108.png?id=security%3Afireeye" class="media" title="security:screenshot-2025-08-01-120108.png"><img src="/lib/exe/fetch.php/security:screenshot-2025-08-01-120108.png?w=640&amp;tok=339516" class="media" loading="lazy" alt="" width="640" /></a>
+</p>
+
+</div>
+
+<h5 id="centos7_and_ubuntu_2004_lts_and_newer">CentOS7 and Ubuntu 20.04 LTS and newer</h5>
+<div class="level5">
+
+<p>
+Execute systemctl commands as root:
+</p>
+<pre class="code">systemctl status xagt</pre>
+
+<p>
+The output will appear similar to this:
+</p>
+
+</div>
+
+<h3 class="sectionedit7" id="notes_from_ryan_bakonis_rbakonis_uciedu">Notes (from Ryan Bakonis, rbakonis@uci.edu)</h3>
+<div class="level3">
+<pre class="code">  The HX client software needs to talk to the managing cloud based server.  
+  All updates, including the software, policies and protection rules as well as engines are updated via this mechanism.  
+  This also allows us to track licensing as well. 
+  Verify that your endpoint (server or workstation) has connectivity outbound to the internet to the required URL via ports 80/443. 
+  URL: hexshj633-hx-agent-1.hex01.helix.apps.fireeye.com
+  Conduct a software inventory and list any application to be whitelisted to OIT Security? 
+  Common software to whitelist would be any existing antivirus software. 
+  This will maximize performance and ensure compatibility with other antivirus software.</pre>
+
+</div>
+
+<h3 class="sectionedit8" id="installing_using_bigfix">Installing Using BigFix</h3>
+<div class="level3">
+
+<p>
+OIT manages the FireEye installer, so installation can be issued as a Fixlet. More details on how to issue a BigFix Fixlet is available in the <a href="/doku.php/group:support:bigfix:issuing_a_fixlet_or_software" class="wikilink1" title="group:support:bigfix:issuing_a_fixlet_or_software" data-wiki-id="group:support:bigfix:issuing_a_fixlet_or_software">Issuing a Fixlet via BigFix</a> section.
+</p>
+
+</div>
+
+<h3 class="sectionedit9" id="manual_installation_instructions">Manual Installation Instructions</h3>
+<div class="level3">
+
+<p>
+The install requires the following:
+</p>
+<pre class="code">  HX install package 
+      Windows Version 33.46.00 (Jul, 2021) 
+      
+      **Main location:**  \\masterhit.ics.uci.edu\FireEye
+      
+      Alternative location (download from Webfiles):  [[https://webfiles.uci.edu/xythoswfs/webview/_xy-6521187_1]]
+  Outbound Internet Access for ports 80/443 to the destination managing URL</pre>
+
+<p>
+Install Steps
+</p>
+
+<p>
+To manually install agent software on an individual Windows or macOS endpoint:
+</p>
+
+<p>
+1. Unzip the *.zip (Windows environments) or .dmg (macOS environments) file. The Windows agent installation package consists of these files:
+</p>
+<pre class="code">  Installation file:  xagtSetup_x.x.x_universal.msi</pre>
+<pre class="code">  Configuration file:  agent_config.json</pre>
+
+<p>
+2. Double-click the xagtSetup_x.x.x_universal.msi installation file to launch the setup wizard.
+</p>
+
+<p>
+3. Accept all suggested settings and the license agreement, and continue through the wizard.
+</p>
+
+</div>
+
+<h4 id="example_screenshot_when_endpoint_security_av_protection_is_enabled">Example screenshot when Endpoint Security AV protection is enabled</h4>
+<div class="level4">
+
+<p>
+<a href="/lib/exe/detail.php/security:fireeyeendpointexample.png?id=security%3Afireeye" class="media" title="security:fireeyeendpointexample.png"><img src="/lib/exe/fetch.php/security:fireeyeendpointexample.png" class="media" loading="lazy" alt="" /></a>
+</p>
+
+</div>
+
+<h5 id="example_screenshot_of_endpoint_security_taskbar_icon">Example screenshot of Endpoint Security taskbar icon</h5>
+<div class="level5">
+
+<p>
+<a href="/lib/exe/detail.php/security:fireeyeendpointtaskbaricon.png?id=security%3Afireeye" class="media" title="security:fireeyeendpointtaskbaricon.png"><img src="/lib/exe/fetch.php/security:fireeyeendpointtaskbaricon.png" class="media" loading="lazy" alt="" /></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit10" id="other_notes">Other Notes</h2>
+<div class="level2">
+<ol>
+<li class="level1"><div class="li"> Faculty laptops are eligible if they are university-owned. Personal devices are excluded.</div>
+</li>
+<li class="level1"><div class="li"> The HX management server is cloud-hosted, so there aren’t any on-campus dependencies. The only requirement is that the endpoint can establish an outbound connection to the HX server over the Internet. </div>
+</li>
+<li class="level1"><div class="li"> The installer can be passed to users for self-service installation. </div>
+</li>
+<li class="level1"><div class="li"> As of September 2021, UCOP covers 10,000 licenses of FireEye and according to Ryan, UCI has used a little less than half of the allocation so far. </div>
+</li>
+<li class="level1"><div class="li"> Contact Ryan Bakonis at rbakonis@uci.edu for inquiries relating to the console. Sub-delegation of console access is currently being worked on. </div>
+</li>
+<li class="level1"><div class="li"> The FireEye installation on BigFix is currently not set to include AV protection.  If installing FireEye from BigFix and AV protection is desired, email Ryan with the computer name to have enabled.  </div>
+</li>
+<li class="level1"><div class="li"> Make sure to remove all other AV protection (such as Sophos) before enabling the AV portion of FireEye</div>
+</li>
+</ol>
+
+</div>
+
+<h3 class="sectionedit11" id="ics_host_sets">ICS Host Sets</h3>
+<div class="level3">
+
+<p>
+From Benny Angeles of OIT Security (November 7, 2024):
+</p>
+<pre class="code">Currently, there are several groups of hosts (also known as &quot;host sets&quot;) in our Trellix console pertaining to ICS. They are:
+
+1. ICS Domain (dynamic host set, currently 362 hosts)
+2. ICS Host Prefixes (dynamic host set, currently 47 hosts)
+3. ICS Machines (static host set, currently 12 hosts)
+
+Dynamic host sets have the ability to automatically add hosts to themselves based on certain attributes of the host. 
+For example, the &quot;ICS Domain&quot; dynamic host set grabs every host under the UCI-ICS domain that has the Trellix agent installed. 
+So if you were to install the agent on a brand new machine under the UCI-ICS domain, once the agent communicates with the Trellix console, that host would automatically join the &quot;ICS Domain&quot; dynamic host set and obtain the custom policy applied to it.
+
+Static host sets are sets of hosts that are manually created and that do not change, but custom policies can be applied to these as well.
+
+The current configuration for the &quot;ICS Domain&quot; dynamic host set is:
+-All hosts under the UCI-ICS domain
+
+The current configuration for the &quot;ICS Host Prefixes&quot; dynamic host set is:
+-All hosts that include the following strings in their hostname: Hostname~=/^BAO-|^COMM-|^CS-|^DEANS-|^GSAO-|^SAO-|^STATS-|^TEC-|^ER-|^INFO-/
+
+The &quot;ICS Machines&quot; host set is a static host set so no dynamic configuration exists.
+
+All 3 host sets are receiving the &quot;ICS Workstations&quot; custom policy.
+
+If the configurations for these host sets need to be updated to include other hosts that are not currently included (i.e. add an additional domain, add specific AD OUs, etc) please let me know and I can work with you to update these.</pre>
+
+</div><div style="clear:both"></div></div></article></div><nav id="dw__pagetools" class="hidden-print dw__pagetools"><ul class="tools"><li class="source"><a href="/doku.php/security:fireeye?do=edit" class="source" title="Show pagesource [v]" accesskey="v"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></div><span class="a11y">Show pagesource</span></a></li><li class="revs"><a href="/doku.php/security:fireeye?do=revisions" class="revs" title="Old revisions [o]" accesskey="o"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></div><span class="a11y">Old revisions</span></a></li><li class="backlink"><a href="/doku.php/security:fireeye?do=backlink" class="backlink" title="Backlinks"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></div><span class="a11y">Backlinks</span></a></li><li class="top"><a href="#dokuwiki__top" class="top" title="Back to top [t]" accesskey="t"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></div><span class="a11y">Back to top</span></a></li></ul></nav></div></main><div class="mikio-page-fill"><div class="mikio-content" style="padding:0"></div></div><footer class="mikio-footer"><div class="doc"><bdi>security/fireeye.txt</bdi> · Last modified: 2025/09/05 09:56</div><div class="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license"><img src="/lib/images/license/badge/cc-by-nc-sa.png" alt="CC Attribution-Noncommercial-Share Alike 4.0 International" /></a> Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license" class="urlextern">CC Attribution-Noncommercial-Share Alike 4.0 International</a></bdi></div></footer>    <div class="no"><img src="/lib/exe/taskrunner.php?id=security%3Afireeye&amp;1760917253" width="2" height="1" alt="" /></div>
+</div>
+</body>
+</html>

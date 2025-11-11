@@ -1,0 +1,231 @@
+<!-- URL: https://www.ics.uci.edu/~irus/wisen/wisen98/presentations/Summary-Reqts/Final_report.html -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+
+<META content=3Dtext/html;charset=3Diso-8859-1 
+http-equiv=3DContent-Type><TITLE>WISEN - Requirements for an
+Internet-scale event notification service</TITLE>
+<META content=3D'"MSHTML 4.72.3110.7"' name=3DGENERATOR>
+</HEAD>
+<BODY>
+<H1>Requirements for Internet scale event notifications</H1>The goal of 
+this
+session was to identify a set of requirements for an Internet-scale 
+event
+notification service. More specifically, the discussion developed from
+<I>minimal</I> requirements to <I>advanced</I> and 
+<I>domain-specific</I>
+requirements. Also, the tension between various domain-specific 
+requirements led
+to discussing the possibility of having one single event service, usable
+in
+different contexts, as opposed to a number of separate services targeted
+to some
+particular application domain.
+<P><I>Core</I> or <I>minimal</I> requirements define the core 
+functionalities of
+an Internet-scale event notification service. These are the features 
+that a
+technology must exhibit in order to qualify as an Internet-scale event
+notification service.
+<P><I>Advanced</I> features are not mandatory parts of the core service, 
+however
+they are desirable functionalities that any Internet-scale event 
+notification
+service should provide either because they are of common utility for
+many
+classes of applications or because they can not be easily or efficiently 
+
+implemented on top of the core services.
+<P>
+<H2>Core Requirements</H2>A quite numerous list of core requirements has 
+been
+proposed. Only some items were analyzed in detail<SPAN=20
+class=3D90003922-31071998><FONT color=3D#000000 face=3DArial 
+size=3D3>,</FONT></SPAN>
+and a few comments were made on the interplay between different items.
+<DL>
+    <DT><B>core functionality</B>
+    <DD><SPAN class=3D90003922-31071998><FONT color=3D#000000 
+face=3DArial
+    size=3D3>T</FONT></SPAN>he main service provided by an event-based
+    infrastructure is the notification of the occurrence of events. 
+Objects can
+    declare their interest in being notified of the occurrence of an 
+event or a
+    class of events by issuing a <I>subscription</I>. In other words,
+    subscriptions can be used to select notifications. The selection is 
+based on
+    the <I>content</I> of notifications, which corresponds to the data
+    associated with the observation of the event.
+    <P></P>
+    <DT><B>attributes of the notification service</B>
+    <DD><SPAN class=3D90003922-31071998><FONT color=3D#000000 
+face=3DArial=20
+    size=3D3>T</FONT></SPAN>he notification of an event is 
+<I>asynchronous</I>
+    with respect to the occurrence of the event. Event producers and 
+consumers
+    are <I>decoupled</I>, i.e., it is not necessary for producers to be 
+aware of
+    the existence of consumers nor of their identity, and vice-versa. 
+Note that
+    this principle doesn't require or imply notifications be anonymous. 
+A
+    notification must be <I>reliably</I> delivered to all the components 
+that
+    subscribed for it. Most of these aspects can be seen in a more 
+general
+    perspective in which the <I>quality of service</I> can be 
+dynamically
+    configured. For example, an object publishing a message can require
+    anonymity of the notification. Or conversely, an object subscribing 
+for some
+    events might require notifications to report information about the
+    publisher. As far as <I>reliability</I><SPAN 
+class=3D90003922-31071998><FONT=20
+    color=3D#000000 face=3DArial size=3D3> </FONT></SPAN><SPAN
+    class=3D90003922-31071998><FONT color=3D#000000 face=3DArial 
+size=3D3>is concerned,
+    </FONT></SPAN>both publishers and subscribers ideally<SPAN
+    class=3D90003922-31071998><FONT color=3D#000000 face=3DArial 
+size=3D3>
+    </FONT></SPAN>should be able to specify different levels or kinds of 
+
+    service. For example, one subscriber might want to receive 
+<I>exactly</I>
+    one notification for each event while others might accept repeated
+    notifications or even lost notifications. The same service 
+parameters could
+    be set by publishers.
+    <DT><B>event notification protocol</B>
+    <DD><SPAN class=3D90003922-31071998><FONT color=3D#000000 
+face=3DArial
+    size=3D3>I</FONT></SPAN>n order to define the interface of the event 
+service,
+    an event notification <I>protocol</I> or an <I>API</I> should be 
+defined.
+    The choice of a protocol is preferable because a protocol is more
+    language-neutral and it is presumably easier to agree on. Also, 
+different
+    implementations and vendors can provide extended APIs and 
+language-dependent
+    bindings that should not be included or constrained by the common 
+interface
+    definition.
+    <P>For the design of this protocol, some extensions of HTTP have 
+been
+    proposed. The major requirement for an event notification protocol 
+is to be
+    compatible with existing firewalls. Other obvious requirements are
+    extensibility and efficiency. It would also be possible and in some 
+cases
+    desirable to piggy-back the notification protocol on top of other 
+standard
+    protocols. </P>
+    <DT><B>distributed architecture</B>
+    <DD>Although the functionality of the service per se doesn't impose 
+this,
+    everyone agrees that it is necessary to have some sort of 
+distributed
+    architecture for the implementation of the service.
+    <P></P></DD></DL>
+<H2>Advanced Requirements</H2>
+<DL>
+    <DT><B>extensions and variances of the basic service</B>
+    <DD>It has been suggested as a <I>minimalist</I> approach that 
+notification
+    be idempotent. This supposedly makes the event service simpler 
+because it is
+    not necessary for it to avoid repeated notification. It should be 
+clear that
+    this is a requirement on the applications that use the event service 
+rather
+    than on the event service itself.
+    <P>Many applications would benefit from having advanced subscription 
+
+    mechanisms that facilitate the selection of very specific classes of 
+events
+    as well as sequences of events. As an example consider a security 
+monitor,
+    in order to detect an intrusion, the monitor might want to receive a 
+
+    notification every time three consecutive failed logins occur for 
+the same
+    user on any machine in a subnet. Although suggested by 
+domain-specific
+    applications, this requirement seems to be useful in a generic event 
+
+    notification service.
+    <P>The event notification interface, and therefore the event 
+notification
+    protocol, should allow for objects to be connected to the event 
+service
+    through <I>proxy</I> agents. This forces an additional de-coupling 
+in the
+    protocol specification in that it should be possible for an object 
+to
+    publish (and subscribe) on the behalf of another object.
+    <P></P>
+    <DT><B>persistence</B>
+    <DD>It is clearly necessary for subscriptions to be persistent 
+within the
+    event service. It has also been argued that the event service should 
+provide
+    persistent storage of notifications. This feature is also related to 
+the
+    types of ``call-back'' mechanism that can be registered with 
+subscriptions.
+    Ideally, the event service should support various communication 
+methods,
+    possibly including HTTP and SMTP. Also, for every single 
+subscription, a
+    list of notification call-backs could be registered so that the 
+event
+    service could try the main one and then fall back to the other ones 
+in case
+    the main one is not accessible.
+    <P>Persistence of notifications is also implied in case the event 
+service
+    supports a pull-style notification mechanism in which objects 
+actively poll
+    the service to check for new notifications.
+    <P>There has been quite a bit of discussion on this aspect. Some 
+think that
+    persistence is so crucial that it would be a bad idea to retrofit 
+it. On the
+    other hand, others argue that persistence should not be handled 
+directly by
+    the event service, but instead, when required, it could be 
+incorporated and
+    dealt with by the call-back mechanisms. An example of a persistent 
+call-back
+    mechanism is e-mail. The impact of persistence should also be 
+evaluated with
+    respect to scalability. </P>
+    <DT><B>mobility</B>
+    <DD>Mobile computing technology allows roaming users to access their 
+
+    personal resources from different nodes on a wide-area network. 
+Similarly,
+    thanks to mobile code technology, applications can ``move'' through 
+the net
+    requesting services from several access points. This possibility 
+poses an
+    additional requirement on the event service. In fact, it is 
+desirable that
+    the event service support mobility by automatically re-routing 
+notifications
+    to follow users or applications as they move. Clearly, this would 
+also
+    require to augment the event service interface (and the 
+corresponding
+    protocol) with the appropriate mobility primitives. 
+<p>
+
+<br>
+
+<em> Breakout Session Scribe:</em> 
+	Antonio Carzaniga, University of Colorado, Boulder
+</DD></DL></BODY></HTML>

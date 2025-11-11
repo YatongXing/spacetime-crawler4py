@@ -1,0 +1,69 @@
+<!-- URL: http://seal.ics.uci.edu/projects/timestump/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83301040-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<head>
+<title>SEAL - Inaccessible Dynamic Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Reply-to" content="malek at uci dot edu">
+<meta http-equiv="Owner" content="Sam Malek">
+<meta name="Author" content="Sam Malek">
+<meta name="Generator" content="Emacs">
+<link rev="MADE" href="mailto:malek at uci dot edu">
+<link href="../../seal.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="wrapper">
+    
+<!-- *************** Beginning of content ****************** -->
+
+<h2>Automated Accessibility Analysis of Dynamic Content Changes on Mobile Apps</h2>
+
+<p>
+With mobile apps playing an increasingly vital role in our daily lives, the importance of ensuring their accessibility for users with disabilities is also growing. Despite this, app developers often overlook the accessibility challenges encountered by users of assistive technologies, such as screen readers. Screen reader users typically navigate content sequentially, focusing on one element at a time, unaware of changes occurring elsewhere in the app. While dynamic changes to content displayed on an app's user interface may be apparent to sighted users, they pose significant accessibility obstacles for screen reader users. Existing accessibility testing tools are unable to identify challenges faced by blind users resulting from dynamic content changes. In this work, we first conduct a formative user study on dynamic changes in Android apps and their accessibility barriers for screen reader users. We then present TIMESTUMP, an automated framework that leverages our findings in the formative study to detect accessibility issues regarding dynamic changes. Finally, we empirically evaluate TIMESTUMP on real-world apps to assess its effectiveness and efficiency in detecting such accessibility issues. TIMESTUMP is able to detect inaccessible dynamic content changes with a precision of 94% and a recall of 92%.
+</p>
+
+<h3>How does TIMESTUMP work?</h3>
+<p>
+Relying on the insights gained from formative interviews with screen reader users, we developed an automated framework called TIMESTUMP, designed to identify accessibility issues associated with dynamic content changes. In the initial phase, we install an Android app on a Virtual Machine~(VM) and utilize a GUI crawler to automatically explore the app, generating a diverse set of states in an app. The Snapshot Recorder tracks app states and records snapshots of distinct screens. In the second phase, we extract the list of actionable elements in each recorded snapshot. Then, the Interaction Automator systematically executes each action, capturing information before, during, and after the action. This rich dataset is passed to the third phase, where the Localizer component assesses the gathered information, precisely flagging accessibility issues stemming from dynamic content changes.
+</p>
+
+<img style="margin:10" ALT="A diagram illustrating the design of TIMESTUMP. The process begins with the app exploring phase, where various app states are analyzed. Next, actionable elements are extracted from each app state. Finally, the Localizer component identifies accessibility issues caused by dynamic content that changes during runtime, such as additions, removals, movements, or updates to attributes." height="500" src=./approach.png><br>
+
+<h3>Artifacts</h3>
+
+<p>
+The artifacts are publicly available <a href="https://github.com/seal-hub/Timestump">here</a>.
+
+<h3>Publications</h3>
+
+More details about can be found in our publication below:
+<br>
+<ul class="paperlist">
+    <li><b>Automated Accessibility Analysis of Dynamic Content Changes on Mobile Apps</b><br> 
+    Forough Mehralian, Ziyao He, and Sam Malek<br>
+    <i>The Proceedings of the International Conference on Software Engineering (ICSE 2025), Ottawa, Canada, April 2025.</i>
+    <br>[<a href="./2025_ICSE_TIMESTUMP.pdf">PDF</a>]
+    </li> 
+</ul>
+
+<!-- ***************** End of content ****************** -->
+<br><br>
+<div style="float:left">
+            <a href="http://www.ics.uci.edu/~seal/"><img ALT="[seal's logo]" height="200" src=../../seal.png></a>
+</div>
+<div style="float:right">
+            <a href="http://www.ics.uci.edu"><img ALT="[uci's logo]" style="padding-top: 40px" height="100" src=../../uci.jpg></a>
+</div>
+</div>
+</body>

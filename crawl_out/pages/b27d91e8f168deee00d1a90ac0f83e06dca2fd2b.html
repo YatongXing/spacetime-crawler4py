@@ -1,0 +1,47 @@
+<!-- URL: http://cybert.ics.uci.edu/dataset-help/CEDS -->
+
+<p><a href="/static/sampledata/CyberT_C+E_DataSet">Download this dataset</a></p>
+<h4>Basic file input parameters</h4>
+<p>
+  This is a toy data set of a small amount of control and experimental data from a DNA Microarray .
+  The data file is comma-delimited.
+  The data has been ln-transformed.  
+  The first row has a '#' so is considered a comment line.
+  The data starts on the first line not beginning with a '#'. 
+  There is one label column, and then there are four control columns and then four experimental columns.
+</p>
+<ul>
+  <li>Delimiter: Commas</li>
+  <li>Row Start: 1</li>
+  <li>Number of label columns: 1</li>
+  <li>Number of first condition columns: 4</li>
+  <li>Number of second condition columns: 4</li>
+</ul>
+
+<h4>Bayes-regularized Analysis Parameters</h4>
+<p>
+  This performs a two-sample t-test using the Bayes-regularized variance estimates.
+  No normalization is performed.
+  PPDE analysis and multiple hypothesis testing correction are performed on the p-values.
+</p>
+<ul>
+  <li>Normalization: None</li>
+  <li>Bayes Sliding Window: 101</li>
+  <li>Bayes Confidence: 4</li>
+  <li>Run PPDE: checked</li>
+  <li>Run Multiple Hypothesis Testing Correction: checked</li>
+</ul>
+
+<h4>Non Bayes-regularized Analysis Parameters</h4>
+<p>
+  This is equivalent to a standard t-test using empirical variances.  
+  No normalization is performed.
+  PPDE analysis and multiple hypothesis testing correction are performed on the p-values.
+</p>
+<ul>
+  <li>Bayes Confidence: BLANK (Default)</li>
+  <li>Run PPDE: checked</li>
+  <li>Run Multiple Hypothesis Testing Correction: checked</li>
+</ul>
+
+
